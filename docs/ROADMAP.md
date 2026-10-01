@@ -105,7 +105,8 @@ Footprint: ~4,200 "veyon" occurrences in 593 files, but only a small set is user
 Existing infra: `core/src/TranslationLoader.cpp`, language list built from `veyon*.qm` in
 `configurator/src/GeneralConfigurationPage.cpp:53-71`, RTL already applied at
 `core/src/VeyonCore.cpp:597` (`setLayoutDirection(QLocale{}.textDirection())`).
-Status: French 100%, Arabic 218/1165 (947 to do), Tamazight none.
+Status at v4.11.3: French 998/1161 (upstream master has it complete), Arabic 218/1161
+(943 to do), Tamazight none.
 
 1. **Script-aware locales**: Qt's `QLocale::name()` drops the script, so Kabyle Latin and
    Tifinagh would collide. Extend `TranslationLoader::load()` and the language list to use
