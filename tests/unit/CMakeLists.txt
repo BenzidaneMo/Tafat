@@ -97,4 +97,23 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME WebPolicyTest COMMAND WebPolicyTest)
 
+	#
+	# QuizTest: quiz data model, grading and tallies
+	#
+	add_executable(QuizTest
+		QuizTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/quiz/Quiz.cpp
+	)
+
+	target_include_directories(QuizTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/quiz
+	)
+
+	target_link_libraries(QuizTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME QuizTest COMMAND QuizTest)
+
 endif()

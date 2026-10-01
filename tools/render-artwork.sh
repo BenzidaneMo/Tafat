@@ -59,5 +59,6 @@ convert -size 164x314 xc:'#faf4ea' "$TMP/logo-140.png" -gravity north -geometry 
 # feature icons
 png feature-app-control.svg 128 "$ROOT/plugins/appcontrol/application-control.png"
 png feature-website-control.svg 128 "$ROOT/plugins/webcontrol/website-control.png"
+png feature-quiz.svg 128 "$ROOT/plugins/quiz/quiz.png"
 
 echo "Artwork rendered."

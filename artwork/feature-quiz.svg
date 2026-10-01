@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Toolbar icon of the quiz feature: a question sheet with a check mark. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="18" y="10" width="76" height="100" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <g fill="#13705f">
+    <circle cx="36" cy="36" r="6"/>
+    <circle cx="36" cy="60" r="6"/>
+    <circle cx="36" cy="84" r="6"/>
+  </g>
+  <g fill="#f6bf3f">
+    <rect x="50" y="32" width="30" height="8" rx="4"/>
+    <rect x="50" y="56" width="24" height="8" rx="4"/>
+    <rect x="50" y="80" width="28" height="8" rx="4"/>
+  </g>
+  <circle cx="94" cy="94" r="26" fill="#f26b2d"/>
+  <path d="M82 94 l9 9 l16 -18" fill="none" stroke="#fffdf9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
