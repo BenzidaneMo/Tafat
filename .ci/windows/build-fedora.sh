@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Build the Windows installer with the Fedora MinGW environment
+# (see fedora-deps.sh). Run from the source directory.
+# usage: build-fedora.sh <i686|x86_64> [<qt major version, default 6>]
+
+set -euo pipefail
+
+ARCH=$1
+QT=${2:-6}
+
+BASEDIR=$(pwd)
+BUILDDIR=/tmp/build-$ARCH-qt$QT
+if [ "$ARCH" = "i686" ]; then BITS=32; else BITS=64; fi
+if [ "$QT" = "6" ]; then WITH_QT6=ON; else WITH_QT6=OFF; fi
+
+"$BASEDIR/.ci/common/strip-ultravnc-sources.sh"
+
+rm -rf "$BUILDDIR"
+cmake -S "$BASEDIR" -B "$BUILDDIR" -G Ninja \
+	-DCMAKE_TOOLCHAIN_FILE="$BASEDIR/cmake/modules/FedoraMinGW${BITS}Toolchain.cmake" \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DQT_HOST_PATH=/usr \
+	-DWITH_QT6=$WITH_QT6 \
+	-DWITH_BUNDLED_LIBVNC=ON \
+	-DWITH_LDAP=OFF \
+	-DWITH_WEBAPI=OFF \
+	-DWITH_LTO=OFF \
+	${CMAKE_FLAGS:-}
+
+ninja -C "$BUILDDIR" create-windows-installer
+
+mv "$BUILDDIR"/*-setup.exe "$BASEDIR/"

@@ -1,0 +1,30 @@
+name: "Windows builds"
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - i686
+          - x86_64
+    runs-on: ubuntu-latest
+    container: fedora:44
+    steps:
+      - run: dnf -y install git
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - run: .ci/windows/fedora-deps.sh ${{ matrix.arch }} 6
+      - run: .ci/windows/build-fedora.sh ${{ matrix.arch }} 6
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tafat-windows-${{ matrix.arch }}
+          path: "*-setup.exe"
