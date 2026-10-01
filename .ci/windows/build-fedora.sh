@@ -25,6 +25,7 @@ cmake -S "$BASEDIR" -B "$BUILDDIR" -G Ninja \
 	-DWITH_LDAP=OFF \
 	-DWITH_WEBAPI=OFF \
 	-DWITH_LTO=OFF \
+	-DWITH_WERROR=OFF \
 	${CMAKE_FLAGS:-}
 
 ninja -C "$BUILDDIR" create-windows-installer
