@@ -25,6 +25,8 @@
 #include <QDesktopServices>
 #include <QFile>
 
+#include <veyonconfig.h>
+
 #include "AboutDialog.h"
 #include "VeyonCore.h"
 
@@ -40,6 +42,21 @@ AboutDialog::AboutDialog( QWidget *parent ) :
 	setWindowTitle(tr("About Veyon %1").arg(VeyonCore::versionString()));
 
 	ui->versionLabel->setText( VeyonCore::versionString() );
+
+	// product identity, keeping the credit to the upstream Veyon project
+	const auto upstreamName = QStringLiteral("Veyon");
+	const auto upstreamWebsite = QStringLiteral("https://veyon.io");
+	const auto website = QStringLiteral(VEYON_WEBSITE);
+	ui->label_3->setText( tr( "%1 - based on %2" ).arg( VeyonCore::productName(),
+		QStringLiteral("<a href=\"%1\">%2</a>").arg( upstreamWebsite, upstreamName ) ) );
+	ui->label_3->setOpenExternalLinks( true );
+	ui->label_4->setText( QStringLiteral("<a href=\"%1\">%1</a>").arg( website ) );
+	ui->label_8->setText( QStringLiteral( "Copyright © 2026 %1 contributors<br/>"
+										  "Copyright © 2004-2026 Tobias Junghans / Veyon Solutions" ).arg( VeyonCore::productName() ) );
+	ui->label_8->setTextFormat( Qt::RichText );
+
+	// the donation link of the upstream project does not apply to this product
+	ui->donateButton->hide();
 
 	QFile authors( QStringLiteral( ":/CONTRIBUTORS" ) );
 	if (authors.open(QFile::ReadOnly))

@@ -60,5 +60,11 @@ QString BrandingTranslator::translate( const char* context, const char* sourceTe
 
 QString BrandingTranslator::brand( QString text )
 {
+	// texts linking to Veyon's own documentation or website still refer to Veyon
+	if( text.contains( QLatin1String("veyon.io") ) || text.contains( QLatin1String("veyon.readthedocs.io") ) )
+	{
+		return text;
+	}
+
 	return text.replace( UpstreamName, VeyonCore::productName() );
 }
