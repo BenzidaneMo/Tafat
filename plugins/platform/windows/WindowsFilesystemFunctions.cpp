@@ -35,6 +35,7 @@
 #include "UserGroupsBackendManager.h"
 #include "WindowsCoreFunctions.h"
 #include "WindowsFilesystemFunctions.h"
+#include "VeyonCore.h"
 
 
 static QString windowsConfigPath( const KNOWNFOLDERID folderId )
@@ -54,14 +55,14 @@ static QString windowsConfigPath( const KNOWNFOLDERID folderId )
 
 QString WindowsFilesystemFunctions::personalAppDataPath() const
 {
-	return windowsConfigPath( FOLDERID_RoamingAppData ) + QDir::separator() + QStringLiteral("Veyon");
+	return windowsConfigPath( FOLDERID_RoamingAppData ) + QDir::separator() + VeyonCore::productName();
 }
 
 
 
 QString WindowsFilesystemFunctions::globalAppDataPath() const
 {
-	return windowsConfigPath( FOLDERID_ProgramData ) + QDir::separator() + QStringLiteral("Veyon");
+	return windowsConfigPath( FOLDERID_ProgramData ) + QDir::separator() + VeyonCore::productName();
 }
 
 

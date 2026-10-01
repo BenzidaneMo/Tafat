@@ -111,6 +111,9 @@ public:
 	static QString pluginDir();
 	static QString translationsDirectory();
 	static QString qtTranslationsDirectory();
+	static QString productName();
+	static QString productSlug();
+	static QString executableName( const QString& component );
 	static QString executableSuffix();
 	static QString sharedLibrarySuffix();
 	static QString applicationsDirectory();

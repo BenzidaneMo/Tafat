@@ -32,6 +32,7 @@
 #include "Logger.h"
 #include "PlatformCoreFunctions.h"
 #include "PlatformFilesystemFunctions.h"
+#include "VeyonCore.h"
 
 QAtomicPointer<Logger> Logger::s_instance = nullptr;
 QMutex Logger::s_instanceMutex;
@@ -40,7 +41,7 @@ QMutex Logger::s_instanceMutex;
 Logger::Logger( const QString &appName ) :
 	m_logLevel( LogLevel::Default ),
 	m_logMutex(),
-	m_appName( QStringLiteral( "Veyon" ) + appName ),
+	m_appName( VeyonCore::productName() + appName ),
 	m_logFile( nullptr ),
 	m_logFileSizeLimit( -1 ),
 	m_logFileRotationCount( -1 )

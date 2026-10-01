@@ -31,18 +31,19 @@
 #include <sys/types.h>
 
 #include "LinuxFilesystemFunctions.h"
+#include "VeyonCore.h"
 
 
 QString LinuxFilesystemFunctions::personalAppDataPath() const
 {
-	return QDir::homePath() + QDir::separator() + QStringLiteral(".veyon");
+	return QDir::homePath() + QDir::separator() + QLatin1Char('.') + VeyonCore::productSlug();
 }
 
 
 
 QString LinuxFilesystemFunctions::globalAppDataPath() const
 {
-	return QStringLiteral( "/etc/veyon" );
+	return QStringLiteral( "/etc/" ) + VeyonCore::productSlug();
 }
 
 

@@ -192,6 +192,27 @@ QString VeyonCore::qtTranslationsDirectory()
 
 
 
+QString VeyonCore::productName()
+{
+	return QStringLiteral( VEYON_PRODUCT_NAME );
+}
+
+
+
+QString VeyonCore::productSlug()
+{
+	return QStringLiteral( VEYON_PRODUCT_SLUG );
+}
+
+
+
+QString VeyonCore::executableName( const QString& component )
+{
+	return productSlug() + QLatin1Char('-') + component;
+}
+
+
+
 QString VeyonCore::executableSuffix()
 {
 	return QStringLiteral( VEYON_EXECUTABLE_SUFFIX ); // clazy:exclude=empty-qstringliteral
@@ -223,9 +244,9 @@ QString VeyonCore::sessionIdEnvironmentVariable()
 
 void VeyonCore::setupApplicationParameters()
 {
-	QCoreApplication::setOrganizationName( QStringLiteral( "Veyon Solutions" ) );
-	QCoreApplication::setOrganizationDomain( QStringLiteral( "veyon.io" ) );
-	QCoreApplication::setApplicationName( QStringLiteral( "Veyon" ) );
+	QCoreApplication::setOrganizationName( QStringLiteral( VEYON_ORGANIZATION ) );
+	QCoreApplication::setOrganizationDomain( QStringLiteral( VEYON_DOMAIN ) );
+	QCoreApplication::setApplicationName( productName() );
 
 	QCoreApplication::setAttribute( Qt::AA_ShareOpenGLContexts );
 
