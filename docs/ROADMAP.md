@@ -1,7 +1,7 @@
 # Tafat roadmap: Veyon fork → NetSupport School replacement for Algerian high schools
 
 ## Context
-Tafat (repo `benzidanemo/opennetsupport`, GPL-2.0-or-later) should replace NetSupport School
+Tafat (repo `BenzidaneMo/Tafat`, GPL-2.0-or-later) should replace NetSupport School
 (NSS) in Algerian high school computer labs. Building on
 **Veyon** (GPL-2.0-or-later, C++/Qt, ~83k LOC, actively maintained, latest stable tag `v4.11.3`)
 gives us monitoring, remote control, demo, lock, messages, launch apps/URLs, file distribute
@@ -197,9 +197,11 @@ inventory → teacher mobile app (Android build already in `android/`).
   conflicts small.
 
 ## Progress
-- Phase 0 done (pushed to `ccr-b7df7899-2kzbe8`): Veyon v4.11.3 merged with history,
-  `README.md`, `UPSTREAM.md`, `docs/ROADMAP.md`; Linux build + 3/3 tests pass (under Xvfb).
+- Phase 0 done (merged in PR #1): Veyon v4.11.3 imported with history, `README.md`,
+  `UPSTREAM.md`, `docs/ROADMAP.md`; Linux build + 3/3 tests pass (under Xvfb).
+- Phase 1 steps 1–4 and 7 done (PR #1): name **Tafat**, `cmake/modules/Branding.cmake`,
+  `tafat-*` executables, branded install/data/config paths, `BrandTheme` colors.
+  Repository renamed to `BenzidaneMo/Tafat`.
 - Open: Windows MinGW CI image. Veyon's image (`veyon/ci-mingw-w64`) is private, so we
   build our own from Fedora's `mingw32-*`/`mingw64-*` packages in GitHub Actions.
-- Phase 1 in progress: name set to **Tafat**.
-
+- Next: Phase 1 steps 5, 6, 8–10 (service/installer names, UI strings, artwork, links, guard).
