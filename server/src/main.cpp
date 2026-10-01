@@ -24,6 +24,8 @@
 
 #include <QGuiApplication>
 
+#include <veyonconfig.h>
+
 #include "ComputerControlServer.h"
 
 
@@ -32,7 +34,7 @@ int main( int argc, char **argv )
 	VeyonCore::setupApplicationParameters();
 
 	QGuiApplication app( argc, argv );
-	QGuiApplication::setDesktopFileName(QStringLiteral("io.veyon.veyon-server"));
+	QGuiApplication::setDesktopFileName(QStringLiteral(VEYON_SERVER_APP_ID));
 
 	VeyonCore core( &app, VeyonCore::Component::Server, QStringLiteral("Server") );
 

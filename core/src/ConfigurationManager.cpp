@@ -28,6 +28,7 @@
 #include "PlatformCoreFunctions.h"
 #include "PlatformNetworkFunctions.h"
 #include "VeyonConfiguration.h"
+#include "VeyonCore.h"
 #include "VeyonServiceControl.h"
 
 
@@ -61,7 +62,7 @@ bool ConfigurationManager::applyConfiguration()
 	auto& network = VeyonCore::platform().networkFunctions();
 
 	if( network.configureFirewallException( VeyonCore::filesystem().serverFilePath(),
-											QStringLiteral("Veyon Server"),
+											VeyonCore::productName() + QStringLiteral(" Server"),
 											m_configuration.isFirewallExceptionEnabled() ) == false )
 	{
 		m_errorString = tr("Could not configure the firewall configuration for the Veyon Server.");
@@ -69,7 +70,7 @@ bool ConfigurationManager::applyConfiguration()
 	}
 
 	if( network.configureFirewallException( VeyonCore::filesystem().workerFilePath(),
-											QStringLiteral("Veyon Worker"),
+											VeyonCore::productName() + QStringLiteral(" Worker"),
 											m_configuration.isFirewallExceptionEnabled() ) == false )
 	{
 		m_errorString = tr("Could not configure the firewall configuration for the Veyon Worker.");

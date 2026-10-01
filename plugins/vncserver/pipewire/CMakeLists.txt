@@ -47,8 +47,14 @@ if(PipeWire_FOUND AND Qt${QT_MAJOR_VERSION}DBus_FOUND)
 
 	target_compile_options(pipewire-vnc-server PRIVATE -Wno-parentheses)
 
+	# use the branded server app ID in the pre-authorization script
+	file(READ "${CMAKE_CURRENT_SOURCE_DIR}/veyon-preauth-kde.sh" preauth_script)
+	string(REPLACE "io.veyon.veyon-server" "${BRANDING_SERVER_APP_ID}" preauth_script "${preauth_script}")
+	set(preauth_script_file "${CMAKE_CURRENT_BINARY_DIR}/${BRANDING_PRODUCT_SLUG}-preauth-kde.sh")
+	file(WRITE "${preauth_script_file}" "${preauth_script}")
+
 	install(
-		PROGRAMS "${CMAKE_CURRENT_SOURCE_DIR}/veyon-preauth-kde.sh"
+		PROGRAMS "${preauth_script_file}"
 		DESTINATION "${VEYON_INSTALL_DATA_DIR}"
 		COMPONENT pipewire-vnc-server
 	)

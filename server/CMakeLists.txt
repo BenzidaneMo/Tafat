@@ -24,23 +24,23 @@ build_veyon_application(veyon-server
 
 configure_file(
 	"${CMAKE_CURRENT_SOURCE_DIR}/data/io.veyon.veyon-server.desktop.in"
-	"${CMAKE_CURRENT_BINARY_DIR}/data/io.veyon.veyon-server.desktop"
+	"${CMAKE_CURRENT_BINARY_DIR}/data/${BRANDING_SERVER_APP_ID}.desktop"
 	@ONLY
 )
 configure_file(
 	"${CMAKE_CURRENT_SOURCE_DIR}/data/io.veyon.veyon-server.service.in"
-	"${CMAKE_CURRENT_BINARY_DIR}/data/io.veyon.veyon-server.service"
+	"${CMAKE_CURRENT_BINARY_DIR}/data/${BRANDING_SERVER_APP_ID}.service"
 	@ONLY
 )
 
 install(
-	FILES "${CMAKE_CURRENT_BINARY_DIR}/data/io.veyon.veyon-server.desktop"
+	FILES "${CMAKE_CURRENT_BINARY_DIR}/data/${BRANDING_SERVER_APP_ID}.desktop"
 	DESTINATION "${CMAKE_INSTALL_DATADIR}/applications"
 	COMPONENT pipewire-vnc-server
 )
 
 install(
-	FILES "${CMAKE_CURRENT_BINARY_DIR}/data/io.veyon.veyon-server.service"
+	FILES "${CMAKE_CURRENT_BINARY_DIR}/data/${BRANDING_SERVER_APP_ID}.service"
 	DESTINATION "${CMAKE_INSTALL_DATADIR}/dbus-1/services"
 	COMPONENT pipewire-vnc-server
 )

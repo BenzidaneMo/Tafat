@@ -23,5 +23,5 @@ else
 	ninja ${@:2}
 fi
 
-mv veyon-*win* $BASEDIR
+find . -maxdepth 1 \( -name '*-win32*' -o -name '*-win64*' \) -exec mv '{}' $BASEDIR ';'
 

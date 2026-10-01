@@ -2,9 +2,9 @@
 Version=1.0
 Type=Application
 Exec=@CMAKE_INSTALL_PREFIX@/bin/@BRANDING_PRODUCT_SLUG@-master
-Icon=veyon-master
+Icon=@BRANDING_PRODUCT_SLUG@-master
 Terminal=false
-Name=Veyon Master
+Name=@BRANDING_PRODUCT_NAME@ Master
 Comment=Monitor and control remote computers
 Comment[de]=Entfernte Computer beobachten und steuern
 Categories=Qt;Education;Network;RemoteAccess;
