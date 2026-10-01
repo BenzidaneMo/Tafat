@@ -40,6 +40,7 @@
 #include <QToolTip>
 
 #include "BrandTheme.h"
+#include "BrandingTranslator.h"
 #include "BuiltinFeatures.h"
 #include "FeatureManager.h"
 #include "Filesystem.h"
@@ -612,6 +613,9 @@ void VeyonCore::initLocaleAndTranslation()
 	}
 
 	TranslationLoader::load( QStringLiteral("veyon") );
+
+	// installed last so it is asked first and can brand the "veyon" catalog's texts
+	QCoreApplication::installTranslator( new BrandingTranslator( findChild<QTranslator *>( QStringLiteral("veyon") ), this ) );
 
 	const auto app = qobject_cast<QGuiApplication *>( QCoreApplication::instance() );
 	if( app )

@@ -145,7 +145,8 @@ void LinuxKeyboardInput::initUinput()
 	usetup.id.bustype = BUS_USB;
 	usetup.id.vendor  = 0x1d6b;
 	usetup.id.product = 0x0001;
-	std::strncpy( usetup.name, "Veyon Virtual Keyboard", sizeof( usetup.name ) - 1 );
+	const auto deviceName = ( VeyonCore::productName() + QStringLiteral(" Virtual Keyboard") ).toUtf8();
+	std::strncpy( usetup.name, deviceName.constData(), sizeof( usetup.name ) - 1 );
 
 	if( ::ioctl( m_uinputFd, UI_DEV_SETUP, &usetup ) < 0 ||
 		::ioctl( m_uinputFd, UI_DEV_CREATE ) < 0 )
