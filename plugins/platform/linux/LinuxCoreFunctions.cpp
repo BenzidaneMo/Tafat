@@ -317,7 +317,7 @@ void LinuxCoreFunctions::disableScreenSaverWayland()
 		QStringLiteral("Inhibit"));
 	inhibitFreeDesktop.setArguments({
 		QVariant::fromValue(appName),
-		QVariant::fromValue(VeyonCore::productName() + QStringLiteral(" remote desktop session"))
+		QVariant::fromValue(QString(VeyonCore::productName() + QStringLiteral(" remote desktop session")))
 	});
 	QDBusMessage reply2 = QDBusConnection::sessionBus().call(inhibitFreeDesktop, QDBus::BlockWithGui, 2000);
 
