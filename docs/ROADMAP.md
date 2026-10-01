@@ -1,8 +1,8 @@
-# OpenNetsupport roadmap: Veyon fork → NetSupport School replacement for Algerian high schools
+# Tafat roadmap: Veyon fork → NetSupport School replacement for Algerian high schools
 
 ## Context
-OpenNetsupport (repo `benzidanemo/opennetsupport`, now GPL-2.0-or-later, only `LICENSE` + `README.md`)
-should replace NetSupport School (NSS) in Algerian high school computer labs. Building on
+Tafat (repo `benzidanemo/opennetsupport`, GPL-2.0-or-later) should replace NetSupport School
+(NSS) in Algerian high school computer labs. Building on
 **Veyon** (GPL-2.0-or-later, C++/Qt, ~83k LOC, actively maintained, latest stable tag `v4.11.3`)
 gives us monitoring, remote control, demo, lock, messages, launch apps/URLs, file distribute
 **and collect**, screenshots, power, logon/logoff on Windows + Linux. We add: full rebrand,
@@ -12,8 +12,9 @@ Decisions:
 - Tamazight: **two** translations — Latin (Kabyle, `kab`) and Tifinagh.
 - Lab OS: **Windows-first** (Linux kept building/working).
 - **32-bit is required, including Windows 7/8.1** (old lab PCs). See Phase 0b.
-- Name: **decide later** — "OpenNetsupport" is a placeholder held in ONE branding file
-  ("NetSupport" is a NetSupport Ltd trademark; must be resolved before first public release).
+- Name: **Tafat** (Kabyle "light"; تافات / ⵜⴰⴼⴰⵜ). Replaces the "OpenNetsupport" placeholder
+  (which contained the NetSupport Ltd trademark). Still held in ONE branding file; do an
+  INAPI + WIPO Global Brand Database + domain check before the first public release.
 - Feature priority: **1) App & web blocking, 2) Quizzes & surveys, 3) Collect work + register**,
   then hand-raise/chat and the rest.
 
@@ -78,8 +79,9 @@ Steps:
 ## Phase 1 — Full rebranding (weeks 2–3)
 Footprint: ~4,200 "veyon" occurrences in 593 files, but only a small set is user-visible.
 
-1. **Single source of truth**: new `cmake/Branding.cmake` (PRODUCT_NAME "OpenNetsupport",
-   PRODUCT_SLUG "opennetsupport", VENDOR, DOMAIN, WEBSITE, DOCS_URL, icon paths) +
+1. **Single source of truth**: new `cmake/Branding.cmake` (PRODUCT_NAME "Tafat",
+   PRODUCT_SLUG "tafat", VENDOR "Tafat contributors", DOMAIN/WEBSITE/DOCS_URL placeholders
+   until a domain is registered, PRODUCT_VERSION with our own scheme, icon paths) +
    `configure_file` → generated `core/src/BrandingConfig.h`. Renaming later = edit one file.
 2. **Runtime identity**: `core/src/VeyonCore.cpp:226-228` (org name/domain/app name) from branding.
 3. **Binary names**: set `OUTPUT_NAME` `${PRODUCT_SLUG}-master/-server/-service/-worker/-cli/
@@ -191,6 +193,10 @@ inventory → teacher mobile app (Android build already in `android/`).
 - Upstream: do a trial merge of the next Veyon release to confirm the thin-rebrand keeps
   conflicts small.
 
-## Current step
-Phase 0 (merge Veyon `v4.11.3` into branch `ccr-b7df7899-2kzbe8`, baseline build, CI incl.
-the 32-bit legacy job) and the Phase 1 branding file — pushed as reviewable commits.
+## Progress
+- Phase 0 done (pushed to `ccr-b7df7899-2kzbe8`): Veyon v4.11.3 merged with history,
+  `README.md`, `UPSTREAM.md`, `docs/ROADMAP.md`; Linux build + 3/3 tests pass (under Xvfb).
+- Open: Windows MinGW CI image. Veyon's image (`veyon/ci-mingw-w64`) is private, so we
+  build our own from Fedora's `mingw32-*`/`mingw64-*` packages in GitHub Actions.
+- Phase 1 in progress: name set to **Tafat**.
+

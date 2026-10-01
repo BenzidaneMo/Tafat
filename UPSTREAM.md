@@ -1,6 +1,6 @@
 # Tracking upstream Veyon
 
-OpenNetsupport is a fork of [Veyon](https://github.com/veyon/veyon) that keeps
+Tafat is a fork of [Veyon](https://github.com/veyon/veyon) that keeps
 Veyon's full git history. Upstream releases are merged regularly to pick up
 security fixes, bug fixes and new Qt support.
 
