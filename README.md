@@ -1,0 +1,63 @@
+# Tafat — ⵜⴰⴼⴰⵜ — تافات
+
+Tafat ("light" in Tamazight) is a free and open source classroom management
+solution for Algerian high schools — an open alternative to NetSupport School.
+
+Tafat is based on [Veyon](https://veyon.io) 4.11.3 by Tobias Junghans /
+Veyon Solutions and keeps its full history so upstream fixes can be merged
+(see [UPSTREAM.md](UPSTREAM.md)).
+
+> **Status:** early development. The code is currently Veyon 4.11.3; rebranding,
+> Arabic/Tamazight translations and new features are in progress — see the
+> [roadmap](docs/ROADMAP.md).
+
+## Features
+
+Inherited from Veyon:
+
+  * Overview: monitor all computers in one or multiple classrooms
+  * Remote access: view or control computers to watch and support students
+  * Demo: broadcast the teacher's screen in realtime (fullscreen/window)
+  * Screen lock: draw attention to what matters right now
+  * Communication: send text messages to students
+  * Start and end lessons: log in and log out users all at once
+  * Screenshots: record learning progress and document infringements
+  * Programs & websites: launch programs and open website URLs remotely
+  * Teaching material: distribute and collect documents, images and videos
+  * Administration: power on/off and reboot computers remotely
+
+Planned (see [roadmap](docs/ROADMAP.md)): application and website blocking,
+quizzes and surveys, student register, hand raising and chat, and more.
+
+## Languages
+
+Arabic, French, Tamazight (Latin and Tifinagh scripts) and English are the
+target languages for the user interface.
+
+## Platforms
+
+  * Windows 10/11 (64-bit)
+  * Windows 7/8.1/10 32-bit and Windows 7/8.1 64-bit (legacy build, planned)
+  * Linux
+
+## Building
+
+See [INSTALL](INSTALL) for build instructions.
+
+## License
+
+Copyright (C) 2026 Tafat contributors.
+Copyright (C) 2004-2026 Tobias Junghans / Veyon Solutions.
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See [LICENSE](LICENSE) for the license text and
+[COPYING](COPYING) for the license as distributed with Veyon, including the
+OpenSSL linking exception granted for Veyon's code.
+
+SPDX-License-Identifier: GPL-2.0-or-later
