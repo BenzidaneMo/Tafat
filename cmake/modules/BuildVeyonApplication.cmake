@@ -3,6 +3,7 @@
 # description: build Veyon application
 # usage: build_veyon_application(<NAME> <SOURCES>)
 include (WindowsBuildHelpers)
+include (Branding)
 
 function(build_veyon_application TARGET)
 	cmake_parse_arguments(PARSE_ARGV 1 arg
@@ -14,6 +15,7 @@ function(build_veyon_application TARGET)
 		add_library(${TARGET} SHARED ${arg_SOURCES})
 	else()
 		add_executable(${TARGET} ${arg_SOURCES})
+		set_branded_output_name(${TARGET})
 		install(TARGETS ${TARGET} RUNTIME DESTINATION bin)
 	endif()
 	target_include_directories(${TARGET} PRIVATE ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)

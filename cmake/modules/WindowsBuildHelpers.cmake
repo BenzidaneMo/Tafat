@@ -31,6 +31,11 @@ function(add_windows_resources TARGET)
 		set(SUFFIX "dll")
 	endif()
 
+	get_target_property(output_name ${TARGET} OUTPUT_NAME)
+	if(NOT output_name)
+		set(output_name ${TARGET})
+	endif()
+
 	string(CONCAT RESOURCE_DATA
 		"#include <windows.h>\n"
 		"CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST ${TARGET}.${SUFFIX}.manifest\n"
@@ -45,14 +50,14 @@ function(add_windows_resources TARGET)
 		"	BEGIN\n"
 		"		BLOCK \"040904E4\"\n"
 		"		BEGIN\n"
-		"			VALUE \"Comments\",         \"Virtual Eye On Networks (https://veyon.io)\\0\"\n"
-		"			VALUE \"CompanyName\",      \"Veyon Solutions\\0\"\n"
-		"			VALUE \"ProductName\",      \"Veyon\\0\"\n"
+		"			VALUE \"Comments\",         \"Based on Veyon (https://veyon.io)\\0\"\n"
+		"			VALUE \"CompanyName\",      \"${BRANDING_ORGANIZATION}\\0\"\n"
+		"			VALUE \"ProductName\",      \"${BRANDING_PRODUCT_NAME}\\0\"\n"
 		"			VALUE \"ProductVersion\",   \"${VERSION_STRING}\\0\"\n"
 		"			VALUE \"FileDescription\",  \"${arg_DESCRIPTION}\\0\"\n"
 		"			VALUE \"FileVersion\",      \"${VERSION_STRING}\\0\"\n"
 		"			VALUE \"LegalCopyright\",   \"Copyright (c) 2017-2026 Veyon Solutions / Tobias Junghans\\0\"\n"
-		"			VALUE \"OriginalFilename\", \"${TARGET}.${SUFFIX}\\0\"\n"
+		"			VALUE \"OriginalFilename\", \"${output_name}.${SUFFIX}\\0\"\n"
 		"		END\n"
 		"	END\n"
 		"	BLOCK \"VarFileInfo\"\n"

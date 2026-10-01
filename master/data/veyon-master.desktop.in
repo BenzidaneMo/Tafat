@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Exec=@CMAKE_INSTALL_PREFIX@/bin/veyon-master
+Exec=@CMAKE_INSTALL_PREFIX@/bin/@BRANDING_PRODUCT_SLUG@-master
 Icon=veyon-master
 Terminal=false
 Name=Veyon Master

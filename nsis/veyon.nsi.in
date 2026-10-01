@@ -6,7 +6,7 @@
 !define DESCRIPTION "Veyon Installer"
 !define LICENSE_TXT "COPYING"
 !define INSTALLER_NAME "veyon-${VERSION}-@VEYON_WINDOWS_ARCH@-setup.exe"
-!define MAIN_APP_EXE "veyon-master.exe"
+!define MAIN_APP_EXE "@BRANDING_PRODUCT_SLUG@-master.exe"
 !define INSTALL_TYPE "SetShellVarContext all"
 !define REG_ROOT "HKLM"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
@@ -148,7 +148,7 @@ Section "Veyon Service" SEC_SERVICE
 SectionIn RO
 ${INSTALL_TYPE}
 ClearErrors
-ExecWait '"$INSTDIR\veyon-wcli.exe" service unregister'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service unregister'
 ${If} $0 != 0
   ExecWait '"$INSTDIR\veyon-ctl.exe" service unregister'
 ${EndIf}
@@ -160,12 +160,12 @@ RmDir /r "$INSTDIR\translations"
 SetOverwrite on
 SetOutPath "$INSTDIR"
 # core components
-File "veyon-server.exe"
-File "veyon-service.exe"
-File "veyon-configurator.exe"
-File "veyon-cli.exe"
-File "veyon-wcli.exe"
-File "veyon-worker.exe"
+File "@BRANDING_PRODUCT_SLUG@-server.exe"
+File "@BRANDING_PRODUCT_SLUG@-service.exe"
+File "@BRANDING_PRODUCT_SLUG@-configurator.exe"
+File "@BRANDING_PRODUCT_SLUG@-cli.exe"
+File "@BRANDING_PRODUCT_SLUG@-wcli.exe"
+File "@BRANDING_PRODUCT_SLUG@-worker.exe"
 File "*.dll"
 File "LICENSE.TXT"
 File "README.TXT"
@@ -190,27 +190,27 @@ File "styles/*.dll"
 SetOutPath "$INSTDIR\tls"
 File "tls/qopensslbackend.dll"
 # configuration
-ExecWait '"$INSTDIR\veyon-wcli.exe" service register'
-ExecWait '"$INSTDIR\veyon-wcli.exe" config set Network/FirewallExceptionEnabled 1'
-ExecWait '"$INSTDIR\veyon-wcli.exe" config set Windows/SoftwareSASEnabled 1'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service register'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Network/FirewallExceptionEnabled 1'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Windows/SoftwareSASEnabled 1'
 # disable forced guest logon as otherwise logon authentication fails
 WriteRegDWORD ${REG_ROOT} "SYSTEM\CurrentControlSet\Control\Lsa"  "ForceGuest" "0"
 ${GetParameters} $R0
 ${GetOptions} $R0 "/ApplyConfig=" $R1
 ${If} $R1 != ""
   ClearErrors
-  ExecWait '"$INSTDIR\veyon-wcli.exe" config import "$R1"' $0
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config import "$R1"' $0
   ${If} $0 != 0
 	   MessageBox MB_OK|MB_ICONSTOP "Could not apply specified configuration file!"
   ${EndIf}
 ${EndIf}
-ExecWait '"$INSTDIR\veyon-wcli.exe" service start'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service start'
 SectionEnd
 
 Section "Veyon Master" SEC_MASTER
 ${INSTALL_TYPE}
 SetOutPath "$INSTDIR"
-File "veyon-master.exe"
+File "@BRANDING_PRODUCT_SLUG@-master.exe"
 
 ${GetParameters} $R0
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
@@ -228,7 +228,7 @@ File "interception/*"
 SectionEnd
 
 Function RunConfigurator
-	Exec '"$INSTDIR\veyon-configurator.exe"'
+	Exec '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-configurator.exe"'
 FunctionEnd
 
 
@@ -263,7 +263,7 @@ ${GetParameters} $R0
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
 CreateDirectory "$SMPROGRAMS\Veyon"
-CreateShortCut "$SMPROGRAMS\Veyon\Veyon Configurator.lnk" "$INSTDIR\veyon-configurator.exe"
+CreateShortCut "$SMPROGRAMS\Veyon\Veyon Configurator.lnk" "$INSTDIR\@BRANDING_PRODUCT_SLUG@-configurator.exe"
 CreateShortCut "$SMPROGRAMS\Veyon\Uninstall Veyon.lnk" "$INSTDIR\uninstall.exe"
 WriteIniStr "$INSTDIR\Veyon website.url" "InternetShortcut" "URL" "${WEB_SITE}"
 CreateShortCut "$SMPROGRAMS\Veyon\Veyon Website.lnk" "$INSTDIR\Veyon website.url"
@@ -283,9 +283,9 @@ SectionEnd
 Section Uninstall
 ${INSTALL_TYPE}
 
-ExecWait '"$INSTDIR\veyon-wcli.exe" config set Service/SoftwareSASEnabled 0'
-ExecWait '"$INSTDIR\veyon-wcli.exe" config set Network/FirewallExceptionEnabled 0'
-ExecWait '"$INSTDIR\veyon-wcli.exe" service unregister'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Service/SoftwareSASEnabled 0'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Network/FirewallExceptionEnabled 0'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service unregister'
 ExecWait '"$INSTDIR\interception\install-interception.exe" /uninstall'
 # make sure the service is stopped and all file handles are released
 Sleep 2000
@@ -293,7 +293,7 @@ Sleep 2000
 ${GetParameters} $R0
 ${GetOptions} $R0 "/ClearConfig" $R1
 ${IfNot} ${Errors}
-	ExecWait '"$INSTDIR\veyon-wcli.exe" config clear'
+	ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config clear'
 ${EndIf}
 
 Delete "$INSTDIR\*.exe"

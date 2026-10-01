@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Exec=@CMAKE_INSTALL_PREFIX@/bin/veyon-configurator
+Exec=@CMAKE_INSTALL_PREFIX@/bin/@BRANDING_PRODUCT_SLUG@-configurator
 Icon=veyon-configurator
 Terminal=false
 Name=Veyon Configurator

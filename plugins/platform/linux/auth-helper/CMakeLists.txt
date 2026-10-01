@@ -1,6 +1,7 @@
 find_package(PAM REQUIRED)
 
 add_executable(veyon-auth-helper ${CMAKE_CURRENT_SOURCE_DIR}/VeyonAuthHelper.cpp)
+set_branded_output_name(veyon-auth-helper)
 
 set_default_target_properties(veyon-auth-helper)
 

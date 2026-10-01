@@ -34,6 +34,7 @@
 #include "LinuxSessionFunctions.h"
 #include "LinuxUserFunctions.h"
 #include "VeyonConfiguration.h"
+#include "VeyonCore.h"
 
 #define XK_MISCELLANY
 
@@ -358,7 +359,7 @@ void LinuxUserFunctions::logoff()
 bool LinuxUserFunctions::authenticate( const QString& username, const Password& password )
 {
 	QProcess p;
-	p.start( QStringLiteral( "veyon-auth-helper" ), QStringList{}, QProcess::ReadWrite | QProcess::Unbuffered );
+	p.start( VeyonCore::executableName( QStringLiteral("auth-helper") ), QStringList{}, QProcess::ReadWrite | QProcess::Unbuffered );
 	if( p.waitForStarted() == false )
 	{
 		vCritical() << "failed to start VeyonAuthHelper";

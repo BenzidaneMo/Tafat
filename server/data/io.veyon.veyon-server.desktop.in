@@ -2,7 +2,7 @@
 Version=1.5
 Type=Application
 NoDisplay=true
-Exec=@CMAKE_INSTALL_PREFIX@/bin/veyon-server
+Exec=@CMAKE_INSTALL_PREFIX@/bin/@BRANDING_PRODUCT_SLUG@-server
 Name=Veyon Server
 Comment=Veyon remote desktop server
 Icon=veyon

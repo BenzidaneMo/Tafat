@@ -33,8 +33,8 @@ if [ -z "$3" ] ; then
 	find $BUILD_PWD/plugins -name "*.so" -exec ln -s '{}' ';'
 	cd $BUILD_PWD
 
-	./cli/veyon-cli help
-	./cli/veyon-cli about
+	./cli/*-cli help
+	./cli/*-cli about
 else
 	fakeroot ninja package
 fi

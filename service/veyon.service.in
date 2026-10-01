@@ -6,7 +6,7 @@ Requires=dbus.service systemd-logind.service
 Documentation=man:veyon-service(1)
 
 [Service]
-ExecStart=@CMAKE_INSTALL_PREFIX@/bin/veyon-service
+ExecStart=@CMAKE_INSTALL_PREFIX@/bin/@BRANDING_PRODUCT_SLUG@-service
 Type=simple
 Restart=always
 StartLimitInterval=60

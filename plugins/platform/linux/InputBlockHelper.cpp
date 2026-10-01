@@ -53,7 +53,7 @@ bool InputBlockHelper::start()
 	}
 
 	m_process = new QProcess(this);
-	m_process->start(QStringLiteral("veyon-input-helper"),
+	m_process->start(VeyonCore::executableName(QStringLiteral("input-helper")),
 					QStringList{QString::number(QCoreApplication::applicationPid())});
 
 	if (m_process->waitForStarted(5000) == false)

@@ -1,4 +1,5 @@
 add_executable(veyon-input-helper input-block-helper.c)
+set_branded_output_name(veyon-input-helper)
 
 set_default_target_properties(veyon-input-helper)
 
