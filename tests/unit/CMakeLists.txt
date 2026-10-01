@@ -76,4 +76,25 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME ProcessControlTest COMMAND ProcessControlTest)
 
+	#
+	# WebPolicyTest: browser policies of the website control
+	#
+	add_executable(WebPolicyTest
+		WebPolicyTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/webcontrol/WebPolicy.cpp
+		${CMAKE_SOURCE_DIR}/plugins/webcontrol/PolicyStore.cpp
+	)
+
+	target_include_directories(WebPolicyTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/webcontrol
+	)
+
+	target_link_libraries(WebPolicyTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		veyon-core
+	)
+
+	add_test(NAME WebPolicyTest COMMAND WebPolicyTest)
+
 endif()

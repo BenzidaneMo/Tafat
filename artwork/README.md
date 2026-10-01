@@ -11,7 +11,7 @@ Tafat theme (`core/src/BrandTheme.h`).
 | `tafat-master-small.svg` | Master app icon, 16–32 px (window, tray) |
 | `tafat-configurator.svg` | Configurator app icon, 48 px and larger |
 | `tafat-configurator-small.svg` | Configurator app icon, 16–32 px |
-| `feature-*.svg` | Toolbar icons of Tafat features |
+| `feature-*.svg` | Toolbar icons of Tafat features (application and website control) |
 
 After changing a source file, run `tools/render-artwork.sh` (needs
 `rsvg-convert` and ImageMagick). It regenerates the PNG, ICO, XPM and BMP
