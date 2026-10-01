@@ -63,4 +63,8 @@ public:
 	static QPalette toolTipPalette( bool dark );
 	static QString styleSheet( bool dark );
 
+	// registers bundled fonts; with preferTifinagh the UI font is switched
+	// to the bundled Tifinagh font (for Tamazight in Tifinagh script)
+	static void initFonts( bool preferTifinagh );
+
 };

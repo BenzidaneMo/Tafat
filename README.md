@@ -36,6 +36,9 @@ quizzes and surveys, student register, hand raising and chat, and more.
 Arabic, French, Tamazight (Latin and Tifinagh scripts) and English are the
 target languages for the user interface.
 
+Tamazight in Tifinagh script uses the bundled Noto Sans Tifinagh font
+(SIL Open Font License 1.1, see `core/resources/fonts/NotoSansTifinagh-OFL.txt`).
+
 ## Platforms
 
   * Windows 10/11 (64-bit)

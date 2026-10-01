@@ -22,6 +22,9 @@
  *
  */
 
+#include <QApplication>
+#include <QFontDatabase>
+
 #include "BrandTheme.h"
 
 
@@ -112,4 +115,19 @@ QString BrandTheme::styleSheet( bool dark )
 		.arg( QLatin1String( dark ? TealDark : OrangeSoft ),
 			  QLatin1String( dark ? Teal : Orange ),
 			  QLatin1String( Orange ) );
+}
+
+
+
+void BrandTheme::initFonts( bool preferTifinagh )
+{
+	const auto fontId = QFontDatabase::addApplicationFont( QStringLiteral(":/fonts/NotoSansTifinagh-Regular.ttf") );
+	if( preferTifinagh == false || fontId < 0 )
+	{
+		return;
+	}
+
+	auto font = QApplication::font();
+	font.setFamilies( QFontDatabase::applicationFontFamilies( fontId ) + QStringList{ font.family() } );
+	QApplication::setFont( font );
 }

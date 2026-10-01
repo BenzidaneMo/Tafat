@@ -23,6 +23,7 @@
  */
 
 #include <QDir>
+#include <QFileInfo>
 #include <QMessageBox>
 
 #include "AuthenticationCredentials.h"
@@ -56,14 +57,29 @@ GeneralConfigurationPage::GeneralConfigurationPage() :
 
 	for( const auto& qmFile : qmFiles )
 	{
-		QLocale loc( qmFile.split( QLatin1Char('_') ).mid( 1 ).join( QLatin1Char('_') ) );
+		const auto catalog = QFileInfo( qmFile ).completeBaseName().split( QLatin1Char('_') ).mid( 1 ).join( QLatin1Char('_') );
+		QLocale loc( catalog );
 		if( loc.language() == QLocale::C )
 		{
 			loc = QLocale( QLocale::English );
 		}
-		languages += QStringLiteral( "%1 - %2 (%3)" ).arg( QLocale::languageToString( loc.language() ),
-														   loc.nativeLanguageName(),
-														   loc.name() );
+
+		// Tamazight is offered in Latin script (Kabyle locale data) and in Tifinagh,
+		// which Qt has no locale for
+		if( catalog == QLatin1String("kab_Tfng") )
+		{
+			languages += QStringLiteral( "Tamazight Tifinagh - \u2D5C\u2D30\u2D4E\u2D30\u2D63\u2D49\u2D56\u2D5C (kab_Tfng)" );
+		}
+		else if( loc.language() == QLocale::Kabyle )
+		{
+			languages += QStringLiteral( "Tamazight - Tamazi\u0263t (%1)" ).arg( loc.name() );
+		}
+		else
+		{
+			languages += QStringLiteral( "%1 - %2 (%3)" ).arg( QLocale::languageToString( loc.language() ),
+															   loc.nativeLanguageName(),
+															   loc.name() );
+		}
 	}
 
 	std::sort( languages.begin(), languages.end() );

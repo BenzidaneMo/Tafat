@@ -169,6 +169,7 @@ File "@BRANDING_PRODUCT_SLUG@-worker.exe"
 File "*.dll"
 File "LICENSE.TXT"
 File "README.TXT"
+File "NotoSansTifinagh-OFL.TXT"
 # plugins
 SetOutPath "$INSTDIR\plugins"
 File "plugins/*.dll"

@@ -654,6 +654,8 @@ void VeyonCore::initUi()
 		QApplication::setPalette(BrandTheme::palette(dark));
 		QToolTip::setPalette(BrandTheme::toolTipPalette(dark));
 		app->setStyleSheet(BrandTheme::styleSheet(dark));
+
+		BrandTheme::initFonts(config().uiLanguage().contains(QLatin1String("(kab_Tfng)")));
 	}
 }
 
