@@ -210,6 +210,12 @@ if(WITH_BUNDLED_LIBVNC)
 
 	target_compile_options(vncclient PRIVATE "-Wno-unused-function;-Wno-unused-variable;-Wno-deprecated-declarations")
 	target_compile_options(vncserver PRIVATE "-Wno-deprecated-declarations;-Wno-unused-function;-Wno-unused-variable;-Wno-unused-but-set-variable;-Wno-discarded-qualifiers;-Wno-unused-result;-Wno-restrict;-Wno-switch;-Wno-maybe-uninitialized")
+	if(VEYON_BUILD_WINDOWS)
+		# LibVNCServer uses the ANSI variants of the Windows API (e.g. GetComputerName)
+		# and builds with -Werror, which newer MinGW GCCs fail with on such warnings
+		target_compile_options(vncclient PRIVATE "-UUNICODE;-U_UNICODE;-Wno-error")
+		target_compile_options(vncserver PRIVATE "-UUNICODE;-U_UNICODE;-Wno-error")
+	endif()
 
 	target_include_directories(vncclient PUBLIC
 		${libvncserver_SOURCE_DIR}/src/common
