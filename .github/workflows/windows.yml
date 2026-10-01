@@ -13,6 +13,10 @@ jobs:
         arch:
           - i686
           - x86_64
+        # Qt 6: Windows 10/11, Qt 5: legacy build for Windows 7/8.1
+        qt:
+          - 6
+          - 5
     runs-on: ubuntu-latest
     container: fedora:44
     steps:
@@ -22,9 +26,9 @@ jobs:
           fetch-depth: 0
           submodules: recursive
       - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
-      - run: .ci/windows/fedora-deps.sh ${{ matrix.arch }} 6
-      - run: .ci/windows/build-fedora.sh ${{ matrix.arch }} 6
+      - run: .ci/windows/fedora-deps.sh ${{ matrix.arch }} ${{ matrix.qt }}
+      - run: .ci/windows/build-fedora.sh ${{ matrix.arch }} ${{ matrix.qt }}
       - uses: actions/upload-artifact@v4
         with:
-          name: tafat-windows-${{ matrix.arch }}
+          name: tafat-windows-${{ matrix.arch }}-qt${{ matrix.qt }}
           path: "*-setup.exe"

@@ -2,6 +2,7 @@
 # Build the Windows installer with the Fedora MinGW environment
 # (see fedora-deps.sh). Run from the source directory.
 # usage: build-fedora.sh <i686|x86_64> [<qt major version, default 6>]
+# Qt 5 builds are legacy builds for Windows 7 and 8.1.
 
 set -euo pipefail
 
@@ -11,7 +12,7 @@ QT=${2:-6}
 BASEDIR=$(pwd)
 BUILDDIR=/tmp/build-$ARCH-qt$QT
 if [ "$ARCH" = "i686" ]; then BITS=32; else BITS=64; fi
-if [ "$QT" = "6" ]; then WITH_QT6=ON; else WITH_QT6=OFF; fi
+if [ "$QT" = "6" ]; then WITH_QT6=ON; LEGACY=OFF; else WITH_QT6=OFF; LEGACY=ON; fi
 
 "$BASEDIR/.ci/common/strip-ultravnc-sources.sh"
 
@@ -21,6 +22,7 @@ cmake -S "$BASEDIR" -B "$BUILDDIR" -G Ninja \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DQT_HOST_PATH=/usr \
 	-DWITH_QT6=$WITH_QT6 \
+	-DWITH_LEGACY_WINDOWS=$LEGACY \
 	-DWITH_BUNDLED_LIBVNC=ON \
 	-DWITH_LDAP=OFF \
 	-DWITH_WEBAPI=OFF \
