@@ -34,6 +34,7 @@
 #include <QStyleHints>
 #include <QTimer>
 
+#include "BrandTheme.h"
 #include "Toast.h"
 #include "VeyonCore.h"
 
@@ -52,21 +53,21 @@ std::deque<Toast*> Toast::s_queue = std::deque<Toast*>();
 const int Toast::sc_updatePositionDuration = 200;
 const int Toast::sc_durationBarUpdateInterval = 5;
 const int Toast::sc_dropShadowSize = 5;
-const QColor Toast::sc_successAccentColor = QColor("#3E9141");
-const QColor Toast::sc_warningAccentColor = QColor("#E8B849");
-const QColor Toast::sc_errorAccentColor = QColor("#BA2626");
-const QColor Toast::sc_informationAccentColor = QColor("#007FFF");
-const QColor Toast::sc_defaultAccentColor = QColor("#5C5C5C");
-const QColor Toast::sc_defaultBackgroundColor = QColor("#E7F4F9");
-const QColor Toast::sc_defaultTitleColor = QColor("#000000");
-const QColor Toast::sc_defaultTextColor = QColor("#5C5C5C");
-const QColor Toast::sc_defaultIconSeparatorColor = QColor("#D9D9D9");
-const QColor Toast::sc_defaultCloseButtonIconColor = QColor("#000000");
-const QColor Toast::sc_defaultBackgroundColorDark = QColor("#292929");
-const QColor Toast::sc_defaultTitleColorDark = QColor("#FFFFFF");
-const QColor Toast::sc_defaultTextColorDark = QColor("#D0D0D0");
-const QColor Toast::sc_defaultIconSeparatorColorDark = QColor("#585858");
-const QColor Toast::sc_defaultCloseButtonIconColorDark = QColor("#C9C9C9");
+const QColor Toast::sc_successAccentColor = QColor(BrandTheme::Teal);
+const QColor Toast::sc_warningAccentColor = QColor(BrandTheme::Yellow);
+const QColor Toast::sc_errorAccentColor = QColor(BrandTheme::Error);
+const QColor Toast::sc_informationAccentColor = QColor(BrandTheme::Orange);
+const QColor Toast::sc_defaultAccentColor = QColor(BrandTheme::Muted);
+const QColor Toast::sc_defaultBackgroundColor = QColor(BrandTheme::Paper);
+const QColor Toast::sc_defaultTitleColor = QColor(BrandTheme::Ink);
+const QColor Toast::sc_defaultTextColor = QColor(BrandTheme::Muted);
+const QColor Toast::sc_defaultIconSeparatorColor = QColor(BrandTheme::Line);
+const QColor Toast::sc_defaultCloseButtonIconColor = QColor(BrandTheme::Ink);
+const QColor Toast::sc_defaultBackgroundColorDark = QColor(BrandTheme::Brown);
+const QColor Toast::sc_defaultTitleColorDark = QColor(BrandTheme::Cream);
+const QColor Toast::sc_defaultTextColorDark = QColor(BrandTheme::Cream2);
+const QColor Toast::sc_defaultIconSeparatorColorDark = QColor(BrandTheme::Brown2);
+const QColor Toast::sc_defaultCloseButtonIconColorDark = QColor(BrandTheme::Cream2);
 
 
 Toast::Toast(QWidget* parent)

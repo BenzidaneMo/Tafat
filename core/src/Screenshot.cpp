@@ -31,6 +31,7 @@
 #include <QPainter>
 #include <QRegularExpression>
 
+#include "BrandTheme.h"
 #include "Screenshot.h"
 #include "VeyonConfiguration.h"
 #include "Computer.h"
@@ -131,7 +132,9 @@ void Screenshot::take( const ComputerControlInterface::Pointer& computerControlI
 	const auto textX = iconX + icon.width() + PADDING;
 	const auto textY = rect.y() + PADDING + fontMetrics.ascent();
 
-	painter.fillRect( rect, QColor( 255, 255, 255, 160 ) );
+	auto labelBackgroundColor = BrandTheme::color( BrandTheme::Paper );
+	labelBackgroundColor.setAlpha( 160 );
+	painter.fillRect( rect, labelBackgroundColor );
 	painter.drawPixmap( iconX, iconY, icon );
 	painter.drawText( textX, textY, caption );
 

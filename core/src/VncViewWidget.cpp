@@ -28,6 +28,7 @@
 #include <QScreen>
 #include <QWindow>
 
+#include "BrandTheme.h"
 #include "VeyonConnection.h"
 #include "VncConnection.h"
 #include "VncViewWidget.h"
@@ -314,7 +315,7 @@ void VncViewWidget::drawBusyIndicator( QPainter* painter )
 		BusyIndicatorSize, BusyIndicatorSize,
 		};
 
-	QColor color(QStringLiteral("#00acdc"));
+	auto color = BrandTheme::color(BrandTheme::Orange);
 	QConicalGradient gradient;
 	gradient.setCenter(drawingRect.center());
 	gradient.setAngle((360 - m_busyIndicatorState) % 360);

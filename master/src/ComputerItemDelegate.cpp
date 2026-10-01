@@ -24,6 +24,7 @@
 
 #include <QPainter>
 
+#include "BrandTheme.h"
 #include "ComputerControlListModel.h"
 #include "ComputerItemDelegate.h"
 #include "FeatureManager.h"
@@ -110,8 +111,10 @@ void ComputerItemDelegate::drawFeatureIcons(QPainter* painter, const QPoint& pos
 		const int y = pos.y() + OverlayIconsPadding;
 
 		painter->setRenderHint(QPainter::Antialiasing);
-		painter->setBrush(QColor(255, 255, 255, 192));
-		painter->setPen(QColor(25, 140, 179));
+		auto overlayBackgroundColor = BrandTheme::color(BrandTheme::Paper);
+		overlayBackgroundColor.setAlpha(192);
+		painter->setBrush(overlayBackgroundColor);
+		painter->setPen(BrandTheme::color(BrandTheme::Teal));
 		painter->drawRoundedRect(QRect(x, y, count * (OverlayIconSize + OverlayIconSpacing), OverlayIconSize),
 								 OverlayIconsRadius, OverlayIconsRadius);
 

@@ -97,10 +97,13 @@ Footprint: ~4,200 "veyon" occurrences in 593 files, but only a small set is user
 6. **UI strings**: 23 `tr()` strings contain "Veyon" — change them to `tr("… %1 …").arg(productName)`
    and update the matching entries in `translations/*.ts` with a script
    (`tools/rebrand-ts.py`) so existing translations are not lost.
-7. **Artwork**: new logo/icon set (`master/data/veyon-master.*`, `configurator/data/*`,
+7. **Colors**: done — `core/src/BrandTheme.{h,cpp}` holds the established web theme tokens
+   (`--cream`, `--paper`, `--brown`, `--ink`, `--orange`, `--teal`, …) and builds the Qt
+   light/dark palettes and app style sheet from them; hard-coded Veyon blues were replaced.
+8. **Artwork**: new logo/icon set (`master/data/veyon-master.*`, `configurator/data/*`,
    `nsis/*`, About dialog, tray icons, Android `res/`).
-8. **Links**: replace `veyon.io` help/docs URLs with project URLs.
-9. **Guard**: `tools/check-branding.sh` (CI) fails if a user-visible "Veyon" string reappears
+9. **Links**: replace `veyon.io` help/docs URLs with project URLs.
+10. **Guard**: `tools/check-branding.sh` (CI) fails if a user-visible "Veyon" string reappears
    after an upstream merge (allow-list for copyright headers/credits).
 
 ## Phase 2 — Localisation: Arabic, Tamazight (Latin + Tifinagh), French (weeks 2–6, parallel)

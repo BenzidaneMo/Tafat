@@ -21,6 +21,7 @@
  *  USA.
  */
 
+#include "BrandTheme.h"
 #include "LockWidget.h"
 #include "PlatformCoreFunctions.h"
 #include "PlatformInputDeviceFunctions.h"
@@ -107,7 +108,7 @@ void LockWidget::paintEvent( QPaintEvent* event )
 		break;
 
 	case BackgroundPixmap:
-		p.fillRect( rect(), QColor( 64, 64, 64 ) );
+		p.fillRect( rect(), BrandTheme::color( BrandTheme::Brown ) );
 		p.drawPixmap( ( width() - m_background.width() ) / 2,
 					  ( height() - m_background.height() ) / 2,
 					  m_background );
