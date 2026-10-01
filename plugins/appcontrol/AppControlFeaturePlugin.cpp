@@ -1,0 +1,220 @@
+/*
+ * AppControlFeaturePlugin.cpp - block or allow applications on student computers
+ *
+ * Copyright (c) 2026 Tafat contributors
+ *
+ * This file is part of Tafat, which is based on Veyon - https://veyon.io
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public
+ * License along with this program (see COPYING); if not, write to the
+ * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+ *
+ */
+
+#include <QMessageBox>
+
+#include "AppControlFeaturePlugin.h"
+#include "ComputerControlInterface.h"
+#include "FeatureWorkerManager.h"
+#include "PlatformCoreFunctions.h"
+#include "PlatformSessionFunctions.h"
+#include "ProcessControl.h"
+#include "VeyonMasterInterface.h"
+#include "VeyonServerInterface.h"
+
+
+AppControlFeaturePlugin::AppControlFeaturePlugin( QObject* parent ) :
+	QObject( parent ),
+	m_appControlFeature( QStringLiteral("AppControl"),
+						 Feature::Flag::Mode | Feature::Flag::AllComponents,
+						 Feature::Uid( "4b4f6a4b-f9c0-494e-9dce-8de93a384e30" ),
+						 Feature::Uid(),
+						 tr( "Block apps" ), tr( "Unblock apps" ),
+						 tr( "Block applications on the selected computers, or allow only "
+							 "the applications needed for the lesson. Blocked applications "
+							 "are closed automatically while this mode is active." ),
+						 QStringLiteral(":/appcontrol/application-control.png") ),
+	m_features( { m_appControlFeature } )
+{
+	m_enforcementTimer.setInterval( EnforcementInterval );
+}
+
+
+
+bool AppControlFeaturePlugin::controlFeature( Feature::Uid featureUid, Operation operation,
+											  const QVariantMap& arguments,
+											  const ComputerControlInterfaceList& computerControlInterfaces )
+{
+	if( featureUid != m_appControlFeature.uid() )
+	{
+		return false;
+	}
+
+	if( operation == Operation::Start )
+	{
+		// never restrict the teacher's own computer
+		auto targets = computerControlInterfaces;
+		targets.removeLocalHostInterfaces();
+
+		sendFeatureMessage( FeatureMessage{ featureUid, FeatureCommand::Start }
+								.addArgument( Argument::Mode, arguments.value( argToString( Argument::Mode ) ).toInt() )
+								.addArgument( Argument::Applications, arguments.value( argToString( Argument::Applications ) ).toStringList() ),
+							targets );
+		return true;
+	}
+
+	if( operation == Operation::Stop )
+	{
+		sendFeatureMessage( FeatureMessage{ featureUid, FeatureCommand::Stop }, computerControlInterfaces );
+		return true;
+	}
+
+	return false;
+}
+
+
+
+bool AppControlFeaturePlugin::startFeature( VeyonMasterInterface& master, const Feature& feature,
+											const ComputerControlInterfaceList& computerControlInterfaces )
+{
+	if( feature.uid() != m_appControlFeature.uid() )
+	{
+		return false;
+	}
+
+	AppControlDialog dialog( master.mainWindow() );
+	if( dialog.exec() == QDialog::Accepted )
+	{
+		controlFeature( feature.uid(), Operation::Start,
+						{ { argToString( Argument::Mode ), int( dialog.mode() ) },
+						  { argToString( Argument::Applications ), dialog.applications() } },
+						computerControlInterfaces );
+	}
+
+	return true;
+}
+
+
+
+bool AppControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server,
+													const MessageContext& messageContext,
+													const FeatureMessage& message )
+{
+	Q_UNUSED(messageContext)
+
+	if( message.featureUid() != m_appControlFeature.uid() )
+	{
+		return false;
+	}
+
+	switch( message.command<FeatureCommand>() )
+	{
+	case FeatureCommand::Start:
+		if( VeyonCore::platform().sessionFunctions().currentSessionHasUser() == false )
+		{
+			vDebug() << "not controlling applications since not running in a user session";
+			return true;
+		}
+
+		m_mode = AppControlDialog::Mode( message.argument( Argument::Mode ).toInt() );
+		m_applications.clear();
+		for( const auto& application : message.argument( Argument::Applications ).toStringList() )
+		{
+			m_applications.append( ProcessControl::normalizedName( application ) );
+		}
+
+		m_enforcementTimer.disconnect( this );
+		connect( &m_enforcementTimer, &QTimer::timeout, this, [this, &server]() { enforce( server ); } );
+		m_enforcementTimer.start();
+		enforce( server );
+
+		vInfo() << "controlling applications, mode" << int(m_mode) << "applications" << m_applications;
+		return true;
+
+	case FeatureCommand::Stop:
+		m_enforcementTimer.stop();
+		m_applications.clear();
+		vInfo() << "stopped controlling applications";
+		return true;
+
+	default:
+		break;
+	}
+
+	return false;
+}
+
+
+
+bool AppControlFeaturePlugin::handleFeatureMessage( VeyonWorkerInterface& worker, const FeatureMessage& message )
+{
+	Q_UNUSED(worker)
+
+	if( message.featureUid() != m_appControlFeature.uid() ||
+		message.command<FeatureCommand>() != FeatureCommand::NotifyClosedApplications )
+	{
+		return false;
+	}
+
+	const auto text = tr( "Your teacher has blocked the following applications, so they were closed:\n\n%1" )
+						  .arg( message.argument( Argument::Applications ).toStringList().join( QStringLiteral(", ") ) );
+
+	if( m_notice )
+	{
+		m_notice->setText( text );
+	}
+	else
+	{
+		m_notice = new QMessageBox( QMessageBox::Information, tr( "Application blocked" ), text );
+		m_notice->setAttribute( Qt::WA_DeleteOnClose );
+		m_notice->show();
+	}
+
+	VeyonCore::platform().coreFunctions().raiseWindow( m_notice, true );
+
+	return true;
+}
+
+
+
+bool AppControlFeaturePlugin::isFeatureActive( VeyonServerInterface& server, Feature::Uid featureUid ) const
+{
+	Q_UNUSED(server)
+
+	return featureUid == m_appControlFeature.uid() && m_enforcementTimer.isActive();
+}
+
+
+
+void AppControlFeaturePlugin::enforce( VeyonServerInterface& server )
+{
+	QStringList closedApplications;
+
+	const auto processes = ProcessControl::processesToClose( ProcessControl::sessionProcesses(), m_mode, m_applications );
+	for( const auto& process : processes )
+	{
+		if( ProcessControl::terminate( process.id ) && closedApplications.contains( process.name ) == false )
+		{
+			closedApplications.append( process.name );
+		}
+	}
+
+	if( closedApplications.isEmpty() == false )
+	{
+		vInfo() << "closed applications" << closedApplications;
+		server.featureWorkerManager().sendMessageToUnmanagedSessionWorker(
+			FeatureMessage{ m_appControlFeature.uid(), FeatureCommand::NotifyClosedApplications }
+				.addArgument( Argument::Applications, closedApplications ) );
+	}
+}

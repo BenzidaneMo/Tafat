@@ -56,4 +56,24 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME VncProtocolRobustnessTest COMMAND VncProtocolRobustnessTest)
 
+	#
+	# ProcessControlTest: which applications the application control closes
+	#
+	add_executable(ProcessControlTest
+		ProcessControlTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/ProcessControl.cpp
+	)
+
+	target_include_directories(ProcessControlTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol
+	)
+
+	target_link_libraries(ProcessControlTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		veyon-core
+	)
+
+	add_test(NAME ProcessControlTest COMMAND ProcessControlTest)
+
 endif()
