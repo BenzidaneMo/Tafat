@@ -49,7 +49,7 @@ if(PipeWire_FOUND AND Qt${QT_MAJOR_VERSION}DBus_FOUND)
 
 	install(
 		PROGRAMS "${CMAKE_CURRENT_SOURCE_DIR}/veyon-preauth-kde.sh"
-		DESTINATION "${CMAKE_INSTALL_DATADIR}/veyon"
+		DESTINATION "${VEYON_INSTALL_DATA_DIR}"
 		COMPONENT pipewire-vnc-server
 	)
 endif()
