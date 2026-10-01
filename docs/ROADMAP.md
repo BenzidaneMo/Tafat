@@ -197,11 +197,19 @@ inventory → teacher mobile app (Android build already in `android/`).
   conflicts small.
 
 ## Progress
-- Phase 0 done (merged in PR #1): Veyon v4.11.3 imported with history, `README.md`,
-  `UPSTREAM.md`, `docs/ROADMAP.md`; Linux build + 3/3 tests pass (under Xvfb).
-- Phase 1 steps 1–4 and 7 done (PR #1): name **Tafat**, `cmake/modules/Branding.cmake`,
-  `tafat-*` executables, branded install/data/config paths, `BrandTheme` colors.
-  Repository renamed to `BenzidaneMo/Tafat`.
-- Open: Windows MinGW CI image. Veyon's image (`veyon/ci-mingw-w64`) is private, so we
-  build our own from Fedora's `mingw32-*`/`mingw64-*` packages in GitHub Actions.
-- Next: Phase 1 steps 5, 6, 8–10 (service/installer names, UI strings, artwork, links, guard).
+- Phase 0 done: Veyon v4.11.3 imported with history; Linux CI green (Debian 11 Qt 5, Fedora 44 Qt 6).
+- Phase 0b in progress: Windows CI (`.github/workflows/windows.yml`, Fedora MinGW) builds
+  32/64-bit installers with Qt 6 (Windows 10/11); the 32-bit Qt 6 installer builds. Legacy
+  Qt 5 builds for Windows 7/8.1 (`WITH_LEGACY_WINDOWS`) were added and still need fixes for
+  Windows 8 APIs. Not yet tested on real Windows machines. LDAP and WebAPI are off on Windows.
+- Phase 1 done: name Tafat (`cmake/modules/Branding.cmake`), `tafat-*` programs, services,
+  paths, packages and installer, UI texts via `BrandingTranslator`, About dialog, theme colors
+  (`BrandTheme`), logo and icons (`artwork/`), branding check in CI.
+- Phase 2 started: Tamazight in Latin (`kab`) and Tifinagh (`kab_Tfng`) with bundled
+  Noto Sans Tifinagh; catalogs created but not translated; Arabic still 218/1161.
+- Phase 3: done as plugins with unit tests — "Block apps" (`plugins/appcontrol`),
+  "Block websites" (`plugins/webcontrol`), "Quiz" with polls (`plugins/quiz`),
+  "Register" for attendance and names on tiles (`plugins/register`); collected files are
+  grouped by student name and computer by default.
+- Next: finish the Windows builds and test on real lab PCs, translate Arabic/Tamazight,
+  then hand-raise/chat.
