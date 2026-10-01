@@ -15,7 +15,9 @@ WORK=$(mktemp -d)
 
 packages=(
 	cmake ninja-build git make autoconf automake libtool wget xz dos2unix findutils
-	$M-gcc-c++ $M-openssl $M-libjpeg-turbo $M-libpng $M-zlib $M-nsis
+	$M-gcc-c++ $M-openssl $M-libjpeg-turbo $M-libpng $M-zlib
+	# the installer itself is a 32-bit program also for 64-bit builds
+	mingw32-nsis
 	$M-qt$QT-qtbase $M-qt$QT-qttools $M-qt$QT-qttranslations $M-qt$QT-qtwebsockets
 )
 if [ "$QT" = "6" ]; then
