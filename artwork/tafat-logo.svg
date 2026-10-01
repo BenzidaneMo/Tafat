@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Tafat Configurator icon (48 px and larger): the Tafat logo on a cream tile. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect x="6" y="6" width="244" height="244" rx="52" fill="#faf4ea" stroke="#13705f" stroke-width="8"/>
-  <g transform="translate(26 22) scale(0.4)">
+<!-- Tafat logo: a T giving light to three student laptops.
+     Colors from the Tafat theme (core/src/BrandTheme.h). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="light-logo" gradientUnits="userSpaceOnUse" x1="0" y1="128" x2="0" y2="352">
+    <linearGradient id="light" gradientUnits="userSpaceOnUse" x1="0" y1="128" x2="0" y2="352">
       <stop offset="0" stop-color="#f6bf3f"/>
       <stop offset="1" stop-color="#f26b2d"/>
     </linearGradient>
@@ -26,8 +25,8 @@
   </g>
 
   <!-- the T -->
-  <rect x="120" y="128" width="272" height="60" rx="30" fill="url(#light-logo)"/>
-  <rect x="226" y="150" width="60" height="202" rx="30" fill="url(#light-logo)"/>
+  <rect x="120" y="128" width="272" height="60" rx="30" fill="url(#light)"/>
+  <rect x="226" y="150" width="60" height="202" rx="30" fill="url(#light)"/>
 
   <!-- laptops -->
   <g fill="#dff2ea" stroke="#13705f" stroke-width="16" stroke-linejoin="round">
@@ -40,19 +39,4 @@
     <rect x="330" y="378" width="156" height="18" rx="9"/>
     <rect x="178" y="468" width="156" height="18" rx="9"/>
   </g>
-
-  </g>
-  <!-- settings badge -->
-  <g transform="translate(206 206) scale(0.7)">
-    <circle r="54" fill="#fffdf9" stroke="#13705f" stroke-width="8"/>
-    <g fill="#13705f">
-      <circle r="26"/>
-      <rect x="-9" y="-40" width="18" height="80" rx="4"/>
-      <rect x="-9" y="-40" width="18" height="80" rx="4" transform="rotate(45)"/>
-      <rect x="-9" y="-40" width="18" height="80" rx="4" transform="rotate(90)"/>
-      <rect x="-9" y="-40" width="18" height="80" rx="4" transform="rotate(135)"/>
-    </g>
-    <circle r="11" fill="#fffdf9"/>
-  </g>
-
 </svg>

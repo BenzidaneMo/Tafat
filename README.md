@@ -1,3 +1,5 @@
+<p align="center"><img src="artwork/tafat-logo.svg" alt="Tafat logo" width="160"></p>
+
 # Tafat — ⵜⴰⴼⴰⵜ — تافات
 
 Tafat ("light" in Tamazight) is a free and open source classroom management
