@@ -5,6 +5,11 @@ on:
       - '**'
   workflow_dispatch:
 
+# a new push makes the builds of older commits of the same branch obsolete
+concurrency:
+  group: windows-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-windows:
     strategy:
