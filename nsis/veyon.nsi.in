@@ -7,6 +7,8 @@
 !define LICENSE_TXT "COPYING"
 !define INSTALLER_NAME "@BRANDING_PRODUCT_SLUG@-${VERSION}-@VEYON_WINDOWS_ARCH@-setup.exe"
 !define MAIN_APP_EXE "@BRANDING_PRODUCT_SLUG@-master.exe"
+!define MIN_WINDOWS "@VEYON_INSTALLER_MIN_WINDOWS@"
+!define IS_64BIT "@VEYON_INSTALLER_64BIT@"
 !define INSTALL_TYPE "SetShellVarContext all"
 !define REG_ROOT "HKLM"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
@@ -40,6 +42,8 @@ RequestExecutionLevel admin
 !include "LogicLib.nsh"
 !include "MUI2.nsh"
 !include "FileFunc.nsh"
+!include "WinVer.nsh"
+!include "x64.nsh"
 
 !define MUI_ABORTWARNING
 !define MUI_UNABORTWARNING
@@ -252,6 +256,26 @@ ${If} $0 != "admin"
 	SetErrorLevel 740 ;ERROR_ELEVATION_REQUIRED
 	Quit
 ${EndIf}
+!if ${IS_64BIT} == 1
+${IfNot} ${RunningX64}
+	MessageBox mb_iconstop "This installer is for 64-bit Windows. Please use the 32-bit (win32) installer of ${APP_NAME} on this computer." /SD IDOK
+	SetErrorLevel 216 ;ERROR_EXE_MACHINE_TYPE_MISMATCH
+	Quit
+${EndIf}
+!endif
+!if ${MIN_WINDOWS} == 10
+${IfNot} ${AtLeastWin10}
+	MessageBox mb_iconstop "This version of ${APP_NAME} requires Windows 10 or newer. Please use the legacy installer (win32-legacy or win64-legacy) on Windows 7 and 8.1." /SD IDOK
+	SetErrorLevel 1150 ;ERROR_OLD_WIN_VERSION
+	Quit
+${EndIf}
+!else
+${IfNot} ${AtLeastWin7}
+	MessageBox mb_iconstop "${APP_NAME} requires Windows 7 or newer." /SD IDOK
+	SetErrorLevel 1150 ;ERROR_OLD_WIN_VERSION
+	Quit
+${EndIf}
+!endif
 FunctionEnd
 
 ######################################################################
