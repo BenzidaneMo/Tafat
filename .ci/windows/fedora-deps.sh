@@ -23,7 +23,8 @@ packages=(
 if [ "$QT" = "6" ]; then
 	packages+=( $M-qt6-qt5compat qt6-qtbase-devel qt6-qttools-devel qt6-linguist )
 else
-	packages+=( $M-qca-qt5 )
+	# -tools: native lrelease etc. referenced by the Qt5LinguistTools CMake package
+	packages+=( $M-qca-qt5 $M-qt5-qttools-tools )
 fi
 dnf -y install "${packages[@]}"
 
