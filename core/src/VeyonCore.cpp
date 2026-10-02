@@ -613,6 +613,8 @@ void VeyonCore::initLocaleAndTranslation()
 	}
 
 	TranslationLoader::load( QStringLiteral("veyon") );
+	// texts of the plugins added by this distribution
+	TranslationLoader::load( QStringLiteral("tafat") );
 
 	// installed last so it is asked first and can brand the "veyon" catalog's texts
 	QCoreApplication::installTranslator( new BrandingTranslator( findChild<QTranslator *>( QStringLiteral("veyon") ), this ) );
