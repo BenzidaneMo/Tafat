@@ -23,6 +23,7 @@
  */
 
 #include "ComputerControlInterface.h"
+#include "InternetBlocker.h"
 #include "PolicyStore.h"
 #include "VeyonMasterInterface.h"
 #include "VeyonServerInterface.h"
@@ -46,7 +47,10 @@ WebControlFeaturePlugin::WebControlFeaturePlugin( QObject* parent ) :
 	if( VeyonCore::component() == VeyonCore::Component::Server )
 	{
 		// remove policies left over e.g. after a crash or power loss
-		connect( VeyonCore::instance(), &VeyonCore::initialized, this, []() { PolicyStore::clear(); } );
+		connect( VeyonCore::instance(), &VeyonCore::initialized, this, []() {
+			PolicyStore::clear();
+			InternetBlocker::clear();
+		} );
 	}
 }
 
@@ -69,7 +73,8 @@ bool WebControlFeaturePlugin::controlFeature( Feature::Uid featureUid, Operation
 
 		sendFeatureMessage( FeatureMessage{ featureUid, FeatureCommand::Start }
 								.addArgument( Argument::Mode, arguments.value( argToString( Argument::Mode ) ).toInt() )
-								.addArgument( Argument::Sites, arguments.value( argToString( Argument::Sites ) ).toStringList() ),
+								.addArgument( Argument::Sites, arguments.value( argToString( Argument::Sites ) ).toStringList() )
+								.addArgument( Argument::BlockInternet, arguments.value( argToString( Argument::BlockInternet ) ).toBool() ),
 							targets );
 		return true;
 	}
@@ -98,7 +103,8 @@ bool WebControlFeaturePlugin::startFeature( VeyonMasterInterface& master, const 
 	{
 		controlFeature( feature.uid(), Operation::Start,
 						{ { argToString( Argument::Mode ), int( dialog.mode() ) },
-						  { argToString( Argument::Sites ), dialog.sites() } },
+						  { argToString( Argument::Sites ), dialog.sites() },
+						  { argToString( Argument::BlockInternet ), dialog.blockInternet() } },
 						computerControlInterfaces );
 	}
 
@@ -138,13 +144,25 @@ bool WebControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server
 		{
 			vWarning() << "could not apply all website policies";
 		}
+
+		const auto blockInternet = message.argument( Argument::BlockInternet ).toBool();
+		if( blockInternet && InternetBlocker::isSupported() )
+		{
+			InternetBlocker::apply();
+		}
+		else
+		{
+			InternetBlocker::clear();
+		}
+
 		m_active = true;
-		vInfo() << "controlling websites, mode" << int(mode) << "sites" << sites;
+		vInfo() << "controlling websites, mode" << int(mode) << "sites" << sites << "block internet" << blockInternet;
 		return true;
 	}
 
 	case FeatureCommand::Stop:
 		PolicyStore::clear();
+		InternetBlocker::clear();
 		m_active = false;
 		vInfo() << "stopped controlling websites";
 		return true;

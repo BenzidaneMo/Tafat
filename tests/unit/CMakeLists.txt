@@ -83,6 +83,7 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 		WebPolicyTest.cpp
 		${CMAKE_SOURCE_DIR}/plugins/webcontrol/WebPolicy.cpp
 		${CMAKE_SOURCE_DIR}/plugins/webcontrol/PolicyStore.cpp
+		${CMAKE_SOURCE_DIR}/plugins/webcontrol/InternetBlocker.cpp
 	)
 
 	target_include_directories(WebPolicyTest PRIVATE

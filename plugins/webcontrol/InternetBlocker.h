@@ -1,5 +1,5 @@
 /*
- * WebControlDialog.h - dialog for choosing blocked or allowed websites
+ * InternetBlocker.h - blocks internet access of all programs
  *
  * Copyright (c) 2026 Tafat contributors
  *
@@ -24,32 +24,26 @@
 
 #pragma once
 
-#include <QDialog>
+#include <QStringList>
 
-#include "WebPolicy.h"
-
-class QCheckBox;
-class QPlainTextEdit;
-class QRadioButton;
-
-class WebControlDialog : public QDialog
+// Blocks web traffic (HTTP, HTTPS and QUIC) of all programs to addresses
+// outside the private network ranges with a Windows firewall rule, so that
+// the school network and the connections to the teacher's computer keep
+// working. Not supported on other platforms. Requires administrator privileges.
+class InternetBlocker
 {
-	Q_OBJECT
 public:
-	explicit WebControlDialog( QWidget* parent = nullptr );
+	static bool isSupported();
 
-	WebPolicy::Mode mode() const;
-	QStringList sites() const;
-	bool blockInternet() const;
+	static bool apply();
+	static bool clear();
 
-	void accept() override;
+	// public internet addresses: everything except 0.0.0.0/8, 10.0.0.0/8,
+	// 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16 and multicast
+	static QString publicAddressRanges();
 
-private:
-	void addSites( const QStringList& sites );
-
-	QRadioButton* m_blockButton;
-	QRadioButton* m_allowButton;
-	QPlainTextEdit* m_sitesEdit;
-	QCheckBox* m_blockInternetBox;
+	// netsh arguments that add or delete the firewall rules
+	static QList<QStringList> addRuleArguments();
+	static QList<QStringList> deleteRuleArguments();
 
 };

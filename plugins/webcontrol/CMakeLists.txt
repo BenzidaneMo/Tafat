@@ -9,6 +9,8 @@ build_veyon_plugin(webcontrol
 	WebControlDialog.h
 	WebPolicy.cpp
 	WebPolicy.h
+	InternetBlocker.cpp
+	InternetBlocker.h
 	PolicyStore.cpp
 	PolicyStore.h
 	webcontrol.qrc

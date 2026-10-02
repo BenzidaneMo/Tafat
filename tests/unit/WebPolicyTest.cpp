@@ -26,6 +26,9 @@
 #include <QJsonObject>
 #include <QtTest>
 
+#include <QHostAddress>
+
+#include "InternetBlocker.h"
 #include "PolicyStore.h"
 #include "WebPolicy.h"
 
@@ -113,6 +116,62 @@ private Q_SLOTS:
 		// clearing removes only our entries
 		merged = PolicyStore::mergedList( merged, { QStringLiteral("tiktok.com") }, {} );
 		QCOMPARE( merged, administrator );
+	}
+	void internetBlockerCoversOnlyPublicAddresses()
+	{
+		QList<QPair<quint32, quint32>> ranges;
+		for( const auto& range : InternetBlocker::publicAddressRanges().split( QLatin1Char(',') ) )
+		{
+			const auto bounds = range.split( QLatin1Char('-') );
+			QCOMPARE( bounds.size(), 2 );
+			const auto from = QHostAddress( bounds[0] ).toIPv4Address();
+			const auto to = QHostAddress( bounds[1] ).toIPv4Address();
+			QVERIFY( from > 0 && from <= to );
+			ranges.append( { from, to } );
+		}
+
+		const auto isBlocked = [&ranges]( const char* address ) {
+			const auto ip = QHostAddress( QString::fromLatin1( address ) ).toIPv4Address();
+			for( const auto& range : std::as_const( ranges ) )
+			{
+				if( ip >= range.first && ip <= range.second )
+				{
+					return true;
+				}
+			}
+			return false;
+		};
+
+		for( const auto address : { "8.8.8.8", "1.1.1.1", "142.250.0.1", "100.64.0.1", "172.15.255.255",
+									"172.32.0.0", "192.169.0.1", "223.255.255.255", "169.253.0.1" } )
+		{
+			QVERIFY2( isBlocked( address ), address );
+		}
+		for( const auto address : { "0.0.0.1", "10.0.0.1", "10.255.255.255", "127.0.0.1", "169.254.10.20",
+									"172.16.0.1", "172.31.255.255", "192.168.1.10", "224.0.0.251", "255.255.255.255" } )
+		{
+			QVERIFY2( isBlocked( address ) == false, address );
+		}
+	}
+
+	void internetBlockerRules()
+	{
+		const auto add = InternetBlocker::addRuleArguments();
+		const auto remove = InternetBlocker::deleteRuleArguments();
+		QCOMPARE( add.size(), 2 );
+		QCOMPARE( remove.size(), 2 );
+
+		for( int i = 0; i < add.size(); ++i )
+		{
+			QVERIFY( add[i].contains( QStringLiteral("dir=out") ) );
+			QVERIFY( add[i].contains( QStringLiteral("action=block") ) );
+			// the same rule names are deleted again
+			const auto name = add[i].filter( QStringLiteral("name=") );
+			QCOMPARE( name.size(), 1 );
+			QVERIFY( remove[i].contains( name.first() ) );
+		}
+		QVERIFY( add[0].contains( QStringLiteral("protocol=TCP") ) && add[0].contains( QStringLiteral("remoteport=80,443") ) );
+		QVERIFY( add[1].contains( QStringLiteral("protocol=UDP") ) && add[1].contains( QStringLiteral("remoteport=443") ) );
 	}
 };
 

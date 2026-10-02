@@ -22,6 +22,7 @@
  *
  */
 
+#include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -46,7 +47,8 @@ WebControlDialog::WebControlDialog( QWidget* parent ) :
 	QDialog( parent ),
 	m_blockButton( new QRadioButton( tr( "Block the websites in the list" ), this ) ),
 	m_allowButton( new QRadioButton( tr( "Allow only the websites in the list (an empty list blocks all websites)" ), this ) ),
-	m_sitesEdit( new QPlainTextEdit( this ) )
+	m_sitesEdit( new QPlainTextEdit( this ) ),
+	m_blockInternetBox( new QCheckBox( tr( "Also block the internet for all other programs (Windows only)" ), this ) )
 {
 	setWindowTitle( tr( "Control websites" ) );
 	setMinimumWidth( 480 );
@@ -82,6 +84,10 @@ WebControlDialog::WebControlDialog( QWidget* parent ) :
 					QStringLiteral("roblox.com"), QStringLiteral("friv.com") } );
 	} );
 
+	m_blockInternetBox->setToolTip( tr( "Blocks web access to the internet for all programs with a firewall rule. "
+										"The school network and the connection to this computer keep working." ) );
+	layout->addWidget( m_blockInternetBox );
+
 	auto hint = new QLabel( tr( "Applies to Google Chrome, Microsoft Edge, Brave, Chromium and Mozilla Firefox. "
 								"Firefox applies the change after it was restarted. Use \"Block apps\" "
 								"for other browsers." ), this );
@@ -98,6 +104,7 @@ WebControlDialog::WebControlDialog( QWidget* parent ) :
 	const auto allow = store.value( QStringLiteral("Mode") ).toInt() == int(WebPolicy::Mode::AllowListedOnly);
 	( allow ? m_allowButton : m_blockButton )->setChecked( true );
 	m_sitesEdit->setPlainText( store.value( QStringLiteral("Sites") ).toStringList().join( QLatin1Char('\n') ) );
+	m_blockInternetBox->setChecked( store.value( QStringLiteral("BlockInternet") ).toBool() );
 }
 
 
@@ -105,6 +112,13 @@ WebControlDialog::WebControlDialog( QWidget* parent ) :
 WebPolicy::Mode WebControlDialog::mode() const
 {
 	return m_allowButton->isChecked() ? WebPolicy::Mode::AllowListedOnly : WebPolicy::Mode::BlockListed;
+}
+
+
+
+bool WebControlDialog::blockInternet() const
+{
+	return m_blockInternetBox->isChecked();
 }
 
 
@@ -131,6 +145,7 @@ void WebControlDialog::accept()
 	auto store = settings();
 	store.setValue( QStringLiteral("Mode"), int(mode()) );
 	store.setValue( QStringLiteral("Sites"), sites() );
+	store.setValue( QStringLiteral("BlockInternet"), blockInternet() );
 
 	QDialog::accept();
 }

@@ -37,7 +37,8 @@ public:
 	enum class Argument
 	{
 		Mode,
-		Sites
+		Sites,
+		BlockInternet
 	};
 	Q_ENUM(Argument)
 
