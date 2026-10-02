@@ -31,6 +31,14 @@
         <source>Add office programs</source>
         <translation type="unfinished">إضافة البرامج المكتبية</translation>
     </message>
+    <message>
+        <source>Also block USB sticks and other removable storage (Windows only)</source>
+        <translation type="unfinished">حظر مفاتيح USB ووسائط التخزين القابلة للإزالة الأخرى أيضًا (ويندوز فقط)</translation>
+    </message>
+    <message>
+        <source>Students cannot open USB sticks, memory cards and external disks while this mode is active. Applies to devices that are connected afterwards.</source>
+        <translation type="unfinished">لا يمكن للتلاميذ فتح مفاتيح USB وبطاقات الذاكرة والأقراص الخارجية ما دام هذا الوضع مفعّلاً. ينطبق على الأجهزة التي تُوصَل بعد ذلك.</translation>
+    </message>
 </context>
 <context>
     <name>AppControlFeaturePlugin</name>

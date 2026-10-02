@@ -1,5 +1,5 @@
 /*
- * AppControlDialog.h - dialog for choosing blocked or allowed applications
+ * UsbStorageBlocker.h - blocks access to USB sticks and other removable storage
  *
  * Copyright (c) 2026 Tafat contributors
  *
@@ -24,34 +24,30 @@
 
 #pragma once
 
-#include <QDialog>
+#include <QVariant>
 
-#include "ProcessControl.h"
-
-class QCheckBox;
-class QPlainTextEdit;
-class QRadioButton;
-
-class AppControlDialog : public QDialog
+// Denies access to all removable storage devices (USB sticks, memory cards,
+// external disks, CD/DVD) with the Windows policy "All Removable Storage
+// classes: Deny all access". A value an administrator configured before is
+// restored afterwards. Not supported on other platforms. Requires
+// administrator privileges.
+class UsbStorageBlocker
 {
-	Q_OBJECT
 public:
-	using Mode = ProcessControl::Policy;
+	static bool isSupported();
 
-	explicit AppControlDialog( QWidget* parent = nullptr );
+	static bool apply();
+	static bool clear();
 
-	Mode mode() const;
-	QStringList applications() const;
-	bool blockUsbStorage() const;
+	struct State
+	{
+		bool applied{false};
+		bool hadValue{false};
+		QVariant previousValue;
+	};
 
-	void accept() override;
-
-private:
-	void addApplications( const QStringList& applications );
-
-	QRadioButton* m_blockButton;
-	QRadioButton* m_allowButton;
-	QPlainTextEdit* m_applicationsEdit;
-	QCheckBox* m_blockUsbStorageBox;
+	// what to write back when the block is removed: an invalid value means
+	// that the policy value is deleted
+	static QVariant restoredValue( const State& state );
 
 };

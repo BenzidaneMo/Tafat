@@ -30,6 +30,7 @@
 #include "PlatformCoreFunctions.h"
 #include "PlatformSessionFunctions.h"
 #include "ProcessControl.h"
+#include "UsbStorageBlocker.h"
 #include "VeyonMasterInterface.h"
 #include "VeyonServerInterface.h"
 
@@ -48,6 +49,12 @@ AppControlFeaturePlugin::AppControlFeaturePlugin( QObject* parent ) :
 	m_features( { m_appControlFeature } )
 {
 	m_enforcementTimer.setInterval( EnforcementInterval );
+
+	if( VeyonCore::component() == VeyonCore::Component::Server )
+	{
+		// restore the storage policy e.g. after a crash or power loss
+		connect( VeyonCore::instance(), &VeyonCore::initialized, this, []() { UsbStorageBlocker::clear(); } );
+	}
 }
 
 
@@ -69,7 +76,8 @@ bool AppControlFeaturePlugin::controlFeature( Feature::Uid featureUid, Operation
 
 		sendFeatureMessage( FeatureMessage{ featureUid, FeatureCommand::Start }
 								.addArgument( Argument::Mode, arguments.value( argToString( Argument::Mode ) ).toInt() )
-								.addArgument( Argument::Applications, arguments.value( argToString( Argument::Applications ) ).toStringList() ),
+								.addArgument( Argument::Applications, arguments.value( argToString( Argument::Applications ) ).toStringList() )
+								.addArgument( Argument::BlockUsbStorage, arguments.value( argToString( Argument::BlockUsbStorage ) ).toBool() ),
 							targets );
 		return true;
 	}
@@ -98,7 +106,8 @@ bool AppControlFeaturePlugin::startFeature( VeyonMasterInterface& master, const 
 	{
 		controlFeature( feature.uid(), Operation::Start,
 						{ { argToString( Argument::Mode ), int( dialog.mode() ) },
-						  { argToString( Argument::Applications ), dialog.applications() } },
+						  { argToString( Argument::Applications ), dialog.applications() },
+						  { argToString( Argument::BlockUsbStorage ), dialog.blockUsbStorage() } },
 						computerControlInterfaces );
 	}
 
@@ -134,6 +143,15 @@ bool AppControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server
 			m_applications.append( ProcessControl::normalizedName( application ) );
 		}
 
+		if( message.argument( Argument::BlockUsbStorage ).toBool() && UsbStorageBlocker::isSupported() )
+		{
+			UsbStorageBlocker::apply();
+		}
+		else
+		{
+			UsbStorageBlocker::clear();
+		}
+
 		m_enforcementTimer.disconnect( this );
 		connect( &m_enforcementTimer, &QTimer::timeout, this, [this, &server]() { enforce( server ); } );
 		m_enforcementTimer.start();
@@ -145,6 +163,7 @@ bool AppControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server
 	case FeatureCommand::Stop:
 		m_enforcementTimer.stop();
 		m_applications.clear();
+		UsbStorageBlocker::clear();
 		vInfo() << "stopped controlling applications";
 		return true;
 

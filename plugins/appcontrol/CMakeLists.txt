@@ -9,5 +9,7 @@ build_veyon_plugin(appcontrol
 	AppControlDialog.h
 	ProcessControl.cpp
 	ProcessControl.h
+	UsbStorageBlocker.cpp
+	UsbStorageBlocker.h
 	appcontrol.qrc
 	)

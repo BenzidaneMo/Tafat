@@ -62,6 +62,7 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 	add_executable(ProcessControlTest
 		ProcessControlTest.cpp
 		${CMAKE_SOURCE_DIR}/plugins/appcontrol/ProcessControl.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/UsbStorageBlocker.cpp
 	)
 
 	target_include_directories(ProcessControlTest PRIVATE

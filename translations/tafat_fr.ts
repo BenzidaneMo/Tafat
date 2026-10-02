@@ -31,6 +31,14 @@
         <source>Add office programs</source>
         <translation type="unfinished">Ajouter les logiciels de bureautique</translation>
     </message>
+    <message>
+        <source>Also block USB sticks and other removable storage (Windows only)</source>
+        <translation type="unfinished">Bloquer aussi les clés USB et les autres supports amovibles (Windows uniquement)</translation>
+    </message>
+    <message>
+        <source>Students cannot open USB sticks, memory cards and external disks while this mode is active. Applies to devices that are connected afterwards.</source>
+        <translation type="unfinished">Les élèves ne peuvent pas ouvrir les clés USB, cartes mémoire et disques externes tant que ce mode est actif. S&apos;applique aux périphériques branchés ensuite.</translation>
+    </message>
 </context>
 <context>
     <name>AppControlFeaturePlugin</name>

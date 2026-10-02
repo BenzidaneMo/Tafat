@@ -25,6 +25,7 @@
 #include <QtTest>
 
 #include "ProcessControl.h"
+#include "UsbStorageBlocker.h"
 
 using Process = ProcessControl::Process;
 using Policy = ProcessControl::Policy;
@@ -107,6 +108,15 @@ private Q_SLOTS:
 															  { QStringLiteral("notepad") }, false );
 
 		QVERIFY( closed.isEmpty() );
+	}
+
+	void usbStoragePolicyIsRestored()
+	{
+		// a value an administrator set before is written back
+		QCOMPARE( UsbStorageBlocker::restoredValue( { true, true, 0 } ), QVariant( 0 ) );
+		QCOMPARE( UsbStorageBlocker::restoredValue( { true, true, 1 } ), QVariant( 1 ) );
+		// without a previous value the policy value is removed
+		QVERIFY( UsbStorageBlocker::restoredValue( { true, false, {} } ).isValid() == false );
 	}
 };
 

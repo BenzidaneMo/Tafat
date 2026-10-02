@@ -31,6 +31,14 @@
         <source>Add office programs</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Also block USB sticks and other removable storage (Windows only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Students cannot open USB sticks, memory cards and external disks while this mode is active. Applies to devices that are connected afterwards.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppControlFeaturePlugin</name>

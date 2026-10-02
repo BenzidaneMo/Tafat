@@ -42,7 +42,8 @@ public:
 	enum class Argument
 	{
 		Mode,
-		Applications
+		Applications,
+		BlockUsbStorage
 	};
 	Q_ENUM(Argument)
 

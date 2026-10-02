@@ -22,6 +22,7 @@
  *
  */
 
+#include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -47,7 +48,8 @@ AppControlDialog::AppControlDialog( QWidget* parent ) :
 	QDialog( parent ),
 	m_blockButton( new QRadioButton( tr( "Block the applications in the list" ), this ) ),
 	m_allowButton( new QRadioButton( tr( "Allow only the applications in the list" ), this ) ),
-	m_applicationsEdit( new QPlainTextEdit( this ) )
+	m_applicationsEdit( new QPlainTextEdit( this ) ),
+	m_blockUsbStorageBox( new QCheckBox( tr( "Also block USB sticks and other removable storage (Windows only)" ), this ) )
 {
 	setWindowTitle( tr( "Control applications" ) );
 	setMinimumWidth( 460 );
@@ -87,6 +89,10 @@ AppControlDialog::AppControlDialog( QWidget* parent ) :
 						   QStringLiteral("soffice"), QStringLiteral("notepad") } );
 	} );
 
+	m_blockUsbStorageBox->setToolTip( tr( "Students cannot open USB sticks, memory cards and external disks while "
+										   "this mode is active. Applies to devices that are connected afterwards." ) );
+	layout->addWidget( m_blockUsbStorageBox );
+
 	auto buttonBox = new QDialogButtonBox( QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this );
 	connect( buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept );
 	connect( buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject );
@@ -97,6 +103,7 @@ AppControlDialog::AppControlDialog( QWidget* parent ) :
 	const auto allow = store.value( QStringLiteral("Mode") ).toInt() == int(Mode::AllowListedOnly);
 	( allow ? m_allowButton : m_blockButton )->setChecked( true );
 	m_applicationsEdit->setPlainText( store.value( QStringLiteral("Applications") ).toStringList().join( QLatin1Char('\n') ) );
+	m_blockUsbStorageBox->setChecked( store.value( QStringLiteral("BlockUsbStorage") ).toBool() );
 }
 
 
@@ -125,11 +132,19 @@ QStringList AppControlDialog::applications() const
 
 
 
+bool AppControlDialog::blockUsbStorage() const
+{
+	return m_blockUsbStorageBox->isChecked();
+}
+
+
+
 void AppControlDialog::accept()
 {
 	auto store = settings();
 	store.setValue( QStringLiteral("Mode"), int(mode()) );
 	store.setValue( QStringLiteral("Applications"), applications() );
+	store.setValue( QStringLiteral("BlockUsbStorage"), blockUsbStorage() );
 
 	QDialog::accept();
 }
