@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Toolbar icon of the hand raise and chat feature: a speech bubble with a raised hand. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M12 22 a12 12 0 0 1 12 -12 h64 a12 12 0 0 1 12 12 v42 a12 12 0 0 1 -12 12 h-38 l-22 18 v-18 h-4 a12 12 0 0 1 -12 -12 z"
+        fill="#fffdf9" stroke="#13705f" stroke-width="7" stroke-linejoin="round"/>
+  <g fill="#f6bf3f">
+    <rect x="28" y="30" width="52" height="8" rx="4"/>
+    <rect x="28" y="48" width="36" height="8" rx="4"/>
+  </g>
+  <circle cx="94" cy="92" r="30" fill="#fffdf9"/>
+  <g fill="#f26b2d">
+    <rect x="78" y="80" width="7" height="22" rx="3.5"/>
+    <rect x="86" y="70" width="7" height="32" rx="3.5"/>
+    <rect x="94" y="68" width="7" height="34" rx="3.5"/>
+    <rect x="102" y="74" width="7" height="28" rx="3.5"/>
+    <path d="M78 96 h31 v6 a14 14 0 0 1 -14 14 h-3 a14 14 0 0 1 -14 -14 z"/>
+    <rect x="66" y="88" width="16" height="7" rx="3.5" transform="rotate(35 74 91)"/>
+  </g>
+</svg>

@@ -116,4 +116,23 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME QuizTest COMMAND QuizTest)
 
+	#
+	# ClassChatTest: chat log of the hand raise and chat feature
+	#
+	add_executable(ClassChatTest
+		ClassChatTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/classchat/ChatLog.cpp
+	)
+
+	target_include_directories(ClassChatTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/classchat
+	)
+
+	target_link_libraries(ClassChatTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME ClassChatTest COMMAND ClassChatTest)
+
 endif()

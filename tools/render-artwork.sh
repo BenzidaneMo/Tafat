@@ -61,5 +61,7 @@ png feature-app-control.svg 128 "$ROOT/plugins/appcontrol/application-control.pn
 png feature-website-control.svg 128 "$ROOT/plugins/webcontrol/website-control.png"
 png feature-quiz.svg 128 "$ROOT/plugins/quiz/quiz.png"
 png feature-register.svg 128 "$ROOT/plugins/register/register.png"
+png feature-chat.svg 128 "$ROOT/plugins/classchat/classchat.png"
+png feature-hand-raised.svg 128 "$ROOT/plugins/classchat/hand-raised.png"
 
 echo "Artwork rendered."
