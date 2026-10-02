@@ -198,18 +198,25 @@ inventory → teacher mobile app (Android build already in `android/`).
 
 ## Progress
 - Phase 0 done: Veyon v4.11.3 imported with history; Linux CI green (Debian 11 Qt 5, Fedora 44 Qt 6).
-- Phase 0b in progress: Windows CI (`.github/workflows/windows.yml`, Fedora MinGW) builds
-  32/64-bit installers with Qt 6 (Windows 10/11); the 32-bit Qt 6 installer builds. Legacy
-  Qt 5 builds for Windows 7/8.1 (`WITH_LEGACY_WINDOWS`) were added and still need fixes for
-  Windows 8 APIs. Not yet tested on real Windows machines. LDAP and WebAPI are off on Windows.
+- Phase 0b in progress: Windows CI (`.github/workflows/windows.yml`, Fedora MinGW) builds the
+  32/64-bit Qt 6 installers for Windows 10/11. The legacy Qt 5 builds for Windows 7/8.1
+  (`WITH_LEGACY_WINDOWS`) now configure and compile further after Qt 5 fixes in
+  Windows-only code; remaining errors are listed in `CLAUDE.md`. The installer refuses
+  the wrong Windows version or architecture. Not yet tested on real Windows machines.
+  LDAP and WebAPI are off on Windows.
 - Phase 1 done: name Tafat (`cmake/modules/Branding.cmake`), `tafat-*` programs, services,
-  paths, packages and installer, UI texts via `BrandingTranslator`, About dialog, theme colors
-  (`BrandTheme`), logo and icons (`artwork/`), branding check in CI.
-- Phase 2 started: Tamazight in Latin (`kab`) and Tifinagh (`kab_Tfng`) with bundled
-  Noto Sans Tifinagh; catalogs created but not translated; Arabic still 218/1161.
+  paths, packages and installer, UI texts via `BrandingTranslator`, About dialog, splash
+  screen, theme colors (`BrandTheme`), logo and icons (`artwork/`), branding check in CI.
+- Phase 2 in progress: Tamazight in Latin (`kab`) and Tifinagh (`kab_Tfng`) with bundled
+  Noto Sans Tifinagh (catalogs not translated yet). Tafat's plugins have their own
+  catalogs (`translations/tafat_*.ts`) with Arabic and French drafts. Arabic upstream
+  catalog 325/1161 (main window and toolbar added as drafts). All drafts need review by
+  native speakers.
 - Phase 3: done as plugins with unit tests — "Block apps" (`plugins/appcontrol`),
-  "Block websites" (`plugins/webcontrol`), "Quiz" with polls (`plugins/quiz`),
-  "Register" for attendance and names on tiles (`plugins/register`); collected files are
-  grouped by student name and computer by default.
-- Next: finish the Windows builds and test on real lab PCs, translate Arabic/Tamazight,
-  then hand-raise/chat.
+  "Block websites" with optional internet block for all programs (`plugins/webcontrol`),
+  "Quiz" with polls and result bars (`plugins/quiz`), "Register" with class list import
+  and absent students (`plugins/register`), "Hands & chat" (`plugins/classchat`);
+  collected files are grouped by student name and computer.
+- Phase 4 started: `docs/DEPLOYMENT.md` (lab installation, silent install, keys, rooms).
+- Next: finish the legacy Windows builds, test on real lab PCs, review translations,
+  "return marked work", then the rest of 3.4.

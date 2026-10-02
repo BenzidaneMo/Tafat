@@ -207,22 +207,52 @@ bool BuiltinUltraVncServer::runServer( int serverPort, const Password& password 
 
 	initUltraVncSettingsManager();
 
+#if _WIN32_WINNT >= 0x0602
 	typedef BOOL (WINAPI *pSetProcessMitigationPolicy_t)(PROCESS_MITIGATION_POLICY, PVOID, SIZE_T);
+#else
+	// Windows 7 builds: the mitigation types are not declared, SetProcessMitigationPolicy()
+	// only exists on Windows 8 and newer and is looked up at runtime anyway
+	typedef BOOL (WINAPI *pSetProcessMitigationPolicy_t)(int, PVOID, SIZE_T);
+#endif
 	HMODULE hKernel32 = GetModuleHandle("kernel32.dll");
 	if (hKernel32)
 	{
 		pSetProcessMitigationPolicy_t pSetProcessMitigationPolicy = (pSetProcessMitigationPolicy_t)GetProcAddress(hKernel32, "SetProcessMitigationPolicy");
 		if (pSetProcessMitigationPolicy)
 		{
+#if _WIN32_WINNT >= 0x0602
 			PROCESS_MITIGATION_IMAGE_LOAD_POLICY policy = {};
 			policy.PreferSystem32Images = 1;
 			pSetProcessMitigationPolicy(ProcessImageLoadPolicy, &policy, sizeof(policy));
+#else
+			static constexpr int ProcessImageLoadPolicyValue = 10;
+			static constexpr DWORD PreferSystem32ImagesFlag = 1 << 2;
+			DWORD policy = PreferSystem32ImagesFlag;
+			pSetProcessMitigationPolicy(ProcessImageLoadPolicyValue, &policy, sizeof(policy));
+#endif
 		}
 	}
 
 	// run UltraVNC server
+#if _WIN32_WINNT >= 0x0602
 	auto hUser32 = LoadLibraryExW(L"user32.dll", NULL, LOAD_LIBRARY_SEARCH_SYSTEM32);
 	auto hSHCore = LoadLibraryExW(L"SHCore.dll", NULL, LOAD_LIBRARY_SEARCH_SYSTEM32);
+#else
+	// LOAD_LIBRARY_SEARCH_SYSTEM32 requires KB2533623 on Windows 7, so load by full path
+	const auto loadSystemLibrary = []( const wchar_t* name ) -> HMODULE {
+		wchar_t path[MAX_PATH];
+		const auto length = GetSystemDirectoryW( path, MAX_PATH );
+		if( length == 0 || length + 1 + wcslen( name ) >= MAX_PATH )
+		{
+			return nullptr;
+		}
+		wcscat( path, L"\\" );
+		wcscat( path, name );
+		return LoadLibraryW( path );
+	};
+	auto hUser32 = loadSystemLibrary(L"user32.dll");
+	auto hSHCore = loadSystemLibrary(L"SHCore.dll");
+#endif
 
 	using SetProcessDpiAwarenessFunc = HRESULT (WINAPI *)( DWORD );
 	const auto setProcessDpiAwareness =
