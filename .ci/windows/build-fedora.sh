@@ -30,6 +30,12 @@ cmake -S "$BASEDIR" -B "$BUILDDIR" -G Ninja \
 	-DWITH_WERROR=OFF \
 	${CMAKE_FLAGS:-}
 
-ninja -C "$BUILDDIR" create-windows-installer
+# keep going after errors and list all of them at the end, so one CI run
+# shows every problem of the build
+if ! ninja -C "$BUILDDIR" -k 0 create-windows-installer 2>&1 | tee "$BUILDDIR/build.log"; then
+	echo "==== build errors ===="
+	grep -E "error:|Error [0-9]|undefined reference" "$BUILDDIR/build.log" | sort -u | head -80
+	exit 1
+fi
 
 mv "$BUILDDIR"/*-setup.exe "$BASEDIR/"
