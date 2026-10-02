@@ -29,7 +29,10 @@
 #include <QMap>
 #include <QWidget>
 
+#include "ClassList.h"
+
 class QLabel;
+class QPushButton;
 class QLineEdit;
 class QTableWidget;
 
@@ -75,13 +78,27 @@ Q_SIGNALS:
 	void askAgainRequested();
 
 private:
+	struct Row
+	{
+		QString computerName;
+		QString studentName;
+		QString group;
+		QString time;
+		QString status;
+	};
+
+	QList<Row> rows() const;
 	void refresh();
+	void importClassList();
+	void clearClassList();
 	void exportCsv();
 
 	QStringList m_order;
 	QMap<QString, Registration> m_entries;
+	ClassList m_classList;
 
 	QLabel* m_summaryLabel;
 	QTableWidget* m_table;
+	QPushButton* m_clearListButton;
 
 };

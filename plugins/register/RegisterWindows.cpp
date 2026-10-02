@@ -37,6 +37,7 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 
+#include "BrandTheme.h"
 #include "RegisterWindows.h"
 #include "VeyonCore.h"
 
@@ -112,24 +113,38 @@ void RegistrationDialog::accept()
 
 
 
+static QSettings teacherSettings()
+{
+	return QSettings( QSettings::UserScope, VeyonCore::productName(), QStringLiteral("Register") );
+}
+
+
+
 RegisterWindow::RegisterWindow( QWidget* parent ) :
 	QWidget( parent, Qt::Window ),
+	m_classList( ClassListUtils::fromStringList( teacherSettings().value( QStringLiteral("ClassList") ).toStringList() ) ),
 	m_summaryLabel( new QLabel( this ) ),
-	m_table( new QTableWidget( this ) )
+	m_table( new QTableWidget( this ) ),
+	m_clearListButton( new QPushButton( tr( "Remove class list" ), this ) )
 {
 	setWindowTitle( tr( "Attendance register: %1" ).arg( QLocale().toString( QDate::currentDate(), QLocale::LongFormat ) ) );
-	resize( 720, 480 );
+	resize( 880, 520 );
 	setAttribute( Qt::WA_DeleteOnClose );
 
-	m_table->setColumnCount( 4 );
-	m_table->setHorizontalHeaderLabels( { tr( "Computer" ), tr( "Student" ), tr( "Class" ), tr( "Registered at" ) } );
+	m_table->setColumnCount( 5 );
+	m_table->setHorizontalHeaderLabels( { tr( "Computer" ), tr( "Student" ), tr( "Class" ), tr( "Registered at" ), tr( "Status" ) } );
 	m_table->horizontalHeader()->setSectionResizeMode( QHeaderView::Stretch );
 	m_table->verticalHeader()->hide();
 	m_table->setEditTriggers( QAbstractItemView::NoEditTriggers );
 	m_table->setSortingEnabled( true );
 
 	auto askAgainButton = new QPushButton( tr( "Ask again" ), this );
+	auto importButton = new QPushButton( tr( "Import class list" ), this );
+	importButton->setToolTip( tr( "Load the students of the class from a CSV file (name in the first column, "
+								  "class in the second column) to see who is absent." ) );
 	auto exportButton = new QPushButton( tr( "Export (CSV)" ), this );
+	connect( importButton, &QPushButton::clicked, this, &RegisterWindow::importClassList );
+	connect( m_clearListButton, &QPushButton::clicked, this, &RegisterWindow::clearClassList );
 	auto closeButton = new QPushButton( tr( "Close" ), this );
 	connect( askAgainButton, &QPushButton::clicked, this, &RegisterWindow::askAgainRequested );
 	connect( exportButton, &QPushButton::clicked, this, &RegisterWindow::exportCsv );
@@ -138,6 +153,8 @@ RegisterWindow::RegisterWindow( QWidget* parent ) :
 	auto buttons = new QHBoxLayout;
 	buttons->addWidget( m_summaryLabel, 1 );
 	buttons->addWidget( askAgainButton );
+	buttons->addWidget( importButton );
+	buttons->addWidget( m_clearListButton );
 	buttons->addWidget( exportButton );
 	buttons->addWidget( closeButton );
 
@@ -174,31 +191,131 @@ void RegisterWindow::setRegistration( const QString& key, const Registration& re
 
 
 
+QList<RegisterWindow::Row> RegisterWindow::rows() const
+{
+	const auto hasClassList = m_classList.isEmpty() == false;
+
+	QList<Row> rows;
+	QStringList registeredNames;
+
+	for( const auto& key : m_order )
+	{
+		const auto& entry = m_entries[key];
+
+		Row row{ entry.computerName, entry.studentName, entry.group,
+				 entry.time.isValid() ? QLocale().toString( entry.time.time(), QLocale::ShortFormat ) : QString(),
+				 {} };
+
+		if( entry.studentName.isEmpty() )
+		{
+			row.status = tr( "Waiting" );
+		}
+		else
+		{
+			registeredNames.append( entry.studentName );
+			row.status = hasClassList && ClassListUtils::contains( m_classList, entry.studentName ) == false
+							 ? tr( "Not on the class list" ) : tr( "Present" );
+		}
+
+		rows.append( row );
+	}
+
+	for( const auto& student : ClassListUtils::absentStudents( m_classList, registeredNames ) )
+	{
+		rows.append( { {}, student.name, student.group, {}, tr( "Absent" ) } );
+	}
+
+	return rows;
+}
+
+
+
 void RegisterWindow::refresh()
 {
+	const auto allRows = rows();
+
 	m_table->setSortingEnabled( false );
-	m_table->setRowCount( int(m_order.size()) );
+	m_table->setRowCount( int(allRows.size()) );
 
 	int registered = 0;
-	for( int row = 0; row < m_order.size(); ++row )
+	int absent = 0;
+	for( int row = 0; row < allRows.size(); ++row )
 	{
-		const auto& entry = m_entries[m_order[row]];
-		registered += entry.studentName.isEmpty() ? 0 : 1;
+		const auto& entry = allRows[row];
+		registered += entry.computerName.isEmpty() == false && entry.studentName.isEmpty() == false ? 1 : 0;
+		absent += entry.computerName.isEmpty() ? 1 : 0;
 
 		const QStringList cells{
 			isolated( entry.computerName ),
 			entry.studentName.isEmpty() ? tr( "(waiting)" ) : isolated( entry.studentName ),
 			isolated( entry.group ),
-			entry.time.isValid() ? QLocale().toString( entry.time.time(), QLocale::ShortFormat ) : QString()
+			entry.time,
+			entry.status
 		};
 		for( int column = 0; column < cells.size(); ++column )
 		{
-			m_table->setItem( row, column, new QTableWidgetItem( cells[column] ) );
+			auto item = new QTableWidgetItem( cells[column] );
+			if( entry.computerName.isEmpty() )
+			{
+				item->setForeground( BrandTheme::color( BrandTheme::Error ) );
+			}
+			m_table->setItem( row, column, item );
 		}
 	}
 	m_table->setSortingEnabled( true );
 
-	m_summaryLabel->setText( tr( "%1 of %2 students registered" ).arg( registered ).arg( m_order.size() ) );
+	m_clearListButton->setVisible( m_classList.isEmpty() == false );
+
+	if( m_classList.isEmpty() )
+	{
+		m_summaryLabel->setText( tr( "%1 of %2 students registered" ).arg( registered ).arg( m_order.size() ) );
+	}
+	else
+	{
+		m_summaryLabel->setText( tr( "%1 registered, %2 of %3 students of the class list absent" )
+									 .arg( registered ).arg( absent ).arg( m_classList.size() ) );
+	}
+}
+
+
+
+void RegisterWindow::importClassList()
+{
+	const auto fileName = QFileDialog::getOpenFileName( this, tr( "Import class list" ), {},
+														tr( "CSV files (*.csv *.txt)" ) );
+	if( fileName.isEmpty() )
+	{
+		return;
+	}
+
+	QFile file( fileName );
+	if( file.open( QFile::ReadOnly ) == false )
+	{
+		QMessageBox::critical( this, windowTitle(), tr( "Could not read %1." ).arg( fileName ) );
+		return;
+	}
+
+	const auto classList = ClassListUtils::parseCsv( file.readAll() );
+	if( classList.isEmpty() )
+	{
+		QMessageBox::warning( this, windowTitle(),
+							  tr( "No students found in %1. Save the class list as CSV with the names in the "
+								  "first column." ).arg( fileName ) );
+		return;
+	}
+
+	m_classList = classList;
+	teacherSettings().setValue( QStringLiteral("ClassList"), ClassListUtils::toStringList( m_classList ) );
+	refresh();
+}
+
+
+
+void RegisterWindow::clearClassList()
+{
+	m_classList.clear();
+	teacherSettings().remove( QStringLiteral("ClassList") );
+	refresh();
 }
 
 
@@ -231,14 +348,14 @@ void RegisterWindow::exportCsv()
 	// UTF-8 byte order mark so that spreadsheet programs detect Arabic and Tifinagh text
 	stream << QStringLiteral("\uFEFF");
 	stream << QStringList{ quote( tr( "Date" ) ), quote( tr( "Computer" ) ), quote( tr( "Student" ) ),
-						   quote( tr( "Class" ) ), quote( tr( "Registered at" ) ) }.join( QLatin1Char(',') ) << QLatin1Char('\n');
+						   quote( tr( "Class" ) ), quote( tr( "Registered at" ) ), quote( tr( "Status" ) ) }
+				  .join( QLatin1Char(',') ) << QLatin1Char('\n');
 
-	for( const auto& key : std::as_const( m_order ) )
+	const auto date = QDate::currentDate().toString( Qt::ISODate );
+	for( const auto& row : rows() )
 	{
-		const auto& entry = m_entries[key];
-		stream << QStringList{ QDate::currentDate().toString( Qt::ISODate ), quote( entry.computerName ),
-							   quote( entry.studentName ), quote( entry.group ),
-							   entry.time.isValid() ? entry.time.time().toString( QStringLiteral("HH:mm") ) : QString() }
+		stream << QStringList{ date, quote( row.computerName ), quote( row.studentName ), quote( row.group ),
+							   quote( row.time ), quote( row.status ) }
 					  .join( QLatin1Char(',') ) << QLatin1Char('\n');
 	}
 }

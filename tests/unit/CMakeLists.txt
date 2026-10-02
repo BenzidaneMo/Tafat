@@ -135,4 +135,23 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME ClassChatTest COMMAND ClassChatTest)
 
+	#
+	# ClassListTest: class list import and name matching of the register
+	#
+	add_executable(ClassListTest
+		ClassListTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/register/ClassList.cpp
+	)
+
+	target_include_directories(ClassListTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/register
+	)
+
+	target_link_libraries(ClassListTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME ClassListTest COMMAND ClassListTest)
+
 endif()

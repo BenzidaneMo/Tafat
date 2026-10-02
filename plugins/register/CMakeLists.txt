@@ -5,6 +5,8 @@ build_veyon_plugin(register
 	SOURCES
 	RegisterFeaturePlugin.cpp
 	RegisterFeaturePlugin.h
+	ClassList.cpp
+	ClassList.h
 	RegisterWindows.cpp
 	RegisterWindows.h
 	register.qrc
