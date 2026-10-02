@@ -1,0 +1,234 @@
+# CLAUDE.md — Tafat
+
+Guidance for Claude Code (and humans) working on this repository. Read this first,
+then `docs/ROADMAP.md` (full plan) and `UPSTREAM.md` (merge procedure).
+
+## 1. Project
+
+**Tafat** ("light" in Tamazight; تافات / ⵜⴰⴼⴰⵜ) is a free classroom management
+program for Algerian high school computer labs, meant to **replace NetSupport
+School**. It is a fork of **Veyon v4.11.3** (C++/Qt) with Veyon's full git
+history, licensed **GPL-2.0-or-later** (`LICENSE`, plus Veyon's `COPYING`).
+
+Decisions already taken with the project owner (do not re-open them):
+
+- **Windows-first** (Linux must keep building and working).
+- **32-bit is required, including Windows 7/8.1** (old lab PCs) → legacy Qt 5 builds.
+- Languages: **Arabic**, **Tamazight in two scripts** — Latin (`kab`) and
+  Tifinagh (`kab_Tfng`) — French and English.
+- Stay on C++/Qt (no rewrite in Rust).
+- Feature priority: 1) app and website blocking, 2) quizzes and surveys,
+  3) collect work + student register, then hand-raise/chat and the rest.
+- Name "Tafat" is held in one file (`cmake/modules/Branding.cmake`). A trademark
+  check (INAPI, WIPO Global Brand Database, domain) is still due before the
+  first public release.
+- Repo: `BenzidaneMo/Tafat` (formerly `opennetsupport`). Work branch:
+  `ccr-b7df7899-2kzbe8`. `main` contains PR #1 only; everything after is on the
+  work branch. Merge PRs with a **merge commit**, never squash/rebase (that would
+  drop Veyon's history).
+
+## 2. Golden rules ("thin rebrand", stay mergeable with upstream Veyon)
+
+- Rebrand **only what users/admins see**. Internal identifiers stay `veyon`:
+  `VeyonCore`, `VEYON_*` macros, CMake target names (`veyon-master` …), class
+  and file names, feature UIDs, `translations/veyon_*.ts` file names.
+- The product identity lives **only** in `cmake/modules/Branding.cmake`
+  (`BRANDING_PRODUCT_NAME` "Tafat", `_SLUG` "tafat", `_ORGANIZATION`, `_DOMAIN`
+  "benzidanemo.github.io", `_WEBSITE`, `_CONTACT`, `_APP_ID_PREFIX`
+  "io.github.benzidanemo", `_SERVER_APP_ID`, `set_branded_output_name()`).
+  It reaches C++ through `core/src/veyonconfig.h.in` (`VEYON_PRODUCT_NAME` …)
+  and `VeyonCore::productName()`, `productSlug()`, `executableName("master")`.
+- **Never edit upstream UI texts that say "Veyon".** `core/src/BrandingTranslator`
+  replaces "Veyon" with the product name at runtime in all translations (it skips
+  texts with veyon.io / veyon.readthedocs.io links, which are kept on purpose).
+- In new code: never hard-code `"veyon-…"` program names or "Veyon" in
+  `QStringLiteral`/`QLatin1String`; use the accessors above.
+  `tools/check-branding.sh` (CI job "check-branding") enforces this — run it before pushing.
+- **New features go into new plugins** under `plugins/`, not into core files.
+- Keep all Veyon copyright headers and the "based on Veyon" credit (About dialog).
+
+## 3. Code conventions
+
+- Follow Veyon's style: tabs, spaces inside parentheses `foo( bar )`, `m_member`
+  names, `Q_OBJECT` plugins via `cmake/modules/BuildVeyonPlugin.cmake`. New files
+  get the header used in `core/src/BrandTheme.cpp` ("Copyright (c) 2026 Tafat
+  contributors … This file is part of Tafat, which is based on Veyon" + GPLv2+ text).
+- Must compile with **Qt 5.15 and Qt 6** (guard with `QT_VERSION_CHECK`). Known
+  trap: don't pass a `QStringBuilder` (`a + b`) to `QVariant::fromValue`; wrap in `QString(...)`.
+- Must not use **Windows 8+ APIs without a fallback** (legacy builds target
+  `_WIN32_WINNT=0x0601`); load such functions with `GetProcAddress`.
+- Never put raw bidi control characters in source (GCC `-Wbidi-chars` fails the
+  build). Use escapes: `⁦` (LRI), `⁨` (FSI), `⁩` (PDI). Isolate
+  numbers/names in RTL text so "3 / 4" is not shown reversed in Arabic.
+- Colors only via `core/src/BrandTheme.h` tokens: cream `#faf4ea`, cream-2
+  `#f4ebdd`, paper `#fffdf9`, brown `#3b271d`, brown-2 `#4b3427`, ink `#2b1f18`,
+  muted `#7c6b5f`, line `#eadfd0`, orange `#f26b2d`, orange-soft `#fde6d7`,
+  teal `#1f9d86`, teal-dark `#13705f`, teal-soft `#dff2ea`, yellow `#f6bf3f`,
+  yellow-soft `#fdf0cc`, hot `#f5a524`, error `#b42318`, error-soft `#fde8e6`.
+- CSV exports: UTF-8 **with BOM** (Excel needs it for Arabic/Tifinagh).
+- Commits: small, descriptive English messages; one feature per commit.
+
+## 4. Build and test
+
+```sh
+git submodule update --init --recursive   # incl. 3rdparty/qthttpserver/src/3rdparty/http-parser
+
+# Linux (Qt 6) development build, as used so far
+cmake -S . -B ../tafat-build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
+      -DWITH_TESTS=ON -DWITH_TRANSLATIONS=OFF -DWITH_LTO=OFF
+ninja -C ../tafat-build
+cd ../tafat-build && xvfb-run -a ctest --output-on-failure    # 6 tests, all pass
+
+# Qt 5 check: add -DWITH_QT6=OFF (Linux CI builds Debian 11 Qt 5 too)
+tools/check-branding.sh
+```
+
+- `WITH_TRANSLATIONS=ON` rewrites `translations/*.ts` in the source tree; undo
+  with `git checkout -- translations/` unless you meant to update them.
+- Useful options (root `CMakeLists.txt`): `WITH_QT6`, `WITH_LEGACY_WINDOWS`
+  (Windows 7/8.1, requires Qt 5), `WITH_LDAP`, `WITH_WEBAPI`, `WITH_WERROR`
+  (default ON; OFF on Windows CI because UltraVNC has warnings),
+  `WITH_BUNDLED_LIBVNC`, `WITH_TESTS`.
+- **Windows installers** are cross-compiled with Fedora's MinGW packages, as in CI:
+
+  ```sh
+  docker run --rm -v "$PWD":/src -w /src fedora:44 bash -c \
+    'dnf -y install git && git config --global --add safe.directory /src &&
+     .ci/windows/fedora-deps.sh i686 6 && .ci/windows/build-fedora.sh i686 6'
+  # args: <i686|x86_64> <6|5>; Qt 5 = legacy Windows 7/8.1 build
+  ```
+
+  `fedora-deps.sh` installs MinGW Qt + NSIS and builds LZO, Interception and
+  QCA (Qt 6). `build-fedora.sh` uses `cmake/modules/FedoraMinGW{32,64}Toolchain.cmake`
+  and produces `*-setup.exe`; DLLs are deployed by `tools/windows-deploy-dlls.sh`
+  (objdump-based). The installer is always a 32-bit NSIS program.
+- Artwork: edit SVGs in `artwork/`, then run `tools/render-artwork.sh` (writes
+  PNG/ICO/XPM/BMP under the upstream file names).
+
+## 5. Architecture cheat-sheet
+
+Components: **master** (teacher app), **service** (Windows service / systemd unit,
+starts one **server** per user session), **worker** (helper in the user session
+for UI such as dialogs), **cli**, **configurator**. Features are plugins
+implementing `core/src/FeatureProviderInterface.h`
+(model: `plugins/textmessage/TextMessageFeaturePlugin.cpp`).
+
+Message flow:
+
+1. master `startFeature`/`controlFeature` → `sendFeatureMessage`
+2. server `handleFeatureMessage( VeyonServerInterface&, … )` →
+   `featureWorkerManager().sendMessageToUnmanagedSessionWorker( … )`
+3. worker `handleFeatureMessage( VeyonWorkerInterface&, … )`; replies with
+   `worker.sendFeatureMessageReply` → server `handleFeatureMessageFromWorker`
+4. server → master: `sendAsyncFeatureMessages` + `server.sendFeatureMessageReply(
+   messageContext, … )`, with a per-connection version counter stored as an
+   `ioDevice()->property` so each master only gets new data (see `plugins/quiz`)
+5. master `handleFeatureMessage( ComputerControlInterface::Pointer, … )`;
+   `isFeatureActive` drives the active-state marks on the computer tiles.
+
+OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,linux}`.
+
+## 6. What is done
+
+**Docs/licensing:** `LICENSE` (GPLv2), `README.md` (logo, features, credit),
+`UPSTREAM.md`, `docs/ROADMAP.md` (incl. Progress section).
+
+**Rebrand (Phase 1, done):**
+- Executables `tafat-master`, `tafat-server`, … (`BuildVeyonApplication.cmake`);
+  install dirs `lib/tafat`, `share/tafat`; lookups in `core/src/Filesystem.cpp`,
+  `core/src/VeyonServiceControl.cpp`.
+- Service `tafat` (Linux) / `TafatService` (Windows); firewall rule names
+  (`ConfigurationManager`); log file names (`Logger`).
+- Desktop/polkit/D-Bus/systemd templates (`XdgInstall.cmake`, takes `NAME`),
+  CPack (`cmake/CPackDefinitions.cmake`), NSIS (`nsis/veyon.nsi.in`,
+  `WindowsInstaller.cmake` windows-binaries target).
+- UI texts via `BrandingTranslator`; About dialog "Tafat – based on Veyon" with
+  both copyrights, donate button hidden (`core/src/AboutDialog.cpp`).
+- Theme: `core/src/BrandTheme.{h,cpp}` light/dark palettes, tooltip palette,
+  stylesheet; applied in `VeyonCore::initUi`.
+- Logo (T with light rays over three laptops) and icons in `artwork/`
+  (`tafat-logo.svg`, `-dark`, master/configurator icons, feature icons).
+- Branding guard `tools/check-branding.sh` in `.github/workflows/build.yml`.
+
+**Languages (Phase 2, started):**
+- `core/src/TranslationLoader.cpp` tries the configured catalog name first
+  (`veyon_kab_Tfng.qm`) because `QLocale::name()` drops the script.
+- `configurator/src/GeneralConfigurationPage.cpp` lists
+  "Tamazight - Tamaziɣt (kab_DZ)" and "Tamazight Tifinagh - ⵜⴰⵎⴰⵣⵉⵖⵜ (kab_Tfng)".
+  The code is read from the **first** parenthesized part, so labels must not
+  contain other parentheses.
+- Noto Sans Tifinagh bundled (`core/resources/fonts/`, OFL, `core/resources/tafat.qrc`),
+  used as UI font for `kab_Tfng` (`BrandTheme::initFonts`).
+- `translations/veyon_kab.ts` and `veyon_kab_Tfng.ts` exist but are **untranslated**.
+
+**Features (Phase 3) — new plugins, vendor "Tafat", each with an icon:**
+- `plugins/appcontrol` — "Block apps": block list or allow-only list;
+  `ProcessControl` (name normalization, session processes, protected system
+  processes, terminate); server checks every 2 s, worker shows a notice.
+  Allow-only needs `Process::hasWindow` → **Windows only**.
+- `plugins/webcontrol` — "Block websites": `WebPolicy` builds Chrome/Edge/Brave/
+  Chromium `URLBlocklist`/`URLAllowlist` and Firefox `WebsiteFilter` policies;
+  `PolicyStore` writes them (Windows registry 64-bit view, Linux `/etc` policy
+  files), merges with admin entries instead of overwriting, keeps state in
+  QSettings (system scope, "WebControl") and clears leftovers on server start.
+  Firefox needs a restart to apply.
+- `plugins/quiz` — quizzes and polls: JSON library in the teacher's data dir,
+  editor (single/multiple choice, text; `*` marks correct options; unmarked =
+  survey), launcher, student window with countdown/auto-submit, live results
+  window with per-question distribution, CSV export. Solutions are stripped
+  before sending; grading happens on the teacher's PC. `m_serverQuizActive` is
+  separate from the quiz ID so final answers still arrive after "end quiz".
+- `plugins/register` — students enter name/class; attendance window + CSV;
+  tiles show the student name via `setUserInformation(login, name)`, re-applied
+  on `userChanged`, dropped on logoff (works with one shared lab account).
+- `plugins/filetransfer/FileTransferConfiguration.h`: collected files are grouped
+  by full user name + computer name by default (one folder per registered student).
+- Unit tests in `tests/unit/`: `ProcessControlTest`, `WebPolicyTest`, `QuizTest`
+  (plus 3 upstream tests).
+
+**CI:**
+- `.github/workflows/build.yml`: Linux builds (Debian 11 Qt 5, Fedora 44 Qt 6) and check-branding.
+- `.github/workflows/windows.yml`: `fedora:44`, matrix arch {i686, x86_64} ×
+  Qt {6, 5}, artifacts `tafat-windows-<arch>-qt<qt>`. LDAP and WebAPI are **off**
+  on Windows for now.
+
+## 7. CI status (checked 2026-10-02, commit `a1bd0c1b`)
+
+| Build | Status |
+|---|---|
+| Linux (Qt 5 + Qt 6), check-branding | green |
+| Windows Qt 6 i686 (Win 10/11 32-bit) | builds installer |
+| Windows Qt 6 x86_64 (Win 10/11 64-bit) | builds installer |
+| Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | **fails** — `build-fedora.sh` stops within a second (configure stage); cause not yet read |
+
+Nothing has been run on a real Windows PC yet.
+
+## 8. Unfinished work (in order)
+
+1. **Legacy Windows builds:** reproduce `build-fedora.sh i686 5` locally (see §4),
+   read the CMake/strip-script error, fix it; then fix every Windows 8+ API the
+   `_WIN32_WINNT=0x0601` build hits (`plugins/platform/windows/*`,
+   `plugins/vncserver/ultravnc-builtin`) with `GetProcAddress` fallbacks.
+   Make the NSIS installer warn on the wrong OS version.
+2. **Real-hardware testing** (Windows 7 SP1 32-bit, 8.1 64-bit, 10 32-bit, 11):
+   install, service start, screen capture, lock, demo, file transfer, and each
+   new plugin end to end (block an app/site, run a quiz, register names on tiles,
+   collect into per-student folders). Teacher and students on different builds must interoperate.
+3. Decide whether LDAP/AD and WebAPI are needed on Windows; re-enable if so.
+4. **Translations:** Arabic (218/1161 strings), Tamazight Latin and Tifinagh
+   (empty), strings of the four new plugins; set up Hosted Weblate; small
+   `qtbase_kab*` overrides for OK/Cancel etc.; RTL audit of custom-painted widgets
+   (`master/src/ComputerItemDelegate.cpp`, `LockWidget`, `Toast`, plugin windows);
+   native speakers must review.
+5. **Next features:** hand-raise/help request + two-way chat; poll bar chart;
+   student "hand in" button and "return marked work"; class list CSV import for
+   the register; "block all internet" via Windows firewall; app/URL history for
+   the teacher; print and USB-storage control; then whiteboard/annotation,
+   screen recording, audio, lesson plans/rewards, inventory, mobile app.
+6. **Packaging:** silent install for mass deployment, lab setup wizard
+   (auth keys, room import), admin/teacher guides in ar/fr/kab, pilot in 1–2 schools.
+7. Known limits to document: allow-only app mode is Windows-only; Firefox needs a
+   restart for website policies; on Windows 7 only Chrome ≤ 109 / Firefox ESR 115
+   support the policies.
+8. Open a PR `ccr-b7df7899-2kzbe8` → `main` when ready (merge commit).
+9. Merge new upstream Veyon releases per `UPSTREAM.md` (current base v4.11.3).
