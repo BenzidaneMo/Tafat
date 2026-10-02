@@ -11,7 +11,8 @@ Tafat theme (`core/src/BrandTheme.h`).
 | `tafat-master-small.svg` | Master app icon, 16–32 px (window, tray) |
 | `tafat-configurator.svg` | Configurator app icon, 48 px and larger |
 | `tafat-configurator-small.svg` | Configurator app icon, 16–32 px |
-| `feature-*.svg` | Toolbar icons of Tafat features (application and website control, quiz, register) |
+| `tafat-splash.svg` | Splash screen of the master app (uses the Noto Sans Tifinagh font from `core/resources/fonts`) |
+| `feature-*.svg` | Toolbar and tile icons of Tafat features (application and website control, quiz, register, hand raise and chat) |
 
 After changing a source file, run `tools/render-artwork.sh` (needs
 `rsvg-convert` and ImageMagick). It regenerates the PNG, ICO, XPM and BMP

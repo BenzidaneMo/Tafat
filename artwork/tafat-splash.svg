@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Splash screen of the teacher application (rendered to master/resources/splash.png). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320">
+  <rect width="640" height="320" fill="#faf4ea"/>
+  <rect y="276" width="640" height="44" fill="#3b271d"/>
+  <g transform="translate(36 34) scale(0.43)">
+    <defs>
+    <linearGradient id="light" gradientUnits="userSpaceOnUse" x1="0" y1="128" x2="0" y2="352">
+      <stop offset="0" stop-color="#f6bf3f"/>
+      <stop offset="1" stop-color="#f26b2d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rays above the T -->
+  <g stroke="#f6bf3f" stroke-width="18" stroke-linecap="round">
+    <line x1="256" y1="104" x2="256" y2="58"/>
+    <line x1="190" y1="112" x2="166" y2="74"/>
+    <line x1="322" y1="112" x2="346" y2="74"/>
+  </g>
+
+  <!-- rays falling on the side laptops -->
+  <g stroke="#f6bf3f" stroke-width="16" stroke-linecap="round">
+    <line x1="176" y1="214" x2="138" y2="262"/>
+    <line x1="124" y1="200" x2="72" y2="242"/>
+    <line x1="336" y1="214" x2="374" y2="262"/>
+    <line x1="388" y1="200" x2="440" y2="242"/>
+  </g>
+
+  <!-- the T -->
+  <rect x="120" y="128" width="272" height="60" rx="30" fill="url(#light)"/>
+  <rect x="226" y="150" width="60" height="202" rx="30" fill="url(#light)"/>
+
+  <!-- laptops -->
+  <g fill="#dff2ea" stroke="#13705f" stroke-width="16" stroke-linejoin="round">
+    <rect x="44" y="288" width="120" height="80" rx="10"/>
+    <rect x="348" y="288" width="120" height="80" rx="10"/>
+    <rect x="196" y="378" width="120" height="80" rx="10"/>
+  </g>
+  <g fill="#13705f">
+    <rect x="26" y="378" width="156" height="18" rx="9"/>
+    <rect x="330" y="378" width="156" height="18" rx="9"/>
+    <rect x="178" y="468" width="156" height="18" rx="9"/>
+  </g>
+  </g>
+  <text x="300" y="138" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="64" font-weight="bold" fill="#3b271d">Tafat</text>
+  <text x="302" y="182" font-family="Noto Sans Tifinagh, DejaVu Sans, sans-serif" font-size="26" fill="#13705f">ⵜⴰⴼⴰⵜ · تافات</text>
+  <text x="302" y="222" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="17" fill="#7c6b5f">Classroom management for schools</text>
+  <text x="24" y="304" font-family="DejaVu Sans, Noto Sans, sans-serif" font-size="14" fill="#faf4ea">Free software · GPL-2.0-or-later · based on Veyon</text>
+  <rect x="0" y="272" width="640" height="4" fill="#f26b2d"/>
+</svg>

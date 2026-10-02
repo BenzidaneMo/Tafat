@@ -56,6 +56,9 @@ png tafat-logo.svg 140 "$TMP/logo-140.png"
 convert -size 164x314 xc:'#faf4ea' "$TMP/logo-140.png" -gravity north -geometry +0+40 -composite \
 	-alpha remove -type TrueColor BMP3:"$ROOT/nsis/welcome-page.bmp"
 
+# splash screen of the teacher application
+rsvg-convert -w 640 -h 320 "$ART/tafat-splash.svg" -o "$ROOT/master/resources/splash.png"
+
 # feature icons
 png feature-app-control.svg 128 "$ROOT/plugins/appcontrol/application-control.png"
 png feature-website-control.svg 128 "$ROOT/plugins/webcontrol/website-control.png"
