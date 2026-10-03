@@ -32,3 +32,10 @@ git submodule update --init --recursive
 Then resolve conflicts, rebuild, run the tests and `tools/check-branding.sh`
 (also run in CI), re-run `tools/render-artwork.sh` if upstream changed any
 icon, and update the "Current base" line above. Never rebase or squash upstream history.
+
+Expected conflicts in Tafat-owned spots:
+
+- Root `CMakeLists.txt`: the Contributors list comes from the root `CONTRIBUTORS` file,
+  not from `git shortlog`; keep Tafat's block.
+- Icons: many upstream PNGs (toolbar, bottom bar) are generated from `artwork/`. On a
+  conflict take any side, then run `tools/render-artwork.sh` again.
