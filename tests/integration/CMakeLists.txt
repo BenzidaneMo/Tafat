@@ -1,5 +1,9 @@
 if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
+	# the code under test needs the C++ standard of the other targets (GCC 10 defaults to C++14)
+	set(CMAKE_CXX_STANDARD 20)
+	set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 	#
 	# IntegrationTest: a master client talks to a real server (Xvfb, key file
 	# authentication); needs root, run with "ctest -L integration"

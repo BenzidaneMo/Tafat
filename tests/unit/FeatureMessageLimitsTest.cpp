@@ -66,6 +66,17 @@ private:
 		return received.arguments();
 	}
 
+	// QStringList( count, value ) does not exist in Qt 5
+	static QStringList repeatedList( int count, const QString& value )
+	{
+		QStringList list;
+		for( int i = 0; i < count; ++i )
+		{
+			list.append( value );
+		}
+		return list;
+	}
+
 	static bool survives( const QVariant& value )
 	{
 		const QVariantMap arguments{ { QStringLiteral("0"), value } };
@@ -79,8 +90,8 @@ private Q_SLOTS:
 		QVERIFY( survives( QString( 32768, QLatin1Char('x') ) ) );
 		QVERIFY( survives( QString( 32769, QLatin1Char('x') ) ) == false );
 		QVERIFY( survives( QByteArray( 4 * 1024 * 1024, 'x' ) ) );
-		QVERIFY( survives( QStringList( 1024, QStringLiteral("app") ) ) );
-		QVERIFY( survives( QStringList( 1025, QStringLiteral("app") ) ) == false );
+		QVERIFY( survives( repeatedList( 1024, QStringLiteral("app") ) ) );
+		QVERIFY( survives( repeatedList( 1025, QStringLiteral("app") ) ) == false );
 		QVERIFY( survives( 1.5 ) == false );
 		QVERIFY( survives( QDateTime::currentDateTime() ) == false );
 		QVERIFY( survives( qint64( 1 ) << 40 ) );

@@ -208,10 +208,13 @@ inventory → teacher mobile app (Android build already in `android/`).
   paths, packages and installer, UI texts via `BrandingTranslator`, About dialog, splash
   screen, theme colors (`BrandTheme`), logo and icons (`artwork/`), branding check in CI.
 - Phase 2 in progress: Tamazight in Latin (`kab`) and Tifinagh (`kab_Tfng`) with bundled
-  Noto Sans Tifinagh (catalogs not translated yet). Tafat's plugins have their own
-  catalogs (`translations/tafat_*.ts`) with Arabic and French drafts. Arabic upstream
-  catalog 430/1161 (main window, toolbar, tiles, file transfer, spotlight added as drafts). All drafts need review by
-  native speakers.
+  Noto Sans Tifinagh.
+  - Tafat's plugins have their own catalogs (`translations/tafat_*.ts`) with Arabic,
+    French and Tamazight drafts for all 263 texts.
+  - Upstream catalogs: Arabic 816/1161, Tamazight 815/1166 (the Tifinagh catalog is
+    transliterated from the Latin one). This covers the teacher program and the
+    configurator; LDAP, WebAPI and command line help are still open.
+  - All drafts need review by native speakers.
 - Phase 3: done as plugins with unit tests — "Block apps" with optional USB and print
   block and a "Running apps" list (`plugins/appcontrol`),
   "Block websites" with optional internet block for all programs (`plugins/webcontrol`),

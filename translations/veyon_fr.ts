@@ -897,7 +897,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Parent UUID</source>
-        <translation>UUID Parent </translation>
+        <translation>UUID Parent</translation>
     </message>
     <message>
         <source>Type</source>
@@ -1315,7 +1315,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> s</source>
-        <translation>s</translation>
+        <translation> s</translation>
     </message>
     <message>
         <source>Update interval</source>
@@ -1323,11 +1323,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> MB</source>
-        <translation>MB</translation>
+        <translation> Mo</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <source>Slow down thumbnail updates while demo is running</source>
@@ -1339,7 +1339,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Key frame interval</source>
-        <translation>Intervalle entre les images clés </translation>
+        <translation>Intervalle entre les images clés</translation>
     </message>
     <message>
         <source>Bandwidth limit</source>
@@ -1347,7 +1347,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> MB/s</source>
-        <translation>Mo/s</translation>
+        <translation> Mo/s</translation>
     </message>
 </context>
 <context>
@@ -2184,7 +2184,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> MB</source>
-        <translation>MB</translation>
+        <translation> Mo</translation>
     </message>
     <message>
         <source>Limit log file size</source>
@@ -2316,7 +2316,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <source>LDAP server and port</source>
@@ -2636,7 +2636,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>LDAP naming context test failed</source>
-        <translation>Échec du test LDAP de nommage par contexte  </translation>
+        <translation>Échec du test LDAP de nommage par contexte</translation>
     </message>
     <message>
         <source>Could not query the base DN via naming contexts. Please check the naming context attribute parameter.
@@ -3309,7 +3309,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <source>Background color</source>
@@ -4218,7 +4218,7 @@ Généralement, ceci est nécessaire pour prendre en charge les serveurs de term
     </message>
     <message>
         <source>Allow connections from localhost only</source>
-        <translation>Autoriser les connexions seulement à partir de l&apos;hôte local </translation>
+        <translation>Autoriser les connexions seulement à partir de l&apos;hôte local</translation>
     </message>
     <message>
         <source>Disable clipboard synchronization</source>
@@ -4748,7 +4748,7 @@ Exemple : [^-]*-(ORD[0-9]*)</translation>
     </message>
     <message>
         <source> s</source>
-        <translation>s</translation>
+        <translation> s</translation>
     </message>
     <message>
         <source>Idle timeout</source>
@@ -4916,7 +4916,7 @@ Exemple : [^-]*-(ORD[0-9]*)</translation>
     </message>
     <message>
         <source>Plugin implementing abstract functions for the Windows platform</source>
-        <translation>Extension implémentant les fonctions abstraites pour le système Windows </translation>
+        <translation>Extension implémentant les fonctions abstraites pour le système Windows</translation>
     </message>
 </context>
 <context>
