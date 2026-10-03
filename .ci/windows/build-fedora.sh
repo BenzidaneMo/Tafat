@@ -43,7 +43,7 @@ fi
 if [ "$LEGACY" = "ON" ]; then
 	ninja -C "$BUILDDIR" windows-binaries > /dev/null
 	for dir in "$BUILDDIR"/*-legacy-*/; do
-		"$BASEDIR/tools/check-windows7-imports.sh" "$ARCH-w64-mingw32-objdump" "${dir%/}" || true
+		"$BASEDIR/tools/check-windows7-imports.sh" "$ARCH-w64-mingw32-objdump" "${dir%/}"
 	done
 fi
 

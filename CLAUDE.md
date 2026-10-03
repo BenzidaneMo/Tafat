@@ -274,17 +274,19 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
 | Windows Qt 6 i686 / x86_64 (Win 10/11) | green, installers ~27 MB |
 | Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | **green since run 24 (`959a6331`)**, installers ~15 MB |
 
-The legacy jobs also run `tools/check-windows7-imports.sh` on the packaged files
-and print `::warning::` lines for EXE/DLL files that import Windows 8+ DLLs or
-functions, which would not load on Windows 7. This is report-only for now; make
-it fail the job once the list is empty. Nothing has been run on a real Windows PC
-yet.
+The legacy jobs also run `tools/check-windows7-imports.sh` on the packaged files:
+it prints `::warning::` lines for EXE/DLL files that import Windows 8+ DLLs or
+functions (they would not load on Windows 7) and **fails the job**. It passes since
+run 29 (`dd72b231`): Fedora's MinGW OpenSSL 3.2 imported
+`api-ms-win-core-path-l1-1-0.dll`, so `fedora-deps.sh` now builds the OpenSSL 3.5
+LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
+`libssl-3.dll` with them (same ABI). Nothing has been run on a real Windows PC yet.
 
 ## 8. Unfinished work (in order)
 
-1. **Legacy Windows installers:** read the Windows 7 import check output of the
-   legacy jobs and fix what it reports (Qt 5, OpenSSL and MinGW runtime DLLs are
-   checked too). Windows 7 notes:
+1. **Legacy Windows installers:** they build and pass the Windows 7 import check.
+   If the check fails after a dependency update, fix the reported DLL (Qt 5,
+   OpenSSL and the MinGW runtime are checked too). Windows 7 notes:
    - `SasEventListener` loads `sas.dll` with `LOAD_LIBRARY_SEARCH_SYSTEM32`
      (needs KB2533623; without it, software SAS is just unavailable).
    - Browsers on Windows 7: only Chrome ≤ 109 / Firefox ESR 115 support the policies.
