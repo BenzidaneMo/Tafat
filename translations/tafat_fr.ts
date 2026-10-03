@@ -616,6 +616,111 @@
     </message>
 </context>
 <context>
+    <name>ReturnWorkDialog</name>
+    <message>
+        <source>Replace files with the same name</source>
+        <translation type="unfinished">Remplacer les fichiers portant le même nom</translation>
+    </message>
+    <message>
+        <source>Return work</source>
+        <translation type="unfinished">Rendre les travaux</translation>
+    </message>
+    <message>
+        <source>Return work to the students</source>
+        <translation type="unfinished">Rendre les travaux aux élèves</translation>
+    </message>
+    <message>
+        <source>Choose the folder of collected files. Each student gets back the files of their own folder, for example after you corrected them.</source>
+        <translation type="unfinished">Choisissez le dossier des fichiers collectés. Chaque élève récupère les fichiers de son propre dossier, par exemple après correction.</translation>
+    </message>
+    <message>
+        <source>Choose folder…</source>
+        <translation type="unfinished">Choisir un dossier…</translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished">Ordinateur</translation>
+    </message>
+    <message>
+        <source>Student</source>
+        <translation type="unfinished">Élève</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation type="unfinished">Dossier</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="unfinished">Fichiers</translation>
+    </message>
+    <message>
+        <source>Returned work</source>
+        <translation type="unfinished">Travaux rendus</translation>
+    </message>
+    <message>
+        <source>Folder on the student computers (in their home folder):</source>
+        <translation type="unfinished">Dossier sur les ordinateurs des élèves (dans leur dossier personnel) :</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <source>All files were returned.</source>
+        <translation type="unfinished">Tous les fichiers ont été rendus.</translation>
+    </message>
+    <message>
+        <source>The files are still being returned. Stop now?</source>
+        <translation type="unfinished">Les fichiers sont encore en cours d&apos;envoi. Arrêter maintenant ?</translation>
+    </message>
+    <message>
+        <source>Folder of collected files</source>
+        <translation type="unfinished">Dossier des fichiers collectés</translation>
+    </message>
+    <message>
+        <source>(nothing)</source>
+        <translation type="unfinished">(rien)</translation>
+    </message>
+    <message>
+        <source>There are no files to return. Choose the folder of collected files and the folder of each student.</source>
+        <translation type="unfinished">Il n&apos;y a aucun fichier à rendre. Choisissez le dossier des fichiers collectés et le dossier de chaque élève.</translation>
+    </message>
+    <message>
+        <source>Returning the files…</source>
+        <translation type="unfinished">Envoi des fichiers…</translation>
+    </message>
+</context>
+<context>
+    <name>ReturnWorkFeaturePlugin</name>
+    <message>
+        <source>Return work</source>
+        <translation type="unfinished">Rendre les travaux</translation>
+    </message>
+    <message>
+        <source>Give each student back the files of their own folder of collected files, for example after you corrected them.</source>
+        <translation type="unfinished">Rendre à chaque élève les fichiers de son dossier de fichiers collectés, par exemple après correction.</translation>
+    </message>
+    <message>
+        <source>Return collected and corrected work to each student</source>
+        <translation type="unfinished">Rendre les travaux collectés et corrigés à chaque élève</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">Contributeurs de %1</translation>
+    </message>
+</context>
+<context>
+    <name>ReturnWorkTransfer</name>
+    <message>
+        <source>%1 is not connected, its files were not returned.</source>
+        <translation type="unfinished">%1 n&apos;est pas connecté, ses fichiers n&apos;ont pas été rendus.</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">Impossible de lire %1.</translation>
+    </message>
+</context>
+<context>
     <name>StudentChatWindow</name>
     <message>
         <source>Chat with the teacher</source>

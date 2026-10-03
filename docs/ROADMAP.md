@@ -215,8 +215,8 @@ inventory → teacher mobile app (Android build already in `android/`).
 - Phase 3: done as plugins with unit tests — "Block apps" (`plugins/appcontrol`),
   "Block websites" with optional internet block for all programs (`plugins/webcontrol`),
   "Quiz" with polls and result bars (`plugins/quiz`), "Register" with class list import
-  and absent students (`plugins/register`), "Hands & chat" (`plugins/classchat`);
+  and absent students (`plugins/register`), "Hands & chat" (`plugins/classchat`), "Return work" (`plugins/returnwork`);
   collected files are grouped by student name and computer.
 - Phase 4 started: `docs/DEPLOYMENT.md` (lab installation, silent install, keys, rooms).
 - Next: finish the legacy Windows builds, test on real lab PCs, review translations,
-  "return marked work", then the rest of 3.4.
+  student "hand in", then the rest of 3.4.

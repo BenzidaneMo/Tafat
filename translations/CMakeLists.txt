@@ -8,7 +8,7 @@ string(REGEX REPLACE "${CMAKE_SOURCE_DIR}/addons[^;]+;?" "" veyon_sources "${vey
 
 # texts of the plugins added by this distribution have their own catalogs
 # (tafat_*.ts) so that the upstream catalogs stay unchanged
-set(tafat_plugins appcontrol classchat quiz register webcontrol)
+set(tafat_plugins appcontrol classchat quiz register returnwork webcontrol)
 set(tafat_sources "")
 foreach(plugin ${tafat_plugins})
 	file(GLOB_RECURSE plugin_sources ${CMAKE_SOURCE_DIR}/plugins/${plugin}/*.cpp ${CMAKE_SOURCE_DIR}/plugins/${plugin}/*.h ${CMAKE_SOURCE_DIR}/plugins/${plugin}/*.ui)

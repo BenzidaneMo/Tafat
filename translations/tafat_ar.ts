@@ -624,6 +624,111 @@
     </message>
 </context>
 <context>
+    <name>ReturnWorkDialog</name>
+    <message>
+        <source>Replace files with the same name</source>
+        <translation type="unfinished">استبدال الملفات التي تحمل الاسم نفسه</translation>
+    </message>
+    <message>
+        <source>Return work</source>
+        <translation type="unfinished">إرجاع الأعمال</translation>
+    </message>
+    <message>
+        <source>Return work to the students</source>
+        <translation type="unfinished">إرجاع الأعمال إلى التلاميذ</translation>
+    </message>
+    <message>
+        <source>Choose the folder of collected files. Each student gets back the files of their own folder, for example after you corrected them.</source>
+        <translation type="unfinished">اختر مجلد الملفات المجمّعة. يستعيد كل تلميذ ملفات مجلده الخاص، مثلاً بعد تصحيحها.</translation>
+    </message>
+    <message>
+        <source>Choose folder…</source>
+        <translation type="unfinished">اختيار مجلد…</translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished">الحاسوب</translation>
+    </message>
+    <message>
+        <source>Student</source>
+        <translation type="unfinished">التلميذ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation type="unfinished">المجلد</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="unfinished">الملفات</translation>
+    </message>
+    <message>
+        <source>Returned work</source>
+        <translation type="unfinished">الأعمال المُرجعة</translation>
+    </message>
+    <message>
+        <source>Folder on the student computers (in their home folder):</source>
+        <translation type="unfinished">المجلد على حواسيب التلاميذ (داخل مجلدهم الشخصي):</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">إغلاق</translation>
+    </message>
+    <message>
+        <source>All files were returned.</source>
+        <translation type="unfinished">تم إرجاع جميع الملفات.</translation>
+    </message>
+    <message>
+        <source>The files are still being returned. Stop now?</source>
+        <translation type="unfinished">ما زال إرجاع الملفات جاريًا. هل تريد الإيقاف الآن؟</translation>
+    </message>
+    <message>
+        <source>Folder of collected files</source>
+        <translation type="unfinished">مجلد الملفات المجمّعة</translation>
+    </message>
+    <message>
+        <source>(nothing)</source>
+        <translation type="unfinished">(لا شيء)</translation>
+    </message>
+    <message>
+        <source>There are no files to return. Choose the folder of collected files and the folder of each student.</source>
+        <translation type="unfinished">لا توجد ملفات لإرجاعها. اختر مجلد الملفات المجمّعة ومجلد كل تلميذ.</translation>
+    </message>
+    <message>
+        <source>Returning the files…</source>
+        <translation type="unfinished">جارٍ إرجاع الملفات…</translation>
+    </message>
+</context>
+<context>
+    <name>ReturnWorkFeaturePlugin</name>
+    <message>
+        <source>Return work</source>
+        <translation type="unfinished">إرجاع الأعمال</translation>
+    </message>
+    <message>
+        <source>Give each student back the files of their own folder of collected files, for example after you corrected them.</source>
+        <translation type="unfinished">إعادة ملفات كل تلميذ من مجلده في الملفات المجمّعة إليه، مثلاً بعد تصحيحها.</translation>
+    </message>
+    <message>
+        <source>Return collected and corrected work to each student</source>
+        <translation type="unfinished">إرجاع الأعمال المجمّعة والمصحّحة إلى كل تلميذ</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">المساهمون في %1</translation>
+    </message>
+</context>
+<context>
+    <name>ReturnWorkTransfer</name>
+    <message>
+        <source>%1 is not connected, its files were not returned.</source>
+        <translation type="unfinished">الحاسوب %1 غير متصل، لم تُرجَع ملفاته.</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">تعذرت قراءة %1.</translation>
+    </message>
+</context>
+<context>
     <name>StudentChatWindow</name>
     <message>
         <source>Chat with the teacher</source>

@@ -156,4 +156,27 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME ClassListTest COMMAND ClassListTest)
 
+	#
+	# ReturnWorkTest: folder matching and the file transfer protocol of "Return work"
+	#
+	add_executable(ReturnWorkTest
+		ReturnWorkTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/returnwork/ReturnWorkMatcher.cpp
+	)
+
+	target_include_directories(ReturnWorkTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/returnwork
+		${CMAKE_SOURCE_DIR}/plugins/filetransfer
+	)
+
+	target_compile_definitions(ReturnWorkTest PRIVATE SOURCE_DIR="${CMAKE_SOURCE_DIR}")
+
+	target_link_libraries(ReturnWorkTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		veyon-core
+	)
+
+	add_test(NAME ReturnWorkTest COMMAND ReturnWorkTest)
+
 endif()

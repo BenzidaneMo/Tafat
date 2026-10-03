@@ -37,6 +37,7 @@ Added by Tafat:
   * Register: attendance with student names on the computers (also with a
     shared account), class list import and absent students
   * Hands & chat: students raise their hands and chat with the teacher
+  * Return work: give each student back their own corrected files
 
 More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:
 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).

@@ -612,6 +612,111 @@
     </message>
 </context>
 <context>
+    <name>ReturnWorkDialog</name>
+    <message>
+        <source>Replace files with the same name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Return work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Return work to the students</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the folder of collected files. Each student gets back the files of their own folder, for example after you corrected them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose folder…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Student</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Returned work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder on the student computers (in their home folder):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All files were returned.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The files are still being returned. Stop now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder of collected files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(nothing)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no files to return. Choose the folder of collected files and the folder of each student.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Returning the files…</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ReturnWorkFeaturePlugin</name>
+    <message>
+        <source>Return work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give each student back the files of their own folder of collected files, for example after you corrected them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Return collected and corrected work to each student</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ReturnWorkTransfer</name>
+    <message>
+        <source>%1 is not connected, its files were not returned.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>StudentChatWindow</name>
     <message>
         <source>Chat with the teacher</source>
