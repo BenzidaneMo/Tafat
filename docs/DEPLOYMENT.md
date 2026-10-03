@@ -100,6 +100,10 @@ Installer options:
 Uninstall: `"C:\Program Files\Tafat\uninstall.exe" /S`, add `/ClearConfig` to
 remove the configuration as well.
 
+After the installation, select all computers in Tafat Master and open
+**Inventory** to check that every computer answers and runs the expected
+version (legacy builds are marked); *Export CSV…* saves the list.
+
 ## 4. Network
 
 - The installer adds a Windows firewall exception for the Tafat service. The

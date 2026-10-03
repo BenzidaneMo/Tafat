@@ -220,4 +220,25 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME LabSetupTest COMMAND LabSetupTest)
 
+	#
+	# InventoryTest: inventory of the student computers
+	#
+	add_executable(InventoryTest
+		InventoryTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/inventory/SystemInventory.cpp
+	)
+
+	target_include_directories(InventoryTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/inventory
+	)
+
+	target_link_libraries(InventoryTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		Qt${QT_MAJOR_VERSION}::Network
+		veyon-core
+	)
+
+	add_test(NAME InventoryTest COMMAND InventoryTest)
+
 endif()

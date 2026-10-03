@@ -183,6 +183,112 @@
     </message>
 </context>
 <context>
+    <name>InventoryFeaturePlugin</name>
+    <message>
+        <source>Inventory</source>
+        <translation type="unfinished">الجرد</translation>
+    </message>
+    <message>
+        <source>Show the operating system, hardware, network addresses and installed version of the selected computers.</source>
+        <translation type="unfinished">عرض نظام التشغيل والعتاد وعناوين الشبكة والإصدار المثبت على الحواسيب المحددة.</translation>
+    </message>
+    <message>
+        <source>Hardware and software inventory of the student computers</source>
+        <translation type="unfinished">جرد عتاد وبرمجيات حواسيب التلاميذ</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">المساهمون في %1</translation>
+    </message>
+</context>
+<context>
+    <name>InventoryWindow</name>
+    <message>
+        <source>Computer inventory</source>
+        <translation type="unfinished">جرد الحواسيب</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished">تحديث</translation>
+    </message>
+    <message>
+        <source>Export CSV…</source>
+        <translation type="unfinished">تصدير CSV…</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">إغلاق</translation>
+    </message>
+    <message>
+        <source>%1 free of %2</source>
+        <translation type="unfinished">%1 متاح من %2</translation>
+    </message>
+    <message>
+        <source>%1 (legacy build)</source>
+        <translation type="unfinished">%1 (إصدار للأنظمة القديمة)</translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished">الحاسوب</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished">المستخدم</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation type="unfinished">نظام التشغيل</translation>
+    </message>
+    <message>
+        <source>Processor</source>
+        <translation type="unfinished">المعالج</translation>
+    </message>
+    <message>
+        <source>Cores</source>
+        <translation type="unfinished">الأنوية</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation type="unfinished">الذاكرة</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation type="unfinished">القرص</translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation type="unfinished">عنوان IP</translation>
+    </message>
+    <message>
+        <source>MAC address</source>
+        <translation type="unfinished">عنوان MAC</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">الإصدار</translation>
+    </message>
+    <message>
+        <source>%1 of %2 computers answered</source>
+        <translation type="unfinished">أجاب %1 من %2 حواسيب</translation>
+    </message>
+    <message>
+        <source>Export inventory</source>
+        <translation type="unfinished">تصدير الجرد</translation>
+    </message>
+    <message>
+        <source>inventory-%1.csv</source>
+        <translation type="unfinished">جرد-%1.csv</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished">ملفات CSV (*.csv)</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">تعذرت الكتابة في %1.</translation>
+    </message>
+</context>
+<context>
     <name>LabSetupPage</name>
     <message>
         <source>Export student setup…</source>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Toolbar icon of the inventory: a clipboard with a computer and a list. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="20" y="14" width="88" height="106" rx="10" fill="#fffdf9" stroke="#3b271d" stroke-width="7"/>
+  <rect x="44" y="6" width="40" height="18" rx="6" fill="#3b271d"/>
+  <rect x="34" y="36" width="44" height="28" rx="3" fill="#1f9d86"/>
+  <rect x="48" y="66" width="16" height="5" fill="#13705f"/>
+  <g fill="#f26b2d">
+    <circle cx="38" cy="86" r="5"/>
+    <circle cx="38" cy="104" r="5"/>
+  </g>
+  <g fill="#f6bf3f">
+    <rect x="50" y="82" width="44" height="8" rx="4"/>
+    <rect x="50" y="100" width="34" height="8" rx="4"/>
+  </g>
+</svg>

@@ -183,6 +183,112 @@
     </message>
 </context>
 <context>
+    <name>InventoryFeaturePlugin</name>
+    <message>
+        <source>Inventory</source>
+        <translation type="unfinished">Inventaire</translation>
+    </message>
+    <message>
+        <source>Show the operating system, hardware, network addresses and installed version of the selected computers.</source>
+        <translation type="unfinished">Afficher le système d&apos;exploitation, le matériel, les adresses réseau et la version installée des ordinateurs sélectionnés.</translation>
+    </message>
+    <message>
+        <source>Hardware and software inventory of the student computers</source>
+        <translation type="unfinished">Inventaire matériel et logiciel des ordinateurs des élèves</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">Contributeurs de %1</translation>
+    </message>
+</context>
+<context>
+    <name>InventoryWindow</name>
+    <message>
+        <source>Computer inventory</source>
+        <translation type="unfinished">Inventaire des ordinateurs</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished">Actualiser</translation>
+    </message>
+    <message>
+        <source>Export CSV…</source>
+        <translation type="unfinished">Exporter en CSV…</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <source>%1 free of %2</source>
+        <translation type="unfinished">%1 libres sur %2</translation>
+    </message>
+    <message>
+        <source>%1 (legacy build)</source>
+        <translation type="unfinished">%1 (version pour anciens systèmes)</translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished">Ordinateur</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished">Utilisateur</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation type="unfinished">Système d&apos;exploitation</translation>
+    </message>
+    <message>
+        <source>Processor</source>
+        <translation type="unfinished">Processeur</translation>
+    </message>
+    <message>
+        <source>Cores</source>
+        <translation type="unfinished">Cœurs</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation type="unfinished">Mémoire</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation type="unfinished">Disque</translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation type="unfinished">Adresse IP</translation>
+    </message>
+    <message>
+        <source>MAC address</source>
+        <translation type="unfinished">Adresse MAC</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished">Version</translation>
+    </message>
+    <message>
+        <source>%1 of %2 computers answered</source>
+        <translation type="unfinished">%1 ordinateurs sur %2 ont répondu</translation>
+    </message>
+    <message>
+        <source>Export inventory</source>
+        <translation type="unfinished">Exporter l&apos;inventaire</translation>
+    </message>
+    <message>
+        <source>inventory-%1.csv</source>
+        <translation type="unfinished">inventaire-%1.csv</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished">Fichiers CSV (*.csv)</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Impossible d&apos;écrire %1.</translation>
+    </message>
+</context>
+<context>
     <name>LabSetupPage</name>
     <message>
         <source>Export student setup…</source>
