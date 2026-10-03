@@ -25,6 +25,7 @@
 #include <QtTest>
 
 #include "ProcessControl.h"
+#include "AppHistory.h"
 #include "PrintBlocker.h"
 #include "UsbStorageBlocker.h"
 
@@ -130,6 +131,38 @@ private Q_SLOTS:
 		QCOMPARE( PrintBlocker::servicesToRestart( { true, 2, true, { QStringLiteral("Fax") } } ),
 				  QStringList( { QStringLiteral("Spooler"), QStringLiteral("Fax") } ) );
 		QVERIFY( PrintBlocker::servicesToRestart( { true, 2, false, {} } ).isEmpty() );
+	}
+
+	void appHistory()
+	{
+		AppHistory history;
+		history.update( { QStringLiteral("firefox"), QStringLiteral("winword") }, 1000 );
+		history.update( { QStringLiteral("winword") }, 2000 );
+		history.update( { QStringLiteral("winword"), QStringLiteral("minecraft") }, 3000 );
+
+		const auto entries = AppHistory::fromVariant( AppHistory::toVariant( history.entries() ) );
+		QCOMPARE( entries.size(), 3 );
+		QCOMPARE( entries[0].name, QStringLiteral("firefox") );
+		QCOMPARE( entries[0].firstSeen, 1000 );
+		QCOMPARE( entries[0].lastSeen, 1000 );
+		QCOMPARE( entries[1].name, QStringLiteral("winword") );
+		QCOMPARE( entries[1].firstSeen, 1000 );
+		QCOMPARE( entries[1].lastSeen, 3000 );
+		QCOMPARE( entries[2].firstSeen, 3000 );
+
+		// the applications not seen for the longest time are dropped first
+		for( int i = 0; i < AppHistory::MaxEntries; ++i )
+		{
+			history.update( { QStringLiteral("app%1").arg( i ) }, 4000 + i );
+		}
+		QCOMPARE( history.entries().size(), AppHistory::MaxEntries );
+		for( const auto& entry : history.entries() )
+		{
+			QVERIFY( entry.name != QStringLiteral("firefox") );
+		}
+
+		history.clear();
+		QVERIFY( history.entries().isEmpty() );
 	}
 
 	void openApplications()

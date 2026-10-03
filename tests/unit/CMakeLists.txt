@@ -64,6 +64,7 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 		${CMAKE_SOURCE_DIR}/plugins/appcontrol/ProcessControl.cpp
 		${CMAKE_SOURCE_DIR}/plugins/appcontrol/UsbStorageBlocker.cpp
 		${CMAKE_SOURCE_DIR}/plugins/appcontrol/PrintBlocker.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/AppHistory.cpp
 	)
 
 	target_include_directories(ProcessControlTest PRIVATE

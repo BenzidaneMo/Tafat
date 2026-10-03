@@ -7,6 +7,8 @@ build_veyon_plugin(appcontrol
 	AppControlFeaturePlugin.h
 	AppControlDialog.cpp
 	AppControlDialog.h
+	AppHistory.cpp
+	AppHistory.h
 	ProcessControl.cpp
 	ProcessControl.h
 	PrintBlocker.cpp

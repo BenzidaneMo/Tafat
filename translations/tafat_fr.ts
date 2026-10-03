@@ -810,6 +810,22 @@
         <source>%1 applications open on %2 computers</source>
         <translation type="unfinished">%1 applications ouvertes sur %2 ordinateurs</translation>
     </message>
+    <message>
+        <source>Application</source>
+        <translation type="unfinished">Application</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation type="unfinished">Utilisation</translation>
+    </message>
+    <message>
+        <source>since %1</source>
+        <translation type="unfinished">depuis %1</translation>
+    </message>
+    <message>
+        <source>%1 to %2 (closed)</source>
+        <translation type="unfinished">de %1 à %2 (fermée)</translation>
+    </message>
 </context>
 <context>
     <name>StudentChatWindow</name>

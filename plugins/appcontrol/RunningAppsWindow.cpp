@@ -22,9 +22,13 @@
  *
  */
 
+#include <algorithm>
+
+#include <QDateTime>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
+#include <QLocale>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QTreeWidget>
@@ -45,6 +49,13 @@ static QString isolated( const QString& text )
 
 
 
+static QString timeText( qint64 msecsSinceEpoch )
+{
+	return isolated( QLocale().toString( QDateTime::fromMSecsSinceEpoch( msecsSinceEpoch ).time(), QLocale::ShortFormat ) );
+}
+
+
+
 RunningAppsWindow::RunningAppsWindow( QWidget* parent ) :
 	QWidget( parent, Qt::Window ),
 	m_tree( new QTreeWidget( this ) ),
@@ -54,9 +65,12 @@ RunningAppsWindow::RunningAppsWindow( QWidget* parent ) :
 {
 	setWindowTitle( tr( "Running applications" ) );
 	setWindowIcon( QIcon( QStringLiteral(":/appcontrol/application-control.png") ) );
-	resize( 520, 560 );
+	resize( 600, 560 );
 
-	m_tree->setHeaderHidden( true );
+	m_tree->setHeaderLabels( { tr( "Application" ), tr( "Used" ) } );
+	m_tree->header()->setStretchLastSection( false );
+	m_tree->header()->setSectionResizeMode( 0, QHeaderView::Stretch );
+	m_tree->header()->setSectionResizeMode( 1, QHeaderView::ResizeToContents );
 	m_tree->setRootIsDecorated( true );
 	m_tree->setSortingEnabled( false );
 
@@ -117,6 +131,7 @@ void RunningAppsWindow::setComputer( const QString& key, const QString& title )
 	}
 
 	auto item = new QTreeWidgetItem( m_tree, { title } );
+	item->setFirstColumnSpanned( true );
 	item->setData( 0, KeyRole, key );
 	auto font = item->font( 0 );
 	font.setBold( true );
@@ -126,7 +141,8 @@ void RunningAppsWindow::setComputer( const QString& key, const QString& title )
 
 
 
-void RunningAppsWindow::setApplications( const QString& key, const QStringList& applications )
+void RunningAppsWindow::setApplications( const QString& key, const QStringList& applications,
+										 const AppHistory::Entries& history )
 {
 	QTreeWidgetItem* computerItem = nullptr;
 	for( int i = 0; i < m_tree->topLevelItemCount(); ++i )
@@ -136,19 +152,33 @@ void RunningAppsWindow::setApplications( const QString& key, const QStringList& 
 			computerItem = m_tree->topLevelItem( i );
 		}
 	}
-	if( computerItem == nullptr || ( m_applications.value( key ) == applications && computerItem->childCount() > 0 ) )
+	const auto historyData = AppHistory::toVariant( history );
+	if( computerItem == nullptr ||
+		( m_applications.value( key ) == applications && m_history.value( key ) == historyData &&
+		  computerItem->childCount() > 0 ) )
 	{
 		return;
 	}
 
 	m_applications[key] = applications;
+	m_history[key] = historyData;
+
+	QMap<QString, AppHistory::Entry> historyByName;
+	for( const auto& entry : history )
+	{
+		historyByName[entry.name] = entry;
+	}
 
 	const auto selected = selectedKey() == key ? selectedApplication() : QString{};
 
 	qDeleteAll( computerItem->takeChildren() );
 	for( const auto& application : applications )
 	{
-		auto item = new QTreeWidgetItem( computerItem, { isolated( application ) } );
+		const auto it = historyByName.constFind( application );
+		auto item = new QTreeWidgetItem( computerItem, { isolated( application ),
+														 it != historyByName.constEnd()
+															 ? tr( "since %1" ).arg( timeText( it->firstSeen ) )
+															 : QString{} } );
 		item->setData( 0, KeyRole, key );
 		item->setData( 0, ApplicationRole, application );
 		if( application == selected )
@@ -159,6 +189,23 @@ void RunningAppsWindow::setApplications( const QString& key, const QStringList& 
 	if( applications.isEmpty() )
 	{
 		auto item = new QTreeWidgetItem( computerItem, { tr( "(no open applications)" ) } );
+		item->setData( 0, KeyRole, key );
+		item->setDisabled( true );
+	}
+
+	// applications that were used before and are closed now, most recent first
+	auto closed = history;
+	closed.erase( std::remove_if( closed.begin(), closed.end(), [&]( const AppHistory::Entry& entry ) {
+					  return applications.contains( entry.name );
+				  } ), closed.end() );
+	std::stable_sort( closed.begin(), closed.end(), []( const AppHistory::Entry& a, const AppHistory::Entry& b ) {
+		return a.lastSeen > b.lastSeen;
+	} );
+	for( const auto& entry : std::as_const( closed ) )
+	{
+		auto item = new QTreeWidgetItem( computerItem, { isolated( entry.name ),
+														 tr( "%1 to %2 (closed)" ).arg( timeText( entry.firstSeen ),
+																						timeText( entry.lastSeen ) ) } );
 		item->setData( 0, KeyRole, key );
 		item->setDisabled( true );
 	}
@@ -180,6 +227,7 @@ void RunningAppsWindow::clear()
 {
 	m_tree->clear();
 	m_applications.clear();
+	m_history.clear();
 	m_summary->clear();
 	updateButtons();
 }

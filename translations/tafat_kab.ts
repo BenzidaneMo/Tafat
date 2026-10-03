@@ -804,6 +804,22 @@
         <source>%1 applications open on %2 computers</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>since %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 to %2 (closed)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StudentChatWindow</name>

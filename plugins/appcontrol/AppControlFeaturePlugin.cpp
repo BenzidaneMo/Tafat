@@ -22,6 +22,7 @@
  *
  */
 
+#include <QDateTime>
 #include <QMessageBox>
 
 #include "AppControlFeaturePlugin.h"
@@ -29,6 +30,7 @@
 #include "FeatureWorkerManager.h"
 #include "PlatformCoreFunctions.h"
 #include "PlatformSessionFunctions.h"
+#include "PlatformUserFunctions.h"
 #include "ProcessControl.h"
 #include "PrintBlocker.h"
 #include "UsbStorageBlocker.h"
@@ -65,6 +67,11 @@ AppControlFeaturePlugin::AppControlFeaturePlugin( QObject* parent ) :
 			UsbStorageBlocker::clear();
 			PrintBlocker::clear();
 		} );
+
+		// remember which applications the student used during the session
+		m_historyTimer.setInterval( HistoryInterval );
+		connect( &m_historyTimer, &QTimer::timeout, this, &AppControlFeaturePlugin::updateHistory );
+		m_historyTimer.start();
 	}
 }
 
@@ -195,7 +202,8 @@ bool AppControlFeaturePlugin::handleFeatureMessage( ComputerControlInterface::Po
 	{
 		addRunningAppsComputer( computerControlInterface );
 		m_runningAppsWindow->setApplications( computerControlInterface->computer().hostName(),
-											   message.argument( Argument::Applications ).toStringList() );
+											   message.argument( Argument::Applications ).toStringList(),
+											   AppHistory::fromVariant( message.argument( Argument::History ).toList() ) );
 	}
 
 	return true;
@@ -249,8 +257,8 @@ bool AppControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server
 			return false;
 		}
 
-		const auto hasUser = VeyonCore::platform().sessionFunctions().currentSessionHasUser();
-		if( hasUser && command == FeatureCommand::CloseApplication )
+		if( command == FeatureCommand::CloseApplication &&
+			VeyonCore::platform().sessionFunctions().currentSessionHasUser() )
 		{
 			const auto application = ProcessControl::normalizedName(
 				message.argument( Argument::Applications ).toStringList().value( 0 ) );
@@ -264,11 +272,11 @@ bool AppControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server
 			vInfo() << "closed application" << application << "on request of the teacher";
 		}
 
+		const auto applications = updateHistory();
 		server.sendFeatureMessageReply( messageContext,
 										FeatureMessage{ m_runningAppsFeature.uid(), FeatureCommand::ApplicationList }
-											.addArgument( Argument::Applications,
-														  hasUser ? ProcessControl::openApplications( ProcessControl::sessionProcesses() )
-																  : QStringList{} ) );
+											.addArgument( Argument::Applications, applications )
+											.addArgument( Argument::History, AppHistory::toVariant( m_history.entries() ) ) );
 		return true;
 	}
 
@@ -396,4 +404,28 @@ void AppControlFeaturePlugin::enforce( VeyonServerInterface& server )
 			FeatureMessage{ m_appControlFeature.uid(), FeatureCommand::NotifyClosedApplications }
 				.addArgument( Argument::Applications, closedApplications ) );
 	}
+}
+
+
+
+QStringList AppControlFeaturePlugin::updateHistory()
+{
+	if( VeyonCore::platform().sessionFunctions().currentSessionHasUser() == false )
+	{
+		m_history.clear();
+		m_historyUser.clear();
+		return {};
+	}
+
+	// a new user starts with an empty history
+	const auto user = VeyonCore::platform().userFunctions().queryCurrentUserProperty( PlatformUserFunctions::UserProperty::LoginName );
+	if( user != m_historyUser )
+	{
+		m_history.clear();
+		m_historyUser = user;
+	}
+
+	const auto applications = ProcessControl::openApplications( ProcessControl::sessionProcesses() );
+	m_history.update( applications, QDateTime::currentMSecsSinceEpoch() );
+	return applications;
 }

@@ -818,6 +818,22 @@
         <source>%1 applications open on %2 computers</source>
         <translation type="unfinished">عدد التطبيقات المفتوحة: %1 على %2 حواسيب</translation>
     </message>
+    <message>
+        <source>Application</source>
+        <translation type="unfinished">التطبيق</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation type="unfinished">الاستخدام</translation>
+    </message>
+    <message>
+        <source>since %1</source>
+        <translation type="unfinished">منذ %1</translation>
+    </message>
+    <message>
+        <source>%1 to %2 (closed)</source>
+        <translation type="unfinished">من %1 إلى %2 (مغلق)</translation>
+    </message>
 </context>
 <context>
     <name>StudentChatWindow</name>

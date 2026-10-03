@@ -28,6 +28,8 @@
 #include <QTimer>
 #include <QWidget>
 
+#include "AppHistory.h"
+
 class QLabel;
 class QPushButton;
 class QTreeWidget;
@@ -41,7 +43,9 @@ public:
 	explicit RunningAppsWindow( QWidget* parent = nullptr );
 
 	void setComputer( const QString& key, const QString& title );
-	void setApplications( const QString& key, const QStringList& applications );
+	// open applications and the applications used before during the session
+	void setApplications( const QString& key, const QStringList& applications,
+						  const AppHistory::Entries& history = {} );
 	void clear();
 
 Q_SIGNALS:
@@ -65,5 +69,6 @@ private:
 	QTimer m_refreshTimer;
 
 	QMap<QString, QStringList> m_applications;
+	QMap<QString, QVariantList> m_history;
 
 };

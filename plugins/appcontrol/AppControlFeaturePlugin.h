@@ -28,6 +28,7 @@
 #include <QTimer>
 
 #include "AppControlDialog.h"
+#include "AppHistory.h"
 #include "ComputerControlInterface.h"
 #include "Feature.h"
 #include "FeatureProviderInterface.h"
@@ -46,7 +47,8 @@ public:
 		Mode,
 		Applications,
 		BlockUsbStorage,
-		BlockPrinting
+		BlockPrinting,
+		History
 	};
 	Q_ENUM(Argument)
 
@@ -117,8 +119,10 @@ private:
 	};
 
 	static constexpr int EnforcementInterval = 2000;
+	static constexpr int HistoryInterval = 10000;
 
 	void enforce( VeyonServerInterface& server );
+	QStringList updateHistory();
 
 	// master side
 	void addRunningAppsComputer( const ComputerControlInterface::Pointer& computerControlInterface );
@@ -136,6 +140,9 @@ private:
 	QTimer m_enforcementTimer;
 	AppControlDialog::Mode m_mode{AppControlDialog::Mode::BlockListed};
 	QStringList m_applications;
+	QTimer m_historyTimer;
+	AppHistory m_history;
+	QString m_historyUser;
 
 	// worker side
 	QPointer<QMessageBox> m_notice;

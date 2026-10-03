@@ -165,7 +165,7 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   (`translations/CMakeLists.txt`, those sources are excluded from the `veyon_*.ts`
   catalogs) and loaded after the `veyon` catalog (`VeyonCore::initLocaleAndTranslation`).
   Add new Tafat plugins to `tafat_plugins` there. Arabic and French drafts for all
-  219 texts are in, marked *unfinished* (Qt still uses them) for native review.
+  225 texts are in, marked *unfinished* (Qt still uses them) for native review.
 - `veyon_ar.ts`: 107 visible upstream texts (main window, toolbar, demo, lock, power,
   log in/off, file transfer, …) added as unfinished drafts → 325/1161. Better to
   also contribute them to Veyon's Transifex so they come back upstream.
@@ -179,6 +179,9 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   applications per computer (`ProcessControl::openApplications`, windowed processes
   on Windows, all session processes on Linux), refreshes every 5 s, closes an app on
   one or all computers (commands `QueryApplications`/`ApplicationList`/`CloseApplication`).
+  The server samples the open apps every 10 s into an `AppHistory` (first/last seen,
+  max 100, reset when the login user changes) that is sent along (`Argument::History`);
+  the window shows "since 10:02" for open and a grey time range for closed apps.
   Mode options (Windows only): *block USB storage* (`UsbStorageBlocker`, policy
   `RemovableStorageDevices\Deny_All`) and *block printing* (`PrintBlocker`: stops the
   `Spooler` service and its running dependents and sets it to disabled; previous
@@ -311,7 +314,8 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
    - Hosted Weblate; small `qtbase_kab*` overrides.
    - RTL audit of `LockWidget`, `Toast` and other custom-painted widgets.
 5. **Next features:**
-   - App/URL history for the teacher (the live "Running apps" list is done).
+   - Website (URL) history for the teacher (app history is done; URLs need a
+     browser extension or reading the browser history databases).
    - Then: whiteboard/annotation, screen recording, audio, lesson plans/rewards,
      inventory, mobile app.
 6. **Packaging:** lab setup wizard (auth keys, room import), teacher guides in
