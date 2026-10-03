@@ -253,17 +253,20 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
 | Build | Status |
 |---|---|
 | Linux (Qt 5 + Qt 6), check-branding | green on every commit |
-| Windows Qt 6 i686 / x86_64 (Win 10/11) | builds installers |
-| Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | compiles and links completely; packaging fixes (QCA plugin path, no Qt 5 TLS plugin) pushed in `959a6331` — check the latest run |
+| Windows Qt 6 i686 / x86_64 (Win 10/11) | green, installers ~27 MB |
+| Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | **green since run 24 (`959a6331`)**, installers ~15 MB |
 
-Nothing has been run on a real Windows PC yet.
+The legacy jobs also run `tools/check-windows7-imports.sh` on the packaged files
+and print `::warning::` lines for EXE/DLL files that import Windows 8+ DLLs or
+functions, which would not load on Windows 7. This is report-only for now; make
+it fail the job once the list is empty. Nothing has been run on a real Windows PC
+yet.
 
 ## 8. Unfinished work (in order)
 
-1. **Legacy Windows installers:** confirm the latest `windows.yml` run is green for
-   the Qt 5 jobs. If packaging still fails, read the `==== build errors ====` block
-   or the last `cp:`/`makensis` lines.
-   Windows 7 notes:
+1. **Legacy Windows installers:** read the Windows 7 import check output of the
+   legacy jobs and fix what it reports (Qt 5, OpenSSL and MinGW runtime DLLs are
+   checked too). Windows 7 notes:
    - `SasEventListener` loads `sas.dll` with `LOAD_LIBRARY_SEARCH_SYSTEM32`
      (needs KB2533623; without it, software SAS is just unavailable).
    - Browsers on Windows 7: only Chrome ≤ 109 / Firefox ESR 115 support the policies.

@@ -38,4 +38,13 @@ if ! ninja -C "$BUILDDIR" -k 0 create-windows-installer 2>&1 | tee "$BUILDDIR/bu
 	exit 1
 fi
 
+# legacy builds: report binaries that Windows 7 could not load (imports of
+# Windows 8+ DLLs or functions); report only until checked on real PCs
+if [ "$LEGACY" = "ON" ]; then
+	ninja -C "$BUILDDIR" windows-binaries > /dev/null
+	for dir in "$BUILDDIR"/*-legacy-*/; do
+		"$BASEDIR/tools/check-windows7-imports.sh" "$ARCH-w64-mingw32-objdump" "${dir%/}" || true
+	done
+fi
+
 mv "$BUILDDIR"/*-setup.exe "$BASEDIR/"
