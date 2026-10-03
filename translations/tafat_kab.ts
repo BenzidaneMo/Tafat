@@ -2,6 +2,101 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="kab">
 <context>
+    <name>AddComputersDialog</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Nadi</translation>
+    </message>
+    <message>
+        <source>Add to the room</source>
+        <translation type="unfinished">Rnu ɣer texxamt</translation>
+    </message>
+    <message>
+        <source>Add computers</source>
+        <translation type="unfinished">Rnu iselkimen</translation>
+    </message>
+    <message>
+        <source>Computer lab</source>
+        <translation type="unfinished">Taxxamt n yiselkimen</translation>
+    </message>
+    <message>
+        <source>Click &quot;Search&quot; to find the student computers in the network. Tick the ones of this room and click &quot;Add to the room&quot;. Student computers are found when %1 is installed on them and they are switched on.</source>
+        <translation type="unfinished">Sit ɣef &quot;Nadi&quot; akken ad d-tafeḍ iselkimen n yinelmaden deg uẓeṭṭa. Ṛcem wid n texxamt-a, syin sit ɣef &quot;Rnu ɣer texxamt&quot;. Iselkimen n yinelmaden ttwafen mi ara yili %1 yebded fell-asen yerna ldin.</translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished">Aselkim</translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation type="unfinished">Tansa IP</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished">Addad</translation>
+    </message>
+    <message>
+        <source>Computer name or IP address</source>
+        <translation type="unfinished">Isem n uselkim neɣ tansa IP</translation>
+    </message>
+    <message>
+        <source>Add to list</source>
+        <translation type="unfinished">Rnu ɣer tebdart</translation>
+    </message>
+    <message>
+        <source>Room:</source>
+        <translation type="unfinished">Taxxamt:</translation>
+    </message>
+    <message>
+        <source>No student computers found. Check that %1 is installed on them, that they are switched on and in the same network, and that no firewall blocks port %2. You can also type a computer name or IP address below.</source>
+        <translation type="unfinished">Ulac aselkim n unelmad i d-yettwafen. Senqed belli %1 yebded fell-asen, belli ldin yerna llan deg yiwen n uẓeṭṭa, akked belli ulac firewall i yesweḥlen tawwurt %2. Tzemreḍ daɣen ad taruḍ isem neɣ tansa IP n uselkim ddaw-a.</translation>
+    </message>
+    <message>
+        <source>Computers found: %1</source>
+        <translation type="unfinished">Iselkimen yettwafen: %1</translation>
+    </message>
+    <message>
+        <source>This computer is not connected to a local network.</source>
+        <translation type="unfinished">Aselkim-a ur yeqqin ara ɣer uẓeṭṭa adigan.</translation>
+    </message>
+    <message>
+        <source>Searching…</source>
+        <translation type="unfinished">Anadi…</translation>
+    </message>
+    <message>
+        <source>already added</source>
+        <translation type="unfinished">yettwarna yakan</translation>
+    </message>
+    <message>
+        <source>new</source>
+        <translation type="unfinished">amaynut</translation>
+    </message>
+    <message>
+        <source>Add to the room (%1)</source>
+        <translation type="unfinished">Rnu ɣer texxamt (%1)</translation>
+    </message>
+    <message>
+        <source>Please enter the name of the room.</source>
+        <translation type="unfinished">Ttxil-k, sekcem isem n texxamt.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Ur yezmir ara ad yaru %1.</translation>
+    </message>
+    <message>
+        <source>The computers could not be added. Please try again and allow the change when you are asked for administrator rights.</source>
+        <translation type="unfinished">Ur ttwarnan ara yiselkimen. Ɛreḍ tikkelt nniḍen, syin sireg asnifel mi ara d-ttwasutren izerfan n unedbal.</translation>
+    </message>
+    <message>
+        <source>added</source>
+        <translation type="unfinished">yettwarna</translation>
+    </message>
+    <message>
+        <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
+        <translation type="unfinished">Iselkimen ttwarnan ɣer texxamt &quot;%1&quot;. Ad d-banen deg %2 deg tesdat.</translation>
+    </message>
+</context>
+<context>
     <name>AppControlDialog</name>
     <message>
         <source>Block the applications in the list</source>
@@ -98,8 +193,8 @@
 <context>
     <name>ClassChatFeaturePlugin</name>
     <message>
-        <source>Hands &amp; chat</source>
-        <translation type="unfinished">Afus &amp; adiwenni</translation>
+        <source>Hands and chat</source>
+        <translation type="unfinished">Afus d udiwenni</translation>
     </message>
     <message>
         <source>Let the students raise their hands and chat with you. Raised hands are shown on the computers.</source>
@@ -346,6 +441,18 @@ Now copy the %3 installers into this folder.</source>
 
 Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
     </message>
+    <message>
+        <source>Create the student installer, for example on a USB stick, and double-click it on each student computer. It contains the key and the settings of this computer. The same button is in %1 Master.</source>
+        <translation type="unfinished">Snulfu-d amsebded n yinelmaden, amedya ɣef tsarut USB, syin sit snat n tikkal fell-as ɣef yal aselkim n unelmad. Deg-s tasarut d yiɣewwaren n uselkim-a. Taqeffalt-a tella daɣen deg %1 Master.</translation>
+    </message>
+    <message>
+        <source>Create student installer…</source>
+        <translation type="unfinished">Snulfu-d amsebded n yinelmaden…</translation>
+    </message>
+    <message>
+        <source>Advanced: student setup folder for a silent installation</source>
+        <translation type="unfinished">Ɣer zdat: akaram n usebded n yinelmaden i usebded s tsusmi</translation>
+    </message>
 </context>
 <context>
     <name>LabSetupPlugin</name>
@@ -356,6 +463,74 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
     <message>
         <source>%1 contributors</source>
         <translation type="unfinished">Imttekkiyen n %1</translation>
+    </message>
+    <message>
+        <source>Student installer</source>
+        <translation type="unfinished">Amsebded n yinelmaden</translation>
+    </message>
+    <message>
+        <source>Create the installer for the student computers, for example on a USB stick. It contains the key and the settings of this computer.</source>
+        <translation type="unfinished">Yesnulfuy-d amsebded i yiselkimen n yinelmaden, amedya ɣef tsarut USB. Deg-s tasarut d yiɣewwaren n uselkim-a.</translation>
+    </message>
+    <message>
+        <source>Add computers</source>
+        <translation type="unfinished">Rnu iselkimen</translation>
+    </message>
+    <message>
+        <source>Search the network for the student computers and add them to a room.</source>
+        <translation type="unfinished">Yettnadi iselkimen n yinelmaden deg uẓeṭṭa, yerna yettarna-ten ɣer texxamt.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Iɣewwaren</translation>
+    </message>
+    <message>
+        <source>Open the settings of %1.</source>
+        <translation type="unfinished">Yeldi iɣewwaren n %1.</translation>
+    </message>
+    <message>
+        <source>Set up this computer as the teacher computer</source>
+        <translation type="unfinished">Swel aselkim-a d aselkim n uselmad</translation>
+    </message>
+    <message>
+        <source>Create a student installer from an installer</source>
+        <translation type="unfinished">Snulfu-d amsebded n yinelmaden seg umsebded</translation>
+    </message>
+    <message>
+        <source>Extract the key and the settings of a student installer</source>
+        <translation type="unfinished">Ssukkes tasarut d yiɣewwaren seg umsebded n yinelmaden</translation>
+    </message>
+    <message>
+        <source>Invalid key name %1.</source>
+        <translation type="unfinished">Isem n tsarut %1 d armeɣtu.</translation>
+    </message>
+    <message>
+        <source>Could not create the key %1.</source>
+        <translation type="unfinished">D awezɣi asnulfu n tsarut %1.</translation>
+    </message>
+    <message>
+        <source>Could not allow the group %1 to use the key %2.</source>
+        <translation type="unfinished">D awezɣi ad yettwasireg ugraw %1 ad yesseqdec tasarut %2.</translation>
+    </message>
+    <message>
+        <source>This computer is set up as the teacher computer with the key %1.</source>
+        <translation type="unfinished">Aselkim-a yettwaswel d aselkim n uselmad s tsarut %1.</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">Ur yezmir ara ad yeɣreḍ %1.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Ur yezmir ara ad yaru %1.</translation>
+    </message>
+    <message>
+        <source>Student installer written to %1.</source>
+        <translation type="unfinished">Amsebded n yinelmaden yettwaru deg %1.</translation>
+    </message>
+    <message>
+        <source>Commands for setting up the teacher and student computers</source>
+        <translation type="unfinished">Tiludna i uswel n uselkim n uselmad d yiselkimen n yinelmaden</translation>
     </message>
 </context>
 <context>
@@ -1022,6 +1197,67 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
     <message>
         <source>Me</source>
         <translation type="unfinished">Nekk</translation>
+    </message>
+</context>
+<context>
+    <name>StudentInstallerDialog</name>
+    <message>
+        <source>Create on USB stick or folder…</source>
+        <translation type="unfinished">Snulfu-d ɣef tsarut USB neɣ deg ukaram…</translation>
+    </message>
+    <message>
+        <source>Create student installer</source>
+        <translation type="unfinished">Snulfu-d amsebded n yinelmaden</translation>
+    </message>
+    <message>
+        <source>Creates the installer for the student computers. Put it on a USB stick, then on each student computer double-click it and answer &quot;Yes&quot;. It installs %1 for students with the key and the settings of this computer, so the student computer can be controlled from here right away.</source>
+        <translation type="unfinished">Yesnulfuy-d amsebded i yiselkimen n yinelmaden. Sers-it ɣef tsarut USB, syin ɣef yal aselkim n unelmad sit snat n tikkal fell-as, terreḍ &quot;Ih&quot;. Ad yesbedd %1 i yinelmaden s tsarut d yiɣewwaren n uselkim-a, akken ad tḥekmeḍ deg uselkim n unelmad seg da imir-a.</translation>
+    </message>
+    <message>
+        <source>Installers to use (one for each kind of Windows in the lab):</source>
+        <translation type="unfinished">Imsebdaden ara tesqedceḍ (yiwen i yal tawsit n Windows deg texxamt):</translation>
+    </message>
+    <message>
+        <source>Add installer…</source>
+        <translation type="unfinished">Rnu amsebded…</translation>
+    </message>
+    <message>
+        <source>Installers for other Windows versions (for example Windows 7) are on the &lt;a href=&quot;%1&quot;&gt;download page&lt;/a&gt;.</source>
+        <translation type="unfinished">Imsebdaden n yileqman nniḍen n Windows (amedya Windows 7) llan deg &lt;a href=&quot;%1&quot;&gt;usebter n usader&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>This computer has no teacher key yet. Install %1 again on this computer, or create a key in Settings → Authentication keys.</source>
+        <translation type="unfinished">Aselkim-a ulac ɣur-s tasarut n uselmad yakan. Ales asebded n %1 ɣef uselkim-a, neɣ snulfu-d tasarut deg Iɣewwaren → Tisura n usesteb.</translation>
+    </message>
+    <message>
+        <source>Key of this teacher computer: %1</source>
+        <translation type="unfinished">Tasarut n uselkim-a n uselmad: %1</translation>
+    </message>
+    <message>
+        <source>Add installer</source>
+        <translation type="unfinished">Rnu amsebded</translation>
+    </message>
+    <message>
+        <source>Installers (*.exe)</source>
+        <translation type="unfinished">Imsebdaden (*.exe)</translation>
+    </message>
+    <message>
+        <source>USB stick or folder for the student installer</source>
+        <translation type="unfinished">Tasarut USB neɣ akaram i umsebded n yinelmaden</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">Ur yezmir ara ad yeɣreḍ %1.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Ur yezmir ara ad yaru %1.</translation>
+    </message>
+    <message>
+        <source>Done. On each student computer, double-click:
+%1</source>
+        <translation type="unfinished">Yemmed. Ɣef yal aselkim n unelmad, sit snat n tikkal ɣef:
+%1</translation>
     </message>
 </context>
 <context>

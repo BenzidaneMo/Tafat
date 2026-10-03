@@ -2,6 +2,101 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr">
 <context>
+    <name>AddComputersDialog</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Rechercher</translation>
+    </message>
+    <message>
+        <source>Add to the room</source>
+        <translation type="unfinished">Ajouter à la salle</translation>
+    </message>
+    <message>
+        <source>Add computers</source>
+        <translation type="unfinished">Ajouter des ordinateurs</translation>
+    </message>
+    <message>
+        <source>Computer lab</source>
+        <translation type="unfinished">Salle informatique</translation>
+    </message>
+    <message>
+        <source>Click &quot;Search&quot; to find the student computers in the network. Tick the ones of this room and click &quot;Add to the room&quot;. Student computers are found when %1 is installed on them and they are switched on.</source>
+        <translation type="unfinished">Cliquez sur « Rechercher » pour trouver les ordinateurs des élèves sur le réseau. Cochez ceux de cette salle et cliquez sur « Ajouter à la salle ». Les ordinateurs des élèves sont trouvés quand %1 y est installé et qu&apos;ils sont allumés.</translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished">Ordinateur</translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation type="unfinished">Adresse IP</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished">État</translation>
+    </message>
+    <message>
+        <source>Computer name or IP address</source>
+        <translation type="unfinished">Nom de l&apos;ordinateur ou adresse IP</translation>
+    </message>
+    <message>
+        <source>Add to list</source>
+        <translation type="unfinished">Ajouter à la liste</translation>
+    </message>
+    <message>
+        <source>Room:</source>
+        <translation type="unfinished">Salle :</translation>
+    </message>
+    <message>
+        <source>No student computers found. Check that %1 is installed on them, that they are switched on and in the same network, and that no firewall blocks port %2. You can also type a computer name or IP address below.</source>
+        <translation type="unfinished">Aucun ordinateur d&apos;élève trouvé. Vérifiez que %1 y est installé, qu&apos;ils sont allumés et dans le même réseau, et qu&apos;aucun pare-feu ne bloque le port %2. Vous pouvez aussi saisir ci-dessous le nom ou l&apos;adresse IP d&apos;un ordinateur.</translation>
+    </message>
+    <message>
+        <source>Computers found: %1</source>
+        <translation type="unfinished">Ordinateurs trouvés : %1</translation>
+    </message>
+    <message>
+        <source>This computer is not connected to a local network.</source>
+        <translation type="unfinished">Cet ordinateur n&apos;est pas connecté à un réseau local.</translation>
+    </message>
+    <message>
+        <source>Searching…</source>
+        <translation type="unfinished">Recherche…</translation>
+    </message>
+    <message>
+        <source>already added</source>
+        <translation type="unfinished">déjà ajouté</translation>
+    </message>
+    <message>
+        <source>new</source>
+        <translation type="unfinished">nouveau</translation>
+    </message>
+    <message>
+        <source>Add to the room (%1)</source>
+        <translation type="unfinished">Ajouter à la salle (%1)</translation>
+    </message>
+    <message>
+        <source>Please enter the name of the room.</source>
+        <translation type="unfinished">Veuillez saisir le nom de la salle.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Impossible d&apos;écrire %1.</translation>
+    </message>
+    <message>
+        <source>The computers could not be added. Please try again and allow the change when you are asked for administrator rights.</source>
+        <translation type="unfinished">Les ordinateurs n&apos;ont pas pu être ajoutés. Réessayez et autorisez la modification quand des droits d&apos;administrateur sont demandés.</translation>
+    </message>
+    <message>
+        <source>added</source>
+        <translation type="unfinished">ajouté</translation>
+    </message>
+    <message>
+        <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
+        <translation type="unfinished">Les ordinateurs ont été ajoutés à la salle « %1 ». Ils apparaissent dans %2 en moins d&apos;une minute.</translation>
+    </message>
+</context>
+<context>
     <name>AppControlDialog</name>
     <message>
         <source>Block the applications in the list</source>
@@ -98,7 +193,7 @@
 <context>
     <name>ClassChatFeaturePlugin</name>
     <message>
-        <source>Hands &amp; chat</source>
+        <source>Hands and chat</source>
         <translation type="unfinished">Mains levées et chat</translation>
     </message>
     <message>
@@ -346,6 +441,18 @@ Now copy the %3 installers into this folder.</source>
 
 Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</translation>
     </message>
+    <message>
+        <source>Create the student installer, for example on a USB stick, and double-click it on each student computer. It contains the key and the settings of this computer. The same button is in %1 Master.</source>
+        <translation type="unfinished">Créez le programme d&apos;installation élève, par exemple sur une clé USB, et double-cliquez dessus sur chaque ordinateur d&apos;élève. Il contient la clé et les paramètres de cet ordinateur. Le même bouton se trouve dans %1 Master.</translation>
+    </message>
+    <message>
+        <source>Create student installer…</source>
+        <translation type="unfinished">Créer le programme d&apos;installation élève…</translation>
+    </message>
+    <message>
+        <source>Advanced: student setup folder for a silent installation</source>
+        <translation type="unfinished">Avancé : dossier d&apos;installation des élèves pour une installation silencieuse</translation>
+    </message>
 </context>
 <context>
     <name>LabSetupPlugin</name>
@@ -356,6 +463,74 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
     <message>
         <source>%1 contributors</source>
         <translation type="unfinished">Contributeurs de %1</translation>
+    </message>
+    <message>
+        <source>Student installer</source>
+        <translation type="unfinished">Installeur élève</translation>
+    </message>
+    <message>
+        <source>Create the installer for the student computers, for example on a USB stick. It contains the key and the settings of this computer.</source>
+        <translation type="unfinished">Crée le programme d&apos;installation pour les ordinateurs des élèves, par exemple sur une clé USB. Il contient la clé et les paramètres de cet ordinateur.</translation>
+    </message>
+    <message>
+        <source>Add computers</source>
+        <translation type="unfinished">Ajouter des ordinateurs</translation>
+    </message>
+    <message>
+        <source>Search the network for the student computers and add them to a room.</source>
+        <translation type="unfinished">Recherche les ordinateurs des élèves sur le réseau et les ajoute à une salle.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Paramètres</translation>
+    </message>
+    <message>
+        <source>Open the settings of %1.</source>
+        <translation type="unfinished">Ouvre les paramètres de %1.</translation>
+    </message>
+    <message>
+        <source>Set up this computer as the teacher computer</source>
+        <translation type="unfinished">Configurer cet ordinateur comme ordinateur de l&apos;enseignant</translation>
+    </message>
+    <message>
+        <source>Create a student installer from an installer</source>
+        <translation type="unfinished">Créer un programme d&apos;installation élève à partir d&apos;un programme d&apos;installation</translation>
+    </message>
+    <message>
+        <source>Extract the key and the settings of a student installer</source>
+        <translation type="unfinished">Extraire la clé et les paramètres d&apos;un programme d&apos;installation élève</translation>
+    </message>
+    <message>
+        <source>Invalid key name %1.</source>
+        <translation type="unfinished">Nom de clé non valide : %1.</translation>
+    </message>
+    <message>
+        <source>Could not create the key %1.</source>
+        <translation type="unfinished">Impossible de créer la clé %1.</translation>
+    </message>
+    <message>
+        <source>Could not allow the group %1 to use the key %2.</source>
+        <translation type="unfinished">Impossible d&apos;autoriser le groupe %1 à utiliser la clé %2.</translation>
+    </message>
+    <message>
+        <source>This computer is set up as the teacher computer with the key %1.</source>
+        <translation type="unfinished">Cet ordinateur est configuré comme ordinateur de l&apos;enseignant avec la clé %1.</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">Impossible de lire %1.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Impossible d&apos;écrire %1.</translation>
+    </message>
+    <message>
+        <source>Student installer written to %1.</source>
+        <translation type="unfinished">Programme d&apos;installation élève écrit dans %1.</translation>
+    </message>
+    <message>
+        <source>Commands for setting up the teacher and student computers</source>
+        <translation type="unfinished">Commandes pour configurer les ordinateurs de l&apos;enseignant et des élèves</translation>
     </message>
 </context>
 <context>
@@ -1024,6 +1199,67 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
     <message>
         <source>Me</source>
         <translation type="unfinished">Moi</translation>
+    </message>
+</context>
+<context>
+    <name>StudentInstallerDialog</name>
+    <message>
+        <source>Create on USB stick or folder…</source>
+        <translation type="unfinished">Créer sur une clé USB ou dans un dossier…</translation>
+    </message>
+    <message>
+        <source>Create student installer</source>
+        <translation type="unfinished">Créer le programme d&apos;installation élève</translation>
+    </message>
+    <message>
+        <source>Creates the installer for the student computers. Put it on a USB stick, then on each student computer double-click it and answer &quot;Yes&quot;. It installs %1 for students with the key and the settings of this computer, so the student computer can be controlled from here right away.</source>
+        <translation type="unfinished">Crée le programme d&apos;installation pour les ordinateurs des élèves. Mettez-le sur une clé USB, puis sur chaque ordinateur d&apos;élève double-cliquez dessus et répondez « Oui ». Il installe %1 pour les élèves avec la clé et les paramètres de cet ordinateur : l&apos;ordinateur de l&apos;élève peut ensuite être contrôlé d&apos;ici tout de suite.</translation>
+    </message>
+    <message>
+        <source>Installers to use (one for each kind of Windows in the lab):</source>
+        <translation type="unfinished">Programmes d&apos;installation à utiliser (un par type de Windows dans la salle) :</translation>
+    </message>
+    <message>
+        <source>Add installer…</source>
+        <translation type="unfinished">Ajouter un programme d&apos;installation…</translation>
+    </message>
+    <message>
+        <source>Installers for other Windows versions (for example Windows 7) are on the &lt;a href=&quot;%1&quot;&gt;download page&lt;/a&gt;.</source>
+        <translation type="unfinished">Les programmes d&apos;installation pour d&apos;autres versions de Windows (par exemple Windows 7) sont sur la &lt;a href=&quot;%1&quot;&gt;page de téléchargement&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>This computer has no teacher key yet. Install %1 again on this computer, or create a key in Settings → Authentication keys.</source>
+        <translation type="unfinished">Cet ordinateur n&apos;a pas encore de clé d&apos;enseignant. Installez de nouveau %1 sur cet ordinateur, ou créez une clé dans Paramètres → Clés d&apos;authentification.</translation>
+    </message>
+    <message>
+        <source>Key of this teacher computer: %1</source>
+        <translation type="unfinished">Clé de cet ordinateur enseignant : %1</translation>
+    </message>
+    <message>
+        <source>Add installer</source>
+        <translation type="unfinished">Ajouter un programme d&apos;installation</translation>
+    </message>
+    <message>
+        <source>Installers (*.exe)</source>
+        <translation type="unfinished">Programmes d&apos;installation (*.exe)</translation>
+    </message>
+    <message>
+        <source>USB stick or folder for the student installer</source>
+        <translation type="unfinished">Clé USB ou dossier pour le programme d&apos;installation élève</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">Impossible de lire %1.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Impossible d&apos;écrire %1.</translation>
+    </message>
+    <message>
+        <source>Done. On each student computer, double-click:
+%1</source>
+        <translation type="unfinished">Terminé. Sur chaque ordinateur d&apos;élève, double-cliquez sur :
+%1</translation>
     </message>
 </context>
 <context>

@@ -2,6 +2,101 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ar">
 <context>
+    <name>AddComputersDialog</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">بحث</translation>
+    </message>
+    <message>
+        <source>Add to the room</source>
+        <translation type="unfinished">إضافة إلى القاعة</translation>
+    </message>
+    <message>
+        <source>Add computers</source>
+        <translation type="unfinished">إضافة حواسيب</translation>
+    </message>
+    <message>
+        <source>Computer lab</source>
+        <translation type="unfinished">قاعة الإعلام الآلي</translation>
+    </message>
+    <message>
+        <source>Click &quot;Search&quot; to find the student computers in the network. Tick the ones of this room and click &quot;Add to the room&quot;. Student computers are found when %1 is installed on them and they are switched on.</source>
+        <translation type="unfinished">انقر «بحث» للعثور على حواسيب التلاميذ في الشبكة. حدّد حواسيب هذه القاعة ثم انقر «إضافة إلى القاعة». يُعثر على حواسيب التلاميذ عندما يكون %1 مثبّتًا عليها وتكون مشغّلة.</translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished">الحاسوب</translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation type="unfinished">عنوان IP</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished">الحالة</translation>
+    </message>
+    <message>
+        <source>Computer name or IP address</source>
+        <translation type="unfinished">اسم الحاسوب أو عنوان IP</translation>
+    </message>
+    <message>
+        <source>Add to list</source>
+        <translation type="unfinished">إضافة إلى القائمة</translation>
+    </message>
+    <message>
+        <source>Room:</source>
+        <translation type="unfinished">القاعة:</translation>
+    </message>
+    <message>
+        <source>No student computers found. Check that %1 is installed on them, that they are switched on and in the same network, and that no firewall blocks port %2. You can also type a computer name or IP address below.</source>
+        <translation type="unfinished">لم يُعثر على أي حاسوب تلميذ. تحقّق من أن %1 مثبّت عليها، وأنها مشغّلة وفي الشبكة نفسها، وأن جدار الحماية لا يحجب المنفذ ⁨%2⁩. يمكنك أيضًا كتابة اسم حاسوب أو عنوان IP أدناه.</translation>
+    </message>
+    <message>
+        <source>Computers found: %1</source>
+        <translation type="unfinished">الحواسيب التي عُثر عليها: ⁨%1⁩</translation>
+    </message>
+    <message>
+        <source>This computer is not connected to a local network.</source>
+        <translation type="unfinished">هذا الحاسوب غير متصل بشبكة محلية.</translation>
+    </message>
+    <message>
+        <source>Searching…</source>
+        <translation type="unfinished">جارٍ البحث…</translation>
+    </message>
+    <message>
+        <source>already added</source>
+        <translation type="unfinished">مضاف من قبل</translation>
+    </message>
+    <message>
+        <source>new</source>
+        <translation type="unfinished">جديد</translation>
+    </message>
+    <message>
+        <source>Add to the room (%1)</source>
+        <translation type="unfinished">إضافة إلى القاعة (⁨%1⁩)</translation>
+    </message>
+    <message>
+        <source>Please enter the name of the room.</source>
+        <translation type="unfinished">يُرجى إدخال اسم القاعة.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">تعذرت الكتابة في %1.</translation>
+    </message>
+    <message>
+        <source>The computers could not be added. Please try again and allow the change when you are asked for administrator rights.</source>
+        <translation type="unfinished">تعذّرت إضافة الحواسيب. أعد المحاولة واسمح بالتغيير عندما تُطلب منك صلاحيات المسؤول.</translation>
+    </message>
+    <message>
+        <source>added</source>
+        <translation type="unfinished">أُضيف</translation>
+    </message>
+    <message>
+        <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
+        <translation type="unfinished">أُضيفت الحواسيب إلى القاعة «⁨%1⁩». ستظهر في %2 خلال دقيقة.</translation>
+    </message>
+</context>
+<context>
     <name>AppControlDialog</name>
     <message>
         <source>Block the applications in the list</source>
@@ -98,7 +193,7 @@
 <context>
     <name>ClassChatFeaturePlugin</name>
     <message>
-        <source>Hands &amp; chat</source>
+        <source>Hands and chat</source>
         <translation type="unfinished">رفع اليد والدردشة</translation>
     </message>
     <message>
@@ -346,6 +441,18 @@ Now copy the %3 installers into this folder.</source>
 
 انسخ الآن برامج تثبيت %3 إلى هذا المجلد.</translation>
     </message>
+    <message>
+        <source>Create the student installer, for example on a USB stick, and double-click it on each student computer. It contains the key and the settings of this computer. The same button is in %1 Master.</source>
+        <translation type="unfinished">أنشئ برنامج تثبيت التلاميذ، مثلًا على مفتاح USB، ثم انقر عليه نقرًا مزدوجًا في كل حاسوب تلميذ. يحتوي على مفتاح هذا الحاسوب وإعداداته. يوجد الزر نفسه في ⁨%1 Master⁩.</translation>
+    </message>
+    <message>
+        <source>Create student installer…</source>
+        <translation type="unfinished">إنشاء برنامج تثبيت التلاميذ…</translation>
+    </message>
+    <message>
+        <source>Advanced: student setup folder for a silent installation</source>
+        <translation type="unfinished">متقدّم: مجلد تثبيت التلاميذ للتثبيت الصامت</translation>
+    </message>
 </context>
 <context>
     <name>LabSetupPlugin</name>
@@ -356,6 +463,74 @@ Now copy the %3 installers into this folder.</source>
     <message>
         <source>%1 contributors</source>
         <translation type="unfinished">المساهمون في %1</translation>
+    </message>
+    <message>
+        <source>Student installer</source>
+        <translation type="unfinished">برنامج تثبيت التلاميذ</translation>
+    </message>
+    <message>
+        <source>Create the installer for the student computers, for example on a USB stick. It contains the key and the settings of this computer.</source>
+        <translation type="unfinished">ينشئ برنامج التثبيت لحواسيب التلاميذ، مثلًا على مفتاح USB. يحتوي على مفتاح هذا الحاسوب وإعداداته.</translation>
+    </message>
+    <message>
+        <source>Add computers</source>
+        <translation type="unfinished">إضافة حواسيب</translation>
+    </message>
+    <message>
+        <source>Search the network for the student computers and add them to a room.</source>
+        <translation type="unfinished">يبحث في الشبكة عن حواسيب التلاميذ ويضيفها إلى قاعة.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">الإعدادات</translation>
+    </message>
+    <message>
+        <source>Open the settings of %1.</source>
+        <translation type="unfinished">يفتح إعدادات %1.</translation>
+    </message>
+    <message>
+        <source>Set up this computer as the teacher computer</source>
+        <translation type="unfinished">إعداد هذا الحاسوب كحاسوب الأستاذ</translation>
+    </message>
+    <message>
+        <source>Create a student installer from an installer</source>
+        <translation type="unfinished">إنشاء برنامج تثبيت التلاميذ من برنامج تثبيت</translation>
+    </message>
+    <message>
+        <source>Extract the key and the settings of a student installer</source>
+        <translation type="unfinished">استخراج المفتاح والإعدادات من برنامج تثبيت التلاميذ</translation>
+    </message>
+    <message>
+        <source>Invalid key name %1.</source>
+        <translation type="unfinished">اسم المفتاح ⁨%1⁩ غير صالح.</translation>
+    </message>
+    <message>
+        <source>Could not create the key %1.</source>
+        <translation type="unfinished">تعذّر إنشاء المفتاح ⁨%1⁩.</translation>
+    </message>
+    <message>
+        <source>Could not allow the group %1 to use the key %2.</source>
+        <translation type="unfinished">تعذّر السماح للمجموعة ⁨%1⁩ باستخدام المفتاح ⁨%2⁩.</translation>
+    </message>
+    <message>
+        <source>This computer is set up as the teacher computer with the key %1.</source>
+        <translation type="unfinished">أُعدّ هذا الحاسوب كحاسوب الأستاذ بالمفتاح ⁨%1⁩.</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">تعذرت قراءة %1.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">تعذرت الكتابة في %1.</translation>
+    </message>
+    <message>
+        <source>Student installer written to %1.</source>
+        <translation type="unfinished">كُتب برنامج تثبيت التلاميذ في ⁨%1⁩.</translation>
+    </message>
+    <message>
+        <source>Commands for setting up the teacher and student computers</source>
+        <translation type="unfinished">أوامر لإعداد حاسوب الأستاذ وحواسيب التلاميذ</translation>
     </message>
 </context>
 <context>
@@ -1032,6 +1207,67 @@ Now copy the %3 installers into this folder.</source>
     <message>
         <source>Me</source>
         <translation type="unfinished">أنا</translation>
+    </message>
+</context>
+<context>
+    <name>StudentInstallerDialog</name>
+    <message>
+        <source>Create on USB stick or folder…</source>
+        <translation type="unfinished">إنشاء على مفتاح USB أو في مجلد…</translation>
+    </message>
+    <message>
+        <source>Create student installer</source>
+        <translation type="unfinished">إنشاء برنامج تثبيت التلاميذ</translation>
+    </message>
+    <message>
+        <source>Creates the installer for the student computers. Put it on a USB stick, then on each student computer double-click it and answer &quot;Yes&quot;. It installs %1 for students with the key and the settings of this computer, so the student computer can be controlled from here right away.</source>
+        <translation type="unfinished">ينشئ برنامج التثبيت لحواسيب التلاميذ. ضعه على مفتاح USB، ثم انقر عليه نقرًا مزدوجًا في كل حاسوب تلميذ وأجب بـ«نعم». يثبّت %1 للتلاميذ بمفتاح هذا الحاسوب وإعداداته، فيمكن التحكّم في حاسوب التلميذ من هنا مباشرة.</translation>
+    </message>
+    <message>
+        <source>Installers to use (one for each kind of Windows in the lab):</source>
+        <translation type="unfinished">برامج التثبيت المستعملة (واحد لكل نوع من Windows في القاعة):</translation>
+    </message>
+    <message>
+        <source>Add installer…</source>
+        <translation type="unfinished">إضافة برنامج تثبيت…</translation>
+    </message>
+    <message>
+        <source>Installers for other Windows versions (for example Windows 7) are on the &lt;a href=&quot;%1&quot;&gt;download page&lt;/a&gt;.</source>
+        <translation type="unfinished">توجد برامج التثبيت لإصدارات Windows الأخرى (مثل ⁨Windows 7⁩) في &lt;a href=&quot;%1&quot;&gt;صفحة التنزيل&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>This computer has no teacher key yet. Install %1 again on this computer, or create a key in Settings → Authentication keys.</source>
+        <translation type="unfinished">لا يملك هذا الحاسوب مفتاح أستاذ بعد. ثبّت %1 من جديد على هذا الحاسوب، أو أنشئ مفتاحًا في الإعدادات ← مفاتيح التوثيق.</translation>
+    </message>
+    <message>
+        <source>Key of this teacher computer: %1</source>
+        <translation type="unfinished">مفتاح حاسوب الأستاذ هذا: ⁨%1⁩</translation>
+    </message>
+    <message>
+        <source>Add installer</source>
+        <translation type="unfinished">إضافة برنامج تثبيت</translation>
+    </message>
+    <message>
+        <source>Installers (*.exe)</source>
+        <translation type="unfinished">برامج التثبيت (*.exe)</translation>
+    </message>
+    <message>
+        <source>USB stick or folder for the student installer</source>
+        <translation type="unfinished">مفتاح USB أو مجلد لبرنامج تثبيت التلاميذ</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">تعذرت قراءة %1.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">تعذرت الكتابة في %1.</translation>
+    </message>
+    <message>
+        <source>Done. On each student computer, double-click:
+%1</source>
+        <translation type="unfinished">تمّ. في كل حاسوب تلميذ، انقر نقرًا مزدوجًا على:
+%1</translation>
     </message>
 </context>
 <context>

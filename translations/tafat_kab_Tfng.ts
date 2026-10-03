@@ -2,6 +2,101 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="kab_Tfng">
 <context>
+    <name>AddComputersDialog</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">ⵏⴰⴷⵉ</translation>
+    </message>
+    <message>
+        <source>Add to the room</source>
+        <translation type="unfinished">ⵔⵏⵓ ⵖⴻⵔ ⵜⴻⵅⵅⴰⵎⵜ</translation>
+    </message>
+    <message>
+        <source>Add computers</source>
+        <translation type="unfinished">ⵔⵏⵓ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Computer lab</source>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Click &quot;Search&quot; to find the student computers in the network. Tick the ones of this room and click &quot;Add to the room&quot;. Student computers are found when %1 is installed on them and they are switched on.</source>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ &quot;ⵏⴰⴷⵉ&quot; ⴰⴽⴽⴻⵏ ⴰⴷ ⴷ-ⵜⴰⴼⴻⴹ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⴷⴻⴳ ⵓⵥⴻⵟⵟⴰ. ⵕⵛⴻⵎ ⵡⵉⴷ ⵏ ⵜⴻⵅⵅⴰⵎⵜ-ⴰ, ⵙⵢⵉⵏ ⵙⵉⵜ ⵖⴻⴼ &quot;ⵔⵏⵓ ⵖⴻⵔ ⵜⴻⵅⵅⴰⵎⵜ&quot;. ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⵜⵜⵡⴰⴼⴻⵏ ⵎⵉ ⴰⵔⴰ ⵢⵉⵍⵉ %1 ⵢⴻⴱⴷⴻⴷ ⴼⴻⵍⵍ-ⴰⵙⴻⵏ ⵢⴻⵔⵏⴰ ⵍⴷⵉⵏ.</translation>
+    </message>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ</translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ IP</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished">ⴰⴷⴷⴰⴷ</translation>
+    </message>
+    <message>
+        <source>Computer name or IP address</source>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵍⴽⵉⵎ ⵏⴻⵖ ⵜⴰⵏⵙⴰ IP</translation>
+    </message>
+    <message>
+        <source>Add to list</source>
+        <translation type="unfinished">ⵔⵏⵓ ⵖⴻⵔ ⵜⴻⴱⴷⴰⵔⵜ</translation>
+    </message>
+    <message>
+        <source>Room:</source>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ:</translation>
+    </message>
+    <message>
+        <source>No student computers found. Check that %1 is installed on them, that they are switched on and in the same network, and that no firewall blocks port %2. You can also type a computer name or IP address below.</source>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵙⴻⵍⴽⵉⵎ ⵏ ⵓⵏⴻⵍⵎⴰⴷ ⵉ ⴷ-ⵢⴻⵜⵜⵡⴰⴼⴻⵏ. ⵙⴻⵏⵇⴻⴷ ⴱⴻⵍⵍⵉ %1 ⵢⴻⴱⴷⴻⴷ ⴼⴻⵍⵍ-ⴰⵙⴻⵏ, ⴱⴻⵍⵍⵉ ⵍⴷⵉⵏ ⵢⴻⵔⵏⴰ ⵍⵍⴰⵏ ⴷⴻⴳ ⵢⵉⵡⴻⵏ ⵏ ⵓⵥⴻⵟⵟⴰ, ⴰⴽⴽⴻⴷ ⴱⴻⵍⵍⵉ ⵓⵍⴰⵛ firewall ⵉ ⵢⴻⵙⵡⴻⵃⵍⴻⵏ ⵜⴰⵡⵡⵓⵔⵜ %2. ⵜⵣⴻⵎⵔⴻⴹ ⴷⴰⵖⴻⵏ ⴰⴷ ⵜⴰⵔⵓⴹ ⵉⵙⴻⵎ ⵏⴻⵖ ⵜⴰⵏⵙⴰ IP ⵏ ⵓⵙⴻⵍⴽⵉⵎ ⴷⴷⴰⵡ-ⴰ.</translation>
+    </message>
+    <message>
+        <source>Computers found: %1</source>
+        <translation type="unfinished">ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵏ: %1</translation>
+    </message>
+    <message>
+        <source>This computer is not connected to a local network.</source>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ-ⴰ ⵓⵔ ⵢⴻⵇⵇⵉⵏ ⴰⵔⴰ ⵖⴻⵔ ⵓⵥⴻⵟⵟⴰ ⴰⴷⵉⴳⴰⵏ.</translation>
+    </message>
+    <message>
+        <source>Searching…</source>
+        <translation type="unfinished">ⴰⵏⴰⴷⵉ…</translation>
+    </message>
+    <message>
+        <source>already added</source>
+        <translation type="unfinished">ⵢⴻⵜⵜⵡⴰⵔⵏⴰ ⵢⴰⴽⴰⵏ</translation>
+    </message>
+    <message>
+        <source>new</source>
+        <translation type="unfinished">ⴰⵎⴰⵢⵏⵓⵜ</translation>
+    </message>
+    <message>
+        <source>Add to the room (%1)</source>
+        <translation type="unfinished">ⵔⵏⵓ ⵖⴻⵔ ⵜⴻⵅⵅⴰⵎⵜ (%1)</translation>
+    </message>
+    <message>
+        <source>Please enter the name of the room.</source>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⴽ, ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ ⵏ ⵜⴻⵅⵅⴰⵎⵜ.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴰⵔⵓ %1.</translation>
+    </message>
+    <message>
+        <source>The computers could not be added. Please try again and allow the change when you are asked for administrator rights.</source>
+        <translation type="unfinished">ⵓⵔ ⵜⵜⵡⴰⵔⵏⴰⵏ ⴰⵔⴰ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ. ⵄⵔⴻⴹ ⵜⵉⴽⴽⴻⵍⵜ ⵏⵏⵉⴹⴻⵏ, ⵙⵢⵉⵏ ⵙⵉⵔⴻⴳ ⴰⵙⵏⵉⴼⴻⵍ ⵎⵉ ⴰⵔⴰ ⴷ-ⵜⵜⵡⴰⵙⵓⵜⵔⴻⵏ ⵉⵣⴻⵔⴼⴰⵏ ⵏ ⵓⵏⴻⴷⴱⴰⵍ.</translation>
+    </message>
+    <message>
+        <source>added</source>
+        <translation type="unfinished">ⵢⴻⵜⵜⵡⴰⵔⵏⴰ</translation>
+    </message>
+    <message>
+        <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
+        <translation type="unfinished">ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵜⵜⵡⴰⵔⵏⴰⵏ ⵖⴻⵔ ⵜⴻⵅⵅⴰⵎⵜ &quot;%1&quot;. ⴰⴷ ⴷ-ⴱⴰⵏⴻⵏ ⴷⴻⴳ %2 ⴷⴻⴳ ⵜⴻⵙⴷⴰⵜ.</translation>
+    </message>
+</context>
+<context>
     <name>AppControlDialog</name>
     <message>
         <source>Block the applications in the list</source>
@@ -98,8 +193,8 @@
 <context>
     <name>ClassChatFeaturePlugin</name>
     <message>
-        <source>Hands &amp; chat</source>
-        <translation type="unfinished">ⴰⴼⵓⵙ &amp; ⴰⴷⵉⵡⴻⵏⵏⵉ</translation>
+        <source>Hands and chat</source>
+        <translation type="unfinished">ⴰⴼⵓⵙ ⴷ ⵓⴷⵉⵡⴻⵏⵏⵉ</translation>
     </message>
     <message>
         <source>Let the students raise their hands and chat with you. Raised hands are shown on the computers.</source>
@@ -346,6 +441,18 @@ Now copy the %3 installers into this folder.</source>
 
 ⵜⵓⵔⴰ ⵏⵖⴻⵍ ⵉⵀⵉⵍⴻⵏ ⵏ ⵓⵙⴻⴱⴷⴻⴷ ⵏ %3 ⵖⴻⵔ ⵓⴽⴰⵔⴰⵎ-ⴰ.</translation>
     </message>
+    <message>
+        <source>Create the student installer, for example on a USB stick, and double-click it on each student computer. It contains the key and the settings of this computer. The same button is in %1 Master.</source>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓ-ⴷ ⴰⵎⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ, ⴰⵎⴻⴷⵢⴰ ⵖⴻⴼ ⵜⵙⴰⵔⵓⵜ USB, ⵙⵢⵉⵏ ⵙⵉⵜ ⵙⵏⴰⵜ ⵏ ⵜⵉⴽⴽⴰⵍ ⴼⴻⵍⵍ-ⴰⵙ ⵖⴻⴼ ⵢⴰⵍ ⴰⵙⴻⵍⴽⵉⵎ ⵏ ⵓⵏⴻⵍⵎⴰⴷ. ⴷⴻⴳ-ⵙ ⵜⴰⵙⴰⵔⵓⵜ ⴷ ⵢⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵏ ⵓⵙⴻⵍⴽⵉⵎ-ⴰ. ⵜⴰⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⵜⴻⵍⵍⴰ ⴷⴰⵖⴻⵏ ⴷⴻⴳ %1 Master.</translation>
+    </message>
+    <message>
+        <source>Create student installer…</source>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓ-ⴷ ⴰⵎⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ…</translation>
+    </message>
+    <message>
+        <source>Advanced: student setup folder for a silent installation</source>
+        <translation type="unfinished">ⵖⴻⵔ ⵣⴷⴰⵜ: ⴰⴽⴰⵔⴰⵎ ⵏ ⵓⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⵉ ⵓⵙⴻⴱⴷⴻⴷ ⵙ ⵜⵙⵓⵙⵎⵉ</translation>
+    </message>
 </context>
 <context>
     <name>LabSetupPlugin</name>
@@ -356,6 +463,74 @@ Now copy the %3 installers into this folder.</source>
     <message>
         <source>%1 contributors</source>
         <translation type="unfinished">ⵉⵎⵜⵜⴻⴽⴽⵉⵢⴻⵏ ⵏ %1</translation>
+    </message>
+    <message>
+        <source>Student installer</source>
+        <translation type="unfinished">ⴰⵎⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Create the installer for the student computers, for example on a USB stick. It contains the key and the settings of this computer.</source>
+        <translation type="unfinished">ⵢⴻⵙⵏⵓⵍⴼⵓⵢ-ⴷ ⴰⵎⵙⴻⴱⴷⴻⴷ ⵉ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ, ⴰⵎⴻⴷⵢⴰ ⵖⴻⴼ ⵜⵙⴰⵔⵓⵜ USB. ⴷⴻⴳ-ⵙ ⵜⴰⵙⴰⵔⵓⵜ ⴷ ⵢⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵏ ⵓⵙⴻⵍⴽⵉⵎ-ⴰ.</translation>
+    </message>
+    <message>
+        <source>Add computers</source>
+        <translation type="unfinished">ⵔⵏⵓ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Search the network for the student computers and add them to a room.</source>
+        <translation type="unfinished">ⵢⴻⵜⵜⵏⴰⴷⵉ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⴷⴻⴳ ⵓⵥⴻⵟⵟⴰ, ⵢⴻⵔⵏⴰ ⵢⴻⵜⵜⴰⵔⵏⴰ-ⵜⴻⵏ ⵖⴻⵔ ⵜⴻⵅⵅⴰⵎⵜ.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">ⵉⵖⴻⵡⵡⴰⵔⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Open the settings of %1.</source>
+        <translation type="unfinished">ⵢⴻⵍⴷⵉ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵏ %1.</translation>
+    </message>
+    <message>
+        <source>Set up this computer as the teacher computer</source>
+        <translation type="unfinished">ⵙⵡⴻⵍ ⴰⵙⴻⵍⴽⵉⵎ-ⴰ ⴷ ⴰⵙⴻⵍⴽⵉⵎ ⵏ ⵓⵙⴻⵍⵎⴰⴷ</translation>
+    </message>
+    <message>
+        <source>Create a student installer from an installer</source>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓ-ⴷ ⴰⵎⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⵙⴻⴳ ⵓⵎⵙⴻⴱⴷⴻⴷ</translation>
+    </message>
+    <message>
+        <source>Extract the key and the settings of a student installer</source>
+        <translation type="unfinished">ⵙⵙⵓⴽⴽⴻⵙ ⵜⴰⵙⴰⵔⵓⵜ ⴷ ⵢⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵙⴻⴳ ⵓⵎⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Invalid key name %1.</source>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵜⵙⴰⵔⵓⵜ %1 ⴷ ⴰⵔⵎⴻⵖⵜⵓ.</translation>
+    </message>
+    <message>
+        <source>Could not create the key %1.</source>
+        <translation type="unfinished">ⴷ ⴰⵡⴻⵣⵖⵉ ⴰⵙⵏⵓⵍⴼⵓ ⵏ ⵜⵙⴰⵔⵓⵜ %1.</translation>
+    </message>
+    <message>
+        <source>Could not allow the group %1 to use the key %2.</source>
+        <translation type="unfinished">ⴷ ⴰⵡⴻⵣⵖⵉ ⴰⴷ ⵢⴻⵜⵜⵡⴰⵙⵉⵔⴻⴳ ⵓⴳⵔⴰⵡ %1 ⴰⴷ ⵢⴻⵙⵙⴻⵇⴷⴻⵛ ⵜⴰⵙⴰⵔⵓⵜ %2.</translation>
+    </message>
+    <message>
+        <source>This computer is set up as the teacher computer with the key %1.</source>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ-ⴰ ⵢⴻⵜⵜⵡⴰⵙⵡⴻⵍ ⴷ ⴰⵙⴻⵍⴽⵉⵎ ⵏ ⵓⵙⴻⵍⵎⴰⴷ ⵙ ⵜⵙⴰⵔⵓⵜ %1.</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵖⵔⴻⴹ %1.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴰⵔⵓ %1.</translation>
+    </message>
+    <message>
+        <source>Student installer written to %1.</source>
+        <translation type="unfinished">ⴰⵎⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⵢⴻⵜⵜⵡⴰⵔⵓ ⴷⴻⴳ %1.</translation>
+    </message>
+    <message>
+        <source>Commands for setting up the teacher and student computers</source>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⵡⴻⵍ ⵏ ⵓⵙⴻⵍⴽⵉⵎ ⵏ ⵓⵙⴻⵍⵎⴰⴷ ⴷ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ</translation>
     </message>
 </context>
 <context>
@@ -1022,6 +1197,67 @@ Now copy the %3 installers into this folder.</source>
     <message>
         <source>Me</source>
         <translation type="unfinished">ⵏⴻⴽⴽ</translation>
+    </message>
+</context>
+<context>
+    <name>StudentInstallerDialog</name>
+    <message>
+        <source>Create on USB stick or folder…</source>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓ-ⴷ ⵖⴻⴼ ⵜⵙⴰⵔⵓⵜ USB ⵏⴻⵖ ⴷⴻⴳ ⵓⴽⴰⵔⴰⵎ…</translation>
+    </message>
+    <message>
+        <source>Create student installer</source>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓ-ⴷ ⴰⵎⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Creates the installer for the student computers. Put it on a USB stick, then on each student computer double-click it and answer &quot;Yes&quot;. It installs %1 for students with the key and the settings of this computer, so the student computer can be controlled from here right away.</source>
+        <translation type="unfinished">ⵢⴻⵙⵏⵓⵍⴼⵓⵢ-ⴷ ⴰⵎⵙⴻⴱⴷⴻⴷ ⵉ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ. ⵙⴻⵔⵙ-ⵉⵜ ⵖⴻⴼ ⵜⵙⴰⵔⵓⵜ USB, ⵙⵢⵉⵏ ⵖⴻⴼ ⵢⴰⵍ ⴰⵙⴻⵍⴽⵉⵎ ⵏ ⵓⵏⴻⵍⵎⴰⴷ ⵙⵉⵜ ⵙⵏⴰⵜ ⵏ ⵜⵉⴽⴽⴰⵍ ⴼⴻⵍⵍ-ⴰⵙ, ⵜⴻⵔⵔⴻⴹ &quot;ⵉⵀ&quot;. ⴰⴷ ⵢⴻⵙⴱⴻⴷⴷ %1 ⵉ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⵙ ⵜⵙⴰⵔⵓⵜ ⴷ ⵢⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵏ ⵓⵙⴻⵍⴽⵉⵎ-ⴰ, ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵃⴻⴽⵎⴻⴹ ⴷⴻⴳ ⵓⵙⴻⵍⴽⵉⵎ ⵏ ⵓⵏⴻⵍⵎⴰⴷ ⵙⴻⴳ ⴷⴰ ⵉⵎⵉⵔ-ⴰ.</translation>
+    </message>
+    <message>
+        <source>Installers to use (one for each kind of Windows in the lab):</source>
+        <translation type="unfinished">ⵉⵎⵙⴻⴱⴷⴰⴷⴻⵏ ⴰⵔⴰ ⵜⴻⵙⵇⴻⴷⵛⴻⴹ (ⵢⵉⵡⴻⵏ ⵉ ⵢⴰⵍ ⵜⴰⵡⵙⵉⵜ ⵏ Windows ⴷⴻⴳ ⵜⴻⵅⵅⴰⵎⵜ):</translation>
+    </message>
+    <message>
+        <source>Add installer…</source>
+        <translation type="unfinished">ⵔⵏⵓ ⴰⵎⵙⴻⴱⴷⴻⴷ…</translation>
+    </message>
+    <message>
+        <source>Installers for other Windows versions (for example Windows 7) are on the &lt;a href=&quot;%1&quot;&gt;download page&lt;/a&gt;.</source>
+        <translation type="unfinished">ⵉⵎⵙⴻⴱⴷⴰⴷⴻⵏ ⵏ ⵢⵉⵍⴻⵇⵎⴰⵏ ⵏⵏⵉⴹⴻⵏ ⵏ Windows (ⴰⵎⴻⴷⵢⴰ Windows 7) ⵍⵍⴰⵏ ⴷⴻⴳ &lt;a href=&quot;%1&quot;&gt;ⵓⵙⴻⴱⵜⴻⵔ ⵏ ⵓⵙⴰⴷⴻⵔ&lt;/a&gt;.</translation>
+    </message>
+    <message>
+        <source>This computer has no teacher key yet. Install %1 again on this computer, or create a key in Settings → Authentication keys.</source>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ-ⴰ ⵓⵍⴰⵛ ⵖⵓⵔ-ⵙ ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⴻⵍⵎⴰⴷ ⵢⴰⴽⴰⵏ. ⴰⵍⴻⵙ ⴰⵙⴻⴱⴷⴻⴷ ⵏ %1 ⵖⴻⴼ ⵓⵙⴻⵍⴽⵉⵎ-ⴰ, ⵏⴻⵖ ⵙⵏⵓⵍⴼⵓ-ⴷ ⵜⴰⵙⴰⵔⵓⵜ ⴷⴻⴳ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ → ⵜⵉⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ.</translation>
+    </message>
+    <message>
+        <source>Key of this teacher computer: %1</source>
+        <translation type="unfinished">ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⴻⵍⴽⵉⵎ-ⴰ ⵏ ⵓⵙⴻⵍⵎⴰⴷ: %1</translation>
+    </message>
+    <message>
+        <source>Add installer</source>
+        <translation type="unfinished">ⵔⵏⵓ ⴰⵎⵙⴻⴱⴷⴻⴷ</translation>
+    </message>
+    <message>
+        <source>Installers (*.exe)</source>
+        <translation type="unfinished">ⵉⵎⵙⴻⴱⴷⴰⴷⴻⵏ (*.exe)</translation>
+    </message>
+    <message>
+        <source>USB stick or folder for the student installer</source>
+        <translation type="unfinished">ⵜⴰⵙⴰⵔⵓⵜ USB ⵏⴻⵖ ⴰⴽⴰⵔⴰⵎ ⵉ ⵓⵎⵙⴻⴱⴷⴻⴷ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵖⵔⴻⴹ %1.</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴰⵔⵓ %1.</translation>
+    </message>
+    <message>
+        <source>Done. On each student computer, double-click:
+%1</source>
+        <translation type="unfinished">ⵢⴻⵎⵎⴻⴷ. ⵖⴻⴼ ⵢⴰⵍ ⴰⵙⴻⵍⴽⵉⵎ ⵏ ⵓⵏⴻⵍⵎⴰⴷ, ⵙⵉⵜ ⵙⵏⴰⵜ ⵏ ⵜⵉⴽⴽⴰⵍ ⵖⴻⴼ:
+%1</translation>
     </message>
 </context>
 <context>
