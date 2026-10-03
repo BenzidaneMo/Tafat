@@ -36,7 +36,8 @@ Decisions already taken with the project owner (do not re-open them):
   and file names, feature UIDs, `translations/veyon_*.ts` file names.
 - The product identity lives **only** in `cmake/modules/Branding.cmake`
   (`BRANDING_PRODUCT_NAME` "Tafat", `_SLUG` "tafat", `_ORGANIZATION`, `_DOMAIN`
-  "benzidanemo.github.io", `_WEBSITE`, `_CONTACT`, `_APP_ID_PREFIX`
+  "benzidanemo.github.io", `_WEBSITE`, `_DEVELOPER` "BenzidaneMo" + `_DEVELOPER_URL`
+  (About dialog "Developed by …", package maintainer), `_CONTACT`, `_APP_ID_PREFIX`
   "io.github.benzidanemo", `_SERVER_APP_ID`, `set_branded_output_name()`).
   It reaches C++ through `core/src/veyonconfig.h.in` (`VEYON_PRODUCT_NAME` …)
   and `VeyonCore::productName()`, `productSlug()`, `executableName("master")`.

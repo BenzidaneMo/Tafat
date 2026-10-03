@@ -2,6 +2,14 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <source>%1 - based on %2</source>
+        <translation type="unfinished">%1 - مبني على %2</translation>
+    </message>
+    <message>
+        <source>Developed by %1</source>
+        <translation type="unfinished">من تطوير %1</translation>
+    </message>
+    <message>
         <source>About Veyon</source>
         <translation>حول Veyon</translation>
     </message>

@@ -137,3 +137,7 @@ school's spreadsheet) in the register window to see who is absent.
 Tafat also builds for Linux (`.deb`/`.rpm` from the "build" workflow). The
 service is named `tafat`. Allow-only application control and the internet
 block for all programs are Windows only.
+
+---
+
+Tafat is developed by [BenzidaneMo](https://github.com/BenzidaneMo), based on [Veyon](https://veyon.io).
