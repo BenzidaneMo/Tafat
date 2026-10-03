@@ -45,7 +45,8 @@ public:
 	{
 		Mode,
 		Applications,
-		BlockUsbStorage
+		BlockUsbStorage,
+		BlockPrinting
 	};
 	Q_ENUM(Argument)
 

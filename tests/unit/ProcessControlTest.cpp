@@ -25,6 +25,7 @@
 #include <QtTest>
 
 #include "ProcessControl.h"
+#include "PrintBlocker.h"
 #include "UsbStorageBlocker.h"
 
 using Process = ProcessControl::Process;
@@ -117,6 +118,18 @@ private Q_SLOTS:
 		QCOMPARE( UsbStorageBlocker::restoredValue( { true, true, 1 } ), QVariant( 1 ) );
 		// without a previous value the policy value is removed
 		QVERIFY( UsbStorageBlocker::restoredValue( { true, false, {} } ).isValid() == false );
+	}
+
+	void printSpoolerIsRestored()
+	{
+		// the previous start type is written back, automatic if it is unknown
+		QCOMPARE( PrintBlocker::restoredStartType( { true, 3, true, {} } ), 3 );
+		QCOMPARE( PrintBlocker::restoredStartType( { true, -1, true, {} } ), 2 );
+
+		// only services that were running are started again, the spooler first
+		QCOMPARE( PrintBlocker::servicesToRestart( { true, 2, true, { QStringLiteral("Fax") } } ),
+				  QStringList( { QStringLiteral("Spooler"), QStringLiteral("Fax") } ) );
+		QVERIFY( PrintBlocker::servicesToRestart( { true, 2, false, {} } ).isEmpty() );
 	}
 
 	void openApplications()

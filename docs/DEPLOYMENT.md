@@ -93,6 +93,10 @@ remove the configuration as well.
 - "Block websites" with "Also block the internet for all other programs" adds
   Windows firewall rules on the students that block web traffic to public
   internet addresses only; the lab network keeps working.
+- "Block apps" can also block USB sticks and printing on Windows. Printing is
+  blocked by stopping the *Print Spooler* service, so shared printers of the
+  student computers are unavailable meanwhile; the service is restored when the
+  mode ends or the Tafat service restarts.
 
 ## 5. Shared student accounts
 

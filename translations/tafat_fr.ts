@@ -39,6 +39,14 @@
         <source>Students cannot open USB sticks, memory cards and external disks while this mode is active. Applies to devices that are connected afterwards.</source>
         <translation type="unfinished">Les élèves ne peuvent pas ouvrir les clés USB, cartes mémoire et disques externes tant que ce mode est actif. S&apos;applique aux périphériques branchés ensuite.</translation>
     </message>
+    <message>
+        <source>Also block printing (Windows only)</source>
+        <translation type="unfinished">Bloquer aussi l&apos;impression (Windows uniquement)</translation>
+    </message>
+    <message>
+        <source>Stops the print service on the student computers while this mode is active, so nothing can be printed (also not to PDF).</source>
+        <translation type="unfinished">Arrête le service d&apos;impression sur les ordinateurs des élèves tant que ce mode est actif : rien ne peut être imprimé (pas même en PDF).</translation>
+    </message>
 </context>
 <context>
     <name>AppControlFeaturePlugin</name>

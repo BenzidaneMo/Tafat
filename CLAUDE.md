@@ -179,6 +179,11 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   applications per computer (`ProcessControl::openApplications`, windowed processes
   on Windows, all session processes on Linux), refreshes every 5 s, closes an app on
   one or all computers (commands `QueryApplications`/`ApplicationList`/`CloseApplication`).
+  Mode options (Windows only): *block USB storage* (`UsbStorageBlocker`, policy
+  `RemovableStorageDevices\Deny_All`) and *block printing* (`PrintBlocker`: stops the
+  `Spooler` service and its running dependents and sets it to disabled; previous
+  start type and running state are kept in QSettings "AppControl" and restored on
+  stop and at server start).
 - `plugins/webcontrol` — "Block websites": `WebPolicy` builds Chrome/Edge/Brave/
   Chromium `URLBlocklist`/`URLAllowlist` and Firefox `WebsiteFilter` policies;
   `PolicyStore` writes them (Windows registry 64-bit view, Linux `/etc` policy
@@ -285,7 +290,7 @@ yet.
    - Browsers on Windows 7: only Chrome ≤ 109 / Firefox ESR 115 support the policies.
 2. **Real-hardware testing** (Windows 7 SP1 32-bit, 8.1 64-bit, 10 32-bit, 11):
    - install, service start, screen capture, lock, demo, file transfer;
-   - each Tafat plugin end to end: block app/site/internet/USB, quiz, register +
+   - each Tafat plugin end to end: block app/site/internet/USB/printing, running apps, quiz, register +
      class list, hands & chat;
    - teacher and students on different builds must interoperate.
 
@@ -293,6 +298,7 @@ yet.
    - `netsh` firewall rules (InternetBlocker);
    - the `RemovableStorageDevices\Deny_All` policy (UsbStorageBlocker; may only
      affect devices plugged in afterwards);
+   - stopping/disabling the print spooler (PrintBlocker, Windows SCM API);
    - the NSIS version/architecture checks.
 3. Decide whether LDAP/AD and WebAPI are needed on Windows; re-enable if so.
 4. **Translations:**
@@ -304,13 +310,12 @@ yet.
    - RTL audit of `LockWidget`, `Toast` and other custom-painted widgets.
 5. **Next features:**
    - App/URL history for the teacher (the live "Running apps" list is done).
-   - Print control.
    - Then: whiteboard/annotation, screen recording, audio, lesson plans/rewards,
      inventory, mobile app.
 6. **Packaging:** lab setup wizard (auth keys, room import), teacher guides in
    ar/fr/kab, pilot in 1–2 schools (`docs/DEPLOYMENT.md` covers admins).
 7. Known limits (documented in DEPLOYMENT.md):
-   - allow-only app mode, internet block and USB block are Windows only;
+   - allow-only app mode, internet, USB and print block are Windows only;
    - Firefox needs a restart for website policies.
 8. Open a PR `ccr-b7df7899-2kzbe8` → `main` when ready (merge commit).
 9. Merge new upstream Veyon releases per `UPSTREAM.md` (current base v4.11.3).

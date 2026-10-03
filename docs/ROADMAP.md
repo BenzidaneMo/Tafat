@@ -212,7 +212,8 @@ inventory → teacher mobile app (Android build already in `android/`).
   catalogs (`translations/tafat_*.ts`) with Arabic and French drafts. Arabic upstream
   catalog 325/1161 (main window and toolbar added as drafts). All drafts need review by
   native speakers.
-- Phase 3: done as plugins with unit tests — "Block apps" (`plugins/appcontrol`),
+- Phase 3: done as plugins with unit tests — "Block apps" with optional USB and print
+  block and a "Running apps" list (`plugins/appcontrol`),
   "Block websites" with optional internet block for all programs (`plugins/webcontrol`),
   "Quiz" with polls and result bars (`plugins/quiz`), "Register" with class list import
   and absent students (`plugins/register`), "Hands & chat" (`plugins/classchat`), "Return work" (`plugins/returnwork`);

@@ -39,6 +39,14 @@
         <source>Students cannot open USB sticks, memory cards and external disks while this mode is active. Applies to devices that are connected afterwards.</source>
         <translation type="unfinished">لا يمكن للتلاميذ فتح مفاتيح USB وبطاقات الذاكرة والأقراص الخارجية ما دام هذا الوضع مفعّلاً. ينطبق على الأجهزة التي تُوصَل بعد ذلك.</translation>
     </message>
+    <message>
+        <source>Also block printing (Windows only)</source>
+        <translation type="unfinished">حظر الطباعة أيضًا (ويندوز فقط)</translation>
+    </message>
+    <message>
+        <source>Stops the print service on the student computers while this mode is active, so nothing can be printed (also not to PDF).</source>
+        <translation type="unfinished">يوقف خدمة الطباعة على حواسيب التلاميذ ما دام هذا الوضع مفعّلاً، فلا يمكن طباعة أي شيء (ولا حتى إلى PDF).</translation>
+    </message>
 </context>
 <context>
     <name>AppControlFeaturePlugin</name>

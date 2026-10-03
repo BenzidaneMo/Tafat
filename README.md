@@ -30,8 +30,9 @@ Inherited from Veyon:
 
 Added by Tafat:
 
-  * Block apps: block listed programs or allow only the programs of the lesson;
-    see the open applications of each computer and close them
+  * Block apps: block listed programs or allow only the programs of the lesson,
+    optionally also USB sticks and printing; see the open applications of each
+    computer and close them
   * Block websites: block listed sites or allow only some, in Chrome, Edge,
     Brave, Chromium and Firefox, optionally block the internet for all programs
   * Quiz: quizzes and polls with live results, scores and CSV export

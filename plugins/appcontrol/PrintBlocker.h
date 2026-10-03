@@ -1,5 +1,5 @@
 /*
- * AppControlDialog.h - dialog for choosing blocked or allowed applications
+ * PrintBlocker.h - blocks printing by stopping the print spooler
  *
  * Copyright (c) 2026 Tafat contributors
  *
@@ -24,36 +24,33 @@
 
 #pragma once
 
-#include <QDialog>
+#include <QStringList>
 
-#include "ProcessControl.h"
-
-class QCheckBox;
-class QPlainTextEdit;
-class QRadioButton;
-
-class AppControlDialog : public QDialog
+// Stops the Windows print spooler and prevents it from being started again
+// while the block is active. The previous start type of the service, whether
+// it was running and the services depending on it that were running are
+// restored afterwards. Not supported on other platforms. Requires
+// administrator privileges.
+class PrintBlocker
 {
-	Q_OBJECT
 public:
-	using Mode = ProcessControl::Policy;
+	static bool isSupported();
 
-	explicit AppControlDialog( QWidget* parent = nullptr );
+	static bool apply();
+	static bool clear();
 
-	Mode mode() const;
-	QStringList applications() const;
-	bool blockUsbStorage() const;
-	bool blockPrinting() const;
+	struct State
+	{
+		bool applied{false};
+		int previousStartType{-1};
+		bool wasRunning{false};
+		QStringList stoppedDependents;
+	};
 
-	void accept() override;
+	// start type to write back; the Windows default (automatic) if unknown
+	static int restoredStartType( const State& state );
 
-private:
-	void addApplications( const QStringList& applications );
-
-	QRadioButton* m_blockButton;
-	QRadioButton* m_allowButton;
-	QPlainTextEdit* m_applicationsEdit;
-	QCheckBox* m_blockUsbStorageBox;
-	QCheckBox* m_blockPrintingBox;
+	// services to start again, the spooler first
+	static QStringList servicesToRestart( const State& state );
 
 };
