@@ -48,7 +48,8 @@ Added by Tafat:
   * Return work: give each student back their own corrected files
 
 More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:
-[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). Teacher guide:
+[français](docs/guide-enseignant.md), [العربية](docs/guide-enseignant-ar.md).
 
 ## Languages
 

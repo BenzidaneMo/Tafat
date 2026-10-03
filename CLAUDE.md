@@ -261,6 +261,9 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
 - NSIS installer refuses Windows < 10 for Qt 6 builds (points to the legacy
   installer), < 7 for legacy builds, and 64-bit installers on 32-bit Windows
   (`VEYON_INSTALLER_MIN_WINDOWS`, `VEYON_INSTALLER_64BIT` in root `CMakeLists.txt`).
+- Teacher guides (drafts, need native review): `docs/guide-enseignant.md` (French),
+  `docs/guide-enseignant-ar.md` (Arabic, `<div dir="rtl">`). Button names are taken
+  from the current catalogs; update the guides when feature names change.
 - `docs/DEPLOYMENT.md`: lab installation guide (installers, keys, silent install
   options, room CSV import, ports, shared accounts).
 - `plugins/filetransfer/FileTransferConfiguration.h`: collected files are grouped
@@ -335,7 +338,9 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
      mobile app (the inventory is done).
 6. **Packaging:** the student setup export is done (`plugins/labsetup`); still open:
    test `install-students.bat` on real Windows 7/10 (incl. localized `ver` output),
-   room import in the lab setup page, teacher guides in ar/fr/kab, pilot in 1–2
+   room import in the lab setup page (the configurator keeps its own copy of the
+   config, so call the import in-process, not via the CLI), teacher guide in
+   Tamazight, pilot in 1–2
    schools (`docs/DEPLOYMENT.md` covers admins).
 7. Known limits (documented in DEPLOYMENT.md):
    - allow-only app mode, internet, USB and print block are Windows only;
