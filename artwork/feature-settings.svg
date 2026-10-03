@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- "Settings": opens the configurator. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <g transform="translate(64 64)">
+    <g fill="#7c6b5f">
+      <rect x="-10" y="-56" width="20" height="24" rx="4"/>
+      <rect x="-10" y="-56" width="20" height="24" rx="4" transform="rotate(45)"/>
+      <rect x="-10" y="-56" width="20" height="24" rx="4" transform="rotate(90)"/>
+      <rect x="-10" y="-56" width="20" height="24" rx="4" transform="rotate(135)"/>
+      <rect x="-10" y="-56" width="20" height="24" rx="4" transform="rotate(180)"/>
+      <rect x="-10" y="-56" width="20" height="24" rx="4" transform="rotate(225)"/>
+      <rect x="-10" y="-56" width="20" height="24" rx="4" transform="rotate(270)"/>
+      <rect x="-10" y="-56" width="20" height="24" rx="4" transform="rotate(315)"/>
+    </g>
+    <circle r="38" fill="#7c6b5f"/>
+    <circle r="17" fill="#fffdf9"/>
+    <circle r="9" fill="#f26b2d"/>
+  </g>
+</svg>

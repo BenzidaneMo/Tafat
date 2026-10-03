@@ -80,6 +80,25 @@ QStringList StudentSetup::publicKeyNames( const QString& publicKeyBaseDir )
 
 
 
+QString StudentSetup::teacherKeyName( const QString& publicKeyBaseDir )
+{
+	QStringList names;
+	for( const auto& name : publicKeyNames( publicKeyBaseDir ) )
+	{
+		if( isValidKeyName( name ) )
+		{
+			names.append( name );
+		}
+	}
+	if( names.contains( QStringLiteral("teacher") ) )
+	{
+		return QStringLiteral("teacher");
+	}
+	return names.value( 0 );
+}
+
+
+
 QByteArray StudentSetup::installScript( const QString& keyName )
 {
 	const auto slug = VeyonCore::productSlug();
