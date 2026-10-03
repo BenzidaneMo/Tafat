@@ -57,7 +57,6 @@ if [ "$QT" = "6" ] || [ -z "$(find "$PREFIX" -name libqca-ossl.dll -print -quit)
 fi
 echo "QCA OpenSSL plugin: $(find "$PREFIX" -name libqca-ossl.dll)"
 
-rm -rf "$WORK"
 # legacy builds (Windows 7/8.1): Fedora's OpenSSL imports
 # api-ms-win-core-path-l1-1-0.dll, which Windows 7 does not have, so replace
 # its DLLs with an upstream OpenSSL LTS build (OpenSSL 3 keeps its ABI)
@@ -65,15 +64,21 @@ if [ "$QT" = "5" ]; then
 	OPENSSL_BRANCH=openssl-3.5
 	if [ "$ARCH" = "i686" ]; then OPENSSL_TARGET=mingw; else OPENSSL_TARGET=mingw64; fi
 	git clone -q --depth 1 -b $OPENSSL_BRANCH https://github.com/openssl/openssl.git
-	( cd openssl &&
-	  ./Configure $OPENSSL_TARGET shared no-docs no-tests --cross-compile-prefix=$TARGET- \
-		--prefix="$WORK/openssl-install" --libdir=lib >/dev/null &&
-	  make -j"$(nproc)" build_libs >/dev/null &&
-	  for dll in libcrypto-3*.dll libssl-3*.dll; do
-		  echo "replacing $dll with $(git describe --tags --always) build"
-		  install -m 755 "$dll" "$PREFIX/bin/"
-	  done )
+	(
+		cd openssl
+		./Configure $OPENSSL_TARGET shared no-docs no-tests --cross-compile-prefix=$TARGET- \
+			--prefix="$WORK/openssl-install" --libdir=lib
+		if ! make -j"$(nproc)" build_libs > build.log 2>&1; then
+			tail -40 build.log
+			exit 1
+		fi
+		for dll in libcrypto-3*.dll libssl-3*.dll; do
+			echo "replacing $dll with OpenSSL $(git rev-parse --short HEAD) ($OPENSSL_BRANCH)"
+			install -m 755 "$dll" "$PREFIX/bin/"
+		done
+	)
 fi
 
+rm -rf "$WORK"
 rpm -q $M-openssl $M-qt$QT-qtbase $M-gcc-c++ $M-crt 2>/dev/null || true
 echo "Windows $ARCH build environment (Qt $QT) ready in $PREFIX"
