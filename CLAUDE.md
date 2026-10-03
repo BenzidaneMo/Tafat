@@ -77,7 +77,7 @@ git submodule update --init --recursive   # incl. 3rdparty/qthttpserver/src/3rdp
 cmake -S . -B ../tafat-build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
       -DWITH_TESTS=ON -DWITH_TRANSLATIONS=OFF -DWITH_LTO=OFF
 ninja -C ../tafat-build
-cd ../tafat-build && xvfb-run -a ctest --output-on-failure    # 6 tests, all pass
+cd ../tafat-build && xvfb-run -a ctest --output-on-failure    # 8 suites, all pass
 
 # Qt 5 check: add -DWITH_QT6=OFF (Linux CI builds Debian 11 Qt 5 too)
 tools/check-branding.sh
@@ -240,43 +240,57 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   `qt6_disable_unicode_defines` to `-UUNICODE -U_UNICODE`;
   `LogoffEventFilter::nativeEventFilter` uses `long*` on Qt 5.
 
-## 7. CI status (checked 2026-10-02, commit `a1bd0c1b`)
+## 7. CI status (checked 2026-10-03)
 
 | Build | Status |
 |---|---|
-| Linux (Qt 5 + Qt 6), check-branding | green |
-| Windows Qt 6 i686 (Win 10/11 32-bit) | builds installer |
-| Windows Qt 6 x86_64 (Win 10/11 64-bit) | builds installer |
-| Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | **fails** — `build-fedora.sh` stops within a second (configure stage); cause not yet read |
+| Linux (Qt 5 + Qt 6), check-branding | green on every commit |
+| Windows Qt 6 i686 / x86_64 (Win 10/11) | builds installers |
+| Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | compiles and links completely; packaging fixes (QCA plugin path, no Qt 5 TLS plugin) pushed in `959a6331` — check the latest run |
 
 Nothing has been run on a real Windows PC yet.
 
 ## 8. Unfinished work (in order)
 
-1. **Legacy Windows builds:** reproduce `build-fedora.sh i686 5` locally (see §4),
-   read the CMake/strip-script error, fix it; then fix every Windows 8+ API the
-   `_WIN32_WINNT=0x0601` build hits (`plugins/platform/windows/*`,
-   `plugins/vncserver/ultravnc-builtin`) with `GetProcAddress` fallbacks.
-   Make the NSIS installer warn on the wrong OS version.
+1. **Legacy Windows installers:** confirm the latest `windows.yml` run is green for
+   the Qt 5 jobs. If packaging still fails, read the `==== build errors ====` block
+   or the last `cp:`/`makensis` lines.
+   Windows 7 notes:
+   - `SasEventListener` loads `sas.dll` with `LOAD_LIBRARY_SEARCH_SYSTEM32`
+     (needs KB2533623; without it, software SAS is just unavailable).
+   - Browsers on Windows 7: only Chrome ≤ 109 / Firefox ESR 115 support the policies.
 2. **Real-hardware testing** (Windows 7 SP1 32-bit, 8.1 64-bit, 10 32-bit, 11):
-   install, service start, screen capture, lock, demo, file transfer, and each
-   new plugin end to end (block an app/site, run a quiz, register names on tiles,
-   collect into per-student folders). Teacher and students on different builds must interoperate.
+   - install, service start, screen capture, lock, demo, file transfer;
+   - each Tafat plugin end to end: block app/site/internet/USB, quiz, register +
+     class list, hands & chat;
+   - teacher and students on different builds must interoperate.
+
+   Things only checked by reading the code:
+   - `netsh` firewall rules (InternetBlocker);
+   - the `RemovableStorageDevices\Deny_All` policy (UsbStorageBlocker; may only
+     affect devices plugged in afterwards);
+   - the NSIS version/architecture checks.
 3. Decide whether LDAP/AD and WebAPI are needed on Windows; re-enable if so.
-4. **Translations:** Arabic (218/1161 strings), Tamazight Latin and Tifinagh
-   (empty), strings of the four new plugins; set up Hosted Weblate; small
-   `qtbase_kab*` overrides for OK/Cancel etc.; RTL audit of custom-painted widgets
-   (`master/src/ComputerItemDelegate.cpp`, `LockWidget`, `Toast`, plugin windows);
-   native speakers must review.
-5. **Next features:** hand-raise/help request + two-way chat; poll bar chart;
-   student "hand in" button and "return marked work"; class list CSV import for
-   the register; "block all internet" via Windows firewall; app/URL history for
-   the teacher; print and USB-storage control; then whiteboard/annotation,
-   screen recording, audio, lesson plans/rewards, inventory, mobile app.
-6. **Packaging:** silent install for mass deployment, lab setup wizard
-   (auth keys, room import), admin/teacher guides in ar/fr/kab, pilot in 1–2 schools.
-7. Known limits to document: allow-only app mode is Windows-only; Firefox needs a
-   restart for website policies; on Windows 7 only Chrome ≤ 109 / Firefox ESR 115
-   support the policies.
+4. **Translations:**
+   - Native review of all *unfinished* Arabic/French drafts (`tafat_*.ts`,
+     `veyon_ar.ts`).
+   - Translate Tamazight Latin + Tifinagh (`veyon_kab*.ts`, `tafat_kab*.ts`; all empty).
+   - Remaining Arabic upstream texts (836).
+   - Hosted Weblate; small `qtbase_kab*` overrides.
+   - RTL audit of `LockWidget`, `Toast` and other custom-painted widgets.
+5. **Next features:**
+   - "Return marked work" / student "hand in". This needs changes in the upstream
+     `plugins/filetransfer` (its `FileTransferController` handles one file set for
+     all computers), so it collides with the thin-rebrand rule. Decide whether to
+     accept that or upstream it.
+   - App/URL history for the teacher.
+   - Print control.
+   - Then: whiteboard/annotation, screen recording, audio, lesson plans/rewards,
+     inventory, mobile app.
+6. **Packaging:** lab setup wizard (auth keys, room import), teacher guides in
+   ar/fr/kab, pilot in 1–2 schools (`docs/DEPLOYMENT.md` covers admins).
+7. Known limits (documented in DEPLOYMENT.md):
+   - allow-only app mode, internet block and USB block are Windows only;
+   - Firefox needs a restart for website policies.
 8. Open a PR `ccr-b7df7899-2kzbe8` → `main` when ready (merge commit).
 9. Merge new upstream Veyon releases per `UPSTREAM.md` (current base v4.11.3).
