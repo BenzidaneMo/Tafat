@@ -17,6 +17,8 @@
 ; end of a student installer made by Tafat Master ("Student installer"), see
 ; plugins/labsetup/StudentPackage.cpp: <installer><JSON><8-byte length><marker>
 !define STUDENT_PACKAGE_MARKER "TAFAT-STUDENT-PACKAGE-v1"
+; name of the Windows service (WindowsServiceFunctions::veyonServiceName())
+!define SERVICE_NAME "${APP_NAME}Service"
 
 ######################################################################
 
@@ -164,10 +166,13 @@ Section "${APP_NAME} Service" SEC_SERVICE
 SectionIn RO
 ${INSTALL_TYPE}
 ClearErrors
-ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service unregister'
+ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service unregister' $0
 ${If} $0 != 0
   ExecWait '"$INSTDIR\veyon-ctl.exe" service unregister'
 ${EndIf}
+; Windows deletes the old service only when nothing uses it any more; registering
+; before that fails and leaves no service at all once the old one is gone
+Call WaitForServiceRemoval
 Delete "$INSTDIR\*.dll"
 Delete "$INSTDIR\*.exe"
 Delete "$INSTDIR\plugins\*.dll"
@@ -210,7 +215,7 @@ SetOutPath "$INSTDIR\tls"
 File "tls/qopensslbackend.dll"
 !endif
 # configuration
-ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service register'
+Call RegisterService
 ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Network/FirewallExceptionEnabled 1'
 ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Windows/SoftwareSASEnabled 1'
 # disable forced guest logon as otherwise logon authentication fails
@@ -322,6 +327,42 @@ ${IfNot} ${SectionIsSelected} ${SEC_MASTER}
 	; nothing to start on a student computer
 	SendMessage $mui.FinishPage.Run ${BM_SETCHECK} ${BST_UNCHECKED} 0
 	ShowWindow $mui.FinishPage.Run ${SW_HIDE}
+${EndIf}
+FunctionEnd
+
+Function WaitForServiceRemoval
+StrCpy $1 0
+${Do}
+	; sc.exe fails (1060, ERROR_SERVICE_DOES_NOT_EXIST) once the service is gone
+	nsExec::Exec '"$SYSDIR\sc.exe" query ${SERVICE_NAME}'
+	Pop $0
+	${If} $0 != 0
+		${ExitDo}
+	${EndIf}
+	Sleep 500
+	IntOp $1 $1 + 1
+${LoopUntil} $1 >= 60
+FunctionEnd
+
+Function RegisterService
+StrCpy $1 0
+${Do}
+	ClearErrors
+	ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service register' $0
+	nsExec::Exec '"$SYSDIR\sc.exe" qc ${SERVICE_NAME}'
+	Pop $2
+	${If} $0 == 0
+	${AndIf} $2 == 0
+		${ExitDo}
+	${EndIf}
+	; the old service may still be marked for deletion
+	Call WaitForServiceRemoval
+	Sleep 1000
+	IntOp $1 $1 + 1
+${LoopUntil} $1 >= 5
+${If} $2 != 0
+	MessageBox MB_OK|MB_ICONSTOP "$(SERVICE_REGISTER_ERROR)" /SD IDOK
+	SetErrorLevel 4
 ${EndIf}
 FunctionEnd
 
@@ -484,6 +525,9 @@ LangString TEACHER_SETUP_ERROR ${LANG_ARABIC} "تعذّر إعداد مفتاح 
 LangString STUDENT_PACKAGE_ERROR ${LANG_ENGLISH} "The settings of the teacher computer could not be read from this installer. Please create the student installer again in ${APP_NAME} Master."
 LangString STUDENT_PACKAGE_ERROR ${LANG_FRENCH} "Les paramètres de l'ordinateur enseignant n'ont pas pu être lus dans ce programme d'installation. Recréez le programme d'installation élève dans ${APP_NAME} Master."
 LangString STUDENT_PACKAGE_ERROR ${LANG_ARABIC} "تعذّرت قراءة إعدادات حاسوب الأستاذ من برنامج التثبيت هذا. أنشئ برنامج تثبيت التلاميذ من جديد في ${APP_NAME} Master."
+LangString SERVICE_REGISTER_ERROR ${LANG_ENGLISH} "The ${APP_NAME} service could not be installed. Please restart the computer and run this installer again."
+LangString SERVICE_REGISTER_ERROR ${LANG_FRENCH} "Le service ${APP_NAME} n'a pas pu être installé. Redémarrez l'ordinateur et relancez ce programme d'installation."
+LangString SERVICE_REGISTER_ERROR ${LANG_ARABIC} "تعذّر تثبيت خدمة ${APP_NAME}. أعد تشغيل الحاسوب ثم شغّل برنامج التثبيت هذا من جديد."
 LangString DESC_SEC_INTERCEPTION ${LANG_GERMAN} "Spezieller Eingabegerätetreiber, der zum Abfangen von Tastenkombinationen wie Strg+Alt+Entf im Bildschirmsperr-Modus benötigt wird"
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
