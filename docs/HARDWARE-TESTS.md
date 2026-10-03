@@ -22,6 +22,9 @@ Chrome ≤ 109 or Firefox ESR 115 (newer browsers don't run there).
 - [ ] Installer runs and finishes (as administrator).
 - [ ] Wrong installer is refused with a clear message: modern installer on Windows 7/8.1,
       64-bit installer on 32-bit Windows.
+- [ ] **Upgrade** over the previous version without rebooting: `sc query TafatService`
+      still finds the service afterwards (v1.0.1 lost it: the old service was still
+      being deleted when the new one was registered; fixed in the installer by waiting).
 - [ ] Service "TafatService" is running after install and after a reboot
       (`sc query TafatService`).
 - [ ] Teacher install (normal Windows account for the teacher, installer run as
