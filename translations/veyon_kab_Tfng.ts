@@ -5,41 +5,43 @@
     <name>AboutDialog</name>
     <message>
         <source>About Veyon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵖⴻⴼ Veyon</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵖⴻⴼ</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⵇⴻⵎ:</translation>
     </message>
     <message>
         <source>Website:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵎⴻⵍ ⵡⴻⴱ:</translation>
     </message>
     <message>
         <source>Support Veyon project with a donation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵄⵉⵡⴻⵏ ⴰⵙⴻⵏⴼⴰⵔ Veyon ⵙ ⵜⵉⴽⵛⵉ</translation>
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵎⵜⵜⴻⴽⴽⵉⵢⴻⵏ</translation>
     </message>
     <message>
         <source>Translation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵙⵓⵇⵉⵍⵜ</translation>
     </message>
     <message>
         <source>Current language not translated yet (or native English).
 
 If you&apos;re interested in translating Veyon into your local or another language or want to improve an existing translation, please contact a Veyon developer!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵜⵍⴰⵢⵜ-ⴰ ⵎⴰⵣⴰⵍ ⵓⵔ ⵜⴻⵜⵜⵡⴰⵙⵓⵇⴻⵍ ⴰⵔⴰ (ⵏⴻⵖ ⴷ ⵜⴰⴳⵍⵉⵣⵉⵜ).
+
+ⵎⴰ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⵙⵓⵇⵍⴻⴹ Veyon ⵖⴻⵔ ⵜⵓⵜⵍⴰⵢⵜ-ⵉⴽ ⵏⴻⵖ ⵖⴻⵔ ⵜⵓⵜⵍⴰⵢⵜ ⵏⵏⵉⴹⴻⵏ, ⵏⴻⵖ ⴰⴷ ⵜⴻⵙⵙⴻⵖⵜⵉⴹ ⵜⴰⵙⵓⵇⵉⵍⵜ ⵢⴻⵍⵍⴰⵏ, ⵏⴻⵔⵎⴻⵙ ⴰⵏⴻⴼⵍⴰⵢ ⵏ Veyon!</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵔⴰⴳⵜ</translation>
     </message>
     <message>
         <source>About Veyon %1</source>
@@ -54,121 +56,121 @@ If you&apos;re interested in translating Veyon into your local or another langua
     <name>AccessControlPage</name>
     <message>
         <source>Computer access control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Restrict access to members of specific user groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵃⴻⵜⵜⴻⵎ ⴰⵏⴻⴽⵛⵓⵎ ⵉ ⵢⵉⵄⴻⴳⴳⴰⵍⴻⵏ ⵏ ⴽⵔⴰ ⵏ ⵢⵉⴳⵔⴰⵡⴻⵏ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵢⴻⴷ</translation>
     </message>
     <message>
         <source>Process access control rules</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵇⴷⴻⵛ ⵉⵍⵓⴳⴰⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Grant access to every authenticated user (default)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴻⴼⴽ ⴰⵏⴻⴽⵛⵓⵎ ⵉ ⵢⴰⵍ ⴰⵙⴻⵇⴷⴰⵛ ⵢⴻⵜⵜⵡⴰⵙⴻⵙⵜⴱⴻⵏ (ⴰⵎⴻⵣⵡⴻⵔ)</translation>
     </message>
     <message>
         <source>User groups authorized for computer access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴳⵔⴰⵡⴻⵏ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵢⴻⵜⵜⵓⵙⵉⵔⴳⴻⵏ ⴰⴷ ⴽⴻⵛⵎⴻⵏ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Please add the groups whose members should be authorized to access computers in your Veyon network.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵔⵏⵓ ⵉⴳⵔⴰⵡⴻⵏ ⴰⵔⴰ ⵢⴻⵙⵄⵓⵏ ⵉⵄⴻⴳⴳⴰⵍⴻⵏ ⵢⴻⵜⵜⵓⵙⵉⵔⴳⴻⵏ ⴰⴷ ⴽⴻⵛⵎⴻⵏ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵓⵥⴻⵟⵟⴰ-ⴽ Veyon.</translation>
     </message>
     <message>
         <source>Authorized user groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴳⵔⴰⵡⴻⵏ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵢⴻⵜⵜⵓⵙⵉⵔⴳⴻⵏ</translation>
     </message>
     <message>
         <source>All groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴳⵔⴰⵡⴻⵏ ⵎⴻⵕⵕⴰ</translation>
     </message>
     <message>
         <source>Access control rules</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵍⵓⴳⴰⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Move selected rule up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵙⴰⵍⵉ ⴰⵍⵓⴳⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Edit selected rule</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵥⵔⴻⴳ ⴰⵍⵓⴳⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Add access control rule</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵏⵓ ⴰⵍⵓⴳⴻⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Remove access control rule</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⴰⵍⵓⴳⴻⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Move selected rule down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴰⴷⴻⵔ ⴰⵍⵓⴳⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Enter username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Please enter a user login name whose access permissions to test:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ ⵏ ⵜⵓⵇⵇⵏⴰ ⵏ ⵓⵙⴻⵇⴷⴰⵛ ⵉ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⴻⵙⴻⴽⵢⴻⴷⴻⴹ ⵜⵉⵙⵉⵔⴰⴳ-ⵉⵙ ⵏ ⵓⵏⴻⴽⵛⵓⵎ:</translation>
     </message>
     <message>
         <source>Access allowed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴻⴽⵛⵓⵎ ⵢⴻⵜⵜⵓⵙⵉⵔⴻⴳ</translation>
     </message>
     <message>
         <source>The specified user is allowed to access computers with this configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ-ⴰ ⵢⴻⵜⵜⵓⵙⵉⵔⴻⴳ ⴰⴷ ⵢⴻⴽⵛⴻⵎ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙ ⵜⵡⵉⵍⴰ-ⴰ.</translation>
     </message>
     <message>
         <source>Access denied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴻⴽⵛⵓⵎ ⵢⴻⵜⵜⵡⴰⴳⵉ</translation>
     </message>
     <message>
         <source>The specified user is not allowed to access computers with this configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ-ⴰ ⵓⵔ ⵢⴻⵜⵜⵓⵙⵉⵔⴻⴳ ⴰⵔⴰ ⴰⴷ ⵢⴻⴽⵛⴻⵎ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙ ⵜⵡⵉⵍⴰ-ⴰ.</translation>
     </message>
 </context>
 <context>
     <name>AccessControlProvider</name>
     <message>
         <source>Provider for access control features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴰⴵⴵⴰⵡ ⵏ ⵜⵎⴰⵀⵉⵍⵉⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
 </context>
 <context>
     <name>AccessControlRuleEditDialog</name>
     <message>
         <source>Edit access control rule</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵥⵔⴻⴳ ⴰⵍⵓⴳⴻⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⵜⵓ</translation>
     </message>
     <message>
         <source>enter a short name for the rule here</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵛⴻⵎ ⴷⴰⴳⵉ ⵉⵙⴻⵎ ⴰⵡⴻⵣⵍⴰⵏ ⵉ ⵓⵍⵓⴳⴻⵏ</translation>
     </message>
     <message>
         <source>Rule name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵍⵓⴳⴻⵏ:</translation>
     </message>
     <message>
         <source>enter a description for the rule here</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵛⴻⵎ ⴷⴰⴳⵉ ⴰⴳⵍⴰⵎ ⵉ ⵓⵍⵓⴳⴻⵏ</translation>
     </message>
     <message>
         <source>Rule description:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴳⵍⴰⵎ ⵏ ⵓⵍⵓⴳⴻⵏ:</translation>
     </message>
     <message>
         <source>Invert all conditions (&quot;is/has&quot; interpreted as &quot;is/has not&quot;)</source>
@@ -176,19 +178,19 @@ If you&apos;re interested in translating Veyon into your local or another langua
     </message>
     <message>
         <source>Always process rule and ignore conditions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵇⴷⴻⵛ ⵢⴰⵍ ⵜⵉⴽⴽⴻⵍⵜ ⴰⵍⵓⴳⴻⵏ ⵓ ⴵⴵ ⵜⵉⵡⵜⵉⵍⵉⵏ</translation>
     </message>
     <message>
         <source>Conditions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵡⵜⵉⵍⵉⵏ</translation>
     </message>
     <message>
         <source>is member of group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷ ⴰⵄⴻⴳⴳⴰⵍ ⵏ ⵓⴳⵔⴰⵡ</translation>
     </message>
     <message>
         <source>If more than one condition is activated each condition has to meet in order to make the rule apply (logical AND). If only one of multiple conditions has to meet (logical OR) please create multiple access control rules.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵢⴻⵍⵍⴰ ⵓⴳⴰⵔ ⵏ ⵢⵉⵡⴻⵜ ⵏ ⵜⵡⵜⵉⵍⵜ ⵢⴻⵔⵎⴷⴻⵏ, ⵢⴰⵍ ⵜⴰⵡⵜⵉⵍⵜ ⵉⵍⴰⵇ ⴰⴷ ⵜⴻⴷⴷⵓ ⴰⴽⴽⴻⵏ ⴰⴷ ⵢⴻⵜⵜⵡⴰⵙⵏⴰⵙ ⵓⵍⵓⴳⴻⵏ (AND ⴰⵎⴻⵥⵍⴰⵏ). ⵎⴰ ⵢⴻⵍⵍⴰ ⵢⵉⵡⴻⵜ ⴽⴰⵏ ⵙⴻⴳ ⵡⴰⵟⴰⵙ ⵏ ⵜⵡⵜⵉⵍⵉⵏ ⵉ ⵉⵍⴰⵇⴻⵏ (OR ⴰⵎⴻⵥⵍⴰⵏ), ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⵏⵓⵍⴼⵓ-ⴷ ⴰⵟⴰⵙ ⵏ ⵢⵉⵍⵓⴳⴰⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ.</translation>
     </message>
     <message>
         <source>Accessing computer and local computer are at the same location</source>
@@ -196,7 +198,7 @@ If you&apos;re interested in translating Veyon into your local or another langua
     </message>
     <message>
         <source>No user logged on</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵙⴻⵇⴷⴰⵛ ⵢⴻⵇⵇⵏⴻⵏ</translation>
     </message>
     <message>
         <source>is located at</source>
@@ -220,31 +222,31 @@ If you&apos;re interested in translating Veyon into your local or another langua
     </message>
     <message>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⴳⴰⵡⵜ</translation>
     </message>
     <message>
         <source>Allow access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵔⴻⴳ ⴰⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Deny access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴳⵉ ⴰⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Ask logged on user for permission</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵓⵜⴻⵔ ⵜⴰⵙⵉⵔⴻⴳⵜ ⵙⴻⴳ ⵓⵙⴻⵇⴷⴰⵛ ⵢⴻⵇⵇⵏⴻⵏ</translation>
     </message>
     <message>
         <source>None (rule disabled)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ (ⴰⵍⵓⴳⴻⵏ ⵢⴻⵏⵙⴰ)</translation>
     </message>
     <message>
         <source>Accessing user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ ⵉ ⴷ-ⵉⴽⴻⵛⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Accessing computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ ⵉ ⴷ-ⵉⴽⴻⵛⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Local (logged on) user</source>
@@ -314,7 +316,7 @@ If you&apos;re interested in translating Veyon into your local or another langua
     <name>AuthKeysConfigurationPage</name>
     <message>
         <source>Authentication keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>Introduction</source>
@@ -346,11 +348,11 @@ If you&apos;re interested in translating Veyon into your local or another langua
     </message>
     <message>
         <source>Public key file base directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⴰⴳⴻⵊⴷⴰⵏ ⵏ ⵢⵉⴼⵓⵢⵍⴰ ⵏ ⵜⵙⵓⵔⴰ ⵜⵉⵣⴰⵢⴻⵣⵉⵏ</translation>
     </message>
     <message>
         <source>Private key file base directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⴰⴳⴻⵊⴷⴰⵏ ⵏ ⵢⵉⴼⵓⵢⵍⴰ ⵏ ⵜⵙⵓⵔⴰ ⵜⵓⵙⵍⵉⴳⵉⵏ</translation>
     </message>
     <message>
         <source>Available authentication keys</source>
@@ -550,7 +552,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>&lt;N/A&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;N/A&gt;</translation>
     </message>
     <message>
         <source>Failed to read key file.</source>
@@ -664,11 +666,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>AuthKeysTableModel</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴰⵡ</translation>
     </message>
     <message>
         <source>Access group</source>
@@ -691,11 +693,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Locations</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵅⵅⴰⵎⵉⵏ</translation>
     </message>
     <message>
         <source>Add new computer</source>
@@ -715,7 +717,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ</translation>
     </message>
     <message>
         <source>Host address/IP</source>
@@ -723,7 +725,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>MAC address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ MAC</translation>
     </message>
     <message>
         <source>Add new location</source>
@@ -747,7 +749,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>New location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ</translation>
     </message>
     <message>
         <source>New computer</source>
@@ -758,7 +760,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>BuiltinDirectoryPlugin</name>
     <message>
         <source>Show help for specific command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵜⴰⵍⵍⴰⵍⵜ ⵏ ⵜⵍⴰⴷⵏⴰ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Add a location or computer</source>
@@ -850,7 +852,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>MAC ADDRESS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ MAC</translation>
     </message>
     <message>
         <source>PARENT</source>
@@ -902,19 +904,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴰⵡ</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ</translation>
     </message>
     <message>
         <source>Host address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ ⵏ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ</translation>
     </message>
     <message>
         <source>MAC address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ MAC</translation>
     </message>
     <message>
         <source>Specified object not found.</source>
@@ -1023,121 +1025,121 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>ComputerControlListModel</name>
     <message>
         <source>Name: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ: %1</translation>
     </message>
     <message>
         <source>Location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ: %1</translation>
     </message>
     <message>
         <source>Active features: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵎⴰⵀⵉⵍⵉⵏ ⵢⴻⵔⵎⴷⴻⵏ: %1</translation>
     </message>
     <message>
         <source>[no user]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[ⵓⵍⴰⵛ ⴰⵙⴻⵇⴷⴰⵛ]</translation>
     </message>
     <message>
         <source>Online and connected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵇⵇⴻⵏ</translation>
     </message>
     <message>
         <source>Establishing connection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵇⵇⵏⴰ ⴷⴻⴳ ⵓⴱⵔⵉⴷ</translation>
     </message>
     <message>
         <source>Computer offline or switched off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ ⵓⵔ ⵢⴻⵇⵇⵉⵏ ⴰⵔⴰ ⵏⴻⵖ ⵢⴻⵏⵙⴰ</translation>
     </message>
     <message>
         <source>Veyon Server unreachable or not running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵇⴻⴷⴷⴰⵛ Veyon ⵓⵔ ⴷ-ⵢⴻⵜⵜⴰⵡⴻⴹ ⴰⵔⴰ ⵏⴻⵖ ⵓⵔ ⵉⵜⴻⴷⴷⵓ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵙⵜⴻⴱ ⵓⵔ ⵢⴻⴷⴷⵉ ⴰⵔⴰ ⵏⴻⵖ ⴰⵏⴻⴽⵛⵓⵎ ⵢⴻⵜⵜⵡⴰⴳⵉ</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⴼⴼⴻⵖ</translation>
     </message>
     <message>
         <source>No user logged on</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵙⴻⵇⴷⴰⵛ ⵢⴻⵇⵇⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Logged on user: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ ⵢⴻⵇⵇⵏⴻⵏ: %1</translation>
     </message>
     <message>
         <source>Hostname: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ: %1</translation>
     </message>
     <message>
         <source>unknown</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵔⵓⵙⵙⵉⵏ</translation>
     </message>
     <message>
         <source>IP address: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ IP: %1</translation>
     </message>
     <message>
         <source>Hostname could not be resolved</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ ⵓⵔ ⵢⴻⵜⵜⵡⴰⴼ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>No features active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⵜⵉⵎⴰⵀⵉⵍⵉⵏ ⵢⴻⵔⵎⴷⴻⵏ</translation>
     </message>
 </context>
 <context>
     <name>ComputerControlServer</name>
     <message>
         <source>Authentication error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; attempted to access this computer but could not authenticate successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ &quot;%1&quot; ⵙⴻⴳ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ &quot;%2&quot; ⵢⴻⵄⵔⴻⴹ ⴰⴷ ⵢⴻⴽⵛⴻⵎ ⵖⴻⵔ ⵓⵙⴻⵍⴽⵉⵎ-ⴰ ⵎⴰⵛⴰ ⴰⵙⴻⵙⵜⴻⴱ ⵓⵔ ⵢⴻⴷⴷⵉ ⴰⵔⴰ.</translation>
     </message>
     <message>
         <source>Remote access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴻⴽⵛⵓⵎ ⵙ ⵍⴻⴱⵄⵉⴷ</translation>
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; is now accessing this computer.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ &quot;%1&quot; ⵙⴻⴳ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ &quot;%2&quot; ⵢⴻⴽⵛⴻⵎ ⵜⵓⵔⴰ ⵖⴻⵔ ⵓⵙⴻⵍⴽⵉⵎ-ⴰ.</translation>
     </message>
     <message>
         <source>Access control error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⴰ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; attempted to access this computer but has been blocked due to access control settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ &quot;%1&quot; ⵙⴻⴳ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ &quot;%2&quot; ⵢⴻⵄⵔⴻⴹ ⴰⴷ ⵢⴻⴽⵛⴻⵎ ⵖⴻⵔ ⵓⵙⴻⵍⴽⵉⵎ-ⴰ ⵎⴰⵛⴰ ⵢⴻⵜⵜⵓⵙⴻⵡⵃⴻⵍ ⵙ ⵙⴻⴱⴱⴰ ⵏ ⵢⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ.</translation>
     </message>
     <message>
         <source>Veyon Service %1 at %2:%3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵥⵍⵓ Veyon %1 ⴷⴻⴳ %2:%3</translation>
     </message>
     <message>
         <source>Active connections:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵇⵇⵏⵉⵡⵉⵏ ⵢⴻⵔⵎⴷⴻⵏ:</translation>
     </message>
 </context>
 <context>
     <name>ComputerManager</name>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Logged in since</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵇⵇⴻⵏ ⵙⴻⴳ</translation>
     </message>
     <message>
         <source>Missing network object directory plugin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵣⴻⴳⵔⵉⵔ ⵏ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵖⴰⵡⵙⵉⵡⵉⵏ ⵏ ⵓⵥⴻⵟⵟⴰ</translation>
     </message>
     <message>
         <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
@@ -1145,19 +1147,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Computer name;Hostname;User</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵍⴽⵉⵎ;ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ;ⴰⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>%1 days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ⵏ ⵡⵓⵙⵙⴰⵏ</translation>
     </message>
     <message>
         <source>1 day</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⵉⵡⴻⵏ ⵡⴰⵙⵙ</translation>
     </message>
     <message>
         <source>Location detection failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⴼⵉⵏ ⵏ ⵜⴻⵅⵅⴰⵎⵜ ⵓⵔ ⵜⴻⴷⴷⵉ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>The location of this computer could not be determined. This indicates a problem with the system configuration. No locations and computers will be displayed in the &quot;Locations &amp; computers&quot; panel.</source>
@@ -1165,38 +1167,38 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Unknown location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ ⵜⴰⵔⵓⵙⵙⵉⵏⵜ</translation>
     </message>
 </context>
 <context>
     <name>ComputerSelectPanel</name>
     <message>
         <source>Search computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵏⴰⴷⵉ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Add location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵏⵓ ⵜⴰⵅⵅⴰⵎⵜ</translation>
     </message>
     <message>
         <source>Save computer/user list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵍⴻⵙ ⵜⴰⴱⴷⴰⵔⵜ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ/ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ</translation>
     </message>
     <message>
         <source>Select output filename</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⵔⴻⵏ ⵉⵙⴻⵎ ⵏ ⵓⴼⴰⵢⵍⵓ ⵏ ⵜⵓⴼⴼⵖⴰ</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ CSV (*.csv)</translation>
     </message>
     <message>
         <source>File error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⴰ ⵏ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Could not write the computer and users list to %1! Please check the file access permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴰⵔⵓ ⵜⴰⴱⴷⴰⵔⵜ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⴷ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷⴻⴳ %1! ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⵏⵇⴻⴷ ⵜⵉⵙⵉⵔⴰⴳ ⵏ ⵓⵏⴻⴽⵛⵓⵎ ⵖⴻⵔ ⵓⴼⴰⵢⵍⵓ.</translation>
     </message>
 </context>
 <context>
@@ -1308,7 +1310,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>DemoConfigurationPage</name>
     <message>
         <source>Demo server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵇⴻⴷⴷⴰⵛ ⵏ ⵓⵙⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Tunables</source>
@@ -1328,7 +1330,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> ⵎⵙ</translation>
     </message>
     <message>
         <source>Slow down thumbnail updates while demo is running</source>
@@ -1355,71 +1357,71 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>DemoFeaturePlugin</name>
     <message>
         <source>Demo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Stop demo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵃⴱⴻⵙ ⴰⵙⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Share your screen or allow a user to share his screen with other users.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴱⴹⵓ ⴰⴳⴷⵉⵍ-ⵉⴽ ⵏⴻⵖ ⵙⵉⵔⴻⴳ ⵉ ⵓⵙⴻⵇⴷⴰⵛ ⴰⴷ ⵢⴻⴱⴹⵓ ⴰⴳⴷⵉⵍ-ⵉⵙ ⴰⴽⴽⴻⴷ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵏⵏⵉⴹⴻⵏ.</translation>
     </message>
     <message>
         <source>Full screen demo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴽⴰⵏ ⵙ ⵓⴳⴷⵉⵍ ⴰⵞⵞⵓⵔⴰⵏ</translation>
     </message>
     <message>
         <source>Window demo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴽⴰⵏ ⴷⴻⴳ ⵓⵙⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Share your own screen in fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴱⴹⵓ ⴰⴳⴷⵉⵍ-ⵉⴽ ⵙ ⵓⵙⴽⴰⵔ ⵏ ⵓⴳⴷⵉⵍ ⴰⵞⵞⵓⵔⴰⵏ</translation>
     </message>
     <message>
         <source>In this mode your screen is being displayed in full screen mode on all computers while the input devices of the users are locked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷⴻⴳ ⵓⵙⴽⴰⵔ-ⴰ, ⴰⴳⴷⵉⵍ-ⵉⴽ ⵢⴻⵜⵜⴱⴰⵏ ⵙ ⵓⴳⴷⵉⵍ ⴰⵞⵞⵓⵔⴰⵏ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ, ⵉⴱⴻⵏⴽⴰⵏ ⵏ ⵓⵏⴻⴽⵛⵓⵎ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵜⵜⵡⴰⵙⴻⴽⴽⵕⴻⵏ.</translation>
     </message>
     <message>
         <source>Share your own screen in a window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴱⴹⵓ ⴰⴳⴷⵉⵍ-ⵉⴽ ⴷⴻⴳ ⵓⵙⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>In this mode your screen being displayed in a window on all computers. The users are able to switch to other windows as needed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷⴻⴳ ⵓⵙⴽⴰⵔ-ⴰ, ⴰⴳⴷⵉⵍ-ⵉⴽ ⵢⴻⵜⵜⴱⴰⵏ ⴷⴻⴳ ⵓⵙⴼⴰⵢⵍⵓ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ. ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵣⴻⵎⵔⴻⵏ ⴰⴷ ⵄⴻⴷⴷⵉⵏ ⵖⴻⵔ ⵢⵉⵙⴼⵓⵢⵍⴰ ⵏⵏⵉⴹⴻⵏ ⵎⴰ ⵢⴻⵍⵍⴰ ⵉⵍⴰⵇ.</translation>
     </message>
     <message>
         <source>Share selected user&apos;s screen in fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴱⴹⵓ ⴰⴳⴷⵉⵍ ⵏ ⵓⵙⴻⵇⴷⴰⵛ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ ⵙ ⵓⵙⴽⴰⵔ ⵏ ⵓⴳⴷⵉⵍ ⴰⵞⵞⵓⵔⴰⵏ</translation>
     </message>
     <message>
         <source>In this mode the screen of the selected user is being displayed in full screen mode on all computers while the input devices of the users are locked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷⴻⴳ ⵓⵙⴽⴰⵔ-ⴰ, ⴰⴳⴷⵉⵍ ⵏ ⵓⵙⴻⵇⴷⴰⵛ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ ⵢⴻⵜⵜⴱⴰⵏ ⵙ ⵓⴳⴷⵉⵍ ⴰⵞⵞⵓⵔⴰⵏ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ, ⵉⴱⴻⵏⴽⴰⵏ ⵏ ⵓⵏⴻⴽⵛⵓⵎ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵜⵜⵡⴰⵙⴻⴽⴽⵕⴻⵏ.</translation>
     </message>
     <message>
         <source>Share selected user&apos;s screen in a window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴱⴹⵓ ⴰⴳⴷⵉⵍ ⵏ ⵓⵙⴻⵇⴷⴰⵛ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ ⴷⴻⴳ ⵓⵙⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>In this mode the screen of the selected user being displayed in a window on all computers. The users are able to switch to other windows as needed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷⴻⴳ ⵓⵙⴽⴰⵔ-ⴰ, ⴰⴳⴷⵉⵍ ⵏ ⵓⵙⴻⵇⴷⴰⵛ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ ⵢⴻⵜⵜⴱⴰⵏ ⴷⴻⴳ ⵓⵙⴼⴰⵢⵍⵓ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ. ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵣⴻⵎⵔⴻⵏ ⴰⴷ ⵄⴻⴷⴷⵉⵏ ⵖⴻⵔ ⵢⵉⵙⴼⵓⵢⵍⴰ ⵏⵏⵉⴹⴻⵏ ⵎⴰ ⵢⴻⵍⵍⴰ ⵉⵍⴰⵇ.</translation>
     </message>
     <message>
         <source>Please select a user screen to share.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⴼⵔⴻⵏ ⴰⴳⴷⵉⵍ ⵏ ⵓⵙⴻⵇⴷⴰⵛ ⴰⵔⴰ ⵜⴻⴱⴹⵓⴹ.</translation>
     </message>
     <message>
         <source>Please select only one user screen to share.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⴼⵔⴻⵏ ⵢⵉⵡⴻⵏ ⴽⴰⵏ ⵏ ⵓⴳⴷⵉⵍ ⵏ ⵓⵙⴻⵇⴷⴰⵛ ⴰⵔⴰ ⵜⴻⴱⴹⵓⴹ.</translation>
     </message>
     <message>
         <source>All screens</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴳⴷⵉⵍⴻⵏ ⵎⴻⵕⵕⴰ</translation>
     </message>
     <message>
         <source>Give a demonstration by screen broadcasting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴰⵙⴽⴰⵏ ⵙ ⵓⵙⵉⵡⴻⴹ ⵏ ⵓⴳⴷⵉⵍ</translation>
     </message>
 </context>
 <context>
@@ -1430,7 +1432,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Confirm desktop access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⵜⴻⵎ ⴰⵏⴻⴽⵛⵓⵎ ⵖⴻⵔ ⵜⵏⴰⵔⵉⵜ</translation>
     </message>
     <message>
         <source>The user %1 at computer %2 wants to access your desktop. Do you want to grant access?</source>
@@ -1438,11 +1440,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Never for this session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵡⴻⵔⴵⵉⵏ ⵉ ⵜⵖⵉⵎⵉⵜ-ⴰ</translation>
     </message>
     <message>
         <source>Always for this session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴰⵍ ⵜⵉⴽⴽⴻⵍⵜ ⵉ ⵜⵖⵉⵎⵉⵜ-ⴰ</translation>
     </message>
 </context>
 <context>
@@ -1457,7 +1459,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ</translation>
     </message>
     <message>
         <source>Path</source>
@@ -1500,46 +1502,46 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>DesktopServicesFeaturePlugin</name>
     <message>
         <source>Start application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⴰⵙⵏⴰⵙ</translation>
     </message>
     <message>
         <source>Click this button to start an application on all computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵙⴻⵏⴽⵔⴻⴹ ⴰⵙⵏⴰⵙ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ.</translation>
     </message>
     <message>
         <source>Open website</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⵙⵎⴻⵍ ⵡⴻⴱ</translation>
     </message>
     <message>
         <source>Click this button to open a website on all computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⵍⴷⵉⴹ ⴰⵙⵎⴻⵍ ⵡⴻⴱ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ.</translation>
     </message>
     <message>
         <source>Start application &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⴰⵙⵏⴰⵙ &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Custom application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵏⴰⵙ ⵓⴷⵎⴰⵡⴰⵏ</translation>
     </message>
     <message>
         <source>Open website &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⵙⵎⴻⵍ ⵡⴻⴱ &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Custom website</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵎⴻⵍ ⵡⴻⴱ ⵓⴷⵎⴰⵡⴰⵏ</translation>
     </message>
     <message>
         <source>Start apps and open websites in user sessions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⵉⵙⵏⴰⵙⴻⵏ ⵓ ⵍⴷⵉ ⵉⵙⵎⴰⵍ ⵡⴻⴱ ⴷⴻⴳ ⵜⵖⵉⵎⵉⵢⵉⵏ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ</translation>
     </message>
 </context>
 <context>
     <name>DocumentationFigureCreator</name>
     <message>
         <source>Teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵍⵎⴰⴷ</translation>
     </message>
     <message>
         <source>Room %1</source>
@@ -1555,7 +1557,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Custom website</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵎⴻⵍ ⵡⴻⴱ ⵓⴷⵎⴰⵡⴰⵏ</translation>
     </message>
     <message>
         <source>Open file manager</source>
@@ -1571,7 +1573,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Custom application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵏⴰⵙ ⵓⴷⵎⴰⵡⴰⵏ</translation>
     </message>
     <message>
         <source>Handout</source>
@@ -1680,7 +1682,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ</translation>
     </message>
     <message>
         <source>Description</source>
@@ -1688,11 +1690,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Master</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵍⵎⴰⴷ</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵥⵍⵓ</translation>
     </message>
     <message>
         <source>Worker</source>
@@ -1716,7 +1718,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Failed to initialize credentials</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵡⴻⵏⵏⴻⵣ ⵏ ⵢⵉⵏⴻⴽⵛⴰⵎ ⵓⵔ ⵢⴻⴷⴷⵉ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>Could not establish a connection to host %1</source>
@@ -1739,83 +1741,83 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FileCollectDialog</name>
     <message>
         <source>File transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⵇⴰⵍ ⵏ ⵢⵉⴼⵓⵢⵍⴰ</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵖⴻⵡⵡⴰⵔⴻⵏ</translation>
     </message>
     <message>
         <source>Subfolder handling</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⴼⵔⴻⴽ ⵏ ⵢⵉⴽⴰⵔⴰⵎⴻⵏ ⵏ ⴷⴰⵡ</translation>
     </message>
     <message>
         <source>*.* or *.docx;*.pdf (leave empty for all files)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">*.* ⵏⴻⵖ *.docx;*.pdf (ⴻⴵⴵ-ⵉⵜ ⴷ ⵉⵍⴻⵎ ⵉ ⵢⵉⴼⵓⵢⵍⴰ ⵎⴻⵕⵕⴰ)</translation>
     </message>
     <message>
         <source>File pattern</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵎⵓⴷⴻⵎⵜ ⵏ ⵢⵉⴼⵓⵢⵍⴰ</translation>
     </message>
     <message>
         <source>Local destination directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⴰⴷⵉⴳⴰⵏ ⵏ ⵜⵓⵣⵣⵏⴰ</translation>
     </message>
     <message>
         <source>Relative (Documents/) or absolute (/tmp/ or C:\TMP) or empty for configured directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴱⵔⵉⴷ ⴰⵎⴰⵙⵙⴰⵖ (Documents/) ⵏⴻⵖ ⵓⵎⵎⵉⴷ (/tmp/ ⵏⴻⵖ C:\TMP), ⵏⴻⵖ ⵉⵍⴻⵎ ⵉ ⵓⴽⴰⵔⴰⵎ ⵏ ⵢⵉⵖⴻⵡⵡⴰⵔⴻⵏ</translation>
     </message>
     <message>
         <source>Source directory on remote computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⴰⵖⴱⴰⵍⵓ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵍⴻⴱⵄⵉⴷ</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵣⵡⴻⵔ</translation>
     </message>
     <message>
         <source>Files in source directory only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⴽⴰⵔⴰⵎ ⴰⵖⴱⴰⵍⵓ ⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Files in source directory and subdirectories</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⴽⴰⵔⴰⵎ ⴰⵖⴱⴰⵍⵓ ⴷ ⵢⵉⴽⴰⵔⴰⵎⴻⵏ-ⵉⵙ ⵏ ⴷⴰⵡ</translation>
     </message>
     <message>
         <source>Collected files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ ⵢⴻⵜⵜⵡⴰⵍⵇⴻⴹⴻⵏ</translation>
     </message>
     <message>
         <source>Overall progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴼⴰⵍ ⴰⵎⴰⵜⵓ</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ</translation>
     </message>
     <message>
         <source>Select destination directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⵔⴻⵏ ⴰⴽⴰⵔⴰⵎ ⵏ ⵜⵓⵣⵣⵏⴰ</translation>
     </message>
     <message>
         <source>Open output directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⴽⴰⵔⴰⵎ ⵏ ⵜⵓⴼⴼⵖⴰ</translation>
     </message>
     <message>
         <source>Enter collection name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ ⵏ ⵜⴻⴳⵔⵓⵎⵎⴰ</translation>
     </message>
     <message>
         <source>Please enter a name for this file collection:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ ⵉ ⵜⴻⴳⵔⵓⵎⵎⴰ-ⴰ ⵏ ⵢⵉⴼⵓⵢⵍⴰ:</translation>
     </message>
     <message>
         <source>Output directory creation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵎⴻⵔⵏⴰ ⵏ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵓⴼⴼⵖⴰ ⵓⵔ ⵜⴻⴷⴷⵉ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>The output directory &quot;%1&quot; does not exist and could not be created. Please check the configuration and the file permissions for the configured destination directory.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⵏ ⵜⵓⴼⴼⵖⴰ &quot;%1&quot; ⵓⵍⴰⵛ-ⵉⵜ, ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵜⵜⵡⴰⵔⵏⵓ. ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⵏⵇⴻⴷ ⵜⴰⵡⵉⵍⴰ ⴷ ⵜⵙⵉⵔⴰⴳ ⵏ ⵢⵉⴼⵓⵢⵍⴰ ⵏ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵓⵣⵣⵏⴰ ⵢⴻⵜⵜⵡⴰⵙⴱⴰⴷⵓⵏ.</translation>
     </message>
 </context>
 <context>
@@ -1826,7 +1828,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ</translation>
     </message>
     <message>
         <source>Number of files</source>
@@ -1837,7 +1839,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FileTransferConfigurationPage</name>
     <message>
         <source>File transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⵇⴰⵍ ⵏ ⵢⵉⴼⵓⵢⵍⴰ</translation>
     </message>
     <message>
         <source>Settings for distributing files</source>
@@ -1949,11 +1951,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User login name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵜⵓⵇⵇⵏⴰ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Full name of user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵓⵎⵎⵉⴷ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Device name</source>
@@ -1979,113 +1981,113 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FileTransferDialog</name>
     <message>
         <source>File transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⵇⴰⵍ ⵏ ⵢⵉⴼⵓⵢⵍⴰ</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵅⵜⵉⵕⵉⵢⵉⵏ</translation>
     </message>
     <message>
         <source>Destination directory on remote computers:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⵏ ⵜⵓⵣⵣⵏⴰ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵍⴻⴱⵄⵉⴷ:</translation>
     </message>
     <message>
         <source>Relative (Desktop/) or absolute (/tmp/ or C:\TMP) or empty for configured directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴱⵔⵉⴷ ⴰⵎⴰⵙⵙⴰⵖ (Desktop/) ⵏⴻⵖ ⵓⵎⵎⵉⴷ (/tmp/ ⵏⴻⵖ C:\TMP), ⵏⴻⵖ ⵉⵍⴻⵎ ⵉ ⵓⴽⴰⵔⴰⵎ ⵏ ⵢⵉⵖⴻⵡⵡⴰⵔⴻⵏ</translation>
     </message>
     <message>
         <source>Overwrite existing files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵎⵙⴻⵍⵙⵉ ⵉⴼⵓⵢⵍⴰ ⵢⴻⵍⵍⴰⵏ</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⵇⴰⵍ ⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Transfer and open file(s) with associated program</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⵇⴰⵍ ⵙⵢⴻⵏ ⵍⴷⵉ ⴰⴼⴰⵢⵍⵓ (ⵉⴼⵓⵢⵍⴰ) ⵙ ⵡⴰⵀⵉⵍ ⵉ ⴰⵙ-ⵉⵡⵓⵍⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Transfer and open destination folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⵇⴰⵍ ⵙⵢⴻⵏ ⵍⴷⵉ ⴰⴽⴰⵔⴰⵎ ⵏ ⵜⵓⵣⵣⵏⴰ</translation>
     </message>
     <message>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ</translation>
     </message>
     <message>
         <source>File transfer error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⴰ ⵏ ⵓⵏⵇⴰⵍ ⵏ ⵢⵉⴼⵓⵢⵍⴰ</translation>
     </message>
 </context>
 <context>
     <name>FileTransferPlugin</name>
     <message>
         <source>Distribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴱⴹⵓ</translation>
     </message>
     <message>
         <source>Click this button to distribute files from your computer to all computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⴱⴹⵓⴹ ⵉⴼⵓⵢⵍⴰ ⵙⴻⴳ ⵓⵙⴻⵍⴽⵉⵎ-ⵉⴽ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ.</translation>
     </message>
     <message>
         <source>Collect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⵇⴻⴹ</translation>
     </message>
     <message>
         <source>Click this button to collect files from all computers to your computer.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵍⴰⵇⴹⴻⴹ ⵉⴼⵓⵢⵍⴰ ⵙⴻⴳ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ ⵖⴻⵔ ⵓⵙⴻⵍⴽⵉⵎ-ⵉⴽ.</translation>
     </message>
     <message>
         <source>Select one or more files to transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⵔⴻⵏ ⵢⵉⵡⴻⵏ ⵏⴻⵖ ⵓⴳⴰⵔ ⵏ ⵢⵉⴼⵓⵢⵍⴰ ⴰⵔⴰ ⵜⴻⵙⵏⴻⵇⵍⴻⴹ</translation>
     </message>
     <message>
         <source>File transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⵇⴰⵍ ⵏ ⵢⵉⴼⵓⵢⵍⴰ</translation>
     </message>
     <message>
         <source>Received file %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ %1 ⵢⴻⵡⵡⴻⴹ-ⴷ.</translation>
     </message>
     <message>
         <source>The file %1 is to be collected, but is still open in an application.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ %1 ⵉⵍⴰⵇ ⴰⴷ ⵢⴻⵜⵜⵡⴰⵍⵇⴻⴹ, ⵎⴰⵛⴰ ⵎⴰⵣⴰⵍ-ⵉⵜ ⵢⴻⵍⴷⵉ ⴷⴻⴳ ⵢⵉⵡⴻⵏ ⵓⵙⵏⴰⵙ.</translation>
     </message>
     <message>
         <source>The file %1 is to be collected, but is still open in the application &lt;b&gt;%2&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ %1 ⵉⵍⴰⵇ ⴰⴷ ⵢⴻⵜⵜⵡⴰⵍⵇⴻⴹ, ⵎⴰⵛⴰ ⵎⴰⵣⴰⵍ-ⵉⵜ ⵢⴻⵍⴷⵉ ⴷⴻⴳ ⵓⵙⵏⴰⵙ &lt;b&gt;%2&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Please save your changes and close the program so that the transfer can be completed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⴽⵍⴻⵙ ⵉⴱⴻⴷⴷⵉⵍⴻⵏ-ⵉⴽ ⵙⵢⴻⵏ ⵎⴷⴻⵍ ⴰⵀⵉⵍ ⴰⴽⴽⴻⵏ ⴰⴷ ⵢⴻⵎⵎⴻⴷ ⵓⵏⵇⴰⵍ.</translation>
     </message>
     <message>
         <source>Are you sure you want to skip transferring the file %1?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴻⵜⵃⴻⵇⵇⴻⴹ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⵣⴻⴳⵍⴻⴹ ⴰⵏⵇⴰⵍ ⵏ ⵓⴼⴰⵢⵍⵓ %1?</translation>
     </message>
     <message>
         <source>Could not receive file %1 as it already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵟⵟⴻⴼ ⴰⴼⴰⵢⵍⵓ %1 ⴰⵛⴽⵓ ⵢⴻⵍⵍⴰ ⵢⴰⴽⴰⵏ.</translation>
     </message>
     <message>
         <source>Could not receive file %1 as it could not be opened for writing!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵟⵟⴻⴼ ⴰⴼⴰⵢⵍⵓ %1 ⴰⵛⴽⵓ ⵓⵔ ⵢⴻⵍⴷⵉ ⴰⵔⴰ ⵉ ⵜⵉⵔⴰ!</translation>
     </message>
     <message>
         <source>Transfer files between computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⵇⴰⵍ ⵏ ⵢⵉⴼⵓⵢⵍⴰ ⴳⴰⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
 </context>
 <context>
     <name>GeneralConfigurationPage</name>
     <message>
         <source>User interface</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴳⵔⵓⴷⴻⵎ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Use system language setting</source>
@@ -2093,7 +2095,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵜⵍⴰⵢⵜ:</translation>
     </message>
     <message>
         <source>Style:</source>
@@ -2105,7 +2107,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Authentication</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>Method:</source>
@@ -2113,15 +2115,15 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Logon authentication</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵙⵜⴻⴱ ⵙ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Key file authentication</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵙⵜⴻⴱ ⵙ ⵓⴼⴰⵢⵍⵓ ⵏ ⵜⵙⴰⵔⵓⵜ</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵢⴻⴷ</translation>
     </message>
     <message>
         <source>Network object directory</source>
@@ -2129,7 +2131,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Backend:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵖⴰⵡⴰⵙ:</translation>
     </message>
     <message>
         <source>Update interval:</source>
@@ -2137,47 +2139,47 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> seconds</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> ⵏ ⵜⴰⵙⵉⵏⵉⵏ</translation>
     </message>
     <message>
         <source>Logging</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵖⵎⵉⵙ</translation>
     </message>
     <message>
         <source>Log file directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⵏ ⵢⵉⴼⵓⵢⵍⴰ ⵏ ⵓⵖⵎⵉⵙ</translation>
     </message>
     <message>
         <source>Log level</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵡⵉⵔ ⵏ ⵓⵖⵎⵉⵙ</translation>
     </message>
     <message>
         <source>Nothing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ</translation>
     </message>
     <message>
         <source>Only critical messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵣⵏⴰⵏ ⵓⵇⵙⵉⵃⴻⵏ ⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Errors and critical messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⵉⵡⵉⵏ ⴷ ⵢⵉⵣⵏⴰⵏ ⵓⵇⵙⵉⵃⴻⵏ</translation>
     </message>
     <message>
         <source>Warnings and errors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵍⵖⴰ ⴷ ⵜⵓⵛⵛⴹⵉⵡⵉⵏ</translation>
     </message>
     <message>
         <source>Information, warnings and errors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⵖⵓⵜ, ⵉⵍⵖⴰ ⴷ ⵜⵓⵛⵛⴹⵉⵡⵉⵏ</translation>
     </message>
     <message>
         <source>Debug messages and everything else</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵣⵏⴰⵏ ⵏ ⵓⵙⴻⵖⵜⵉ ⴷ ⵡⴰⵢⴻⵏ ⵏⵏⵉⴹⴻⵏ ⴰⴽⴽ</translation>
     </message>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵅ</translation>
     </message>
     <message>
         <source>Rotate log files</source>
@@ -2189,11 +2191,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Limit log file size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵜⴰⵍⴰⵙⵜ ⵉ ⵜⵉⴷⴷⵉ ⵏ ⵓⴼⴰⵢⵍⵓ ⵏ ⵓⵖⵎⵉⵙ</translation>
     </message>
     <message>
         <source>Log to standard error output</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵔⵓ ⴰⵖⵎⵉⵙ ⵖⴻⵔ ⵜⵓⴼⴼⵖⴰ ⵜⴰⵎⴰⴳⵏⵓⵜ ⵏ ⵜⵓⵛⵛⴹⵉⵡⵉⵏ</translation>
     </message>
     <message>
         <source>Write to logging system of operating system</source>
@@ -2201,7 +2203,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Clear all log files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴼⴻⴹ ⴰⴽⴽ ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⵖⵎⵉⵙ</translation>
     </message>
     <message>
         <source>Authentication is set up properly on this computer.</source>
@@ -2221,19 +2223,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Log files cleared</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⵖⵎⵉⵙ ⵜⵜⵡⴰⵙⴻⴼⴹⴻⵏ</translation>
     </message>
     <message>
         <source>All log files were cleared successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴽ ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⵖⵎⵉⵙ ⵜⵜⵡⴰⵙⴻⴼⴹⴻⵏ ⴰⴽⴽⴻⵏ ⵉⵡⴰⵜⴰ.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⴰ</translation>
     </message>
     <message>
         <source>Could not remove all log files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⴽⴽⴻⵙ ⴰⴽⴽ ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⵖⵎⵉⵙ.</translation>
     </message>
     <message>
         <source>Authentication test</source>
@@ -2241,7 +2243,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴳⵔⴰⵡⴻⵏ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ</translation>
     </message>
     <message>
         <source>Include user groups from domain</source>
@@ -2293,11 +2295,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>LdapConfigurationPage</name>
     <message>
         <source>Basic settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵉⴳⴻⵊⴷⴰⵏⴻⵏ</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⵜⵓ</translation>
     </message>
     <message>
         <source>Anonymous bind</source>
@@ -2317,7 +2319,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> ⵎⵙ</translation>
     </message>
     <message>
         <source>LDAP server and port</source>
@@ -2609,7 +2611,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵢⴻⴷ</translation>
     </message>
     <message>
         <source>LDAP base DN test failed</source>
@@ -2668,7 +2670,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Enter username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Please enter a user login name (wildcards allowed) which to query:</source>
@@ -2760,11 +2762,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>users</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵇⴷⴰⵛⴻⵏ</translation>
     </message>
     <message>
         <source>user groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴳⵔⴰⵡⴻⵏ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ</translation>
     </message>
     <message>
         <source>computers</source>
@@ -2910,7 +2912,9 @@ Make sure that the names of the keys belonging to each other are identical on al
         <source>%1 %2 have been queried successfully:
 
 %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 %2 ⵜⵜⵡⴰⵙⵓⵜⵔⴻⵏ ⴰⴽⴽⴻⵏ ⵉⵡⴰⵜⴰ:
+
+%3</translation>
     </message>
     <message>
         <source>LDAP filter test failed</source>
@@ -2947,7 +2951,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Show help about command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵜⴰⵍⵍⴰⵍⵜ ⵖⴻⴼ ⵜⵍⴰⴷⵏⴰ</translation>
     </message>
     <message>
         <source>Please specify a valid LDAP url following the schema &quot;ldap[s]://[user[:password]@]hostname[:port]&quot;</source>
@@ -2971,11 +2975,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>%1 (load computers and locations from LDAP/AD)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (ⵙⴰⵍⵉ-ⴷ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⴷ ⵜⴻⵅⵅⴰⵎⵉⵏ ⵙⴻⴳ LDAP/AD)</translation>
     </message>
     <message>
         <source>%1 (load users and groups from LDAP/AD)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (ⵙⴰⵍⵉ-ⴷ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷ ⵢⵉⴳⵔⴰⵡⴻⵏ ⵙⴻⴳ LDAP/AD)</translation>
     </message>
     <message>
         <source>LDAP/AD support for Veyon</source>
@@ -3040,7 +3044,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>enter search filter...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵛⴻⵎ ⵉⵎⵙⵉⵣⴷⴻⴳ ⵏ ⵓⵏⴰⴷⵉ...</translation>
     </message>
 </context>
 <context>
@@ -3062,155 +3066,155 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>MainWindow</name>
     <message>
         <source>Veyon Configurator</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵙⴱⴰⴷⵓ ⵏ Veyon</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⵜⵓ</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵥⵍⵓ</translation>
     </message>
     <message>
         <source>Master</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵍⵎⴰⴷ</translation>
     </message>
     <message>
         <source>Access control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⵍⴰⵍⵜ</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⴼⴻⵖ</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;Save settings to file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵍⴻⵙ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⴷⴻⴳ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Save settings to file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵍⴻⵙ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⴷⴻⴳ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+S</translation>
     </message>
     <message>
         <source>L&amp;oad settings from file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴰⵍⵉ-ⴷ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵙⴻⴳ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+O</translation>
     </message>
     <message>
         <source>About Veyon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵖⴻⴼ Veyon</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵖⴻⴼ Qt</translation>
     </message>
     <message>
         <source>Reset configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵍⴻⵙ ⴰⵡⴻⵏⵏⴻⵣ ⵏ ⵜⵡⵉⵍⴰ</translation>
     </message>
     <message>
         <source>&amp;Standard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⴳⵏⵓ</translation>
     </message>
     <message>
         <source>&amp;Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴻⵇⵇⴰⵢⴻⵏ</translation>
     </message>
     <message>
         <source>Adjust size of computer icons automatically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴳⴳⴻⵎ ⵜⵉⴷⴷⵉ ⵏ ⵜⵉⴳⵏⵉⵜⵉⵏ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙ ⵡⵓⴷⴻⵎ ⴰⵡⵓⵔⵎⴰⵏ</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵡⵓⵔⵎⴰⵏ</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵖⴻⴼ</translation>
     </message>
     <message>
         <source>Search users and computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵏⴰⴷⵉ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Align computers to grid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴳⴳⴻⵎ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵖⴻⴼ ⵜⴼⴻⵔⴽⵉⵜ</translation>
     </message>
     <message>
         <source>Only show powered on computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴽⴰⵏ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵢⴻⵔⵎⴷⴻⵏ</translation>
     </message>
     <message>
         <source>Locations &amp;&amp; computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵅⵅⴰⵎⵉⵏ &amp;&amp; ⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Screenshots</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵟⵟⴼⵉⵡⵉⵏ ⵏ ⵓⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>Slideshow</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴽⴰⵏ ⵏ ⵜⵓⴳⵏⵉⵡⵉⵏ</translation>
     </message>
     <message>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵎⵖⴻⵔ</translation>
     </message>
     <message>
         <source>Only show computers with logged on users</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴽⴰⵏ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵢⴻⵇⵇⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Veyon Configurator %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵙⴱⴰⴷⵓ ⵏ Veyon %1</translation>
     </message>
     <message>
         <source>Load settings from file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴰⵍⵉ-ⴷ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵙⴻⴳ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>JSON files (*.json)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ JSON (*.json)</translation>
     </message>
     <message>
         <source>Do you really want to reset the local configuration and revert all settings to their defaults?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴻⴱⵖⵉⴹ ⵙ ⵜⵉⴷⴻⵜ ⴰⴷ ⵜⴰⵍⵙⴻⴹ ⴰⵡⴻⵏⵏⴻⵣ ⵏ ⵜⵡⵉⵍⴰ ⵜⴰⴷⵉⴳⴰⵏⵜ, ⴰⴷ ⴷ-ⵜⴻⵔⵔⴻⴹ ⴰⴽⴽ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵖⴻⵔ ⵡⴰⵣⴰⵍⴻⵏ-ⵏⵙⴻⵏ ⵉⵎⴻⵣⵡⴻⵔ?</translation>
     </message>
     <message>
         <source>Unsaved settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵙⴽⴻⵍⵙⴻⵏ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>There are unsaved settings. Quit anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⵍⴰⵏ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵙⴽⴻⵍⵙⴻⵏ ⴰⵔⴰ. ⴰⴷ ⵜⴻⴼⴼⵖⴻⴹ ⴰⴽⴽⴻⵏ ⵢⴻⴱⵖⵓ ⵢⵉⵍⵉ?</translation>
     </message>
     <message>
         <source>Insufficient privileges</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵙⵉⵔⴰⴳ ⵓⵔ ⵇⵡⵉⵏⵜ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>Could not start with administrative privileges. Please make sure a sudo-like program is installed for your desktop environment! The program will be run with normal user privileges.</source>
@@ -3218,7 +3222,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Configuration not writable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵡⵉⵍⴰ ⵓⵔ ⵜⴻⵜⵜⵡⴰⵔⵓ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
@@ -3226,52 +3230,54 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Authentication impossible</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵙⵜⴻⴱ ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⵉⵍⵉ</translation>
     </message>
     <message>
         <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⵉⴼⵓⵢⵍⴰ ⵏ ⵜⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ ⵏⴻⵖ ⵡⵉⴷ ⵜⴻⵙⵄⵉⴹ ⵇⵇⵉⵎⴻⵏ. ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⵏⵓⵍⴼⵓ-ⴷ ⵉⴼⵓⵢⵍⴰ ⵏ ⵜⵙⵓⵔⴰ ⵉⵎⴰⵢⵏⵓⵜⴻⵏ ⵙ ⵓⵎⴻⵙⴱⴰⴷⵓ ⵏ Veyon. ⵏⴻⵖ ⵙⴱⴰⴷⵓ ⴰⵙⴻⵙⵜⴻⴱ ⵙ ⵓⵏⴻⴽⵛⵓⵎ ⵙ ⵓⵎⴻⵙⴱⴰⴷⵓ ⵏ Veyon. ⵎⴰ ⵓⵍⴰⵛ, ⵓⵔ ⵜⴻⵜⵜⵉⵣⵎⵉⵔⴻⴹ ⴰⵔⴰ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙ Veyon.</translation>
     </message>
     <message>
         <source>Access denied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴻⴽⵛⵓⵎ ⵢⴻⵜⵜⵡⴰⴳⵉ</translation>
     </message>
     <message>
         <source>According to the local configuration you&apos;re not allowed to access computers in the network. Please log in with a different account or let your system administrator check the local configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴽⴻⵏ ⵜⴻⵍⵍⴰ ⵜⵡⵉⵍⴰ ⵜⴰⴷⵉⴳⴰⵏⵜ, ⵓⵔ ⵜⴻⵜⵜⵓⵙⵉⵔⴻⴳⴻⴹ ⴰⵔⴰ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵓⵥⴻⵟⵟⴰ. ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⴽⵛⴻⵎ ⵙ ⵓⵎⵉⴹⴰⵏ ⵏⵏⵉⴹⴻⵏ ⵏⴻⵖ ⴻⴵⴵ ⴰⵏⴻⴷⴱⴰⵍ ⵏ ⵓⵏⴰⴳⵔⴰⵡ ⴰⴷ ⵉⵙⴻⵏⵇⴻⴷ ⵜⴰⵡⵉⵍⴰ ⵜⴰⴷⵉⴳⴰⵏⵜ.</translation>
     </message>
     <message>
         <source>Feature active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵎⴰⵀⵉⵍⵜ ⵜⵓⵔⵎⵉⴷⵜ</translation>
     </message>
     <message>
         <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵎⴰⵀⵉⵍⵜ &quot;%1&quot; ⵎⴰⵣⴰⵍ-ⵉⵜⵜ ⵜⵓⵔⵎⵉⴷ. ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⵃⴱⴻⵙ-ⵉⵜⵜ ⵙⴻⵏⴷ ⴰⴷ ⵜⵎⴻⴷⵍⴻⴹ Veyon.</translation>
     </message>
     <message>
         <source>Use custom computer arrangement.
 
 Press and hold to load arrangement from a file or save current arrangement to a file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵇⴷⴻⵛ ⴰⵙⵓⴷⴷⴻⵙ ⵓⴷⵎⴰⵡⴰⵏ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ.
+
+ⵙⵉⵜ ⵓ ⵟⵟⴻⴼ ⴰⴽⴽⴻⵏ ⴰⴷ ⴷ-ⵜⴻⵙⵙⴰⵍⵉⴹ ⴰⵙⵓⴷⴷⴻⵙ ⵙⴻⴳ ⵓⴼⴰⵢⵍⵓ ⵏⴻⵖ ⴰⴷ ⵜⴻⵙⴽⴻⵍⵙⴻⴹ ⴰⵙⵓⴷⴷⴻⵙ ⴰⵎⵉⵔⴰⵏ ⴷⴻⴳ ⵓⴼⴰⵢⵍⵓ.</translation>
     </message>
     <message>
         <source>Load computer positions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴰⵍⵉ-ⴷ ⵉⵎⵓⴽⴰⵏ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Save computer positions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵍⴻⵙ ⵉⵎⵓⴽⴰⵏ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
 </context>
 <context>
     <name>MasterConfigurationPage</name>
     <message>
         <source>Basic settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵉⴳⴻⵊⴷⴰⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Directories</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴽⴰⵔⴰⵎⴻⵏ</translation>
     </message>
     <message>
         <source>User configuration</source>
@@ -3279,7 +3285,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Screenshots</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵟⵟⴼⵉⵡⵉⵏ ⵏ ⵓⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>Text color</source>
@@ -3287,7 +3293,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> ⵎⵙ</translation>
     </message>
     <message>
         <source>Background color</source>
@@ -3299,7 +3305,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵡⵓⵔⵎⴰⵏ</translation>
     </message>
     <message>
         <source>Computer and user name</source>
@@ -3363,7 +3369,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Guest</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵏⴻⴱⴳⵉ</translation>
     </message>
     <message>
         <source>Guest user identity extension</source>
@@ -3491,19 +3497,19 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵣⵡⴻⵔ</translation>
     </message>
     <message>
         <source>Host address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ ⵏ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ</translation>
     </message>
     <message>
         <source>Session client address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ ⵏ ⵓⵎⵙⴰⵖ ⵏ ⵜⵖⵉⵎⵉⵜ</translation>
     </message>
     <message>
         <source>Session client name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵎⵙⴰⵖ ⵏ ⵜⵖⵉⵎⵉⵜ</translation>
     </message>
     <message>
         <source>Session host name</source>
@@ -3515,11 +3521,11 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Full name of user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵓⵎⵎⵉⴷ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>User login name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵜⵓⵇⵇⵏⴰ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Computer UID role</source>
@@ -3571,18 +3577,18 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Remote access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴻⴽⵛⵓⵎ ⵙ ⵍⴻⴱⵄⵉⴷ</translation>
     </message>
 </context>
 <context>
     <name>MonitoringMode</name>
     <message>
         <source>Monitoring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵄⴻⵙⵙⵉ</translation>
     </message>
     <message>
         <source>This mode allows you to monitor all computers at one or more locations.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴽⴰⵔ-ⴰ ⵢⴻⴵⴵⴰ-ⴽ ⴰⴷ ⵜⵄⴰⵙⵙⴻⴹ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ ⵏ ⵢⵉⵡⴻⵜ ⵏⴻⵖ ⵓⴳⴰⵔ ⵏ ⵜⴻⵅⵅⴰⵎⵉⵏ.</translation>
     </message>
     <message>
         <source>Query application version of the server</source>
@@ -3602,19 +3608,19 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Identification request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵓⵜⴻⵔ ⵏ ⵓⵙⵓⵍⵓ</translation>
     </message>
     <message>
         <source>Please enter your name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ-ⵉⴽ:</translation>
     </message>
     <message>
         <source>First name + last name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ + ⵉⵙⴻⵎ ⵏ ⵜⵡⴰⵛⵓⵍⵜ</translation>
     </message>
     <message>
         <source>Builtin monitoring mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴽⴰⵔ ⵏ ⵓⵄⴻⵙⵙⵉ ⵢⴻⵜⵜⵡⴰⴱⵏⴰⵏ</translation>
     </message>
 </context>
 <context>
@@ -3628,27 +3634,27 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <name>OpenWebsiteDialog</name>
     <message>
         <source>Open website</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⵙⵎⴻⵍ ⵡⴻⴱ</translation>
     </message>
     <message>
         <source>e.g. Veyon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⴷⵢⴰ: Veyon</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵛⴼⵓ ⵙⵢⴻⵏ ⵔⵏⵓ ⵖⴻⵔ ⵡⵓⵎⵓⵖ ⵏ ⵢⵉⵙⵎⴰⵍ</translation>
     </message>
     <message>
         <source>e.g. www.veyon.io</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⴷⵢⴰ: www.veyon.io</translation>
     </message>
     <message>
         <source>Please enter the URL of the website to open:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⴽⵛⴻⵎ URL ⵏ ⵓⵙⵎⴻⵍ ⴰⵔⴰ ⵜⴻⵍⴷⵉⴹ:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ:</translation>
     </message>
 </context>
 <context>
@@ -3659,19 +3665,19 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ-ⵉⴽ ⵏ ⵓⵙⴻⵇⴷⴰⵛ ⴷ ⵡⴰⵡⴰⵍ-ⵉⴽ ⵓⴼⴼⵉⵔ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⵖⴻⵔ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ.</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ</translation>
     </message>
     <message>
         <source>Authentication error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>Logon failed with given username and password. Please try again!</source>
@@ -3697,7 +3703,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ</translation>
     </message>
     <message>
         <source>Description</source>
@@ -3724,51 +3730,51 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <name>PowerControlFeaturePlugin</name>
     <message>
         <source>Power on a computer via Wake-on-LAN (WOL)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⴽⴻⵔ ⴰⵙⴻⵍⴽⵉⵎ ⵙ Wake-on-LAN (WOL)</translation>
     </message>
     <message>
         <source>Power on</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⴽⴻⵔ</translation>
     </message>
     <message>
         <source>Click this button to power on all computers. This way you do not have to power on each computer by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵙⴻⴽⴽⵔⴻⴹ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ. ⴰⴽⴽⴰ ⵓⵔ ⵜⴻⵜⵜⵃⵡⴰⴵⴻⴹ ⴰⵔⴰ ⴰⴷ ⵜⵙⴻⴽⴽⵔⴻⴹ ⵢⴰⵍ ⴰⵙⴻⵍⴽⵉⵎ ⵙ ⵓⴼⵓⵙ.</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵍⴻⵙ ⴰⵙⴻⴽⴽⴻⵔ</translation>
     </message>
     <message>
         <source>Click this button to reboot all computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴰⵍⵙⴻⴹ ⴰⵙⴻⴽⴽⴻⵔ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ.</translation>
     </message>
     <message>
         <source>Power down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵅⵙⵉ</translation>
     </message>
     <message>
         <source>Click this button to power down all computers. This way you do not have to power down each computer by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵙⴻⵅⵙⵉⴹ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ. ⴰⴽⴽⴰ ⵓⵔ ⵜⴻⵜⵜⵃⵡⴰⴵⴻⴹ ⴰⵔⴰ ⴰⴷ ⵜⵙⴻⵅⵙⵉⴹ ⵢⴰⵍ ⴰⵙⴻⵍⴽⵉⵎ ⵙ ⵓⴼⵓⵙ.</translation>
     </message>
     <message>
         <source>Power down now</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵅⵙⵉ ⵜⵓⵔⴰ</translation>
     </message>
     <message>
         <source>Install updates and power down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴱⴷⴻⴷ ⵉⵍⴻⵇⵎⴰⵏ ⵙⵢⴻⵏ ⵙⴻⵅⵙⵉ</translation>
     </message>
     <message>
         <source>Power down after user confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵅⵙⵉ ⴷⴻⴼⴼⵉⵔ ⴰⵙⴻⵏⵜⴻⵎ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Power down after timeout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵅⵙⵉ ⴷⴻⴼⴼⵉⵔ ⴰⴽⵓⴷ ⵢⴻⵜⵜⵡⴰⵙⴱⴰⴷⵓⵏ</translation>
     </message>
     <message>
         <source>MAC ADDRESS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ MAC</translation>
     </message>
     <message>
         <source>This command broadcasts a Wake-on-LAN (WOL) packet to the network in order to power on the computer with the given MAC address.</source>
@@ -3776,56 +3782,58 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Confirm reboot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⵜⴻⵎ ⴰⵍⵍⵓⵙ ⵏ ⵓⵙⴻⴽⴽⴻⵔ</translation>
     </message>
     <message>
         <source>Do you really want to reboot &lt;b&gt;ALL&lt;/b&gt; computers?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴻⴱⵖⵉⴹ ⵙ ⵜⵉⴷⴻⵜ ⴰⴷ ⵜⴰⵍⵙⴻⴹ ⴰⵙⴻⴽⴽⴻⵔ ⵏ &lt;b&gt;ⵎⴻⵕⵕⴰ&lt;/b&gt; ⵉⵙⴻⵍⴽⵉⵎⴻⵏ?</translation>
     </message>
     <message>
         <source>Do you really want to reboot the selected computers?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴻⴱⵖⵉⴹ ⵙ ⵜⵉⴷⴻⵜ ⴰⴷ ⵜⴰⵍⵙⴻⴹ ⴰⵙⴻⴽⴽⴻⵔ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ?</translation>
     </message>
     <message>
         <source>Confirm power down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⵜⴻⵎ ⴰⵙⴻⵅⵙⵉ</translation>
     </message>
     <message>
         <source>Do you really want to power down &lt;b&gt;ALL&lt;/b&gt; computers?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴻⴱⵖⵉⴹ ⵙ ⵜⵉⴷⴻⵜ ⴰⴷ ⵜⵙⴻⵅⵙⵉⴹ &lt;b&gt;ⵎⴻⵕⵕⴰ&lt;/b&gt; ⵉⵙⴻⵍⴽⵉⵎⴻⵏ?</translation>
     </message>
     <message>
         <source>Do you really want to power down the selected computers?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴻⴱⵖⵉⴹ ⵙ ⵜⵉⴷⴻⵜ ⴰⴷ ⵜⵙⴻⵅⵙⵉⴹ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ?</translation>
     </message>
     <message>
         <source>Invalid MAC address specified!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵙⴰ MAC ⴷ ⵜⴰⵔⴰⵎⴻⵖⵜⵓⵜ!</translation>
     </message>
     <message>
         <source>The computer was remotely requested to power down. Do you want to power down the computer now?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵜⵜⵡⴰⵙⵓⵜⴻⵔ-ⴷ ⵙ ⵍⴻⴱⵄⵉⴷ ⴰⴷ ⵢⴻⵏⵙⵓ ⵓⵙⴻⵍⴽⵉⵎ. ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⵙⴻⵅⵙⵉⴹ ⴰⵙⴻⵍⴽⵉⵎ ⵜⵓⵔⴰ?</translation>
     </message>
     <message>
         <source>The computer will be powered down in %1 minutes, %2 seconds.
 
 Please save your work and close all programs.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ ⴰⴷ ⵢⴻⵏⵙⵓ ⴷⴻⴳ %1 ⵏ ⵜⴻⵙⴷⴰⵜⵉⵏ, %2 ⵏ ⵜⴰⵙⵉⵏⵉⵏ.
+
+ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⴽⵍⴻⵙ ⵍⴻⵇⴷⵉⵛ-ⵉⴽ ⵙⵢⴻⵏ ⵎⴷⴻⵍ ⴰⴽⴽ ⵉⵀⵉⵍⴻⵏ.</translation>
     </message>
     <message>
         <source>Power on/down or reboot a computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⴽⴻⵔ/ⵙⴻⵅⵙⵉ ⵏⴻⵖ ⴰⵍⴻⵙ ⴰⵙⴻⴽⴽⴻⵔ ⵏ ⵓⵙⴻⵍⴽⵉⵎ</translation>
     </message>
     <message>
         <source>Commands for controlling power status of computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⴰⴷⵏⵉⵏ ⵉ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵡⴰⴷⴷⴰⴷ ⵏ ⵜⴻⵣⵎⴻⵔⵜ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
 </context>
 <context>
     <name>PowerDownTimeInputDialog</name>
     <message>
         <source>Power down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵅⵙⵉ</translation>
     </message>
     <message>
         <source>Please specify a timeout for powering down the selected computers:</source>
@@ -3837,46 +3845,46 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵙⵉⵏⵉⵏ</translation>
     </message>
 </context>
 <context>
     <name>RemoteAccessFeaturePlugin</name>
     <message>
         <source>Remote view</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵎⵓⵖⵍⵉ ⵙ ⵍⴻⴱⵄⵉⴷ</translation>
     </message>
     <message>
         <source>Open a remote view for a computer without interaction.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴷⵉ ⵜⴰⵎⵓⵖⵍⵉ ⵙ ⵍⴻⴱⵄⵉⴷ ⵖⴻⵔ ⵓⵙⴻⵍⴽⵉⵎ ⵡⴰⵔ ⴰⵎⵢⵉⴳⴻⵡ.</translation>
     </message>
     <message>
         <source>Remote control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵏⵇⴻⴷ ⵙ ⵍⴻⴱⵄⵉⴷ</translation>
     </message>
     <message>
         <source>Open a remote control window for a computer.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⵙⴼⴰⵢⵍⵓ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵙ ⵍⴻⴱⵄⵉⴷ ⵉ ⵓⵙⴻⵍⴽⵉⵎ.</translation>
     </message>
     <message>
         <source>Exchange clipboard contents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴱⴻⴷⴷⴻⵍ ⴰⴳⴱⵓⵔ ⵏ ⵜⴻⵛⴼⴰⵡⵉⵜ</translation>
     </message>
     <message>
         <source>Show help about command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵜⴰⵍⵍⴰⵍⵜ ⵖⴻⴼ ⵜⵍⴰⴷⵏⴰ</translation>
     </message>
     <message>
         <source>Remote access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴻⴽⵛⵓⵎ ⵙ ⵍⴻⴱⵄⵉⴷ</translation>
     </message>
     <message>
         <source>No computer has been selected so you can enter a hostname or IP address of a computer for manual access:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵙⴻⵍⴽⵉⵎ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ, ⵉⵀⵉ ⵜⵣⴻⵎⵔⴻⴹ ⴰⴷ ⵜⴻⵙⴻⴽⵛⵎⴻⴹ ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ ⵏⴻⵖ ⵜⴰⵏⵙⴰ IP ⵏ ⵓⵙⴻⵍⴽⵉⵎ ⵉ ⵓⵏⴻⴽⵛⵓⵎ ⵙ ⵓⴼⵓⵙ:</translation>
     </message>
     <message>
         <source>Remote view or control a computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵎⵓⵖⵍⵉ ⵏⴻⵖ ⴰⵙⴻⵏⵇⴻⴷ ⵙ ⵍⴻⴱⵄⵉⴷ ⵏ ⵓⵙⴻⵍⴽⵉⵎ</translation>
     </message>
 </context>
 <context>
@@ -3894,35 +3902,35 @@ Please save your work and close all programs.</source>
     <name>RemoteAccessWidgetToolBar</name>
     <message>
         <source>View only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵎⵓⵖⵍⵉ ⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Remote control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵏⵇⴻⴷ ⵙ ⵍⴻⴱⵄⵉⴷ</translation>
     </message>
     <message>
         <source>Select screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⵔⴻⵏ ⴰⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>Send shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵣⴻⵏ ⴰⵏⴻⴳⵣⵓⵎ</translation>
     </message>
     <message>
         <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵟⵟⴼⴰ ⵏ ⵓⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴳⴷⵉⵍ ⴰⵞⵞⵓⵔⴰⵏ</translation>
     </message>
     <message>
         <source>Window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⴼⴻⵖ</translation>
     </message>
     <message>
         <source>Ctrl+Alt+Del</source>
@@ -3950,7 +3958,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵎⵓⵖ</translation>
     </message>
     <message>
         <source>Alt+Ctrl+F1</source>
@@ -3958,53 +3966,53 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Connected.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵇⵇⴻⵏ.</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵇⵇⵏⴰ...</translation>
     </message>
     <message>
         <source>All screens</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴳⴷⵉⵍⴻⵏ ⵎⴻⵕⵕⴰ</translation>
     </message>
 </context>
 <context>
     <name>ScreenLockFeaturePlugin</name>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⴽⴻⵕ</translation>
     </message>
     <message>
         <source>Unlock</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵔⵔⴻⵃ</translation>
     </message>
     <message>
         <source>To reclaim all user&apos;s full attention you can lock their computers using this button. In this mode all input devices are locked and the screens are blacked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴽⴻⵏ ⴰⴷ ⴷ-ⵜⴻⵔⵔⴻⴹ ⵍⵡⴻⵍⵀⴰ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵎⴻⵕⵕⴰ, ⵜⵣⴻⵎⵔⴻⴹ ⴰⴷ ⵜⵙⴻⴽⴽⵕⴻⴹ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ-ⵏⵙⴻⵏ ⵙ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ. ⴷⴻⴳ ⵓⵙⴽⴰⵔ-ⴰ, ⴰⴽⴽ ⵉⴱⴻⵏⴽⴰⵏ ⵏ ⵓⵏⴻⴽⵛⵓⵎ ⵜⵜⵡⴰⵙⴻⴽⴽⵕⴻⵏ, ⵉⴳⴷⵉⵍⴻⵏ ⵜⵜⵓⵖⴰⵍⴻⵏ ⴷ ⵉⴱⴻⵔⴽⴰⵏⴻⵏ.</translation>
     </message>
     <message>
         <source>Lock input devices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⴽⴻⵕ ⵉⴱⴻⵏⴽⴰⵏ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Unlock input devices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵔⵔⴻⵃ ⵉⴱⴻⵏⴽⴰⵏ ⵏ ⵓⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>To reclaim all user&apos;s full attention you can lock their computers using this button. In this mode all input devices are locked while the desktop is still visible.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴽⴻⵏ ⴰⴷ ⴷ-ⵜⴻⵔⵔⴻⴹ ⵍⵡⴻⵍⵀⴰ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵎⴻⵕⵕⴰ, ⵜⵣⴻⵎⵔⴻⴹ ⴰⴷ ⵜⵙⴻⴽⴽⵕⴻⴹ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ-ⵏⵙⴻⵏ ⵙ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ. ⴷⴻⴳ ⵓⵙⴽⴰⵔ-ⴰ, ⴰⴽⴽ ⵉⴱⴻⵏⴽⴰⵏ ⵏ ⵓⵏⴻⴽⵛⵓⵎ ⵜⵜⵡⴰⵙⴻⴽⴽⵕⴻⵏ, ⵜⴰⵏⴰⵔⵉⵜ ⵎⴰⵣⴰⵍ-ⵉⵜⵜ ⵜⴻⵜⵜⴱⴰⵏ.</translation>
     </message>
     <message>
         <source>Lock screen and input devices of a computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⴽⴻⵕ ⴰⴳⴷⵉⵍ ⴷ ⵢⵉⴱⴻⵏⴽⴰⵏ ⵏ ⵓⵏⴻⴽⵛⵓⵎ ⵏ ⵓⵙⴻⵍⴽⵉⵎ</translation>
     </message>
 </context>
 <context>
     <name>Screenshot</name>
     <message>
         <source>unknown</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵔⵓⵙⵙⵉⵏ</translation>
     </message>
     <message>
         <source>Could not take a screenshot as directory %1 doesn&apos;t exist and couldn&apos;t be created.</source>
@@ -4012,7 +4020,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵟⵟⴼⴰ ⵏ ⵓⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>Could not open screenshot file %1 for writing.</source>
@@ -4023,15 +4031,15 @@ Please save your work and close all programs.</source>
     <name>ScreenshotFeaturePlugin</name>
     <message>
         <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵟⵟⴼⴰ ⵏ ⵓⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>Use this function to take a screenshot of selected computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵇⴷⴻⵛ ⵜⴰⵡⵓⵔⵉ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⵟⵟⴼⴻⴹ ⵜⵓⵟⵟⴼⴰ ⵏ ⵓⴳⴷⵉⵍ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ.</translation>
     </message>
     <message>
         <source>Screenshots taken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵟⵟⴼⵉⵡⵉⵏ ⵏ ⵓⴳⴷⵉⵍ ⵜⵜⵡⴰⵟⵟⴼⴻⵏⵜ</translation>
     </message>
     <message>
         <source>Screenshot of %1 computer have been taken successfully.</source>
@@ -4039,7 +4047,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Take screenshots of computers and save them locally.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵟⵟⴻⴼ ⵜⵓⵟⵟⴼⵉⵡⵉⵏ ⵏ ⵓⴳⴷⵉⵍ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙⵢⴻⵏ ⵙⴻⴽⵍⴻⵙ-ⵉⵜⴻⵏⵜ ⵙ ⵡⵓⴷⴻⵎ ⴰⴷⵉⴳⴰⵏ.</translation>
     </message>
 </context>
 <context>
@@ -4050,7 +4058,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>User:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ:</translation>
     </message>
     <message>
         <source>Computer:</source>
@@ -4058,23 +4066,23 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵣⴻⵎⵣ:</translation>
     </message>
     <message>
         <source>Time:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⵓⴷ:</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ</translation>
     </message>
     <message>
         <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵟⵟⴼⴰ ⵏ ⵓⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>Do you really want to delete all selected screenshots?</source>
@@ -4085,38 +4093,38 @@ Please save your work and close all programs.</source>
     <name>ServerAccessControlManager</name>
     <message>
         <source>Requested authentication method not available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵔⵔⴰⵢⵜ ⵏ ⵓⵙⴻⵙⵜⴻⴱ ⵢⴻⵜⵜⵡⴰⵙⵓⵜⵔⴻⵏ ⵓⵍⴰⵛ-ⵉⵜⵜ</translation>
     </message>
     <message>
         <source>Access allowed by rule &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴻⴽⵛⵓⵎ ⵢⴻⵜⵜⵓⵙⵉⵔⴻⴳ ⵙ ⵓⵍⵓⴳⴻⵏ &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Access denied by rule &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵏⴻⴽⵛⵓⵎ ⵢⴻⵜⵜⵡⴰⴳⵉ ⵙ ⵓⵍⵓⴳⴻⵏ &quot;%1&quot;</translation>
     </message>
     <message>
         <source>No rule allowed access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵍⵓⴳⴻⵏ ⵉ ⵢⴻⵙⵉⵔⴳⴻⵏ ⴰⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>Accessing user not member of an authorized user group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ ⵉ ⴷ-ⵉⴽⴻⵛⵎⴻⵏ ⵎⴰⵞⵞⵉ ⴷ ⴰⵄⴻⴳⴳⴰⵍ ⵏ ⵓⴳⵔⴰⵡ ⵏ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵢⴻⵜⵜⵓⵙⵉⵔⴳⴻⵏ</translation>
     </message>
     <message>
         <source>User has denied access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ ⵢⵓⴳⵉ ⴰⵏⴻⴽⵛⵓⵎ</translation>
     </message>
     <message>
         <source>User confirmed access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵇⴷⴰⵛ ⵢⴻⵙⴻⵏⵜⴻⵎ ⴰⵏⴻⴽⵛⵓⵎ</translation>
     </message>
 </context>
 <context>
     <name>ServiceConfigurationPage</name>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⵜⵓ</translation>
     </message>
     <message>
         <source>Show notification when an unauthorized access is blocked</source>
@@ -4136,27 +4144,27 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Hide tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⴼⴻⵔ ⵜⵉⴳⵏⵉⵜ ⴷⴻⴳ ⵓⴼⴻⴳⴳⴰⴳ ⵏ ⵡⴰⴷⴷⴰⴷ</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⴽⴽⴻⵔ ⴰⵡⵓⵔⵎⴰⵏ</translation>
     </message>
     <message>
         <source>State:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴷⴷⴰⴷ:</translation>
     </message>
     <message>
         <source>Stopped</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵃⴱⴻⵙ</translation>
     </message>
     <message>
         <source>Start service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⴰⵎⴻⵥⵍⵓ</translation>
     </message>
     <message>
         <source>Stop service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵃⴱⴻⵙ ⴰⵎⴻⵥⵍⵓ</translation>
     </message>
     <message>
         <source>Session mode</source>
@@ -4201,7 +4209,7 @@ Typically this is required to support terminal servers.</source>
     </message>
     <message>
         <source>Demo server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵇⴻⴷⴷⴰⵛ ⵏ ⵓⵙⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Miscellaneous settings</source>
@@ -4209,11 +4217,11 @@ Typically this is required to support terminal servers.</source>
     </message>
     <message>
         <source>Enable firewall exception</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵎⴻⴷ ⵜⴰⵙⵓⵔⴻⴼⵜ ⵏ firewall</translation>
     </message>
     <message>
         <source>Allow connections from localhost only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵔⴻⴳ ⵜⵓⵇⵇⵏⵉⵡⵉⵏ ⵙⴻⴳ localhost ⴽⴰⵏ</translation>
     </message>
     <message>
         <source>Disable clipboard synchronization</source>
@@ -4237,7 +4245,7 @@ Typically this is required to support terminal servers.</source>
     </message>
     <message>
         <source>Running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵜⴻⴷⴷⵓ</translation>
     </message>
     <message>
         <source>Session metadata</source>
@@ -4263,7 +4271,9 @@ Typically this is required to support terminal servers.</source>
         <source>Optionally enter a regular expression with a capture to extract a part of the computer name and use it as the display name for the computer.
 
 Example: [^-]*-(PC[0-9]*)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙ ⵡⵓⴷⴻⵎ ⴰⴼⵔⴰⵢⴰⵏ, ⵙⴻⴽⵛⴻⵎ ⵜⴰⵏⴼⴰⵍⵉⵜ ⵜⴰⵎⴰⴳⵏⵓⵜ ⵙ ⵜⵟⵓⵟⴼⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⴷ-ⵜⴻⵙⵙⵓⴼⵖⴻⴹ ⴰⵃⵔⵉⵛ ⵙⴻⴳ ⵢⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵍⴽⵉⵎ ⵓ ⴰⴷ ⵜ-ⵜⴻⵙⵇⴻⴷⵛⴻⴹ ⴷ ⵉⵙⴻⵎ ⵏ ⵓⵙⴽⴰⵏ ⵏ ⵓⵙⴻⵍⴽⵉⵎ.
+
+ⴰⵎⴻⴷⵢⴰ: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
@@ -4371,69 +4381,69 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>SlideshowPanel</name>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵣⵡⵉⵔ</translation>
     </message>
     <message>
         <source>Start/pause</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ/ⵃⴱⴻⵙ</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⴹⴼⵉⵔ</translation>
     </message>
     <message>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵣⴰⴳⵜ:</translation>
     </message>
     <message>
         <source>View in separate window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴷⴻⴳ ⵓⵙⴼⴰⵢⵍⵓ ⵡⴻⵃⴷ-ⵙ</translation>
     </message>
     <message>
         <source>Veyon Master – Slideshow</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Veyon Master – ⴰⵙⴽⴰⵏ ⵏ ⵜⵓⴳⵏⵉⵡⵉⵏ</translation>
     </message>
 </context>
 <context>
     <name>SpotlightPanel</name>
     <message>
         <source>Add computers by clicking with the middle mouse button or clicking the first button below.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵏⵓ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙ ⵓⵙⵉⵜⵉ ⵙ ⵜⵇⴻⴼⴼⴰⵍⵜ ⵜⴰⵍⴻⵎⵎⴰⵙⵜ ⵏ ⵜⵖⴻⵔⴷⴰⵢⵜ ⵏⴻⵖ ⵙ ⵓⵙⵉⵜⵉ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ ⵜⴰⵎⴻⵣⵡⴰⵔⵓⵜ ⴷⴷⴰⵡ-ⴰ.</translation>
     </message>
     <message>
         <source>Add selected computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵏⵓ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Remove selected computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ</translation>
     </message>
     <message>
         <source>Update computers in realtime</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴻⵇⵇⴻⵎ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙ ⵡⴰⴽⵓⴷ ⵉⵍⴰⵡ</translation>
     </message>
     <message>
         <source>Spotlight</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵎⵖⴻⵔ</translation>
     </message>
     <message>
         <source>Please select at least one computer to add.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⴼⵔⴻⵏ ⵎⴰ ⴷⵔⵓⵙ ⵢⵉⵡⴻⵏ ⵓⵙⴻⵍⴽⵉⵎ ⴰⵔⴰ ⵜⴻⵔⵏⵓⴹ.</translation>
     </message>
     <message>
         <source>Please select at least one computer to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⴼⵔⴻⵏ ⵎⴰ ⴷⵔⵓⵙ ⵢⵉⵡⴻⵏ ⵓⵙⴻⵍⴽⵉⵎ ⴰⵔⴰ ⵜⴻⴽⴽⵙⴻⴹ.</translation>
     </message>
 </context>
 <context>
     <name>StartAppDialog</name>
     <message>
         <source>Start application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⴰⵙⵏⴰⵙ</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ:</translation>
     </message>
     <message>
         <source>e.g. &quot;C:\Program Files\VideoLAN\VLC\vlc.exe&quot;</source>
@@ -4441,15 +4451,15 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Remember and add to application menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵛⴼⵓ ⵙⵢⴻⵏ ⵔⵏⵓ ⵖⴻⵔ ⵡⵓⵎⵓⵖ ⵏ ⵢⵉⵙⵏⴰⵙⴻⵏ</translation>
     </message>
     <message>
         <source>e.g. VLC</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⴷⵢⴰ: VLC</translation>
     </message>
     <message>
         <source>Please enter the applications to start on the selected computers. You can separate multiple applications by line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵎⴰ ⵓⵍⴰⵛ ⴰⵖⵉⵍⵉⴼ, ⵙⴻⴽⵛⴻⵎ ⵉⵙⵏⴰⵙⴻⵏ ⴰⵔⴰ ⵜⵙⴻⵏⴽⵔⴻⴹ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ. ⵜⵣⴻⵎⵔⴻⴹ ⴰⴷ ⵜⴻⵙⴻⴽⵛⵎⴻⴹ ⵢⵉⵡⴻⵏ ⵓⵙⵏⴰⵙ ⴷⴻⴳ ⵢⴰⵍ ⵉⵣⵉⵔⵉⴳ.</translation>
     </message>
 </context>
 <context>
@@ -4485,11 +4495,11 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>TextMessageDialog</name>
     <message>
         <source>Send text message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵣⴻⵏ ⵉⵣⴻⵏ ⴰⴹⵔⵉⵙ</translation>
     </message>
     <message>
         <source>Use the field below to type your message which will be sent to all selected users.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵇⴷⴻⵛ ⵓⵔⵜⵉ ⴷⴷⴰⵡ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴰⵔⵓⴹ ⵉⵣⴻⵏ-ⵉⴽ ⴰⵔⴰ ⵢⴻⵜⵜⵡⴰⵣⵏⴻⵏ ⵉ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵎⴻⵕⵕⴰ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ.</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -4501,7 +4511,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Message from teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⵙⴻⴳ ⵓⵙⴻⵍⵎⴰⴷ</translation>
     </message>
     <message>
         <source>Message from %1</source>
@@ -4512,19 +4522,19 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>TextMessageFeaturePlugin</name>
     <message>
         <source>Text message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⴰⴹⵔⵉⵙ</translation>
     </message>
     <message>
         <source>Use this function to send a text message to all users e.g. to assign them new tasks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵇⴷⴻⵛ ⵜⴰⵡⵓⵔⵉ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴰⵣⵏⴻⴹ ⵉⵣⴻⵏ ⴰⴹⵔⵉⵙ ⵉ ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵎⴻⵕⵕⴰ, ⴰⵎⴻⴷⵢⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⴰⵙⴻⵏ-ⵜⴻⴼⴽⴻⴹ ⵜⵉⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ.</translation>
     </message>
     <message>
         <source>Message from teacher</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⵙⴻⴳ ⵓⵙⴻⵍⵎⴰⴷ</translation>
     </message>
     <message>
         <source>Send a message to a user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵣⴻⵏ ⵉⵣⴻⵏ ⵉ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
 </context>
 <context>
@@ -4539,7 +4549,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Low accuracy (turbo mode)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵖⴷⴻⵎⵜ ⵜⴰⴷⵔⵓⵙⵜ (ⴰⵙⴽⴰⵔ turbo)</translation>
     </message>
     <message>
         <source>Poll full screen (leave this enabled per default)</source>
@@ -4555,7 +4565,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Enable capturing of layered (semi-transparent) windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵎⴻⴷ ⵜⵓⵟⵟⴼⴰ ⵏ ⵢⵉⵙⴼⵓⵢⵍⴰ ⵙ ⵜⵉⵙⵙⵉⵡⵉⵏ (ⴰⵣⴳⴻⵏ-ⴰⴼⵔⴰⵡⴰⵏ)</translation>
     </message>
 </context>
 <context>
@@ -4570,57 +4580,57 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ</translation>
     </message>
 </context>
 <context>
     <name>UserSessionControlPlugin</name>
     <message>
         <source>Log in</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⵛⴻⵎ</translation>
     </message>
     <message>
         <source>Click this button to log in a specific user on all computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⵙ ⵓⵙⴻⵇⴷⴰⵛ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ ⵖⴻⴼ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ.</translation>
     </message>
     <message>
         <source>Log off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⴼⴻⵖ</translation>
     </message>
     <message>
         <source>Click this button to log off users from all computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⵜ ⵖⴻⴼ ⵜⵇⴻⴼⴼⴰⵍⵜ-ⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⵙⵙⵓⴼⵖⴻⴹ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵙⴻⴳ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵎⴻⵕⵕⴰ.</translation>
     </message>
     <message>
         <source>Confirm user logoff</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⵜⴻⵎ ⵜⵓⴼⴼⵖⴰ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
     <message>
         <source>Do you really want to log off &lt;b&gt;ALL&lt;/b&gt; users?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴻⴱⵖⵉⴹ ⵙ ⵜⵉⴷⴻⵜ ⴰⴷ ⵜⴻⵙⵙⵓⴼⵖⴻⴹ &lt;b&gt;ⵎⴻⵕⵕⴰ&lt;/b&gt; ⵉⵙⴻⵇⴷⴰⵛⴻⵏ?</translation>
     </message>
     <message>
         <source>Do you really want to log off the selected users?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴻⴱⵖⵉⴹ ⵙ ⵜⵉⴷⴻⵜ ⴰⴷ ⵜⴻⵙⵙⵓⴼⵖⴻⴹ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ?</translation>
     </message>
     <message>
         <source>User session control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵏⵇⴻⴷ ⵏ ⵜⵖⵉⵎⵉⵜ ⵏ ⵓⵙⴻⵇⴷⴰⵛ</translation>
     </message>
 </context>
 <context>
     <name>VeyonCore</name>
     <message>
         <source>[OK]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[OK]</translation>
     </message>
     <message>
         <source>[FAIL]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[ⵜⵓⵛⵛⴹⴰ]</translation>
     </message>
     <message>
         <source>Invalid arguments given</source>
@@ -4644,7 +4654,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Available commands:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⴰⴷⵏⵉⵏ ⵢⴻⵍⵍⴰⵏ:</translation>
     </message>
     <message>
         <source>Unknown command result</source>
@@ -4684,18 +4694,18 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴳⴷⵉⵍ %1</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵏⴻⴱⴳⵉ</translation>
     </message>
 </context>
 <context>
     <name>VeyonMaster</name>
     <message>
         <source>No write access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵏⴻⴽⵛⵓⵎ ⵏ ⵜⵉⵔⴰ</translation>
     </message>
     <message>
         <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
@@ -4717,7 +4727,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⵜⵓ</translation>
     </message>
     <message>
         <source>Network port</source>
@@ -4769,7 +4779,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
         <source>Use HTTPS with TLS 1.3 instead of HTTP</source>
@@ -4814,7 +4824,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⵜⵓ</translation>
     </message>
     <message>
         <source>Enable SAS generation by software (Ctrl+Alt+Del)</source>

@@ -300,7 +300,7 @@
     </message>
     <message>
         <source>Lab setup</source>
-        <translation type="unfinished">ⴰⵙⴻⴱⴷⴻⴷ ⵏ ⵜⵣⴻⵇⵇⴰ</translation>
+        <translation type="unfinished">ⴰⵙⴻⴱⴷⴻⴷ ⵏ ⵜⴻⵅⵅⴰⵎⵜ</translation>
     </message>
     <message>
         <source>Prepare the student computers</source>

@@ -300,7 +300,7 @@
     </message>
     <message>
         <source>Lab setup</source>
-        <translation type="unfinished">Asebded n tzeqqa</translation>
+        <translation type="unfinished">Asebded n texxamt</translation>
     </message>
     <message>
         <source>Prepare the student computers</source>
