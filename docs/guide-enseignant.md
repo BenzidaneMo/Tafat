@@ -1,7 +1,8 @@
 # Guide de l'enseignant – Tafat
 
 Ce guide explique l'utilisation de **Tafat Master** pendant un cours. Pour
-l'installation de la salle, voir [DEPLOYMENT.md](DEPLOYMENT.md).
+l'installation de la salle, voir [install.html](install.html) ou
+[DEPLOYMENT.md](DEPLOYMENT.md).
 
 > Brouillon : les noms des boutons suivent les traductions françaises
 > actuelles et peuvent encore changer. Merci de signaler les erreurs.
@@ -14,6 +15,11 @@ l'installation de la salle, voir [DEPLOYMENT.md](DEPLOYMENT.md).
    l'ordinateur est éteint ou que Tafat n'y fonctionne pas.
 3. Sélectionnez des ordinateurs d'un clic (Ctrl + clic pour en ajouter). Sans
    sélection, une action s'applique à **tous** les ordinateurs affichés.
+
+Un nouvel ordinateur d'élève ? Installez-le avec l'**Installeur élève** (sur
+une clé USB, double-clic sur l'ordinateur de l'élève), puis **Ajouter des
+ordinateurs** → **Rechercher** → cochez-le → **Ajouter à la salle**.
+**Paramètres** ouvre le configurateur (langue, etc.) ; *OK* enregistre et ferme.
 
 ## 2. Début du cours : l'appel
 
@@ -105,9 +111,8 @@ Les bonnes réponses ne sont jamais envoyées aux ordinateurs des élèves.
 
 - **Vignette grise** : l'ordinateur est éteint, n'est pas dans le réseau ou le
   service Tafat ne fonctionne pas. Redémarrez l'ordinateur de l'élève.
-- **Accès refusé** : la clé de l'enseignant n'est pas installée sur l'ordinateur
-  de l'élève (voir [DEPLOYMENT.md](DEPLOYMENT.md), section 3, ou la page
-  *Installation de la salle* du configurateur).
+- **Accès refusé** : l'ordinateur de l'élève n'a pas la clé de cet ordinateur
+  enseignant. Recréez l'**Installeur élève** et relancez-le sur cet ordinateur.
 - **Un site n'est pas bloqué** : le navigateur n'est pas pris en charge ou
   Firefox n'a pas été redémarré ; bloquez ce navigateur avec **Bloquer les
   applis**.
