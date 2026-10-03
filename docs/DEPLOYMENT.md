@@ -22,8 +22,12 @@ All builds work together: a Windows 11 teacher computer can control Windows 7
 student computers and the other way round. The installer refuses to run on a
 Windows version or architecture it is not made for.
 
-The installers are the artifacts of the "Windows builds" GitHub Actions
-workflow (`tafat-windows-<arch>-qt<6|5>`; Qt 5 = legacy build).
+Download the installers from the [Releases page](https://github.com/BenzidaneMo/Tafat/releases/latest). Every version tag
+(`vX.Y.Z`, e.g. `v1.0.0`; `v1.1.0-beta1` makes a pre-release) publishes the four
+installers there. Newer
+development builds are the artifacts of the "Windows builds" GitHub Actions
+workflow (`tafat-windows-<arch>-qt<6|5>`; Qt 5 = legacy build). They are zip files,
+need a GitHub login and expire after 90 days.
 
 ### Windows 7 and 8.1
 

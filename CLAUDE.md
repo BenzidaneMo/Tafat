@@ -323,7 +323,10 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   - On Debian 11 (past its LTS), Xvfb comes from the main repository if the security
     mirror returns 404.
 - `.github/workflows/windows.yml`: `fedora:44`, matrix arch {i686, x86_64} ×
-  Qt {6, 5}, artifacts `tafat-windows-<arch>-qt<qt>`. LDAP and WebAPI are **off**
+  Qt {6, 5}, artifacts `tafat-windows-<arch>-qt<qt>`. A tag `vX.Y.Z…` (first one: `v1.0.0`)
+  also runs the `release` job: it attaches the four `*-setup.exe` to a GitHub release
+  (`softprops/action-gh-release`; tags with a `-suffix` become pre-releases), named after
+  the tag by the root `CMakeLists.txt` (`tafat-1.0.0.0-win64-setup.exe` on the tagged commit). LDAP and WebAPI are **off**
   on Windows for now. A concurrency group cancels older runs of the same branch
   (so push in batches), and `build-fedora.sh` builds with `ninja -k 0` and prints
   all error lines under `==== build errors ====` at the end of the step.
