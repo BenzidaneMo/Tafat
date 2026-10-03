@@ -22,6 +22,36 @@ jobs:
       - run: git config --global --add safe.directory $GITHUB_WORKSPACE
       - run: .ci/linux.${{matrix.dist}}/script.sh $GITHUB_WORKSPACE /tmp
 
+  unit-tests:
+    strategy:
+      matrix:
+        include:
+          - dist: debian.11
+            flags: -DWITH_QT6=OFF -DWITH_BUNDLED_LIBVNC=ON
+            xvfb: apt-get update && apt-get install -y --no-install-recommends xvfb
+          - dist: fedora.44
+            flags: -DCMAKE_CXX_FLAGS=-Wno-sfinae-incomplete
+            xvfb: dnf install -y xorg-x11-server-Xvfb
+    runs-on: ubuntu-latest
+    container: veyon/ci.linux.${{matrix.dist}}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+      - run: git config --global --add safe.directory $GITHUB_WORKSPACE
+      - run: cmake -S . -B /tmp/build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DWITH_TESTS=ON -DWITH_TRANSLATIONS=OFF -DWITH_LTO=OFF ${{matrix.flags}}
+      - run: ninja -C /tmp/build
+      - name: Unit tests
+        working-directory: /tmp/build
+        run: |
+          # a configure that finds no tests must not pass
+          test "$(ctest -N -LE integration | grep -c 'Test *#')" -ge 13
+          QT_QPA_PLATFORM=offscreen ctest -LE integration --output-on-failure
+      - run: ${{matrix.xvfb}}
+      - name: Integration test
+        working-directory: /tmp/build
+        run: TAFAT_INTEGRATION_REQUIRED=1 ctest -L integration --output-on-failure
+
   check-branding:
     runs-on: ubuntu-latest
     steps:
