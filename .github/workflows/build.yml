@@ -29,7 +29,10 @@ jobs:
         include:
           - dist: debian.11
             flags: -DWITH_QT6=OFF -DWITH_BUNDLED_LIBVNC=ON
-            xvfb: apt-get update && apt-get install -y --no-install-recommends xvfb
+            # Debian 11 is past its LTS: if the security mirror lists packages it no longer
+            # serves, install Xvfb from the main bullseye repository instead
+            xvfb: apt-get update && (apt-get install -y --no-install-recommends xvfb ||
+              (sed -i '/-security/d' /etc/apt/sources.list && apt-get update && apt-get install -y --no-install-recommends xvfb))
           - dist: fedora.44
             flags: -DCMAKE_CXX_FLAGS=-Wno-sfinae-incomplete
             xvfb: dnf install -y xorg-x11-server-Xvfb
