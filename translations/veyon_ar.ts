@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Translation</source>
-        <translation>ترجمة </translation>
+        <translation>ترجمة</translation>
     </message>
     <message>
         <source>Current language not translated yet (or native English).
@@ -342,11 +342,11 @@ If you&apos;re interested in translating Veyon into your local or another langua
     </message>
     <message>
         <source>Public key file base directory</source>
-        <translation>دليل ملفات المفاتيح العامة الأساسي </translation>
+        <translation>دليل ملفات المفاتيح العامة الأساسي</translation>
     </message>
     <message>
         <source>Private key file base directory</source>
-        <translation>دليل ملفات المفاتيح الخاصة الأساسي </translation>
+        <translation>دليل ملفات المفاتيح الخاصة الأساسي</translation>
     </message>
     <message>
         <source>Available authentication keys</source>
@@ -1329,7 +1329,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <source>Slow down thumbnail updates while demo is running</source>
@@ -1439,11 +1439,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Never for this session</source>
-        <translation>ليس لهذه الحلقة </translation>
+        <translation>ليس لهذه الحلقة</translation>
     </message>
     <message>
         <source>Always for this session</source>
-        <translation>دائما لهذه الحلقة </translation>
+        <translation>دائما لهذه الحلقة</translation>
     </message>
 </context>
 <context>
@@ -2140,7 +2140,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source> seconds</source>
-        <translation>ثواني</translation>
+        <translation> ثوانٍ</translation>
     </message>
     <message>
         <source>Logging</source>
@@ -2164,11 +2164,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Errors and critical messages</source>
-        <translation>أخطاء ورسائل حرجة </translation>
+        <translation>أخطاء ورسائل حرجة</translation>
     </message>
     <message>
         <source>Warnings and errors</source>
-        <translation>تحذيرات وأخطاء </translation>
+        <translation>تحذيرات وأخطاء</translation>
     </message>
     <message>
         <source>Information, warnings and errors</source>
@@ -3278,7 +3278,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Directories</source>
-        <translation>أدلة </translation>
+        <translation>أدلة</translation>
     </message>
     <message>
         <source>User configuration</source>
@@ -3298,7 +3298,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <source>Background color</source>
@@ -3654,7 +3654,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Username</source>
-        <translation>اسم المستخدم </translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Password</source>
@@ -3719,7 +3719,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Power on</source>
-        <translation>تشغيل </translation>
+        <translation>تشغيل</translation>
     </message>
     <message>
         <source>Click this button to power on all computers. This way you do not have to power on each computer by hand.</source>
@@ -3727,7 +3727,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Reboot</source>
-        <translation>إعادة تشغيل الحاسب </translation>
+        <translation>إعادة تشغيل الحاسب</translation>
     </message>
     <message>
         <source>Click this button to reboot all computers.</source>
@@ -3735,7 +3735,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Power down</source>
-        <translation>إطفاء </translation>
+        <translation>إطفاء</translation>
     </message>
     <message>
         <source>Click this button to power down all computers. This way you do not have to power down each computer by hand.</source>
@@ -3818,7 +3818,7 @@ Please save your work and close all programs.</source>
     <name>PowerDownTimeInputDialog</name>
     <message>
         <source>Power down</source>
-        <translation>إطفاء </translation>
+        <translation>إطفاء</translation>
     </message>
     <message>
         <source>Please specify a timeout for powering down the selected computers:</source>
@@ -4145,7 +4145,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Start service</source>
-        <translation>بدء الخدمة </translation>
+        <translation>بدء الخدمة</translation>
     </message>
     <message>
         <source>Stop service</source>
@@ -4566,7 +4566,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Username</source>
-        <translation>اسم المستخدم </translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Password</source>
@@ -4691,7 +4691,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>VeyonMaster</name>
     <message>
         <source>No write access</source>
-        <translation>لا يوجد وصول للكتابة </translation>
+        <translation>لا يوجد وصول للكتابة</translation>
     </message>
     <message>
         <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
