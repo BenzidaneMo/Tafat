@@ -40,7 +40,7 @@ static constexpr int AutoStart = 2; // SERVICE_AUTO_START
 static constexpr int DisabledStart = 4; // SERVICE_DISABLED
 static const auto SpoolerService = QStringLiteral("Spooler");
 
-static QSettings stateStore()
+static QSettings printBlockStateStore()
 {
 	return QSettings( QSettings::SystemScope, VeyonCore::productName(), QStringLiteral("AppControl") );
 }
@@ -231,7 +231,7 @@ bool PrintBlocker::apply()
 		return false;
 	}
 
-	auto state = stateStore();
+	auto state = printBlockStateStore();
 	const auto dependents = runningDependents( spooler );
 	if( state.value( QStringLiteral("PrintBlock/Applied") ).toBool() == false )
 	{
@@ -264,7 +264,7 @@ bool PrintBlocker::apply()
 bool PrintBlocker::clear()
 {
 #ifdef Q_OS_WIN
-	auto store = stateStore();
+	auto store = printBlockStateStore();
 	if( store.value( QStringLiteral("PrintBlock/Applied") ).toBool() == false )
 	{
 		return true;
