@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - '**'
-    # a version tag (e.g. v0.1.0-beta1) also publishes the installers as a GitHub release
+    # a version tag (e.g. v1.0.0) also publishes the installers as a GitHub release
     tags:
       - 'v*'
   workflow_dispatch:
@@ -53,11 +53,11 @@ jobs:
           pattern: tafat-windows-*
           merge-multiple: true
       - run: ls -l *-setup.exe
-      # pre-release until the installers have been tested on real lab PCs
+      # tags with a suffix (v1.1.0-beta1) are pre-releases, v1.0.0 is a normal release
       - uses: softprops/action-gh-release@v2
         with:
           files: "*-setup.exe"
-          prerelease: true
+          prerelease: ${{ contains(github.ref_name, '-') }}
           generate_release_notes: true
           body: |
             Windows installers (see docs/install.html or docs/DEPLOYMENT.md):
