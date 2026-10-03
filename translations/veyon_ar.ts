@@ -570,103 +570,103 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>AuthKeysPlugin</name>
     <message>
         <source>Create new authentication key pair</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إنشاء زوج مفاتيح توثيق جديد</translation>
     </message>
     <message>
         <source>Delete authentication key</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">حذف مفتاح توثيق</translation>
     </message>
     <message>
         <source>List authentication keys</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض مفاتيح التوثيق</translation>
     </message>
     <message>
         <source>Import public or private key</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استيراد مفتاح عمومي أو خاص</translation>
     </message>
     <message>
         <source>Export public or private key</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تصدير مفتاح عمومي أو خاص</translation>
     </message>
     <message>
         <source>Extract public key from existing private key</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استخراج المفتاح العمومي من مفتاح خاص موجود</translation>
     </message>
     <message>
         <source>Set user group allowed to access a key</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تحديد مجموعة المستخدمين المسموح لها بالوصول إلى مفتاح</translation>
     </message>
     <message>
         <source>Please specify the command to display help for.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يُرجى تحديد الأمر المطلوب عرض المساعدة له.</translation>
     </message>
     <message>
         <source>NAME</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">NAME</translation>
     </message>
     <message>
         <source>This command creates a new authentication key pair with name &lt;NAME&gt; and saves private and public key to the configured key directories. The parameter must be a name for the key, which may only contain letters.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ينشئ هذا الأمر زوج مفاتيح توثيق جديدًا بالاسم ⁨&lt;NAME&gt;⁩ ويحفظ المفتاح الخاص والمفتاح العمومي في مجلدات المفاتيح المضبوطة. يجب أن يكون المعامل اسمًا للمفتاح لا يحتوي إلا على حروف.</translation>
     </message>
     <message>
         <source>KEY</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">KEY</translation>
     </message>
     <message>
         <source>This command deletes the authentication key &lt;KEY&gt; from the configured key directory. Please note that a key can&apos;t be recovered once it has been deleted.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يحذف هذا الأمر مفتاح التوثيق ⁨&lt;KEY&gt;⁩ من مجلد المفاتيح المضبوط. لاحظ أنه لا يمكن استرجاع المفتاح بعد حذفه.</translation>
     </message>
     <message>
         <source>FILE</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">FILE</translation>
     </message>
     <message>
         <source>This command exports the authentication key &lt;KEY&gt; to &lt;FILE&gt;. If &lt;FILE&gt; is not specified a name will be constructed from name and type of &lt;KEY&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يصدّر هذا الأمر مفتاح التوثيق ⁨&lt;KEY&gt;⁩ إلى ⁨&lt;FILE&gt;⁩. إذا لم يُحدَّد ⁨&lt;FILE&gt;⁩ يُكوَّن اسم من اسم ⁨&lt;KEY&gt;⁩ ونوعه.</translation>
     </message>
     <message>
         <source>This command extracts the public key part from the private key &lt;KEY&gt; and saves it as the corresponding public key. When setting up another master computer, it is therefore sufficient to transfer the private key only. The public key can then be extracted.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يستخرج هذا الأمر الجزء العمومي من المفتاح الخاص ⁨&lt;KEY&gt;⁩ ويحفظه كمفتاح عمومي مقابل. لذلك يكفي عند إعداد حاسوب أستاذ آخر نقل المفتاح الخاص فقط، ثم يمكن استخراج المفتاح العمومي.</translation>
     </message>
     <message>
         <source>This command imports the authentication key &lt;KEY&gt; from &lt;FILE&gt;. If &lt;FILE&gt; is not specified a name will be constructed from name and type of &lt;KEY&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يستورد هذا الأمر مفتاح التوثيق ⁨&lt;KEY&gt;⁩ من ⁨&lt;FILE&gt;⁩. إذا لم يُحدَّد ⁨&lt;FILE&gt;⁩ يُكوَّن اسم من اسم ⁨&lt;KEY&gt;⁩ ونوعه.</translation>
     </message>
     <message>
         <source>This command lists all available authentication keys in the configured key directory. If the option &quot;%1&quot; is specified a table with key details will be displayed instead. Some details might be missing if a key is not accessible e.g. due to the lack of read permissions.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يعرض هذا الأمر كل مفاتيح التوثيق الموجودة في مجلد المفاتيح المضبوط. إذا حُدِّد الخيار «⁨%1⁩» يُعرض بدلًا من ذلك جدول بتفاصيل المفاتيح. قد تنقص بعض التفاصيل إذا تعذّر الوصول إلى مفتاح، مثلًا لعدم وجود صلاحية القراءة.</translation>
     </message>
     <message>
         <source>ACCESS GROUP</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ACCESS GROUP</translation>
     </message>
     <message>
         <source>This command adjusts file access permissions to &lt;KEY&gt; such that only the user group &lt;ACCESS GROUP&gt; has read access to it.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يضبط هذا الأمر صلاحيات الوصول إلى الملف ⁨&lt;KEY&gt;⁩ بحيث لا يملك صلاحية قراءته إلا مجموعة المستخدمين ⁨&lt;ACCESS GROUP&gt;⁩.</translation>
     </message>
     <message>
         <source>The specified command does not exist or no help is available for it.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الأمر المحدد غير موجود أو لا تتوفر له مساعدة.</translation>
     </message>
     <message>
         <source>Please specify the key name (e.g. &quot;teacher/public&quot;) as the first argument.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يُرجى تحديد اسم المفتاح (مثل «⁨teacher/public⁩») كأول معامل.</translation>
     </message>
     <message>
         <source>TYPE</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">TYPE</translation>
     </message>
     <message>
         <source>PAIR ID</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">PAIR ID</translation>
     </message>
     <message>
         <source>Command line support for managing authentication keys</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">دعم سطر الأوامر لإدارة مفاتيح التوثيق</translation>
     </message>
     <message>
         <source>Commands for managing authentication keys</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر لإدارة مفاتيح التوثيق</translation>
     </message>
 </context>
 <context>
@@ -771,143 +771,143 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Add a location or computer</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إضافة قاعة أو حاسوب</translation>
     </message>
     <message>
         <source>Clear all locations and computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">حذف كل القاعات والحواسيب</translation>
     </message>
     <message>
         <source>Dump all or individual locations and computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض كل القاعات والحواسيب أو بعضها</translation>
     </message>
     <message>
         <source>List all locations and computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض قائمة كل القاعات والحواسيب</translation>
     </message>
     <message>
         <source>Remove a location or computer</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إزالة قاعة أو حاسوب</translation>
     </message>
     <message>
         <source>Import objects from given file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استيراد الكائنات من الملف المحدد</translation>
     </message>
     <message>
         <source>Export objects to given file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تصدير الكائنات إلى الملف المحدد</translation>
     </message>
     <message>
         <source>FILE</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">FILE</translation>
     </message>
     <message>
         <source>LOCATION</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">LOCATION</translation>
     </message>
     <message>
         <source>FORMAT-STRING-WITH-PLACEHOLDERS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">FORMAT-STRING-WITH-PLACEHOLDERS</translation>
     </message>
     <message>
         <source>REGULAR-EXPRESSION-WITH-PLACEHOLDER</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">REGULAR-EXPRESSION-WITH-PLACEHOLDER</translation>
     </message>
     <message>
         <source>Imports objects from the specified text file using the given format string or regular expression containing one or multiple placeholders. Valid placeholders are: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يستورد الكائنات من الملف النصي المحدد باستعمال سلسلة التنسيق أو التعبير النمطي المعطى الذي يحتوي على عنصر نائب واحد أو أكثر. العناصر النائبة الصالحة: ⁨%1⁩</translation>
     </message>
     <message>
         <source>Import simple CSV file to a single room</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استيراد ملف CSV بسيط إلى قاعة واحدة</translation>
     </message>
     <message>
         <source>Import CSV file with location name in first column</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استيراد ملف CSV يحتوي اسم القاعة في العمود الأول</translation>
     </message>
     <message>
         <source>Import text file with with key/value pairs using regular expressions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استيراد ملف نصي بأزواج مفتاح/قيمة باستعمال التعابير النمطية</translation>
     </message>
     <message>
         <source>Import arbitrarily formatted data</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استيراد بيانات بأي تنسيق</translation>
     </message>
     <message>
         <source>Exports objects to the specified text file using the given format string containing one or multiple placeholders. Valid placeholders are: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يصدّر الكائنات إلى الملف النصي المحدد باستعمال سلسلة التنسيق المعطاة التي تحتوي على عنصر نائب واحد أو أكثر. العناصر النائبة الصالحة: ⁨%1⁩</translation>
     </message>
     <message>
         <source>Export all objects to a CSV file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تصدير كل الكائنات إلى ملف CSV</translation>
     </message>
     <message>
         <source>Export all computers in a specific location to a CSV file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تصدير كل حواسيب قاعة معيّنة إلى ملف CSV</translation>
     </message>
     <message>
         <source>TYPE</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">TYPE</translation>
     </message>
     <message>
         <source>NAME</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">NAME</translation>
     </message>
     <message>
         <source>HOST ADDRESS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">HOST ADDRESS</translation>
     </message>
     <message>
         <source>MAC ADDRESS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">MAC ADDRESS</translation>
     </message>
     <message>
         <source>PARENT</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">PARENT</translation>
     </message>
     <message>
         <source>Adds an object where %1 can be one of &quot;%2&quot; or &quot;%3&quot;. %4 can be specified by name or UUID.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يضيف كائنًا حيث يمكن أن يكون ⁨%1⁩ أحد «⁨%2⁩» أو «⁨%3⁩». يمكن تحديد ⁨%4⁩ بالاسم أو بالمعرّف UUID.</translation>
     </message>
     <message>
         <source>Add a room</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إضافة قاعة</translation>
     </message>
     <message>
         <source>Add a computer to room %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إضافة حاسوب إلى القاعة ⁨%1⁩</translation>
     </message>
     <message>
         <source>OBJECT</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">OBJECT</translation>
     </message>
     <message>
         <source>Removes the specified object from the directory. %1 can be specified by name or UUID. Removing a location will also remove all related computers.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يزيل الكائن المحدد من الدليل. يمكن تحديد ⁨%1⁩ بالاسم أو بالمعرّف UUID. إزالة قاعة تزيل أيضًا كل الحواسيب التابعة لها.</translation>
     </message>
     <message>
         <source>Remove a computer by name</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إزالة حاسوب باسمه</translation>
     </message>
     <message>
         <source>Remove an object by UUID</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إزالة كائن بمعرّفه UUID</translation>
     </message>
     <message>
         <source>The specified command does not exist or no help is available for it.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الأمر المحدد غير موجود أو لا تتوفر له مساعدة.</translation>
     </message>
     <message>
         <source>Invalid type specified. Valid values are &quot;%1&quot; or &quot;%2&quot;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">النوع المحدد غير صالح. القيم الصالحة هي «⁨%1⁩» أو «⁨%2⁩».</translation>
     </message>
     <message>
         <source>Object UUID</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">معرّف الكائن (UUID)</translation>
     </message>
     <message>
         <source>Parent UUID</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">معرّف الأصل (UUID)</translation>
     </message>
     <message>
         <source>Type</source>
@@ -927,43 +927,43 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Specified object not found.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لم يُعثر على الكائن المحدد.</translation>
     </message>
     <message>
         <source>File &quot;%1&quot; does not exist!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الملف «⁨%1⁩» غير موجود!</translation>
     </message>
     <message>
         <source>Can&apos;t open file &quot;%1&quot; for reading!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذّر فتح الملف «⁨%1⁩» للقراءة!</translation>
     </message>
     <message>
         <source>Unknown argument &quot;%1&quot;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">معامل غير معروف «⁨%1⁩».</translation>
     </message>
     <message>
         <source>No format string or regular expression specified!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لم تُحدَّد سلسلة تنسيق أو تعبير نمطي!</translation>
     </message>
     <message>
         <source>Can&apos;t open file &quot;%1&quot; for writing!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذّر فتح الملف «⁨%1⁩» للكتابة!</translation>
     </message>
     <message>
         <source>No format string specified!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لم تُحدَّد سلسلة تنسيق!</translation>
     </message>
     <message>
         <source>Location &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">القاعة «⁨%1⁩»</translation>
     </message>
     <message>
         <source>Computer &quot;%1&quot; (host address: &quot;%2&quot; MAC address: &quot;%3&quot;)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الحاسوب «⁨%1⁩» (عنوان المضيف: «⁨%2⁩»، عنوان MAC: «⁨%3⁩»)</translation>
     </message>
     <message>
         <source>Unclassified object &quot;%1&quot; with ID &quot;%2&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">كائن غير مصنَّف «⁨%1⁩» بالمعرّف «⁨%2⁩»</translation>
     </message>
     <message>
         <source>None</source>
@@ -971,47 +971,47 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Invalid</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">غير صالح</translation>
     </message>
     <message>
         <source>Error while parsing line %1.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خطأ أثناء تحليل السطر ⁨%1⁩.</translation>
     </message>
     <message>
         <source>Network object directory which stores objects in local configuration</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">دليل كائنات الشبكة الذي يحفظ الكائنات في الإعدادات المحلية</translation>
     </message>
     <message>
         <source>Builtin (computers and locations in local configuration)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مدمج (الحواسيب والقاعات في الإعدادات المحلية)</translation>
     </message>
     <message>
         <source>Commands for managing the builtin network object directory</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر لإدارة دليل كائنات الشبكة المدمج</translation>
     </message>
     <message>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">القاعة</translation>
     </message>
     <message>
         <source>Computer</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الحاسوب</translation>
     </message>
     <message>
         <source>Root</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الجذر</translation>
     </message>
     <message>
         <source>&quot;Room 01&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">&quot;Room 01&quot;</translation>
     </message>
     <message>
         <source>&quot;Computer 01&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">&quot;Computer 01&quot;</translation>
     </message>
     <message>
         <source>Location &quot;%1&quot; not found.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لم يُعثر على القاعة «⁨%1⁩».</translation>
     </message>
 </context>
 <context>
@@ -1212,75 +1212,75 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>ConfigCommands</name>
     <message>
         <source>Clear system-wide Veyon configuration</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مسح إعدادات Veyon على مستوى النظام</translation>
     </message>
     <message>
         <source>List all configuration keys and values</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض كل مفاتيح الإعدادات وقيمها</translation>
     </message>
     <message>
         <source>Import configuration from given file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استيراد الإعدادات من الملف المحدد</translation>
     </message>
     <message>
         <source>Export configuration to given file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تصدير الإعدادات إلى الملف المحدد</translation>
     </message>
     <message>
         <source>Read and output configuration value for given key</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">قراءة قيمة الإعداد للمفتاح المحدد وعرضها</translation>
     </message>
     <message>
         <source>Write given value to given configuration key</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">كتابة القيمة المعطاة في مفتاح الإعداد المحدد</translation>
     </message>
     <message>
         <source>Unset (remove) given configuration key</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إزالة مفتاح الإعداد المحدد</translation>
     </message>
     <message>
         <source>Upgrade and save configuration of program and plugins</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ترقية إعدادات البرنامج والإضافات وحفظها</translation>
     </message>
     <message>
         <source>Please specify an existing configuration file to import.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يُرجى تحديد ملف إعدادات موجود لاستيراده.</translation>
     </message>
     <message>
         <source>Configuration file is not readable!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ملف الإعدادات غير قابل للقراءة!</translation>
     </message>
     <message>
         <source>Please specify a valid filename for the configuration export.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يُرجى تحديد اسم ملف صالح لتصدير الإعدادات.</translation>
     </message>
     <message>
         <source>Output file is not writable!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ملف الإخراج غير قابل للكتابة!</translation>
     </message>
     <message>
         <source>Output directory is not writable!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مجلد الإخراج غير قابل للكتابة!</translation>
     </message>
     <message>
         <source>Please specify a valid key.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يُرجى تحديد مفتاح صالح.</translation>
     </message>
     <message>
         <source>Specified key does not exist in current configuration!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المفتاح المحدد غير موجود في الإعدادات الحالية!</translation>
     </message>
     <message>
         <source>Please specify a valid value.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يُرجى تحديد قيمة صالحة.</translation>
     </message>
     <message>
         <source>Configure Veyon at command line</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ضبط Veyon من سطر الأوامر</translation>
     </message>
     <message>
         <source>Commands for managing the configuration of Veyon</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر لإدارة إعدادات Veyon</translation>
     </message>
 </context>
 <context>
@@ -1552,43 +1552,43 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Room %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">القاعة ⁨%1⁩</translation>
     </message>
     <message>
         <source>generic-student-user</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">generic-student-user</translation>
     </message>
     <message>
         <source>Please complete all tasks within the next 5 minutes.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يُرجى إكمال كل المهام خلال الدقائق الخمس القادمة.</translation>
     </message>
     <message>
         <source>Custom website</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">موقع مخصص</translation>
     </message>
     <message>
         <source>Open file manager</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فتح مدير الملفات</translation>
     </message>
     <message>
         <source>Start learning tool</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل أداة التعلم</translation>
     </message>
     <message>
         <source>Play tutorial video</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل فيديو تعليمي</translation>
     </message>
     <message>
         <source>Custom application</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تطبيق مخصص</translation>
     </message>
     <message>
         <source>Handout</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ورقة العمل</translation>
     </message>
     <message>
         <source>Texts to read</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">نصوص للقراءة</translation>
     </message>
 </context>
 <context>
@@ -1617,75 +1617,75 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FeatureCommands</name>
     <message>
         <source>List names of all available features</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض أسماء كل الميزات المتوفرة</translation>
     </message>
     <message>
         <source>Show table with details of all available features</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض جدول بتفاصيل كل الميزات المتوفرة</translation>
     </message>
     <message>
         <source>Start a feature on a remote host</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل ميزة على حاسوب بعيد</translation>
     </message>
     <message>
         <source>Stop a feature on a remote host</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إيقاف ميزة على حاسوب بعيد</translation>
     </message>
     <message>
         <source>Please specify the command to display help for.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يُرجى تحديد الأمر المطلوب عرض المساعدة له.</translation>
     </message>
     <message>
         <source>Displays a list with the names of all available features.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يعرض قائمة بأسماء كل الميزات المتوفرة.</translation>
     </message>
     <message>
         <source>Displays a table with detailed information about all available features. This information include a description, the UID, the name of the plugin providing the respective feature and some other implementation-related details.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يعرض جدولًا بمعلومات مفصّلة عن كل الميزات المتوفرة: الوصف والمعرّف UID واسم الإضافة التي توفر الميزة وبعض التفاصيل التقنية الأخرى.</translation>
     </message>
     <message>
         <source>HOST ADDRESS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">HOST ADDRESS</translation>
     </message>
     <message>
         <source>FEATURE</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">FEATURE</translation>
     </message>
     <message>
         <source>ARGUMENTS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ARGUMENTS</translation>
     </message>
     <message>
         <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يشغّل الميزة المحددة على الحاسوب المحدد بالاتصال بخادم Veyon العامل عليه. يمكن تحديد الميزة بالاسم أو بالمعرّف UID. استعمل الأمر ⁨``show``⁩ لرؤية كل الميزات المتوفرة. حسب الميزة، يجب تحديد معاملات إضافية (مثل الرسالة النصية المراد عرضها) مرمّزة في سلسلة JSON واحدة. راجع وثائق المطوّرين لمزيد من المعلومات</translation>
     </message>
     <message>
         <source>Lock the screen</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">قفل الشاشة</translation>
     </message>
     <message>
         <source>Display a text message</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض رسالة نصية</translation>
     </message>
     <message>
         <source>Test message</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">رسالة تجريبية</translation>
     </message>
     <message>
         <source>Start an application</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل تطبيق</translation>
     </message>
     <message>
         <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يوقف الميزة المحددة على الحاسوب المحدد بالاتصال بخادم Veyon العامل عليه. يمكن تحديد الميزة بالاسم أو بالمعرّف UID. استعمل الأمر ⁨``show``⁩ لرؤية كل الميزات المتوفرة.</translation>
     </message>
     <message>
         <source>Unlock the screen</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فتح قفل الشاشة</translation>
     </message>
     <message>
         <source>The specified command does not exist or no help is available for it.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الأمر المحدد غير موجود أو لا تتوفر له مساعدة.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1693,35 +1693,35 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الوصف</translation>
     </message>
     <message>
         <source>Master</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الأستاذ</translation>
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الخدمة</translation>
     </message>
     <message>
         <source>Worker</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">العامل</translation>
     </message>
     <message>
         <source>UID</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">UID</translation>
     </message>
     <message>
         <source>Plugin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الإضافة</translation>
     </message>
     <message>
         <source>Invalid feature name or UID specified</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">اسم الميزة أو معرّفها UID غير صالح</translation>
     </message>
     <message>
         <source>Error parsing the JSON-encoded arguments: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خطأ في تحليل المعاملات المرمّزة بصيغة JSON: ⁨%1⁩</translation>
     </message>
     <message>
         <source>Failed to initialize credentials</source>
@@ -1731,19 +1731,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Could not establish a connection to host %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذّر الاتصال بالحاسوب ⁨%1⁩</translation>
     </message>
     <message>
         <source>Failed to send feature control message to host %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذّر إرسال رسالة التحكم في الميزة إلى الحاسوب ⁨%1⁩</translation>
     </message>
     <message>
         <source>Feature-related CLI operations</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عمليات سطر الأوامر الخاصة بالميزات</translation>
     </message>
     <message>
         <source>Commands for controlling features</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر للتحكم في الميزات</translation>
     </message>
 </context>
 <context>
@@ -2999,7 +2999,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>LinuxPlatformConfigurationPage</name>
     <message>
         <source>Linux</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Linux</translation>
     </message>
     <message>
         <source>User authentication</source>
@@ -3007,15 +3007,15 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Custom PAM service for user authentication</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خدمة PAM مخصصة لتوثيق المستخدمين</translation>
     </message>
     <message>
         <source>User sessions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">جلسات المستخدمين</translation>
     </message>
     <message>
         <source>Minimum session lifetime before server start</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أدنى مدة للجلسة قبل تشغيل الخادم</translation>
     </message>
     <message>
         <source>User login</source>
@@ -3023,7 +3023,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Login key sequence</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تسلسل مفاتيح تسجيل الدخول</translation>
     </message>
     <message>
         <source>Input start delay</source>
@@ -3031,18 +3031,18 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Key press interval for text input</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الفاصل بين ضغطات المفاتيح لإدخال النص</translation>
     </message>
     <message>
         <source>Key press interval to control input fields</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الفاصل بين ضغطات المفاتيح للتحكم في حقول الإدخال</translation>
     </message>
 </context>
 <context>
     <name>LinuxPlatformPlugin</name>
     <message>
         <source>Plugin implementing abstract functions for the Linux platform</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إضافة تنفّذ الوظائف المجردة لمنصة Linux</translation>
     </message>
 </context>
 <context>
@@ -3681,18 +3681,18 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <name>PipeWireVncServer</name>
     <message>
         <source>Wayland VNC server (PipeWire/XDG Desktop Portal)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خادم VNC لـ Wayland (PipeWire/XDG Desktop Portal)</translation>
     </message>
 </context>
 <context>
     <name>PluginCommands</name>
     <message>
         <source>List names of all installed plugins</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض أسماء كل الإضافات المثبتة</translation>
     </message>
     <message>
         <source>Show table with details of all installed plugins</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض جدول بتفاصيل كل الإضافات المثبتة</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3700,23 +3700,23 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الوصف</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الإصدار</translation>
     </message>
     <message>
         <source>UID</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">UID</translation>
     </message>
     <message>
         <source>Plugin-related CLI operations</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عمليات سطر الأوامر الخاصة بالإضافات</translation>
     </message>
     <message>
         <source>Commands for managing plugins</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر لإدارة الإضافات</translation>
     </message>
 </context>
 <context>
@@ -4313,19 +4313,19 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>ServiceControlCommands</name>
     <message>
         <source>Register Veyon Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تسجيل خدمة Veyon</translation>
     </message>
     <message>
         <source>Unregister Veyon Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إلغاء تسجيل خدمة Veyon</translation>
     </message>
     <message>
         <source>Start Veyon Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل خدمة Veyon</translation>
     </message>
     <message>
         <source>Stop Veyon Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إيقاف خدمة Veyon</translation>
     </message>
     <message>
         <source>Restart Veyon Service</source>
@@ -4333,42 +4333,42 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Query status of Veyon Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الاستعلام عن حالة خدمة Veyon</translation>
     </message>
     <message>
         <source>Service is running</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الخدمة تعمل</translation>
     </message>
     <message>
         <source>Service is not running</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الخدمة لا تعمل</translation>
     </message>
     <message>
         <source>Configure and control Veyon service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ضبط خدمة Veyon والتحكم فيها</translation>
     </message>
     <message>
         <source>Commands for configuring and controlling Veyon Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر لضبط خدمة Veyon والتحكم فيها</translation>
     </message>
 </context>
 <context>
     <name>ShellCommands</name>
     <message>
         <source>Run command file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل ملف أوامر</translation>
     </message>
     <message>
         <source>File &quot;%1&quot; does not exist!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الملف «⁨%1⁩» غير موجود!</translation>
     </message>
     <message>
         <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">صدفة تفاعلية وتنفيذ البرامج النصية لسطر أوامر Veyon</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر لوظائف الصدفة</translation>
     </message>
 </context>
 <context>
@@ -4478,11 +4478,11 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>TestingCommandLinePlugin</name>
     <message>
         <source>Test internal Veyon components and functions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">اختبار المكونات والوظائف الداخلية لـ Veyon</translation>
     </message>
     <message>
         <source>Commands for testing internal components and functions of Veyon</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر لاختبار المكونات والوظائف الداخلية لـ Veyon</translation>
     </message>
 </context>
 <context>
@@ -4717,7 +4717,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>WebApiConfigurationPage</name>
     <message>
         <source>Web API</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">واجهة الويب البرمجية (Web API)</translation>
     </message>
     <message>
         <source>General</source>
@@ -4725,23 +4725,23 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Network port</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">منفذ الشبكة</translation>
     </message>
     <message>
         <source>Enable WebAPI server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تفعيل خادم WebAPI</translation>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إعدادات الاتصال</translation>
     </message>
     <message>
         <source>Lifetime</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مدة الصلاحية</translation>
     </message>
     <message>
         <source> h</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"> سا</translation>
     </message>
     <message>
         <source> s</source>
@@ -4749,27 +4749,27 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Idle timeout</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مهلة الخمول</translation>
     </message>
     <message>
         <source>Authentication timeout</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مهلة التوثيق</translation>
     </message>
     <message>
         <source>Maximum number of open connections</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الحد الأقصى للاتصالات المفتوحة</translation>
     </message>
     <message>
         <source>Connection encryption</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشفير الاتصال</translation>
     </message>
     <message>
         <source>TLS certificate file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ملف شهادة TLS</translation>
     </message>
     <message>
         <source>TLS private key file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ملف المفتاح الخاص لـ TLS</translation>
     </message>
     <message>
         <source>...</source>
@@ -4777,30 +4777,30 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Use HTTPS with TLS 1.3 instead of HTTP</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استعمال HTTPS مع TLS 1.3 بدلًا من HTTP</translation>
     </message>
 </context>
 <context>
     <name>WebApiPlugin</name>
     <message>
         <source>Run WebAPI server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل خادم WebAPI</translation>
     </message>
     <message>
         <source>Failed to start WebAPI server at port %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذّر تشغيل خادم WebAPI على المنفذ ⁨%1⁩</translation>
     </message>
     <message>
         <source>WebAPI server running at port %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خادم WebAPI يعمل على المنفذ ⁨%1⁩</translation>
     </message>
     <message>
         <source>Provide access to a computer via HTTP</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">توفير الوصول إلى حاسوب عبر HTTP</translation>
     </message>
     <message>
         <source>Commands for running the WebAPI server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر لتشغيل خادم WebAPI</translation>
     </message>
 </context>
 <context>

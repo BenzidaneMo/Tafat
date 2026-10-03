@@ -436,7 +436,8 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
      (`tafat_kab.ts`, `veyon_kab.ts`), then re-transliterate Tifinagh.
      Choices to confirm: Asmiḍen (inventory), Tilin (register), Asemɣer (spotlight),
      Amesbadu (configurator).
-   - Still without Arabic: 345 upstream texts (LDAP, WebAPI, CLI help).
+   - Still without Arabic: 157 upstream texts, all LDAP (off on Windows); the CLI help,
+     WebAPI and Linux texts have drafts since 2026-10-04.
      Without Kabyle: 351.
    - Hosted Weblate; small `qtbase_kab*` overrides; RTL audit of `LockWidget`,
      `Toast` and other custom-painted widgets.
