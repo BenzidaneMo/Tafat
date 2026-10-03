@@ -45,13 +45,16 @@ git clone -q --depth 1 https://github.com/oblitum/Interception.git
   install -m 755 interception.dll "$PREFIX/bin/" &&
   install -m 644 libinterception.dll.a "$PREFIX/lib/" )
 
-# QCA (Fedora only packages it for Qt 5)
-if [ "$QT" = "6" ]; then
+# QCA with its OpenSSL plugin (Fedora only packages it for Qt 5, and maybe
+# without the plugin)
+if [ "$QT" = "6" ] || [ -z "$(find "$PREFIX" -name libqca-ossl.dll -print -quit)" ]; then
+	if [ "$QT" = "6" ]; then QCA_QT6=ON; else QCA_QT6=OFF; fi
 	git clone -q --depth 1 -b v2.3.10 https://invent.kde.org/libraries/qca.git
-	$M-cmake -S qca -B qca-build -G Ninja -DCMAKE_BUILD_TYPE=Release -DQT6=ON -DQT_HOST_PATH=/usr \
+	$M-cmake -S qca -B qca-build -G Ninja -DCMAKE_BUILD_TYPE=Release -DQT6=$QCA_QT6 -DQT_HOST_PATH=/usr \
 		-DBUILD_TESTS=OFF -DBUILD_TOOLS=OFF -DBUILD_PLUGINS=ossl >/dev/null
 	ninja -C qca-build install >/dev/null
 fi
+echo "QCA OpenSSL plugin: $(find "$PREFIX" -name libqca-ossl.dll)"
 
 rm -rf "$WORK"
 echo "Windows $ARCH build environment (Qt $QT) ready in $PREFIX"

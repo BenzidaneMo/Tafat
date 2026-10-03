@@ -15,8 +15,34 @@ if(NOT MINGW_QT_PLUGINS_DIR)
 	endforeach()
 endif()
 if(NOT MINGW_QCA_PLUGINS_DIR)
-	set(MINGW_QCA_PLUGINS_DIR "${MINGW_PREFIX}/lib/qca-qt${QT_MAJOR_VERSION}/crypto")
+	# QCA built for Qt 6 (see .ci/windows/fedora-deps.sh) installs to lib/qca-qt6/crypto,
+	# packaged QCA for Qt 5 installs into the Qt plugins directory
+	foreach(dir "${MINGW_PREFIX}/lib/qca-qt${QT_MAJOR_VERSION}/crypto" "${MINGW_QT_PLUGINS_DIR}/crypto"
+				"${MINGW_PREFIX}/lib/qt${QT_MAJOR_VERSION}/plugins/crypto" "${MINGW_PREFIX}/plugins/crypto")
+		if(EXISTS "${dir}/libqca-ossl.dll")
+			set(MINGW_QCA_PLUGINS_DIR "${dir}")
+			break()
+		endif()
+	endforeach()
+	if(NOT MINGW_QCA_PLUGINS_DIR)
+		file(GLOB_RECURSE qca_ossl_plugin "${MINGW_PREFIX}/lib/libqca-ossl.dll" "${MINGW_PREFIX}/lib/*/libqca-ossl.dll")
+		if(qca_ossl_plugin)
+			list(GET qca_ossl_plugin 0 qca_ossl_plugin)
+			get_filename_component(MINGW_QCA_PLUGINS_DIR "${qca_ossl_plugin}" DIRECTORY)
+		else()
+			message(WARNING "QCA OpenSSL plugin (libqca-ossl.dll) not found below ${MINGW_PREFIX}/lib")
+			set(MINGW_QCA_PLUGINS_DIR "${MINGW_PREFIX}/lib/qca-qt${QT_MAJOR_VERSION}/crypto")
+		endif()
+	endif()
 endif()
+message(STATUS "QCA plugins for the Windows installer: ${MINGW_QCA_PLUGINS_DIR}")
+# TLS backends are plugins since Qt 6.2; Qt 5 has OpenSSL support built in
+if(WITH_QT6)
+	set(WINDOWS_TLS_PLUGIN_COMMAND COMMAND cp ${MINGW_QT_PLUGINS_DIR}/tls/qopensslbackend.dll ${WINDOWS_INSTALL_FILES}/tls)
+else()
+	set(WINDOWS_TLS_PLUGIN_COMMAND "")
+endif()
+
 find_program(UNIX2DOS NAMES unix2dos todos REQUIRED)
 
 if(NOT MINGW_OBJDUMP)
@@ -36,7 +62,7 @@ add_custom_target(windows-binaries
 	COMMAND cp ${CMAKE_SOURCE_DIR}/3rdparty/interception/* ${WINDOWS_INSTALL_FILES}/interception
 	COMMAND cp ${CMAKE_SOURCE_DIR}/3rdparty/ddengine/${DLL_DDENGINE} ${WINDOWS_INSTALL_FILES}
 	COMMAND cp core/veyon-core.dll ${WINDOWS_INSTALL_FILES}
-	COMMAND find . -mindepth 2 -name '${BRANDING_PRODUCT_SLUG}-*.exe' -exec cp '{}' ${WINDOWS_INSTALL_FILES}/ '\;'
+	COMMAND find . -mindepth 2 -name '${BRANDING_PRODUCT_SLUG}-*.exe' -not -path './${WINDOWS_INSTALL_FILES}/*' -exec cp '{}' ${WINDOWS_INSTALL_FILES}/ '\;'
 	COMMAND find 3rdparty -name 'libvnc*.dll' -exec cp '{}' ${WINDOWS_INSTALL_FILES}/ '\;'
 	COMMAND mkdir -p ${WINDOWS_INSTALL_FILES}/plugins
 	COMMAND find plugins/ -name '*.dll' -exec cp '{}' ${WINDOWS_INSTALL_FILES}/plugins/ '\;'
@@ -50,7 +76,7 @@ add_custom_target(windows-binaries
 	COMMAND cp ${MINGW_QT_PLUGINS_DIR}/imageformats/qjpeg.dll ${WINDOWS_INSTALL_FILES}/imageformats
 	COMMAND cp ${MINGW_QT_PLUGINS_DIR}/platforms/qwindows.dll ${WINDOWS_INSTALL_FILES}/platforms
 	COMMAND cp ${MINGW_QT_PLUGINS_DIR}/styles/*.dll ${WINDOWS_INSTALL_FILES}/styles
-	COMMAND cp ${MINGW_QT_PLUGINS_DIR}/tls/qopensslbackend.dll ${WINDOWS_INSTALL_FILES}/tls
+	${WINDOWS_TLS_PLUGIN_COMMAND}
 	# copy all DLLs the binaries and plugins depend on from the MinGW environment
 	COMMAND ${CMAKE_SOURCE_DIR}/tools/windows-deploy-dlls.sh ${MINGW_OBJDUMP} ${WINDOWS_INSTALL_FILES} ${MINGW_DLL_DIRS}
 	COMMAND ${MINGW_TOOL_PREFIX}strip ${WINDOWS_INSTALL_FILES}/*.dll ${WINDOWS_INSTALL_FILES}/*.exe ${WINDOWS_INSTALL_FILES}/plugins/*.dll ${WINDOWS_INSTALL_FILES}/platforms/*.dll ${WINDOWS_INSTALL_FILES}/styles/*.dll ${WINDOWS_INSTALL_FILES}/crypto/*.dll

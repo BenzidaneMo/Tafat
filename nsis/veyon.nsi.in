@@ -9,6 +9,7 @@
 !define MAIN_APP_EXE "@BRANDING_PRODUCT_SLUG@-master.exe"
 !define MIN_WINDOWS "@VEYON_INSTALLER_MIN_WINDOWS@"
 !define IS_64BIT "@VEYON_INSTALLER_64BIT@"
+!define QT_MAJOR "@QT_MAJOR_VERSION@"
 !define INSTALL_TYPE "SetShellVarContext all"
 !define REG_ROOT "HKLM"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
@@ -192,8 +193,11 @@ File "platforms/qwindows.dll"
 SetOutPath "$INSTDIR\styles"
 File "styles/*.dll"
 # Qt TLS backend
+!if ${QT_MAJOR} >= 6
+; TLS backends are plugins since Qt 6.2 (Qt 5 has OpenSSL support built in)
 SetOutPath "$INSTDIR\tls"
 File "tls/qopensslbackend.dll"
+!endif
 # configuration
 ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service register'
 ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Network/FirewallExceptionEnabled 1'
