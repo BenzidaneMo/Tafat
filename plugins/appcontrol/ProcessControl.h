@@ -59,6 +59,11 @@ public:
 	// the product's own programs and essential parts of the desktop are never closed
 	static bool isProtected( const QString& name );
 
+	// names of the applications the user works with: processes with a window
+	// (all processes without window detection), without protected ones, sorted
+	static QStringList openApplications( const QList<Process>& processes,
+										 bool windowDetection = supportsWindowDetection() );
+
 	// with Policy::AllowListedOnly only processes with a window are closed
 	static QList<Process> processesToClose( const QList<Process>& processes, Policy policy,
 											const QStringList& applications,

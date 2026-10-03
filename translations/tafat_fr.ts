@@ -74,6 +74,14 @@
         <source>%1 contributors</source>
         <translation type="unfinished">Contributeurs de %1</translation>
     </message>
+    <message>
+        <source>Running apps</source>
+        <translation type="unfinished">Applications ouvertes</translation>
+    </message>
+    <message>
+        <source>See which applications are open on the selected computers and close them.</source>
+        <translation type="unfinished">Voir les applications ouvertes sur les ordinateurs sélectionnés et les fermer.</translation>
+    </message>
 </context>
 <context>
     <name>ClassChatFeaturePlugin</name>
@@ -758,6 +766,41 @@
     <message>
         <source>Could not read %1.</source>
         <translation type="unfinished">Impossible de lire %1.</translation>
+    </message>
+</context>
+<context>
+    <name>RunningAppsWindow</name>
+    <message>
+        <source>Close on this computer</source>
+        <translation type="unfinished">Fermer sur cet ordinateur</translation>
+    </message>
+    <message>
+        <source>Close on all computers</source>
+        <translation type="unfinished">Fermer sur tous les ordinateurs</translation>
+    </message>
+    <message>
+        <source>Running applications</source>
+        <translation type="unfinished">Applications ouvertes</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished">Actualiser</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <source>Close %1 on all computers in the list? Unsaved work in it is lost.</source>
+        <translation type="unfinished">Fermer %1 sur tous les ordinateurs de la liste ? Le travail non enregistré sera perdu.</translation>
+    </message>
+    <message>
+        <source>(no open applications)</source>
+        <translation type="unfinished">(aucune application ouverte)</translation>
+    </message>
+    <message>
+        <source>%1 applications open on %2 computers</source>
+        <translation type="unfinished">%1 applications ouvertes sur %2 ordinateurs</translation>
     </message>
 </context>
 <context>

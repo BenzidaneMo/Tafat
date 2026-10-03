@@ -46,7 +46,14 @@ AppControlFeaturePlugin::AppControlFeaturePlugin( QObject* parent ) :
 							 "the applications needed for the lesson. Blocked applications "
 							 "are closed automatically while this mode is active." ),
 						 QStringLiteral(":/appcontrol/application-control.png") ),
-	m_features( { m_appControlFeature } )
+	m_runningAppsFeature( QStringLiteral("RunningApps"),
+						  Feature::Flag::Action | Feature::Flag::AllComponents,
+						  Feature::Uid( "9e1c4b7a-3d2f-4a86-b5c9-0f7e2d6a1b38" ),
+						  Feature::Uid(),
+						  tr( "Running apps" ), {},
+						  tr( "See which applications are open on the selected computers and close them." ),
+						  QStringLiteral(":/appcontrol/running-apps.png") ),
+	m_features( { m_appControlFeature, m_runningAppsFeature } )
 {
 	m_enforcementTimer.setInterval( EnforcementInterval );
 
@@ -63,6 +70,23 @@ bool AppControlFeaturePlugin::controlFeature( Feature::Uid featureUid, Operation
 											  const QVariantMap& arguments,
 											  const ComputerControlInterfaceList& computerControlInterfaces )
 {
+	if( featureUid == m_runningAppsFeature.uid() )
+	{
+		if( operation != Operation::Start )
+		{
+			return false;
+		}
+		const auto application = arguments.value( argToString( Argument::Applications ) ).toStringList().value( 0 );
+		auto targets = computerControlInterfaces;
+		targets.removeLocalHostInterfaces();
+		sendFeatureMessage( application.isEmpty()
+								? FeatureMessage{ featureUid, FeatureCommand::QueryApplications }
+								: FeatureMessage{ featureUid, FeatureCommand::CloseApplication }
+									  .addArgument( Argument::Applications, QStringList{ application } ),
+							targets );
+		return true;
+	}
+
 	if( featureUid != m_appControlFeature.uid() )
 	{
 		return false;
@@ -96,6 +120,42 @@ bool AppControlFeaturePlugin::controlFeature( Feature::Uid featureUid, Operation
 bool AppControlFeaturePlugin::startFeature( VeyonMasterInterface& master, const Feature& feature,
 											const ComputerControlInterfaceList& computerControlInterfaces )
 {
+	if( feature.uid() == m_runningAppsFeature.uid() )
+	{
+		if( m_runningAppsWindow == nullptr )
+		{
+			m_runningAppsWindow = new RunningAppsWindow( master.mainWindow() );
+			connect( m_runningAppsWindow, &RunningAppsWindow::refreshRequested, this, [this]() {
+				controlFeature( m_runningAppsFeature.uid(), Operation::Start, {}, runningAppsComputers() );
+			} );
+			connect( m_runningAppsWindow, &RunningAppsWindow::closeRequested, this,
+					 [this]( const QString& key, const QString& application ) {
+				if( const auto computer = m_runningAppsComputers.value( key ).toStrongRef() )
+				{
+					controlFeature( m_runningAppsFeature.uid(), Operation::Start,
+									{ { argToString( Argument::Applications ), QStringList{ application } } }, { computer } );
+				}
+			} );
+			connect( m_runningAppsWindow, &RunningAppsWindow::closeEverywhereRequested, this,
+					 [this]( const QString& application ) {
+				controlFeature( m_runningAppsFeature.uid(), Operation::Start,
+								{ { argToString( Argument::Applications ), QStringList{ application } } },
+								runningAppsComputers() );
+			} );
+		}
+
+		m_runningAppsWindow->clear();
+		m_runningAppsComputers.clear();
+		for( const auto& computer : computerControlInterfaces )
+		{
+			addRunningAppsComputer( computer );
+		}
+		m_runningAppsWindow->show();
+		m_runningAppsWindow->raise();
+
+		return controlFeature( feature.uid(), Operation::Start, {}, computerControlInterfaces );
+	}
+
 	if( feature.uid() != m_appControlFeature.uid() )
 	{
 		return false;
@@ -116,11 +176,95 @@ bool AppControlFeaturePlugin::startFeature( VeyonMasterInterface& master, const 
 
 
 
+bool AppControlFeaturePlugin::handleFeatureMessage( ComputerControlInterface::Pointer computerControlInterface,
+													const FeatureMessage& message )
+{
+	if( message.featureUid() != m_runningAppsFeature.uid() ||
+		message.command<FeatureCommand>() != FeatureCommand::ApplicationList )
+	{
+		return false;
+	}
+
+	if( m_runningAppsWindow )
+	{
+		addRunningAppsComputer( computerControlInterface );
+		m_runningAppsWindow->setApplications( computerControlInterface->computer().hostName(),
+											   message.argument( Argument::Applications ).toStringList() );
+	}
+
+	return true;
+}
+
+
+
+void AppControlFeaturePlugin::addRunningAppsComputer( const ComputerControlInterface::Pointer& computerControlInterface )
+{
+	const auto key = computerControlInterface->computer().hostName();
+	if( key.isEmpty() || m_runningAppsWindow == nullptr )
+	{
+		return;
+	}
+
+	m_runningAppsComputers[key] = computerControlInterface.toWeakRef();
+
+	const auto user = computerControlInterface->userFullName().isEmpty() ? computerControlInterface->userLoginName()
+																		  : computerControlInterface->userFullName();
+	m_runningAppsWindow->setComputer( key, user.isEmpty() ? computerControlInterface->computerName()
+														  : QStringLiteral("%1 \u2013 %2").arg( VeyonCore::stripDomain( user ),
+																							   computerControlInterface->computerName() ) );
+}
+
+
+
+ComputerControlInterfaceList AppControlFeaturePlugin::runningAppsComputers() const
+{
+	ComputerControlInterfaceList computers;
+	for( const auto& weakComputer : m_runningAppsComputers )
+	{
+		if( const auto computer = weakComputer.toStrongRef() )
+		{
+			computers.append( computer );
+		}
+	}
+	return computers;
+}
+
+
+
 bool AppControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server,
 													const MessageContext& messageContext,
 													const FeatureMessage& message )
 {
-	Q_UNUSED(messageContext)
+	if( message.featureUid() == m_runningAppsFeature.uid() )
+	{
+		const auto command = message.command<FeatureCommand>();
+		if( command != FeatureCommand::QueryApplications && command != FeatureCommand::CloseApplication )
+		{
+			return false;
+		}
+
+		const auto hasUser = VeyonCore::platform().sessionFunctions().currentSessionHasUser();
+		if( hasUser && command == FeatureCommand::CloseApplication )
+		{
+			const auto application = ProcessControl::normalizedName(
+				message.argument( Argument::Applications ).toStringList().value( 0 ) );
+			for( const auto& process : ProcessControl::sessionProcesses() )
+			{
+				if( process.name == application && ProcessControl::isProtected( process.name ) == false )
+				{
+					ProcessControl::terminate( process.id );
+				}
+			}
+			vInfo() << "closed application" << application << "on request of the teacher";
+		}
+
+		server.sendFeatureMessageReply( messageContext,
+										FeatureMessage{ m_runningAppsFeature.uid(), FeatureCommand::ApplicationList }
+											.addArgument( Argument::Applications,
+														  hasUser ? ProcessControl::openApplications( ProcessControl::sessionProcesses() )
+																  : QStringList{} ) );
+		return true;
+	}
 
 	if( message.featureUid() != m_appControlFeature.uid() )
 	{

@@ -72,6 +72,14 @@
         <source>%1 contributors</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Running apps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See which applications are open on the selected computers and close them.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ClassChatFeaturePlugin</name>
@@ -751,6 +759,41 @@
     </message>
     <message>
         <source>Could not read %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RunningAppsWindow</name>
+    <message>
+        <source>Close on this computer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close on all computers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Running applications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close %1 on all computers in the list? Unsaved work in it is lost.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no open applications)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 applications open on %2 computers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -61,6 +61,7 @@ rsvg-convert -w 640 -h 320 "$ART/tafat-splash.svg" -o "$ROOT/master/resources/sp
 
 # feature icons
 png feature-app-control.svg 128 "$ROOT/plugins/appcontrol/application-control.png"
+png feature-running-apps.svg 128 "$ROOT/plugins/appcontrol/running-apps.png"
 png feature-website-control.svg 128 "$ROOT/plugins/webcontrol/website-control.png"
 png feature-quiz.svg 128 "$ROOT/plugins/quiz/quiz.png"
 png feature-register.svg 128 "$ROOT/plugins/register/register.png"

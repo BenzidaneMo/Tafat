@@ -70,6 +70,25 @@ bool ProcessControl::isProtected( const QString& name )
 
 
 
+QStringList ProcessControl::openApplications( const QList<Process>& processes, bool windowDetection )
+{
+	QStringList applications;
+	for( const auto& process : processes )
+	{
+		if( ( windowDetection == false || process.hasWindow ) &&
+			process.name.isEmpty() == false &&
+			isProtected( process.name ) == false &&
+			applications.contains( process.name ) == false )
+		{
+			applications.append( process.name );
+		}
+	}
+	applications.sort();
+	return applications;
+}
+
+
+
 QList<ProcessControl::Process> ProcessControl::processesToClose( const QList<Process>& processes, Policy policy,
 																 const QStringList& applications,
 																 bool windowDetection )

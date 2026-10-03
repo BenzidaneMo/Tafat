@@ -118,6 +118,23 @@ private Q_SLOTS:
 		// without a previous value the policy value is removed
 		QVERIFY( UsbStorageBlocker::restoredValue( { true, false, {} } ).isValid() == false );
 	}
+
+	void openApplications()
+	{
+		const QList<ProcessControl::Process> processes{
+			{ 1, QStringLiteral("firefox"), true },
+			{ 2, QStringLiteral("firefox"), true },
+			{ 3, QStringLiteral("svchost"), false },
+			{ 4, QStringLiteral("explorer"), true },
+			{ 5, QStringLiteral("tafat-worker"), true },
+			{ 6, QStringLiteral("game"), true },
+		};
+		QCOMPARE( ProcessControl::openApplications( processes, true ),
+				  ( QStringList{ QStringLiteral("firefox"), QStringLiteral("game") } ) );
+		// without window detection all processes count, protected ones still not
+		QCOMPARE( ProcessControl::openApplications( processes, false ),
+				  ( QStringList{ QStringLiteral("firefox"), QStringLiteral("game"), QStringLiteral("svchost") } ) );
+	}
 };
 
 QTEST_GUILESS_MAIN(ProcessControlTest)

@@ -74,6 +74,14 @@
         <source>%1 contributors</source>
         <translation type="unfinished">المساهمون في %1</translation>
     </message>
+    <message>
+        <source>Running apps</source>
+        <translation type="unfinished">التطبيقات المفتوحة</translation>
+    </message>
+    <message>
+        <source>See which applications are open on the selected computers and close them.</source>
+        <translation type="unfinished">عرض التطبيقات المفتوحة على الحواسيب المحددة وإغلاقها.</translation>
+    </message>
 </context>
 <context>
     <name>ClassChatFeaturePlugin</name>
@@ -766,6 +774,41 @@
     <message>
         <source>Could not read %1.</source>
         <translation type="unfinished">تعذرت قراءة %1.</translation>
+    </message>
+</context>
+<context>
+    <name>RunningAppsWindow</name>
+    <message>
+        <source>Close on this computer</source>
+        <translation type="unfinished">إغلاق على هذا الحاسوب</translation>
+    </message>
+    <message>
+        <source>Close on all computers</source>
+        <translation type="unfinished">إغلاق على كل الحواسيب</translation>
+    </message>
+    <message>
+        <source>Running applications</source>
+        <translation type="unfinished">التطبيقات المفتوحة</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished">تحديث</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">إغلاق</translation>
+    </message>
+    <message>
+        <source>Close %1 on all computers in the list? Unsaved work in it is lost.</source>
+        <translation type="unfinished">هل تريد إغلاق %1 على كل الحواسيب في القائمة؟ سيضيع العمل غير المحفوظ فيه.</translation>
+    </message>
+    <message>
+        <source>(no open applications)</source>
+        <translation type="unfinished">(لا توجد تطبيقات مفتوحة)</translation>
+    </message>
+    <message>
+        <source>%1 applications open on %2 computers</source>
+        <translation type="unfinished">عدد التطبيقات المفتوحة: %1 على %2 حواسيب</translation>
     </message>
 </context>
 <context>

@@ -165,7 +165,7 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   (`translations/CMakeLists.txt`, those sources are excluded from the `veyon_*.ts`
   catalogs) and loaded after the `veyon` catalog (`VeyonCore::initLocaleAndTranslation`).
   Add new Tafat plugins to `tafat_plugins` there. Arabic and French drafts for all
-  209 texts are in, marked *unfinished* (Qt still uses them) for native review.
+  219 texts are in, marked *unfinished* (Qt still uses them) for native review.
 - `veyon_ar.ts`: 107 visible upstream texts (main window, toolbar, demo, lock, power,
   log in/off, file transfer, …) added as unfinished drafts → 325/1161. Better to
   also contribute them to Veyon's Transifex so they come back upstream.
@@ -175,6 +175,10 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   `ProcessControl` (name normalization, session processes, protected system
   processes, terminate); server checks every 2 s, worker shows a notice.
   Allow-only needs `Process::hasWindow` → **Windows only**.
+  Action **"Running apps"** (`RunningAppsWindow`): lists the open
+  applications per computer (`ProcessControl::openApplications`, windowed processes
+  on Windows, all session processes on Linux), refreshes every 5 s, closes an app on
+  one or all computers (commands `QueryApplications`/`ApplicationList`/`CloseApplication`).
 - `plugins/webcontrol` — "Block websites": `WebPolicy` builds Chrome/Edge/Brave/
   Chromium `URLBlocklist`/`URLAllowlist` and Firefox `WebsiteFilter` policies;
   `PolicyStore` writes them (Windows registry 64-bit view, Linux `/etc` policy
@@ -299,7 +303,7 @@ yet.
    - Hosted Weblate; small `qtbase_kab*` overrides.
    - RTL audit of `LockWidget`, `Toast` and other custom-painted widgets.
 5. **Next features:**
-   - App/URL history for the teacher.
+   - App/URL history for the teacher (the live "Running apps" list is done).
    - Print control.
    - Then: whiteboard/annotation, screen recording, audio, lesson plans/rewards,
      inventory, mobile app.

@@ -28,8 +28,10 @@
 #include <QTimer>
 
 #include "AppControlDialog.h"
+#include "ComputerControlInterface.h"
 #include "Feature.h"
 #include "FeatureProviderInterface.h"
+#include "RunningAppsWindow.h"
 
 class QMessageBox;
 
@@ -91,6 +93,9 @@ public:
 	bool startFeature( VeyonMasterInterface& master, const Feature& feature,
 					   const ComputerControlInterfaceList& computerControlInterfaces ) override;
 
+	bool handleFeatureMessage( ComputerControlInterface::Pointer computerControlInterface,
+							   const FeatureMessage& message ) override;
+
 	bool handleFeatureMessage( VeyonServerInterface& server,
 							   const MessageContext& messageContext,
 							   const FeatureMessage& message ) override;
@@ -104,15 +109,27 @@ private:
 	{
 		Start,
 		Stop,
-		NotifyClosedApplications
+		NotifyClosedApplications,
+		QueryApplications,
+		ApplicationList,
+		CloseApplication
 	};
 
 	static constexpr int EnforcementInterval = 2000;
 
 	void enforce( VeyonServerInterface& server );
 
+	// master side
+	void addRunningAppsComputer( const ComputerControlInterface::Pointer& computerControlInterface );
+	ComputerControlInterfaceList runningAppsComputers() const;
+
 	const Feature m_appControlFeature;
+	const Feature m_runningAppsFeature;
 	const FeatureList m_features;
+
+	// master side
+	QPointer<RunningAppsWindow> m_runningAppsWindow;
+	QMap<QString, QWeakPointer<ComputerControlInterface>> m_runningAppsComputers;
 
 	// server side
 	QTimer m_enforcementTimer;
