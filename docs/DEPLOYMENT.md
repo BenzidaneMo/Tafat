@@ -59,9 +59,24 @@ workflow (`tafat-windows-<arch>-qt<6|5>`; Qt 5 = legacy build).
 
 ## 3. Student computers
 
+### With the student setup folder (recommended)
+
+1. In **Tafat Configurator** → *Lab setup*, choose the teacher's key pair and
+   click *Export student setup…*. Choose an empty folder, e.g. on a USB stick.
+   It receives `teacher_public_key.pem` (only the public key),
+   `tafat-config.json` (these settings) and `install-students.bat`.
+2. Copy the installers into the same folder (all four, or only the ones the
+   lab needs).
+3. On each student computer, right click `install-students.bat` →
+   *Run as administrator*. The script picks the installer for the Windows
+   version (legacy installer on Windows 7/8.1, 32 or 64 bit) and installs
+   silently without the teacher program, applies the settings and imports the
+   key.
+
+### By hand or with a deployment tool
+
 Install without the teacher program, import the teacher's public key and the
-configuration. This can be done silently, e.g. from a USB stick or a
-deployment tool:
+configuration:
 
 ```bat
 tafat-<version>-win64-setup.exe /S /NoMaster /ApplyConfig=D:\lab.json
@@ -78,6 +93,8 @@ Installer options:
 | `/NoInterception` | do not install the input device driver (used for locking the keyboard/mouse) |
 | `/NoStartMenuFolder` | no start menu entries |
 | `/ApplyConfig=<file>` | import a configuration exported from the configurator |
+| `/ImportPublicKey=<file>` | import a public key (replaces a key of the same name) |
+| `/PublicKeyName=<name>` | name for `/ImportPublicKey` (default `teacher`) |
 | `/D=<folder>` | installation folder (must be the last option) |
 
 Uninstall: `"C:\Program Files\Tafat\uninstall.exe" /S`, add `/ClearConfig` to

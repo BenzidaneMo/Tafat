@@ -40,6 +40,9 @@ Added by Tafat:
     shared account), class list import and absent students
   * Hands & chat: students raise their hands, chat with the teacher and hand in
     their work
+  * Lab setup: export a folder (e.g. on a USB stick) with the teacher's key,
+    the settings and a script that installs the right version on each student
+    computer
   * Return work: give each student back their own corrected files
 
 More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:

@@ -69,5 +69,6 @@ png feature-chat.svg 128 "$ROOT/plugins/classchat/classchat.png"
 png feature-hand-raised.svg 128 "$ROOT/plugins/classchat/hand-raised.png"
 png feature-hand-in.svg 128 "$ROOT/plugins/classchat/hand-in.png"
 png feature-return-work.svg 128 "$ROOT/plugins/returnwork/return-work.png"
+png feature-lab-setup.svg 128 "$ROOT/plugins/labsetup/lab-setup.png"
 
 echo "Artwork rendered."

@@ -213,6 +213,23 @@ ${If} $R1 != ""
 	   MessageBox MB_OK|MB_ICONSTOP "Could not apply specified configuration file!"
   ${EndIf}
 ${EndIf}
+; /ImportPublicKey=<file> [/PublicKeyName=<name>, default "teacher"]: e.g. from
+; the student setup exported by the configurator ("Lab setup" page)
+${GetOptions} $R0 "/ImportPublicKey=" $R1
+${If} $R1 != ""
+  ${GetOptions} $R0 "/PublicKeyName=" $R2
+  ${If} $R2 == ""
+    StrCpy $R2 "teacher"
+  ${EndIf}
+  ; replace a key of the same name from a previous installation
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys delete "$R2/public"'
+  ClearErrors
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys import "$R2/public" "$R1"' $0
+  ${If} $0 != 0
+    MessageBox MB_OK|MB_ICONSTOP "Could not import the public key $R1!" /SD IDOK
+    SetErrorLevel 3
+  ${EndIf}
+${EndIf}
 ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service start'
 SectionEnd
 

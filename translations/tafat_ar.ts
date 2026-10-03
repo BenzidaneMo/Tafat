@@ -183,6 +183,72 @@
     </message>
 </context>
 <context>
+    <name>LabSetupPage</name>
+    <message>
+        <source>Export student setup…</source>
+        <translation type="unfinished">تصدير إعداد حواسيب التلاميذ…</translation>
+    </message>
+    <message>
+        <source>Lab setup</source>
+        <translation type="unfinished">إعداد القاعة</translation>
+    </message>
+    <message>
+        <source>Prepare the student computers</source>
+        <translation type="unfinished">تجهيز حواسيب التلاميذ</translation>
+    </message>
+    <message>
+        <source>Exports everything the student computers need into a folder, for example on a USB stick: the teacher&apos;s public key, these settings and an installation script.
+
+1. Choose the key pair of the teacher computer (key file authentication).
+2. Export the student setup into an empty folder.
+3. Copy the %1 installers (%2-…-setup.exe) into the same folder.
+4. On each student computer, run %3 as administrator. It picks the right installer for the Windows version and installs %1 silently without the teacher program.</source>
+        <translation type="unfinished">يصدّر كل ما تحتاجه حواسيب التلاميذ إلى مجلد، مثلاً على مفتاح USB: المفتاح العمومي للأستاذ وهذه الإعدادات وبرنامج نصي للتثبيت.
+
+1. اختر زوج مفاتيح حاسوب الأستاذ (توثيق ملف المفاتيح).
+2. صدّر إعداد التلاميذ إلى مجلد فارغ.
+3. انسخ برامج تثبيت %1 (⁨%2-…-setup.exe⁩) إلى المجلد نفسه.
+4. على كل حاسوب تلميذ، شغّل ⁨%3⁩ بصلاحيات المسؤول. يختار برنامج التثبيت المناسب لإصدار ويندوز ويثبّت %1 بصمت دون برنامج الأستاذ.</translation>
+    </message>
+    <message>
+        <source>There is no key pair yet. Create one on the page &quot;Authentication keys&quot; first and choose key file authentication on the page &quot;General&quot;.</source>
+        <translation type="unfinished">لا يوجد زوج مفاتيح بعد. أنشئ واحدًا أولاً في صفحة «مفاتيح التوثيق» واختر توثيق ملف المفاتيح في صفحة «عام».</translation>
+    </message>
+    <message>
+        <source>Key pair:</source>
+        <translation type="unfinished">زوج المفاتيح:</translation>
+    </message>
+    <message>
+        <source>Folder for the student setup</source>
+        <translation type="unfinished">مجلد إعداد التلاميذ</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">تعذرت الكتابة في %1.</translation>
+    </message>
+    <message>
+        <source>The student setup was written to %1:
+%2
+
+Now copy the %3 installers into this folder.</source>
+        <translation type="unfinished">تمت كتابة إعداد التلاميذ في ⁨%1⁩:
+⁨%2⁩
+
+انسخ الآن برامج تثبيت %3 إلى هذا المجلد.</translation>
+    </message>
+</context>
+<context>
+    <name>LabSetupPlugin</name>
+    <message>
+        <source>Prepare the installation of the student computers</source>
+        <translation type="unfinished">تجهيز تثبيت حواسيب التلاميذ</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">المساهمون في %1</translation>
+    </message>
+</context>
+<context>
     <name>QuestionDialog</name>
     <message>
         <source>Question</source>

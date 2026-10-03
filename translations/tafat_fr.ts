@@ -183,6 +183,72 @@
     </message>
 </context>
 <context>
+    <name>LabSetupPage</name>
+    <message>
+        <source>Export student setup…</source>
+        <translation type="unfinished">Exporter l&apos;installation des élèves…</translation>
+    </message>
+    <message>
+        <source>Lab setup</source>
+        <translation type="unfinished">Installation de la salle</translation>
+    </message>
+    <message>
+        <source>Prepare the student computers</source>
+        <translation type="unfinished">Préparer les ordinateurs des élèves</translation>
+    </message>
+    <message>
+        <source>Exports everything the student computers need into a folder, for example on a USB stick: the teacher&apos;s public key, these settings and an installation script.
+
+1. Choose the key pair of the teacher computer (key file authentication).
+2. Export the student setup into an empty folder.
+3. Copy the %1 installers (%2-…-setup.exe) into the same folder.
+4. On each student computer, run %3 as administrator. It picks the right installer for the Windows version and installs %1 silently without the teacher program.</source>
+        <translation type="unfinished">Exporte dans un dossier, par exemple sur une clé USB, tout ce dont les ordinateurs des élèves ont besoin : la clé publique de l&apos;enseignant, ces paramètres et un script d&apos;installation.
+
+1. Choisissez la paire de clés de l&apos;ordinateur de l&apos;enseignant (authentification par un fichier clé).
+2. Exportez l&apos;installation des élèves dans un dossier vide.
+3. Copiez les programmes d&apos;installation de %1 (%2-…-setup.exe) dans le même dossier.
+4. Sur chaque ordinateur d&apos;élève, exécutez %3 en tant qu&apos;administrateur. Il choisit le programme d&apos;installation adapté à la version de Windows et installe %1 en silence, sans le programme de l&apos;enseignant.</translation>
+    </message>
+    <message>
+        <source>There is no key pair yet. Create one on the page &quot;Authentication keys&quot; first and choose key file authentication on the page &quot;General&quot;.</source>
+        <translation type="unfinished">Il n&apos;y a pas encore de paire de clés. Créez-en une d&apos;abord sur la page « Clés d&apos;authentification » et choisissez l&apos;authentification par un fichier clé sur la page « Général ».</translation>
+    </message>
+    <message>
+        <source>Key pair:</source>
+        <translation type="unfinished">Paire de clés :</translation>
+    </message>
+    <message>
+        <source>Folder for the student setup</source>
+        <translation type="unfinished">Dossier pour l&apos;installation des élèves</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Impossible d&apos;écrire %1.</translation>
+    </message>
+    <message>
+        <source>The student setup was written to %1:
+%2
+
+Now copy the %3 installers into this folder.</source>
+        <translation type="unfinished">L&apos;installation des élèves a été écrite dans %1 :
+%2
+
+Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</translation>
+    </message>
+</context>
+<context>
+    <name>LabSetupPlugin</name>
+    <message>
+        <source>Prepare the installation of the student computers</source>
+        <translation type="unfinished">Préparer l&apos;installation des ordinateurs des élèves</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">Contributeurs de %1</translation>
+    </message>
+</context>
+<context>
     <name>QuestionDialog</name>
     <message>
         <source>Question</source>

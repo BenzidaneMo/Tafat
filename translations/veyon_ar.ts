@@ -310,7 +310,7 @@ If you&apos;re interested in translating Veyon into your local or another langua
     <name>AuthKeysConfigurationPage</name>
     <message>
         <source>Authentication keys</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مفاتيح التوثيق</translation>
     </message>
     <message>
         <source>Introduction</source>
