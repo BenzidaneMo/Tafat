@@ -26,6 +26,7 @@
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QRadioButton>
@@ -142,6 +143,12 @@ QStringList WebControlDialog::sites() const
 
 void WebControlDialog::accept()
 {
+	if( sites().size() > MaxSites )
+	{
+		QMessageBox::warning( this, windowTitle(), tr( "Please enter at most %1 websites." ).arg( MaxSites ) );
+		return;
+	}
+
 	auto store = settings();
 	store.setValue( QStringLiteral("Mode"), int(mode()) );
 	store.setValue( QStringLiteral("Sites"), sites() );

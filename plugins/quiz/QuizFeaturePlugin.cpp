@@ -65,16 +65,18 @@ QuizFeaturePlugin::~QuizFeaturePlugin()
 
 
 
-QString QuizFeaturePlugin::toJsonString( const QJsonObject& object )
+QByteArray QuizFeaturePlugin::toJsonData( const QJsonObject& object )
 {
-	return QString::fromUtf8( QJsonDocument( object ).toJson( QJsonDocument::Compact ) );
+	// sent as byte array: feature messages limit strings to 32768 characters
+	return QJsonDocument( object ).toJson( QJsonDocument::Compact );
 }
 
 
 
-QJsonObject QuizFeaturePlugin::fromJsonString( const QString& json )
+QJsonObject QuizFeaturePlugin::fromJsonData( const QVariant& json )
 {
-	return QJsonDocument::fromJson( json.toUtf8() ).object();
+	// also accepts JSON sent as string
+	return QJsonDocument::fromJson( json.toByteArray() ).object();
 }
 
 
@@ -93,11 +95,11 @@ bool QuizFeaturePlugin::controlFeature( Feature::Uid featureUid, Operation opera
 		auto targets = computerControlInterfaces;
 		targets.removeLocalHostInterfaces();
 
-		const auto quiz = Quiz::fromJson( fromJsonString( arguments.value( argToString( Argument::Quiz ) ).toString() ) );
+		const auto quiz = Quiz::fromJson( fromJsonData( arguments.value( argToString( Argument::Quiz ) ) ) );
 
 		// solutions never leave the teacher's computer
 		sendFeatureMessage( FeatureMessage{ featureUid, FeatureCommand::StartQuiz }
-								.addArgument( Argument::Quiz, toJsonString( quiz.withoutSolutions().toJson() ) ),
+								.addArgument( Argument::Quiz, toJsonData( quiz.withoutSolutions().toJson() ) ),
 							targets );
 		return true;
 	}
@@ -144,7 +146,7 @@ bool QuizFeaturePlugin::startFeature( VeyonMasterInterface& master, const Featur
 	m_resultsWindow->show();
 
 	controlFeature( feature.uid(), Operation::Start,
-					{ { argToString( Argument::Quiz ), toJsonString( m_masterQuiz.toJson() ) } },
+					{ { argToString( Argument::Quiz ), toJsonData( m_masterQuiz.toJson() ) } },
 					computerControlInterfaces );
 
 	return true;
@@ -192,7 +194,7 @@ bool QuizFeaturePlugin::handleFeatureMessage( ComputerControlInterface::Pointer 
 										 computerControlInterface->userFullName().isEmpty() ? computerControlInterface->userLoginName()
 																							 : computerControlInterface->userFullName() );
 		m_resultsWindow->updateAnswers( key,
-										Quiz::answersFromJson( fromJsonString( message.argument( Argument::Answers ).toString() ) ),
+										Quiz::answersFromJson( fromJsonData( message.argument( Argument::Answers ) ) ),
 										message.argument( Argument::Finished ).toBool() );
 	}
 
@@ -214,12 +216,12 @@ bool QuizFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server,
 
 	if( message.command<FeatureCommand>() == FeatureCommand::StartQuiz )
 	{
-		const auto quiz = Quiz::fromJson( fromJsonString( message.argument( Argument::Quiz ).toString() ) );
+		const auto quiz = Quiz::fromJson( fromJsonData( message.argument( Argument::Quiz ) ) );
 		{
 			QMutexLocker locker( &m_serverMutex );
 			m_serverQuizId = quiz.id;
 			m_serverQuizActive = true;
-			m_serverAnswers = toJsonString( {} );
+			m_serverAnswers = toJsonData( {} );
 			m_serverFinished = false;
 		}
 		m_answersVersion.ref();
@@ -255,7 +257,7 @@ bool QuizFeaturePlugin::handleFeatureMessageFromWorker( VeyonServerInterface& se
 	QMutexLocker locker( &m_serverMutex );
 	if( message.argument( Argument::QuizId ).toString() == m_serverQuizId )
 	{
-		m_serverAnswers = message.argument( Argument::Answers ).toString();
+		m_serverAnswers = message.argument( Argument::Answers ).toByteArray();
 		m_serverFinished = message.argument( Argument::Finished ).toBool();
 		m_answersVersion.ref();
 	}
@@ -301,7 +303,7 @@ bool QuizFeaturePlugin::handleFeatureMessage( VeyonWorkerInterface& worker, cons
 
 	if( message.command<FeatureCommand>() == FeatureCommand::StartQuiz )
 	{
-		const auto quiz = Quiz::fromJson( fromJsonString( message.argument( Argument::Quiz ).toString() ) );
+		const auto quiz = Quiz::fromJson( fromJsonData( message.argument( Argument::Quiz ) ) );
 
 		delete m_quizWindow;
 		m_quizWindow = new QuizWindow( quiz );
@@ -311,7 +313,7 @@ bool QuizFeaturePlugin::handleFeatureMessage( VeyonWorkerInterface& worker, cons
 				 [&worker, quizId = quiz.id, featureUid = m_quizFeature.uid()]( const QuizAnswers& answers, bool finished ) {
 			worker.sendFeatureMessageReply( FeatureMessage{ featureUid, FeatureCommand::ReportAnswers }
 												.addArgument( Argument::QuizId, quizId )
-												.addArgument( Argument::Answers, toJsonString( Quiz::answersToJson( answers ) ) )
+												.addArgument( Argument::Answers, toJsonData( Quiz::answersToJson( answers ) ) )
 												.addArgument( Argument::Finished, finished ) );
 		} );
 

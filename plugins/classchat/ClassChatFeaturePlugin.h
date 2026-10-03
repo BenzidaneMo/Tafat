@@ -129,8 +129,8 @@ private:
 		HandInChunk
 	};
 
-	static QString toJsonString( const QJsonArray& array );
-	static QString toJsonString( const QJsonObject& object );
+	static QByteArray toJsonData( const QJsonArray& array );
+	static QByteArray toJsonData( const QJsonObject& object );
 
 	// master side
 	TeacherChatWindow* chatWindow( VeyonMasterInterface* master );

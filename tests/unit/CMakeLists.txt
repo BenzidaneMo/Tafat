@@ -241,4 +241,29 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME InventoryTest COMMAND InventoryTest)
 
+	#
+	# FeatureMessageLimitsTest: payloads of the Tafat plugins fit into feature messages
+	#
+	add_executable(FeatureMessageLimitsTest
+		FeatureMessageLimitsTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/AppHistory.cpp
+		${CMAKE_SOURCE_DIR}/plugins/classchat/ChatLog.cpp
+		${CMAKE_SOURCE_DIR}/plugins/inventory/SystemInventory.cpp
+	)
+
+	target_include_directories(FeatureMessageLimitsTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol
+		${CMAKE_SOURCE_DIR}/plugins/classchat
+		${CMAKE_SOURCE_DIR}/plugins/inventory
+	)
+
+	target_link_libraries(FeatureMessageLimitsTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		Qt${QT_MAJOR_VERSION}::Network
+		veyon-core
+	)
+
+	add_test(NAME FeatureMessageLimitsTest COMMAND FeatureMessageLimitsTest)
+
 endif()

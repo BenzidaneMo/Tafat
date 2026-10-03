@@ -36,6 +36,9 @@ class WebControlDialog : public QDialog
 {
 	Q_OBJECT
 public:
+	// feature messages carry at most 1024 list entries
+	static constexpr int MaxSites = 1000;
+
 	explicit WebControlDialog( QWidget* parent = nullptr );
 
 	WebPolicy::Mode mode() const;

@@ -38,6 +38,9 @@ class AppControlDialog : public QDialog
 public:
 	using Mode = ProcessControl::Policy;
 
+	// feature messages carry at most 1024 list entries
+	static constexpr int MaxApplications = 1000;
+
 	explicit AppControlDialog( QWidget* parent = nullptr );
 
 	Mode mode() const;

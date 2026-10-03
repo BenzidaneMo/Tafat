@@ -47,6 +47,10 @@
         <source>Stops the print service on the student computers while this mode is active, so nothing can be printed (also not to PDF).</source>
         <translation type="unfinished">Arrête le service d&apos;impression sur les ordinateurs des élèves tant que ce mode est actif : rien ne peut être imprimé (pas même en PDF).</translation>
     </message>
+    <message>
+        <source>Please enter at most %1 applications.</source>
+        <translation type="unfinished">Saisissez au plus %1 applications.</translation>
+    </message>
 </context>
 <context>
     <name>AppControlFeaturePlugin</name>
@@ -1125,6 +1129,10 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
     <message>
         <source>Applies to Google Chrome, Microsoft Edge, Brave, Chromium and Mozilla Firefox. Firefox applies the change after it was restarted. Use &quot;Block apps&quot; for other browsers.</source>
         <translation type="unfinished">S&apos;applique à Google Chrome, Microsoft Edge, Brave, Chromium et Mozilla Firefox. Firefox applique le changement après redémarrage. Utilisez « Bloquer les applis » pour les autres navigateurs.</translation>
+    </message>
+    <message>
+        <source>Please enter at most %1 websites.</source>
+        <translation type="unfinished">Saisissez au plus %1 sites.</translation>
     </message>
 </context>
 <context>

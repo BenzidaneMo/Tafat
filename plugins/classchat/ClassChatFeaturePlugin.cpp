@@ -102,16 +102,17 @@ ClassChatFeaturePlugin::~ClassChatFeaturePlugin()
 
 
 
-QString ClassChatFeaturePlugin::toJsonString( const QJsonArray& array )
+// JSON is sent as byte array: feature messages limit strings to 32768 characters
+QByteArray ClassChatFeaturePlugin::toJsonData( const QJsonArray& array )
 {
-	return QString::fromUtf8( QJsonDocument( array ).toJson( QJsonDocument::Compact ) );
+	return QJsonDocument( array ).toJson( QJsonDocument::Compact );
 }
 
 
 
-QString ClassChatFeaturePlugin::toJsonString( const QJsonObject& object )
+QByteArray ClassChatFeaturePlugin::toJsonData( const QJsonObject& object )
 {
-	return QString::fromUtf8( QJsonDocument( object ).toJson( QJsonDocument::Compact ) );
+	return QJsonDocument( object ).toJson( QJsonDocument::Compact );
 }
 
 
@@ -235,7 +236,7 @@ bool ClassChatFeaturePlugin::handleFeatureMessage( ComputerControlInterface::Poi
 
 	auto& log = m_masterLogs[key];
 	ChatMessageList newMessages;
-	const auto messages = ChatLog::fromJson( QJsonDocument::fromJson( message.argument( Argument::Messages ).toString().toUtf8() ).array() );
+	const auto messages = ChatLog::fromJson( QJsonDocument::fromJson( message.argument( Argument::Messages ).toByteArray() ).array() );
 	for( const auto& chatMessage : messages )
 	{
 		if( log.add( chatMessage ) )
@@ -311,7 +312,7 @@ bool ClassChatFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server,
 
 		workerManager.sendMessageToUnmanagedSessionWorker(
 			FeatureMessage{ m_chatFeature.uid(), FeatureCommand::TeacherMessage }
-				.addArgument( Argument::Message, toJsonString( chatMessage.toJson() ) ) );
+				.addArgument( Argument::Message, toJsonData( chatMessage.toJson() ) ) );
 		return true;
 	}
 	case FeatureCommand::LowerHand:
@@ -419,7 +420,7 @@ void ClassChatFeaturePlugin::sendAsyncFeatureMessages( VeyonServerInterface& ser
 		QMutexLocker locker( &m_serverMutex );
 		reply.addArgument( Argument::SessionId, m_serverSessionId )
 			.addArgument( Argument::HandRaised, m_serverHandRaised )
-			.addArgument( Argument::Messages, toJsonString( ChatLog::toJson( m_serverLog.messagesAfter( lastMessageId ) ) ) );
+			.addArgument( Argument::Messages, toJsonData( ChatLog::toJson( m_serverLog.messagesAfter( lastMessageId ) ) ) );
 		lastMessageId = m_serverLog.lastId();
 	}
 
@@ -475,7 +476,7 @@ bool ClassChatFeaturePlugin::handleFeatureMessage( VeyonWorkerInterface& worker,
 	case FeatureCommand::TeacherMessage:
 	{
 		const auto chatMessage = ChatMessage::fromJson(
-			QJsonDocument::fromJson( message.argument( Argument::Message ).toString().toUtf8() ).object() );
+			QJsonDocument::fromJson( message.argument( Argument::Message ).toByteArray() ).object() );
 		if( chatMessage.text.isEmpty() == false )
 		{
 			auto window = studentChatWindow( worker );

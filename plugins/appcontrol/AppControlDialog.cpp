@@ -26,6 +26,7 @@
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QRadioButton>
@@ -154,6 +155,12 @@ bool AppControlDialog::blockPrinting() const
 
 void AppControlDialog::accept()
 {
+	if( applications().size() > MaxApplications )
+	{
+		QMessageBox::warning( this, windowTitle(), tr( "Please enter at most %1 applications." ).arg( MaxApplications ) );
+		return;
+	}
+
 	auto store = settings();
 	store.setValue( QStringLiteral("Mode"), int(mode()) );
 	store.setValue( QStringLiteral("Applications"), applications() );

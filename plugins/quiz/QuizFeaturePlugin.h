@@ -121,8 +121,8 @@ private:
 		ReportAnswers
 	};
 
-	static QString toJsonString( const QJsonObject& object );
-	static QJsonObject fromJsonString( const QString& json );
+	static QByteArray toJsonData( const QJsonObject& object );
+	static QJsonObject fromJsonData( const QVariant& json );
 
 	const Feature m_quizFeature;
 	const FeatureList m_features;
@@ -135,7 +135,7 @@ private:
 	mutable QMutex m_serverMutex;
 	QString m_serverQuizId;
 	bool m_serverQuizActive{false};
-	QString m_serverAnswers;
+	QByteArray m_serverAnswers;
 	bool m_serverFinished{false};
 	QAtomicInt m_answersVersion{0};
 

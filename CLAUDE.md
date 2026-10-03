@@ -66,6 +66,13 @@ Decisions already taken with the project owner (do not re-open them):
   teal `#1f9d86`, teal-dark `#13705f`, teal-soft `#dff2ea`, yellow `#f6bf3f`,
   yellow-soft `#fdf0cc`, hot `#f5a524`, error `#b42318`, error-soft `#fde8e6`.
 - CSV exports: UTF-8 **with BOM** (Excel needs it for Arabic/Tifinagh).
+- **Feature message limits** (`core/src/VariantStream`, checked on receive; a message
+  that breaks one is dropped *silently*): only bool, int, qint64, QString,
+  QStringList, QByteArray, QUuid, QRect, QVariantList, QVariantMap (no double, uint,
+  QDateTime …); strings ≤ 32768 characters; lists/maps ≤ 1024 entries; nesting ≤ 3
+  levels below the argument map. Send JSON and other large data as **QByteArray**
+  (≤ 16 MB) and read it with `toByteArray()` (see quiz/classchat `toJsonData`);
+  `tests/unit/FeatureMessageLimitsTest` round-trips plugin payloads.
 - Commits: small, descriptive English messages; one feature per commit.
 
 ## 4. Build and test
@@ -77,7 +84,7 @@ git submodule update --init --recursive   # incl. 3rdparty/qthttpserver/src/3rdp
 cmake -S . -B ../tafat-build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
       -DWITH_TESTS=ON -DWITH_TRANSLATIONS=OFF -DWITH_LTO=OFF
 ninja -C ../tafat-build
-cd ../tafat-build && xvfb-run -a ctest --output-on-failure    # 12 suites, all pass
+cd ../tafat-build && xvfb-run -a ctest --output-on-failure    # 13 suites, all pass
 
 # Qt 5 check: add -DWITH_QT6=OFF (Linux CI builds Debian 11 Qt 5 too)
 tools/check-branding.sh
@@ -165,7 +172,7 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   (`translations/CMakeLists.txt`, those sources are excluded from the `veyon_*.ts`
   catalogs) and loaded after the `veyon` catalog (`VeyonCore::initLocaleAndTranslation`).
   Add new Tafat plugins to `tafat_plugins` there (now also `inventory`, `labsetup`). Arabic and French drafts for all
-  261 texts are in, marked *unfinished* (Qt still uses them) for native review.
+  263 texts are in, marked *unfinished* (Qt still uses them) for native review.
 - `veyon_ar.ts`: 211 visible upstream texts (main window, toolbar, demo, lock, power,
   log in/off, tile states/tooltips, file transfer/collect dialogs, spotlight,
   slideshow, open website/start app, access messages) added as unfinished drafts
@@ -272,7 +279,8 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   by full user name + computer name by default (one folder per registered student).
 - Unit tests in `tests/unit/`: `ProcessControlTest`, `WebPolicyTest` (incl.
   `InternetBlocker` ranges/rules), `QuizTest`, `ClassChatTest`, `ClassListTest`,
-  `ReturnWorkTest`, `HandInTest`, `LabSetupTest`, `InventoryTest` (plus 3 upstream tests) → 12 suites.
+  `ReturnWorkTest`, `HandInTest`, `LabSetupTest`, `InventoryTest`, `FeatureMessageLimitsTest`
+  (plus 3 upstream tests) → 13 suites.
   `ProcessControlTest` also covers `UsbStorageBlocker`, `PrintBlocker` and `AppHistory`.
 
 **CI:**

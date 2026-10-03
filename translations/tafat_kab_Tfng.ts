@@ -47,6 +47,10 @@
         <source>Stops the print service on the student computers while this mode is active, so nothing can be printed (also not to PDF).</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Please enter at most %1 applications.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppControlFeaturePlugin</name>
@@ -1110,6 +1114,10 @@ Now copy the %3 installers into this folder.</source>
     </message>
     <message>
         <source>Applies to Google Chrome, Microsoft Edge, Brave, Chromium and Mozilla Firefox. Firefox applies the change after it was restarted. Use &quot;Block apps&quot; for other browsers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter at most %1 websites.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
