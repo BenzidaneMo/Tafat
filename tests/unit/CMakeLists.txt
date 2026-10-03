@@ -179,4 +179,23 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME ReturnWorkTest COMMAND ReturnWorkTest)
 
+	#
+	# HandInTest: files students hand in to the teacher
+	#
+	add_executable(HandInTest
+		HandInTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/classchat/HandIn.cpp
+	)
+
+	target_include_directories(HandInTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/classchat
+	)
+
+	target_link_libraries(HandInTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME HandInTest COMMAND HandInTest)
+
 endif()

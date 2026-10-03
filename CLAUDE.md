@@ -77,7 +77,7 @@ git submodule update --init --recursive   # incl. 3rdparty/qthttpserver/src/3rdp
 cmake -S . -B ../tafat-build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
       -DWITH_TESTS=ON -DWITH_TRANSLATIONS=OFF -DWITH_LTO=OFF
 ninja -C ../tafat-build
-cd ../tafat-build && xvfb-run -a ctest --output-on-failure    # 9 suites, all pass
+cd ../tafat-build && xvfb-run -a ctest --output-on-failure    # 10 suites, all pass
 
 # Qt 5 check: add -DWITH_QT6=OFF (Linux CI builds Debian 11 Qt 5 too)
 tools/check-branding.sh
@@ -165,7 +165,7 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   (`translations/CMakeLists.txt`, those sources are excluded from the `veyon_*.ts`
   catalogs) and loaded after the `veyon` catalog (`VeyonCore::initLocaleAndTranslation`).
   Add new Tafat plugins to `tafat_plugins` there. Arabic and French drafts for all
-  198 texts are in, marked *unfinished* (Qt still uses them) for native review.
+  209 texts are in, marked *unfinished* (Qt still uses them) for native review.
 - `veyon_ar.ts`: 107 visible upstream texts (main window, toolbar, demo, lock, power,
   log in/off, file transfer, …) added as unfinished drafts → 325/1161. Better to
   also contribute them to Veyon's Transifex so they come back upstream.
@@ -202,6 +202,15 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   `classChatMessageId`, `classChatSessionId`; a new session ID resets the
   master's log). Teacher messages pop up the student chat window even without
   the toolbar. Hiding the toolbar stops the worker after 1 s.
+  **Hand in work** (student toolbar): up to 10 files, 20 MB each, 50 MB together;
+  the worker sends them in 256 KB `HandInChunk`s to the server, which keeps them
+  in a `HandInQueue` (≤ 64 MB, 10 min) and sends 4 chunks per connection every
+  sync (500 ms, ≈ 2 MB/s) to each master. The master reassembles them
+  (`HandInAssembler`) and saves them to `<CollectedFilesDestinationDirectory>/
+  Handed-in work <date>/<student>_<computer>/` (`HandIn::safeFileName`,
+  `uniqueFilePath`); the conversation shows "Handed in: …" and the window gets an
+  "Open handed-in work" button. Enum values are on the wire: only append to
+  `FeatureCommand`/`Argument`.
 - `plugins/register` also imports a **class list** (CSV, `ClassList.{h,cpp}`:
   `,`/`;`/tab, quotes, BOM, header detection) stored in the teacher's QSettings;
   absent students are listed in red and exported. Name matching
@@ -232,7 +241,7 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   by full user name + computer name by default (one folder per registered student).
 - Unit tests in `tests/unit/`: `ProcessControlTest`, `WebPolicyTest` (incl.
   `InternetBlocker` ranges/rules), `QuizTest`, `ClassChatTest`, `ClassListTest`,
-  `ReturnWorkTest` (plus 3 upstream tests) → 9 suites.
+  `ReturnWorkTest`, `HandInTest` (plus 3 upstream tests) → 10 suites.
 
 **CI:**
 - `.github/workflows/build.yml`: Linux builds (Debian 11 Qt 5, Fedora 44 Qt 6) and check-branding.
@@ -290,9 +299,6 @@ yet.
    - Hosted Weblate; small `qtbase_kab*` overrides.
    - RTL audit of `LockWidget`, `Toast` and other custom-painted widgets.
 5. **Next features:**
-   - Student "hand in" button (in the student toolbar of `plugins/classchat`); the
-     collect side could reuse the upstream FileCollect messages like
-     `plugins/returnwork` reuses Distribute. "Return work" is done.
    - App/URL history for the teacher.
    - Print control.
    - Then: whiteboard/annotation, screen recording, audio, lesson plans/rewards,

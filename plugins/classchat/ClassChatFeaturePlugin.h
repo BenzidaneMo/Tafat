@@ -34,6 +34,7 @@
 #include "ComputerControlInterface.h"
 #include "Feature.h"
 #include "FeatureProviderInterface.h"
+#include "HandIn.h"
 
 class ClassChatFeaturePlugin : public QObject, FeatureProviderInterface, PluginInterface
 {
@@ -47,7 +48,12 @@ public:
 		Message,
 		Messages,
 		HandRaised,
-		SessionId
+		SessionId,
+		FileId,
+		FileName,
+		ChunkIndex,
+		ChunkCount,
+		Data
 	};
 	Q_ENUM(Argument)
 
@@ -119,7 +125,8 @@ private:
 		LowerHand,
 		HandState,
 		StudentMessage,
-		Update
+		Update,
+		HandInChunk
 	};
 
 	static QString toJsonString( const QJsonArray& array );
@@ -131,8 +138,15 @@ private:
 	void addComputer( const ComputerControlInterface::Pointer& computerControlInterface );
 	ComputerControlInterfaceList computersForKeys( const QStringList& keys ) const;
 
+	void saveHandIn( const ComputerControlInterface::Pointer& computerControlInterface, const HandInAssembler::File& file );
+	static QString handInFolder();
+
 	// worker side
 	StudentChatWindow* studentChatWindow( VeyonWorkerInterface& worker );
+	void handIn( VeyonWorkerInterface& worker );
+
+	static FeatureMessage& addChunk( FeatureMessage& message, const HandInChunk& chunk );
+	static HandInChunk chunkFromMessage( const FeatureMessage& message );
 
 	const Feature m_chatFeature;
 	const Feature m_showToolbarFeature;
@@ -147,6 +161,7 @@ private:
 	QMap<QString, QWeakPointer<ComputerControlInterface>> m_computers;
 	QMap<QString, ChatLog> m_masterLogs;
 	QMap<QString, QString> m_masterSessionIds;
+	HandInAssembler m_handInAssembler;
 
 	// server side: state of the current session
 	mutable QMutex m_serverMutex;
@@ -155,6 +170,7 @@ private:
 	bool m_serverToolbarActive{false};
 	bool m_serverHandRaised{false};
 	QAtomicInt m_serverVersion{0};
+	HandInQueue m_serverHandIns;
 
 	// worker side
 	QPointer<StudentToolbar> m_toolbar;

@@ -36,7 +36,8 @@ Added by Tafat:
   * Quiz: quizzes and polls with live results, scores and CSV export
   * Register: attendance with student names on the computers (also with a
     shared account), class list import and absent students
-  * Hands & chat: students raise their hands and chat with the teacher
+  * Hands & chat: students raise their hands, chat with the teacher and hand in
+    their work
   * Return work: give each student back their own corrected files
 
 More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:

@@ -9,5 +9,7 @@ build_veyon_plugin(classchat
 	ClassChatFeaturePlugin.h
 	ClassChatWindows.cpp
 	ClassChatWindows.h
+	HandIn.cpp
+	HandIn.h
 	classchat.qrc
 	)

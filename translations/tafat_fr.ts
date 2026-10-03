@@ -125,6 +125,46 @@
         <source>%1 contributors</source>
         <translation type="unfinished">Contributeurs de %1</translation>
     </message>
+    <message>
+        <source>Handed-in work</source>
+        <translation type="unfinished">Travaux remis</translation>
+    </message>
+    <message>
+        <source>Handed in: %1</source>
+        <translation type="unfinished">Remis : %1</translation>
+    </message>
+    <message>
+        <source>A file could not be saved: %1</source>
+        <translation type="unfinished">Un fichier n&apos;a pas pu être enregistré : %1</translation>
+    </message>
+    <message>
+        <source>Hand in work</source>
+        <translation type="unfinished">Remettre mon travail</translation>
+    </message>
+    <message>
+        <source>Please choose at most %1 files.</source>
+        <translation type="unfinished">Choisis au plus %1 fichiers.</translation>
+    </message>
+    <message>
+        <source>These files are too large together. You can hand in at most %1 MB at once.</source>
+        <translation type="unfinished">Ces fichiers sont trop volumineux ensemble. Tu peux remettre au plus %1 Mo à la fois.</translation>
+    </message>
+    <message>
+        <source>%1 is too large. Files can have at most %2 MB.</source>
+        <translation type="unfinished">%1 est trop volumineux. Un fichier peut faire au plus %2 Mo.</translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished">Impossible de lire %1.</translation>
+    </message>
+    <message>
+        <source>Your teacher receives these files:
+
+%1</source>
+        <translation type="unfinished">Ton enseignant reçoit ces fichiers :
+
+%1</translation>
+    </message>
 </context>
 <context>
     <name>QuestionDialog</name>
@@ -761,6 +801,10 @@
         <source>Raise hand</source>
         <translation type="unfinished">Lever la main</translation>
     </message>
+    <message>
+        <source>Hand in work</source>
+        <translation type="unfinished">Remettre mon travail</translation>
+    </message>
 </context>
 <context>
     <name>TeacherChatWindow</name>
@@ -795,6 +839,10 @@
     <message>
         <source>This student raised the hand.</source>
         <translation type="unfinished">Cet élève a levé la main.</translation>
+    </message>
+    <message>
+        <source>Open handed-in work</source>
+        <translation type="unfinished">Ouvrir les travaux remis</translation>
     </message>
 </context>
 <context>

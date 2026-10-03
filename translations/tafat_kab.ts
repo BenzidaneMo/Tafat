@@ -123,6 +123,44 @@
         <source>%1 contributors</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Handed-in work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Handed in: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A file could not be saved: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hand in work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please choose at most %1 files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These files are too large together. You can hand in at most %1 MB at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is too large. Files can have at most %2 MB.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not read %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your teacher receives these files:
+
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QuestionDialog</name>
@@ -757,6 +795,10 @@
         <source>Raise hand</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hand in work</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TeacherChatWindow</name>
@@ -790,6 +832,10 @@
     </message>
     <message>
         <source>This student raised the hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open handed-in work</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

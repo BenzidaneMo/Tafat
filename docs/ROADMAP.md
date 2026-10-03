@@ -218,5 +218,4 @@ inventory → teacher mobile app (Android build already in `android/`).
   and absent students (`plugins/register`), "Hands & chat" (`plugins/classchat`), "Return work" (`plugins/returnwork`);
   collected files are grouped by student name and computer.
 - Phase 4 started: `docs/DEPLOYMENT.md` (lab installation, silent install, keys, rooms).
-- Next: finish the legacy Windows builds, test on real lab PCs, review translations,
-  student "hand in", then the rest of 3.4.
+- Next: finish the legacy Windows builds, test on real lab PCs, review translations, then the rest of 3.4.

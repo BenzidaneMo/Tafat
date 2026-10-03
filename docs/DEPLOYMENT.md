@@ -89,7 +89,8 @@ remove the configuration as well.
 Labs often use one Windows account for all students. Use **Register** at the
 beginning of the lesson: the students type their names, the teacher's computer
 tiles show them, attendance can be exported, collected files are filed per
-student (and **Return work** gives each student their corrected files back),
+student (students can also **hand in** files from their toolbar, and **Return
+work** gives each student their corrected files back),
 and the chat shows who wrote. Import the class list (CSV from the
 school's spreadsheet) in the register window to see who is absent.
 

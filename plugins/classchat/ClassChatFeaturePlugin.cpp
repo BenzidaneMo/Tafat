@@ -22,13 +22,20 @@
  *
  */
 
+#include <QDir>
+#include <QFileDialog>
+#include <QFileInfo>
 #include <QJsonDocument>
+#include <QMessageBox>
+#include <QStandardPaths>
 #include <QTimer>
 
 #include "ClassChatFeaturePlugin.h"
 #include "FeatureWorkerManager.h"
+#include "Filesystem.h"
 #include "MessageContext.h"
 #include "PlatformCoreFunctions.h"
+#include "VeyonConfiguration.h"
 #include "VeyonMasterInterface.h"
 #include "VeyonServerInterface.h"
 #include "VeyonWorkerInterface.h"
@@ -37,6 +44,10 @@
 static const char* VersionProperty = "classChatVersion";
 static const char* MessageIdProperty = "classChatMessageId";
 static const char* SessionIdProperty = "classChatSessionId";
+static const char* HandInSequenceProperty = "classChatHandInSequence";
+
+// parts of handed-in files sent to a teacher computer per update
+static constexpr int HandInChunksPerUpdate = 4;
 
 
 
@@ -189,8 +200,22 @@ bool ClassChatFeaturePlugin::startFeature( VeyonMasterInterface& master, const F
 bool ClassChatFeaturePlugin::handleFeatureMessage( ComputerControlInterface::Pointer computerControlInterface,
 												   const FeatureMessage& message )
 {
-	if( message.featureUid() != m_chatFeature.uid() ||
-		message.command<FeatureCommand>() != FeatureCommand::Update )
+	if( message.featureUid() != m_chatFeature.uid() )
+	{
+		return false;
+	}
+
+	if( message.command<FeatureCommand>() == FeatureCommand::HandInChunk )
+	{
+		const auto file = m_handInAssembler.add( computerControlInterface->computer().hostName(), chunkFromMessage( message ) );
+		if( file.has_value() )
+		{
+			saveHandIn( computerControlInterface, *file );
+		}
+		return true;
+	}
+
+	if( message.command<FeatureCommand>() != FeatureCommand::Update )
 	{
 		return false;
 	}
@@ -327,6 +352,12 @@ bool ClassChatFeaturePlugin::handleFeatureMessageFromWorker( VeyonServerInterfac
 		QMutexLocker locker( &m_serverMutex );
 		m_serverHandRaised = message.argument( Argument::HandRaised ).toBool();
 	}
+	else if( message.command<FeatureCommand>() == FeatureCommand::HandInChunk )
+	{
+		QMutexLocker locker( &m_serverMutex );
+		m_serverHandIns.append( chunkFromMessage( message ) );
+		return true;
+	}
 	else if( message.command<FeatureCommand>() == FeatureCommand::StudentMessage )
 	{
 		QMutexLocker locker( &m_serverMutex );
@@ -349,9 +380,28 @@ bool ClassChatFeaturePlugin::handleFeatureMessageFromWorker( VeyonServerInterfac
 
 void ClassChatFeaturePlugin::sendAsyncFeatureMessages( VeyonServerInterface& server, const MessageContext& messageContext )
 {
-	const auto version = m_serverVersion.loadAcquire();
 	auto ioDevice = messageContext.ioDevice();
-	if( version == 0 || ioDevice == nullptr ||
+	if( ioDevice == nullptr )
+	{
+		return;
+	}
+
+	// handed-in files, a few parts at a time so that the connection stays responsive
+	QList<QPair<qint64, HandInChunk>> handInChunks;
+	{
+		QMutexLocker locker( &m_serverMutex );
+		handInChunks = m_serverHandIns.chunksAfter( ioDevice->property( HandInSequenceProperty ).toLongLong(),
+													HandInChunksPerUpdate );
+	}
+	for( const auto& [sequence, chunk] : std::as_const( handInChunks ) )
+	{
+		FeatureMessage chunkMessage{ m_chatFeature.uid(), FeatureCommand::HandInChunk };
+		server.sendFeatureMessageReply( messageContext, addChunk( chunkMessage, chunk ) );
+		ioDevice->setProperty( HandInSequenceProperty, sequence );
+	}
+
+	const auto version = m_serverVersion.loadAcquire();
+	if( version == 0 ||
 		ioDevice->property( VersionProperty ).toInt() == version )
 	{
 		return;
@@ -404,6 +454,7 @@ bool ClassChatFeaturePlugin::handleFeatureMessage( VeyonWorkerInterface& worker,
 				window->show();
 				VeyonCore::platform().coreFunctions().raiseWindow( window, true );
 			} );
+			connect( m_toolbar, &StudentToolbar::handInRequested, this, [this, &worker]() { handIn( worker ); } );
 		}
 		m_toolbar->show();
 		VeyonCore::platform().coreFunctions().raiseWindow( m_toolbar, true );
@@ -538,4 +589,139 @@ StudentChatWindow* ClassChatFeaturePlugin::studentChatWindow( VeyonWorkerInterfa
 	}
 
 	return m_studentChatWindow;
+}
+
+
+
+FeatureMessage& ClassChatFeaturePlugin::addChunk( FeatureMessage& message, const HandInChunk& chunk )
+{
+	return message.addArgument( Argument::FileId, chunk.fileId )
+		.addArgument( Argument::FileName, chunk.fileName )
+		.addArgument( Argument::ChunkIndex, chunk.index )
+		.addArgument( Argument::ChunkCount, chunk.count )
+		.addArgument( Argument::Data, chunk.data );
+}
+
+
+
+HandInChunk ClassChatFeaturePlugin::chunkFromMessage( const FeatureMessage& message )
+{
+	return { message.argument( Argument::FileId ).toUuid(),
+			 message.argument( Argument::FileName ).toString(),
+			 message.argument( Argument::ChunkIndex ).toInt(),
+			 message.argument( Argument::ChunkCount ).toInt(),
+			 message.argument( Argument::Data ).toByteArray() };
+}
+
+
+
+QString ClassChatFeaturePlugin::handInFolder()
+{
+	// next to the files collected with "Collect"
+	const auto base = VeyonCore::filesystem().expandPath(
+		VeyonCore::config().value( QStringLiteral("CollectedFilesDestinationDirectory"), QStringLiteral("FileTransfer"),
+								   QStringLiteral("%HOME%") ).toString() );
+	return QDir( base ).filePath( tr( "Handed-in work" ) + QLatin1Char(' ') + QDate::currentDate().toString( Qt::ISODate ) );
+}
+
+
+
+void ClassChatFeaturePlugin::saveHandIn( const ComputerControlInterface::Pointer& computerControlInterface,
+										 const HandInAssembler::File& file )
+{
+	const auto key = computerControlInterface->computer().hostName();
+	auto student = VeyonCore::stripDomain( computerControlInterface->userFullName().isEmpty()
+											   ? computerControlInterface->userLoginName()
+											   : computerControlInterface->userFullName() );
+
+	// one folder per student and computer, like the file collection
+	const auto folderName = HandIn::safeFileName( student.isEmpty() ? computerControlInterface->computerName()
+																	 : student + QLatin1Char('_') + computerControlInterface->computerName() );
+	const auto folder = QDir( handInFolder() ).filePath( folderName );
+
+	QFile output( HandIn::uniqueFilePath( folder, HandIn::safeFileName( file.fileName ) ) );
+	const auto saved = QDir().mkpath( folder ) && output.open( QFile::WriteOnly ) &&
+					   output.write( file.data ) == file.data.size();
+	output.close();
+
+	auto window = chatWindow( nullptr );
+	addComputer( computerControlInterface );
+
+	ChatMessage note;
+	note.time = QDateTime::currentDateTime();
+	note.text = saved ? tr( "Handed in: %1" ).arg( QFileInfo( output.fileName() ).fileName() )
+					  : tr( "A file could not be saved: %1" ).arg( output.fileName() );
+	window->addMessages( key, { note } );
+	window->setHandInFolder( handInFolder() );
+
+	if( saved == false )
+	{
+		vWarning() << "could not save handed-in file" << output.fileName();
+	}
+}
+
+
+
+void ClassChatFeaturePlugin::handIn( VeyonWorkerInterface& worker )
+{
+	const auto files = QFileDialog::getOpenFileNames( m_toolbar, tr( "Hand in work" ),
+													  QStandardPaths::writableLocation( QStandardPaths::DocumentsLocation ) );
+	if( files.isEmpty() )
+	{
+		return;
+	}
+
+	if( files.size() > HandIn::MaxFiles )
+	{
+		QMessageBox::warning( m_toolbar, tr( "Hand in work" ), tr( "Please choose at most %1 files." ).arg( HandIn::MaxFiles ) );
+		return;
+	}
+
+	qint64 totalSize = 0;
+	for( const auto& fileName : files )
+	{
+		totalSize += QFileInfo( fileName ).size();
+	}
+	if( totalSize > HandIn::MaxTotalSize )
+	{
+		QMessageBox::warning( m_toolbar, tr( "Hand in work" ),
+							  tr( "These files are too large together. You can hand in at most %1 MB at once." )
+								  .arg( HandIn::MaxTotalSize / 1024 / 1024 ) );
+		return;
+	}
+
+	for( const auto& fileName : files )
+	{
+		if( QFileInfo( fileName ).size() > HandIn::MaxFileSize )
+		{
+			QMessageBox::warning( m_toolbar, tr( "Hand in work" ),
+								  tr( "%1 is too large. Files can have at most %2 MB." )
+									  .arg( QFileInfo( fileName ).fileName() ).arg( HandIn::MaxFileSize / 1024 / 1024 ) );
+			return;
+		}
+	}
+
+	QStringList handedIn;
+	for( const auto& fileName : files )
+	{
+		QFile file( fileName );
+		if( file.open( QFile::ReadOnly ) == false )
+		{
+			QMessageBox::warning( m_toolbar, tr( "Hand in work" ), tr( "Could not read %1." ).arg( fileName ) );
+			continue;
+		}
+
+		for( const auto& chunk : HandIn::split( QFileInfo( fileName ).fileName(), file.readAll() ) )
+		{
+			FeatureMessage message{ m_chatFeature.uid(), FeatureCommand::HandInChunk };
+			worker.sendFeatureMessageReply( addChunk( message, chunk ) );
+		}
+		handedIn.append( QFileInfo( fileName ).fileName() );
+	}
+
+	if( handedIn.isEmpty() == false )
+	{
+		QMessageBox::information( m_toolbar, tr( "Hand in work" ),
+								  tr( "Your teacher receives these files:\n\n%1" ).arg( handedIn.join( QLatin1Char('\n') ) ) );
+	}
 }

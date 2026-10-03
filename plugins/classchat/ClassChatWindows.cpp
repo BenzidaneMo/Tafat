@@ -23,6 +23,8 @@
  */
 
 #include <QApplication>
+#include <QDesktopServices>
+#include <QDir>
 #include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -36,6 +38,7 @@
 #include <QSplitter>
 #include <QTextBrowser>
 #include <QToolButton>
+#include <QUrl>
 #include <QVBoxLayout>
 
 #include "BrandTheme.h"
@@ -85,13 +88,14 @@ void ChatView::appendMessage( QTextBrowser* browser, const ChatMessage& message,
 StudentToolbar::StudentToolbar( QWidget* parent ) :
 	QWidget( parent, Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::WindowDoesNotAcceptFocus ),
 	m_handButton( new QToolButton( this ) ),
-	m_chatButton( new QToolButton( this ) )
+	m_chatButton( new QToolButton( this ) ),
+	m_handInButton( new QToolButton( this ) )
 {
 	setAttribute( Qt::WA_TranslucentBackground );
 	setAttribute( Qt::WA_ShowWithoutActivating );
 	setWindowTitle( tr( "Hand raise and chat" ) );
 
-	for( auto button : { m_handButton, m_chatButton } )
+	for( auto button : { m_handButton, m_chatButton, m_handInButton } )
 	{
 		button->setToolButtonStyle( Qt::ToolButtonTextBesideIcon );
 		button->setIconSize( QSize( 24, 24 ) );
@@ -103,6 +107,9 @@ StudentToolbar::StudentToolbar( QWidget* parent ) :
 	m_handButton->setIcon( QIcon( QStringLiteral(":/classchat/hand-raised.png") ) );
 	m_chatButton->setIcon( QIcon( QStringLiteral(":/classchat/classchat.png") ) );
 	m_chatButton->setText( tr( "Chat with the teacher" ) );
+	m_handInButton->setIcon( QIcon( QStringLiteral(":/classchat/hand-in.png") ) );
+	m_handInButton->setText( tr( "Hand in work" ) );
+	m_handInButton->setFocusPolicy( Qt::NoFocus );
 	updateHandButton();
 
 	connect( m_handButton, &QToolButton::toggled, this, [this]( bool raised ) {
@@ -110,11 +117,13 @@ StudentToolbar::StudentToolbar( QWidget* parent ) :
 		Q_EMIT handRaisedChanged( raised );
 	} );
 	connect( m_chatButton, &QToolButton::clicked, this, &StudentToolbar::chatRequested );
+	connect( m_handInButton, &QToolButton::clicked, this, &StudentToolbar::handInRequested );
 
 	auto layout = new QHBoxLayout( this );
 	layout->setContentsMargins( 10, 4, 10, 4 );
 	layout->addWidget( m_handButton );
 	layout->addWidget( m_chatButton );
+	layout->addWidget( m_handInButton );
 
 	adjustSize();
 
@@ -245,7 +254,8 @@ TeacherChatWindow::TeacherChatWindow( QWidget* parent ) :
 	m_input( new QLineEdit( this ) ),
 	m_sendButton( new QPushButton( tr( "Send" ), this ) ),
 	m_sendAllButton( new QPushButton( tr( "Send to all" ), this ) ),
-	m_lowerHandButton( new QPushButton( QIcon( QStringLiteral(":/classchat/hand-raised.png") ), tr( "Lower hand" ), this ) )
+	m_lowerHandButton( new QPushButton( QIcon( QStringLiteral(":/classchat/hand-raised.png") ), tr( "Lower hand" ), this ) ),
+	m_handInFolderButton( new QPushButton( QIcon( QStringLiteral(":/classchat/hand-in.png") ), tr( "Open handed-in work" ), this ) )
 {
 	setWindowTitle( tr( "Raised hands and chat" ) );
 	setWindowIcon( QIcon( QStringLiteral(":/classchat/classchat.png") ) );
@@ -273,8 +283,14 @@ TeacherChatWindow::TeacherChatWindow( QWidget* parent ) :
 		}
 	} );
 
+	m_handInFolderButton->setVisible( false );
+	connect( m_handInFolderButton, &QPushButton::clicked, this, [this]() {
+		QDesktopServices::openUrl( QUrl::fromLocalFile( m_handInFolder ) );
+	} );
+
 	auto header = new QHBoxLayout;
 	header->addWidget( m_title, 1 );
+	header->addWidget( m_handInFolderButton );
 	header->addWidget( m_lowerHandButton );
 
 	auto inputLayout = new QHBoxLayout;
@@ -397,6 +413,15 @@ void TeacherChatWindow::clearConversation( const QString& key )
 			showConversation();
 		}
 	}
+}
+
+
+
+void TeacherChatWindow::setHandInFolder( const QString& folder )
+{
+	m_handInFolder = folder;
+	m_handInFolderButton->setVisible( folder.isEmpty() == false );
+	m_handInFolderButton->setToolTip( QDir::toNativeSeparators( folder ) );
 }
 
 

@@ -2,5 +2,6 @@
   <qresource prefix="/classchat">
     <file>classchat.png</file>
     <file>hand-raised.png</file>
+    <file>hand-in.png</file>
   </qresource>
 </RCC>

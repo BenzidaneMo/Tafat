@@ -60,6 +60,7 @@ public:
 Q_SIGNALS:
 	void handRaisedChanged( bool raised );
 	void chatRequested();
+	void handInRequested();
 
 protected:
 	void mousePressEvent( QMouseEvent* event ) override;
@@ -71,6 +72,7 @@ private:
 
 	QToolButton* m_handButton;
 	QToolButton* m_chatButton;
+	QToolButton* m_handInButton;
 	QPoint m_dragOffset;
 
 };
@@ -109,6 +111,9 @@ public:
 	void addMessages( const QString& key, const ChatMessageList& messages );
 	void clearConversation( const QString& key );
 
+	// shows a button that opens the folder with the handed-in files
+	void setHandInFolder( const QString& folder );
+
 	// shows the window without taking the focus from the teacher's work
 	void notify();
 
@@ -140,6 +145,8 @@ private:
 	QPushButton* m_sendButton;
 	QPushButton* m_sendAllButton;
 	QPushButton* m_lowerHandButton;
+	QPushButton* m_handInFolderButton;
+	QString m_handInFolder;
 
 	QMap<QString, Conversation> m_conversations;
 
