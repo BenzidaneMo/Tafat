@@ -22,6 +22,16 @@ Windows version or architecture it is not made for.
 The installers are the artifacts of the "Windows builds" GitHub Actions
 workflow (`tafat-windows-<arch>-qt<6|5>`; Qt 5 = legacy build).
 
+### Windows 7 and 8.1
+
+- Windows 7 needs Service Pack 1. Update KB2533623 (included in most update
+  rollups) is recommended; without it the "secure attention sequence"
+  (Ctrl+Alt+Del) cannot be sent remotely.
+- Website blocking works with the last browser versions for Windows 7:
+  Chrome 109 and Firefox ESR 115.
+- Windows 7 gets no security updates any more: keep these computers in the
+  lab network, ideally without direct internet access.
+
 ## 2. Teacher computer
 
 1. Run the installer with all components.
