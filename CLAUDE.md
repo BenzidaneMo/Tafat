@@ -378,14 +378,22 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   `qt6_disable_unicode_defines` to `-UUNICODE -U_UNICODE`;
   `LogoffEventFilter::nativeEventFilter` uses `long*` on Qt 5.
 
-## 7. CI status (checked 2026-10-03, Windows run 31 green incl. new plugins)
+## 7. CI status (checked 2026-10-04, release runs for v1.0.1–v1.0.3 green)
 
 | Build | Status |
 |---|---|
 | Linux (Qt 5 + Qt 6), check-branding | green on every commit |
-| unit-tests + integration (Debian 11 Qt 5, Fedora 44 Qt 6) | Fedora green since `1f702029`; Debian: 13/13 unit tests pass, Xvfb install fallback to be confirmed |
+| unit-tests + integration (Debian 11 Qt 5, Fedora 44 Qt 6) | green; 13 unit suites + integration test |
 | Windows Qt 6 i686 / x86_64 (Win 10/11) | green, installers ~27 MB |
-| Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | **green since run 24 (`959a6331`)**, installers ~15 MB |
+| Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | green, installers ~15 MB (the x86_64 legacy job is the slowest, ~13 min) |
+
+Releases so far: v1.0.0 (first), v1.0.1 (teacher-only setup, student installer, Add computers),
+v1.0.2 (service kept on upgrade), v1.0.3 (Tafat-style toolbar icons, Contributors). The `release`
+job only runs after all four builds; until then a fresh release shows just the source archives.
+
+First real Windows test (owner's PC, Windows 11, 2026-10-03): installing works, the master
+shows the new buttons; upgrading 1.0.0 → 1.0.1 without a reboot lost the service (fixed in v1.0.2,
+see §6 labsetup "Service upgrade").
 
 The legacy jobs also run `tools/check-windows7-imports.sh` on the packaged files:
 it prints `::warning::` lines for EXE/DLL files that import Windows 8+ DLLs or
