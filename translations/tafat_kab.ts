@@ -95,6 +95,18 @@
         <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
         <translation type="unfinished">Iselkimen ttwarnan ɣer texxamt &quot;%1&quot;. Ad d-banen deg %2 deg tesdat.</translation>
     </message>
+    <message>
+        <source>Optional, for another network: 192.168.2.0/24 or 10.0.5.10-80</source>
+        <translation type="unfinished">Ma tebɣiḍ, i uẓeṭṭa nniḍen: 192.168.2.0/24 neɣ 10.0.5.10-80</translation>
+    </message>
+    <message>
+        <source>Network to search:</source>
+        <translation type="unfinished">Aẓeṭṭa ara yettwanadin:</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; is not a local network range. Examples: 192.168.2.0/24, 10.0.5.10-80 (at most %2 addresses).</source>
+        <translation type="unfinished">&quot;%1&quot; mačči d azilal n uẓeṭṭa adigan. Imedyaten: 192.168.2.0/24, 10.0.5.10-80 (%2 n tansiwin s wugar).</translation>
+    </message>
 </context>
 <context>
     <name>AppControlDialog</name>

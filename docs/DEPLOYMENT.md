@@ -92,8 +92,10 @@ works silently (`"Install Tafat - student (…).exe" /S`). Without the dialog:
    **Search**. Tafat tries TCP port 11100 on every address of the private IPv4
    networks of the teacher computer (the /24 network around each address, at most
    1024 addresses, about 5 s for a /24) and lists the hosts that answer like a
-   Tafat server. Names come from reverse DNS; computers on other networks can be
-   added by name or IP address.
+   Tafat server. Names come from reverse DNS. For computers on another network, type it
+   in *Network to search* (`192.168.2.0/24`, `10.0.5.10-80` or
+   `192.168.1.250-192.168.2.5`, private addresses only, at most 1024), or add a
+   single computer by name or IP address.
 3. Tick the computers and click **Add to the room** (one administrator prompt).
    It runs `tafat-wcli networkobjects import <csv> location <room> format
    "%name%;%host%"`; the room is ticked in *Locations & computers*, so the

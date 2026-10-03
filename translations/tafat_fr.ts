@@ -95,6 +95,18 @@
         <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
         <translation type="unfinished">Les ordinateurs ont été ajoutés à la salle « %1 ». Ils apparaissent dans %2 en moins d&apos;une minute.</translation>
     </message>
+    <message>
+        <source>Optional, for another network: 192.168.2.0/24 or 10.0.5.10-80</source>
+        <translation type="unfinished">Facultatif, pour un autre réseau : 192.168.2.0/24 ou 10.0.5.10-80</translation>
+    </message>
+    <message>
+        <source>Network to search:</source>
+        <translation type="unfinished">Réseau à parcourir :</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; is not a local network range. Examples: 192.168.2.0/24, 10.0.5.10-80 (at most %2 addresses).</source>
+        <translation type="unfinished">« %1 » n&apos;est pas une plage du réseau local. Exemples : 192.168.2.0/24, 10.0.5.10-80 (au plus %2 adresses).</translation>
+    </message>
 </context>
 <context>
     <name>AppControlDialog</name>

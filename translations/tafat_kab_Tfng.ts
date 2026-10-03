@@ -95,6 +95,18 @@
         <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
         <translation type="unfinished">ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵜⵜⵡⴰⵔⵏⴰⵏ ⵖⴻⵔ ⵜⴻⵅⵅⴰⵎⵜ &quot;%1&quot;. ⴰⴷ ⴷ-ⴱⴰⵏⴻⵏ ⴷⴻⴳ %2 ⴷⴻⴳ ⵜⴻⵙⴷⴰⵜ.</translation>
     </message>
+    <message>
+        <source>Optional, for another network: 192.168.2.0/24 or 10.0.5.10-80</source>
+        <translation type="unfinished">ⵎⴰ ⵜⴻⴱⵖⵉⴹ, ⵉ ⵓⵥⴻⵟⵟⴰ ⵏⵏⵉⴹⴻⵏ: 192.168.2.0/24 ⵏⴻⵖ 10.0.5.10-80</translation>
+    </message>
+    <message>
+        <source>Network to search:</source>
+        <translation type="unfinished">ⴰⵥⴻⵟⵟⴰ ⴰⵔⴰ ⵢⴻⵜⵜⵡⴰⵏⴰⴷⵉⵏ:</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; is not a local network range. Examples: 192.168.2.0/24, 10.0.5.10-80 (at most %2 addresses).</source>
+        <translation type="unfinished">&quot;%1&quot; ⵎⴰⵞⵞⵉ ⴷ ⴰⵣⵉⵍⴰⵍ ⵏ ⵓⵥⴻⵟⵟⴰ ⴰⴷⵉⴳⴰⵏ. ⵉⵎⴻⴷⵢⴰⵜⴻⵏ: 192.168.2.0/24, 10.0.5.10-80 (%2 ⵏ ⵜⴰⵏⵙⵉⵡⵉⵏ ⵙ ⵡⵓⴳⴰⵔ).</translation>
+    </message>
 </context>
 <context>
     <name>AppControlDialog</name>

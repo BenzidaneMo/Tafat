@@ -32,6 +32,7 @@
 #include <QHostInfo>
 #include <QLabel>
 #include <QLineEdit>
+#include <QNetworkInterface>
 #include <QMessageBox>
 #include <QProcess>
 #include <QProgressBar>
@@ -58,6 +59,7 @@ AddComputersDialog::AddComputersDialog( const ComputerControlInterfaceList& know
 	m_progressBar( new QProgressBar( this ) ),
 	m_list( new QTreeWidget( this ) ),
 	m_manualEdit( new QLineEdit( this ) ),
+	m_rangeEdit( new QLineEdit( this ) ),
 	m_statusLabel( new QLabel( this ) ),
 	m_addButton( new QPushButton( tr( "Add to the room" ), this ) ),
 	m_scanner( new ComputerScanner( VeyonCore::config().veyonServerPort(), this ) ),
@@ -114,6 +116,9 @@ AddComputersDialog::AddComputersDialog( const ComputerControlInterfaceList& know
 
 	auto form = new QFormLayout;
 	form->addRow( tr( "Room:" ), m_roomComboBox );
+	m_rangeEdit->setPlaceholderText( tr( "Optional, for another network: 192.168.2.0/24 or 10.0.5.10-80" ) );
+	m_rangeEdit->setClearButtonEnabled( true );
+	form->addRow( tr( "Network to search:" ), m_rangeEdit );
 
 	m_statusLabel->setWordWrap( true );
 
@@ -176,11 +181,31 @@ AddComputersDialog::AddComputersDialog( const ComputerControlInterfaceList& know
 
 void AddComputersDialog::search()
 {
-	const auto hosts = ComputerScanner::localCandidateHosts();
-	if( hosts.isEmpty() )
+	QList<QHostAddress> hosts;
+	const auto range = m_rangeEdit->text().trimmed();
+	if( range.isEmpty() )
 	{
-		m_statusLabel->setText( tr( "This computer is not connected to a local network." ) );
-		return;
+		hosts = ComputerScanner::localCandidateHosts();
+		if( hosts.isEmpty() )
+		{
+			m_statusLabel->setText( tr( "This computer is not connected to a local network." ) );
+			return;
+		}
+	}
+	else
+	{
+		hosts = ComputerScanner::rangeHosts( range );
+		if( hosts.isEmpty() )
+		{
+			m_statusLabel->setText( tr( "\"%1\" is not a local network range. Examples: 192.168.2.0/24, "
+										"10.0.5.10-80 (at most %2 addresses)." ).arg( range ).arg( ComputerScanner::MaximumHosts ) );
+			return;
+		}
+		// the teacher computer is not one of the student computers
+		for( const auto& address : QNetworkInterface::allAddresses() )
+		{
+			hosts.removeAll( address );
+		}
 	}
 
 	m_foundCount = 0;

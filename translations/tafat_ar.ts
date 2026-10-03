@@ -95,6 +95,18 @@
         <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
         <translation type="unfinished">أُضيفت الحواسيب إلى القاعة «⁨%1⁩». ستظهر في %2 خلال دقيقة.</translation>
     </message>
+    <message>
+        <source>Optional, for another network: 192.168.2.0/24 or 10.0.5.10-80</source>
+        <translation type="unfinished">اختياري، لشبكة أخرى: ⁨192.168.2.0/24⁩ أو ⁨10.0.5.10-80⁩</translation>
+    </message>
+    <message>
+        <source>Network to search:</source>
+        <translation type="unfinished">الشبكة المراد البحث فيها:</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; is not a local network range. Examples: 192.168.2.0/24, 10.0.5.10-80 (at most %2 addresses).</source>
+        <translation type="unfinished">«⁨%1⁩» ليس نطاقًا من الشبكة المحلية. أمثلة: ⁨192.168.2.0/24⁩، ⁨10.0.5.10-80⁩ (بحد أقصى ⁨%2⁩ عنوان).</translation>
+    </message>
 </context>
 <context>
     <name>AppControlDialog</name>

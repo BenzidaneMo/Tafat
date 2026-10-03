@@ -298,7 +298,8 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
 - `plugins/labsetup` — NetSupport-style setup without commands (install on the teacher PC only):
   - Master-only Actions: **Add computers** (`AddComputersDialog` + `ComputerScanner`: TCP connect
     to `veyonServerPort()` on the /24 of each private IPv4 address, ≤ 1024 hosts, 48 parallel, 600 ms,
-    accepts only an `RFB 003.` greeting; reverse DNS for names; **Add to the room** writes a temp CSV
+    accepts only an `RFB 003.` greeting; a typed range (`ComputerScanner::rangeHosts`: `a.b.c.d/22-32`,
+    `a.b.c.d-e`, `a.b.c.d-a.b.c.e`, private only, ≤ 1024) replaces the local networks; reverse DNS for names; **Add to the room** writes a temp CSV
     and runs `tafat-wcli networkobjects import <csv> location <room> format "%name%;%host%"` via
     `runProgramAsAdmin` (arguments quoted on Windows) or directly when elevated; then it calls
     `configuredDirectory()->update()` every 2 s and ticks the room in the master's
@@ -438,8 +439,7 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
      browser extension or reading the browser history databases).
    - Then whiteboard/annotation, screen recording, audio, lesson plans/rewards,
      and a pilot in 1–2 schools (`docs/DEPLOYMENT.md` covers admins).
-   - Packaging leftovers: teacher guide in Tamazight; scanning networks larger than
-     a /24 or other subnets (only typed names/IPs for now).
+   - Packaging leftovers: teacher guide in Tamazight.
 6. Known limits (documented in DEPLOYMENT.md):
    - allow-only app mode, internet, USB and print block are Windows only;
    - Firefox needs a restart for website policies.
