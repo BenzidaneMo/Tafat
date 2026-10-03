@@ -75,3 +75,45 @@ png feature-settings.svg 128 "$ROOT/plugins/labsetup/settings.png"
 png feature-inventory.svg 128 "$ROOT/plugins/inventory/inventory.png"
 
 echo "Artwork rendered."
+
+# upstream toolbar and bottom-bar icons, redrawn in the Tafat style
+while read -r svg out; do
+	png "$svg.svg" 128 "$ROOT/$out"
+done <<'MAP'
+feature-monitoring core/resources/presentation-none.png
+feature-demo plugins/demo/demo.png
+feature-demo-fullscreen plugins/demo/presentation-fullscreen.png
+feature-demo-window plugins/demo/presentation-window.png
+feature-lock plugins/screenlock/system-lock-screen.png
+feature-remote-view plugins/remoteaccess/kmag.png
+feature-remote-control plugins/remoteaccess/krdc.png
+feature-power-on plugins/powercontrol/preferences-system-power-management.png
+feature-reboot plugins/powercontrol/system-reboot.png
+feature-power-down plugins/powercontrol/system-shutdown.png
+feature-log-in plugins/usersessioncontrol/login-user.png
+feature-log-off plugins/usersessioncontrol/logout-user.png
+feature-text-message plugins/textmessage/dialog-information.png
+feature-start-app plugins/desktopservices/preferences-desktop-launch-feedback.png
+feature-open-website plugins/desktopservices/internet-web-browser.png
+feature-distribute plugins/filetransfer/distribute-files.png
+feature-distribute plugins/filetransfer/distribute-files-dark.png
+feature-collect plugins/filetransfer/collect-files.png
+feature-screenshot plugins/screenshot/camera-photo.png
+feature-screenshot plugins/remoteaccess/camera-photo.png
+feature-screenshot master/resources/camera-photo.png
+panel-computers master/resources/computers.png
+panel-slideshow master/resources/computer-slideshow.png
+panel-spotlight master/resources/spotlight.png
+button-powered-on master/resources/powered-on.png
+button-powered-on-dark master/resources/powered-on-dark.png
+button-align-grid master/resources/align-grid.png
+button-align-grid-dark master/resources/align-grid-dark.png
+button-zoom-fit master/resources/zoom-fit-best.png
+button-zoom-fit-dark master/resources/zoom-fit-best-dark.png
+button-exchange master/resources/exchange-positions-zorder.png
+button-exchange-dark master/resources/exchange-positions-zorder-dark.png
+button-about core/resources/help-about.png
+button-about-dark core/resources/help-about-dark.png
+button-user-group core/resources/user-group-new.png
+button-user-group-dark core/resources/user-group-new-dark.png
+MAP

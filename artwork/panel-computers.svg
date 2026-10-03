@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Locations & computers panel -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M43 76 v14 M23 92 h40" stroke="#13705f" stroke-width="7" stroke-linecap="round"/>
+  <rect x="8" y="26" width="70" height="50" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="17" y="35" width="52" height="32" rx="4" fill="#f4ebdd"/>
+  <rect x="50" y="12" width="70" height="50" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="59" y="21" width="52" height="32" rx="4" fill="#f6bf3f"/>
+</svg>

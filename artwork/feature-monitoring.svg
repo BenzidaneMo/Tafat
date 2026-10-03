@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Monitoring: the screens of the room -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="10" y="16" width="50" height="40" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="19" y="25" width="32" height="22" rx="4" fill="#f4ebdd"/>
+  <rect x="10" y="70" width="50" height="40" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="19" y="79" width="32" height="22" rx="4" fill="#f4ebdd"/>
+  <rect x="68" y="16" width="50" height="40" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="77" y="25" width="32" height="22" rx="4" fill="#f6bf3f"/>
+  <rect x="68" y="70" width="50" height="40" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="77" y="79" width="32" height="22" rx="4" fill="#f4ebdd"/>
+</svg>

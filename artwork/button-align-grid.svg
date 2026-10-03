@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Align the computers in a grid -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="14" y="14" width="28" height="28" rx="6" fill="#13705f"/>
+  <rect x="14" y="50" width="28" height="28" rx="6" fill="#13705f"/>
+  <rect x="14" y="86" width="28" height="28" rx="6" fill="#13705f"/>
+  <rect x="50" y="14" width="28" height="28" rx="6" fill="#13705f"/>
+  <rect x="50" y="50" width="28" height="28" rx="6" fill="#f26b2d"/>
+  <rect x="50" y="86" width="28" height="28" rx="6" fill="#13705f"/>
+  <rect x="86" y="14" width="28" height="28" rx="6" fill="#13705f"/>
+  <rect x="86" y="50" width="28" height="28" rx="6" fill="#13705f"/>
+  <rect x="86" y="86" width="28" height="28" rx="6" fill="#13705f"/>
+</svg>

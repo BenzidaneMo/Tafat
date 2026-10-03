@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lock: the student screens are locked -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M64 86 v14 M44 102 h40" stroke="#13705f" stroke-width="7" stroke-linecap="round"/>
+  <rect x="12" y="14" width="104" height="72" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="21" y="23" width="86" height="54" rx="4" fill="#4b3427"/>
+  <path d="M52 48 v-8 a12 12 0 0 1 24 0 v8" fill="none" stroke="#f6bf3f" stroke-width="7" stroke-linecap="round"/>
+  <rect x="44" y="46" width="40" height="28" rx="6" fill="#f26b2d"/>
+  <circle cx="64" cy="58" r="4" fill="#fffdf9"/><rect x="62" y="58" width="4" height="9" rx="2" fill="#fffdf9"/>
+</svg>

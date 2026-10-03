@@ -172,6 +172,12 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   stylesheet; applied in `VeyonCore::initUi`.
 - Logo (T with light rays over three laptops) and icons in `artwork/`
   (`tafat-logo.svg`, `-dark`, master/configurator icons, feature icons).
+  The upstream toolbar and bottom-bar icons are redrawn in the same style
+  (`tools/generate-toolbar-icons.py` → `artwork/feature-*`, `panel-*`, `button-*`,
+  rendered to the upstream PNG names by `tools/render-artwork.sh`).
+- About → Contributors shows the root `CONTRIBUTORS` file (BenzidaneMo and a
+  credit line to the Veyon contributors) instead of the `git shortlog` list
+  (root `CMakeLists.txt`; `-DCONTRIBUTORS=` still overrides it).
 - Branding guard `tools/check-branding.sh` in `.github/workflows/build.yml`.
 
 **Languages (Phase 2, started):**

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Text message to the students -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M20 16 h88 a10 10 0 0 1 10 10 v52 a10 10 0 0 1 -10 10 h-50 l-22 20 v-20 h-16 a10 10 0 0 1 -10 -10 v-52 a10 10 0 0 1 10 -10 z" fill="#fffdf9" stroke="#13705f" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="64" cy="34" r="6" fill="#f26b2d"/><rect x="58" y="46" width="12" height="30" rx="6" fill="#f26b2d"/>
+</svg>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fit the computers to the window (dark theme) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="38" y="38" width="52" height="52" rx="8" fill="#f26b2d"/>
+  <g fill="none" stroke="#faf4ea" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M14 40 v-26 h26"/><path d="M114 40 v-26 h-26"/><path d="M14 88 v26 h26"/><path d="M114 88 v26 h-26"/></g>
+</svg>

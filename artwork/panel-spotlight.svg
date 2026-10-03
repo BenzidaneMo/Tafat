@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spotlight panel -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M64 86 v14 M44 102 h40" stroke="#13705f" stroke-width="7" stroke-linecap="round"/>
+  <rect x="12" y="14" width="104" height="72" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="21" y="23" width="86" height="54" rx="4" fill="#f4ebdd"/>
+  <circle cx="64" cy="50" r="20" fill="#f6bf3f"/>
+  <path d="M64 38 l4 8 l9 1 l-7 6 l2 9 l-8 -5 l-8 5 l2 -9 l-7 -6 l9 -1 z" fill="#f26b2d"/>
+</svg>
