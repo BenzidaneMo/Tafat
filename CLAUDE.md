@@ -166,8 +166,10 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   catalogs) and loaded after the `veyon` catalog (`VeyonCore::initLocaleAndTranslation`).
   Add new Tafat plugins to `tafat_plugins` there (now also `inventory`, `labsetup`). Arabic and French drafts for all
   261 texts are in, marked *unfinished* (Qt still uses them) for native review.
-- `veyon_ar.ts`: 107 visible upstream texts (main window, toolbar, demo, lock, power,
-  log in/off, file transfer, …) added as unfinished drafts → 325/1161. Better to
+- `veyon_ar.ts`: 211 visible upstream texts (main window, toolbar, demo, lock, power,
+  log in/off, tile states/tooltips, file transfer/collect dialogs, spotlight,
+  slideshow, open website/start app, access messages) added as unfinished drafts
+  → 430/1161; a broken upstream placeholder ("1% 2%") was fixed. Better to
   also contribute them to Veyon's Transifex so they come back upstream.
 
 **Features (Phase 3) — new plugins, vendor "Tafat", each with an icon:**
@@ -328,7 +330,7 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
    - Native review of all *unfinished* Arabic/French drafts (`tafat_*.ts`,
      `veyon_ar.ts`).
    - Translate Tamazight Latin + Tifinagh (`veyon_kab*.ts`, `tafat_kab*.ts`; all empty).
-   - Remaining Arabic upstream texts (836).
+   - Remaining Arabic upstream texts (731; mostly LDAP, configurator pages, CLI help).
    - Hosted Weblate; small `qtbase_kab*` overrides.
    - RTL audit of `LockWidget`, `Toast` and other custom-painted widgets.
 5. **Next features:**

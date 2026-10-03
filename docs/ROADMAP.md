@@ -210,7 +210,7 @@ inventory → teacher mobile app (Android build already in `android/`).
 - Phase 2 in progress: Tamazight in Latin (`kab`) and Tifinagh (`kab_Tfng`) with bundled
   Noto Sans Tifinagh (catalogs not translated yet). Tafat's plugins have their own
   catalogs (`translations/tafat_*.ts`) with Arabic and French drafts. Arabic upstream
-  catalog 325/1161 (main window and toolbar added as drafts). All drafts need review by
+  catalog 430/1161 (main window, toolbar, tiles, file transfer, spotlight added as drafts). All drafts need review by
   native speakers.
 - Phase 3: done as plugins with unit tests — "Block apps" with optional USB and print
   block and a "Running apps" list (`plugins/appcontrol`),
