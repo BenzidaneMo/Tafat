@@ -572,103 +572,103 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>AuthKeysPlugin</name>
     <message>
         <source>Create new authentication key pair</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓ-ⴷ ⵜⴰⵢⵓⴳⴰ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵏ ⵜⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>Delete authentication key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>List authentication keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵜⴰⴱⴷⴰⵔⵜ ⵏ ⵜⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>Import public or private key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⵜⴻⵔ ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⴻⵣⵜ ⵏⴻⵖ ⵜⵓⵙⵍⵉⴳⵜ</translation>
     </message>
     <message>
         <source>Export public or private key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⴼⴻⴹ ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⴻⵣⵜ ⵏⴻⵖ ⵜⵓⵙⵍⵉⴳⵜ</translation>
     </message>
     <message>
         <source>Extract public key from existing private key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵙⵓⴽⴽⴻⵙ ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⴻⵣⵜ ⵙⴻⴳ ⵜⵙⴰⵔⵓⵜ ⵜⵓⵙⵍⵉⴳⵜ ⵢⴻⵍⵍⴰⵏ</translation>
     </message>
     <message>
         <source>Set user group allowed to access a key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴼⵔⴻⵏ ⴰⴳⵔⴰⵡ ⵏ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵢⴻⵜⵜⵡⴰⵙⵉⵔⴳⴻⵏ ⴰⴷ ⴽⴻⵛⵎⴻⵏ ⵖⴻⵔ ⵜⵙⴰⵔⵓⵜ</translation>
     </message>
     <message>
         <source>Please specify the command to display help for.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⴽ, ⴼⵔⴻⵏ ⵜⴰⵍⴰⴷⵏⴰ ⵉ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⵡⴰⵍⵉⴹ ⵜⴰⵍⵍⴰⵍⵜ-ⵉⵙ.</translation>
     </message>
     <message>
         <source>NAME</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NAME</translation>
     </message>
     <message>
         <source>This command creates a new authentication key pair with name &lt;NAME&gt; and saves private and public key to the configured key directories. The parameter must be a name for the key, which may only contain letters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵜⴻⵙⵏⵓⵍⴼⵓⵢ-ⴷ ⵜⴰⵢⵓⴳⴰ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵏ ⵜⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ ⵙ ⵢⵉⵙⴻⵎ &lt;NAME&gt;, ⵜⴻⵙⵙⴻⴽⵍⴻⵙ ⵜⴰⵙⴰⵔⵓⵜ ⵜⵓⵙⵍⵉⴳⵜ ⴷ ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⴻⵣⵜ ⴷⴻⴳ ⵢⵉⴽⴰⵔⴰⵎⴻⵏ ⵏ ⵜⵙⵓⵔⴰ ⵢⴻⵜⵜⵡⴰⵙⵡⴻⵍⴻⵏ. ⴰⵖⴻⵡⵡⴰⵔ ⵢⴻⵙⵙⴻⴼⴽ ⴰⴷ ⵢⵉⵍⵉ ⴷ ⵉⵙⴻⵎ ⵏ ⵜⵙⴰⵔⵓⵜ, ⵙ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ ⴽⴰⵏ.</translation>
     </message>
     <message>
         <source>KEY</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">KEY</translation>
     </message>
     <message>
         <source>This command deletes the authentication key &lt;KEY&gt; from the configured key directory. Please note that a key can&apos;t be recovered once it has been deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵜⴻⴽⴽⴻⵙ ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⴻⵙⵜⴻⴱ &lt;KEY&gt; ⵙⴻⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵙⵓⵔⴰ ⵢⴻⵜⵜⵡⴰⵙⵡⴻⵍⴻⵏ. ⵥⴻⵔ ⴱⴻⵍⵍⵉ ⵜⴰⵙⴰⵔⵓⵜ ⵓⵔ ⵜⴻⵜⵜⵓⵖⴰⵍ ⴰⵔⴰ ⵎⵉ ⴰⵔⴰ ⵜⴻⵜⵜⵡⴰⴽⴽⴻⵙ.</translation>
     </message>
     <message>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FILE</translation>
     </message>
     <message>
         <source>This command exports the authentication key &lt;KEY&gt; to &lt;FILE&gt;. If &lt;FILE&gt; is not specified a name will be constructed from name and type of &lt;KEY&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵜⴻⵙⵙⵉⴼⵉⴹ ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⴻⵙⵜⴻⴱ &lt;KEY&gt; ⵖⴻⵔ &lt;FILE&gt;. ⵎⴰ ⵓⵔ ⴷ-ⵜⴻⴼⵔⵉⴹ ⴰⵔⴰ &lt;FILE&gt;, ⵉⵙⴻⵎ ⴰⴷ ⵢⴻⵜⵜⵡⴰⵄⴻⵎⵎⴻⵔ ⵙⴻⴳ ⵢⵉⵙⴻⵎ ⴷ ⵜⴻⵡⵙⵉⵜ ⵏ &lt;KEY&gt;.</translation>
     </message>
     <message>
         <source>This command extracts the public key part from the private key &lt;KEY&gt; and saves it as the corresponding public key. When setting up another master computer, it is therefore sufficient to transfer the private key only. The public key can then be extracted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵜⴻⵙⵙⵓⴽⴽⵓⵙ ⴰⵃⵔⵉⵛ ⴰⵣⴰⵢⴻⵣ ⵙⴻⴳ ⵜⵙⴰⵔⵓⵜ ⵜⵓⵙⵍⵉⴳⵜ &lt;KEY&gt; ⵜⴻⵙⵙⴻⴽⵍⴻⵙ-ⵉⵜ ⴷ ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⴻⵣⵜ-ⵉⵙ. ⵎⵉ ⴰⵔⴰ ⵜⴻⵙⴱⴻⴷⴷⴻⴹ ⴰⵙⴻⵍⴽⵉⵎ ⵏⵏⵉⴹⴻⵏ ⵏ ⵓⵙⴻⵍⵎⴰⴷ, ⵢⴻⵇⵇⵉⵎ-ⴷ ⴽⴰⵏ ⴰⴷ ⵜⴻⵙⵙⵉⵡⴻⴹ ⵜⴰⵙⴰⵔⵓⵜ ⵜⵓⵙⵍⵉⴳⵜ; ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⴻⵣⵜ ⵜⴻⵣⵎⴻⵔ ⴰⴷ ⵜⴻⵜⵜⵡⴰⵙⵙⵓⴽⴽⴻⵙ ⵙⵢⵉⵏ.</translation>
     </message>
     <message>
         <source>This command imports the authentication key &lt;KEY&gt; from &lt;FILE&gt;. If &lt;FILE&gt; is not specified a name will be constructed from name and type of &lt;KEY&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵜⴻⴽⵜⴻⵔ ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⴻⵙⵜⴻⴱ &lt;KEY&gt; ⵙⴻⴳ &lt;FILE&gt;. ⵎⴰ ⵓⵔ ⴷ-ⵜⴻⴼⵔⵉⴹ ⴰⵔⴰ &lt;FILE&gt;, ⵉⵙⴻⵎ ⴰⴷ ⵢⴻⵜⵜⵡⴰⵄⴻⵎⵎⴻⵔ ⵙⴻⴳ ⵢⵉⵙⴻⵎ ⴷ ⵜⴻⵡⵙⵉⵜ ⵏ &lt;KEY&gt;.</translation>
     </message>
     <message>
         <source>This command lists all available authentication keys in the configured key directory. If the option &quot;%1&quot; is specified a table with key details will be displayed instead. Some details might be missing if a key is not accessible e.g. due to the lack of read permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵜⴻⵙⵙⴽⴰⵏ ⴰⴽⴽ ⵜⵉⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ ⵢⴻⵍⵍⴰⵏ ⴷⴻⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵙⵓⵔⴰ ⵢⴻⵜⵜⵡⴰⵙⵡⴻⵍⴻⵏ. ⵎⴰ ⵜⴻⴼⵔⵉⴹ ⵜⴰⵅⵜⵉⵕⵜ &quot;%1&quot;, ⴰⴷ ⴷ-ⵉⴱⴰⵏ ⵡⴻⴷⵍⵉⵙ ⵙ ⵜⴻⵍⵇⴰⵢⵜ ⵏ ⵜⵙⵓⵔⴰ. ⴽⵔⴰ ⵏ ⵜⴻⵍⵇⴰⵢⵉⵏ ⵣⴻⵎⵔⴻⵏⵜ ⴰⴷ ⵉⵅⵓⵚⵚⴻⵏⵜ ⵎⴰ ⵓⵔ ⵜⴻⵣⵎⵉⵔⴻⴹ ⴰⵔⴰ ⴰⴷ ⵜⴻⴽⵛⴻⵎⴻⴹ ⵖⴻⵔ ⵜⵙⴰⵔⵓⵜ, ⴰⵎⴻⴷⵢⴰ ⵎⵉ ⵓⵍⴰⵛ ⵜⴰⵙⵉⵔⴻⴳⵜ ⵏ ⵜⵖⵓⵔⵉ.</translation>
     </message>
     <message>
         <source>ACCESS GROUP</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ACCESS GROUP</translation>
     </message>
     <message>
         <source>This command adjusts file access permissions to &lt;KEY&gt; such that only the user group &lt;ACCESS GROUP&gt; has read access to it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵜⴻⵙⵙⴻⴳⴳⴰⴷ ⵜⵉⵙⵉⵔⴰⴳ ⵏ ⵓⵏⴻⴽⵛⵓⵎ ⵖⴻⵔ &lt;KEY&gt; ⴰⴽⴽⴻⵏ ⴷ ⴰⴳⵔⴰⵡ ⵏ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ &lt;ACCESS GROUP&gt; ⴽⴰⵏ ⴰⵔⴰ ⵜ-ⵉⵖⵔⴻⵏ.</translation>
     </message>
     <message>
         <source>The specified command does not exist or no help is available for it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵓⵍⴰⵛ-ⵉⵜⵜ ⵏⴻⵖ ⵓⵍⴰⵛ ⵜⴰⵍⵍⴰⵍⵜ ⵉ ⵜⵜ-ⵢⴻⵄⵏⴰⵏ.</translation>
     </message>
     <message>
         <source>Please specify the key name (e.g. &quot;teacher/public&quot;) as the first argument.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⴽ, ⵙⴻⴽⵛⴻⵎ ⵉⵙⴻⵎ ⵏ ⵜⵙⴰⵔⵓⵜ (ⴰⵎⴻⴷⵢⴰ &quot;teacher/public&quot;) ⴷ ⴰⵖⴻⵡⵡⴰⵔ ⴰⵎⴻⵣⵡⴰⵔⵓ.</translation>
     </message>
     <message>
         <source>TYPE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TYPE</translation>
     </message>
     <message>
         <source>PAIR ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PAIR ID</translation>
     </message>
     <message>
         <source>Command line support for managing authentication keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⵍⴰⵍⵜ ⵏ ⵢⵉⵣⵉⵔⵉⴳ ⵏ ⵜⵍⴰⴷⵏⴰ ⵉ ⵓⵙⴻⴼⵔⴻⴽ ⵏ ⵜⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>Commands for managing authentication keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⴻⴼⵔⴻⴽ ⵏ ⵜⵙⵓⵔⴰ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
 </context>
 <context>
@@ -773,91 +773,91 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Add a location or computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵏⵓ ⵜⴰⵅⵅⴰⵎⵜ ⵏⴻⵖ ⴰⵙⴻⵍⴽⵉⵎ</translation>
     </message>
     <message>
         <source>Clear all locations and computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴼⴻⴹ ⴰⴽⴽ ⵜⵉⵅⵅⴰⵎⵉⵏ ⴷ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Dump all or individual locations and computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴰⴽⴽ ⵜⵉⵅⵅⴰⵎⵉⵏ ⴷ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏⴻⵖ ⴽⵔⴰ ⵙⴻⴳ-ⵙⴻⵏ</translation>
     </message>
     <message>
         <source>List all locations and computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵜⴰⴱⴷⴰⵔⵜ ⵏ ⵜⵉⵅⵅⴰⵎⵉⵏ ⴷ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
     </message>
     <message>
         <source>Remove a location or computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵜⴰⵅⵅⴰⵎⵜ ⵏⴻⵖ ⴰⵙⴻⵍⴽⵉⵎ</translation>
     </message>
     <message>
         <source>Import objects from given file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⵜⴻⵔ ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⵙⴻⴳ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Export objects to given file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⴼⴻⴹ ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⵖⴻⵔ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>FILE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FILE</translation>
     </message>
     <message>
         <source>LOCATION</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LOCATION</translation>
     </message>
     <message>
         <source>FORMAT-STRING-WITH-PLACEHOLDERS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FORMAT-STRING-WITH-PLACEHOLDERS</translation>
     </message>
     <message>
         <source>REGULAR-EXPRESSION-WITH-PLACEHOLDER</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">REGULAR-EXPRESSION-WITH-PLACEHOLDER</translation>
     </message>
     <message>
         <source>Imports objects from the specified text file using the given format string or regular expression containing one or multiple placeholders. Valid placeholders are: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⴽⵜⴻⵔ ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⵙⴻⴳ ⵓⴼⴰⵢⵍⵓ ⵏ ⵓⴹⵔⵉⵙ ⵙ ⵓⵣⵔⵉⵔ ⵏ ⵓⵎⴰⵙⴰⵍ ⵏⴻⵖ ⵙ ⵜⴻⵏⴼⴰⵍⵉⵜ ⵜⴰⴳⵏⴰⵡⵜ ⵉⴷⴻⴳ ⵢⵉⵡⴻⵏ ⵏⴻⵖ ⵓⴳⴰⵔ ⵏ ⵢⵉⵎⴻⵙⴽⴰⵔⴻⵏ. ⵉⵎⴻⵙⴽⴰⵔⴻⵏ ⵉⵖⴱⴻⵍⴻⵏ: %1</translation>
     </message>
     <message>
         <source>Import simple CSV file to a single room</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⵜⴻⵔ ⴰⴼⴰⵢⵍⵓ CSV ⴰⴼⴻⵙⵙⴰⵙ ⵖⴻⵔ ⵢⵉⵡⴻⵜ ⵏ ⵜⴻⵅⵅⴰⵎⵜ</translation>
     </message>
     <message>
         <source>Import CSV file with location name in first column</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⵜⴻⵔ ⴰⴼⴰⵢⵍⵓ CSV ⵙ ⵢⵉⵙⴻⵎ ⵏ ⵜⴻⵅⵅⴰⵎⵜ ⴷⴻⴳ ⵜⴳⴻⵊⴷⵉⵜ ⵜⴰⵎⴻⵣⵡⴰⵔⵓⵜ</translation>
     </message>
     <message>
         <source>Import text file with with key/value pairs using regular expressions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⵜⴻⵔ ⴰⴼⴰⵢⵍⵓ ⵏ ⵓⴹⵔⵉⵙ ⵙ ⵜⵢⵓⴳⵉⵡⵉⵏ ⵜⴰⵙⴰⵔⵓⵜ/ⴰⵣⴰⵍ ⵙ ⵜⴻⵏⴼⴰⵍⵉⵢⵉⵏ ⵜⵉⴳⵏⴰⵡⵉⵏ</translation>
     </message>
     <message>
         <source>Import arbitrarily formatted data</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⵜⴻⵔ ⵉⵙⴻⴼⴽⴰ ⵏ ⵢⴰⵍ ⴰⵎⴰⵙⴰⵍ</translation>
     </message>
     <message>
         <source>Exports objects to the specified text file using the given format string containing one or multiple placeholders. Valid placeholders are: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵙⵙⵉⴼⵉⴹ ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⵖⴻⵔ ⵓⴼⴰⵢⵍⵓ ⵏ ⵓⴹⵔⵉⵙ ⵙ ⵓⵣⵔⵉⵔ ⵏ ⵓⵎⴰⵙⴰⵍ ⵉⴷⴻⴳ ⵢⵉⵡⴻⵏ ⵏⴻⵖ ⵓⴳⴰⵔ ⵏ ⵢⵉⵎⴻⵙⴽⴰⵔⴻⵏ. ⵉⵎⴻⵙⴽⴰⵔⴻⵏ ⵉⵖⴱⴻⵍⴻⵏ: %1</translation>
     </message>
     <message>
         <source>Export all objects to a CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⴼⴻⴹ ⴰⴽⴽ ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⵖⴻⵔ ⵓⴼⴰⵢⵍⵓ CSV</translation>
     </message>
     <message>
         <source>Export all computers in a specific location to a CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⴼⴻⴹ ⴰⴽⴽ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵏ ⵢⵉⵡⴻⵜ ⵏ ⵜⴻⵅⵅⴰⵎⵜ ⵖⴻⵔ ⵓⴼⴰⵢⵍⵓ CSV</translation>
     </message>
     <message>
         <source>TYPE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TYPE</translation>
     </message>
     <message>
         <source>NAME</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NAME</translation>
     </message>
     <message>
         <source>HOST ADDRESS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HOST ADDRESS</translation>
     </message>
     <message>
         <source>MAC ADDRESS</source>
@@ -865,51 +865,51 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>PARENT</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PARENT</translation>
     </message>
     <message>
         <source>Adds an object where %1 can be one of &quot;%2&quot; or &quot;%3&quot;. %4 can be specified by name or UUID.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵔⵏⴰ ⵜⴰⵖⴰⵡⵙⴰ ⴰⵏⵉⴷⴰ %1 ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⵉⵍⵉ &quot;%2&quot; ⵏⴻⵖ &quot;%3&quot;. %4 ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵜⵜⵡⴰⴼⵔⴻⵏ ⵙ ⵢⵉⵙⴻⵎ ⵏⴻⵖ ⵙ UUID.</translation>
     </message>
     <message>
         <source>Add a room</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵏⵓ ⵜⴰⵅⵅⴰⵎⵜ</translation>
     </message>
     <message>
         <source>Add a computer to room %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵏⵓ ⴰⵙⴻⵍⴽⵉⵎ ⵖⴻⵔ ⵜⴻⵅⵅⴰⵎⵜ %1</translation>
     </message>
     <message>
         <source>OBJECT</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OBJECT</translation>
     </message>
     <message>
         <source>Removes the specified object from the directory. %1 can be specified by name or UUID. Removing a location will also remove all related computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⴽⴽⴻⵙ ⵜⴰⵖⴰⵡⵙⴰ ⵙⴻⴳ ⵓⴽⴰⵔⴰⵎ. %1 ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵜⵜⵡⴰⴼⵔⴻⵏ ⵙ ⵢⵉⵙⴻⵎ ⵏⴻⵖ ⵙ UUID. ⵜⵓⴽⴽⵙⴰ ⵏ ⵜⴻⵅⵅⴰⵎⵜ ⴰⴷ ⵜⴻⴽⴽⴻⵙ ⴷⴰⵖⴻⵏ ⴰⴽⴽ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ-ⵉⵙ.</translation>
     </message>
     <message>
         <source>Remove a computer by name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⴰⵙⴻⵍⴽⵉⵎ ⵙ ⵢⵉⵙⴻⵎ-ⵉⵙ</translation>
     </message>
     <message>
         <source>Remove an object by UUID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵜⴰⵖⴰⵡⵙⴰ ⵙ UUID-ⵉⵏⴻⵙ</translation>
     </message>
     <message>
         <source>The specified command does not exist or no help is available for it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵓⵍⴰⵛ-ⵉⵜⵜ ⵏⴻⵖ ⵓⵍⴰⵛ ⵜⴰⵍⵍⴰⵍⵜ ⵉ ⵜⵜ-ⵢⴻⵄⵏⴰⵏ.</translation>
     </message>
     <message>
         <source>Invalid type specified. Valid values are &quot;%1&quot; or &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵡⵙⵉⵜ ⴷ ⵜⴰⵔⴰⵎⴻⵖⵜⵓⵜ. ⴰⵣⴰⵍⴻⵏ ⵉⵖⴱⴻⵍⴻⵏ: &quot;%1&quot; ⵏⴻⵖ &quot;%2&quot;.</translation>
     </message>
     <message>
         <source>Object UUID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UUID ⵏ ⵜⵖⴰⵡⵙⴰ</translation>
     </message>
     <message>
         <source>Parent UUID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UUID ⵏ ⵓⵎⴰⵔⴰⵡ</translation>
     </message>
     <message>
         <source>Type</source>
@@ -929,43 +929,43 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Specified object not found.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵖⴰⵡⵙⴰ ⵓⵔ ⵜⴻⵜⵜⵡⴰⴼ ⴰⵔⴰ.</translation>
     </message>
     <message>
         <source>File &quot;%1&quot; does not exist!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ &quot;%1&quot; ⵓⵍⴰⵛ-ⵉⵜ!</translation>
     </message>
     <message>
         <source>Can&apos;t open file &quot;%1&quot; for reading!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷ ⴰⵡⴻⵣⵖⵉ ⴰⴷ ⵢⴻⵍⴷⵉ ⵓⴼⴰⵢⵍⵓ &quot;%1&quot; ⵉ ⵜⵖⵓⵔⵉ!</translation>
     </message>
     <message>
         <source>Unknown argument &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵖⴻⵡⵡⴰⵔ ⴰⵔⵓⵙⵙⵉⵏ &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>No format string or regular expression specified!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵣⵔⵉⵔ ⵏ ⵓⵎⴰⵙⴰⵍ ⵏⴻⵖ ⵜⴰⵏⴼⴰⵍⵉⵜ ⵜⴰⴳⵏⴰⵡⵜ!</translation>
     </message>
     <message>
         <source>Can&apos;t open file &quot;%1&quot; for writing!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷ ⴰⵡⴻⵣⵖⵉ ⴰⴷ ⵢⴻⵍⴷⵉ ⵓⴼⴰⵢⵍⵓ &quot;%1&quot; ⵉ ⵜⵉⵔⴰ!</translation>
     </message>
     <message>
         <source>No format string specified!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵣⵔⵉⵔ ⵏ ⵓⵎⴰⵙⴰⵍ!</translation>
     </message>
     <message>
         <source>Location &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Computer &quot;%1&quot; (host address: &quot;%2&quot; MAC address: &quot;%3&quot;)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ &quot;%1&quot; (ⵜⴰⵏⵙⴰ ⵏ ⵓⵙⴻⵏⵏⴻⴼⵜⴰⵖ: &quot;%2&quot; ⵜⴰⵏⵙⴰ MAC: &quot;%3&quot;)</translation>
     </message>
     <message>
         <source>Unclassified object &quot;%1&quot; with ID &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵖⴰⵡⵙⴰ ⵓⵔ ⵏⴻⵜⵜⵡⴰⵙⵎⵉⵣⵣⵡⴻⵔ ⴰⵔⴰ &quot;%1&quot; ⵙ ⵓⵙⵓⵍⴰⵢ &quot;%2&quot;</translation>
     </message>
     <message>
         <source>None</source>
@@ -973,47 +973,47 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Invalid</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵔⵎⴻⵖⵜⵓ</translation>
     </message>
     <message>
         <source>Error while parsing line %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⴰ ⴷⴻⴳ ⵜⴻⵙⵍⴻⴹⵜ ⵏ ⵢⵉⵣⵉⵔⵉⴳ %1.</translation>
     </message>
     <message>
         <source>Network object directory which stores objects in local configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⵏ ⵜⵖⴰⵡⵙⵉⵡⵉⵏ ⵏ ⵓⵥⴻⵟⵟⴰ ⵉ ⵢⴻⵙⵙⴻⴽⵍⴻⵙ ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⴷⴻⴳ ⵜⵡⵉⵍⴰ ⵜⴰⴷⵉⴳⴰⵏⵜ</translation>
     </message>
     <message>
         <source>Builtin (computers and locations in local configuration)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵙⵍⵉⵖ (ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⴷ ⵜⵉⵅⵅⴰⵎⵉⵏ ⴷⴻⴳ ⵜⵡⵉⵍⴰ ⵜⴰⴷⵉⴳⴰⵏⵜ)</translation>
     </message>
     <message>
         <source>Commands for managing the builtin network object directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⴻⴼⵔⴻⴽ ⵏ ⵓⴽⴰⵔⴰⵎ ⵓⵙⵍⵉⵖ ⵏ ⵜⵖⴰⵡⵙⵉⵡⵉⵏ ⵏ ⵓⵥⴻⵟⵟⴰ</translation>
     </message>
     <message>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ</translation>
     </message>
     <message>
         <source>Computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴻⵍⴽⵉⵎ</translation>
     </message>
     <message>
         <source>Root</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵥⴰⵔ</translation>
     </message>
     <message>
         <source>&quot;Room 01&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;Room 01&quot;</translation>
     </message>
     <message>
         <source>&quot;Computer 01&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;Computer 01&quot;</translation>
     </message>
     <message>
         <source>Location &quot;%1&quot; not found.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ &quot;%1&quot; ⵓⵔ ⵜⴻⵜⵜⵡⴰⴼ ⴰⵔⴰ.</translation>
     </message>
 </context>
 <context>
@@ -1214,75 +1214,75 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>ConfigCommands</name>
     <message>
         <source>Clear system-wide Veyon configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴼⴻⴹ ⵜⴰⵡⵉⵍⴰ ⵏ Veyon ⵉ ⵓⵏⴰⴳⵔⴰⵡ ⵎⴻⵕⵕⴰ</translation>
     </message>
     <message>
         <source>List all configuration keys and values</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴰⴽⴽ ⵜⵉⵙⵓⵔⴰ ⵏ ⵜⵡⵉⵍⴰ ⴷ ⵡⴰⵣⴰⵍⴻⵏ-ⵏⵙⴻⵏⵜ</translation>
     </message>
     <message>
         <source>Import configuration from given file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⵜⴻⵔ ⵜⴰⵡⵉⵍⴰ ⵙⴻⴳ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Export configuration to given file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵉⴼⴻⴹ ⵜⴰⵡⵉⵍⴰ ⵖⴻⵔ ⵓⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
         <source>Read and output configuration value for given key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵖⴻⵔ ⴰⵣⴰⵍ ⵏ ⵜⵡⵉⵍⴰ ⵏ ⵜⵙⴰⵔⵓⵜ ⵙⵢⵉⵏ ⵙⴽⴻⵏ-ⵉⵜ</translation>
     </message>
     <message>
         <source>Write given value to given configuration key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵔⵓ ⴰⵣⴰⵍ ⴷⴻⴳ ⵜⵙⴰⵔⵓⵜ ⵏ ⵜⵡⵉⵍⴰ</translation>
     </message>
     <message>
         <source>Unset (remove) given configuration key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵜⵡⵉⵍⴰ</translation>
     </message>
     <message>
         <source>Upgrade and save configuration of program and plugins</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴻⵇⵇⴻⵎ ⵙⵢⵉⵏ ⵙⴻⴽⵍⴻⵙ ⵜⴰⵡⵉⵍⴰ ⵏ ⵡⴰⵀⵉⵍ ⴷ ⵢⵉⵣⴻⴳⵔⵉⵔⴻⵏ</translation>
     </message>
     <message>
         <source>Please specify an existing configuration file to import.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⴽ, ⴼⵔⴻⵏ ⴰⴼⴰⵢⵍⵓ ⵏ ⵜⵡⵉⵍⴰ ⵢⴻⵍⵍⴰⵏ ⵉ ⵓⴽⵜⴻⵔ.</translation>
     </message>
     <message>
         <source>Configuration file is not readable!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ ⵏ ⵜⵡⵉⵍⴰ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵖⵔⴰ ⴰⵔⴰ!</translation>
     </message>
     <message>
         <source>Please specify a valid filename for the configuration export.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⴽ, ⴼⵔⴻⵏ ⵉⵙⴻⵎ ⵏ ⵓⴼⴰⵢⵍⵓ ⵉⵖⴱⴻⵍⴻⵏ ⵉ ⵓⵙⵉⴼⴻⴹ ⵏ ⵜⵡⵉⵍⴰ.</translation>
     </message>
     <message>
         <source>Output file is not writable!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ ⵏ ⵜⵓⴼⴼⵖⴰ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵔⵓ ⴰⵔⴰ!</translation>
     </message>
     <message>
         <source>Output directory is not writable!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⴰⵔⴰⵎ ⵏ ⵜⵓⴼⴼⵖⴰ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵔⵓ ⴰⵔⴰ!</translation>
     </message>
     <message>
         <source>Please specify a valid key.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⴽ, ⴼⵔⴻⵏ ⵜⴰⵙⴰⵔⵓⵜ ⵉⵖⴱⴻⵍⴻⵏ.</translation>
     </message>
     <message>
         <source>Specified key does not exist in current configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵙⴰⵔⵓⵜ-ⴰ ⵓⵍⴰⵛ-ⵉⵜⵜ ⴷⴻⴳ ⵜⵡⵉⵍⴰ ⵏ ⵜⵓⵔⴰ!</translation>
     </message>
     <message>
         <source>Please specify a valid value.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⴽ, ⴼⵔⴻⵏ ⴰⵣⴰⵍ ⵉⵖⴱⴻⵍⴻⵏ.</translation>
     </message>
     <message>
         <source>Configure Veyon at command line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵡⴻⵍ Veyon ⵙⴻⴳ ⵢⵉⵣⵉⵔⵉⴳ ⵏ ⵜⵍⴰⴷⵏⴰ</translation>
     </message>
     <message>
         <source>Commands for managing the configuration of Veyon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⴻⴼⵔⴻⴽ ⵏ ⵜⵡⵉⵍⴰ ⵏ Veyon</translation>
     </message>
 </context>
 <context>
@@ -1554,15 +1554,15 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Room %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵅⵅⴰⵎⵜ %1</translation>
     </message>
     <message>
         <source>generic-student-user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">generic-student-user</translation>
     </message>
     <message>
         <source>Please complete all tasks within the next 5 minutes.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⵡⴻⵜ, ⴽⴻⵎⵎⵍⴻⵜ ⴰⴽⴽ ⵍⴻⵇⴷⵉⵛⴰⵜ ⴷⴻⴳ 5 ⵏ ⵜⴻⵙⴷⴰⵜⵉⵏ ⵉ ⴷ-ⵉⵜⴻⴷⴷⵓⵏ.</translation>
     </message>
     <message>
         <source>Custom website</source>
@@ -1570,15 +1570,15 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Open file manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⵎⵙⴻⴼⵔⴰⴽ ⵏ ⵢⵉⴼⵓⵢⵍⴰ</translation>
     </message>
     <message>
         <source>Start learning tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⴰⴼⴻⵛⴽⵓ ⵏ ⵓⵍⵎⴰⴷ</translation>
     </message>
     <message>
         <source>Play tutorial video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵓⵔⴰⵔ ⵜⴰⵠⵉⴷⵢⵓⵜ ⵏ ⵓⵙⴻⵍⵎⴻⴷ</translation>
     </message>
     <message>
         <source>Custom application</source>
@@ -1586,11 +1586,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Handout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵙⴻⴱⵜⴰⵔⵜ ⵏ ⵍⴻⵇⴷⵉⵛ</translation>
     </message>
     <message>
         <source>Texts to read</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⴹⵔⵉⵙⴻⵏ ⴰⵔⴰ ⵜⴻⵖⵔⴻⴹ</translation>
     </message>
 </context>
 <context>
@@ -1619,75 +1619,75 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FeatureCommands</name>
     <message>
         <source>List names of all available features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵉⵙⵎⴰⵡⴻⵏ ⵏ ⴰⴽⴽ ⵜⵉⵎⴰⵀⵉⵍⵉⵏ ⵢⴻⵍⵍⴰⵏ</translation>
     </message>
     <message>
         <source>Show table with details of all available features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴰⴷⵍⵉⵙ ⵙ ⵜⴻⵍⵇⴰⵢⵜ ⵏ ⴰⴽⴽ ⵜⵉⵎⴰⵀⵉⵍⵉⵏ ⵢⴻⵍⵍⴰⵏ</translation>
     </message>
     <message>
         <source>Start a feature on a remote host</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⵜⴰⵎⴰⵀⵉⵍⵜ ⵖⴻⴼ ⵓⵙⴻⵍⴽⵉⵎ ⵢⴻⴱⵄⴷⴻⵏ</translation>
     </message>
     <message>
         <source>Stop a feature on a remote host</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵃⴱⴻⵙ ⵜⴰⵎⴰⵀⵉⵍⵜ ⵖⴻⴼ ⵓⵙⴻⵍⴽⵉⵎ ⵢⴻⴱⵄⴷⴻⵏ</translation>
     </message>
     <message>
         <source>Please specify the command to display help for.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵜⵅⵉⵍ-ⴽ, ⴼⵔⴻⵏ ⵜⴰⵍⴰⴷⵏⴰ ⵉ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⵡⴰⵍⵉⴹ ⵜⴰⵍⵍⴰⵍⵜ-ⵉⵙ.</translation>
     </message>
     <message>
         <source>Displays a list with the names of all available features.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵙⵙⴽⴰⵏ ⵜⴰⴱⴷⴰⵔⵜ ⵏ ⵢⵉⵙⵎⴰⵡⴻⵏ ⵏ ⴰⴽⴽ ⵜⵉⵎⴰⵀⵉⵍⵉⵏ ⵢⴻⵍⵍⴰⵏ.</translation>
     </message>
     <message>
         <source>Displays a table with detailed information about all available features. This information include a description, the UID, the name of the plugin providing the respective feature and some other implementation-related details.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵙⵙⴽⴰⵏ ⴰⴷⵍⵉⵙ ⵙ ⵜⴻⵍⵖⵓⵜ ⵍⴻⵇⵇⴰⵢⴻⵏ ⵖⴻⴼ ⴰⴽⴽ ⵜⵉⵎⴰⵀⵉⵍⵉⵏ ⵢⴻⵍⵍⴰⵏ: ⴰⴳⵍⴰⵎ, UID, ⵉⵙⴻⵎ ⵏ ⵓⵣⴻⴳⵔⵉⵔ ⵉ ⴷ-ⵢⴻⵜⵜⴰⴽ ⵜⴰⵎⴰⵀⵉⵍⵜ, ⴷ ⴽⵔⴰ ⵏ ⵜⴻⵍⵇⴰⵢⵉⵏ ⵏⵏⵉⴹⴻⵏ ⵜⵉⵟⵉⴽⵏⵉⴽⴰⵏⵉⵏ.</translation>
     </message>
     <message>
         <source>HOST ADDRESS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HOST ADDRESS</translation>
     </message>
     <message>
         <source>FEATURE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">FEATURE</translation>
     </message>
     <message>
         <source>ARGUMENTS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ARGUMENTS</translation>
     </message>
     <message>
         <source>Starts the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features. Depending on the feature, additional arguments (such as the text message to display) encoded as a single JSON string have to be specified. Please refer to the developer documentation for more information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵙⵙⴻⵏⴽⴻⵔ ⵜⴰⵎⴰⵀⵉⵍⵜ ⵖⴻⴼ ⵓⵙⴻⵍⴽⵉⵎ ⵙ ⵜⵓⵇⵇⵏⴰ ⵖⴻⵔ ⵓⵇⴻⴷⴷⴰⵛ Veyon ⵉ ⵉⵜⴻⴷⴷⵓⵏ ⴼⴻⵍⵍ-ⴰⵙ. ⵜⴰⵎⴰⵀⵉⵍⵜ ⵜⴻⵣⵎⴻⵔ ⴰⴷ ⵜⴻⵜⵜⵡⴰⴼⵔⴻⵏ ⵙ ⵢⵉⵙⴻⵎ ⵏⴻⵖ ⵙ UID. ⵙⴻⵇⴷⴻⵛ ⵜⴰⵍⴰⴷⵏⴰ ``show`` ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵡⴰⵍⵉⴹ ⴰⴽⴽ ⵜⵉⵎⴰⵀⵉⵍⵉⵏ. ⵖⴻⴼ ⵜⵎⴰⵀⵉⵍⵜ, ⵉⵍⴰⵇ ⴰⴷ ⴷ-ⵜⴻⴼⴽⴻⴹ ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵏⵏⵉⴹⴻⵏ (ⴰⵎ ⵢⵉⵣⴻⵏ ⵏ ⵓⴹⵔⵉⵙ ⴰⵔⴰ ⴷ-ⵢⴻⵜⵜⵡⴰⵙⴽⴰⵏⴻⵏ) ⴷⴻⴳ ⵢⵉⵡⴻⵏ ⵓⵣⵔⵉⵔ JSON. ⵥⴻⵔ ⵜⴰⵙⴻⵎⵍⵉⵜ ⵏ ⵢⵉⵏⴻⴼⵍⴰⵢⴻⵏ ⵉ ⵡⵓⴳⴰⵔ ⵏ ⵜⴻⵍⵖⵓⵜ</translation>
     </message>
     <message>
         <source>Lock the screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⴽⴻⵕ ⴰⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>Display a text message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵉⵣⴻⵏ ⴰⴹⵔⵉⵙ</translation>
     </message>
     <message>
         <source>Test message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⵏ ⵓⵙⴻⴽⵢⴻⴷ</translation>
     </message>
     <message>
         <source>Start an application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⴰⵙⵏⴰⵙ</translation>
     </message>
     <message>
         <source>Stops the specified feature on the specified host by connecting to the Veyon Server running remotely. The feature can be specified by name or UID. Use the ``show`` command to see all available features.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵙⵙⴻⵃⴱⴰⵙ ⵜⴰⵎⴰⵀⵉⵍⵜ ⵖⴻⴼ ⵓⵙⴻⵍⴽⵉⵎ ⵙ ⵜⵓⵇⵇⵏⴰ ⵖⴻⵔ ⵓⵇⴻⴷⴷⴰⵛ Veyon ⵉ ⵉⵜⴻⴷⴷⵓⵏ ⴼⴻⵍⵍ-ⴰⵙ. ⵜⴰⵎⴰⵀⵉⵍⵜ ⵜⴻⵣⵎⴻⵔ ⴰⴷ ⵜⴻⵜⵜⵡⴰⴼⵔⴻⵏ ⵙ ⵢⵉⵙⴻⵎ ⵏⴻⵖ ⵙ UID. ⵙⴻⵇⴷⴻⵛ ⵜⴰⵍⴰⴷⵏⴰ ``show`` ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵡⴰⵍⵉⴹ ⴰⴽⴽ ⵜⵉⵎⴰⵀⵉⵍⵉⵏ.</translation>
     </message>
     <message>
         <source>Unlock the screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⴳⴷⵉⵍ</translation>
     </message>
     <message>
         <source>The specified command does not exist or no help is available for it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⴰⴷⵏⴰ-ⴰ ⵓⵍⴰⵛ-ⵉⵜⵜ ⵏⴻⵖ ⵓⵍⴰⵛ ⵜⴰⵍⵍⴰⵍⵜ ⵉ ⵜⵜ-ⵢⴻⵄⵏⴰⵏ.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1695,7 +1695,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴳⵍⴰⵎ</translation>
     </message>
     <message>
         <source>Master</source>
@@ -1707,23 +1707,23 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Worker</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⵀⵉⵍ</translation>
     </message>
     <message>
         <source>UID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UID</translation>
     </message>
     <message>
         <source>Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵣⴻⴳⵔⵉⵔ</translation>
     </message>
     <message>
         <source>Invalid feature name or UID specified</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵜⵎⴰⵀⵉⵍⵜ ⵏⴻⵖ UID ⴷ ⴰⵔⵎⴻⵖⵜⵓ</translation>
     </message>
     <message>
         <source>Error parsing the JSON-encoded arguments: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵓⵛⵛⴹⴰ ⴷⴻⴳ ⵜⴻⵙⵍⴻⴹⵜ ⵏ ⵢⵉⵖⴻⵡⵡⴰⵔⴻⵏ JSON: %1</translation>
     </message>
     <message>
         <source>Failed to initialize credentials</source>
@@ -1731,19 +1731,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Could not establish a connection to host %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷ ⴰⵡⴻⵣⵖⵉ ⵜⵓⵇⵇⵏⴰ ⵖⴻⵔ ⵓⵙⴻⵍⴽⵉⵎ %1</translation>
     </message>
     <message>
         <source>Failed to send feature control message to host %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷ ⴰⵡⴻⵣⵖⵉ ⵜⵓⵣⵏⴰ ⵏ ⵢⵉⵣⴻⵏ ⵏ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵜⵎⴰⵀⵉⵍⵜ ⵖⴻⵔ ⵓⵙⴻⵍⴽⵉⵎ %1</translation>
     </message>
     <message>
         <source>Feature-related CLI operations</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵎⵀⴰⵍⵉⵏ ⵏ ⵢⵉⵣⵉⵔⵉⴳ ⵏ ⵜⵍⴰⴷⵏⴰ ⵉ ⵜⵉⵎⴰⵀⵉⵍⵉⵏ</translation>
     </message>
     <message>
         <source>Commands for controlling features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵜⵎⴰⵀⵉⵍⵉⵏ</translation>
     </message>
 </context>
 <context>
@@ -2999,7 +2999,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>LinuxPlatformConfigurationPage</name>
     <message>
         <source>Linux</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linux</translation>
     </message>
     <message>
         <source>User authentication</source>
@@ -3007,15 +3007,15 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Custom PAM service for user authentication</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵥⵍⵓ PAM ⵓⴷⵎⴰⵡⴰⵏ ⵉ ⵓⵙⴻⵙⵜⴻⴱ ⵏ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ</translation>
     </message>
     <message>
         <source>User sessions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵖⵉⵎⵉⵢⵉⵏ ⵏ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ</translation>
     </message>
     <message>
         <source>Minimum session lifetime before server start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵣⴰⴳⵜ ⵜⴰⵎⴻⵛⵟⵓⵃⵜ ⵏ ⵜⵖⵉⵎⵉⵜ ⵓⵇⴱⴻⵍ ⴰⴷ ⵢⴻⴽⴽⴻⵔ ⵓⵇⴻⴷⴷⴰⵛ</translation>
     </message>
     <message>
         <source>User login</source>
@@ -3023,7 +3023,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Login key sequence</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⴳⵣⴻⵎⵜ ⵏ ⵜⵙⵓⵔⴰ ⵏ ⵜⵓⵇⵇⵏⴰ</translation>
     </message>
     <message>
         <source>Input start delay</source>
@@ -3031,18 +3031,18 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Key press interval for text input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⵓⴷ ⴳⴰⵔ ⵜⵙⵉⵜⵉ ⵏ ⵜⵙⵓⵔⴰ ⵉ ⵓⵙⴻⴽⵛⴻⵎ ⵏ ⵓⴹⵔⵉⵙ</translation>
     </message>
     <message>
         <source>Key press interval to control input fields</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⵓⴷ ⴳⴰⵔ ⵜⵙⵉⵜⵉ ⵏ ⵜⵙⵓⵔⴰ ⵉ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵢⵉⴼⴻⵔⴷⵉⵙⴻⵏ ⵏ ⵓⵙⴻⴽⵛⴻⵎ</translation>
     </message>
 </context>
 <context>
     <name>LinuxPlatformPlugin</name>
     <message>
         <source>Plugin implementing abstract functions for the Linux platform</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵣⴻⴳⵔⵉⵔ ⵉ ⵢⴻⵙⵙⴻⴷⴷⴰⵢⴻⵏ ⵜⵉⵡⵓⵔⵉⵡⵉⵏ ⵏ ⵜⵖⴻⵔⵖⴻⵔⵜ Linux</translation>
     </message>
 </context>
 <context>
@@ -3546,43 +3546,43 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Monitoring view</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵎⵓⵖⵍⵉ ⵏ ⵓⵄⴻⵙⵙⵉ</translation>
     </message>
     <message>
         <source>Refresh rate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵡⵉⵔ ⵏ ⵓⵙⵎⵉⵔⴻⵏ</translation>
     </message>
     <message>
         <source>Display label</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵜⴰⴱⵣⵉⵎⵜ</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⵙⴰⵖ ⵏ ⵜⴻⵀⵔⵉ</translation>
     </message>
     <message>
         <source>Grid spacing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵍⵍⵓⵏⵜ ⵏ ⵜⴼⴻⵔⴽⵉⵜ</translation>
     </message>
     <message>
         <source>Image quality</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵖⴰⵔⴰ ⵏ ⵜⵓⴳⵏⴰ</translation>
     </message>
     <message>
         <source>Visibility mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵙⴽⴰⵔ ⵏ ⵓⴱⴰⵏⵉ</translation>
     </message>
     <message>
         <source>Normal</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴰⴳⵏⵓ</translation>
     </message>
     <message>
         <source>Blurred</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⵜⵜⵡⴰⵖⵓⵎⵎ</translation>
     </message>
     <message>
         <source>Hidden</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵢⴻⴼⴼⴻⵔ</translation>
     </message>
     <message>
         <source>Remote access</source>
@@ -3697,18 +3697,18 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <name>PipeWireVncServer</name>
     <message>
         <source>Wayland VNC server (PipeWire/XDG Desktop Portal)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵇⴻⴷⴷⴰⵛ VNC ⵏ Wayland (PipeWire/XDG Desktop Portal)</translation>
     </message>
 </context>
 <context>
     <name>PluginCommands</name>
     <message>
         <source>List names of all installed plugins</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵉⵙⵎⴰⵡⴻⵏ ⵏ ⴰⴽⴽ ⵉⵣⴻⴳⵔⵉⵔⴻⵏ ⵢⴻⴱⴷⴰⵏ</translation>
     </message>
     <message>
         <source>Show table with details of all installed plugins</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴰⴷⵍⵉⵙ ⵙ ⵜⴻⵍⵇⴰⵢⵜ ⵏ ⴰⴽⴽ ⵉⵣⴻⴳⵔⵉⵔⴻⵏ ⵢⴻⴱⴷⴰⵏ</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3716,23 +3716,23 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴳⵍⴰⵎ</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵍⵇⴻⵎ</translation>
     </message>
     <message>
         <source>UID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UID</translation>
     </message>
     <message>
         <source>Plugin-related CLI operations</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵎⵀⴰⵍⵉⵏ ⵏ ⵢⵉⵣⵉⵔⵉⴳ ⵏ ⵜⵍⴰⴷⵏⴰ ⵉ ⵢⵉⵣⴻⴳⵔⵉⵔⴻⵏ</translation>
     </message>
     <message>
         <source>Commands for managing plugins</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⴻⴼⵔⴻⴽ ⵏ ⵢⵉⵣⴻⴳⵔⵉⵔⴻⵏ</translation>
     </message>
 </context>
 <context>
@@ -4329,19 +4329,19 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>ServiceControlCommands</name>
     <message>
         <source>Register Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵍⴻⵙ ⴰⵎⴻⵥⵍⵓ Veyon</translation>
     </message>
     <message>
         <source>Unregister Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⴰⵙⴻⴽⵍⴻⵙ ⵏ ⵓⵎⴻⵥⵍⵓ Veyon</translation>
     </message>
     <message>
         <source>Start Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵏⴽⴻⵔ ⴰⵎⴻⵥⵍⵓ Veyon</translation>
     </message>
     <message>
         <source>Stop Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵃⴱⴻⵙ ⴰⵎⴻⵥⵍⵓ Veyon</translation>
     </message>
     <message>
         <source>Restart Veyon Service</source>
@@ -4349,42 +4349,42 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Query status of Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵙⵓⵜⴻⵔ ⴰⴷⴷⴰⴷ ⵏ ⵓⵎⴻⵥⵍⵓ Veyon</translation>
     </message>
     <message>
         <source>Service is running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵥⵍⵓ ⵉⵜⴻⴷⴷⵓ</translation>
     </message>
     <message>
         <source>Service is not running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴻⵥⵍⵓ ⵓⵔ ⵉⵜⴻⴷⴷⵓ ⴰⵔⴰ</translation>
     </message>
     <message>
         <source>Configure and control Veyon service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⵡⴻⵍ ⵙⵢⵉⵏ ⵙⴻⵏⵇⴻⴷ ⴰⵎⴻⵥⵍⵓ Veyon</translation>
     </message>
     <message>
         <source>Commands for configuring and controlling Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⵡⴻⵍ ⴷ ⵓⵙⴻⵏⵇⴻⴷ ⵏ ⵓⵎⴻⵥⵍⵓ Veyon</translation>
     </message>
 </context>
 <context>
     <name>ShellCommands</name>
     <message>
         <source>Run command file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵍⴽⴻⵎ ⴰⴼⴰⵢⵍⵓ ⵏ ⵜⵍⴰⴷⵏⴰ</translation>
     </message>
     <message>
         <source>File &quot;%1&quot; does not exist!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ &quot;%1&quot; ⵓⵍⴰⵛ-ⵉⵜ!</translation>
     </message>
     <message>
         <source>Interactive shell and script execution for Veyon CLI</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⴼⵓⵖⴰⵍⵜ ⵜⴰⵎⵢⵉⴳⴰⵡⵜ ⴷ ⵓⵙⴻⵍⴽⴻⵎ ⵏ ⵢⵉⵙⴽⵔⵉⵒⵜⴻⵏ ⵉ ⵢⵉⵣⵉⵔⵉⴳ ⵏ ⵜⵍⴰⴷⵏⴰ ⵏ Veyon</translation>
     </message>
     <message>
         <source>Commands for shell functionalities</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵜⵎⴰⵀⵉⵍⵉⵏ ⵏ ⵜⴼⵓⵖⴰⵍⵜ</translation>
     </message>
 </context>
 <context>
@@ -4494,11 +4494,11 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>TestingCommandLinePlugin</name>
     <message>
         <source>Test internal Veyon components and functions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⴽⵢⴻⴷ ⵉⴼⴻⵔⴷⵉⵙⴻⵏ ⴷ ⵜⵉⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⴳⴻⵏⵙⴰⵏⵉⵏ ⵏ Veyon</translation>
     </message>
     <message>
         <source>Commands for testing internal components and functions of Veyon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⴻⴽⵢⴻⴷ ⵏ ⵢⵉⴼⴻⵔⴷⵉⵙⴻⵏ ⴷ ⵜⵉⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⴳⴻⵏⵙⴰⵏⵉⵏ ⵏ Veyon</translation>
     </message>
 </context>
 <context>
@@ -4733,7 +4733,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>WebApiConfigurationPage</name>
     <message>
         <source>Web API</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Web API</translation>
     </message>
     <message>
         <source>General</source>
@@ -4741,23 +4741,23 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Network port</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵡⵡⵓⵔⵜ ⵏ ⵓⵥⴻⵟⵟⴰ</translation>
     </message>
     <message>
         <source>Enable WebAPI server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵔⵎⴻⴷ ⴰⵇⴻⴷⴷⴰⵛ WebAPI</translation>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵉⵖⴻⵡⵡⴰⵔⴻⵏ ⵏ ⵜⵓⵇⵇⵏⴰ</translation>
     </message>
     <message>
         <source>Lifetime</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⴰⵏⵣⴰⴳⵜ</translation>
     </message>
     <message>
         <source> h</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> ⵙⵔ</translation>
     </message>
     <message>
         <source> s</source>
@@ -4765,27 +4765,27 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⵓⴷ ⵏ ⵡⴰⵔⵎⵓⴷ</translation>
     </message>
     <message>
         <source>Authentication timeout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴽⵓⴷ ⵏ ⵓⵙⴻⵙⵜⴻⴱ</translation>
     </message>
     <message>
         <source>Maximum number of open connections</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵎⴹⴰⵏ ⴰⴼⴻⵍⵍⴰⵢ ⵏ ⵜⵓⵇⵇⵏⵉⵡⵉⵏ ⵢⴻⵍⴷⵉⵏ</translation>
     </message>
     <message>
         <source>Connection encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵡⴳⴻⵍⵀⴻⵏ ⵏ ⵜⵓⵇⵇⵏⴰ</translation>
     </message>
     <message>
         <source>TLS certificate file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ ⵏ ⵓⵙⴻⵍⴽⵉⵏ TLS</translation>
     </message>
     <message>
         <source>TLS private key file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ ⵏ ⵜⵙⴰⵔⵓⵜ ⵜⵓⵙⵍⵉⴳⵜ TLS</translation>
     </message>
     <message>
         <source>...</source>
@@ -4793,30 +4793,30 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Use HTTPS with TLS 1.3 instead of HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵇⴷⴻⵛ HTTPS ⵙ TLS 1.3 ⴷⴻⴳ ⵡⴰⴷⴻⴳ ⵏ HTTP</translation>
     </message>
 </context>
 <context>
     <name>WebApiPlugin</name>
     <message>
         <source>Run WebAPI server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵙⴻⵍⴽⴻⵎ ⴰⵇⴻⴷⴷⴰⵛ WebAPI</translation>
     </message>
     <message>
         <source>Failed to start WebAPI server at port %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴷ ⴰⵡⴻⵣⵖⵉ ⴰⵙⴻⵏⴽⴻⵔ ⵏ ⵓⵇⴻⴷⴷⴰⵛ WebAPI ⵖⴻⴼ ⵜⴻⵡⵡⵓⵔⵜ %1</translation>
     </message>
     <message>
         <source>WebAPI server running at port %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴰⵇⴻⴷⴷⴰⵛ WebAPI ⵉⵜⴻⴷⴷⵓ ⵖⴻⴼ ⵜⴻⵡⵡⵓⵔⵜ %1</translation>
     </message>
     <message>
         <source>Provide access to a computer via HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⴻⴼⴽ ⴰⵏⴻⴽⵛⵓⵎ ⵖⴻⵔ ⵓⵙⴻⵍⴽⵉⵎ ⵙ HTTP</translation>
     </message>
     <message>
         <source>Commands for running the WebAPI server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ⵜⵉⵍⵓⴷⵏⴰ ⵉ ⵓⵙⴻⵍⴽⴻⵎ ⵏ ⵓⵇⴻⴷⴷⴰⵛ WebAPI</translation>
     </message>
 </context>
 <context>

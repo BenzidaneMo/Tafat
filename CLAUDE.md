@@ -438,7 +438,7 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
      Amesbadu (configurator).
    - Still without Arabic: 157 upstream texts, all LDAP (off on Windows); the CLI help,
      WebAPI and Linux texts have drafts since 2026-10-04.
-     Without Kabyle: 351.
+     Without Kabyle: 157, also only LDAP (CLI/WebAPI/Linux drafts added 2026-10-04, Tifinagh too).
    - Hosted Weblate; small `qtbase_kab*` overrides; RTL audit of `LockWidget`,
      `Toast` and other custom-painted widgets.
 3. **Decisions:** do schools need LDAP/Active Directory or the WebAPI on Windows?
