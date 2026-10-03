@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Tafat installation guide for lab administrators (French and Arabic).
+  Tafat installation guide for lab administrators (French, English and Arabic).
   Self-contained on purpose: it must work offline from a USB stick or a lab share.
   Keep it in step with docs/DEPLOYMENT.md (English, more detail).
   Colors are the tokens of core/src/BrandTheme.h.
@@ -96,6 +96,11 @@ a { color: var(--accent); }
 
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin: 12px 0; }
 .note { background: var(--warn-bg); border-inline-start: 4px solid var(--warn-border); border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
+details.adv { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 0 18px; margin: 18px 0; }
+details.adv > summary { cursor: pointer; font-weight: 600; padding: 12px 0; min-height: 44px; }
+details.adv[open] > summary { border-bottom: 1px solid var(--border); margin-bottom: 6px; }
+details.adv > summary:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.file-name { font-weight: 600; overflow-wrap: anywhere; }
 .ok { background: var(--accent-soft); border-inline-start: 4px solid var(--accent); border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
 
 ol.steps { padding-inline-start: 1.4em; }
@@ -152,6 +157,7 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 @media print {
 	header.top { position: static; }
 	.switch, .copy, nav.toc { display: none !important; }
+	details.adv > *:not(summary) { display: block; }
 	.cmd pre { padding-right: 16px; }
 	body { background: #fff; }
 }
@@ -188,14 +194,15 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 
 <div class="hero">
 	<h1>Installer Tafat dans une salle informatique</h1>
-	<p>Pour la personne qui installe la salle : un poste enseignant et les postes des élèves dans le même réseau. Les mêmes étapes valent pour plusieurs salles. Comptez environ une heure pour une salle de 20 postes.</p>
+	<p>Pour la personne qui installe la salle : un poste enseignant et les postes des élèves dans le même réseau. Tafat s'installe d'abord sur le poste de l'enseignant ; il crée ensuite lui-même l'installeur des postes des élèves. Aucune commande à taper.</p>
 	<nav class="toc" aria-label="Sommaire">
 		<a href="#fr-choose">1. Programme d'installation</a>
 		<a href="#fr-teacher">2. Poste enseignant</a>
 		<a href="#fr-students">3. Postes élèves</a>
-		<a href="#fr-check">4. Vérifier</a>
-		<a href="#fr-network">5. Réseau</a>
-		<a href="#fr-help">6. Problèmes</a>
+		<a href="#fr-computers">4. Ajouter les postes</a>
+		<a href="#fr-check">5. Vérifier</a>
+		<a href="#fr-network">6. Réseau</a>
+		<a href="#fr-help">7. Problèmes</a>
 	</nav>
 </div>
 
@@ -252,59 +259,71 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 <section id="fr-teacher">
 	<h2><span class="n">2</span>Poste de l'enseignant</h2>
 	<ol class="steps">
-		<li>Lancez le programme d'installation avec <strong>tous les composants</strong>.</li>
-		<li>Ouvrez <strong>Tafat Configurator</strong> → <em>Authentification</em> : choisissez <em>Authentification par fichier clé</em> et créez une paire de clés, par exemple <code>teacher</code>. En ligne de commande :
-			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" authkeys create teacher</code></pre></div>
-		</li>
-		<li><em>Emplacements &amp; ordinateurs</em> : ajoutez la salle et ses postes, ou importez-les depuis un fichier CSV (<code>salle;nom;hôte-ou-IP</code>) :
-			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
-		</li>
-		<li><em>Général</em> → <em>Langue</em> : arabe, français, tamazight (latin ou tifinagh) ou anglais.</li>
-		<li>Cliquez sur <em>Appliquer</em>.</li>
+		<li>Lancez le programme d'installation sur le poste de l'enseignant et gardez <strong>tous les composants</strong>.</li>
+		<li>À la fin, laissez cochée la case <em>Démarrer Tafat Master maintenant</em> et cliquez sur <em>Fermer</em>.</li>
 	</ol>
-	<div class="ok">La clé <strong>privée</strong> reste sur le poste de l'enseignant. Seule la clé <strong>publique</strong> va sur les postes des élèves.</div>
+	<div class="ok">C'est tout : le programme d'installation crée la clé de l'enseignant et règle l'authentification. La clé <strong>privée</strong> reste sur ce poste ; seule la clé <strong>publique</strong> ira sur les postes des élèves.</div>
+	<p>La langue se règle dans <strong>Tafat Master</strong> → <strong>Paramètres</strong> → <em>Général</em> → <em>Langue</em> (arabe, français, tamazight en latin ou en tifinagh, anglais), puis <em>OK</em>.</p>
 </section>
 
 <section id="fr-students">
 	<h2><span class="n">3</span>Postes des élèves</h2>
-
-	<h3>Avec le dossier d'installation des élèves (recommandé)</h3>
 	<ol class="steps">
-		<li>Sur le poste de l'enseignant : <strong>Tafat Configurator</strong> → <em>Installation de la salle</em>, choisissez la paire de clés de l'enseignant puis <em>Exporter l'installation des élèves…</em> vers un dossier vide, par exemple sur une clé USB. Le dossier reçoit <code>teacher_public_key.pem</code>, <code>tafat-config.json</code> et <code>install-students.bat</code>.</li>
-		<li>Copiez les programmes d'installation dans ce même dossier (les quatre, ou seulement ceux dont la salle a besoin).</li>
-		<li>Sur chaque poste élève : clic droit sur <code>install-students.bat</code> → <em>Exécuter en tant qu'administrateur</em>. Le script choisit le bon programme d'installation selon la version de Windows et installe Tafat sans le programme de l'enseignant, applique les paramètres et importe la clé.</li>
+		<li>Dans <strong>Tafat Master</strong>, cliquez sur <strong>Installeur élève</strong>. Si la salle a aussi des postes sous Windows 7/8.1 ou en 32 bits, cliquez sur <em>Ajouter un programme d'installation…</em> et choisissez le fichier correspondant (<a href="#fr-choose">étape 1</a>).</li>
+		<li>Branchez une clé USB, cliquez sur <em>Créer sur une clé USB ou dans un dossier…</em> et choisissez la clé. Elle reçoit par exemple <span class="file-name" dir="ltr">Install Tafat - student (Windows 10-11 64-bit).exe</span>.</li>
+		<li>Sur chaque poste élève : double-cliquez sur ce fichier, répondez <em>Oui</em> quand Windows demande l'autorisation, puis <em>Suivant</em>, <em>Installer</em> et <em>Fermer</em>.</li>
+	</ol>
+	<div class="ok">L'installeur élève contient la clé publique et les paramètres du poste de l'enseignant : il n'y a rien d'autre à régler sur les postes des élèves. Refaites-le si vous changez de poste enseignant.</div>
+</section>
+
+<section id="fr-computers">
+	<h2><span class="n">4</span>Ajouter les postes à la salle</h2>
+	<ol class="steps">
+		<li>Allumez les postes des élèves.</li>
+		<li>Dans <strong>Tafat Master</strong>, cliquez sur <strong>Ajouter des ordinateurs</strong>. Donnez un nom à la salle, par exemple <em>Salle informatique 1</em>.</li>
+		<li>Cliquez sur <strong>Rechercher</strong> : les postes où Tafat est installé apparaissent après quelques secondes. Un poste d'un autre réseau peut être ajouté avec son nom ou son adresse IP.</li>
+		<li>Cochez les postes de cette salle, cliquez sur <strong>Ajouter à la salle</strong> et répondez <em>Oui</em> à Windows. Les postes s'affichent aussitôt dans Tafat Master.</li>
 	</ol>
 
-	<h3>À la main ou avec un outil de déploiement</h3>
-	<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
-
-	<div class="table"><table>
-		<thead><tr><th>Option</th><th>Effet</th></tr></thead>
-		<tbody>
-			<tr><td><code>/S</code></td><td>installation silencieuse</td></tr>
-			<tr><td><code>/NoMaster</code></td><td>sans le programme de l'enseignant</td></tr>
-			<tr><td><code>/NoInterception</code></td><td>sans le pilote de périphériques d'entrée (sert à bloquer clavier et souris)</td></tr>
-			<tr><td><code>/NoStartMenuFolder</code></td><td>pas d'entrées dans le menu Démarrer</td></tr>
-			<tr><td><code>/ApplyConfig=&lt;fichier&gt;</code></td><td>importe une configuration exportée du configurateur</td></tr>
-			<tr><td><code>/ImportPublicKey=&lt;fichier&gt;</code></td><td>importe une clé publique (remplace une clé du même nom)</td></tr>
-			<tr><td><code>/PublicKeyName=&lt;nom&gt;</code></td><td>nom de la clé importée (par défaut <code>teacher</code>)</td></tr>
-			<tr><td><code>/D=&lt;dossier&gt;</code></td><td>dossier d'installation (toujours en dernier)</td></tr>
-		</tbody>
-	</table></div>
-	<p>Désinstaller : <code>"C:\Program Files\Tafat\uninstall.exe" /S</code> (ajoutez <code>/ClearConfig</code> pour supprimer aussi la configuration).</p>
+	<details class="adv">
+		<summary>Avancé : installation silencieuse et ligne de commande</summary>
+		<p>Pour un outil de déploiement, l'installeur élève fonctionne aussi en silence : <code>"Install Tafat - student (Windows 10-11 64-bit).exe" /S</code>. Les programmes d'installation habituels acceptent ces options :</p>
+		<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
+		<div class="table"><table>
+			<thead><tr><th>Option</th><th>Effet</th></tr></thead>
+			<tbody>
+				<tr><td><code>/S</code></td><td>installation silencieuse</td></tr>
+				<tr><td><code>/NoMaster</code></td><td>sans le programme de l'enseignant</td></tr>
+				<tr><td><code>/NoTeacherSetup</code></td><td>ne crée pas la clé de l'enseignant et ne change pas l'authentification</td></tr>
+				<tr><td><code>/NoInterception</code></td><td>sans le pilote de périphériques d'entrée (sert à bloquer clavier et souris)</td></tr>
+				<tr><td><code>/NoStartMenuFolder</code></td><td>pas d'entrées dans le menu Démarrer</td></tr>
+				<tr><td><code>/ApplyConfig=&lt;fichier&gt;</code></td><td>importe une configuration exportée du configurateur</td></tr>
+				<tr><td><code>/ImportPublicKey=&lt;fichier&gt;</code></td><td>importe une clé publique (remplace une clé du même nom)</td></tr>
+				<tr><td><code>/PublicKeyName=&lt;nom&gt;</code></td><td>nom de la clé importée (par défaut <code>teacher</code>)</td></tr>
+				<tr><td><code>/D=&lt;dossier&gt;</code></td><td>dossier d'installation (toujours en dernier)</td></tr>
+			</tbody>
+		</table></div>
+		<p><em>Paramètres</em> → <em>Installation de la salle</em> → <em>Exporter l'installation des élèves…</em> écrit les deux fichiers et un script <code>install-students.bat</code> qui choisit le bon programme d'installation (à lancer en tant qu'administrateur, programmes d'installation dans le même dossier).</p>
+		<p>Ligne de commande (dans une invite de commandes <strong>administrateur</strong>) :</p>
+		<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" labsetup setupteacher
+"C:\Program Files\Tafat\tafat-cli.exe" labsetup createpackage tafat-&lt;version&gt;-win64-setup.exe E:\eleves.exe
+"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
+		<div class="note">Dans <strong>PowerShell</strong>, mettez <code>&amp;</code> devant un chemin entre guillemets : <code>&amp; "C:\Program Files\Tafat\tafat-cli.exe" …</code>. Sans lui, PowerShell affiche « Unexpected token ». Ou utilisez <code>cmd</code>.</div>
+		<p>Désinstaller : <code>"C:\Program Files\Tafat\uninstall.exe" /S</code> (ajoutez <code>/ClearConfig</code> pour supprimer aussi la configuration).</p>
+	</details>
 </section>
 
 <section id="fr-check">
-	<h2><span class="n">4</span>Vérifier</h2>
+	<h2><span class="n">5</span>Vérifier</h2>
 	<ol class="steps">
-		<li>Ouvrez <strong>Tafat Master</strong> sur le poste de l'enseignant et choisissez la salle. Chaque poste allumé doit afficher l'écran de l'élève.</li>
+		<li>Dans <strong>Tafat Master</strong>, chaque poste allumé doit afficher l'écran de l'élève.</li>
 		<li>Sélectionnez tous les postes puis <strong>Inventaire</strong> : chaque poste doit répondre avec la version attendue (les versions pour anciens systèmes sont signalées). <em>Exporter en CSV…</em> enregistre la liste.</li>
 		<li>Essayez <strong>Verrouiller</strong> puis déverrouillez.</li>
 	</ol>
 </section>
 
 <section id="fr-network">
-	<h2><span class="n">5</span>Réseau</h2>
+	<h2><span class="n">6</span>Réseau</h2>
 	<div class="table"><table>
 		<thead><tr><th>Port</th><th>Sur</th><th>Usage</th></tr></thead>
 		<tbody>
@@ -321,12 +340,13 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 </section>
 
 <section id="fr-help">
-	<h2><span class="n">6</span>En cas de problème</h2>
+	<h2><span class="n">7</span>En cas de problème</h2>
 	<div class="table"><table>
 		<thead><tr><th>Symptôme</th><th>À vérifier</th></tr></thead>
 		<tbody>
 			<tr><td>Vignette grise</td><td>Poste éteint, hors du réseau, ou service Tafat arrêté. Redémarrez le poste ; vérifiez le port 11100.</td></tr>
-			<tr><td>Accès refusé</td><td>La clé publique de l'enseignant n'est pas installée sur le poste, ou porte un autre nom. Relancez <code>install-students.bat</code>.</td></tr>
+			<tr><td><em>Rechercher</em> ne trouve aucun poste</td><td>Tafat n'est pas installé sur les postes, ils sont éteints ou dans un autre réseau, ou un pare-feu bloque le port 11100. Tapez le nom ou l'adresse IP du poste.</td></tr>
+			<tr><td>Accès refusé</td><td>Le poste n'a pas la clé de ce poste enseignant. Recréez l'installeur élève dans Tafat Master et relancez-le sur ce poste.</td></tr>
 			<tr><td>« Ce programme n'est pas fait pour cette version de Windows »</td><td>Prenez l'autre programme d'installation (<code>-legacy</code> pour Windows 7/8.1, <code>win32</code> pour 32 bits).</td></tr>
 			<tr><td>Un site n'est pas bloqué</td><td>Navigateur non pris en charge ou Firefox pas redémarré : bloquez ce navigateur avec <strong>Bloquer les applis</strong>.</td></tr>
 		</tbody>
@@ -345,14 +365,15 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 
 <div class="hero">
 	<h1>Installing Tafat in a computer lab</h1>
-	<p>For the person who sets up the lab: one teacher computer and the student computers on the same network. The same steps work for several labs. Allow about an hour for a lab of 20 computers.</p>
+	<p>For the person who sets up the lab: one teacher computer and the student computers on the same network. Tafat is installed on the teacher computer first; it then creates the installer for the student computers itself. No commands to type.</p>
 	<nav class="toc" aria-label="Contents">
 		<a href="#en-choose">1. Installer</a>
 		<a href="#en-teacher">2. Teacher computer</a>
 		<a href="#en-students">3. Student computers</a>
-		<a href="#en-check">4. Check</a>
-		<a href="#en-network">5. Network</a>
-		<a href="#en-help">6. Problems</a>
+		<a href="#en-computers">4. Add computers</a>
+		<a href="#en-check">5. Check</a>
+		<a href="#en-network">6. Network</a>
+		<a href="#en-help">7. Problems</a>
 	</nav>
 </div>
 
@@ -409,59 +430,71 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 <section id="en-teacher">
 	<h2><span class="n">2</span>Teacher computer</h2>
 	<ol class="steps">
-		<li>Run the installer with <strong>all components</strong>.</li>
-		<li>Open <strong>Tafat Configurator</strong> → <em>Authentication</em>: choose <em>Key file authentication</em> and create a key pair, for example <code>teacher</code>. From the command line:
-			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" authkeys create teacher</code></pre></div>
-		</li>
-		<li><em>Locations &amp; computers</em>: add the lab and its computers, or import them from a CSV file (<code>room;name;host-or-IP</code>):
-			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
-		</li>
-		<li><em>General</em> → <em>Language</em>: Arabic, French, Tamazight (Latin or Tifinagh) or English.</li>
-		<li>Click <em>Apply</em>.</li>
+		<li>Run the installer on the teacher computer and keep <strong>all components</strong>.</li>
+		<li>At the end, leave <em>Start Tafat Master now</em> ticked and click <em>Finish</em>.</li>
 	</ol>
-	<div class="ok">The <strong>private</strong> key stays on the teacher computer. Only the <strong>public</strong> key goes to the student computers.</div>
+	<div class="ok">That's all: the installer creates the teacher's key and sets up authentication. The <strong>private</strong> key stays on this computer; only the <strong>public</strong> key goes to the student computers.</div>
+	<p>To change the language: <strong>Tafat Master</strong> → <strong>Settings</strong> → <em>General</em> → <em>Language</em> (Arabic, French, Tamazight in Latin or Tifinagh script, English), then <em>OK</em>.</p>
 </section>
 
 <section id="en-students">
 	<h2><span class="n">3</span>Student computers</h2>
-
-	<h3>With the student setup folder (recommended)</h3>
 	<ol class="steps">
-		<li>On the teacher computer: <strong>Tafat Configurator</strong> → <em>Lab setup</em>, choose the teacher's key pair, then <em>Export student setup…</em> to an empty folder, for example on a USB stick. The folder gets <code>teacher_public_key.pem</code>, <code>tafat-config.json</code> and <code>install-students.bat</code>.</li>
-		<li>Copy the installers into the same folder (all four, or only the ones the lab needs).</li>
-		<li>On each student computer: right-click <code>install-students.bat</code> → <em>Run as administrator</em>. The script picks the right installer for the Windows version, installs Tafat without the teacher program, applies the settings and imports the key.</li>
+		<li>In <strong>Tafat Master</strong>, click <strong>Student installer</strong>. If the lab also has Windows 7/8.1 or 32-bit computers, click <em>Add installer…</em> and choose the matching file (<a href="#en-choose">step 1</a>).</li>
+		<li>Plug in a USB stick, click <em>Create on USB stick or folder…</em> and choose the stick. It gets, for example, <span class="file-name" dir="ltr">Install Tafat - student (Windows 10-11 64-bit).exe</span>.</li>
+		<li>On each student computer: double-click this file, answer <em>Yes</em> when Windows asks for permission, then <em>Next</em>, <em>Install</em> and <em>Finish</em>.</li>
+	</ol>
+	<div class="ok">The student installer carries the public key and the settings of the teacher computer: nothing else needs to be set up on the student computers. Create it again if the teacher computer changes.</div>
+</section>
+
+<section id="en-computers">
+	<h2><span class="n">4</span>Add the computers to the room</h2>
+	<ol class="steps">
+		<li>Switch on the student computers.</li>
+		<li>In <strong>Tafat Master</strong>, click <strong>Add computers</strong>. Give the room a name, for example <em>Computer lab 1</em>.</li>
+		<li>Click <strong>Search</strong>: the computers with Tafat installed appear after a few seconds. A computer on another network can be added by its name or IP address.</li>
+		<li>Tick the computers of this room, click <strong>Add to the room</strong> and answer <em>Yes</em> to Windows. The computers show up in Tafat Master right away.</li>
 	</ol>
 
-	<h3>By hand or with a deployment tool</h3>
-	<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
-
-	<div class="table"><table>
-		<thead><tr><th>Option</th><th>Effect</th></tr></thead>
-		<tbody>
-			<tr><td><code>/S</code></td><td>silent install</td></tr>
-			<tr><td><code>/NoMaster</code></td><td>without the teacher program</td></tr>
-			<tr><td><code>/NoInterception</code></td><td>without the input device driver (used to lock keyboard and mouse)</td></tr>
-			<tr><td><code>/NoStartMenuFolder</code></td><td>no Start menu entries</td></tr>
-			<tr><td><code>/ApplyConfig=&lt;file&gt;</code></td><td>imports a configuration exported from the configurator</td></tr>
-			<tr><td><code>/ImportPublicKey=&lt;file&gt;</code></td><td>imports a public key (replaces a key with the same name)</td></tr>
-			<tr><td><code>/PublicKeyName=&lt;name&gt;</code></td><td>name of the imported key (default <code>teacher</code>)</td></tr>
-			<tr><td><code>/D=&lt;folder&gt;</code></td><td>installation folder (always last)</td></tr>
-		</tbody>
-	</table></div>
-	<p>Uninstall: <code>"C:\Program Files\Tafat\uninstall.exe" /S</code> (add <code>/ClearConfig</code> to remove the configuration too).</p>
+	<details class="adv">
+		<summary>Advanced: silent installation and command line</summary>
+		<p>For a deployment tool, the student installer also runs silently: <code>"Install Tafat - student (Windows 10-11 64-bit).exe" /S</code>. The plain installers accept these options:</p>
+		<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
+		<div class="table"><table>
+			<thead><tr><th>Option</th><th>Effect</th></tr></thead>
+			<tbody>
+				<tr><td><code>/S</code></td><td>silent install</td></tr>
+				<tr><td><code>/NoMaster</code></td><td>without the teacher program</td></tr>
+				<tr><td><code>/NoTeacherSetup</code></td><td>does not create the teacher key or change authentication</td></tr>
+				<tr><td><code>/NoInterception</code></td><td>without the input device driver (used to lock keyboard and mouse)</td></tr>
+				<tr><td><code>/NoStartMenuFolder</code></td><td>no Start menu entries</td></tr>
+				<tr><td><code>/ApplyConfig=&lt;file&gt;</code></td><td>imports a configuration exported from the configurator</td></tr>
+				<tr><td><code>/ImportPublicKey=&lt;file&gt;</code></td><td>imports a public key (replaces a key with the same name)</td></tr>
+				<tr><td><code>/PublicKeyName=&lt;name&gt;</code></td><td>name of the imported key (default <code>teacher</code>)</td></tr>
+				<tr><td><code>/D=&lt;folder&gt;</code></td><td>installation folder (always last)</td></tr>
+			</tbody>
+		</table></div>
+		<p><em>Settings</em> → <em>Lab setup</em> → <em>Export student setup…</em> writes these two files and an <code>install-students.bat</code> script that picks the right installer (run it as administrator, with the installers in the same folder).</p>
+		<p>Command line (in an <strong>administrator</strong> command prompt):</p>
+		<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" labsetup setupteacher
+"C:\Program Files\Tafat\tafat-cli.exe" labsetup createpackage tafat-&lt;version&gt;-win64-setup.exe E:\students.exe
+"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
+		<div class="note">In <strong>PowerShell</strong>, put <code>&amp;</code> before a quoted path: <code>&amp; "C:\Program Files\Tafat\tafat-cli.exe" …</code>. Without it, PowerShell reports "Unexpected token". Or use <code>cmd</code>.</div>
+		<p>Uninstall: <code>"C:\Program Files\Tafat\uninstall.exe" /S</code> (add <code>/ClearConfig</code> to remove the configuration too).</p>
+	</details>
 </section>
 
 <section id="en-check">
-	<h2><span class="n">4</span>Check</h2>
+	<h2><span class="n">5</span>Check</h2>
 	<ol class="steps">
-		<li>Open <strong>Tafat Master</strong> on the teacher computer and choose the lab. Every computer that is switched on should show the student's screen.</li>
+		<li>In <strong>Tafat Master</strong>, every computer that is switched on should show the student's screen.</li>
 		<li>Select all computers, then <strong>Inventory</strong>: each computer should answer with the expected version (builds for older systems are marked). <em>Export CSV…</em> saves the list.</li>
 		<li>Try <strong>Lock</strong>, then unlock.</li>
 	</ol>
 </section>
 
 <section id="en-network">
-	<h2><span class="n">5</span>Network</h2>
+	<h2><span class="n">6</span>Network</h2>
 	<div class="table"><table>
 		<thead><tr><th>Port</th><th>On</th><th>Used for</th></tr></thead>
 		<tbody>
@@ -478,12 +511,13 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 </section>
 
 <section id="en-help">
-	<h2><span class="n">6</span>If something goes wrong</h2>
+	<h2><span class="n">7</span>If something goes wrong</h2>
 	<div class="table"><table>
 		<thead><tr><th>Symptom</th><th>What to check</th></tr></thead>
 		<tbody>
 			<tr><td>Grey tile</td><td>Computer switched off, not on the network, or Tafat service stopped. Restart the computer; check port 11100.</td></tr>
-			<tr><td>Access denied</td><td>The teacher's public key is not installed on the computer, or has a different name. Run <code>install-students.bat</code> again.</td></tr>
+			<tr><td><em>Search</em> finds no computers</td><td>Tafat is not installed on them, they are switched off or on another network, or a firewall blocks port 11100. Type the computer's name or IP address.</td></tr>
+			<tr><td>Access denied</td><td>The computer does not have the key of this teacher computer. Create the student installer again in Tafat Master and run it on that computer.</td></tr>
 			<tr><td>"This version of Tafat requires Windows 10 or newer" or "This installer is for 64-bit Windows"</td><td>Use the other installer (<code>-legacy</code> for Windows 7/8.1, <code>win32</code> for 32-bit).</td></tr>
 			<tr><td>A website is not blocked</td><td>Browser not supported or Firefox not restarted: block that browser with <strong>Block apps</strong>.</td></tr>
 		</tbody>
@@ -502,14 +536,15 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 
 <div class="hero">
 	<h1>تثبيت تافات في قاعة الإعلام الآلي</h1>
-	<p>هذا الدليل موجّه لمن يجهّز القاعة: حاسوب الأستاذ وحواسيب التلاميذ في الشبكة نفسها. الخطوات نفسها تصلح لعدة قاعات. احسب حوالي ساعة لقاعة من 20 حاسوبًا.</p>
+	<p>هذا الدليل موجّه لمن يجهّز القاعة: حاسوب الأستاذ وحواسيب التلاميذ في الشبكة نفسها. يُثبَّت تافات أولًا على حاسوب الأستاذ، ثم يُنشئ بنفسه برنامج تثبيت حواسيب التلاميذ. لا حاجة لكتابة أي أمر.</p>
 	<nav class="toc" aria-label="المحتويات">
 		<a href="#ar-choose">1. برنامج التثبيت</a>
 		<a href="#ar-teacher">2. حاسوب الأستاذ</a>
 		<a href="#ar-students">3. حواسيب التلاميذ</a>
-		<a href="#ar-check">4. التحقق</a>
-		<a href="#ar-network">5. الشبكة</a>
-		<a href="#ar-help">6. المشاكل</a>
+		<a href="#ar-computers">4. إضافة الحواسيب</a>
+		<a href="#ar-check">5. التحقق</a>
+		<a href="#ar-network">6. الشبكة</a>
+		<a href="#ar-help">7. المشاكل</a>
 	</nav>
 </div>
 
@@ -566,59 +601,71 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 <section id="ar-teacher">
 	<h2><span class="n">2</span>حاسوب الأستاذ</h2>
 	<ol class="steps">
-		<li>شغّل برنامج التثبيت مع <strong>كل المكونات</strong>.</li>
-		<li>افتح <strong>Tafat Configurator</strong> ← <em>التوثيق</em>: اختر <em>توثيق ملف المفاتيح</em> وأنشئ زوج مفاتيح، مثلاً باسم <code>teacher</code>. من سطر الأوامر:
-			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" authkeys create teacher</code></pre></div>
-		</li>
-		<li><em>القاعات والحواسيب</em>: أضف القاعة وحواسيبها، أو استوردها من ملف CSV (<code dir="ltr">room;name;host-or-IP</code>):
-			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
-		</li>
-		<li><em>عام</em> ← <em>اللغة</em>: العربية أو الفرنسية أو الأمازيغية (بالحروف اللاتينية أو تيفيناغ) أو الإنجليزية.</li>
-		<li>انقر على <em>تطبيق</em>.</li>
+		<li>شغّل برنامج التثبيت على حاسوب الأستاذ مع <strong>كل المكونات</strong>.</li>
+		<li>في النهاية، اترك خانة <em>تشغيل Tafat Master الآن</em> محددة وانقر <em>إنهاء</em>.</li>
 	</ol>
-	<div class="ok">يبقى المفتاح <strong>الخاص</strong> على حاسوب الأستاذ. المفتاح <strong>العمومي</strong> وحده يُنقل إلى حواسيب التلاميذ.</div>
+	<div class="ok">هذا كل شيء: ينشئ برنامج التثبيت مفتاح الأستاذ ويضبط التوثيق. يبقى المفتاح <strong>الخاص</strong> على هذا الحاسوب، والمفتاح <strong>العمومي</strong> وحده ينتقل إلى حواسيب التلاميذ.</div>
+	<p>لتغيير اللغة: <strong>Tafat Master</strong> ← <strong>الإعدادات</strong> ← <em>عام</em> ← <em>اللغة</em> (العربية أو الفرنسية أو الأمازيغية بالحروف اللاتينية أو تيفيناغ أو الإنجليزية)، ثم <em>موافق</em>.</p>
 </section>
 
 <section id="ar-students">
 	<h2><span class="n">3</span>حواسيب التلاميذ</h2>
-
-	<h3>باستعمال مجلد إعداد التلاميذ (موصى به)</h3>
 	<ol class="steps">
-		<li>على حاسوب الأستاذ: <strong>Tafat Configurator</strong> ← <em>إعداد القاعة</em>، اختر زوج مفاتيح الأستاذ ثم <em>تصدير إعداد حواسيب التلاميذ…</em> إلى مجلد فارغ، مثلاً على مفتاح USB. يحتوي المجلد بعدها على <code dir="ltr">teacher_public_key.pem</code> و<code dir="ltr">tafat-config.json</code> و<code dir="ltr">install-students.bat</code>.</li>
-		<li>انسخ برامج التثبيت إلى المجلد نفسه (الأربعة، أو التي تحتاجها القاعة فقط).</li>
-		<li>على كل حاسوب تلميذ: انقر بالزر الأيمن على <code dir="ltr">install-students.bat</code> ← <em>تشغيل كمسؤول</em>. يختار البرنامج النصي برنامج التثبيت المناسب لإصدار Windows، ويثبّت تافات دون برنامج الأستاذ، ويطبّق الإعدادات ويستورد المفتاح.</li>
+		<li>في <strong>Tafat Master</strong>، انقر <strong>برنامج تثبيت التلاميذ</strong>. إذا كانت في القاعة حواسيب بنظام Windows 7/8.1 أو 32 بت، انقر <em>إضافة برنامج تثبيت…</em> واختر الملف المناسب (<a href="#ar-choose">الخطوة 1</a>).</li>
+		<li>أدخل مفتاح USB، وانقر <em>إنشاء على مفتاح USB أو في مجلد…</em> واختر المفتاح. يُكتب عليه مثلًا <span class="file-name" dir="ltr">Install Tafat - student (Windows 10-11 64-bit).exe</span>.</li>
+		<li>على كل حاسوب تلميذ: انقر نقرًا مزدوجًا على هذا الملف، وأجب بـ<em>نعم</em> عندما يطلب Windows الإذن، ثم <em>التالي</em> و<em>تثبيت</em> و<em>إنهاء</em>.</li>
+	</ol>
+	<div class="ok">يحتوي برنامج تثبيت التلاميذ على المفتاح العمومي وإعدادات حاسوب الأستاذ: لا شيء آخر يلزم ضبطه على حواسيب التلاميذ. أعد إنشاءه إذا تغيّر حاسوب الأستاذ.</div>
+</section>
+
+<section id="ar-computers">
+	<h2><span class="n">4</span>إضافة الحواسيب إلى القاعة</h2>
+	<ol class="steps">
+		<li>شغّل حواسيب التلاميذ.</li>
+		<li>في <strong>Tafat Master</strong>، انقر <strong>إضافة حواسيب</strong>. أعطِ القاعة اسمًا، مثلًا <em>قاعة الإعلام الآلي 1</em>.</li>
+		<li>انقر <strong>بحث</strong>: تظهر الحواسيب المثبَّت عليها تافات بعد بضع ثوانٍ. يمكن إضافة حاسوب من شبكة أخرى باسمه أو بعنوان IP.</li>
+		<li>حدّد حواسيب هذه القاعة، وانقر <strong>إضافة إلى القاعة</strong> وأجب بـ<em>نعم</em> على Windows. تظهر الحواسيب فورًا في Tafat Master.</li>
 	</ol>
 
-	<h3>يدويًا أو بأداة نشر</h3>
-	<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
-
-	<div class="table"><table>
-		<thead><tr><th>الخيار</th><th>الأثر</th></tr></thead>
-		<tbody>
-			<tr><td><code dir="ltr">/S</code></td><td>تثبيت صامت</td></tr>
-			<tr><td><code dir="ltr">/NoMaster</code></td><td>دون برنامج الأستاذ</td></tr>
-			<tr><td><code dir="ltr">/NoInterception</code></td><td>دون برنامج تشغيل أجهزة الإدخال (يُستعمل لقفل لوحة المفاتيح والفأرة)</td></tr>
-			<tr><td><code dir="ltr">/NoStartMenuFolder</code></td><td>دون اختصارات في قائمة ابدأ</td></tr>
-			<tr><td><code dir="ltr">/ApplyConfig=&lt;file&gt;</code></td><td>استيراد إعدادات مصدّرة من المُهيِّئ</td></tr>
-			<tr><td><code dir="ltr">/ImportPublicKey=&lt;file&gt;</code></td><td>استيراد مفتاح عمومي (يستبدل مفتاحًا بالاسم نفسه)</td></tr>
-			<tr><td><code dir="ltr">/PublicKeyName=&lt;name&gt;</code></td><td>اسم المفتاح المستورد (افتراضيًا <code>teacher</code>)</td></tr>
-			<tr><td><code dir="ltr">/D=&lt;folder&gt;</code></td><td>مجلد التثبيت (دائمًا في الأخير)</td></tr>
-		</tbody>
-	</table></div>
-	<p>إلغاء التثبيت: <code dir="ltr">"C:\Program Files\Tafat\uninstall.exe" /S</code> (أضف <code dir="ltr">/ClearConfig</code> لحذف الإعدادات أيضًا).</p>
+	<details class="adv">
+		<summary>متقدّم: التثبيت الصامت وسطر الأوامر</summary>
+		<p>لأدوات النشر، يعمل برنامج تثبيت التلاميذ أيضًا بصمت: <code dir="ltr">"Install Tafat - student (Windows 10-11 64-bit).exe" /S</code>. وتقبل برامج التثبيت العادية هذه الخيارات:</p>
+		<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
+		<div class="table"><table>
+			<thead><tr><th>الخيار</th><th>الأثر</th></tr></thead>
+			<tbody>
+				<tr><td><code dir="ltr">/S</code></td><td>تثبيت صامت</td></tr>
+				<tr><td><code dir="ltr">/NoMaster</code></td><td>دون برنامج الأستاذ</td></tr>
+				<tr><td><code dir="ltr">/NoTeacherSetup</code></td><td>لا ينشئ مفتاح الأستاذ ولا يغيّر التوثيق</td></tr>
+				<tr><td><code dir="ltr">/NoInterception</code></td><td>دون برنامج تشغيل أجهزة الإدخال (يُستعمل لقفل لوحة المفاتيح والفأرة)</td></tr>
+				<tr><td><code dir="ltr">/NoStartMenuFolder</code></td><td>دون اختصارات في قائمة ابدأ</td></tr>
+				<tr><td><code dir="ltr">/ApplyConfig=&lt;file&gt;</code></td><td>استيراد إعدادات مصدّرة من المُهيِّئ</td></tr>
+				<tr><td><code dir="ltr">/ImportPublicKey=&lt;file&gt;</code></td><td>استيراد مفتاح عمومي (يستبدل مفتاحًا بالاسم نفسه)</td></tr>
+				<tr><td><code dir="ltr">/PublicKeyName=&lt;name&gt;</code></td><td>اسم المفتاح المستورد (افتراضيًا <code>teacher</code>)</td></tr>
+				<tr><td><code dir="ltr">/D=&lt;folder&gt;</code></td><td>مجلد التثبيت (دائمًا في الأخير)</td></tr>
+			</tbody>
+		</table></div>
+		<p><em>الإعدادات</em> ← <em>إعداد القاعة</em> ← <em>تصدير إعداد حواسيب التلاميذ…</em> يكتب هذين الملفين وبرنامجًا نصيًا <code dir="ltr">install-students.bat</code> يختار برنامج التثبيت المناسب (شغّله كمسؤول، مع برامج التثبيت في المجلد نفسه).</p>
+		<p>سطر الأوامر (في موجّه أوامر <strong>بصلاحيات المسؤول</strong>):</p>
+		<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" labsetup setupteacher
+"C:\Program Files\Tafat\tafat-cli.exe" labsetup createpackage tafat-&lt;version&gt;-win64-setup.exe E:\students.exe
+"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
+		<div class="note">في <strong>PowerShell</strong>، ضع <code dir="ltr">&amp;</code> قبل المسار المكتوب بين علامتي تنصيص: <code dir="ltr">&amp; "C:\Program Files\Tafat\tafat-cli.exe" …</code>. بدونها يعرض PowerShell الخطأ <bdi dir="ltr">Unexpected token</bdi>. أو استعمل <code dir="ltr">cmd</code>.</div>
+		<p>إلغاء التثبيت: <code dir="ltr">"C:\Program Files\Tafat\uninstall.exe" /S</code> (أضف <code dir="ltr">/ClearConfig</code> لحذف الإعدادات أيضًا).</p>
+	</details>
 </section>
 
 <section id="ar-check">
-	<h2><span class="n">4</span>التحقق</h2>
+	<h2><span class="n">5</span>التحقق</h2>
 	<ol class="steps">
-		<li>افتح <strong>Tafat Master</strong> على حاسوب الأستاذ واختر القاعة. يجب أن تعرض كل خانة حاسوب مشغَّل شاشةَ التلميذ.</li>
+		<li>في <strong>Tafat Master</strong>، يجب أن تعرض خانة كل حاسوب مشغَّل شاشةَ التلميذ.</li>
 		<li>حدّد كل الحواسيب ثم <strong>الجرد</strong>: يجب أن يجيب كل حاسوب بالإصدار المتوقع (إصدارات الأنظمة القديمة مُعلَّمة). <em>تصدير CSV…</em> يحفظ القائمة.</li>
 		<li>جرّب <strong>قفل</strong> ثم افتح القفل.</li>
 	</ol>
 </section>
 
 <section id="ar-network">
-	<h2><span class="n">5</span>الشبكة</h2>
+	<h2><span class="n">6</span>الشبكة</h2>
 	<div class="table"><table>
 		<thead><tr><th>المنفذ</th><th>على</th><th>الاستعمال</th></tr></thead>
 		<tbody>
@@ -635,12 +682,13 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 </section>
 
 <section id="ar-help">
-	<h2><span class="n">6</span>عند حدوث مشكلة</h2>
+	<h2><span class="n">7</span>عند حدوث مشكلة</h2>
 	<div class="table"><table>
 		<thead><tr><th>العَرَض</th><th>ما يجب التحقق منه</th></tr></thead>
 		<tbody>
 			<tr><td>خانة رمادية</td><td>الحاسوب مطفأ أو خارج الشبكة أو خدمة تافات متوقفة. أعد تشغيل الحاسوب وتحقق من المنفذ <bdi>11100</bdi>.</td></tr>
-			<tr><td>رفض الوصول</td><td>المفتاح العمومي للأستاذ غير مثبت على الحاسوب أو باسم مختلف. أعد تشغيل <code dir="ltr">install-students.bat</code>.</td></tr>
+			<tr><td><em>بحث</em> لا يجد أي حاسوب</td><td>تافات غير مثبَّت على الحواسيب، أو هي مطفأة أو في شبكة أخرى، أو جدار حماية يحجب المنفذ <bdi>11100</bdi>. اكتب اسم الحاسوب أو عنوان IP.</td></tr>
+			<tr><td>رفض الوصول</td><td>لا يملك الحاسوب مفتاح حاسوب الأستاذ هذا. أعد إنشاء برنامج تثبيت التلاميذ في Tafat Master وشغّله على هذا الحاسوب.</td></tr>
 			<tr><td>«هذا البرنامج غير مخصص لهذا الإصدار من Windows»</td><td>استعمل برنامج التثبيت الآخر (<code dir="ltr">-legacy</code> لـ Windows 7/8.1، و<code dir="ltr">win32</code> لنظام 32 بت).</td></tr>
 			<tr><td>موقع غير محظور</td><td>المتصفح غير مدعوم أو لم يُعَد تشغيل Firefox: احظر هذا المتصفح باستعمال <strong>حظر التطبيقات</strong>.</td></tr>
 		</tbody>
@@ -714,8 +762,9 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 		var btn = document.createElement('button');
 		btn.type = 'button';
 		btn.className = 'copy';
-		var ar = block.closest('main').id === 'ar';
-		var label = ar ? 'نسخ' : 'Copier', done = ar ? 'تم النسخ' : 'Copié';
+		var labels = { fr: ['Copier', 'Copié'], en: ['Copy', 'Copied'], ar: ['نسخ', 'تم النسخ'] };
+		var l = labels[block.closest('main').id] || labels.fr;
+		var label = l[0], done = l[1];
 		btn.textContent = label;
 		btn.addEventListener('click', function () {
 			var text = block.querySelector('code').textContent;

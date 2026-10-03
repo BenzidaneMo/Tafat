@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/labsetup">
     <file>lab-setup.png</file>
+    <file>add-computers.png</file>
+    <file>settings.png</file>
   </qresource>
 </RCC>

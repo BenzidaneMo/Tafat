@@ -41,54 +41,74 @@ need a GitHub login and expire after 90 days.
 
 ## 2. Teacher computer
 
-1. Run the installer with all components.
-2. Start **Tafat Configurator** → *Authentication*: choose *Key file
-   authentication* and create a key pair (for example named `teacher`).
-   From the command line:
+Run the installer with all components. With the teacher program selected, the
+installer also:
 
-   ```bat
-   "C:\Program Files\Tafat\tafat-cli.exe" authkeys create teacher
-   "C:\Program Files\Tafat\tafat-cli.exe" authkeys export teacher/public teacher_public_key.pem
-   ```
+- creates the key pair `teacher` (kept on updates) and switches to key file
+  authentication (`tafat-wcli labsetup setupteacher`);
+- lets the local *Users* group read the private key, so the teacher can work
+  with a normal Windows account (the group is found by its well-known SID, so
+  this also works on French or Arabic Windows);
+- keeps a copy of itself in `C:\Program Files\Tafat\setup\` for the student
+  installer.
 
-3. *Locations & computers*: add the lab and its computers, or import them
-   from a CSV file (`room;name;host-or-IP`):
+The finish page offers *Start Tafat Master now* (started with the rights of the
+logged-on user). `/NoTeacherSetup` skips the key and authentication setup.
 
-   ```bat
-   "C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"
-   ```
-
-4. *General* → *Language*: Arabic, French, Tamazight (Latin or Tifinagh) or
-   English.
-5. Export the configuration for the students (*File* → *Save settings to
-   file*, e.g. `lab.json`). It contains the authentication method and the
-   access settings, not the private key.
+The language is set in **Tafat Master** → **Settings** (the configurator) →
+*General* → *Language*: Arabic, French, Tamazight (Latin or Tifinagh) or
+English. *OK* applies and closes the configurator.
 
 ## 3. Student computers
 
-### With the student setup folder (recommended)
+### With the student installer (recommended)
 
-1. In **Tafat Configurator** → *Lab setup*, choose the teacher's key pair and
-   click *Export student setup…*. Choose an empty folder, e.g. on a USB stick.
-   It receives `teacher_public_key.pem` (only the public key),
-   `tafat-config.json` (these settings) and `install-students.bat`.
-2. Copy the installers into the same folder (all four, or only the ones the
-   lab needs).
-3. On each student computer, right click `install-students.bat` →
-   *Run as administrator*. The script picks the installer for the Windows
-   version (legacy installer on Windows 7/8.1, 32 or 64 bit) and installs
-   silently without the teacher program, applies the settings and imports the
-   key.
+1. In **Tafat Master**, click **Student installer**. The list shows the
+   installer of the teacher computer; for other Windows versions in the lab
+   (Windows 7/8.1, 32-bit) click *Add installer…* and choose them.
+2. Click *Create on USB stick or folder…*. One file per installer is written,
+   e.g. `Install Tafat - student (Windows 10-11 64-bit).exe`.
+3. On each student computer, double-click it and answer *Yes* to the Windows
+   prompt. Only Welcome, progress and Finish pages are shown; the teacher
+   program is not installed.
 
-### By hand or with a deployment tool
-
-Install without the teacher program, import the teacher's public key and the
-configuration:
+A student installer is the normal installer with a block appended at its end
+(`plugins/labsetup/StudentPackage.cpp`): the teacher's public key and the
+current configuration without `Core/InstallationID`, as JSON, then an 8-byte
+length and the marker `TAFAT-STUDENT-PACKAGE-v1`. The installer finds the
+marker, runs `tafat-wcli labsetup extractpackage` and imports both files like
+`/ApplyConfig` and `/ImportPublicKey`. NSIS only checks the data covered by its
+own header, so the appended block does not break the integrity check. It also
+works silently (`"Install Tafat - student (…).exe" /S`). Without the dialog:
 
 ```bat
-tafat-<version>-win64-setup.exe /S /NoMaster /ApplyConfig=D:\lab.json
-"C:\Program Files\Tafat\tafat-cli.exe" authkeys import teacher/public D:\teacher_public_key.pem
-"C:\Program Files\Tafat\tafat-cli.exe" service restart
+"C:\Program Files\Tafat\tafat-cli.exe" labsetup createpackage tafat-<version>-win64-setup.exe E:\students.exe [key name]
+```
+
+### Adding the computers to a room
+
+1. Switch the student computers on.
+2. In **Tafat Master**, click **Add computers**, enter the room name and click
+   **Search**. Tafat tries TCP port 11100 on every address of the private IPv4
+   networks of the teacher computer (the /24 network around each address, at most
+   1024 addresses, about 5 s for a /24) and lists the hosts that answer like a
+   Tafat server. Names come from reverse DNS; computers on other networks can be
+   added by name or IP address.
+3. Tick the computers and click **Add to the room** (one administrator prompt).
+   It runs `tafat-wcli networkobjects import <csv> location <room> format
+   "%name%;%host%"`; the room is ticked in *Locations & computers*, so the
+   computers show up at once.
+
+### Advanced: student setup folder or a deployment tool
+
+**Settings** → *Lab setup* → *Export student setup…* writes
+`teacher_public_key.pem`, `tafat-config.json` and `install-students.bat` to a
+folder. Copy the installers next to them and run `install-students.bat` as
+administrator on each student computer: it picks the installer for the Windows
+version and installs silently with these options:
+
+```bat
+tafat-<version>-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem
 ```
 
 Installer options:
@@ -97,12 +117,24 @@ Installer options:
 |---|---|
 | `/S` | silent installation |
 | `/NoMaster` | do not install the teacher program |
+| `/NoTeacherSetup` | with the teacher program: do not create the key or change authentication |
 | `/NoInterception` | do not install the input device driver (used for locking the keyboard/mouse) |
 | `/NoStartMenuFolder` | no start menu entries |
 | `/ApplyConfig=<file>` | import a configuration exported from the configurator |
 | `/ImportPublicKey=<file>` | import a public key (replaces a key of the same name) |
 | `/PublicKeyName=<name>` | name for `/ImportPublicKey` (default `teacher`) |
 | `/D=<folder>` | installation folder (must be the last option) |
+
+Rooms can also be imported from a CSV file (`room;name;host-or-IP`):
+
+```bat
+"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"
+```
+
+> In **PowerShell**, a quoted program path needs `&` in front:
+> `& "C:\Program Files\Tafat\tafat-cli.exe" …`. Otherwise PowerShell reports
+> "Unexpected token". `cmd.exe` needs no `&`. Commands that change the
+> configuration need an administrator prompt.
 
 Uninstall: `"C:\Program Files\Tafat\uninstall.exe" /S`, add `/ClearConfig` to
 remove the configuration as well.

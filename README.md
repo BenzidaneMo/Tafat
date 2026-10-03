@@ -39,13 +39,14 @@ Added by Tafat:
   * Quiz: quizzes and polls with live results, scores and CSV export
   * Register: attendance with student names on the computers (also with a
     shared account), class list import and absent students
-  * Hands & chat: students raise their hands, chat with the teacher and hand in
+  * Hands and chat: students raise their hands, chat with the teacher and hand in
     their work
   * Inventory: Windows version, processor, memory, disk, addresses and installed
     version of every computer, with CSV export
-  * Lab setup: export a folder (e.g. on a USB stick) with the teacher's key,
-    the settings and a script that installs the right version on each student
-    computer
+  * Lab setup, like NetSupport: install on the teacher computer only, create a
+    student installer on a USB stick from Tafat Master (double-click on each
+    student computer, no commands), and **Add computers** searches the network
+    for them
   * Return work: give each student back their own corrected files
 
 More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:

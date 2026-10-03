@@ -121,7 +121,7 @@ void MainWindow::reset( bool onlyUI )
 		page->resetWidgets();
 	}
 
-	ui->buttonBox->setEnabled( false );
+	setChangeButtonsEnabled( false );
 	m_configChanged = false;
 }
 
@@ -150,7 +150,7 @@ void MainWindow::apply()
 			page->applyConfiguration();
 		}
 
-		ui->buttonBox->setEnabled( false );
+		setChangeButtonsEnabled( false );
 		m_configChanged = false;
 	}
 	else
@@ -171,9 +171,19 @@ void MainWindow::resizeEvent( QResizeEvent* event )
 
 
 
+void MainWindow::setChangeButtonsEnabled( bool enabled )
+{
+	// OK stays enabled, it also closes the window
+	ui->buttonBox->button( QDialogButtonBox::Apply )->setEnabled( enabled );
+	ui->buttonBox->button( QDialogButtonBox::Reset )->setEnabled( enabled );
+}
+
+
+
+
 void MainWindow::configurationChanged()
 {
-	ui->buttonBox->setEnabled( true );
+	setChangeButtonsEnabled( true );
 	m_configChanged = true;
 }
 
@@ -182,7 +192,19 @@ void MainWindow::configurationChanged()
 
 void MainWindow::resetOrApply( QAbstractButton *btn )
 {
-	if( ui->buttonBox->standardButton( btn ) & QDialogButtonBox::Apply )
+	if( ui->buttonBox->standardButton( btn ) & QDialogButtonBox::Ok )
+	{
+		// OK = apply and close (close() asks again if applying failed)
+		if( m_configChanged )
+		{
+			apply();
+		}
+		if( m_configChanged == false )
+		{
+			close();
+		}
+	}
+	else if( ui->buttonBox->standardButton( btn ) & QDialogButtonBox::Apply )
 	{
 		apply();
 	}
@@ -227,7 +249,7 @@ void MainWindow::saveSettingsToFile()
 		Configuration::JsonStore(Configuration::JsonStore::Scope::System, fileName).flush(&VeyonCore::config());
 
 		m_configChanged = configChangedPrevious;
-		ui->buttonBox->setEnabled( m_configChanged );
+		setChangeButtonsEnabled( m_configChanged );
 	}
 }
 

@@ -41,6 +41,8 @@ public:
 
 	// names of the keys below the public key directory
 	static QStringList publicKeyNames( const QString& publicKeyBaseDir );
+	// the teacher key: "teacher" if it exists, else the first valid key
+	static QString teacherKeyName( const QString& publicKeyBaseDir );
 
 	// Windows batch script with CRLF line endings
 	static QByteArray installScript( const QString& keyName );

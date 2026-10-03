@@ -1,5 +1,5 @@
 /*
- * LabSetupPlugin.h - plugin with the lab setup page of the configurator
+ * LabSetupPlugin.h - lab setup page, teacher buttons and command line module
  *
  * Copyright (c) 2026 Tafat contributors
  *
@@ -22,22 +22,36 @@
  *
  */
 
+
 #pragma once
 
-#include "ConfigurationPagePluginInterface.h"
+#include <QPointer>
 
-class LabSetupPlugin : public QObject, PluginInterface, ConfigurationPagePluginInterface
+#include "CommandLineIO.h"
+#include "CommandLinePluginInterface.h"
+#include "ConfigurationPagePluginInterface.h"
+#include "Feature.h"
+#include "FeatureProviderInterface.h"
+
+class AddComputersDialog;
+class StudentInstallerDialog;
+
+// Everything for setting up a lab without commands: the "Lab setup" page of the
+// configurator, the teacher's buttons "Create student installer", "Add
+// computers" and "Settings", and the command line module used by the installer.
+class LabSetupPlugin : public QObject,
+		PluginInterface,
+		ConfigurationPagePluginInterface,
+		FeatureProviderInterface,
+		CommandLinePluginInterface,
+		CommandLineIO
 {
 	Q_OBJECT
 	Q_PLUGIN_METADATA(IID "io.github.benzidanemo.Tafat.Plugins.LabSetup")
-	Q_INTERFACES(PluginInterface ConfigurationPagePluginInterface)
+	Q_INTERFACES(PluginInterface ConfigurationPagePluginInterface FeatureProviderInterface CommandLinePluginInterface)
 public:
-	explicit LabSetupPlugin( QObject* parent = nullptr ) :
-		QObject( parent )
-	{
-	}
-
-	~LabSetupPlugin() override = default;
+	explicit LabSetupPlugin( QObject* parent = nullptr );
+	~LabSetupPlugin() override;
 
 	Plugin::Uid uid() const override
 	{
@@ -46,7 +60,7 @@ public:
 
 	QVersionNumber version() const override
 	{
-		return QVersionNumber( 1, 0 );
+		return QVersionNumber( 1, 1 );
 	}
 
 	QString name() const override
@@ -69,6 +83,59 @@ public:
 		return tr( "%1 contributors" ).arg( VeyonCore::productName() );
 	}
 
+	// configurator page
 	ConfigurationPage* createConfigurationPage() override;
+
+	// teacher's buttons
+	const FeatureList& featureList() const override
+	{
+		return m_features;
+	}
+
+	bool controlFeature( Feature::Uid featureUid, Operation operation, const QVariantMap& arguments,
+						 const ComputerControlInterfaceList& computerControlInterfaces ) override;
+
+	bool startFeature( VeyonMasterInterface& master, const Feature& feature,
+					   const ComputerControlInterfaceList& computerControlInterfaces ) override;
+
+	bool handleFeatureMessage( ComputerControlInterface::Pointer computerControlInterface,
+							   const FeatureMessage& message ) override
+	{
+		Q_UNUSED(computerControlInterface)
+		Q_UNUSED(message)
+		return false;
+	}
+
+	// command line
+	QString commandLineModuleName() const override
+	{
+		return QStringLiteral("labsetup");
+	}
+
+	QString commandLineModuleHelp() const override
+	{
+		return tr( "Commands for setting up the teacher and student computers" );
+	}
+
+	QStringList commands() const override;
+	QString commandHelp( const QString& command ) const override;
+
+public Q_SLOTS:
+	CommandLinePluginInterface::RunResult handle_setupteacher( const QStringList& arguments );
+	CommandLinePluginInterface::RunResult handle_createpackage( const QStringList& arguments );
+	CommandLinePluginInterface::RunResult handle_extractpackage( const QStringList& arguments );
+
+private:
+	static QString localUsersGroupName();
+	int runCommandLine( const QStringList& arguments );
+
+	const Feature m_studentInstallerFeature;
+	const Feature m_addComputersFeature;
+	const Feature m_settingsFeature;
+	const FeatureList m_features;
+	QMap<QString, QString> m_commands;
+
+	QPointer<StudentInstallerDialog> m_studentInstallerDialog;
+	QPointer<AddComputersDialog> m_addComputersDialog;
 
 };

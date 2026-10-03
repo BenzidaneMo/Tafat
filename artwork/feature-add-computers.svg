@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- "Add computers": a student laptop found on the network, with a plus. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="14" y="26" width="76" height="52" rx="6" fill="#dff2ea" stroke="#13705f" stroke-width="7"/>
+  <path d="M6 86 h92 l-8 12 h-76 z" fill="#13705f"/>
+  <g fill="none" stroke="#1f9d86" stroke-width="6" stroke-linecap="round">
+    <path d="M38 52 a14 14 0 0 1 28 0"/>
+    <path d="M30 44 a24 24 0 0 1 44 0"/>
+  </g>
+  <circle cx="52" cy="58" r="5" fill="#1f9d86"/>
+  <circle cx="96" cy="94" r="26" fill="#f26b2d" stroke="#fffdf9" stroke-width="5"/>
+  <path d="M96 80 v28 M82 94 h28" stroke="#fffdf9" stroke-width="8" stroke-linecap="round"/>
+</svg>

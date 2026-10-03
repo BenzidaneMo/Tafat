@@ -35,6 +35,7 @@
 
 #include "Filesystem.h"
 #include "LabSetupPage.h"
+#include "StudentInstallerDialog.h"
 #include "StudentSetup.h"
 #include "VeyonConfiguration.h"
 
@@ -54,6 +55,19 @@ LabSetupPage::LabSetupPage( QWidget* parent ) :
 	font.setBold( true );
 	font.setPointSizeF( font.pointSizeF() * 1.2 );
 	title->setFont( font );
+
+	auto installerIntro = new QLabel( tr( "Create the student installer, for example on a USB stick, and double-click it "
+										  "on each student computer. It contains the key and the settings of this "
+										  "computer. The same button is in %1 Master." )
+										  .arg( VeyonCore::productName() ), this );
+	installerIntro->setWordWrap( true );
+	auto installerButton = new QPushButton( QIcon( QStringLiteral(":/labsetup/lab-setup.png") ),
+											tr( "Create student installer…" ), this );
+
+	auto advancedTitle = new QLabel( tr( "Advanced: student setup folder for a silent installation" ), this );
+	auto advancedFont = advancedTitle->font();
+	advancedFont.setBold( true );
+	advancedTitle->setFont( advancedFont );
 
 	auto intro = new QLabel( tr( "Exports everything the student computers need into a folder, for example on a "
 								 "USB stick: the teacher's public key, these settings and an installation script.\n\n"
@@ -80,6 +94,10 @@ LabSetupPage::LabSetupPage( QWidget* parent ) :
 
 	auto layout = new QVBoxLayout( this );
 	layout->addWidget( title );
+	layout->addWidget( installerIntro );
+	layout->addWidget( installerButton, 0, Qt::AlignLeft );
+	layout->addSpacing( 16 );
+	layout->addWidget( advancedTitle );
 	layout->addWidget( intro );
 	layout->addLayout( form );
 	layout->addWidget( m_noKeyLabel );
@@ -88,6 +106,10 @@ LabSetupPage::LabSetupPage( QWidget* parent ) :
 	layout->addStretch( 1 );
 
 	connect( m_exportButton, &QPushButton::clicked, this, &LabSetupPage::exportStudentSetup );
+	connect( installerButton, &QPushButton::clicked, this, [this]() {
+		StudentInstallerDialog dialog( this );
+		dialog.exec();
+	} );
 
 	updateKeys();
 }

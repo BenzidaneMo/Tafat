@@ -24,14 +24,30 @@ Chrome ≤ 109 or Firefox ESR 115 (newer browsers don't run there).
       64-bit installer on 32-bit Windows.
 - [ ] Service "TafatService" is running after install and after a reboot
       (`sc query TafatService`).
-- [ ] Teacher: Tafat Configurator → create key pair; Lab setup page → export the student
-      setup folder.
-- [ ] Students: copy the folder **and the installers** onto the PC, run
-      `install-students.bat` as administrator. Test this on a **French or Arabic
-      Windows** too (the script reads the `ver` output).
-- [ ] The script picks the right installer for that PC (see the table above).
-- [ ] After the script: service running, key imported (`tafat-cli authkeys list`),
-      configuration applied.
+- [ ] Teacher install (normal Windows account for the teacher, installer run as
+      administrator): `tafat-cli authkeys list` shows `teacher` public and private,
+      Authentication/Method is key file, `C:\Program Files\Tafat\setup\` holds a copy
+      of the installer. On a **French or Arabic Windows**, the private key is readable
+      by the local Users group (`setaccessgroup` with the localized group name).
+- [ ] Finish page "Start Tafat Master now" starts the master **not** elevated; the title
+      reads "Tafat Master".
+- [ ] Master → **Student installer** → *Create on USB stick or folder…* writes
+      `Install Tafat - student (…).exe` (also with an added legacy installer).
+- [ ] Student: double-click the student installer → one UAC prompt, only Welcome /
+      progress / Finish pages, no teacher program; afterwards service running, key
+      `teacher` imported, configuration applied, finish page has no "Start" checkbox.
+      Also silent: `"Install Tafat - student (…).exe" /S`. Windows does **not** report
+      a damaged installer (data appended after the NSIS installer) and SmartScreen
+      behaves as for the plain installer.
+- [ ] Master → **Add computers** → **Search** finds the student PCs within ~5 s
+      (Windows firewall rule for port 11100 active), names from reverse DNS;
+      **Add to the room** shows one UAC prompt and the room appears ticked with its
+      computers. Repeat with the master started as administrator (no prompt).
+- [ ] Master → **Settings** opens the configurator (UAC prompt); *OK* applies and closes.
+- [ ] Advanced: configurator Lab setup → export the student setup folder, copy the
+      installers next to it and run `install-students.bat` as administrator, also on a
+      French or Arabic Windows (the script reads the `ver` output); it picks the right
+      installer (see the table above); service running, key imported, config applied.
 
 ## 2. Basic functions (upstream Veyon)
 
@@ -72,7 +88,7 @@ the blocker is on (it must clean up at service start).
       auto-submits, live results and bars, CSV opens correctly in Excel (Arabic text).
 - [ ] **Register + class list**: import a CSV class list (with Arabic names), students
       register, tiles show their names, absent students in red, CSV export.
-- [ ] **Hands & chat**: show toolbar, raise hand (icon on tile), chat one/all,
+- [ ] **Hands and chat**: show toolbar, raise hand (icon on tile), chat one/all,
       lower hand, hand in work (several files), "Open handed-in work".
 - [ ] **Return work**: files come back into each student's "Returned work" folder.
 - [ ] **Inventory**: all PCs listed, legacy builds marked.

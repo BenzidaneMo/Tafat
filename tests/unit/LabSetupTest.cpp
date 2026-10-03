@@ -22,8 +22,13 @@
  *
  */
 
+#include <QNetworkAddressEntry>
+#include <QTcpServer>
+#include <QTcpSocket>
 #include <QtTest>
 
+#include "ComputerScanner.h"
+#include "StudentPackage.h"
 #include "StudentSetup.h"
 #include "VeyonCore.h"
 
@@ -99,6 +104,178 @@ private Q_SLOTS:
 		QVERIFY( text.contains( QStringLiteral("set LEGACY=-legacy") ) );
 		QVERIFY( text.contains( QStringLiteral("net session") ) );
 		QVERIFY( StudentSetup::configFileName().startsWith( slug ) );
+	}
+
+	void studentPackage()
+	{
+		QTemporaryDir dir;
+		const auto installer = dir.filePath( QStringLiteral("tafat-1.0.1.0-win64-setup.exe") );
+		const QByteArray installerData = QByteArray( "MZ" ) + QByteArray( 5000, 'x' ) + "end";
+		QFile file( installer );
+		QVERIFY( file.open( QFile::WriteOnly ) );
+		file.write( installerData );
+		file.close();
+
+		// a plain installer is no package
+		QVERIFY( StudentPackage::hasPackage( installer ) == false );
+
+		StudentPackage::Content content;
+		content.keyName = QStringLiteral("teacher");
+		content.publicKey = "-----BEGIN PUBLIC KEY-----\nabc\n-----END PUBLIC KEY-----\n";
+		content.config = R"({"Authentication":{"Method":1},"Network":{"VeyonServerPort":11100}})";
+		QVERIFY( content.isValid() );
+
+		QString error;
+		const auto package = dir.filePath( QStringLiteral("student.exe") );
+		QVERIFY2( StudentPackage::create( installer, package, content, &error ), qPrintable( error ) );
+
+		// the installer stays unchanged in front, the trailer ends with the marker read by NSIS
+		QFile packageFile( package );
+		QVERIFY( packageFile.open( QFile::ReadOnly ) );
+		const auto packageData = packageFile.readAll();
+		packageFile.close();
+		QVERIFY( packageData.startsWith( installerData ) );
+		QVERIFY( packageData.endsWith( StudentPackage::marker() ) );
+		QCOMPARE( StudentPackage::marker().size(), 24 );
+
+		const auto read = StudentPackage::read( package );
+		QVERIFY( read.isValid() );
+		QCOMPARE( read.keyName, content.keyName );
+		QCOMPARE( read.publicKey, content.publicKey );
+		QCOMPARE( QJsonDocument::fromJson( read.config ), QJsonDocument::fromJson( content.config ) );
+
+		// a package made from a package replaces the old content instead of adding to it
+		auto other = content;
+		other.keyName = QStringLiteral("lab2");
+		const auto repackaged = dir.filePath( QStringLiteral("student2.exe") );
+		QVERIFY( StudentPackage::create( package, repackaged, other, &error ) );
+		QCOMPARE( StudentPackage::read( repackaged ).keyName, QStringLiteral("lab2") );
+		QCOMPARE( QFileInfo( repackaged ).size(), qint64( installerData.size() + StudentPackage::encode( other ).size() ) );
+
+		const auto folder = dir.filePath( QStringLiteral("extracted") );
+		const auto files = StudentPackage::extract( package, folder, &error );
+		QCOMPARE( files.size(), 2 );
+		QFile key( QDir( folder ).filePath( StudentSetup::keyFileName( QStringLiteral("teacher") ) ) );
+		QVERIFY( key.open( QFile::ReadOnly ) );
+		QCOMPARE( key.readAll(), content.publicKey );
+		QFile config( QDir( folder ).filePath( StudentSetup::configFileName() ) );
+		QVERIFY( config.open( QFile::ReadOnly ) );
+		QCOMPARE( QJsonDocument::fromJson( config.readAll() )[QStringLiteral("Authentication")][QStringLiteral("Method")].toInt(), 1 );
+
+		QVERIFY( StudentPackage::extract( installer, folder, &error ).isEmpty() );
+		QVERIFY( error.isEmpty() == false );
+
+		// invalid content is refused
+		auto invalid = content;
+		invalid.keyName = QStringLiteral("a b");
+		QVERIFY( StudentPackage::create( installer, dir.filePath( QStringLiteral("x.exe") ), invalid, &error ) == false );
+	}
+
+	void damagedPackage()
+	{
+		QTemporaryDir dir;
+		const auto fileName = dir.filePath( QStringLiteral("damaged.exe") );
+		QFile file( fileName );
+		QVERIFY( file.open( QFile::WriteOnly ) );
+		// marker with a length larger than the file
+		file.write( QByteArray( "MZ" ) + QByteArray( "\xff\xff\x00\x00\x00\x00\x00\x00", 8 ) + StudentPackage::marker() );
+		file.close();
+		QVERIFY( StudentPackage::hasPackage( fileName ) == false );
+	}
+
+	void packageNames()
+	{
+		QCOMPARE( StudentPackage::windowsVersions( QStringLiteral("C:/x/tafat-1.0.0.0-win64-setup.exe") ),
+				  QStringLiteral("Windows 10-11 64-bit") );
+		QCOMPARE( StudentPackage::windowsVersions( QStringLiteral("tafat-1.0.0.0-win32-setup.exe") ),
+				  QStringLiteral("Windows 10 32-bit") );
+		QCOMPARE( StudentPackage::windowsVersions( QStringLiteral("tafat-1.0.0.0-win32-legacy-setup.exe") ),
+				  QStringLiteral("Windows 7-8.1 32-bit") );
+		QCOMPARE( StudentPackage::windowsVersions( QStringLiteral("tafat-1.0.0.0-win64-legacy-setup.exe") ),
+				  QStringLiteral("Windows 7-8.1 64-bit") );
+		QVERIFY( StudentPackage::windowsVersions( QStringLiteral("setup.exe") ).isEmpty() );
+		QVERIFY( StudentPackage::packageFileName( QStringLiteral("tafat-1.0.0.0-win64-setup.exe") )
+					 .endsWith( QStringLiteral(" - student (Windows 10-11 64-bit).exe") ) );
+	}
+
+	void candidateHosts()
+	{
+		QNetworkAddressEntry lab;
+		lab.setIp( QHostAddress( QStringLiteral("192.168.1.10") ) );
+		lab.setPrefixLength( 24 );
+
+		QNetworkAddressEntry publicEntry;
+		publicEntry.setIp( QHostAddress( QStringLiteral("8.8.4.4") ) );
+		publicEntry.setPrefixLength( 24 );
+
+		const auto own = QList<QHostAddress>{ QHostAddress( QStringLiteral("192.168.1.10") ) };
+		const auto hosts = ComputerScanner::candidateHosts( { lab, publicEntry, lab }, own );
+		// .1 to .254 without the own address and without duplicates, no public addresses
+		QCOMPARE( hosts.size(), 253 );
+		QVERIFY( hosts.contains( QHostAddress( QStringLiteral("192.168.1.1") ) ) );
+		QVERIFY( hosts.contains( QHostAddress( QStringLiteral("192.168.1.254") ) ) );
+		QVERIFY( hosts.contains( QHostAddress( QStringLiteral("192.168.1.10") ) ) == false );
+		QVERIFY( hosts.contains( QHostAddress( QStringLiteral("192.168.1.255") ) ) == false );
+
+		// a /16 network is cut to the /24 around this computer
+		QNetworkAddressEntry large;
+		large.setIp( QHostAddress( QStringLiteral("10.20.30.40") ) );
+		large.setPrefixLength( 16 );
+		const auto largeHosts = ComputerScanner::candidateHosts( { large }, {} );
+		QCOMPARE( largeHosts.size(), 254 );
+		QCOMPARE( largeHosts.first(), QHostAddress( QStringLiteral("10.20.30.1") ) );
+
+		// the limit holds over several networks
+		QNetworkAddressEntry second;
+		second.setIp( QHostAddress( QStringLiteral("172.16.5.1") ) );
+		second.setPrefixLength( 24 );
+		QCOMPARE( ComputerScanner::candidateHosts( { lab, second }, own, 300 ).size(), 300 );
+
+		QVERIFY( ComputerScanner::isPrivateAddress( QHostAddress( QStringLiteral("172.31.255.1") ) ) );
+		QVERIFY( ComputerScanner::isPrivateAddress( QHostAddress( QStringLiteral("172.32.0.1") ) ) == false );
+		QVERIFY( ComputerScanner::isPrivateAddress( QHostAddress( QStringLiteral("fe80::1") ) ) == false );
+	}
+
+	void serverGreeting()
+	{
+		QVERIFY( ComputerScanner::isServerGreeting( "RFB 003.008\n" ) );
+		QVERIFY( ComputerScanner::isServerGreeting( "SSH-2.0-OpenSSH" ) == false );
+		QVERIFY( ComputerScanner::isServerGreeting( "HTTP/1.1 400" ) == false );
+	}
+
+	void scanner()
+	{
+		// one fake server answering like a VNC server, one with another greeting
+		QTcpServer vnc;
+		QTcpServer other;
+		QVERIFY( vnc.listen( QHostAddress::LocalHost ) );
+		QVERIFY( other.listen( QHostAddress::LocalHost ) );
+		connect( &vnc, &QTcpServer::newConnection, &vnc, [&vnc]() {
+			vnc.nextPendingConnection()->write( "RFB 003.008\n" );
+		} );
+		connect( &other, &QTcpServer::newConnection, &other, [&other]() {
+			other.nextPendingConnection()->write( "SSH-2.0-test\r\n" );
+		} );
+
+		const QList<QHostAddress> hosts{ QHostAddress::LocalHost };
+		for( const auto server : { &vnc, &other } )
+		{
+			ComputerScanner scanner( server->serverPort() );
+			int found = 0;
+			connect( &scanner, &ComputerScanner::found, &scanner, [&found]() { ++found; } );
+			QSignalSpy finished( &scanner, &ComputerScanner::finished );
+			scanner.start( hosts );
+			QVERIFY( finished.wait( 5000 ) );
+			QCOMPARE( found, server == &vnc ? 1 : 0 );
+			QVERIFY( scanner.isRunning() == false );
+		}
+	}
+
+	void importData()
+	{
+		QCOMPARE( ComputerScanner::importData( { { QStringLiteral("PC-01"), QStringLiteral("192.168.1.11") },
+												 { QStringLiteral(" a;b "), QStringLiteral("pc2.lab ") } } ),
+				  QByteArray( "PC-01;192.168.1.11\na b;pc2.lab" ) );
 	}
 };
 

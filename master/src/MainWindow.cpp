@@ -63,6 +63,9 @@ MainWindow::MainWindow( VeyonMaster &masterCore, QWidget* parent ) :
 {
 	ui->setupUi( this );
 
+	// the title in the .ui file is not translated, so the product name is not applied to it
+	setWindowTitle( QStringLiteral("%1 Master").arg( VeyonCore::productName() ) );
+
 	restoreState( QByteArray::fromBase64( m_master.userConfig().windowState().toUtf8() ) );
 	restoreGeometry( QByteArray::fromBase64( m_master.userConfig().windowGeometry().toUtf8() ) );
 

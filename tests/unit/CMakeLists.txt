@@ -205,10 +205,12 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 	add_test(NAME HandInTest COMMAND HandInTest)
 
 	#
-	# LabSetupTest: files of the student setup exported by the configurator
+	# LabSetupTest: student setup folder and installer package, computer search
 	#
 	add_executable(LabSetupTest
 		LabSetupTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/labsetup/ComputerScanner.cpp
+		${CMAKE_SOURCE_DIR}/plugins/labsetup/StudentPackage.cpp
 		${CMAKE_SOURCE_DIR}/plugins/labsetup/StudentSetup.cpp
 	)
 
@@ -219,6 +221,7 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 	target_link_libraries(LabSetupTest PRIVATE
 		Qt${QT_MAJOR_VERSION}::Test
 		Qt${QT_MAJOR_VERSION}::Core
+		Qt${QT_MAJOR_VERSION}::Network
 		veyon-core
 	)
 
