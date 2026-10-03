@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Show only computers that are switched on (dark theme) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M42.92 41.48 A34 34 0 1 0 85.08 41.48" fill="none" stroke="#faf4ea" stroke-width="12" stroke-linecap="round"/>
+  <path d="M64 28.9 v35.7" stroke="#faf4ea" stroke-width="12" stroke-linecap="round"/>
+</svg>

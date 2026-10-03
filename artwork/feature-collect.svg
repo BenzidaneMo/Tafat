@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Collect files from the students -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M14 40 v-14 a8 8 0 0 1 8 -8 h26 l10 10 h48 a8 8 0 0 1 8 8 v60 a8 8 0 0 1 -8 8 h-84 a8 8 0 0 1 -8 -8 z" fill="#fffdf9" stroke="#13705f" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M64 50 v40 m-16 -16 l16 16 l16 -16" fill="none" stroke="#1f9d86" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

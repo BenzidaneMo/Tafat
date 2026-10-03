@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Slideshow panel -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M64 86 v14 M44 102 h40" stroke="#13705f" stroke-width="7" stroke-linecap="round"/>
+  <rect x="12" y="14" width="104" height="72" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="21" y="23" width="86" height="54" rx="4" fill="#f4ebdd"/>
+  <g fill="none" stroke="#f26b2d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M44 36 l-12 14 l12 14"/><path d="M84 36 l12 14 l-12 14"/></g>
+  <rect x="52" y="38" width="24" height="24" rx="4" fill="#f6bf3f"/>
+</svg>

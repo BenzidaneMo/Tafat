@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reboot -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <circle cx="64" cy="64" r="50" fill="#f6bf3f"/>
+  <path d="M88 60 A25 25 0 1 1 78 42" fill="none" stroke="#4b3427" stroke-width="9" stroke-linecap="round"/>
+  <path d="M70 30 l18 6 l-6 18 z" fill="#4b3427" stroke="#4b3427" stroke-width="4" stroke-linejoin="round"/>
+</svg>
