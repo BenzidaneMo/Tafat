@@ -224,7 +224,7 @@ void AppControlFeaturePlugin::addRunningAppsComputer( const ComputerControlInter
 	const auto user = computerControlInterface->userFullName().isEmpty() ? computerControlInterface->userLoginName()
 																		  : computerControlInterface->userFullName();
 	m_runningAppsWindow->setComputer( key, user.isEmpty() ? computerControlInterface->computerName()
-														  : QStringLiteral("%1 \u2013 %2").arg( VeyonCore::stripDomain( user ),
+														  : QStringLiteral("\u2068%1\u2069 \u2013 \u2068%2\u2069").arg( VeyonCore::stripDomain( user ),
 																							   computerControlInterface->computerName() ) );
 }
 
