@@ -3,7 +3,7 @@
 This guide is for the person who sets up a lab: one teacher computer and the
 student computers in the same network. All steps also work for several labs.
 For the teachers: [guide de l'enseignant](guide-enseignant.md) (français),
-[دليل الأستاذ](guide-enseignant-ar.md) (العربية). A short version of this guide in French,
+[دليل الأستاذ](guide-enseignant-ar.md) (العربية), [amnir n uselmad](guide-aselmad-kab.md) (taqbaylit, draft). A short version of this guide in French,
 English and Arabic, for printing or a USB stick: [install.html](install.html).
 
 > Status: the installers are built by CI but have not been tested on real lab

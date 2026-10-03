@@ -340,7 +340,8 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   installer), < 7 for legacy builds, and 64-bit installers on 32-bit Windows
   (`VEYON_INSTALLER_MIN_WINDOWS`, `VEYON_INSTALLER_64BIT` in root `CMakeLists.txt`).
 - Teacher guides (drafts, need native review): `docs/guide-enseignant.md` (French),
-  `docs/guide-enseignant-ar.md` (Arabic, `<div dir="rtl">`). Button names are taken
+  `docs/guide-enseignant-ar.md` (Arabic, `<div dir="rtl">`), `docs/guide-aselmad-kab.md`
+  (Tamazight, Latin script; button names from `tafat_kab.ts`/`veyon_kab.ts`). Button names are taken
   from the current catalogs; update the guides when feature names change.
 - `docs/install.html`: short installation page in French, English and Arabic. It is self-contained
   (works offline from a USB stick), with an installer chooser, copy buttons, brand colors,
@@ -439,7 +440,6 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
      browser extension or reading the browser history databases).
    - Then whiteboard/annotation, screen recording, audio, lesson plans/rewards,
      and a pilot in 1–2 schools (`docs/DEPLOYMENT.md` covers admins).
-   - Packaging leftovers: teacher guide in Tamazight.
 6. Known limits (documented in DEPLOYMENT.md):
    - allow-only app mode, internet, USB and print block are Windows only;
    - Firefox needs a restart for website policies.
