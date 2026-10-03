@@ -297,7 +297,7 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   `qt6_disable_unicode_defines` to `-UUNICODE -U_UNICODE`;
   `LogoffEventFilter::nativeEventFilter` uses `long*` on Qt 5.
 
-## 7. CI status (checked 2026-10-03)
+## 7. CI status (checked 2026-10-03, Windows run 31 green incl. new plugins)
 
 | Build | Status |
 |---|---|
@@ -314,6 +314,24 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
 `libssl-3.dll` with them (same ABI). Nothing has been run on a real Windows PC yet.
 
 ## 8. Unfinished work (in order)
+
+0. **Next session, started but not pushed:**
+   - CI does not build or run the unit tests (`.ci/common/linux-build.sh` has no
+     `WITH_TESTS`). Add a separate `unit-tests` job to `build.yml` (containers
+     `veyon/ci.linux.fedora.44` and `.debian.11` with `-DWITH_QT6=OFF
+     -DWITH_BUNDLED_LIBVNC=ON`; `cmake -DWITH_TESTS=ON`, `ninja`,
+     `QT_QPA_PLATFORM=offscreen ctest`). All 13 suites pass offscreen with Qt 6;
+     check the Qt 5 build of the tests locally first (a reconfigure with
+     `-DWITH_TESTS=ON` found no tests, so do a clean Qt 5 build dir).
+   - End-to-end check that worked on Linux: `Xvfb :77`, then run `build/server/tafat-server`
+     with `DISPLAY=:77` (as root, key `teacher` created with `tafat-cli authkeys create`).
+     A small client (call `VeyonCore::setupApplicationParameters()` *before* creating
+     the app, then `VeyonCore(app, Component::Master, …)`, `initAuthentication()`,
+     `ComputerControlInterface::start(…, FeatureControlOnly)`, and send raw
+     `FeatureMessage`s via `cci->sendFeatureMessage`, read `cci->connection()`
+     `featureMessageReceived`) got correct Inventory and Running apps replies. Without
+     logind there is no user session, so session-bound features answer empty.
+     Turn this into a scripted integration test.
 
 1. **Legacy Windows installers:** they build and pass the Windows 7 import check.
    If the check fails after a dependency update, fix the reported DLL (Qt 5,
