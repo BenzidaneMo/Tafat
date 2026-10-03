@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Access rule: ask for permission -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <circle cx="64" cy="64" r="50" fill="#f6bf3f"/><path d="M48 50 a16 16 0 1 1 22 15 c-5 2 -6 5 -6 10" fill="none" stroke="#4b3427" stroke-width="11" stroke-linecap="round"/><circle cx="64" cy="94" r="7" fill="#4b3427"/>
+</svg>

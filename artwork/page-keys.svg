@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configurator page: authentication keys -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <circle cx="42" cy="64" r="26" fill="#f6bf3f" stroke="#13705f" stroke-width="7"/>
+  <circle cx="38" cy="64" r="8" fill="#fffdf9"/>
+  <path d="M68 64 h48 M100 64 v18 M86 64 v12" stroke="#13705f" stroke-width="10" stroke-linecap="round"/>
+</svg>

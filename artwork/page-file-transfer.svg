@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configurator page: file transfer -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M14 40 v-14 a8 8 0 0 1 8 -8 h26 l10 10 h48 a8 8 0 0 1 8 8 v60 a8 8 0 0 1 -8 8 h-84 a8 8 0 0 1 -8 -8 z" fill="#fffdf9" stroke="#13705f" stroke-width="7" stroke-linejoin="round"/>
+  <g fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M48 90 v-34 m-12 12 l12 -12 l12 12" stroke="#f26b2d"/><path d="M80 56 v34 m-12 -12 l12 12 l12 -12" stroke="#1f9d86"/></g>
+</svg>

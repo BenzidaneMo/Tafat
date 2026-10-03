@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configurator page: locations and computers -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M14 56 l50 -38 l50 38 v52 a6 6 0 0 1 -6 6 h-88 a6 6 0 0 1 -6 -6 z" fill="#fffdf9" stroke="#13705f" stroke-width="7" stroke-linejoin="round"/>
+  <rect x="28" y="62" width="26" height="18" rx="3" fill="#1f9d86"/><path d="M41 80 v6" stroke="#13705f" stroke-width="4"/>
+  <rect x="74" y="62" width="26" height="18" rx="3" fill="#f6bf3f"/><path d="M87 80 v6" stroke="#13705f" stroke-width="4"/>
+  <rect x="51" y="86" width="26" height="18" rx="3" fill="#f26b2d"/><path d="M64 104 v6" stroke="#13705f" stroke-width="4"/>
+</svg>

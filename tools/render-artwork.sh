@@ -77,8 +77,8 @@ png feature-inventory.svg 128 "$ROOT/plugins/inventory/inventory.png"
 echo "Artwork rendered."
 
 # upstream toolbar and bottom-bar icons, redrawn in the Tafat style
-while read -r svg out; do
-	png "$svg.svg" 128 "$ROOT/$out"
+while read -r svg out size; do
+	png "$svg.svg" "${size:-128}" "$ROOT/$out"
 done <<'MAP'
 feature-monitoring core/resources/presentation-none.png
 feature-demo plugins/demo/demo.png
@@ -96,7 +96,7 @@ feature-text-message plugins/textmessage/dialog-information.png
 feature-start-app plugins/desktopservices/preferences-desktop-launch-feedback.png
 feature-open-website plugins/desktopservices/internet-web-browser.png
 feature-distribute plugins/filetransfer/distribute-files.png
-feature-distribute plugins/filetransfer/distribute-files-dark.png
+page-file-transfer plugins/filetransfer/distribute-files-dark.png
 feature-collect plugins/filetransfer/collect-files.png
 feature-screenshot plugins/screenshot/camera-photo.png
 feature-screenshot plugins/remoteaccess/camera-photo.png
@@ -116,4 +116,18 @@ button-about core/resources/help-about.png
 button-about-dark core/resources/help-about-dark.png
 button-user-group core/resources/user-group-new.png
 button-user-group-dark core/resources/user-group-new-dark.png
+page-general configurator/resources/configure-shortcuts.png 64
+page-service configurator/resources/application-x-sharedlib.png 64
+page-master configurator/resources/application-x-ms-dos-executable.png 64
+page-access-control configurator/resources/network-vpn.png 64
+page-keys core/resources/application-x-pem-key.png
+page-locations plugins/builtindirectory/builtindirectory.png
+page-apps-websites plugins/desktopservices/desktop-services.png
+page-demo plugins/demo/window-duplicate.png
+page-ldap plugins/ldap/application-x-kexi-connectiondata.png
+page-webapi plugins/webapi/webapi.png
+rule-allow configurator/resources/vcs-normal.png 64
+rule-deny configurator/resources/vcs-conflicting.png 64
+rule-ask configurator/resources/access-rule-ask.png 64
+rule-none configurator/resources/vcs-removed.png 64
 MAP
