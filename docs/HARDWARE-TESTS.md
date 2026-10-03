@@ -1,0 +1,100 @@
+# Tafat – tests on real Windows PCs
+
+Nothing has run on a real Windows machine yet. Work through the sections **in order**
+on each PC and tick the boxes in a copy of this file (one copy per PC). Write down
+anything that fails with the Windows version, the installer file name and, if
+possible, the log files `Tafat*.log` from `C:\Windows\Temp\` (service, server) and
+from `%TEMP%` of the logged-in user (teacher app, student helper).
+
+| PC | Windows | Installer to use |
+|---|---|---|
+| A | 7 SP1, 32-bit | `tafat-*-win32-legacy-setup.exe` |
+| B | 8.1, 64-bit | `tafat-*-win64-legacy-setup.exe` |
+| C | 10, 32-bit | `tafat-*-win32-setup.exe` |
+| D | 11 (64-bit) | `tafat-*-win64-setup.exe` |
+
+Use one PC as the teacher and the others as students; in section 6 swap the roles.
+On Windows 7, install KB2533623 first (needed for Ctrl+Alt+Del handling) and use
+Chrome ≤ 109 or Firefox ESR 115 (newer browsers don't run there).
+
+## 1. Installer and service
+
+- [ ] Installer runs and finishes (as administrator).
+- [ ] Wrong installer is refused with a clear message: modern installer on Windows 7/8.1,
+      64-bit installer on 32-bit Windows.
+- [ ] Service "TafatService" is running after install and after a reboot
+      (`sc query TafatService`).
+- [ ] Teacher: Tafat Configurator → create key pair; Lab setup page → export the student
+      setup folder.
+- [ ] Students: copy the folder **and the installers** onto the PC, run
+      `install-students.bat` as administrator. Test this on a **French or Arabic
+      Windows** too (the script reads the `ver` output).
+- [ ] The script picks the right installer for that PC (see the table above).
+- [ ] After the script: service running, key imported (`tafat-cli authkeys list`),
+      configuration applied.
+
+## 2. Basic functions (upstream Veyon)
+
+- [ ] Teacher sees the student screens (thumbnails update).
+- [ ] Lock / unlock screens.
+- [ ] Demo: full screen and window, teacher screen to students.
+- [ ] File transfer: send a file to students; collect files from students.
+
+## 3. Blockers
+
+Start each blocker from the teacher, check on the student, then stop it and check
+that everything is back to normal. Repeat once after rebooting the student PC while
+the blocker is on (it must clean up at service start).
+
+- [ ] **Block apps**: block list closes the app; allow-only list closes everything else
+      but keeps Explorer and system programs; the student sees a notice.
+- [ ] **Internet block** (option in "Block websites"):
+      `netsh advfirewall firewall show rule name="Tafat - block internet (TCP)"`
+      (and `(UDP)`) exists while active and is gone after stop. Websites don't load,
+      but the teacher connection, demo and LAN shares still work.
+- [ ] **USB storage**: while active,
+      `HKLM\SOFTWARE\Policies\Microsoft\Windows\RemovableStorageDevices` has
+      `Deny_All = 1`. Check a stick plugged in **before** and one plugged in **after**
+      starting (only the second may be blocked). After stop the old value is back.
+- [ ] **Printing**: while active, `sc query Spooler` is stopped and `sc qc Spooler`
+      shows DISABLED; printing fails. After stop, the start type and running state are
+      as before.
+- [ ] **Website blocking**: Chrome/Edge/Brave show the list in `chrome://policy` /
+      `edge://policy`; Firefox in `about:policies` (after a restart). Blocked sites are
+      blocked; with an allow list only those sites open. After stop the policies are gone
+      and policies set by the admin before are still there.
+
+## 4. Tafat features
+
+- [ ] **Running apps**: list per computer, refreshes, "close" works on one and on all
+      computers; history shows "since …" and closed apps in grey.
+- [ ] **Quiz**: create (single, multiple, text), launch, students answer, countdown
+      auto-submits, live results and bars, CSV opens correctly in Excel (Arabic text).
+- [ ] **Register + class list**: import a CSV class list (with Arabic names), students
+      register, tiles show their names, absent students in red, CSV export.
+- [ ] **Hands & chat**: show toolbar, raise hand (icon on tile), chat one/all,
+      lower hand, hand in work (several files), "Open handed-in work".
+- [ ] **Return work**: files come back into each student's "Returned work" folder.
+- [ ] **Inventory**: all PCs listed, legacy builds marked.
+
+## 5. Languages on Windows
+
+- [ ] Arabic UI is right-to-left, numbers like "3 / 4" are not reversed.
+- [ ] Tifinagh text is shown (not boxes) on Windows 7 and 10.
+
+## 6. Mixed builds
+
+- [ ] Teacher on a modern build (C or D) with students on legacy builds (A, B):
+      sections 2–4 work.
+- [ ] Teacher on a legacy build (A or B) with students on modern builds.
+
+## Results
+
+| Section | A (7, 32) | B (8.1, 64) | C (10, 32) | D (11) |
+|---|---|---|---|---|
+| 1 Installer | | | | |
+| 2 Basic | | | | |
+| 3 Blockers | | | | |
+| 4 Features | | | | |
+| 5 Languages | | | | |
+| 6 Mixed | | | | |

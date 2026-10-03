@@ -22,10 +22,10 @@ Decisions already taken with the project owner (do not re-open them):
 - Name "Tafat" is held in one file (`cmake/modules/Branding.cmake`). A trademark
   check (INAPI, WIPO Global Brand Database, domain) is still due before the
   first public release.
-- Repo: `BenzidaneMo/Tafat` (formerly `opennetsupport`). Work branch:
-  `ccr-b7df7899-2kzbe8`. `main` contains PR #1 only; everything after is on the
-  work branch. Merge PRs with a **merge commit**, never squash/rebase (that would
-  drop Veyon's history).
+- Repo: `BenzidaneMo/Tafat` (formerly `opennetsupport`). Work happens
+  directly on `main` (no PRs); the old work branch `ccr-b7df7899-2kzbe8` was merged
+  with PR #2 (`121d68fd`). Never squash or rebase pushed history (that would drop
+  Veyon's history); merge other branches with a **merge commit**.
 
 ## 2. Golden rules ("thin rebrand", stay mergeable with upstream Veyon)
 
@@ -58,7 +58,7 @@ Decisions already taken with the project owner (do not re-open them):
 - Must not use **Windows 8+ APIs without a fallback** (legacy builds target
   `_WIN32_WINNT=0x0601`); load such functions with `GetProcAddress`.
 - Never put raw bidi control characters in source (GCC `-Wbidi-chars` fails the
-  build). Use escapes: `⁦` (LRI), `⁨` (FSI), `⁩` (PDI). Isolate
+  build). Use escapes: `\u2066` (LRI), `\u2068` (FSI), `\u2069` (PDI). Isolate
   numbers/names in RTL text so "3 / 4" is not shown reversed in Arabic.
 - Colors only via `core/src/BrandTheme.h` tokens: cream `#faf4ea`, cream-2
   `#f4ebdd`, paper `#fffdf9`, brown `#3b271d`, brown-2 `#4b3427`, ink `#2b1f18`,
@@ -84,7 +84,8 @@ git submodule update --init --recursive   # incl. 3rdparty/qthttpserver/src/3rdp
 cmake -S . -B ../tafat-build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
       -DWITH_TESTS=ON -DWITH_TRANSLATIONS=OFF -DWITH_LTO=OFF
 ninja -C ../tafat-build
-cd ../tafat-build && xvfb-run -a ctest --output-on-failure    # 13 suites, all pass
+cd ../tafat-build && QT_QPA_PLATFORM=offscreen ctest -LE integration --output-on-failure  # 13 suites
+sudo ctest -L integration --output-on-failure   # server/client test, needs root + Xvfb
 
 # Qt 5 check: add -DWITH_QT6=OFF (Linux CI builds Debian 11 Qt 5 too)
 tools/check-branding.sh
@@ -315,63 +316,50 @@ LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
 
 ## 8. Unfinished work (in order)
 
-0. **Next session, started but not pushed:**
-   - CI does not build or run the unit tests (`.ci/common/linux-build.sh` has no
-     `WITH_TESTS`). Add a separate `unit-tests` job to `build.yml` (containers
-     `veyon/ci.linux.fedora.44` and `.debian.11` with `-DWITH_QT6=OFF
-     -DWITH_BUNDLED_LIBVNC=ON`; `cmake -DWITH_TESTS=ON`, `ninja`,
-     `QT_QPA_PLATFORM=offscreen ctest`). All 13 suites pass offscreen with Qt 6;
-     check the Qt 5 build of the tests locally first (a reconfigure with
-     `-DWITH_TESTS=ON` found no tests, so do a clean Qt 5 build dir).
-   - End-to-end check that worked on Linux: `Xvfb :77`, then run `build/server/tafat-server`
-     with `DISPLAY=:77` (as root, key `teacher` created with `tafat-cli authkeys create`).
-     A small client (call `VeyonCore::setupApplicationParameters()` *before* creating
-     the app, then `VeyonCore(app, Component::Master, …)`, `initAuthentication()`,
-     `ComputerControlInterface::start(…, FeatureControlOnly)`, and send raw
-     `FeatureMessage`s via `cci->sendFeatureMessage`, read `cci->connection()`
-     `featureMessageReceived`) got correct Inventory and Running apps replies. Without
-     logind there is no user session, so session-bound features answer empty.
-     Turn this into a scripted integration test.
+0. **CI tests (on `main`, not yet verified by CI):** `unit-tests` job in
+   `build.yml` (Debian 11 Qt 5, Fedora 44 Qt 6; fails if fewer than 13 unit tests are
+   found) and `tests/integration/` (`FeatureRoundTripTest` + `run-integration-test.sh`:
+   Xvfb, key file auth, `tafat-server`, Inventory and Running apps replies; label
+   `integration`, needs root, skipped otherwise; config/keys restored afterwards).
+   Neither has been built yet (no Docker on the dev PC): push, fix Qt 5 compile errors
+   if any.
+1. **Real-hardware testing** — checklist in `docs/HARDWARE-TESTS.md`, on Windows 7 SP1
+   32-bit, 8.1 64-bit, 10 32-bit and 11, in this order:
+   1. installer and service start, `install-students.bat` on a localized Windows
+      (`ver` output), NSIS version/architecture checks;
+   2. screen view, lock, demo, file transfer;
+   3. each blocker — only checked by reading the code so far: internet
+      (`netsh` rules, InternetBlocker), USB storage policy
+      (`RemovableStorageDevices\Deny_All`, may only affect devices plugged in
+      afterwards), print spooler stop/disable (PrintBlocker, SCM API), website
+      policies in the browsers;
+   4. running apps, quiz, register + class list, hands & chat;
+   5. teacher and students on different builds (legacy and modern) together.
 
-1. **Legacy Windows installers:** they build and pass the Windows 7 import check.
-   If the check fails after a dependency update, fix the reported DLL (Qt 5,
-   OpenSSL and the MinGW runtime are checked too). Windows 7 notes:
-   - `SasEventListener` loads `sas.dll` with `LOAD_LIBRARY_SEARCH_SYSTEM32`
-     (needs KB2533623; without it, software SAS is just unavailable).
-   - Browsers on Windows 7: only Chrome ≤ 109 / Firefox ESR 115 support the policies.
-2. **Real-hardware testing** (Windows 7 SP1 32-bit, 8.1 64-bit, 10 32-bit, 11):
-   - install, service start, screen capture, lock, demo, file transfer;
-   - each Tafat plugin end to end: block app/site/internet/USB/printing, running apps, quiz, register +
-     class list, hands & chat;
-   - teacher and students on different builds must interoperate.
-
-   Things only checked by reading the code:
-   - `netsh` firewall rules (InternetBlocker);
-   - the `RemovableStorageDevices\Deny_All` policy (UsbStorageBlocker; may only
-     affect devices plugged in afterwards);
-   - stopping/disabling the print spooler (PrintBlocker, Windows SCM API);
-   - the NSIS version/architecture checks.
-3. Decide whether LDAP/AD and WebAPI are needed on Windows; re-enable if so.
-4. **Translations:**
+   Windows 7 notes: `SasEventListener` loads `sas.dll` with
+   `LOAD_LIBRARY_SEARCH_SYSTEM32` (needs KB2533623; without it software SAS is
+   unavailable); only Chrome ≤ 109 / Firefox ESR 115 support the policies. If the
+   Windows 7 import check fails after a dependency update, fix the reported DLL.
+2. **Translations:**
    - Native review of all *unfinished* Arabic/French drafts (`tafat_*.ts`,
      `veyon_ar.ts`).
-   - Translate Tamazight Latin + Tifinagh (`veyon_kab*.ts`, `tafat_kab*.ts`; all empty).
-   - Remaining Arabic upstream texts (731; mostly LDAP, configurator pages, CLI help).
-   - Hosted Weblate; small `qtbase_kab*` overrides.
-   - RTL audit of `LockWidget`, `Toast` and other custom-painted widgets.
-5. **Next features:**
+   - Tamazight Latin + Tifinagh not started (`veyon_kab*.ts`, `tafat_kab*.ts`).
+   - 731 upstream texts without Arabic (mostly LDAP, configurator pages, CLI help).
+   - Hosted Weblate; small `qtbase_kab*` overrides; RTL audit of `LockWidget`,
+     `Toast` and other custom-painted widgets.
+3. **Decisions:** do schools need LDAP/Active Directory or the WebAPI on Windows?
+   Both are off for now; re-enable in `.ci/windows/build-fedora.sh` if so.
+4. **Before any public release:** trademark check for "Tafat" (INAPI, WIPO, domain).
+5. **Later:**
    - Website (URL) history for the teacher (app history is done; URLs need a
      browser extension or reading the browser history databases).
-   - Then: whiteboard/annotation, screen recording, audio, lesson plans/rewards,
-     mobile app (the inventory is done).
-6. **Packaging:** the student setup export is done (`plugins/labsetup`); still open:
-   test `install-students.bat` on real Windows 7/10 (incl. localized `ver` output),
-   room import in the lab setup page (the configurator keeps its own copy of the
-   config, so call the import in-process, not via the CLI), teacher guide in
-   Tamazight, pilot in 1–2
-   schools (`docs/DEPLOYMENT.md` covers admins).
-7. Known limits (documented in DEPLOYMENT.md):
+   - Then whiteboard/annotation, screen recording, audio, lesson plans/rewards,
+     and a pilot in 1–2 schools (`docs/DEPLOYMENT.md` covers admins).
+   - Packaging leftovers: room import in the lab setup page (the configurator keeps
+     its own copy of the config, so call the import in-process, not via the CLI),
+     teacher guide in Tamazight.
+6. Known limits (documented in DEPLOYMENT.md):
    - allow-only app mode, internet, USB and print block are Windows only;
    - Firefox needs a restart for website policies.
-8. Open a PR `ccr-b7df7899-2kzbe8` → `main` when ready (merge commit).
-9. Merge new upstream Veyon releases per `UPSTREAM.md` (current base v4.11.3).
+7. Commit directly to `main` (no PRs); never rewrite pushed history.
+8. Merge new upstream Veyon releases per `UPSTREAM.md` (current base v4.11.3).
