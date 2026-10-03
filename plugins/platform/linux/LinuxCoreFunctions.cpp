@@ -47,6 +47,7 @@
 #include "LinuxUserFunctions.h"
 #include "PlatformUserFunctions.h"
 #include "ProcessHelper.h"
+#include "VeyonCore.h"
 
 #include <X11/XKBlib.h>
 #include <X11/extensions/dpms.h>
@@ -316,7 +317,7 @@ void LinuxCoreFunctions::disableScreenSaverWayland()
 		QStringLiteral("Inhibit"));
 	inhibitFreeDesktop.setArguments({
 		QVariant::fromValue(appName),
-		QVariant::fromValue(QStringLiteral("Veyon remote desktop session"))
+		QVariant::fromValue(QString(VeyonCore::productName() + QStringLiteral(" remote desktop session")))
 	});
 	QDBusMessage reply2 = QDBusConnection::sessionBus().call(inhibitFreeDesktop, QDBus::BlockWithGui, 2000);
 

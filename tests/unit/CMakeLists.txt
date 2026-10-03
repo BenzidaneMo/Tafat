@@ -56,4 +56,214 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 
 	add_test(NAME VncProtocolRobustnessTest COMMAND VncProtocolRobustnessTest)
 
+	#
+	# ProcessControlTest: which applications the application control closes
+	#
+	add_executable(ProcessControlTest
+		ProcessControlTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/ProcessControl.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/UsbStorageBlocker.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/PrintBlocker.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/AppHistory.cpp
+	)
+
+	target_include_directories(ProcessControlTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol
+	)
+
+	target_link_libraries(ProcessControlTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		veyon-core
+	)
+
+	add_test(NAME ProcessControlTest COMMAND ProcessControlTest)
+
+	#
+	# WebPolicyTest: browser policies of the website control
+	#
+	add_executable(WebPolicyTest
+		WebPolicyTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/webcontrol/WebPolicy.cpp
+		${CMAKE_SOURCE_DIR}/plugins/webcontrol/PolicyStore.cpp
+		${CMAKE_SOURCE_DIR}/plugins/webcontrol/InternetBlocker.cpp
+	)
+
+	target_include_directories(WebPolicyTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/webcontrol
+	)
+
+	target_link_libraries(WebPolicyTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		veyon-core
+	)
+
+	add_test(NAME WebPolicyTest COMMAND WebPolicyTest)
+
+	#
+	# QuizTest: quiz data model, grading and tallies
+	#
+	add_executable(QuizTest
+		QuizTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/quiz/Quiz.cpp
+	)
+
+	target_include_directories(QuizTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/quiz
+	)
+
+	target_link_libraries(QuizTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME QuizTest COMMAND QuizTest)
+
+	#
+	# ClassChatTest: chat log of the hand raise and chat feature
+	#
+	add_executable(ClassChatTest
+		ClassChatTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/classchat/ChatLog.cpp
+	)
+
+	target_include_directories(ClassChatTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/classchat
+	)
+
+	target_link_libraries(ClassChatTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME ClassChatTest COMMAND ClassChatTest)
+
+	#
+	# ClassListTest: class list import and name matching of the register
+	#
+	add_executable(ClassListTest
+		ClassListTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/register/ClassList.cpp
+	)
+
+	target_include_directories(ClassListTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/register
+	)
+
+	target_link_libraries(ClassListTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME ClassListTest COMMAND ClassListTest)
+
+	#
+	# ReturnWorkTest: folder matching and the file transfer protocol of "Return work"
+	#
+	add_executable(ReturnWorkTest
+		ReturnWorkTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/returnwork/ReturnWorkMatcher.cpp
+	)
+
+	target_include_directories(ReturnWorkTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/returnwork
+		${CMAKE_SOURCE_DIR}/plugins/filetransfer
+	)
+
+	target_compile_definitions(ReturnWorkTest PRIVATE SOURCE_DIR="${CMAKE_SOURCE_DIR}")
+
+	target_link_libraries(ReturnWorkTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		veyon-core
+	)
+
+	add_test(NAME ReturnWorkTest COMMAND ReturnWorkTest)
+
+	#
+	# HandInTest: files students hand in to the teacher
+	#
+	add_executable(HandInTest
+		HandInTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/classchat/HandIn.cpp
+	)
+
+	target_include_directories(HandInTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/classchat
+	)
+
+	target_link_libraries(HandInTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME HandInTest COMMAND HandInTest)
+
+	#
+	# LabSetupTest: files of the student setup exported by the configurator
+	#
+	add_executable(LabSetupTest
+		LabSetupTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/labsetup/StudentSetup.cpp
+	)
+
+	target_include_directories(LabSetupTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/labsetup
+	)
+
+	target_link_libraries(LabSetupTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		veyon-core
+	)
+
+	add_test(NAME LabSetupTest COMMAND LabSetupTest)
+
+	#
+	# InventoryTest: inventory of the student computers
+	#
+	add_executable(InventoryTest
+		InventoryTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/inventory/SystemInventory.cpp
+	)
+
+	target_include_directories(InventoryTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/inventory
+	)
+
+	target_link_libraries(InventoryTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		Qt${QT_MAJOR_VERSION}::Network
+		veyon-core
+	)
+
+	add_test(NAME InventoryTest COMMAND InventoryTest)
+
+	#
+	# FeatureMessageLimitsTest: payloads of the Tafat plugins fit into feature messages
+	#
+	add_executable(FeatureMessageLimitsTest
+		FeatureMessageLimitsTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol/AppHistory.cpp
+		${CMAKE_SOURCE_DIR}/plugins/classchat/ChatLog.cpp
+		${CMAKE_SOURCE_DIR}/plugins/inventory/SystemInventory.cpp
+	)
+
+	target_include_directories(FeatureMessageLimitsTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/appcontrol
+		${CMAKE_SOURCE_DIR}/plugins/classchat
+		${CMAKE_SOURCE_DIR}/plugins/inventory
+	)
+
+	target_link_libraries(FeatureMessageLimitsTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+		Qt${QT_MAJOR_VERSION}::Network
+		veyon-core
+	)
+
+	add_test(NAME FeatureMessageLimitsTest COMMAND FeatureMessageLimitsTest)
+
 endif()

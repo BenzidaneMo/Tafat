@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/fonts">
+    <file alias="NotoSansTifinagh-Regular.ttf">fonts/NotoSansTifinagh-Regular.ttf</file>
+  </qresource>
+</RCC>

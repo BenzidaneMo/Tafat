@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tafat Master icon (16-32 px): the T giving light, on a teal tile. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="light" gradientUnits="userSpaceOnUse" x1="0" y1="92" x2="0" y2="232">
+      <stop offset="0" stop-color="#f6bf3f"/>
+      <stop offset="1" stop-color="#f26b2d"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="256" height="256" rx="56" fill="#13705f"/>
+  <g stroke="#f6bf3f" stroke-width="22" stroke-linecap="round">
+    <line x1="128" y1="70" x2="128" y2="30"/>
+    <line x1="72" y1="78" x2="50" y2="44"/>
+    <line x1="184" y1="78" x2="206" y2="44"/>
+  </g>
+  <rect x="40" y="92" width="176" height="52" rx="26" fill="url(#light)"/>
+  <rect x="102" y="110" width="52" height="122" rx="26" fill="url(#light)"/>
+</svg>

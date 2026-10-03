@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/returnwork">
+    <file>return-work.png</file>
+  </qresource>
+</RCC>

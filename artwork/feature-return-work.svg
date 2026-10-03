@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Toolbar icon of the return work feature: a corrected sheet going back to the student. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M22 10 h56 l22 22 v86 h-78 z" fill="#fffdf9" stroke="#13705f" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M78 10 v22 h22" fill="none" stroke="#13705f" stroke-width="7" stroke-linejoin="round"/>
+  <g fill="#f6bf3f">
+    <rect x="36" y="44" width="40" height="7" rx="3.5"/>
+    <rect x="36" y="60" width="30" height="7" rx="3.5"/>
+  </g>
+  <path d="M38 84 l9 9 l17 -19" fill="none" stroke="#1f9d86" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="94" cy="94" r="28" fill="#fffdf9"/>
+  <path d="M112 94 a18 18 0 1 1 -10 -16" fill="none" stroke="#f26b2d" stroke-width="8" stroke-linecap="round"/>
+  <path d="M96 66 l10 12 l-14 6 z" fill="#f26b2d"/>
+</svg>

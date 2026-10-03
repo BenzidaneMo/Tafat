@@ -12,6 +12,7 @@ file(GLOB veyoncore_SOURCES
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/builddata.qrc.in ${CMAKE_CURRENT_BINARY_DIR}/builddata.qrc)
 set(core_RESOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/resources/core.qrc
+	${CMAKE_CURRENT_SOURCE_DIR}/resources/tafat.qrc
 	${CMAKE_CURRENT_BINARY_DIR}/builddata.qrc
 	)
 
@@ -67,11 +68,12 @@ if(VEYON_BUILD_WINDOWS)
 else()
 	if(NOT WITH_CORE_ONLY)
 		install(TARGETS veyon-core LIBRARY DESTINATION ${VEYON_LIB_DIR})
+		install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/resources/fonts/NotoSansTifinagh-OFL.txt DESTINATION ${VEYON_INSTALL_DATA_DIR})
 	endif()
 endif()
 
 if(VEYON_BUILD_WINDOWS)
-	target_compile_definitions(veyon-core PUBLIC _WIN32_WINNT=0x0602)
+	target_compile_definitions(veyon-core PUBLIC _WIN32_WINNT=${VEYON_WINDOWS_VERSION})
 endif()
 
 if(WITH_PCH)

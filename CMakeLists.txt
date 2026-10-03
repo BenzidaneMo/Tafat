@@ -17,6 +17,9 @@ option(WITH_UB_SANITIZER "Build with undefined behavior sanitizer" OFF)
 option(WITH_FUZZERS "Build LLVM fuzzer tests (implies WITH_TESTS=ON)" OFF)
 option(WITH_BUNDLED_LIBVNC "Build with bundled LibVNCServer/Client" OFF)
 option(WITH_WEBAPI "Build WebAPI plugin" ON)
+option(WITH_LDAP "Build LDAP/AD plugin" ON)
+option(WITH_WERROR "Treat compiler warnings as errors" ON)
+option(WITH_LEGACY_WINDOWS "Build for Windows 7 and 8.1 (requires Qt 5, WITH_QT6=OFF)" OFF)
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -103,6 +106,21 @@ if(WIN32)
 		set(VEYON_BUILD_WIN32 1)
 		set(VEYON_WINDOWS_ARCH "win32")
 	endif()
+	# oldest supported Windows version: Windows 8, or Windows 7 for legacy builds
+	if(WITH_LEGACY_WINDOWS)
+		set(VEYON_WINDOWS_VERSION 0x0601)
+		set(VEYON_WINDOWS_ARCH "${VEYON_WINDOWS_ARCH}-legacy")
+		set(VEYON_INSTALLER_MIN_WINDOWS 7)
+	else()
+		set(VEYON_WINDOWS_VERSION 0x0602)
+		# Qt 6 requires Windows 10
+		set(VEYON_INSTALLER_MIN_WINDOWS 10)
+	endif()
+	if(VEYON_BUILD_WIN64)
+		set(VEYON_INSTALLER_64BIT 1)
+	else()
+		set(VEYON_INSTALLER_64BIT 0)
+	endif()
 	add_definitions(-DUNICODE -D_UNICODE)
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-attributes")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-attributes")
@@ -147,6 +165,9 @@ endif()
 
 # find required Qt modules
 option(WITH_QT6 "Build for Qt 6" ON)
+if(WITH_LEGACY_WINDOWS AND WITH_QT6)
+	message(FATAL_ERROR "Qt 6 does not support Windows 7 and 8.1: configure legacy Windows builds with -DWITH_QT6=OFF")
+endif()
 if(WITH_QT6)
 	set(QT_MAJOR_VERSION 6)
 	find_package(Qt6 COMPONENTS
@@ -209,6 +230,12 @@ if(WITH_BUNDLED_LIBVNC)
 
 	target_compile_options(vncclient PRIVATE "-Wno-unused-function;-Wno-unused-variable;-Wno-deprecated-declarations")
 	target_compile_options(vncserver PRIVATE "-Wno-deprecated-declarations;-Wno-unused-function;-Wno-unused-variable;-Wno-unused-but-set-variable;-Wno-discarded-qualifiers;-Wno-unused-result;-Wno-restrict;-Wno-switch;-Wno-maybe-uninitialized")
+	if(VEYON_BUILD_WINDOWS)
+		# LibVNCServer uses the ANSI variants of the Windows API (e.g. GetComputerName)
+		# and builds with -Werror, which newer MinGW GCCs fail with on such warnings
+		target_compile_options(vncclient PRIVATE "-UUNICODE;-U_UNICODE;-Wno-error")
+		target_compile_options(vncserver PRIVATE "-UUNICODE;-U_UNICODE;-Wno-error")
+	endif()
 
 	target_include_directories(vncclient PUBLIC
 		${libvncserver_SOURCE_DIR}/src/common

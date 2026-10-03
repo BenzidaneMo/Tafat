@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configurator page "Lab setup": a USB stick that carries the student setup. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <g transform="rotate(-35 64 64)">
+    <rect x="46" y="10" width="36" height="26" rx="3" fill="#fffdf9" stroke="#7c6b5f" stroke-width="5"/>
+    <rect x="55" y="18" width="7" height="7" fill="#7c6b5f"/>
+    <rect x="66" y="18" width="7" height="7" fill="#7c6b5f"/>
+    <rect x="38" y="34" width="52" height="80" rx="10" fill="#3b271d"/>
+    <rect x="50" y="50" width="28" height="8" rx="4" fill="#f26b2d"/>
+  </g>
+  <circle cx="94" cy="94" r="26" fill="#1f9d86" stroke="#fffdf9" stroke-width="5"/>
+  <path d="M81 94 l9 9 l17 -18" fill="none" stroke="#fffdf9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

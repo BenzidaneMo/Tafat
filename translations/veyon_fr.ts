@@ -2025,7 +2025,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FileTransferPlugin</name>
     <message>
         <source>Distribute</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Distribuer</translation>
     </message>
     <message>
         <source>Click this button to distribute files from your computer to all computers.</source>
@@ -2033,7 +2033,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Collect</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Collecter</translation>
     </message>
     <message>
         <source>Click this button to collect files from all computers to your computer.</source>

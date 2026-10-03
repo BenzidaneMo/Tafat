@@ -1,3 +1,5 @@
+<p align="center"><img src="artwork/tafat-logo.svg" alt="Tafat logo" width="160"></p>
+
 # Tafat — ⵜⴰⴼⴰⵜ — تافات
 
 Tafat ("light" in Tamazight) is a free and open source classroom management
@@ -7,9 +9,9 @@ Tafat is based on [Veyon](https://veyon.io) 4.11.3 by Tobias Junghans /
 Veyon Solutions and keeps its full history so upstream fixes can be merged
 (see [UPSTREAM.md](UPSTREAM.md)).
 
-> **Status:** early development. The code is currently Veyon 4.11.3; rebranding,
-> Arabic/Tamazight translations and new features are in progress — see the
-> [roadmap](docs/ROADMAP.md).
+> **Status:** early development, not yet tested in a real lab. Based on Veyon
+> 4.11.3; Arabic/Tamazight translations and more features are in progress —
+> see the [roadmap](docs/ROADMAP.md).
 
 ## Features
 
@@ -26,18 +28,41 @@ Inherited from Veyon:
   * Teaching material: distribute and collect documents, images and videos
   * Administration: power on/off and reboot computers remotely
 
-Planned (see [roadmap](docs/ROADMAP.md)): application and website blocking,
-quizzes and surveys, student register, hand raising and chat, and more.
+Added by Tafat:
+
+  * Block apps: block listed programs or allow only the programs of the lesson,
+    optionally also USB sticks and printing; see the open applications of each
+    computer, the ones used before, and close them
+  * Block websites: block listed sites or allow only some, in Chrome, Edge,
+    Brave, Chromium and Firefox, optionally block the internet for all programs
+  * Quiz: quizzes and polls with live results, scores and CSV export
+  * Register: attendance with student names on the computers (also with a
+    shared account), class list import and absent students
+  * Hands & chat: students raise their hands, chat with the teacher and hand in
+    their work
+  * Inventory: Windows version, processor, memory, disk, addresses and installed
+    version of every computer, with CSV export
+  * Lab setup: export a folder (e.g. on a USB stick) with the teacher's key,
+    the settings and a script that installs the right version on each student
+    computer
+  * Return work: give each student back their own corrected files
+
+More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:
+[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). Teacher guide:
+[français](docs/guide-enseignant.md), [العربية](docs/guide-enseignant-ar.md).
 
 ## Languages
 
 Arabic, French, Tamazight (Latin and Tifinagh scripts) and English are the
 target languages for the user interface.
 
+Tamazight in Tifinagh script uses the bundled Noto Sans Tifinagh font
+(SIL Open Font License 1.1, see `core/resources/fonts/NotoSansTifinagh-OFL.txt`).
+
 ## Platforms
 
-  * Windows 10/11 (64-bit)
-  * Windows 7/8.1/10 32-bit and Windows 7/8.1 64-bit (legacy build, planned)
+  * Windows 10/11, 32-bit and 64-bit
+  * Windows 7/8.1, 32-bit and 64-bit (legacy build, in progress)
   * Linux
 
 ## Building

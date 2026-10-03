@@ -107,7 +107,12 @@ if(VEYON_BUILD_WIN64)
 	target_compile_definitions(builtin-ultravnc-server PRIVATE _X64)
 endif()
 
-qt6_disable_unicode_defines(builtin-ultravnc-server)
+if(COMMAND qt6_disable_unicode_defines)
+	qt6_disable_unicode_defines(builtin-ultravnc-server)
+else()
+	# Qt 5 (legacy Windows 7/8.1 builds) has no helper for this
+	target_compile_options(builtin-ultravnc-server PRIVATE -UUNICODE -U_UNICODE)
+endif()
 
 set(ULTRAVNC_COMPILER_FLAGS "-Wno-comments -Wno-attributes -Wno-write-strings -Wno-parentheses -Wno-misleading-indentation -Wno-unused-result -Wno-unused-label -Wno-unknown-pragmas -Wno-unused-variable -Wno-unused-value -Wno-unused-but-set-variable -Wno-deprecated-declarations -Wno-format-zero-length -Wno-sign-compare -Wno-int-to-pointer-cast -fexceptions")
 

@@ -21,3 +21,9 @@ jobs:
           submodules: recursive
       - run: git config --global --add safe.directory $GITHUB_WORKSPACE
       - run: .ci/linux.${{matrix.dist}}/script.sh $GITHUB_WORKSPACE /tmp
+
+  check-branding:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: tools/check-branding.sh

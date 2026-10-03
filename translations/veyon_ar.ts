@@ -310,7 +310,7 @@ If you&apos;re interested in translating Veyon into your local or another langua
     <name>AuthKeysConfigurationPage</name>
     <message>
         <source>Authentication keys</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مفاتيح التوثيق</translation>
     </message>
     <message>
         <source>Introduction</source>
@@ -1019,55 +1019,55 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>ComputerControlListModel</name>
     <message>
         <source>Name: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الاسم: %1</translation>
     </message>
     <message>
         <source>Location: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">القاعة: %1</translation>
     </message>
     <message>
         <source>Active features: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الميزات المفعّلة: %1</translation>
     </message>
     <message>
         <source>[no user]</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">[لا يوجد مستخدم]</translation>
     </message>
     <message>
         <source>Online and connected</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">متصل</translation>
     </message>
     <message>
         <source>Establishing connection</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">جارٍ الاتصال</translation>
     </message>
     <message>
         <source>Computer offline or switched off</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الحاسوب غير متصل أو مطفأ</translation>
     </message>
     <message>
         <source>Veyon Server unreachable or not running</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذر الوصول إلى خادم Veyon أو أنه لا يعمل</translation>
     </message>
     <message>
         <source>Authentication failed or access denied</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فشل التوثيق أو تم رفض الوصول</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">غير متصل</translation>
     </message>
     <message>
         <source>No user logged on</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لم يسجّل أي مستخدم الدخول</translation>
     </message>
     <message>
         <source>Logged on user: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المستخدم المسجّل: %1</translation>
     </message>
     <message>
         <source>Hostname: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">اسم المضيف: %1</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -1075,15 +1075,15 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>IP address: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عنوان IP: %1</translation>
     </message>
     <message>
         <source>Hostname could not be resolved</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذر التعرف على اسم المضيف</translation>
     </message>
     <message>
         <source>No features active</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لا توجد ميزات مفعّلة</translation>
     </message>
 </context>
 <context>
@@ -1094,7 +1094,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; attempted to access this computer but could not authenticate successfully.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">حاول المستخدم "%1" من الجهاز "%2" الوصول إلى هذا الحاسوب لكن التوثيق فشل.</translation>
     </message>
     <message>
         <source>Remote access</source>
@@ -1102,38 +1102,38 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; is now accessing this computer.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المستخدم "%1" من الجهاز "%2" متصل الآن بهذا الحاسوب.</translation>
     </message>
     <message>
         <source>Access control error</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خطأ في التحكم في الوصول</translation>
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; attempted to access this computer but has been blocked due to access control settings.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">حاول المستخدم "%1" من الجهاز "%2" الوصول إلى هذا الحاسوب لكنه مُنع بسبب إعدادات التحكم في الوصول.</translation>
     </message>
     <message>
         <source>Veyon Service %1 at %2:%3</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خدمة Veyon %1 على %2:%3</translation>
     </message>
     <message>
         <source>Active connections:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الاتصالات النشطة:</translation>
     </message>
 </context>
 <context>
     <name>ComputerManager</name>
     <message>
         <source>User</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المستخدم</translation>
     </message>
     <message>
         <source>Logged in since</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مسجّل الدخول منذ</translation>
     </message>
     <message>
         <source>Missing network object directory plugin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إضافة دليل كائنات الشبكة غير موجودة</translation>
     </message>
     <message>
         <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
@@ -1141,19 +1141,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Computer name;Hostname;User</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">اسم الحاسوب;اسم المضيف;المستخدم</translation>
     </message>
     <message>
         <source>%1 days</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">%1 أيام</translation>
     </message>
     <message>
         <source>1 day</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يوم واحد</translation>
     </message>
     <message>
         <source>Location detection failed</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فشل تحديد القاعة</translation>
     </message>
     <message>
         <source>The location of this computer could not be determined. This indicates a problem with the system configuration. No locations and computers will be displayed in the &quot;Locations &amp; computers&quot; panel.</source>
@@ -1168,31 +1168,31 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>ComputerSelectPanel</name>
     <message>
         <source>Search computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">البحث عن الحواسيب</translation>
     </message>
     <message>
         <source>Add location</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إضافة قاعة</translation>
     </message>
     <message>
         <source>Save computer/user list</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">حفظ قائمة الحواسيب/المستخدمين</translation>
     </message>
     <message>
         <source>Select output filename</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">اختيار اسم ملف الإخراج</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ملفات CSV (*.csv)</translation>
     </message>
     <message>
         <source>File error</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خطأ في الملف</translation>
     </message>
     <message>
         <source>Could not write the computer and users list to %1! Please check the file access permissions.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذرت كتابة قائمة الحواسيب والمستخدمين في %1! يرجى التحقق من صلاحيات الوصول إلى الملف.</translation>
     </message>
 </context>
 <context>
@@ -1351,19 +1351,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>DemoFeaturePlugin</name>
     <message>
         <source>Demo</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض توضيحي</translation>
     </message>
     <message>
         <source>Stop demo</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إيقاف العرض</translation>
     </message>
     <message>
         <source>Share your screen or allow a user to share his screen with other users.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مشاركة شاشتك أو السماح لتلميذ بمشاركة شاشته مع الآخرين.</translation>
     </message>
     <message>
         <source>Full screen demo</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض بملء الشاشة</translation>
     </message>
     <message>
         <source>Window demo</source>
@@ -1371,51 +1371,51 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Share your own screen in fullscreen mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مشاركة شاشتك بملء الشاشة</translation>
     </message>
     <message>
         <source>In this mode your screen is being displayed in full screen mode on all computers while the input devices of the users are locked.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">في هذا الوضع تُعرض شاشتك بملء الشاشة على جميع الحواسيب مع قفل أجهزة الإدخال لدى التلاميذ.</translation>
     </message>
     <message>
         <source>Share your own screen in a window</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مشاركة شاشتك في نافذة</translation>
     </message>
     <message>
         <source>In this mode your screen being displayed in a window on all computers. The users are able to switch to other windows as needed.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">في هذا الوضع تُعرض شاشتك في نافذة على جميع الحواسيب. يمكن للتلاميذ الانتقال إلى نوافذ أخرى عند الحاجة.</translation>
     </message>
     <message>
         <source>Share selected user&apos;s screen in fullscreen mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مشاركة شاشة التلميذ المحدد بملء الشاشة</translation>
     </message>
     <message>
         <source>In this mode the screen of the selected user is being displayed in full screen mode on all computers while the input devices of the users are locked.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">في هذا الوضع تُعرض شاشة التلميذ المحدد بملء الشاشة على جميع الحواسيب مع قفل أجهزة الإدخال لدى التلاميذ.</translation>
     </message>
     <message>
         <source>Share selected user&apos;s screen in a window</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مشاركة شاشة التلميذ المحدد في نافذة</translation>
     </message>
     <message>
         <source>In this mode the screen of the selected user being displayed in a window on all computers. The users are able to switch to other windows as needed.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">في هذا الوضع تُعرض شاشة التلميذ المحدد في نافذة على جميع الحواسيب. يمكن للتلاميذ الانتقال إلى نوافذ أخرى عند الحاجة.</translation>
     </message>
     <message>
         <source>Please select a user screen to share.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى اختيار شاشة تلميذ لمشاركتها.</translation>
     </message>
     <message>
         <source>Please select only one user screen to share.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى اختيار شاشة تلميذ واحد فقط لمشاركتها.</translation>
     </message>
     <message>
         <source>All screens</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">جميع الشاشات</translation>
     </message>
     <message>
         <source>Give a demonstration by screen broadcasting</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تقديم عرض توضيحي ببث الشاشة</translation>
     </message>
 </context>
 <context>
@@ -1496,39 +1496,39 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>DesktopServicesFeaturePlugin</name>
     <message>
         <source>Start application</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل تطبيق</translation>
     </message>
     <message>
         <source>Click this button to start an application on all computers.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">انقر هذا الزر لتشغيل تطبيق على جميع الحواسيب.</translation>
     </message>
     <message>
         <source>Open website</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فتح موقع</translation>
     </message>
     <message>
         <source>Click this button to open a website on all computers.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">انقر هذا الزر لفتح موقع على جميع الحواسيب.</translation>
     </message>
     <message>
         <source>Start application &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل التطبيق "%1"</translation>
     </message>
     <message>
         <source>Custom application</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تطبيق مخصص</translation>
     </message>
     <message>
         <source>Open website &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فتح الموقع "%1"</translation>
     </message>
     <message>
         <source>Custom website</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">موقع مخصص</translation>
     </message>
     <message>
         <source>Start apps and open websites in user sessions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل التطبيقات وفتح المواقع في جلسات المستخدمين</translation>
     </message>
 </context>
 <context>
@@ -1737,35 +1737,35 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FileCollectDialog</name>
     <message>
         <source>File transfer</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">نقل الملفات</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الإعدادات</translation>
     </message>
     <message>
         <source>Subfolder handling</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">معالجة المجلدات الفرعية</translation>
     </message>
     <message>
         <source>*.* or *.docx;*.pdf (leave empty for all files)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">*.* أو *.docx;*.pdf (اتركه فارغًا لكل الملفات)</translation>
     </message>
     <message>
         <source>File pattern</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">نمط الملفات</translation>
     </message>
     <message>
         <source>Local destination directory</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المجلد المحلي للوجهة</translation>
     </message>
     <message>
         <source>Relative (Documents/) or absolute (/tmp/ or C:\TMP) or empty for configured directory</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">نسبي (Documents/) أو مطلق (/tmp/ أو C:\TMP) أو فارغ للمجلد المحدد في الإعدادات</translation>
     </message>
     <message>
         <source>Source directory on remote computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المجلد المصدر على حواسيب التلاميذ</translation>
     </message>
     <message>
         <source>Default</source>
@@ -1773,23 +1773,23 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Files in source directory only</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الملفات في المجلد المصدر فقط</translation>
     </message>
     <message>
         <source>Files in source directory and subdirectories</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الملفات في المجلد المصدر ومجلداته الفرعية</translation>
     </message>
     <message>
         <source>Collected files</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الملفات المجمّعة</translation>
     </message>
     <message>
         <source>Overall progress</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">التقدم الإجمالي</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">بدء</translation>
     </message>
     <message>
         <source>Select destination directory</source>
@@ -1797,23 +1797,23 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Open output directory</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فتح مجلد الإخراج</translation>
     </message>
     <message>
         <source>Enter collection name</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أدخل اسم المجموعة</translation>
     </message>
     <message>
         <source>Please enter a name for this file collection:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى إدخال اسم لمجموعة الملفات هذه:</translation>
     </message>
     <message>
         <source>Output directory creation failed</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فشل إنشاء مجلد الإخراج</translation>
     </message>
     <message>
         <source>The output directory &quot;%1&quot; does not exist and could not be created. Please check the configuration and the file permissions for the configured destination directory.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مجلد الإخراج "%1" غير موجود وتعذر إنشاؤه. يرجى التحقق من الإعدادات ومن صلاحيات الملفات لمجلد الوجهة المحدد.</translation>
     </message>
 </context>
 <context>
@@ -1977,7 +1977,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FileTransferDialog</name>
     <message>
         <source>File transfer</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">نقل الملفات</translation>
     </message>
     <message>
         <source>Options</source>
@@ -1985,98 +1985,98 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Destination directory on remote computers:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مجلد الوجهة على حواسيب التلاميذ:</translation>
     </message>
     <message>
         <source>Relative (Desktop/) or absolute (/tmp/ or C:\TMP) or empty for configured directory</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">نسبي (Desktop/) أو مطلق (/tmp/ أو C:\TMP) أو فارغ للمجلد المحدد في الإعدادات</translation>
     </message>
     <message>
         <source>Overwrite existing files</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استبدال الملفات الموجودة</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">النقل فقط</translation>
     </message>
     <message>
         <source>Transfer and open file(s) with associated program</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">النقل وفتح الملفات بالبرنامج المرتبط بها</translation>
     </message>
     <message>
         <source>Transfer and open destination folder</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">النقل وفتح مجلد الوجهة</translation>
     </message>
     <message>
         <source>Files</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الملفات</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">بدء</translation>
     </message>
     <message>
         <source>File transfer error</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خطأ في نقل الملفات</translation>
     </message>
 </context>
 <context>
     <name>FileTransferPlugin</name>
     <message>
         <source>Distribute</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">توزيع</translation>
     </message>
     <message>
         <source>Click this button to distribute files from your computer to all computers.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">انقر هذا الزر لتوزيع ملفات من حاسوبك على جميع الحواسيب.</translation>
     </message>
     <message>
         <source>Collect</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">جمع</translation>
     </message>
     <message>
         <source>Click this button to collect files from all computers to your computer.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">انقر هذا الزر لجمع الملفات من جميع الحواسيب إلى حاسوبك.</translation>
     </message>
     <message>
         <source>Select one or more files to transfer</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">اختر ملفًا أو أكثر لنقله</translation>
     </message>
     <message>
         <source>File transfer</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">نقل الملفات</translation>
     </message>
     <message>
         <source>Received file %1.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تم استلام الملف %1.</translation>
     </message>
     <message>
         <source>The file %1 is to be collected, but is still open in an application.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">سيتم جمع الملف %1، لكنه ما زال مفتوحًا في أحد التطبيقات.</translation>
     </message>
     <message>
         <source>The file %1 is to be collected, but is still open in the application &lt;b&gt;%2&lt;/b&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">سيتم جمع الملف %1، لكنه ما زال مفتوحًا في التطبيق &lt;b&gt;%2&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>Please save your changes and close the program so that the transfer can be completed.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى حفظ تغييراتك وإغلاق البرنامج حتى يكتمل النقل.</translation>
     </message>
     <message>
         <source>Are you sure you want to skip transferring the file %1?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">هل أنت متأكد من أنك تريد تخطي نقل الملف %1؟</translation>
     </message>
     <message>
         <source>Could not receive file %1 as it already exists.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذر استلام الملف %1 لأنه موجود مسبقًا.</translation>
     </message>
     <message>
         <source>Could not receive file %1 as it could not be opened for writing!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تعذر استلام الملف %1 لأنه تعذر فتحه للكتابة!</translation>
     </message>
     <message>
         <source>Transfer files between computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">نقل الملفات بين الحواسيب</translation>
     </message>
 </context>
 <context>
@@ -2908,9 +2908,9 @@ Make sure that the names of the keys belonging to each other are identical on al
         <source>%1 %2 have been queried successfully:
 
 %3</source>
-        <translation>تم الاستعلام عن 1% 2% بنجاح:
+        <translation>تم الاستعلام عن %1 %2 بنجاح:
 
-3%</translation>
+%3</translation>
     </message>
     <message>
         <source>LDAP filter test failed</source>
@@ -3062,7 +3062,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>MainWindow</name>
     <message>
         <source>Veyon Configurator</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مُهيِّئ Veyon</translation>
     </message>
     <message>
         <source>General</source>
@@ -3070,15 +3070,15 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الخدمة</translation>
     </message>
     <message>
         <source>Master</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الأستاذ</translation>
     </message>
     <message>
         <source>Access control</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">التحكم في الوصول</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -3090,7 +3090,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">&amp;عرض</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -3102,7 +3102,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>&amp;Save settings to file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">&amp;حفظ الإعدادات في ملف</translation>
     </message>
     <message>
         <source>Save settings to file</source>
@@ -3130,23 +3130,23 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Reset configuration</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إعادة تعيين الإعدادات</translation>
     </message>
     <message>
         <source>&amp;Standard</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">&amp;قياسي</translation>
     </message>
     <message>
         <source>&amp;Advanced</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">&amp;متقدم</translation>
     </message>
     <message>
         <source>Adjust size of computer icons automatically</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ضبط حجم أيقونات الحواسيب تلقائيًا</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تلقائي</translation>
     </message>
     <message>
         <source>About</source>
@@ -3154,39 +3154,39 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Search users and computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">البحث عن المستخدمين والحواسيب</translation>
     </message>
     <message>
         <source>Align computers to grid</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">محاذاة الحواسيب على الشبكة</translation>
     </message>
     <message>
         <source>Only show powered on computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إظهار الحواسيب المشغّلة فقط</translation>
     </message>
     <message>
         <source>Locations &amp;&amp; computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">القاعات والحواسيب</translation>
     </message>
     <message>
         <source>Screenshots</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لقطات الشاشة</translation>
     </message>
     <message>
         <source>Slideshow</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عرض الشرائح</translation>
     </message>
     <message>
         <source>Spotlight</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تسليط الضوء</translation>
     </message>
     <message>
         <source>Only show computers with logged on users</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إظهار الحواسيب التي سجّل فيها مستخدمون الدخول فقط</translation>
     </message>
     <message>
         <source>Veyon Configurator %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مُهيِّئ Veyon %1</translation>
     </message>
     <message>
         <source>Load settings from file</source>
@@ -3194,11 +3194,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>JSON files (*.json)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ملفات JSON (*.json)</translation>
     </message>
     <message>
         <source>Do you really want to reset the local configuration and revert all settings to their defaults?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">هل تريد حقًا إعادة تعيين الإعدادات المحلية وإرجاع كل الإعدادات إلى قيمها الافتراضية؟</translation>
     </message>
     <message>
         <source>Unsaved settings</source>
@@ -3210,7 +3210,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Insufficient privileges</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">صلاحيات غير كافية</translation>
     </message>
     <message>
         <source>Could not start with administrative privileges. Please make sure a sudo-like program is installed for your desktop environment! The program will be run with normal user privileges.</source>
@@ -3230,7 +3230,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>No authentication key files were found or your current ones are outdated. Please create new key files using Veyon Configurator. Alternatively set up logon authentication using Veyon Configurator. Otherwise you won&apos;t be able to access computers using Veyon.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لم يُعثر على ملفات مفاتيح التوثيق أو أن الملفات الحالية قديمة. يرجى إنشاء ملفات مفاتيح جديدة باستعمال مُهيِّئ Veyon، أو إعداد التوثيق بتسجيل الدخول في مُهيِّئ Veyon. وإلا فلن تتمكن من الوصول إلى الحواسيب باستعمال Veyon.</translation>
     </message>
     <message>
         <source>Access denied</source>
@@ -3238,29 +3238,31 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>According to the local configuration you&apos;re not allowed to access computers in the network. Please log in with a different account or let your system administrator check the local configuration.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">حسب الإعدادات المحلية، لا يُسمح لك بالوصول إلى الحواسيب في الشبكة. يرجى تسجيل الدخول بحساب آخر أو الطلب من مسؤول النظام التحقق من الإعدادات المحلية.</translation>
     </message>
     <message>
         <source>Feature active</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الميزة مفعّلة</translation>
     </message>
     <message>
         <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الميزة "%1" ما زالت مفعّلة. يرجى إيقافها قبل إغلاق Veyon.</translation>
     </message>
     <message>
         <source>Use custom computer arrangement.
 
 Press and hold to load arrangement from a file or save current arrangement to a file.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استعمال ترتيب مخصص للحواسيب.
+
+اضغط مطوّلاً لتحميل ترتيب من ملف أو حفظ الترتيب الحالي في ملف.</translation>
     </message>
     <message>
         <source>Load computer positions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تحميل مواضع الحواسيب</translation>
     </message>
     <message>
         <source>Save computer positions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">حفظ مواضع الحواسيب</translation>
     </message>
 </context>
 <context>
@@ -3562,11 +3564,11 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <name>MonitoringMode</name>
     <message>
         <source>Monitoring</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المراقبة</translation>
     </message>
     <message>
         <source>This mode allows you to monitor all computers at one or more locations.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يسمح لك هذا الوضع بمراقبة جميع الحواسيب في قاعة واحدة أو أكثر.</translation>
     </message>
     <message>
         <source>Query application version of the server</source>
@@ -3586,19 +3588,19 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Identification request</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">طلب تعريف</translation>
     </message>
     <message>
         <source>Please enter your name:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى إدخال اسمك:</translation>
     </message>
     <message>
         <source>First name + last name</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الاسم + اللقب</translation>
     </message>
     <message>
         <source>Builtin monitoring mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">وضع المراقبة المدمج</translation>
     </message>
 </context>
 <context>
@@ -3612,27 +3614,27 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <name>OpenWebsiteDialog</name>
     <message>
         <source>Open website</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فتح موقع</translation>
     </message>
     <message>
         <source>e.g. Veyon</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مثلاً: Veyon</translation>
     </message>
     <message>
         <source>Remember and add to website menu</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تذكّر وإضافة إلى قائمة المواقع</translation>
     </message>
     <message>
         <source>e.g. www.veyon.io</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مثلاً: www.veyon.io</translation>
     </message>
     <message>
         <source>Please enter the URL of the website to open:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى إدخال عنوان الموقع المراد فتحه:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الاسم:</translation>
     </message>
 </context>
 <context>
@@ -3708,7 +3710,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <name>PowerControlFeaturePlugin</name>
     <message>
         <source>Power on a computer via Wake-on-LAN (WOL)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل حاسوب عبر Wake-on-LAN (WOL)</translation>
     </message>
     <message>
         <source>Power on</source>
@@ -3732,27 +3734,27 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Click this button to power down all computers. This way you do not have to power down each computer by hand.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">انقر هذا الزر لإطفاء جميع الحواسيب، فلا تحتاج إلى إطفاء كل حاسوب يدويًا.</translation>
     </message>
     <message>
         <source>Power down now</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الإطفاء الآن</translation>
     </message>
     <message>
         <source>Install updates and power down</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تثبيت التحديثات ثم الإطفاء</translation>
     </message>
     <message>
         <source>Power down after user confirmation</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الإطفاء بعد تأكيد المستخدم</translation>
     </message>
     <message>
         <source>Power down after timeout</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الإطفاء بعد مهلة</translation>
     </message>
     <message>
         <source>MAC ADDRESS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عنوان MAC</translation>
     </message>
     <message>
         <source>This command broadcasts a Wake-on-LAN (WOL) packet to the network in order to power on the computer with the given MAC address.</source>
@@ -3764,7 +3766,7 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Do you really want to reboot &lt;b&gt;ALL&lt;/b&gt; computers?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">هل تريد حقًا إعادة تشغيل &lt;b&gt;جميع&lt;/b&gt; الحواسيب؟</translation>
     </message>
     <message>
         <source>Do you really want to reboot the selected computers?</source>
@@ -3776,25 +3778,27 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     </message>
     <message>
         <source>Do you really want to power down &lt;b&gt;ALL&lt;/b&gt; computers?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">هل تريد حقًا إطفاء &lt;b&gt;جميع&lt;/b&gt; الحواسيب؟</translation>
     </message>
     <message>
         <source>Do you really want to power down the selected computers?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">هل تريد حقًا إطفاء الحواسيب المحددة؟</translation>
     </message>
     <message>
         <source>Invalid MAC address specified!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">عنوان MAC المحدد غير صالح!</translation>
     </message>
     <message>
         <source>The computer was remotely requested to power down. Do you want to power down the computer now?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">طُلب عن بعد إطفاء الحاسوب. هل تريد إطفاء الحاسوب الآن؟</translation>
     </message>
     <message>
         <source>The computer will be powered down in %1 minutes, %2 seconds.
 
 Please save your work and close all programs.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">سيتم إطفاء الحاسوب بعد %1 دقيقة و%2 ثانية.
+
+يرجى حفظ عملك وإغلاق جميع البرامج.</translation>
     </message>
     <message>
         <source>Power on/down or reboot a computer</source>
@@ -3802,7 +3806,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Commands for controlling power status of computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أوامر التحكم في تشغيل الحواسيب وإطفائها</translation>
     </message>
 </context>
 <context>
@@ -3832,7 +3836,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Open a remote view for a computer without interaction.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">فتح عرض عن بعد لحاسوب دون تفاعل.</translation>
     </message>
     <message>
         <source>Remote control</source>
@@ -3844,7 +3848,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Exchange clipboard contents</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تبادل محتوى الحافظة</translation>
     </message>
     <message>
         <source>Show help about command</source>
@@ -3856,7 +3860,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>No computer has been selected so you can enter a hostname or IP address of a computer for manual access:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لم يتم تحديد أي حاسوب، يمكنك إدخال اسم أو عنوان IP لحاسوب للوصول إليه يدويًا:</translation>
     </message>
     <message>
         <source>Remote view or control a computer</source>
@@ -3886,7 +3890,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Select screen</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">اختيار الشاشة</translation>
     </message>
     <message>
         <source>Send shortcut</source>
@@ -3906,7 +3910,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">خروج</translation>
     </message>
     <message>
         <source>Ctrl+Alt+Del</source>
@@ -3946,18 +3950,18 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">جارٍ الاتصال...</translation>
     </message>
     <message>
         <source>All screens</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">كل الشاشات</translation>
     </message>
 </context>
 <context>
     <name>ScreenLockFeaturePlugin</name>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">قفل</translation>
     </message>
     <message>
         <source>Unlock</source>
@@ -3965,23 +3969,23 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>To reclaim all user&apos;s full attention you can lock their computers using this button. In this mode all input devices are locked and the screens are blacked.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لاستعادة انتباه جميع التلاميذ يمكنك قفل حواسيبهم بهذا الزر. في هذا الوضع تُقفل جميع أجهزة الإدخال وتُسوَّد الشاشات.</translation>
     </message>
     <message>
         <source>Lock input devices</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">قفل أجهزة الإدخال</translation>
     </message>
     <message>
         <source>Unlock input devices</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إلغاء قفل أجهزة الإدخال</translation>
     </message>
     <message>
         <source>To reclaim all user&apos;s full attention you can lock their computers using this button. In this mode all input devices are locked while the desktop is still visible.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لاستعادة انتباه جميع التلاميذ يمكنك قفل حواسيبهم بهذا الزر. في هذا الوضع تُقفل جميع أجهزة الإدخال بينما يبقى سطح المكتب ظاهرًا.</translation>
     </message>
     <message>
         <source>Lock screen and input devices of a computer</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">قفل شاشة الحاسوب وأجهزة الإدخال</translation>
     </message>
 </context>
 <context>
@@ -4011,11 +4015,11 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Use this function to take a screenshot of selected computers.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استخدم هذه الوظيفة لأخذ لقطة شاشة للحواسيب المحددة.</translation>
     </message>
     <message>
         <source>Screenshots taken</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تم أخذ لقطات الشاشة</translation>
     </message>
     <message>
         <source>Screenshot of %1 computer have been taken successfully.</source>
@@ -4023,7 +4027,7 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Take screenshots of computers and save them locally.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أخذ لقطات شاشة للحواسيب وحفظها محليًا.</translation>
     </message>
 </context>
 <context>
@@ -4069,31 +4073,31 @@ Please save your work and close all programs.</source>
     <name>ServerAccessControlManager</name>
     <message>
         <source>Requested authentication method not available</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">طريقة التوثيق المطلوبة غير متاحة</translation>
     </message>
     <message>
         <source>Access allowed by rule &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">سُمح بالوصول حسب القاعدة "%1"</translation>
     </message>
     <message>
         <source>Access denied by rule &quot;%1&quot;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">رُفض الوصول حسب القاعدة "%1"</translation>
     </message>
     <message>
         <source>No rule allowed access</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">لم تسمح أي قاعدة بالوصول</translation>
     </message>
     <message>
         <source>Accessing user not member of an authorized user group</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المستخدم الذي يحاول الوصول ليس عضوًا في مجموعة مسموح لها</translation>
     </message>
     <message>
         <source>User has denied access</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">رفض المستخدم الوصول</translation>
     </message>
     <message>
         <source>User confirmed access</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">وافق المستخدم على الوصول</translation>
     </message>
 </context>
 <context>
@@ -4357,69 +4361,69 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>SlideshowPanel</name>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">السابق</translation>
     </message>
     <message>
         <source>Start/pause</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">بدء/إيقاف مؤقت</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">التالي</translation>
     </message>
     <message>
         <source>Duration:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">المدة:</translation>
     </message>
     <message>
         <source>View in separate window</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">العرض في نافذة منفصلة</translation>
     </message>
     <message>
         <source>Veyon Master – Slideshow</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Veyon Master – عرض الشرائح</translation>
     </message>
 </context>
 <context>
     <name>SpotlightPanel</name>
     <message>
         <source>Add computers by clicking with the middle mouse button or clicking the first button below.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">أضف حواسيب بالنقر بزر الفأرة الأوسط أو بالنقر على الزر الأول أدناه.</translation>
     </message>
     <message>
         <source>Add selected computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إضافة الحواسيب المحددة</translation>
     </message>
     <message>
         <source>Remove selected computers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إزالة الحواسيب المحددة</translation>
     </message>
     <message>
         <source>Update computers in realtime</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تحديث الحواسيب مباشرة</translation>
     </message>
     <message>
         <source>Spotlight</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تسليط الضوء</translation>
     </message>
     <message>
         <source>Please select at least one computer to add.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى تحديد حاسوب واحد على الأقل لإضافته.</translation>
     </message>
     <message>
         <source>Please select at least one computer to remove.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى تحديد حاسوب واحد على الأقل لإزالته.</translation>
     </message>
 </context>
 <context>
     <name>StartAppDialog</name>
     <message>
         <source>Start application</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تشغيل تطبيق</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الاسم:</translation>
     </message>
     <message>
         <source>e.g. &quot;C:\Program Files\VideoLAN\VLC\vlc.exe&quot;</source>
@@ -4427,15 +4431,15 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Remember and add to application menu</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تذكّر وإضافة إلى قائمة التطبيقات</translation>
     </message>
     <message>
         <source>e.g. VLC</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">مثلاً: VLC</translation>
     </message>
     <message>
         <source>Please enter the applications to start on the selected computers. You can separate multiple applications by line.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">يرجى إدخال التطبيقات المراد تشغيلها على الحواسيب المحددة. يمكنك وضع كل تطبيق في سطر.</translation>
     </message>
 </context>
 <context>
@@ -4502,7 +4506,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Use this function to send a text message to all users e.g. to assign them new tasks.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">استخدم هذه الوظيفة لإرسال رسالة نصية إلى جميع التلاميذ، مثلاً لإعطائهم مهامًا جديدة.</translation>
     </message>
     <message>
         <source>Message from teacher</source>
@@ -4510,7 +4514,7 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Send a message to a user</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">إرسال رسالة إلى مستخدم</translation>
     </message>
 </context>
 <context>
@@ -4567,31 +4571,31 @@ Example: [^-]*-(PC[0-9]*)</source>
     <name>UserSessionControlPlugin</name>
     <message>
         <source>Log in</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تسجيل الدخول</translation>
     </message>
     <message>
         <source>Click this button to log in a specific user on all computers.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">انقر هذا الزر لتسجيل دخول مستخدم معيّن على جميع الحواسيب.</translation>
     </message>
     <message>
         <source>Log off</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تسجيل الخروج</translation>
     </message>
     <message>
         <source>Click this button to log off users from all computers.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">انقر هذا الزر لتسجيل خروج المستخدمين من جميع الحواسيب.</translation>
     </message>
     <message>
         <source>Confirm user logoff</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">تأكيد تسجيل خروج المستخدمين</translation>
     </message>
     <message>
         <source>Do you really want to log off &lt;b&gt;ALL&lt;/b&gt; users?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">هل تريد حقًا تسجيل خروج &lt;b&gt;جميع&lt;/b&gt; المستخدمين؟</translation>
     </message>
     <message>
         <source>Do you really want to log off the selected users?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">هل تريد حقًا تسجيل خروج المستخدمين المحددين؟</translation>
     </message>
     <message>
         <source>User session control</source>
@@ -4670,11 +4674,11 @@ Example: [^-]*-(PC[0-9]*)</source>
     </message>
     <message>
         <source>Screen %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">الشاشة %1</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">ضيف</translation>
     </message>
 </context>
 <context>

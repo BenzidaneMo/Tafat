@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tile icon shown while a student raises the hand. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <circle cx="64" cy="64" r="60" fill="#fde6d7"/>
+  <g fill="#f26b2d">
+    <rect x="34" y="44" width="13" height="44" rx="6.5"/>
+    <rect x="50" y="22" width="13" height="66" rx="6.5"/>
+    <rect x="66" y="18" width="13" height="70" rx="6.5"/>
+    <rect x="82" y="28" width="13" height="60" rx="6.5"/>
+    <path d="M34 76 h61 v10 a26 26 0 0 1 -26 26 h-9 a26 26 0 0 1 -26 -26 z"/>
+    <rect x="12" y="66" width="30" height="13" rx="6.5" transform="rotate(40 27 72)"/>
+  </g>
+</svg>

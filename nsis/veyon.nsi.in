@@ -1,12 +1,15 @@
-!define APP_NAME "Veyon"
-!define COMP_NAME "Veyon Solutions"
-!define WEB_SITE "https://veyon.io"
+!define APP_NAME "@BRANDING_PRODUCT_NAME@"
+!define COMP_NAME "@BRANDING_ORGANIZATION@"
+!define WEB_SITE "@BRANDING_WEBSITE@"
 !define VERSION "@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@.@VERSION_BUILD@"
-!define COPYRIGHT "2004-2026 Veyon Solutions / Tobias Junghans"
-!define DESCRIPTION "Veyon Installer"
+!define COPYRIGHT "2026 @BRANDING_PRODUCT_NAME@ contributors, 2004-2026 Veyon Solutions / Tobias Junghans"
+!define DESCRIPTION "${APP_NAME} Installer"
 !define LICENSE_TXT "COPYING"
-!define INSTALLER_NAME "veyon-${VERSION}-@VEYON_WINDOWS_ARCH@-setup.exe"
+!define INSTALLER_NAME "@BRANDING_PRODUCT_SLUG@-${VERSION}-@VEYON_WINDOWS_ARCH@-setup.exe"
 !define MAIN_APP_EXE "@BRANDING_PRODUCT_SLUG@-master.exe"
+!define MIN_WINDOWS "@VEYON_INSTALLER_MIN_WINDOWS@"
+!define IS_64BIT "@VEYON_INSTALLER_64BIT@"
+!define QT_MAJOR "@QT_MAJOR_VERSION@"
 !define INSTALL_TYPE "SetShellVarContext all"
 !define REG_ROOT "HKLM"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
@@ -31,7 +34,7 @@ OutFile "${INSTALLER_NAME}"
 BrandingText "${APP_NAME} ${VERSION}"
 XPStyle on
 InstallDirRegKey "${REG_ROOT}" "${REG_APP_PATH}" ""
-InstallDir "$PROGRAMFILES64\Veyon"
+InstallDir "$PROGRAMFILES64\${APP_NAME}"
 ShowInstDetails hide
 RequestExecutionLevel admin
 
@@ -40,6 +43,8 @@ RequestExecutionLevel admin
 !include "LogicLib.nsh"
 !include "MUI2.nsh"
 !include "FileFunc.nsh"
+!include "WinVer.nsh"
+!include "x64.nsh"
 
 !define MUI_ABORTWARNING
 !define MUI_UNABORTWARNING
@@ -68,10 +73,10 @@ RequestExecutionLevel admin
 !insertmacro MUI_PAGE_INSTFILES
 
 !define MUI_FINISHPAGE_RUN
-!define MUI_FINISHPAGE_RUN_TEXT "Run Veyon Configurator now"
+!define MUI_FINISHPAGE_RUN_TEXT "Run ${APP_NAME} Configurator now"
 !define MUI_FINISHPAGE_RUN_FUNCTION "RunConfigurator"
-!define MUI_FINISHPAGE_LINK "Support Veyon project with a donation"
-!define MUI_FINISHPAGE_LINK_LOCATION "https://www.paypal.com/cgi-bin/webscr?item_name=Donation+to+Veyon+-+OpenSource+classroom+management&cmd=_donations&business=donate%40veyon.io"
+!define MUI_FINISHPAGE_LINK "Visit the ${APP_NAME} website"
+!define MUI_FINISHPAGE_LINK_LOCATION "${WEB_SITE}"
 
 !insertmacro MUI_PAGE_FINISH
 
@@ -144,7 +149,7 @@ RequestExecutionLevel admin
 
 ######################################################################
 
-Section "Veyon Service" SEC_SERVICE
+Section "${APP_NAME} Service" SEC_SERVICE
 SectionIn RO
 ${INSTALL_TYPE}
 ClearErrors
@@ -169,6 +174,7 @@ File "@BRANDING_PRODUCT_SLUG@-worker.exe"
 File "*.dll"
 File "LICENSE.TXT"
 File "README.TXT"
+File "NotoSansTifinagh-OFL.TXT"
 # plugins
 SetOutPath "$INSTDIR\plugins"
 File "plugins/*.dll"
@@ -187,8 +193,11 @@ File "platforms/qwindows.dll"
 SetOutPath "$INSTDIR\styles"
 File "styles/*.dll"
 # Qt TLS backend
+!if ${QT_MAJOR} >= 6
+; TLS backends are plugins since Qt 6.2 (Qt 5 has OpenSSL support built in)
 SetOutPath "$INSTDIR\tls"
 File "tls/qopensslbackend.dll"
+!endif
 # configuration
 ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service register'
 ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Network/FirewallExceptionEnabled 1'
@@ -204,10 +213,27 @@ ${If} $R1 != ""
 	   MessageBox MB_OK|MB_ICONSTOP "Could not apply specified configuration file!"
   ${EndIf}
 ${EndIf}
+; /ImportPublicKey=<file> [/PublicKeyName=<name>, default "teacher"]: e.g. from
+; the student setup exported by the configurator ("Lab setup" page)
+${GetOptions} $R0 "/ImportPublicKey=" $R1
+${If} $R1 != ""
+  ${GetOptions} $R0 "/PublicKeyName=" $R2
+  ${If} $R2 == ""
+    StrCpy $R2 "teacher"
+  ${EndIf}
+  ; replace a key of the same name from a previous installation
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys delete "$R2/public"'
+  ClearErrors
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys import "$R2/public" "$R1"' $0
+  ${If} $0 != 0
+    MessageBox MB_OK|MB_ICONSTOP "Could not import the public key $R1!" /SD IDOK
+    SetErrorLevel 3
+  ${EndIf}
+${EndIf}
 ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service start'
 SectionEnd
 
-Section "Veyon Master" SEC_MASTER
+Section "${APP_NAME} Master" SEC_MASTER
 ${INSTALL_TYPE}
 SetOutPath "$INSTDIR"
 File "@BRANDING_PRODUCT_SLUG@-master.exe"
@@ -215,10 +241,10 @@ File "@BRANDING_PRODUCT_SLUG@-master.exe"
 ${GetParameters} $R0
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
-CreateDirectory "$SMPROGRAMS\Veyon"
-CreateShortCut "$SMPROGRAMS\Veyon\Veyon Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
+CreateDirectory "$SMPROGRAMS\${APP_NAME}"
+CreateShortCut "$SMPROGRAMS\${APP_NAME}\${APP_NAME} Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
 ${EndIf}
-CreateShortCut "$DESKTOP\Veyon Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
+CreateShortCut "$DESKTOP\${APP_NAME} Master.lnk" "$INSTDIR\${MAIN_APP_EXE}"
 SectionEnd
 
 Section "Interception driver" SEC_INTERCEPTION
@@ -251,6 +277,26 @@ ${If} $0 != "admin"
 	SetErrorLevel 740 ;ERROR_ELEVATION_REQUIRED
 	Quit
 ${EndIf}
+!if ${IS_64BIT} == 1
+${IfNot} ${RunningX64}
+	MessageBox mb_iconstop "This installer is for 64-bit Windows. Please use the 32-bit (win32) installer of ${APP_NAME} on this computer." /SD IDOK
+	SetErrorLevel 216 ;ERROR_EXE_MACHINE_TYPE_MISMATCH
+	Quit
+${EndIf}
+!endif
+!if ${MIN_WINDOWS} == 10
+${IfNot} ${AtLeastWin10}
+	MessageBox mb_iconstop "This version of ${APP_NAME} requires Windows 10 or newer. Please use the legacy installer (win32-legacy or win64-legacy) on Windows 7 and 8.1." /SD IDOK
+	SetErrorLevel 1150 ;ERROR_OLD_WIN_VERSION
+	Quit
+${EndIf}
+!else
+${IfNot} ${AtLeastWin7}
+	MessageBox mb_iconstop "${APP_NAME} requires Windows 7 or newer." /SD IDOK
+	SetErrorLevel 1150 ;ERROR_OLD_WIN_VERSION
+	Quit
+${EndIf}
+!endif
 FunctionEnd
 
 ######################################################################
@@ -262,15 +308,15 @@ WriteUninstaller "$INSTDIR\uninstall.exe"
 ${GetParameters} $R0
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
-CreateDirectory "$SMPROGRAMS\Veyon"
-CreateShortCut "$SMPROGRAMS\Veyon\Veyon Configurator.lnk" "$INSTDIR\@BRANDING_PRODUCT_SLUG@-configurator.exe"
-CreateShortCut "$SMPROGRAMS\Veyon\Uninstall Veyon.lnk" "$INSTDIR\uninstall.exe"
-WriteIniStr "$INSTDIR\Veyon website.url" "InternetShortcut" "URL" "${WEB_SITE}"
-CreateShortCut "$SMPROGRAMS\Veyon\Veyon Website.lnk" "$INSTDIR\Veyon website.url"
+CreateDirectory "$SMPROGRAMS\${APP_NAME}"
+CreateShortCut "$SMPROGRAMS\${APP_NAME}\${APP_NAME} Configurator.lnk" "$INSTDIR\@BRANDING_PRODUCT_SLUG@-configurator.exe"
+CreateShortCut "$SMPROGRAMS\${APP_NAME}\Uninstall ${APP_NAME}.lnk" "$INSTDIR\uninstall.exe"
+WriteIniStr "$INSTDIR\${APP_NAME} website.url" "InternetShortcut" "URL" "${WEB_SITE}"
+CreateShortCut "$SMPROGRAMS\${APP_NAME}\${APP_NAME} Website.lnk" "$INSTDIR\${APP_NAME} website.url"
 ${EndIf}
 
 WriteRegStr ${REG_ROOT} "${REG_APP_PATH}" "" "$INSTDIR\${MAIN_APP_EXE}"
-WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "DisplayName" "Veyon"
+WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "DisplayName" "${APP_NAME}"
 WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "UninstallString" "$INSTDIR\uninstall.exe"
 WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "DisplayIcon" "$INSTDIR\${MAIN_APP_EXE}"
 WriteRegStr ${REG_ROOT} "${UNINSTALL_PATH}"  "DisplayVersion" "${VERSION}"
@@ -311,13 +357,13 @@ RmDir /r "$INSTDIR\interception"
 
 RmDir "$INSTDIR"
 
-Delete "$SMPROGRAMS\Veyon\Veyon Master.lnk"
-Delete "$SMPROGRAMS\Veyon\Veyon Configurator.lnk"
-Delete "$SMPROGRAMS\Veyon\Uninstall Veyon.lnk"
-Delete "$SMPROGRAMS\Veyon\Veyon Website.lnk"
-RmDir "$SMPROGRAMS\Veyon"
+Delete "$SMPROGRAMS\${APP_NAME}\${APP_NAME} Master.lnk"
+Delete "$SMPROGRAMS\${APP_NAME}\${APP_NAME} Configurator.lnk"
+Delete "$SMPROGRAMS\${APP_NAME}\Uninstall ${APP_NAME}.lnk"
+Delete "$SMPROGRAMS\${APP_NAME}\${APP_NAME} Website.lnk"
+RmDir "$SMPROGRAMS\${APP_NAME}"
 
-Delete "$DESKTOP\Veyon Master.lnk"
+Delete "$DESKTOP\${APP_NAME} Master.lnk"
 
 DeleteRegKey ${REG_ROOT} "${REG_APP_PATH}"
 DeleteRegKey ${REG_ROOT} "${UNINSTALL_PATH}"
@@ -331,10 +377,10 @@ FunctionEnd
 
 ######################################################################
 
-LangString DESC_SEC_SERVICE ${LANG_ENGLISH} "Veyon service and common files required on all computers"
-LangString DESC_SEC_SERVICE ${LANG_GERMAN} "Veyon-Dienst und gemeinsame Dateien, die auf allen Computern benötigt werden"
-LangString DESC_SEC_MASTER ${LANG_ENGLISH} "Master application for monitoring and controlling Veyon client computers"
-LangString DESC_SEC_MASTER ${LANG_GERMAN} "Master-Applikation zum Beobachten und Steuern von Veyon-Client-Computern"
+LangString DESC_SEC_SERVICE ${LANG_ENGLISH} "${APP_NAME} service and common files required on all computers"
+LangString DESC_SEC_SERVICE ${LANG_GERMAN} "${APP_NAME}-Dienst und gemeinsame Dateien, die auf allen Computern benötigt werden"
+LangString DESC_SEC_MASTER ${LANG_ENGLISH} "Master application for monitoring and controlling ${APP_NAME} client computers"
+LangString DESC_SEC_MASTER ${LANG_GERMAN} "Master-Applikation zum Beobachten und Steuern von ${APP_NAME}-Client-Computern"
 LangString DESC_SEC_INTERCEPTION ${LANG_ENGLISH} "Special input device driver required for intercepting keyboard shortcuts such as Ctrl+Alt+Del in screen lock mode"
 LangString DESC_SEC_INTERCEPTION ${LANG_GERMAN} "Spezieller Eingabegerätetreiber, der zum Abfangen von Tastenkombinationen wie Strg+Alt+Entf im Bildschirmsperr-Modus benötigt wird"
 

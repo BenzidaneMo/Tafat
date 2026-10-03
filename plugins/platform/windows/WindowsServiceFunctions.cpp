@@ -25,11 +25,12 @@
 #include "WindowsServiceFunctions.h"
 #include "WindowsServiceControl.h"
 #include "WindowsServiceCore.h"
+#include "VeyonCore.h"
 
 
 QString WindowsServiceFunctions::veyonServiceName() const
 {
-	return QStringLiteral("VeyonService");
+	return VeyonCore::productName() + QStringLiteral("Service");
 }
 
 

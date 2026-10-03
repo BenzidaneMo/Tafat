@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tafat logo for dark backgrounds: a T giving light to three student laptops.
+     Colors from the Tafat theme (core/src/BrandTheme.h). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="light" gradientUnits="userSpaceOnUse" x1="0" y1="128" x2="0" y2="352">
+      <stop offset="0" stop-color="#f6bf3f"/>
+      <stop offset="1" stop-color="#f26b2d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rays above the T -->
+  <g stroke="#f6bf3f" stroke-width="18" stroke-linecap="round">
+    <line x1="256" y1="104" x2="256" y2="58"/>
+    <line x1="190" y1="112" x2="166" y2="74"/>
+    <line x1="322" y1="112" x2="346" y2="74"/>
+  </g>
+
+  <!-- rays falling on the side laptops -->
+  <g stroke="#f6bf3f" stroke-width="16" stroke-linecap="round">
+    <line x1="176" y1="214" x2="138" y2="262"/>
+    <line x1="124" y1="200" x2="72" y2="242"/>
+    <line x1="336" y1="214" x2="374" y2="262"/>
+    <line x1="388" y1="200" x2="440" y2="242"/>
+  </g>
+
+  <!-- the T -->
+  <rect x="120" y="128" width="272" height="60" rx="30" fill="url(#light)"/>
+  <rect x="226" y="150" width="60" height="202" rx="30" fill="url(#light)"/>
+
+  <!-- laptops -->
+  <g fill="#2b1f18" stroke="#1f9d86" stroke-width="16" stroke-linejoin="round">
+    <rect x="44" y="288" width="120" height="80" rx="10"/>
+    <rect x="348" y="288" width="120" height="80" rx="10"/>
+    <rect x="196" y="378" width="120" height="80" rx="10"/>
+  </g>
+  <g fill="#1f9d86">
+    <rect x="26" y="378" width="156" height="18" rx="9"/>
+    <rect x="330" y="378" width="156" height="18" rx="9"/>
+    <rect x="178" y="468" width="156" height="18" rx="9"/>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Toolbar icon of the running applications view: a window with a list of programs. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="10" y="16" width="108" height="92" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="10" y="16" width="108" height="20" rx="10" fill="#13705f"/>
+  <rect x="10" y="28" width="108" height="8" fill="#13705f"/>
+  <g fill="#f26b2d">
+    <rect x="26" y="50" width="14" height="14" rx="3"/>
+    <rect x="26" y="74" width="14" height="14" rx="3"/>
+  </g>
+  <g fill="#f6bf3f">
+    <rect x="48" y="53" width="52" height="8" rx="4"/>
+    <rect x="48" y="77" width="40" height="8" rx="4"/>
+  </g>
+</svg>

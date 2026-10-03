@@ -1,14 +1,15 @@
 # Basic information
 if(NOT CPACK_PACKAGE_NAME)
-	set(CPACK_PACKAGE_NAME "veyon")
+	set(CPACK_PACKAGE_NAME "${BRANDING_PRODUCT_SLUG}")
 endif()
 set(CPACK_PACKAGE_VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}.${VERSION_BUILD}")
 
 set(CPACK_PACKAGING_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
-set(CPACK_PACKAGE_CONTACT "Tobias Junghans <tobydox@veyon.io>")
-set(CPACK_PACKAGE_HOMEPAGE "https://veyon.io")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Cross-platform computer control and classroom management")
-set(CPACK_PACKAGE_VENDOR "Veyon Solutions")
+set(CPACK_PACKAGE_CONTACT "${BRANDING_CONTACT}")
+set(CPACK_PACKAGE_HOMEPAGE "${BRANDING_WEBSITE}")
+set(CPACK_PACKAGE_HOMEPAGE_URL "${BRANDING_WEBSITE}")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Classroom management for schools, based on Veyon")
+set(CPACK_PACKAGE_VENDOR "${BRANDING_ORGANIZATION}")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/COPYING")
 set(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/README.md")
 set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY TRUE)
@@ -18,11 +19,11 @@ set(CPACK_STRIP_FILES  TRUE)
 # DEB package
 if(${CMAKE_VERSION} VERSION_GREATER "3.15.0")
 	set(CPACK_DEBIAN_PACKAGE_DESCRIPTION
-"Veyon is a free and open source software for monitoring and controlling
-computers across multiple platforms. Veyon supports you in teaching in digital
-learning environments, performing virtual trainings or giving remote support.
+"${BRANDING_PRODUCT_NAME} is a free and open source classroom management software
+for schools, based on Veyon. It supports teachers in computer labs and digital
+learning environments.
 
-The following features are available in Veyon:
+The following features are available in ${BRANDING_PRODUCT_NAME}:
 
 * Overview: monitor all computers in one or multiple locations or classrooms
 * Remote access: view or control computers to watch and support users
@@ -76,7 +77,7 @@ else()
 		set(CPACK_RPM_PACKAGE_REQUIRES ${CPACK_RPM_PACKAGE_REQUIRES} "qca-qt5-ossl")
 	endif()
 endif()
-set(CPACK_RPM_PACKAGE_LICENSE "GPLv2")
+set(CPACK_RPM_PACKAGE_LICENSE "GPL-2.0-or-later")
 set(CPACK_RPM_PACKAGE_DESCRIPTION ${CPACK_DEBIAN_PACKAGE_DESCRIPTION})
 set(CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION /lib)
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Toolbar icon of the website control feature: a globe with a "blocked" badge. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <g fill="none" stroke="#13705f" stroke-width="7">
+    <circle cx="56" cy="56" r="42" fill="#dff2ea"/>
+    <ellipse cx="56" cy="56" rx="18" ry="42"/>
+    <line x1="14" y1="56" x2="98" y2="56"/>
+    <path d="M22 32 Q56 44 90 32"/>
+    <path d="M22 80 Q56 68 90 80"/>
+  </g>
+  <circle cx="92" cy="92" r="28" fill="#fffdf9"/>
+  <circle cx="92" cy="92" r="22" fill="#b42318"/>
+  <rect x="78" y="88" width="28" height="8" rx="4" fill="#fffdf9"/>
+</svg>

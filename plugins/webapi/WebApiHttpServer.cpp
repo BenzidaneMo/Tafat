@@ -39,6 +39,7 @@
 #include "WebApiHttpServer.h"
 #include "WebApiConfiguration.h"
 #include "WebApiController.h"
+#include "VeyonCore.h"
 
 static inline QByteArray toJson(const QVariant& data)
 {
@@ -435,7 +436,7 @@ bool WebApiHttpServer::setupTls()
 QString WebApiHttpServer::getDebugInformation()
 {
 	const QString sysInfo =
-			QStringLiteral("Veyon WebAPI server version: %1<br/>\n").arg(VeyonCore::versionString()) +
+			QStringLiteral("%1 WebAPI server version: %2<br/>\n").arg(VeyonCore::productName(), VeyonCore::versionString()) +
 			QStringLiteral("Local hostname: %1<br/>\n").arg(HostAddress::localFQDN()) +
 			QStringLiteral("Operating system: %1 %2 %3<br/>\n").arg(QSysInfo::prettyProductName(), QSysInfo::productType(), QSysInfo::productVersion()) +
 			QStringLiteral("Kernel: %1 %2<br/>\n").arg(QSysInfo::kernelType(), QSysInfo::kernelVersion());

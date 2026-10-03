@@ -125,6 +125,8 @@ int main(int argc, char** argv)
 		pam_service = QByteArrayLiteral("login");
 	}
 
+	const auto helperName = VeyonCore::executableName(QStringLiteral("auth-helper")).toUtf8();
+
 	struct pam_conv pconv = { &pam_conv, nullptr };
 	pam_handle_t* pamh = nullptr;
 	auto err = pam_start(pam_service.constData(), nullptr, &pconv, &pamh);
@@ -133,7 +135,7 @@ int main(int argc, char** argv)
 		err = pam_authenticate(pamh, PAM_SILENT);
 		if (err != PAM_SUCCESS)
 		{
-			syslog(LOG_AUTHPRIV | LOG_NOTICE, "veyon-auth-helper: pam_authenticate failed: %s",
+			syslog(LOG_AUTHPRIV | LOG_NOTICE, "%s: pam_authenticate failed: %s", helperName.constData(),
 				   pam_strerror(pamh, err));
 		}
 		else
@@ -141,14 +143,14 @@ int main(int argc, char** argv)
 			err = pam_acct_mgmt(pamh, PAM_SILENT);
 			if (err != PAM_SUCCESS)
 			{
-				syslog(LOG_AUTHPRIV | LOG_NOTICE, "veyon-auth-helper: pam_acct_mgmt failed: %s",
+				syslog(LOG_AUTHPRIV | LOG_NOTICE, "%s: pam_acct_mgmt failed: %s", helperName.constData(),
 					   pam_strerror(pamh, err));
 			}
 		}
 	}
 	else
 	{
-		syslog(LOG_AUTHPRIV | LOG_NOTICE, "veyon-auth-helper: pam_start failed: %s",
+		syslog(LOG_AUTHPRIV | LOG_NOTICE, "%s: pam_start failed: %s", helperName.constData(),
 			   pam_strerror(pamh, err));
 	}
 

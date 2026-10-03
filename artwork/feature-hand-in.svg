@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Student toolbar icon for handing in work: a sheet going up into a tray. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M14 78 h28 l8 14 h28 l8 -14 h28 v34 a8 8 0 0 1 -8 8 h-84 a8 8 0 0 1 -8 -8 z" fill="#dff2ea" stroke="#13705f" stroke-width="7" stroke-linejoin="round"/>
+  <rect x="40" y="10" width="48" height="58" rx="6" fill="#fffdf9" stroke="#13705f" stroke-width="6"/>
+  <g fill="#f6bf3f">
+    <rect x="50" y="24" width="28" height="6" rx="3"/>
+    <rect x="50" y="38" width="20" height="6" rx="3"/>
+  </g>
+  <path d="M64 84 v-30 M50 66 l14 -14 l14 14" fill="none" stroke="#f26b2d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

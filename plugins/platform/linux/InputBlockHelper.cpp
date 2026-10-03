@@ -58,13 +58,13 @@ bool InputBlockHelper::start()
 
 	if (m_process->waitForStarted(5000) == false)
 	{
-		vWarning() << "Failed to start veyon-input-helper:" << m_process->errorString();
+		vWarning() << "Failed to start" << m_process->program() << m_process->errorString();
 		delete m_process;
 		m_process = nullptr;
 		return false;
 	}
 
-	vInfo() << "veyon-input-helper started, PID" << m_process->processId();
+	vInfo() << m_process->program() << "started, PID" << m_process->processId();
 	return true;
 }
 

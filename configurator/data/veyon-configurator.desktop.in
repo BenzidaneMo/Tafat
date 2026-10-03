@@ -2,10 +2,10 @@
 Version=1.0
 Type=Application
 Exec=@CMAKE_INSTALL_PREFIX@/bin/@BRANDING_PRODUCT_SLUG@-configurator
-Icon=veyon-configurator
+Icon=@BRANDING_PRODUCT_SLUG@-configurator
 Terminal=false
-Name=Veyon Configurator
-Comment=Configuration tool for Veyon (Virtual Eye On Networks)
-Comment[de]=Einrichtungswerkzeug für Veyon (Virtual Eye On Networks)
+Name=@BRANDING_PRODUCT_NAME@ Configurator
+Comment=Configuration tool for @BRANDING_PRODUCT_NAME@
+Comment[de]=Einrichtungswerkzeug für @BRANDING_PRODUCT_NAME@
 Categories=Qt;Education;Network;Settings;System;RemoteAccess;
 Keywords=classroom,control,computer,room,lab,monitoring,teacher,student,settings,configuration

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/appcontrol">
+    <file>application-control.png</file>
+    <file>running-apps.png</file>
+  </qresource>
+</RCC>

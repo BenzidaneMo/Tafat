@@ -1,3 +1,7 @@
+if(NOT WITH_LDAP)
+	return()
+endif()
+
 include(BuildVeyonPlugin)
 
 add_subdirectory(kldap)

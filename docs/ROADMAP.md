@@ -1,7 +1,7 @@
 # Tafat roadmap: Veyon fork → NetSupport School replacement for Algerian high schools
 
 ## Context
-Tafat (repo `benzidanemo/opennetsupport`, GPL-2.0-or-later) should replace NetSupport School
+Tafat (repo `BenzidaneMo/Tafat`, GPL-2.0-or-later) should replace NetSupport School
 (NSS) in Algerian high school computer labs. Building on
 **Veyon** (GPL-2.0-or-later, C++/Qt, ~83k LOC, actively maintained, latest stable tag `v4.11.3`)
 gives us monitoring, remote control, demo, lock, messages, launch apps/URLs, file distribute
@@ -197,9 +197,27 @@ inventory → teacher mobile app (Android build already in `android/`).
   conflicts small.
 
 ## Progress
-- Phase 0 done (pushed to `ccr-b7df7899-2kzbe8`): Veyon v4.11.3 merged with history,
-  `README.md`, `UPSTREAM.md`, `docs/ROADMAP.md`; Linux build + 3/3 tests pass (under Xvfb).
-- Open: Windows MinGW CI image. Veyon's image (`veyon/ci-mingw-w64`) is private, so we
-  build our own from Fedora's `mingw32-*`/`mingw64-*` packages in GitHub Actions.
-- Phase 1 in progress: name set to **Tafat**.
-
+- Phase 0 done: Veyon v4.11.3 imported with history; Linux CI green (Debian 11 Qt 5, Fedora 44 Qt 6).
+- Phase 0b in progress: Windows CI (`.github/workflows/windows.yml`, Fedora MinGW) builds the
+  32/64-bit Qt 6 installers for Windows 10/11. The legacy Qt 5 builds for Windows 7/8.1
+  (`WITH_LEGACY_WINDOWS`) now configure and compile further after Qt 5 fixes in
+  Windows-only code; remaining errors are listed in `CLAUDE.md`. The installer refuses
+  the wrong Windows version or architecture. Not yet tested on real Windows machines.
+  LDAP and WebAPI are off on Windows.
+- Phase 1 done: name Tafat (`cmake/modules/Branding.cmake`), `tafat-*` programs, services,
+  paths, packages and installer, UI texts via `BrandingTranslator`, About dialog, splash
+  screen, theme colors (`BrandTheme`), logo and icons (`artwork/`), branding check in CI.
+- Phase 2 in progress: Tamazight in Latin (`kab`) and Tifinagh (`kab_Tfng`) with bundled
+  Noto Sans Tifinagh (catalogs not translated yet). Tafat's plugins have their own
+  catalogs (`translations/tafat_*.ts`) with Arabic and French drafts. Arabic upstream
+  catalog 430/1161 (main window, toolbar, tiles, file transfer, spotlight added as drafts). All drafts need review by
+  native speakers.
+- Phase 3: done as plugins with unit tests — "Block apps" with optional USB and print
+  block and a "Running apps" list (`plugins/appcontrol`),
+  "Block websites" with optional internet block for all programs (`plugins/webcontrol`),
+  "Quiz" with polls and result bars (`plugins/quiz`), "Register" with class list import
+  and absent students (`plugins/register`), "Hands & chat" (`plugins/classchat`), "Return work" (`plugins/returnwork`),
+  "Inventory" (`plugins/inventory`), configurator page "Lab setup" (`plugins/labsetup`);
+  collected files are grouped by student name and computer.
+- Phase 4 started: `docs/DEPLOYMENT.md` (lab installation, silent install, keys, rooms).
+- Next: finish the legacy Windows builds, test on real lab PCs, review translations, then the rest of 3.4.

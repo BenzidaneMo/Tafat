@@ -25,11 +25,12 @@
 #include "LinuxCoreFunctions.h"
 #include "LinuxServiceCore.h"
 #include "LinuxServiceFunctions.h"
+#include "VeyonCore.h"
 
 
 QString LinuxServiceFunctions::veyonServiceName() const
 {
-	return QStringLiteral("veyon");
+	return VeyonCore::productSlug();
 }
 
 

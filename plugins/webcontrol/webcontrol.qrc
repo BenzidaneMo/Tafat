@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/webcontrol">
+    <file>website-control.png</file>
+  </qresource>
+</RCC>

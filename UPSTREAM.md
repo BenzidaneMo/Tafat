@@ -12,6 +12,9 @@ Current base: **Veyon v4.11.3**.
     icons, installer, service, paths, URLs). Internal identifiers such as
     `VeyonCore`, `VEYON_*` macros, class and file names, feature UIDs and the
     `veyon_*.ts` translation file names stay unchanged.
+  * Leave upstream user interface texts that say "Veyon" unchanged. The
+    `BrandingTranslator` (`core/src/BrandingTranslator.*`) shows the product
+    name in their place at runtime, so all upstream translations keep working.
   * Put new features in new plugins under `plugins/` instead of changing core
     files.
   * Keep all Veyon copyright headers and `COPYING`.
@@ -26,5 +29,6 @@ git merge vX.Y.Z
 git submodule update --init --recursive
 ```
 
-Then resolve conflicts, rebuild, run the tests and update the "Current base"
-line above. Never rebase or squash upstream history.
+Then resolve conflicts, rebuild, run the tests and `tools/check-branding.sh`
+(also run in CI), re-run `tools/render-artwork.sh` if upstream changed any
+icon, and update the "Current base" line above. Never rebase or squash upstream history.

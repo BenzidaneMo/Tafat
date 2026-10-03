@@ -41,12 +41,14 @@ TranslationLoader::TranslationLoader( const QString& resourceName )
 bool TranslationLoader::load( const QString& resourceName )
 {
 	QLocale configuredLocale( QLocale::C );
+	QString configuredCatalog;
 
 	static const QRegularExpression configuredLocaleRX{QStringLiteral( "[^(]*\\(([^)]*)\\)")};
 	const auto configuredLocaleMatch = configuredLocaleRX.match(VeyonCore::config().uiLanguage());
 	if( configuredLocaleMatch.hasMatch() )
 	{
-		configuredLocale = QLocale( configuredLocaleMatch.captured( 1 ) );
+		configuredCatalog = configuredLocaleMatch.captured( 1 );
+		configuredLocale = QLocale( configuredCatalog );
 	}
 
 	if( configuredLocale.language() != QLocale::English &&
@@ -59,9 +61,17 @@ bool TranslationLoader::load( const QString& resourceName )
 		auto translator = new QTranslator( VeyonCore::instance() );
 		translator->setObjectName( resourceName );
 
-		if( configuredLocale == QLocale::C ||
-			translator->load( QStringLiteral( "%1_%2.qm" ).arg( resourceName, configuredLocale.name() ),
-							  translationsDirectory ) == false )
+		// catalogs can be script-qualified (e.g. "kab_Tfng" for Tamazight in Tifinagh),
+		// which QLocale::name() does not preserve, so try the configured name first
+		const auto loadConfigured = [&]() {
+			return ( configuredCatalog.isEmpty() == false &&
+					 translator->load( QStringLiteral( "%1_%2.qm" ).arg( resourceName, configuredCatalog ),
+									   translationsDirectory ) ) ||
+				   translator->load( QStringLiteral( "%1_%2.qm" ).arg( resourceName, configuredLocale.name() ),
+									 translationsDirectory );
+		};
+
+		if( configuredLocale == QLocale::C || loadConfigured() == false )
 		{
 			configuredLocale = QLocale::system(); // Flawfinder: ignore
 
