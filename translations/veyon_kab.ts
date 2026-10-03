@@ -45,7 +45,7 @@ Ma tebɣiḍ ad tsuqleḍ Veyon ɣer tutlayt-ik neɣ ɣer tutlayt nniḍen, neɣ
     </message>
     <message>
         <source>About Veyon %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ɣef Veyon %1</translation>
     </message>
     <message>
         <source>%1 - based on %2</source>
@@ -174,7 +174,7 @@ Ma tebɣiḍ ad tsuqleḍ Veyon ɣer tutlayt-ik neɣ ɣer tutlayt nniḍen, neɣ
     </message>
     <message>
         <source>Invert all conditions (&quot;is/has&quot; interpreted as &quot;is/has not&quot;)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tti akk tiwtilin (&quot;d/ɣur-s&quot; ad yettwafhem am &quot;mačči d/ulac ɣur-s&quot;)</translation>
     </message>
     <message>
         <source>Always process rule and ignore conditions</source>
@@ -194,7 +194,7 @@ Ma tebɣiḍ ad tsuqleḍ Veyon ɣer tutlayt-ik neɣ ɣer tutlayt nniḍen, neɣ
     </message>
     <message>
         <source>Accessing computer and local computer are at the same location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aselkim i d-ikecmen d uselkim adigan llan deg yiwet n texxamt</translation>
     </message>
     <message>
         <source>No user logged on</source>
@@ -202,23 +202,23 @@ Ma tebɣiḍ ad tsuqleḍ Veyon ɣer tutlayt-ik neɣ ɣer tutlayt nniḍen, neɣ
     </message>
     <message>
         <source>is located at</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">yella deg</translation>
     </message>
     <message>
         <source>Accessing computer is localhost</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aselkim i d-ikecmen d aselkim adigan (localhost)</translation>
     </message>
     <message>
         <source>Accessing user has one or more groups in common with local (logged on) user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseqdac i d-ikecmen yesɛa yiwen neɣ ugar n yigrawen yettwabḍan akked useqdac adigan (yeqqnen)</translation>
     </message>
     <message>
         <source>Accessing user is logged on user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseqdac i d-ikecmen d aseqdac yeqqnen</translation>
     </message>
     <message>
         <source>Accessing user is already connected</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseqdac i d-ikecmen yeqqen yakan</translation>
     </message>
     <message>
         <source>Action</source>
@@ -250,66 +250,66 @@ Ma tebɣiḍ ad tsuqleḍ Veyon ɣer tutlayt-ik neɣ ɣer tutlayt nniḍen, neɣ
     </message>
     <message>
         <source>Local (logged on) user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseqdac adigan (yeqqnen)</translation>
     </message>
     <message>
         <source>Local computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aselkim adigan</translation>
     </message>
     <message>
         <source>Local computer is already being accessed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Llan wid yekcemen yakan ɣer uselkim adigan</translation>
     </message>
 </context>
 <context>
     <name>AccessControlRulesTestDialog</name>
     <message>
         <source>Access control rules test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akayad n yilugan n usenqed n unekcum</translation>
     </message>
     <message>
         <source>Accessing user:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseqdac i d-ikecmen:</translation>
     </message>
     <message>
         <source>Local computer:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aselkim adigan:</translation>
     </message>
     <message>
         <source>Accessing computer:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aselkim i d-ikecmen:</translation>
     </message>
     <message>
         <source>Please enter the following user and computer information in order to test the configured ruleset.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, sekcem talɣut-a ɣef useqdac d uselkim akken ad tesekyedeḍ ilugan yettwasbadun.</translation>
     </message>
     <message>
         <source>Local user:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseqdac adigan:</translation>
     </message>
     <message>
         <source>Connected users:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iseqdacen yeqqnen:</translation>
     </message>
     <message>
         <source>The access in the given scenario is allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anekcum deg twaṭ-a yettusireg.</translation>
     </message>
     <message>
         <source>The access in the given scenario is denied.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anekcum deg twaṭ-a yettwagi.</translation>
     </message>
     <message>
         <source>The access in the given scenario needs permission of the logged on user.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anekcum deg twaṭ-a yesra tasiregt n useqdac yeqqnen.</translation>
     </message>
     <message>
         <source>Test result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Agmuḍ n ukayad</translation>
     </message>
     <message>
         <source>There is no matching rule with a valid action. The access is therefore denied.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac alugen yemṣadan s tigawt tameɣtut, ihi anekcum yettwagi.</translation>
     </message>
 </context>
 <context>
@@ -320,31 +320,31 @@ Ma tebɣiḍ ad tsuqleḍ Veyon ɣer tutlayt-ik neɣ ɣer tutlayt nniḍen, neɣ
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tazwart</translation>
     </message>
     <message>
         <source>Please perform the following steps to set up key file authentication:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, ḍfer isurifen-a akken ad tesbaduḍ asesteb s ufaylu n tsarut:</translation>
     </message>
     <message>
         <source>1) Create a key pair on the master computer.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1) Snulfu-d tayuga n tsura ɣef uselkim n uselmad.</translation>
     </message>
     <message>
         <source>2) Set an access group whose members should be allowed to access other computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">2) Sbadu agraw n unekcum ara yesɛun iɛeggalen yettusirgen ad kecmen ɣer yiselkimen nniḍen.</translation>
     </message>
     <message>
         <source>3) Export the public key and import it on all client computers with the same name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">3) Sifeḍ tasarut tazayezt syen kter-itt ɣef yiselkimen meṛṛa n yinelmaden s yisem-nni.</translation>
     </message>
     <message>
         <source>Please refer to the &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;Veyon Administrator Manual&lt;/a&gt; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I ugar n telɣut, wali &lt;a href=&quot;https://veyon.readthedocs.io/en/latest/admin/index.html&quot;&gt;amnir n unedbal n Veyon&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>Key file directories</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ikaramen n yifuyla n tsura</translation>
     </message>
     <message>
         <source>Public key file base directory</source>
@@ -356,199 +356,204 @@ Ma tebɣiḍ ad tsuqleḍ Veyon ɣer tutlayt-ik neɣ ɣer tutlayt nniḍen, neɣ
     </message>
     <message>
         <source>Available authentication keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tisura n usesteb yellan</translation>
     </message>
     <message>
         <source>An authentication key pair consist of two coupled cryptographic keys, a private and a public key.
 A private key allows users on the master computer to access client computers.
 It is important that only authorized users have read access to the private key file.
 The public key is used on client computers to authenticate incoming connection request.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tayuga n tsura n usesteb tesɛa snat n tsura n uwgelhen icudden: tasarut tusligt d tsarut tazayezt.
+Tasarut tusligt teǧǧa iseqdacen n uselkim n uselmad ad kecmen ɣer yiselkimen n yinelmaden.
+Yesɛa azal ad yili kan iseqdacen yettusirgen i izemren ad ɣren afaylu n tsarut tusligt.
+Tasarut tazayezt tettwaseqdac ɣef yiselkimen n yinelmaden i usesteb n yisutar n tuqqna i d-yettasen.</translation>
     </message>
     <message>
         <source>Create key pair</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Snulfu-d tayuga n tsura</translation>
     </message>
     <message>
         <source>Delete key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kkes tasarut</translation>
     </message>
     <message>
         <source>Import key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kter tasarut</translation>
     </message>
     <message>
         <source>Export key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sifeḍ tasarut</translation>
     </message>
     <message>
         <source>Set access group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sbadu agraw n unekcum</translation>
     </message>
     <message>
         <source>Key files (*.pem)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ifuyla n tsura (*.pem)</translation>
     </message>
     <message>
         <source>Authentication key name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n tsarut n usesteb</translation>
     </message>
     <message>
         <source>Please enter the name of the user group or role for which to create an authentication key pair:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, sekcem isem n ugraw n yiseqdacen neɣ n tmlilt i wumi ara d-tesnulfuḍ tayuga n tsura n usesteb:</translation>
     </message>
     <message>
         <source>Do you really want to delete authentication key &quot;%1/%2&quot;?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tebɣiḍ s tidet ad tekkseḍ tasarut n usesteb &quot;%1/%2&quot;?</translation>
     </message>
     <message>
         <source>Please select a key to delete!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, fren tasarut ara tekkseḍ!</translation>
     </message>
     <message>
         <source>Please select a key to export!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, fren tasarut ara tesifḍeḍ!</translation>
     </message>
     <message>
         <source>Please select a user group which to grant access to key &quot;%1&quot;:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, fren agraw n yiseqdacen ara yawin anekcum ɣer tsarut &quot;%1&quot;:</translation>
     </message>
     <message>
         <source>Please select a key which to set the access group for!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, fren tasarut i wumi ara tesbaduḍ agraw n unekcum!</translation>
     </message>
     <message>
         <source>Please enter the name of the user group or role for which to import the authentication key.
 
 Make sure that the names of the keys belonging to each other are identical on all computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, sekcem isem n ugraw n yiseqdacen neɣ n tmlilt i wumi ara tketreḍ tasarut n usesteb.
+
+Ḥader ad yili yismawen n tsura yettwacudden kifkif ɣef yiselkimen meṛṛa.</translation>
     </message>
 </context>
 <context>
     <name>AuthKeysManager</name>
     <message>
         <source>Please check your permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, senqed tisirag-ik.</translation>
     </message>
     <message>
         <source>Key name contains invalid characters!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n tsarut yesɛa isekkilen arameɣtuten!</translation>
     </message>
     <message>
         <source>Invalid key type specified! Please specify &quot;%1&quot; or &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anaw n tsarut d arameɣtu! Ma ulac aɣilif, fren &quot;%1&quot; neɣ &quot;%2&quot;.</translation>
     </message>
     <message>
         <source>Specified key does not exist! Please use the &quot;list&quot; command to list all installed keys.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tasarut-a ulac-itt! Seqdec taladna &quot;list&quot; akken ad twaliḍ akk tisura yettwasbedden.</translation>
     </message>
     <message>
         <source>One or more key files already exist! Please delete them using the &quot;delete&quot; command.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yiwen neɣ ugar n yifuyla n tsura llan yakan! Ma ulac aɣilif, kkes-iten s tladna &quot;delete&quot;.</translation>
     </message>
     <message>
         <source>Creating new key pair for &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timerna n tayuga n tsura tamaynut i &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Failed to create public or private key!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timerna n tsarut tazayezt neɣ tusligt ur teddi ara!</translation>
     </message>
     <message>
         <source>Newly created key pair has been saved to &quot;%1&quot; and &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tayuga n tsura tamaynut tettwasekles deg &quot;%1&quot; d &quot;%2&quot;.</translation>
     </message>
     <message>
         <source>Could not remove key file &quot;%1&quot;!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yekkes afaylu n tsarut &quot;%1&quot;!</translation>
     </message>
     <message>
         <source>Could not remove key file directory &quot;%1&quot;!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yekkes akaram n yifuyla n tsura &quot;%1&quot;!</translation>
     </message>
     <message>
         <source>Failed to create directory for output file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timerna n ukaram i ufaylu n tuffɣa ur teddi ara.</translation>
     </message>
     <message>
         <source>File &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afaylu &quot;%1&quot; yella yakan.</translation>
     </message>
     <message>
         <source>Failed to write output file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tira n ufaylu n tuffɣa ur teddi ara.</translation>
     </message>
     <message>
         <source>Key &quot;%1/%2&quot; has been exported to &quot;%3&quot; successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tasarut &quot;%1/%2&quot; tettwasifeḍ ɣer &quot;%3&quot; akken iwata.</translation>
     </message>
     <message>
         <source>Failed read input file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Taɣuri n ufaylu n unekcum ur teddi ara.</translation>
     </message>
     <message>
         <source>File &quot;%1&quot; does not contain a valid private key!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afaylu &quot;%1&quot; ur yesɛi ara tasarut tusligt tameɣtut!</translation>
     </message>
     <message>
         <source>File &quot;%1&quot; does not contain a valid public key!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afaylu &quot;%1&quot; ur yesɛi ara tasarut tazayezt tameɣtut!</translation>
     </message>
     <message>
         <source>Failed to create directory for key file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timerna n ukaram i ufaylu n tsarut ur teddi ara.</translation>
     </message>
     <message>
         <source>Failed to write key file &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tira n ufaylu n tsarut &quot;%1&quot; ur teddi ara.</translation>
     </message>
     <message>
         <source>Failed to set permissions for key file &quot;%1&quot;!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asbadu n tsirag n ufaylu n tsarut &quot;%1&quot; ur yeddi ara!</translation>
     </message>
     <message>
         <source>Key &quot;%1/%2&quot; has been imported successfully. Please check file permissions of &quot;%3&quot; in order to prevent unauthorized accesses.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tasarut &quot;%1/%2&quot; tettwakter akken iwata. Ma ulac aɣilif, senqed tisirag n ufaylu &quot;%3&quot; akken ad tegdeleḍ anekcum ur yettusirgen ara.</translation>
     </message>
     <message>
         <source>Failed to convert private key to public key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abeddel n tsarut tusligt ɣer tsarut tazayezt ur yeddi ara</translation>
     </message>
     <message>
         <source>Failed to create directory for private key file &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timerna n ukaram i ufaylu n tsarut tusligt &quot;%1&quot; ur teddi ara.</translation>
     </message>
     <message>
         <source>Failed to save private key in file &quot;%1&quot;!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asekles n tsarut tusligt deg ufaylu &quot;%1&quot; ur yeddi ara!</translation>
     </message>
     <message>
         <source>Failed to set permissions for private key file &quot;%1&quot;!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asbadu n tsirag n ufaylu n tsarut tusligt &quot;%1&quot; ur yeddi ara!</translation>
     </message>
     <message>
         <source>Failed to create directory for public key file &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timerna n ukaram i ufaylu n tsarut tazayezt &quot;%1&quot; ur teddi ara.</translation>
     </message>
     <message>
         <source>Failed to save public key in file &quot;%1&quot;!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asekles n tsarut tazayezt deg ufaylu &quot;%1&quot; ur yeddi ara!</translation>
     </message>
     <message>
         <source>Failed to set permissions for public key file &quot;%1&quot;!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asbadu n tsirag n ufaylu n tsarut tazayezt &quot;%1&quot; ur yeddi ara!</translation>
     </message>
     <message>
         <source>Failed to set owner of key file &quot;%1&quot; to &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asbadu n &quot;%2&quot; d bab n ufaylu n tsarut &quot;%1&quot; ur yeddi ara.</translation>
     </message>
     <message>
         <source>Failed to set permissions for key file &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asbadu n tsirag n ufaylu n tsarut &quot;%1&quot; ur yeddi ara.</translation>
     </message>
     <message>
         <source>Key &quot;%1&quot; is now accessible by user group &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Agraw n yiseqdacen &quot;%2&quot; yezmer tura ad yekcem ɣer tsarut &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>&lt;N/A&gt;</source>
@@ -556,7 +561,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Failed to read key file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Taɣuri n ufaylu n tsarut ur teddi ara.</translation>
     </message>
 </context>
 <context>
@@ -674,22 +679,22 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Access group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Agraw n unekcum</translation>
     </message>
     <message>
         <source>Pair ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asulay n tayuga</translation>
     </message>
 </context>
 <context>
     <name>BuiltinDirectoryConfigurationPage</name>
     <message>
         <source>Locations &amp; computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tixxamin &amp; iselkimen</translation>
     </message>
     <message>
         <source>Builtin directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akaram yettwabnan</translation>
     </message>
     <message>
         <source>Computers</source>
@@ -701,19 +706,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Add new computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rnu aselkim amaynut</translation>
     </message>
     <message>
         <source>Remove selected computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kkes aselkim yettwafernen</translation>
     </message>
     <message>
         <source>Move selected computer up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ssali aselkim yettwafernen</translation>
     </message>
     <message>
         <source>Move selected computer down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sader aselkim yettwafernen</translation>
     </message>
     <message>
         <source>Name</source>
@@ -721,7 +726,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Host address/IP</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tansa n usenneftaɣ/IP</translation>
     </message>
     <message>
         <source>MAC address</source>
@@ -729,23 +734,23 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Add new location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rnu taxxamt tamaynut</translation>
     </message>
     <message>
         <source>Remove selected location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kkes taxxamt yettwafernen</translation>
     </message>
     <message>
         <source>Move selected location up</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ssali taxxamt yettwafernen</translation>
     </message>
     <message>
         <source>Move selected location down</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sader taxxamt yettwafernen</translation>
     </message>
     <message>
         <source>The import of CSV files is possible through the command line interface. For more information, see the &lt;a href=&quot;https://docs.veyon.io/en/latest/admin/cli.html#network-object-directory&quot;&gt;online documentation&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktar n yifuyla CSV yezmer ad yili s ugrudem n yizirig n tladna. I ugar n telɣut, wali &lt;a href=&quot;https://docs.veyon.io/en/latest/admin/cli.html#network-object-directory&quot;&gt;tasemlit srid&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>New location</source>
@@ -753,7 +758,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>New computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aselkim amaynut</translation>
     </message>
 </context>
 <context>
@@ -960,7 +965,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac</translation>
     </message>
     <message>
         <source>Invalid</source>
@@ -1011,14 +1016,14 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>BuiltinUltraVncServer</name>
     <message>
         <source>Builtin VNC server (UltraVNC)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aqeddac VNC yettwabnan (UltraVNC)</translation>
     </message>
 </context>
 <context>
     <name>BuiltinX11VncServer</name>
     <message>
         <source>Builtin VNC server (x11vnc)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aqeddac VNC yettwabnan (x11vnc)</translation>
     </message>
 </context>
 <context>
@@ -1143,7 +1148,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>No default network object directory plugin was found. Please check your installation or configure a different network object directory backend via Veyon Configurator.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac azegrir amezwer n ukaram n tɣawsiwin n uẓeṭṭa. Ma ulac aɣilif, senqed asebded neɣ sbadu aɣawas nniḍen n ukaram n tɣawsiwin n uẓeṭṭa s Umesbadu n Veyon.</translation>
     </message>
     <message>
         <source>Computer name;Hostname;User</source>
@@ -1163,7 +1168,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>The location of this computer could not be determined. This indicates a problem with the system configuration. No locations and computers will be displayed in the &quot;Locations &amp; computers&quot; panel.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Taxxamt n uselkim-a ur tettwaf ara, ayagi d ugur deg twila n unagraw. Ulac tixxamin d yiselkimen ara d-ibanen deg ugalis &quot;Tixxamin &amp; iselkimen&quot;.</translation>
     </message>
     <message>
         <source>Unknown location</source>
@@ -1280,30 +1285,30 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>ConfigurationManager</name>
     <message>
         <source>Could not modify the autostart property for the Veyon Service.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad ibeddel asekker awurman n umeẓlu Veyon.</translation>
     </message>
     <message>
         <source>Could not configure the firewall configuration for the Veyon Server.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yesbadu firewall i uqeddac Veyon.</translation>
     </message>
     <message>
         <source>Could not configure the firewall configuration for the Veyon Worker.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yesbadu firewall i Veyon Worker.</translation>
     </message>
     <message>
         <source>Could not apply platform-specific configuration settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yessnes iɣewwaren n unagraw.</translation>
     </message>
     <message>
         <source>Configuration is not writable. Please check your permissions!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tawila ur tettwaru ara. Ma ulac aɣilif, senqed tisirag-ik!</translation>
     </message>
 </context>
 <context>
     <name>DemoClient</name>
     <message>
         <source>Veyon Demo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Askan n Veyon</translation>
     </message>
 </context>
 <context>
@@ -1314,19 +1319,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Tunables</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iɣewwaren n useggem</translation>
     </message>
     <message>
         <source> s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> tas</translation>
     </message>
     <message>
         <source>Update interval</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azilal n uleqqem</translation>
     </message>
     <message>
         <source> MB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source> ms</source>
@@ -1334,23 +1339,23 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Slow down thumbnail updates while demo is running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sẓeḍ aleqqem n tugniwin timecṭuḥin mi ara iteddu uskan</translation>
     </message>
     <message>
         <source>Memory limit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Talast n tkatut</translation>
     </message>
     <message>
         <source>Key frame interval</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azilal n tugniwin tigejdanin</translation>
     </message>
     <message>
         <source>Bandwidth limit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Talast n tehri n tuqqna</translation>
     </message>
     <message>
         <source> MB/s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> MB/tas</translation>
     </message>
 </context>
 <context>
@@ -1428,7 +1433,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>DesktopAccessDialog</name>
     <message>
         <source>Desktop access dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asfaylu n unekcum ɣer tnarit</translation>
     </message>
     <message>
         <source>Confirm desktop access</source>
@@ -1436,7 +1441,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>The user %1 at computer %2 wants to access your desktop. Do you want to grant access?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseqdac %1 ɣef uselkim %2 yebɣa ad yekcem ɣer tnarit-ik. Ad as-tefkeḍ anekcum?</translation>
     </message>
     <message>
         <source>Never for this session</source>
@@ -1451,11 +1456,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>DesktopServicesConfigurationPage</name>
     <message>
         <source>Applications &amp; websites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isnasen &amp; ismal web</translation>
     </message>
     <message>
         <source>Predefined applications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isnasen yettwasbadun uqbel</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1463,39 +1468,39 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abrid</translation>
     </message>
     <message>
         <source>Add new application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rnu asnas amaynut</translation>
     </message>
     <message>
         <source>Remove selected application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kkes asnas yettwafernen</translation>
     </message>
     <message>
         <source>Predefined websites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ismal web yettwasbadun uqbel</translation>
     </message>
     <message>
         <source>Add new website</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rnu asmel web amaynut</translation>
     </message>
     <message>
         <source>Remove selected website</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kkes asmel web yettwafernen</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL</translation>
     </message>
     <message>
         <source>New application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asnas amaynut</translation>
     </message>
     <message>
         <source>New website</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asmel web amaynut</translation>
     </message>
 </context>
 <context>
@@ -1588,22 +1593,22 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>ExternalVncServer</name>
     <message>
         <source>External VNC server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aqeddac VNC azɣaray</translation>
     </message>
 </context>
 <context>
     <name>ExternalVncServerConfigurationWidget</name>
     <message>
         <source>External VNC server configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tawila n uqeddac VNC azɣaray</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tawwurt:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Awal uffir:</translation>
     </message>
 </context>
 <context>
@@ -1824,7 +1829,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>FileCollectTreeModel</name>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anfal</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1832,7 +1837,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Number of files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Amḍan n yifuyla</translation>
     </message>
 </context>
 <context>
@@ -1843,111 +1848,111 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Settings for distributing files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iɣewwaren n beṭṭu n yifuyla</translation>
     </message>
     <message>
         <source>Settings for collecting files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iɣewwaren n ulqaḍ n yifuyla</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ala</translation>
     </message>
     <message>
         <source>Prefix filenames with grouping attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rnu tamahilt n usegrew send yismawen n yifuyla</translation>
     </message>
     <message>
         <source>Store files in subdirectories based on the grouping attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sekles ifuyla deg yikaramen n daw akken tella tmahilt n usegrew</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac</translation>
     </message>
     <message>
         <source>First part of user name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aḥric amezwaru n yisem n useqdac</translation>
     </message>
     <message>
         <source>Last part of user name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aḥric aneggaru n yisem n useqdac</translation>
     </message>
     <message>
         <source>Collect all files from configured source directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lqeḍ akk ifuyla seg ukaram aɣbalu yettwasbadun</translation>
     </message>
     <message>
         <source>Prompt user for folder to collect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Steqsi aseqdac ɣef ukaram ara yettwalqeḍen</translation>
     </message>
     <message>
         <source>Prompt user for files to collect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Steqsi aseqdac ɣef yifuyla ara yettwalqeḍen</translation>
     </message>
     <message>
         <source>Grouping attribute 3:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamahilt n usegrew 3:</translation>
     </message>
     <message>
         <source>Destination directory:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akaram n tuzzna:</translation>
     </message>
     <message>
         <source>Store collected files in:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sekles ifuyla yettwalqeḍen deg:</translation>
     </message>
     <message>
         <source>Group collected files:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Segrew ifuyla yettwalqeḍen:</translation>
     </message>
     <message>
         <source>Grouping attribute 1:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamahilt n usegrew 1:</translation>
     </message>
     <message>
         <source>Grouping attribute 2:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamahilt n usegrew 2:</translation>
     </message>
     <message>
         <source>Directly in the destination directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Srid deg ukaram n tuzzna</translation>
     </message>
     <message>
         <source>Subdirectory based on date &amp; time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akaram n daw akken ttilin wazemz &amp; wakud</translation>
     </message>
     <message>
         <source>Subdirectory with name entered by the collecting user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akaram n daw s yisem i d-yesekcem useqdac i ilaqḍen</translation>
     </message>
     <message>
         <source>Files to collect:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ifuyla ara yettwalqeḍen:</translation>
     </message>
     <message>
         <source>Files to exclude:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ifuyla ara yettwasebɛaden:</translation>
     </message>
     <message>
         <source>e.g. *.lnk or *.desktop</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">amedya *.lnk neɣ *.desktop</translation>
     </message>
     <message>
         <source>Collect files recursively</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lqeḍ ifuyla akked yikaramen n daw</translation>
     </message>
     <message>
         <source>Destination directory (remote):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akaram n tuzzna (s lebɛid):</translation>
     </message>
     <message>
         <source>Default source directory:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akaram aɣbalu amezwer:</translation>
     </message>
     <message>
         <source>Source directory (remote):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akaram aɣbalu (s lebɛid):</translation>
     </message>
     <message>
         <source>User login name</source>
@@ -1959,22 +1964,22 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Device name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n yibenk</translation>
     </message>
     <message>
         <source>Remember last source directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cfu ɣef ukaram aɣbalu aneggaru</translation>
     </message>
     <message>
         <source>Create destination directory if it does not exist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Snulfu-d akaram n tuzzna ma ulac-it</translation>
     </message>
 </context>
 <context>
     <name>FileTransferController</name>
     <message>
         <source>Could not open file %1 for reading. Please check your permissions. The file will be skipped, remaining files will still be transferred.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yeldi afaylu %1 i tɣuri. Ma ulac aɣilif, senqed tisirag-ik. Afaylu-a ad yettwazgel, ifuyla nniḍen ad ttwasneqlen.</translation>
     </message>
 </context>
 <context>
@@ -2091,7 +2096,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Use system language setting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seqdec tutlayt n unagraw</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -2099,11 +2104,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aɣanib:</translation>
     </message>
     <message>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">N unagraw</translation>
     </message>
     <message>
         <source>Authentication</source>
@@ -2111,7 +2116,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Method:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tarrayt:</translation>
     </message>
     <message>
         <source>Logon authentication</source>
@@ -2127,7 +2132,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Network object directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akaram n tɣawsiwin n uẓeṭṭa</translation>
     </message>
     <message>
         <source>Backend:</source>
@@ -2135,7 +2140,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Update interval:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azilal n uleqqem:</translation>
     </message>
     <message>
         <source> seconds</source>
@@ -2183,11 +2188,11 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Rotate log files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sezzi ifuyla n uɣmis</translation>
     </message>
     <message>
         <source> MB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>Limit log file size</source>
@@ -2199,7 +2204,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Write to logging system of operating system</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aru deg uɣmis n unagraw n wammud</translation>
     </message>
     <message>
         <source>Clear all log files</source>
@@ -2207,19 +2212,19 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Authentication is set up properly on this computer.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asesteb yettwasbadu akken iwata ɣef uselkim-a.</translation>
     </message>
     <message>
         <source>Authentication keys are not set up properly on this computer.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tisura n usesteb ur ttwasbadunt ara akken iwata ɣef uselkim-a.</translation>
     </message>
     <message>
         <source>Veyon service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu Veyon</translation>
     </message>
     <message>
         <source>The Veyon service needs to be stopped temporarily in order to remove the log files. Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu Veyon ilaq ad yeḥbes cwiṭ akken ad ttwakksen yifuyla n uɣmis. Ad tkemmleḍ?</translation>
     </message>
     <message>
         <source>Log files cleared</source>
@@ -2239,7 +2244,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Authentication test</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Akayad n usesteb</translation>
     </message>
     <message>
         <source>User groups</source>
@@ -2247,34 +2252,34 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Include user groups from domain</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seddu igrawen n yiseqdacen n taɣult</translation>
     </message>
     <message>
         <source>Missing user groups backend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac aɣawas n yigrawen n yiseqdacen</translation>
     </message>
     <message>
         <source>No user groups plugin was found. Please check your installation!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac azegrir n yigrawen n yiseqdacen. Ma ulac aɣilif, senqed asebded!</translation>
     </message>
     <message>
         <source>Color scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ini:</translation>
     </message>
     <message>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aceɛlal</translation>
     </message>
     <message>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aberkan</translation>
     </message>
 </context>
 <context>
     <name>HeadlessVncServer</name>
     <message>
         <source>Headless VNC server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aqeddac VNC war agdil</translation>
     </message>
 </context>
 <context>
@@ -2355,7 +2360,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac</translation>
     </message>
     <message>
         <source>TLS</source>
@@ -2994,7 +2999,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User authentication</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asesteb n useqdac</translation>
     </message>
     <message>
         <source>Custom PAM service for user authentication</source>
@@ -3010,7 +3015,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User login</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tuqqna n useqdac</translation>
     </message>
     <message>
         <source>Login key sequence</source>
@@ -3018,7 +3023,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Input start delay</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aɛeṭṭel uqbel ad yebdu unekcum</translation>
     </message>
     <message>
         <source>Key press interval for text input</source>
@@ -3040,7 +3045,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>LocationDialog</name>
     <message>
         <source>Select location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fren taxxamt</translation>
     </message>
     <message>
         <source>enter search filter...</source>
@@ -3051,15 +3056,15 @@ Make sure that the names of the keys belonging to each other are identical on al
     <name>MainToolBar</name>
     <message>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tawila</translation>
     </message>
     <message>
         <source>Disable tooltips</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sens tixidas</translation>
     </message>
     <message>
         <source>Show icons only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sken tignitin kan</translation>
     </message>
 </context>
 <context>
@@ -3218,7 +3223,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Could not start with administrative privileges. Please make sure a sudo-like program is installed for your desktop environment! The program will be run with normal user privileges.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yekker s tsirag n unedbal. Ḥader ad yili ahil am sudo yettwasbedden i twennaḍt-ik n tnarit! Ahil ad iteddu s tsirag n useqdac amagnu.</translation>
     </message>
     <message>
         <source>Configuration not writable</source>
@@ -3226,7 +3231,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>The local configuration backend reported that the configuration is not writable! Please run Veyon Configurator with higher privileges.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aɣawas n twila tadigant yenna-d tawila ur tettwaru ara! Ma ulac aɣilif, sekker Amesbadu n Veyon s tsirag tifellayin.</translation>
     </message>
     <message>
         <source>Authentication impossible</source>
@@ -3281,7 +3286,7 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>User configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tawila n useqdac</translation>
     </message>
     <message>
         <source>Screenshots</source>
@@ -3289,7 +3294,7 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>Text color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ini n uḍris</translation>
     </message>
     <message>
         <source> ms</source>
@@ -3297,11 +3302,11 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>Background color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ini n ugilal</translation>
     </message>
     <message>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -3309,63 +3314,63 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>Computer and user name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n uselkim d useqdac</translation>
     </message>
     <message>
         <source>Only user name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n useqdac kan</translation>
     </message>
     <message>
         <source>Only last part of user name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aḥric aneggaru n yisem n useqdac kan</translation>
     </message>
     <message>
         <source>Only computer name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n uselkim kan</translation>
     </message>
     <message>
         <source>User and computer name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n useqdac d uselkim</translation>
     </message>
     <message>
         <source>Sort order</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Amizwer n usmizwer</translation>
     </message>
     <message>
         <source>Highest</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afellay aṭas</translation>
     </message>
     <message>
         <source>High</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afellay</translation>
     </message>
     <message>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alemmas</translation>
     </message>
     <message>
         <source>Low</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adday</translation>
     </message>
     <message>
         <source>Lowest</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adday aṭas</translation>
     </message>
     <message>
         <source>Identify users in guest sessions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ssulu iseqdacen deg tɣimiyin n yinebgawen</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Werǧin</translation>
     </message>
     <message>
         <source>If login name matches</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma yemṣada yisem n tuqqna</translation>
     </message>
     <message>
         <source>If full name matches</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma yemṣada yisem ummid</translation>
     </message>
     <message>
         <source>Guest</source>
@@ -3373,127 +3378,127 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>Guest user identity extension</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asiɣzef n usulu n useqdac inebgi</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azwir</translation>
     </message>
     <message>
         <source>Suffix</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aḍfir</translation>
     </message>
     <message>
         <source>Behaviour</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tikli</translation>
     </message>
     <message>
         <source>Program start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asekker n wahil</translation>
     </message>
     <message>
         <source>Perform access control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Senqed anekcum</translation>
     </message>
     <message>
         <source>Automatically select current location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fren taxxamt tamirant s wudem awurman</translation>
     </message>
     <message>
         <source>Automatically adjust computer icon size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seggem tiddi n tignitin n yiselkimen s wudem awurman</translation>
     </message>
     <message>
         <source>Automatically open computer select panel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ldi agalis n ufran n yiselkimen s wudem awurman</translation>
     </message>
     <message>
         <source>Computer locations</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tixxamin n yiselkimen</translation>
     </message>
     <message>
         <source>Show current location only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sken taxxamt tamirant kan</translation>
     </message>
     <message>
         <source>Allow adding hidden locations manually</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sireg timerna n texxamin yeffren s ufus</translation>
     </message>
     <message>
         <source>Hide local computer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ffer aselkim adigan</translation>
     </message>
     <message>
         <source>Hide local session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ffer tiɣimit tadigant</translation>
     </message>
     <message>
         <source>Hide empty locations</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ffer tixxamin tilmawin</translation>
     </message>
     <message>
         <source>Hide computer filter field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ffer urti n usizdeg n yiselkimen</translation>
     </message>
     <message>
         <source>Modes and features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iskaren d tmahilin</translation>
     </message>
     <message>
         <source>Enforce selected mode for client computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ḥettem askar yettwafernen ɣef yiselkimen n yinelmaden</translation>
     </message>
     <message>
         <source>Actions such as rebooting or powering down computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tigawin am wallus n usekker neɣ asexsi n yiselkimen</translation>
     </message>
     <message>
         <source>Show confirmation dialog for potentially unsafe actions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sken asfaylu n usentem i tigawin i yezmren ad ilin d tiwaɛrin</translation>
     </message>
     <message>
         <source>Feature on computer double click:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamahilt mi ara tsiteḍ snat n tikkal ɣef uselkim:</translation>
     </message>
     <message>
         <source>Open feature windows on the same screen as the main window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ldi isfuyla n tmahilin ɣef ugdil n usfaylu agejdan</translation>
     </message>
     <message>
         <source>Features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timahilin</translation>
     </message>
     <message>
         <source>All features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timahilin meṛṛa</translation>
     </message>
     <message>
         <source>Disabled features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timahilin yensan</translation>
     </message>
     <message>
         <source>&lt;no feature&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;ulac tamahilt&gt;</translation>
     </message>
     <message>
         <source>Always expand all locations</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Snefli yal tikkelt tixxamin meṛṛa</translation>
     </message>
     <message>
         <source>Configuration templates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timudmin n twila</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Leqqayen</translation>
     </message>
     <message>
         <source>Computer name source</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aɣbalu n yisem n uselkim</translation>
     </message>
     <message>
         <source>Default</source>
@@ -3513,11 +3518,11 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>Session host name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n usenneftaɣ n tɣimit</translation>
     </message>
     <message>
         <source>Session metadata</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isefka uffiren n tɣimit</translation>
     </message>
     <message>
         <source>Full name of user</source>
@@ -3529,11 +3534,11 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>Computer UID role</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamlilt n UID n uselkim</translation>
     </message>
     <message>
         <source>Session meta data hash</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adwil n yisefka uffiren n tɣimit</translation>
     </message>
     <message>
         <source>Monitoring view</source>
@@ -3592,19 +3597,19 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>Query application version of the server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Suter lqem n wahil n uqeddac</translation>
     </message>
     <message>
         <source>Query active features</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Suter timahilin yermden</translation>
     </message>
     <message>
         <source>Query properties of remotely available screens</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Suter timahilin n yigdilen yellan s lebɛid</translation>
     </message>
     <message>
         <source>Identify users in guest sessions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ssulu iseqdacen deg tɣimiyin n yinebgawen</translation>
     </message>
     <message>
         <source>Identification request</source>
@@ -3627,7 +3632,7 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     <name>NetworkObjectTreeModel</name>
     <message>
         <source>Locations/Computers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tixxamin/Iselkimen</translation>
     </message>
 </context>
 <context>
@@ -3661,7 +3666,7 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     <name>PasswordDialog</name>
     <message>
         <source>Veyon Logon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tuqqna ɣer Veyon</translation>
     </message>
     <message>
         <source>Please enter your username and password in order to access computers.</source>
@@ -3681,7 +3686,7 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>Logon failed with given username and password. Please try again!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tuqqna ur teddi ara s yisem n useqdac d wawal uffir-a. Ma ulac aɣilif, ɛreḍ tikkelt nniḍen!</translation>
     </message>
 </context>
 <context>
@@ -3778,7 +3783,7 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     </message>
     <message>
         <source>This command broadcasts a Wake-on-LAN (WOL) packet to the network in order to power on the computer with the given MAC address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Taladna-a tettazen akemmus Wake-on-LAN (WOL) deg uẓeṭṭa akken ad yekker uselkim n tansa MAC-a.</translation>
     </message>
     <message>
         <source>Confirm reboot</source>
@@ -3837,11 +3842,11 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Please specify a timeout for powering down the selected computers:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, sbadu akud uqbel ad nsen yiselkimen yettwafernen:</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">tisdatin</translation>
     </message>
     <message>
         <source>seconds</source>
@@ -3891,11 +3896,11 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     <name>RemoteAccessWidget</name>
     <message>
         <source>%1 - Veyon Remote Access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - Anekcum s lebɛid n Veyon</translation>
     </message>
     <message>
         <source>%1 - %2 - Veyon Remote Access</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - %2 - Anekcum s lebɛid n Veyon</translation>
     </message>
 </context>
 <context>
@@ -3934,27 +3939,27 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Ctrl+Alt+Del</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Alt+Del</translation>
     </message>
     <message>
         <source>Ctrl+Esc</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Esc</translation>
     </message>
     <message>
         <source>Alt+Tab</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alt+Tab</translation>
     </message>
     <message>
         <source>Alt+F4</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alt+F4</translation>
     </message>
     <message>
         <source>Win+Tab</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Win+Tab</translation>
     </message>
     <message>
         <source>Win</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Win</translation>
     </message>
     <message>
         <source>Menu</source>
@@ -3962,7 +3967,7 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Alt+Ctrl+F1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alt+Ctrl+F1</translation>
     </message>
     <message>
         <source>Connected.</source>
@@ -4016,7 +4021,7 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Could not take a screenshot as directory %1 doesn&apos;t exist and couldn&apos;t be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yeṭṭef tuṭṭfa n ugdil acku akaram %1 ulac-it, ur yezmir ara ad yettwarnu.</translation>
     </message>
     <message>
         <source>Screenshot</source>
@@ -4024,7 +4029,7 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Could not open screenshot file %1 for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yeldi afaylu n tuṭṭfa n ugdil %1 i tira.</translation>
     </message>
 </context>
 <context>
@@ -4043,7 +4048,7 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Screenshot of %1 computer have been taken successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tuṭṭfa n ugdil n uselkim %1 tettwaṭṭef akken iwata.</translation>
     </message>
     <message>
         <source>Take screenshots of computers and save them locally.</source>
@@ -4054,7 +4059,7 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     <name>ScreenshotManagementPanel</name>
     <message>
         <source>All screenshots taken by you are listed here. You can take screenshots by clicking the &quot;Screenshot&quot; item in the context menu of a computer. The screenshots can be managed using the buttons below.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tuṭṭfiwin n ugdil i teṭṭfeḍ akk ttbanent-d dagi. Tzemreḍ ad teṭṭfeḍ tuṭṭfa s usiti ɣef &quot;Tuṭṭfa n ugdil&quot; deg wumuɣ n uselkim, syen ad tent-tesferkeḍ s tqeffalin ddaw-a.</translation>
     </message>
     <message>
         <source>User:</source>
@@ -4062,7 +4067,7 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Computer:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aselkim:</translation>
     </message>
     <message>
         <source>Date:</source>
@@ -4086,7 +4091,7 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Do you really want to delete all selected screenshots?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tebɣiḍ s tidet ad tekkseḍ akk tuṭṭfiwin n ugdil yettwafernen?</translation>
     </message>
 </context>
 <context>
@@ -4128,19 +4133,19 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Show notification when an unauthorized access is blocked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sken alɣu mi ara yettusewḥel unekcum ur yettusirgen ara</translation>
     </message>
     <message>
         <source>Show notification on remote connection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sken alɣu mi ara tili tuqqna s lebɛid</translation>
     </message>
     <message>
         <source>Maximum simultaneous server connections</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Amḍan afellay n tuqqniwin akk-a ɣer uqeddac</translation>
     </message>
     <message>
         <source>Limits simultaneous remote connections to protect the server against resource exhaustion.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yettḥettim amḍan n tuqqniwin s lebɛid akk-a akken ad yeḥrez aqeddac seg ufukk n tɣbula.</translation>
     </message>
     <message>
         <source>Hide tray icon</source>
@@ -4168,44 +4173,45 @@ Ma ulac aɣilif, sekles leqdic-ik syen mdel akk ihilen.</translation>
     </message>
     <message>
         <source>Session mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Askar n tɣimiyin</translation>
     </message>
     <message>
         <source>Local session mode (single server instance for primary local session)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Askar n tɣimit tadigant (yiwen n uqeddac i tɣimit tadigant tagejdant)</translation>
     </message>
     <message>
         <source>Enabling this option will make the service launch a server process for every interactive session on a computer.
 Typically this is required to support terminal servers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma tremdeḍ taxtiṛt-a, ameẓlu ad yesker akala n uqeddac i yal tiɣimit tamyigawt ɣef uselkim.
+S umata, ayagi ilaq i yiqeddacen n yineggura.</translation>
     </message>
     <message>
         <source>Active session mode (single server instance for active local or remote session)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Askar n tɣimit turmidt (yiwen n uqeddac i tɣimit turmidt tadigant neɣ s lebɛid)</translation>
     </message>
     <message>
         <source>Multi session mode (distinct server instance for each local and remote desktop session)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Askar n waṭas n tɣimiyin (aqeddac i yal tiɣimit n tnarit tadigant neɣ s lebɛid)</translation>
     </message>
     <message>
         <source>Maximum session count</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Amḍan afellay n tɣimiyin</translation>
     </message>
     <message>
         <source>Network port numbers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uṭṭunen n tewwura n uẓeṭṭa</translation>
     </message>
     <message>
         <source>Veyon server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aqeddac Veyon</translation>
     </message>
     <message>
         <source>Internal VNC server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aqeddac VNC agensan</translation>
     </message>
     <message>
         <source>Feature manager</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Amsefrak n tmahilin</translation>
     </message>
     <message>
         <source>Demo server</source>
@@ -4213,7 +4219,7 @@ Typically this is required to support terminal servers.</source>
     </message>
     <message>
         <source>Miscellaneous settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iɣewwaren nniḍen</translation>
     </message>
     <message>
         <source>Enable firewall exception</source>
@@ -4225,23 +4231,23 @@ Typically this is required to support terminal servers.</source>
     </message>
     <message>
         <source>Disable clipboard synchronization</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sens amtawi n tecfawit</translation>
     </message>
     <message>
         <source>VNC server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aqeddac VNC</translation>
     </message>
     <message>
         <source>Plugin:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azegrir:</translation>
     </message>
     <message>
         <source>Restart Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ales asekker n umeẓlu Veyon</translation>
     </message>
     <message>
         <source>All settings were saved successfully. In order to take effect the Veyon service needs to be restarted. Restart it now?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iɣewwaren akk ttwaskelsen akken iwata. Akken ad ddun, ameẓlu Veyon ilaq ad yales asekker. Ad as-talseḍ asekker tura?</translation>
     </message>
     <message>
         <source>Running</source>
@@ -4249,23 +4255,23 @@ Typically this is required to support terminal servers.</source>
     </message>
     <message>
         <source>Session metadata</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isefka uffiren n tɣimit</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Agbur</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac</translation>
     </message>
     <message>
         <source>Value of an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azal n umutti n twennaḍt</translation>
     </message>
     <message>
         <source>Value of a registry key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azal n tsarut n uɣmis n Windows</translation>
     </message>
     <message>
         <source>Optionally enter a regular expression with a capture to extract a part of the computer name and use it as the display name for the computer.
@@ -4277,42 +4283,42 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Enable if a single Veyon Server instance should be launched for the currently active session, no matter if local or remote.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rmed-it ma yella ilaq ad yekker yiwen n uqeddac Veyon i tɣimit turmidt tura, ama tadigant ama s lebɛid.</translation>
     </message>
     <message>
         <source>Environment variable name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n umutti n twennaḍt</translation>
     </message>
     <message>
         <source>Registry key name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isem n tsarut n uɣmis n Windows</translation>
     </message>
 </context>
 <context>
     <name>ServiceControl</name>
     <message>
         <source>Service control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asenqed n umeẓlu</translation>
     </message>
     <message>
         <source>Starting %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asekker n %1</translation>
     </message>
     <message>
         <source>Stopping %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseḥbes n %1</translation>
     </message>
     <message>
         <source>Restarting %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Allus n usekker n %1</translation>
     </message>
     <message>
         <source>Registering %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ajerred n %1</translation>
     </message>
     <message>
         <source>Unregistering %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tukksa n ujerred n %1</translation>
     </message>
 </context>
 <context>
@@ -4335,7 +4341,7 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Restart Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ales asekker n umeẓlu Veyon</translation>
     </message>
     <message>
         <source>Query status of Veyon Service</source>
@@ -4447,7 +4453,7 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>e.g. &quot;C:\Program Files\VideoLAN\VLC\vlc.exe&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">amedya &quot;C:\Program Files\VideoLAN\VLC\vlc.exe&quot;</translation>
     </message>
     <message>
         <source>Remember and add to application menu</source>
@@ -4466,18 +4472,18 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     <name>SystemTrayIcon</name>
     <message>
         <source>System tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tignit deg ufeggag n waddad</translation>
     </message>
 </context>
 <context>
     <name>SystemUserGroupsPlugin</name>
     <message>
         <source>User groups backend for system user groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aɣawas n yigrawen n yiseqdacen n unagraw</translation>
     </message>
     <message>
         <source>Default (system user groups)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Amezwer (igrawen n yiseqdacen n unagraw)</translation>
     </message>
 </context>
 <context>
@@ -4503,11 +4509,11 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azwel:</translation>
     </message>
     <message>
         <source>Optional custom title for the message window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azwel afrayan i usfaylu n yizen</translation>
     </message>
     <message>
         <source>Message from teacher</source>
@@ -4515,7 +4521,7 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Message from %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izen seg %1</translation>
     </message>
 </context>
 <context>
@@ -4541,11 +4547,11 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     <name>UltraVncConfigurationWidget</name>
     <message>
         <source>Builtin UltraVNC server configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tawila n uqeddac UltraVNC yettwabnan</translation>
     </message>
     <message>
         <source>Maximum CPU usage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aseqdec afellay n umesfeḍ</translation>
     </message>
     <message>
         <source>Low accuracy (turbo mode)</source>
@@ -4553,15 +4559,15 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Poll full screen (leave this enabled per default)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ɣer agdil akk (eǧǧ-it yermed s umezwer)</translation>
     </message>
     <message>
         <source>Enable Desktop Duplication Engine on Windows 8 and newer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rmed amsadday n ususru n tnarit ɣef Windows 8 d wid i d-yernan</translation>
     </message>
     <message>
         <source>Enable multi monitor support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rmed tallelt n waṭas n yigdilen</translation>
     </message>
     <message>
         <source>Enable capturing of layered (semi-transparent) windows</source>
@@ -4572,11 +4578,11 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     <name>UserLoginDialog</name>
     <message>
         <source>User login</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tuqqna n useqdac</translation>
     </message>
     <message>
         <source>Please enter a username and password for automatic login on all computers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ma ulac aɣilif, sekcem isem n useqdac d wawal uffir i tuqqna tawurmant ɣef yiselkimen meṛṛa.</translation>
     </message>
     <message>
         <source>Username</source>
@@ -4634,23 +4640,23 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Invalid arguments given</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iɣewwaren arameɣtuten</translation>
     </message>
     <message>
         <source>Not enough arguments given - use &quot;%1 help&quot; for more information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac iɣewwaren yekfan - seqdec &quot;%1 help&quot; i ugar n telɣut</translation>
     </message>
     <message>
         <source>No command given</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac taladna</translation>
     </message>
     <message>
         <source>Invalid command given</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Taladna d tarameɣtut</translation>
     </message>
     <message>
         <source>Plugin not licensed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azegrir ulac ɣur-s turagt</translation>
     </message>
     <message>
         <source>Available commands:</source>
@@ -4658,39 +4664,39 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Unknown command result</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Agmuḍ n tladna arussin</translation>
     </message>
     <message>
         <source>Available modules:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timḍunin yellan:</translation>
     </message>
     <message>
         <source>No module specified or module not found - available modules are:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac tamḍunt neɣ ur tettwaf ara - timḍunin yellan d tigi:</translation>
     </message>
     <message>
         <source>INFO</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TALƔUT</translation>
     </message>
     <message>
         <source>WARNING</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ALƔU</translation>
     </message>
     <message>
         <source>ERROR</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TUCCḌA</translation>
     </message>
     <message>
         <source>USAGE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ASEQDEC</translation>
     </message>
     <message>
         <source>DESCRIPTION</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">AGLAM</translation>
     </message>
     <message>
         <source>EXAMPLES</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IMEDYATEN</translation>
     </message>
     <message>
         <source>Screen %1</source>
@@ -4709,14 +4715,14 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Could not save your personal settings! Please check the user configuration file path using Veyon Configurator.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad yesekles iɣewwaren-ik udmawanen! Ma ulac aɣilif, senqed abrid n ufaylu n twila n useqdac deg Umesbadu n Veyon.</translation>
     </message>
 </context>
 <context>
     <name>VeyonServiceControl</name>
     <message>
         <source>Veyon Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu Veyon</translation>
     </message>
 </context>
 <context>
@@ -4751,7 +4757,7 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source> s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> tas</translation>
     </message>
     <message>
         <source>Idle timeout</source>
@@ -4813,14 +4819,14 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     <name>WindowsPlatformConfiguration</name>
     <message>
         <source>Could not change the setting for SAS generation by software. Sending Ctrl+Alt+Del via remote control will not work!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad ibeddel aɣewwar n tsuta n SAS s wahil. Tuzzna n Ctrl+Alt+Del s usenqed s lebɛid ur tetteddu ara!</translation>
     </message>
 </context>
 <context>
     <name>WindowsPlatformConfigurationPage</name>
     <message>
         <source>Windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Windows</translation>
     </message>
     <message>
         <source>General</source>
@@ -4828,148 +4834,148 @@ Amedya: [^-]*-(PC[0-9]*)</translation>
     </message>
     <message>
         <source>Enable SAS generation by software (Ctrl+Alt+Del)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rmed tasuta n SAS s wahil (Ctrl+Alt+Del)</translation>
     </message>
     <message>
         <source>User authentication</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asesteb n useqdac</translation>
     </message>
     <message>
         <source>Use alternative user authentication mechanism</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seqdec aɣawas nniḍen n usesteb n useqdac</translation>
     </message>
     <message>
         <source>User login</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tuqqna n useqdac</translation>
     </message>
     <message>
         <source>Input start delay</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aɛeṭṭel uqbel ad yebdu unekcum</translation>
     </message>
     <message>
         <source>Simulated key presses interval</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azilal gar tiqeffalin n unasiw yettwasmeslayen</translation>
     </message>
     <message>
         <source>Confirm legal notice (message displayed before user logs in)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sentem alɣu ussḍif (izen i d-ibanen uqbel ad yeqqen useqdac)</translation>
     </message>
     <message>
         <source>Screen lock</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asekkeṛ n ugdil</translation>
     </message>
     <message>
         <source>Hide taskbar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ffer afeggag n twuriwin</translation>
     </message>
     <message>
         <source>Hide start menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ffer umuɣ n usekker</translation>
     </message>
     <message>
         <source>Hide desktop</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ffer tanarit</translation>
     </message>
     <message>
         <source>Use custom power scheme with disabled power and sleep buttons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seqdec aɣawas n tezmert udmawan s tqeffalin n tezmert d yiḍes yensan</translation>
     </message>
     <message>
         <source>Use input device interception driver</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seqdec anuḍaf n tuṭṭfa n yibenkan n unekcum</translation>
     </message>
     <message>
         <source>Disable touchpads and touchscreens</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sens tiferkiwin n wannar d yigdilen n wannar</translation>
     </message>
     <message>
         <source>Disable keyboard devices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sens inasiwen</translation>
     </message>
     <message>
         <source>Disable mouse devices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sens tiɣerdayin</translation>
     </message>
     <message>
         <source>Handling of interfering windows</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asefrek n yisfuyla i d-yekkaten</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ulac</translation>
     </message>
     <message>
         <source>Fix window attributes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ṣeggem timahilin n yisfuyla</translation>
     </message>
     <message>
         <source>Terminate related process</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fak akala yettwacudden</translation>
     </message>
     <message>
         <source>Close session</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mdel tiɣimit</translation>
     </message>
 </context>
 <context>
     <name>WindowsPlatformPlugin</name>
     <message>
         <source>Internal display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Agdil agensan</translation>
     </message>
     <message>
         <source>Plugin implementing abstract functions for the Windows platform</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azegrir i d-yesbedden tiwuriwin tiddimin n unagraw Windows</translation>
     </message>
 </context>
 <context>
     <name>WindowsServiceControl</name>
     <message>
         <source>The service &quot;%1&quot; is already installed.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu &quot;%1&quot; yettwasbedd yakan.</translation>
     </message>
     <message>
         <source>The service &quot;%1&quot; could not be installed (error %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu &quot;%1&quot; ur yettwasbedd ara (tuccḍa %2).</translation>
     </message>
     <message>
         <source>Could not change the failure actions config for service &quot;%1&quot; (error %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur yezmir ara ad ibeddel tawila n tigawin n tuccḍa i umeẓlu &quot;%1&quot; (tuccḍa %2).</translation>
     </message>
     <message>
         <source>The service &quot;%1&quot; has been installed successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu &quot;%1&quot; yettwasbedd akken iwata.</translation>
     </message>
     <message>
         <source>The service &quot;%1&quot; could not be uninstalled (error %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu &quot;%1&quot; ur yettwakkes ara (tuccḍa %2).</translation>
     </message>
     <message>
         <source>The service &quot;%1&quot; has been uninstalled successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu &quot;%1&quot; yettwakkes akken iwata.</translation>
     </message>
     <message>
         <source>The start type of service &quot;%1&quot; could not be changed (error %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anaw n usekker n umeẓlu &quot;%1&quot; ur yettwabeddel ara (tuccḍa %2).</translation>
     </message>
     <message>
         <source>Service &quot;%1&quot; could not be found.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ameẓlu &quot;%1&quot; ur yettwaf ara.</translation>
     </message>
 </context>
 <context>
     <name>X11VncConfigurationWidget</name>
     <message>
         <source>Builtin x11vnc server configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tawila n uqeddac x11vnc yettwabnan</translation>
     </message>
     <message>
         <source>Custom x11vnc parameters:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iɣewwaren udmawanen n x11vnc:</translation>
     </message>
     <message>
         <source>Do not use X Damage extension</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ur seqdac ara asiɣzef X Damage</translation>
     </message>
 </context>
 </TS>
