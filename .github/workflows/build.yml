@@ -24,6 +24,7 @@ jobs:
 
   unit-tests:
     strategy:
+      fail-fast: false
       matrix:
         include:
           - dist: debian.11
