@@ -24,7 +24,8 @@ if [ "$QT" = "6" ]; then
 	packages+=( $M-qt6-qt5compat qt6-qtbase-devel qt6-qttools-devel qt6-linguist )
 else
 	# -tools: native lrelease etc. referenced by the Qt5LinguistTools CMake package
-	packages+=( $M-qca-qt5 $M-qt5-qttools-tools )
+	# perl-core: building OpenSSL (see below)
+	packages+=( $M-qca-qt5 $M-qt5-qttools-tools perl-core )
 fi
 dnf -y install "${packages[@]}"
 
@@ -57,5 +58,22 @@ fi
 echo "QCA OpenSSL plugin: $(find "$PREFIX" -name libqca-ossl.dll)"
 
 rm -rf "$WORK"
+# legacy builds (Windows 7/8.1): Fedora's OpenSSL imports
+# api-ms-win-core-path-l1-1-0.dll, which Windows 7 does not have, so replace
+# its DLLs with an upstream OpenSSL LTS build (OpenSSL 3 keeps its ABI)
+if [ "$QT" = "5" ]; then
+	OPENSSL_BRANCH=openssl-3.5
+	if [ "$ARCH" = "i686" ]; then OPENSSL_TARGET=mingw; else OPENSSL_TARGET=mingw64; fi
+	git clone -q --depth 1 -b $OPENSSL_BRANCH https://github.com/openssl/openssl.git
+	( cd openssl &&
+	  ./Configure $OPENSSL_TARGET shared no-docs no-tests --cross-compile-prefix=$TARGET- \
+		--prefix="$WORK/openssl-install" --libdir=lib >/dev/null &&
+	  make -j"$(nproc)" build_libs >/dev/null &&
+	  for dll in libcrypto-3*.dll libssl-3*.dll; do
+		  echo "replacing $dll with $(git describe --tags --always) build"
+		  install -m 755 "$dll" "$PREFIX/bin/"
+	  done )
+fi
+
 rpm -q $M-openssl $M-qt$QT-qtbase $M-gcc-c++ $M-crt 2>/dev/null || true
 echo "Windows $ARCH build environment (Qt $QT) ready in $PREFIX"

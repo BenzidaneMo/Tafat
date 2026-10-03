@@ -23,7 +23,7 @@ status=0
 while IFS= read -r -d '' file; do
 	report=$("$objdump" -p "$file" 2>/dev/null | awk -v dlls="$win8_dlls" -v functions="$win8_functions" '
 		/DLL Name:/ { dll = $3; bad = (tolower(dll) ~ dlls); if (bad) print "  imports " dll; next }
-		/^\t[0-9a-f]+[ \t]+[0-9]+[ \t]+[A-Za-z_]/ {
+		/^\t *[0-9a-f]+[ \t]+[0-9]+[ \t]+[A-Za-z_]/ {
 			if (bad) print "    " $3
 			else if ($3 ~ functions) print "  imports " $3 " from " dll
 		}
