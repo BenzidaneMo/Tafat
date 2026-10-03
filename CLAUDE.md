@@ -311,6 +311,10 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
     `$EXEPATH`, a student package unselects the Master and skips license/directory/components and
     imports via `extractpackage`; finish page "Start Tafat Master now" runs it through Explorer
     (not elevated). LangStrings in English, French and Arabic.
+  - Service upgrade: `service unregister` only marks a busy service for deletion, so the
+    installer waits until `sc query` fails before copying files (`WaitForServiceRemoval`) and
+    retries `service register` until `sc qc` finds the service (`RegisterService`).
+    `service register` can report success while the old service is still listed.
   - Still there (configurator page "Lab setup", Advanced): the student setup folder (`StudentSetup`):
     `<name>_public_key.pem`, `tafat-config.json` and `install-students.bat` (CRLF, ASCII; checks
     admin rights, picks `tafat-*-<win32|win64>[-legacy]-setup.exe` by `ver`/`PROCESSOR_ARCHITECTURE`,

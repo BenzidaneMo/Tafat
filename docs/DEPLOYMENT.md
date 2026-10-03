@@ -143,6 +143,12 @@ After the installation, select all computers in Tafat Master and open
 **Inventory** to check that every computer answers and runs the expected
 version (legacy builds are marked); *Export CSV…* saves the list.
 
+If the configurator reports "Could not modify the autostart property for the
+Tafat Service", the service is missing (`sc query TafatService` → 1060). Register
+it again from an administrator prompt: `tafat-cli service register`, then
+`tafat-cli service start`. Installers up to v1.0.1 could lose the service when
+upgrading without a reboot; newer installers wait for the old service to be removed.
+
 ## 4. Network
 
 - The installer adds a Windows firewall exception for the Tafat service. The
