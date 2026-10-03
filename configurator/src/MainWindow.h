@@ -55,6 +55,7 @@ private Q_SLOTS:
 
 private:
 	void updateSizes();
+	void setChangeButtonsEnabled( bool enabled );
 	void updateView();
 
 	void switchToStandardView();

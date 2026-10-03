@@ -57,7 +57,7 @@ ClassChatFeaturePlugin::ClassChatFeaturePlugin( QObject* parent ) :
 				   Feature::Flag::Action | Feature::Flag::AllComponents,
 				   Feature::Uid( "0b6c7e4e-5d55-4f3a-b5a4-1c2d9e5f7a10" ),
 				   Feature::Uid(),
-				   tr( "Hands & chat" ), {},
+				   tr( "Hands and chat" ), {},
 				   tr( "Let the students raise their hands and chat with you. Raised hands are "
 					   "shown on the computers." ),
 				   QStringLiteral(":/classchat/classchat.png") ),
