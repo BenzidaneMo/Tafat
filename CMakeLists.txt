@@ -69,6 +69,13 @@ endif()
 
 find_package(Git)
 
+# Contributors tab of the About dialog: the people working on this product
+# (upstream Veyon generated it from git shortlog; the Veyon contributors are
+# credited in the file). Can be overridden with -DCONTRIBUTORS=/path/to/file.
+if(NOT CONTRIBUTORS)
+	set(CONTRIBUTORS "${CMAKE_SOURCE_DIR}/CONTRIBUTORS")
+endif()
+
 if(GIT_FOUND)
 	# determine build number to use in NSIS installer and resource files
 	execute_process(COMMAND "${GIT_EXECUTABLE}" describe --tags
@@ -80,20 +87,6 @@ if(GIT_FOUND)
 		set(VERSION_BUILD 0)
 	endif()
 
-	# Get list of all committers from git history, ordered by number of commits.
-	# The CONTRIBUTORS file is used by AboutDialog. This information can be provided
-	# with -DCONTRIBUTORS=/path/to/CONTRIBUTORS instead. For instance, to generate
-	# this file for version 3.0.2, the command is:
-	#   git shortlog -sne v3.0.2 | cut -c8-
-	set(CONTRIBUTORS "${CMAKE_BINARY_DIR}/CONTRIBUTORS")
-	if(NOT EXISTS "${CONTRIBUTORS}")
-		execute_process(COMMAND "${GIT_EXECUTABLE}" shortlog -s d160d147165271516589c304cb1b8f5e48f8527d..HEAD
-			COMMAND cut -c8-
-			COMMAND sort -f
-			OUTPUT_FILE "${CONTRIBUTORS}"
-			WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-			TIMEOUT 10)
-	endif()
 endif()
 
 # set up basic platform variables
