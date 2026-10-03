@@ -302,7 +302,7 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
 - Teacher guides (drafts, need native review): `docs/guide-enseignant.md` (French),
   `docs/guide-enseignant-ar.md` (Arabic, `<div dir="rtl">`). Button names are taken
   from the current catalogs; update the guides when feature names change.
-- `docs/install.html`: short installation page in French and Arabic. It is self-contained
+- `docs/install.html`: short installation page in French, English and Arabic. It is self-contained
   (works offline from a USB stick), with an installer chooser, copy buttons, brand colors,
   light/dark and phone layout. Keep it in step with `DEPLOYMENT.md`.
 - `docs/DEPLOYMENT.md`: lab installation guide (installers, keys, silent install

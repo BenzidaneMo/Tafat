@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Installer Tafat</title>
-<meta name="description" content="Installer Tafat dans une salle informatique : poste de l'enseignant, postes des élèves, réseau. تثبيت تافات في قاعة الإعلام الآلي.">
+<meta name="description" content="Installer Tafat dans une salle informatique : poste de l'enseignant, postes des élèves, réseau. Installing Tafat in a computer lab. تثبيت تافات في قاعة الإعلام الآلي.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect x='120' y='128' width='272' height='60' rx='30' fill='%23f26b2d'/%3E%3Crect x='226' y='150' width='60' height='202' rx='30' fill='%23f26b2d'/%3E%3C/svg%3E">
 <style>
 :root {
@@ -172,8 +172,9 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 			<span>Tafat <span style="font-weight:400;color:var(--text-muted)">· ⵜⴰⴼⴰⵜ · تافات</span></span>
 		</a>
 		<span class="spacer"></span>
-		<div class="switch" role="group" aria-label="Langue / اللغة">
+		<div class="switch" role="group" aria-label="Langue / Language / اللغة">
 			<button type="button" data-set-lang="fr" aria-pressed="true">Français</button>
+			<button type="button" data-set-lang="en" aria-pressed="false" lang="en">English</button>
 			<button type="button" data-set-lang="ar" aria-pressed="false" lang="ar">العربية</button>
 		</div>
 	</div>
@@ -337,7 +338,164 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 </main>
 
 <!-- ===================================================================== -->
-<!-- العربية                                                                -->
+<!-- ENGLISH                                                                -->
+<!-- ===================================================================== -->
+<main id="en" lang="en" dir="ltr" hidden>
+<div class="wrap">
+
+<div class="hero">
+	<h1>Installing Tafat in a computer lab</h1>
+	<p>For the person who sets up the lab: one teacher computer and the student computers on the same network. The same steps work for several labs. Allow about an hour for a lab of 20 computers.</p>
+	<nav class="toc" aria-label="Contents">
+		<a href="#en-choose">1. Installer</a>
+		<a href="#en-teacher">2. Teacher computer</a>
+		<a href="#en-students">3. Student computers</a>
+		<a href="#en-check">4. Check</a>
+		<a href="#en-network">5. Network</a>
+		<a href="#en-help">6. Problems</a>
+	</nav>
+</div>
+
+<div class="note"><strong>Status:</strong> the installers are built automatically but have not yet been tried on real lab computers. Please report any problem.</div>
+
+<section id="en-choose">
+	<h2><span class="n">1</span>Choose the installer</h2>
+	<p>There are four installers. They all work together: a teacher computer on Windows 11 can control student computers on Windows 7, and the other way round.</p>
+
+	<div class="card chooser" data-chooser>
+		<fieldset>
+			<legend>Windows version of the computer</legend>
+			<div class="opts">
+				<label><input type="radio" name="en-win" value="7"><span>Windows 7</span></label>
+				<label><input type="radio" name="en-win" value="8.1"><span>Windows 8.1</span></label>
+				<label><input type="radio" name="en-win" value="10" checked><span>Windows 10</span></label>
+				<label><input type="radio" name="en-win" value="11"><span>Windows 11</span></label>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Architecture</legend>
+			<div class="opts">
+				<label><input type="radio" name="en-arch" value="64" checked><span>64-bit</span></label>
+				<label><input type="radio" name="en-arch" value="32"><span>32-bit</span></label>
+			</div>
+		</fieldset>
+		<div class="result" aria-live="polite">
+			<span data-msg="ok">Installer to use:</span>
+			<span data-msg="bad" hidden>Windows 11 only exists as 64-bit. Check the computer's architecture.</span>
+			<code class="file" data-file>tafat-&lt;version&gt;-win64-setup.exe</code>
+		</div>
+		<p style="margin:10px 0 0;color:var(--text-muted);font-size:.92rem">To find the version and architecture: press <kbd>Windows</kbd> + <kbd>Pause</kbd>, or <kbd>Windows</kbd> + <kbd>R</kbd> and type <code>winver</code>.</p>
+	</div>
+
+	<div class="table"><table>
+		<thead><tr><th>Windows</th><th>Installer</th></tr></thead>
+		<tbody>
+			<tr><td>10 / 11, 64-bit</td><td><code>tafat-&lt;version&gt;-win64-setup.exe</code></td></tr>
+			<tr><td>10, 32-bit</td><td><code>tafat-&lt;version&gt;-win32-setup.exe</code></td></tr>
+			<tr><td>7 / 8.1, 64-bit</td><td><code>tafat-&lt;version&gt;-win64-legacy-setup.exe</code></td></tr>
+			<tr><td>7 / 8.1, 32-bit</td><td><code>tafat-&lt;version&gt;-win32-legacy-setup.exe</code></td></tr>
+		</tbody>
+	</table></div>
+	<p>An installer refuses to run on a Windows version or architecture it is not made for. Download the <code>.exe</code> files from the <a href="https://github.com/BenzidaneMo/Tafat/releases/latest">Releases</a> page. Newer development versions are in the <a href="https://github.com/BenzidaneMo/Tafat/actions/workflows/windows.yml">Windows builds</a> (zip files <code>tafat-windows-&lt;arch&gt;-qt6</code>, and <code>-qt5</code> for Windows 7/8.1; a GitHub account is needed).</p>
+
+	<h3>Windows 7 and 8.1</h3>
+	<ul>
+		<li>Windows 7 needs Service Pack 1. Update KB2533623 is recommended; without it, <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> cannot be sent remotely.</li>
+		<li>Website blocking works with the last versions for Windows 7: Chrome 109 and Firefox ESR 115.</li>
+		<li>Windows 7 no longer gets security updates: keep these computers on the lab network, preferably without direct internet access.</li>
+	</ul>
+</section>
+
+<section id="en-teacher">
+	<h2><span class="n">2</span>Teacher computer</h2>
+	<ol class="steps">
+		<li>Run the installer with <strong>all components</strong>.</li>
+		<li>Open <strong>Tafat Configurator</strong> → <em>Authentication</em>: choose <em>Key file authentication</em> and create a key pair, for example <code>teacher</code>. From the command line:
+			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" authkeys create teacher</code></pre></div>
+		</li>
+		<li><em>Locations &amp; computers</em>: add the lab and its computers, or import them from a CSV file (<code>room;name;host-or-IP</code>):
+			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
+		</li>
+		<li><em>General</em> → <em>Language</em>: Arabic, French, Tamazight (Latin or Tifinagh) or English.</li>
+		<li>Click <em>Apply</em>.</li>
+	</ol>
+	<div class="ok">The <strong>private</strong> key stays on the teacher computer. Only the <strong>public</strong> key goes to the student computers.</div>
+</section>
+
+<section id="en-students">
+	<h2><span class="n">3</span>Student computers</h2>
+
+	<h3>With the student setup folder (recommended)</h3>
+	<ol class="steps">
+		<li>On the teacher computer: <strong>Tafat Configurator</strong> → <em>Lab setup</em>, choose the teacher's key pair, then <em>Export student setup…</em> to an empty folder, for example on a USB stick. The folder gets <code>teacher_public_key.pem</code>, <code>tafat-config.json</code> and <code>install-students.bat</code>.</li>
+		<li>Copy the installers into the same folder (all four, or only the ones the lab needs).</li>
+		<li>On each student computer: right-click <code>install-students.bat</code> → <em>Run as administrator</em>. The script picks the right installer for the Windows version, installs Tafat without the teacher program, applies the settings and imports the key.</li>
+	</ol>
+
+	<h3>By hand or with a deployment tool</h3>
+	<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
+
+	<div class="table"><table>
+		<thead><tr><th>Option</th><th>Effect</th></tr></thead>
+		<tbody>
+			<tr><td><code>/S</code></td><td>silent install</td></tr>
+			<tr><td><code>/NoMaster</code></td><td>without the teacher program</td></tr>
+			<tr><td><code>/NoInterception</code></td><td>without the input device driver (used to lock keyboard and mouse)</td></tr>
+			<tr><td><code>/NoStartMenuFolder</code></td><td>no Start menu entries</td></tr>
+			<tr><td><code>/ApplyConfig=&lt;file&gt;</code></td><td>imports a configuration exported from the configurator</td></tr>
+			<tr><td><code>/ImportPublicKey=&lt;file&gt;</code></td><td>imports a public key (replaces a key with the same name)</td></tr>
+			<tr><td><code>/PublicKeyName=&lt;name&gt;</code></td><td>name of the imported key (default <code>teacher</code>)</td></tr>
+			<tr><td><code>/D=&lt;folder&gt;</code></td><td>installation folder (always last)</td></tr>
+		</tbody>
+	</table></div>
+	<p>Uninstall: <code>"C:\Program Files\Tafat\uninstall.exe" /S</code> (add <code>/ClearConfig</code> to remove the configuration too).</p>
+</section>
+
+<section id="en-check">
+	<h2><span class="n">4</span>Check</h2>
+	<ol class="steps">
+		<li>Open <strong>Tafat Master</strong> on the teacher computer and choose the lab. Every computer that is switched on should show the student's screen.</li>
+		<li>Select all computers, then <strong>Inventory</strong>: each computer should answer with the expected version (builds for older systems are marked). <em>Export CSV…</em> saves the list.</li>
+		<li>Try <strong>Lock</strong>, then unlock.</li>
+	</ol>
+</section>
+
+<section id="en-network">
+	<h2><span class="n">5</span>Network</h2>
+	<div class="table"><table>
+		<thead><tr><th>Port</th><th>On</th><th>Used for</th></tr></thead>
+		<tbody>
+			<tr><td><code>TCP 11100</code></td><td>student computers</td><td>teacher connection (screens, commands)</td></tr>
+			<tr><td><code>TCP 11400</code></td><td>teacher computer</td><td>demo (teacher's screen to the students)</td></tr>
+		</tbody>
+	</table></div>
+	<ul>
+		<li>The installer adds the exception to Windows Firewall. Other firewalls in the lab must allow these ports.</li>
+		<li>Fixed IP addresses or DHCP reservations keep the lab's computer list reliable.</li>
+		<li><em>Also block the internet for all other programs</em> only blocks public internet addresses: the lab network keeps working.</li>
+		<li>Print blocking stops the <em>Print Spooler</em> service on the student computers while the mode is on; it is restored afterwards.</li>
+	</ul>
+</section>
+
+<section id="en-help">
+	<h2><span class="n">6</span>If something goes wrong</h2>
+	<div class="table"><table>
+		<thead><tr><th>Symptom</th><th>What to check</th></tr></thead>
+		<tbody>
+			<tr><td>Grey tile</td><td>Computer switched off, not on the network, or Tafat service stopped. Restart the computer; check port 11100.</td></tr>
+			<tr><td>Access denied</td><td>The teacher's public key is not installed on the computer, or has a different name. Run <code>install-students.bat</code> again.</td></tr>
+			<tr><td>"This version of Tafat requires Windows 10 or newer" or "This installer is for 64-bit Windows"</td><td>Use the other installer (<code>-legacy</code> for Windows 7/8.1, <code>win32</code> for 32-bit).</td></tr>
+			<tr><td>A website is not blocked</td><td>Browser not supported or Firefox not restarted: block that browser with <strong>Block apps</strong>.</td></tr>
+		</tbody>
+	</table></div>
+	<p>More details: <a href="DEPLOYMENT.md">DEPLOYMENT.md</a>. For teachers: <a href="guide-enseignant.md">teacher guide</a> (French) or <a href="guide-enseignant-ar.md">Arabic</a>.</p>
+</section>
+
+</div>
+</main>
+
+<!-- ===================================================================== -->
+<!-- العربية                                                              -->
 <!-- ===================================================================== -->
 <main id="ar" lang="ar" dir="rtl" hidden>
 <div class="wrap">
@@ -498,6 +656,7 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 		Tafat — développé par <a href="https://github.com/BenzidaneMo">BenzidaneMo</a> ·
 		<span lang="ar" dir="rtl">تطوير <a href="https://github.com/BenzidaneMo">BenzidaneMo</a></span> ·
 		logiciel libre (GPL-2.0-or-later), basé sur <a href="https://veyon.io">Veyon</a> ·
+		<span lang="en">free software based on Veyon</span> ·
 		<span lang="ar" dir="rtl">برنامج حر مبني على Veyon</span> ·
 		<a href="https://github.com/BenzidaneMo/Tafat">github.com/BenzidaneMo/Tafat</a>
 	</div>
@@ -505,13 +664,15 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 
 <script>
 (function () {
-	// language switch: ?lang=ar or #ar-… links, remembered per browser
+	// language switch: ?lang=fr|en|ar or #en-… links, remembered per browser
 	var buttons = document.querySelectorAll('[data-set-lang]');
+	var langs = ['fr', 'en', 'ar'];
+	var titles = { fr: 'Installer Tafat', en: 'Install Tafat', ar: 'تثبيت تافات' };
 	function setLang(lang) {
-		['fr', 'ar'].forEach(function (l) { document.getElementById(l).hidden = (l !== lang); });
+		['fr', 'en', 'ar'].forEach(function (l) { document.getElementById(l).hidden = (l !== lang); });
 		document.documentElement.lang = lang;
 		document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-		document.title = (lang === 'ar') ? 'تثبيت تافات' : 'Installer Tafat';
+		document.title = titles[lang];
 		buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)); });
 		try { localStorage.setItem('tafat-install-lang', lang); } catch (e) {}
 	}
@@ -521,11 +682,12 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 	try { stored = localStorage.getItem('tafat-install-lang'); } catch (e) {}
 	var q = new URLSearchParams(location.search).get('lang');
 	var initial;
-	if (q === 'ar' || q === 'fr') initial = q;
-	else if (/^#ar-/.test(location.hash)) initial = 'ar';
-	else if (/^#fr-/.test(location.hash)) initial = 'fr';
-	else if (stored === 'ar' || stored === 'fr') initial = stored;
-	else initial = ((navigator.language || '').indexOf('ar') === 0) ? 'ar' : 'fr';
+	var hash = (location.hash.match(/^#(fr|en|ar)-/) || [])[1];
+	var nav = (navigator.language || '').slice(0, 2);
+	if (langs.indexOf(q) >= 0) initial = q;
+	else if (hash) initial = hash;
+	else if (langs.indexOf(stored) >= 0) initial = stored;
+	else initial = (langs.indexOf(nav) >= 0) ? nav : 'fr';
 	setLang(initial);
 
 	// installer chooser
