@@ -57,4 +57,5 @@ fi
 echo "QCA OpenSSL plugin: $(find "$PREFIX" -name libqca-ossl.dll)"
 
 rm -rf "$WORK"
+rpm -q $M-openssl $M-qt$QT-qtbase $M-gcc-c++ $M-crt 2>/dev/null || true
 echo "Windows $ARCH build environment (Qt $QT) ready in $PREFIX"
