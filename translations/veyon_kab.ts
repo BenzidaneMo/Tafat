@@ -4,6 +4,10 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <source>Developed by %1</source>
+        <translation type="unfinished">Yesnefli-t %1</translation>
+    </message>
+    <message>
         <source>About Veyon</source>
         <translation type="unfinished">Ɣef Veyon</translation>
     </message>
@@ -49,7 +53,7 @@ Ma tebɣiḍ ad tsuqleḍ Veyon ɣer tutlayt-ik neɣ ɣer tutlayt nniḍen, neɣ
     </message>
     <message>
         <source>%1 - based on %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - yebna ɣef %2</translation>
     </message>
 </context>
 <context>

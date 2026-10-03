@@ -47,12 +47,16 @@ AboutDialog::AboutDialog( QWidget *parent ) :
 	const auto upstreamName = QStringLiteral("Veyon");
 	const auto upstreamWebsite = QStringLiteral("https://veyon.io");
 	const auto website = QStringLiteral(VEYON_WEBSITE);
+	const auto developer = QStringLiteral("<a href=\"%1\">%2</a>").arg( QStringLiteral(VEYON_DEVELOPER_URL),
+																		 QStringLiteral(VEYON_DEVELOPER) );
 	ui->label_3->setText( tr( "%1 - based on %2" ).arg( VeyonCore::productName(),
-		QStringLiteral("<a href=\"%1\">%2</a>").arg( upstreamWebsite, upstreamName ) ) );
+		QStringLiteral("<a href=\"%1\">%2</a>").arg( upstreamWebsite, upstreamName ) ) +
+		QStringLiteral("<br/>") + tr( "Developed by %1" ).arg( developer ) );
 	ui->label_3->setOpenExternalLinks( true );
 	ui->label_4->setText( QStringLiteral("<a href=\"%1\">%1</a>").arg( website ) );
-	ui->label_8->setText( QStringLiteral( "Copyright © 2026 %1 contributors<br/>"
-										  "Copyright © 2004-2026 Tobias Junghans / Veyon Solutions" ).arg( VeyonCore::productName() ) );
+	ui->label_8->setText( QStringLiteral( "Copyright © 2026 %1 and %2 contributors<br/>"
+										  "Copyright © 2004-2026 Tobias Junghans / Veyon Solutions" )
+							  .arg( QStringLiteral(VEYON_DEVELOPER), VeyonCore::productName() ) );
 	ui->label_8->setTextFormat( Qt::RichText );
 
 	// the donation link of the upstream project does not apply to this product

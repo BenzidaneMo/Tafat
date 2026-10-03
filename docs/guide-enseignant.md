@@ -111,3 +111,7 @@ Les bonnes réponses ne sont jamais envoyées aux ordinateurs des élèves.
 - **Un site n'est pas bloqué** : le navigateur n'est pas pris en charge ou
   Firefox n'a pas été redémarré ; bloquez ce navigateur avec **Bloquer les
   applis**.
+
+---
+
+Tafat est développé par [BenzidaneMo](https://github.com/BenzidaneMo), sur la base de [Veyon](https://veyon.io).

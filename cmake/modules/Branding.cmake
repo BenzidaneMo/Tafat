@@ -14,8 +14,11 @@ set(BRANDING_ORGANIZATION "Tafat")
 set(BRANDING_DOMAIN "benzidanemo.github.io")
 # Project website
 set(BRANDING_WEBSITE "https://github.com/BenzidaneMo/Tafat")
+# Developer of this distribution, credited in the About dialog
+set(BRANDING_DEVELOPER "BenzidaneMo")
+set(BRANDING_DEVELOPER_URL "https://github.com/BenzidaneMo")
 # Maintainer shown in Linux packages
-set(BRANDING_CONTACT "Tafat contributors")
+set(BRANDING_CONTACT "${BRANDING_DEVELOPER}")
 # Prefix for reverse-DNS identifiers (desktop file, D-Bus and polkit names)
 set(BRANDING_APP_ID_PREFIX "io.github.benzidanemo")
 set(BRANDING_SERVER_APP_ID "${BRANDING_APP_ID_PREFIX}.${BRANDING_PRODUCT_SLUG}-server")

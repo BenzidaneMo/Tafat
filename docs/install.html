@@ -1,0 +1,575 @@
+<!doctype html>
+<!--
+  Tafat installation guide for lab administrators (French and Arabic).
+  Self-contained on purpose: it must work offline from a USB stick or a lab share.
+  Keep it in step with docs/DEPLOYMENT.md (English, more detail).
+  Colors are the tokens of core/src/BrandTheme.h.
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installer Tafat</title>
+<meta name="description" content="Installer Tafat dans une salle informatique : poste de l'enseignant, postes des élèves, réseau. تثبيت تافات في قاعة الإعلام الآلي.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect x='120' y='128' width='272' height='60' rx='30' fill='%23f26b2d'/%3E%3Crect x='226' y='150' width='60' height='202' rx='30' fill='%23f26b2d'/%3E%3C/svg%3E">
+<style>
+:root {
+	--cream: #faf4ea; --cream-2: #f4ebdd; --paper: #fffdf9;
+	--brown: #3b271d; --ink: #2b1f18; --muted: #7c6b5f; --line: #eadfd0;
+	--orange: #f26b2d; --orange-soft: #fde6d7;
+	--teal: #1f9d86; --teal-dark: #13705f; --teal-soft: #dff2ea;
+	--yellow: #f6bf3f; --yellow-soft: #fdf0cc;
+	--error: #b42318; --error-soft: #fde8e6;
+
+	--bg: var(--cream); --surface: var(--paper); --surface-2: var(--cream-2);
+	--text: var(--ink); --text-muted: var(--muted); --border: var(--line);
+	--accent: var(--teal-dark); --accent-soft: var(--teal-soft);
+	--warn-bg: var(--yellow-soft); --warn-border: var(--yellow);
+	--code-bg: var(--brown); --code-text: var(--cream);
+	color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--bg: #1e1510; --surface: #2b1f18; --surface-2: #3b271d;
+		--text: #f4ebdd; --text-muted: #c9b8a8; --border: #4b3427;
+		--accent: #5fd0b8; --accent-soft: #163c34;
+		--warn-bg: #3d3216; --warn-border: #f6bf3f;
+		--code-bg: #140e0a; --code-text: #f4ebdd;
+		color-scheme: dark;
+	}
+}
+:root[data-theme="dark"] {
+	--bg: #1e1510; --surface: #2b1f18; --surface-2: #3b271d;
+	--text: #f4ebdd; --text-muted: #c9b8a8; --border: #4b3427;
+	--accent: #5fd0b8; --accent-soft: #163c34;
+	--warn-bg: #3d3216; --warn-border: #f6bf3f;
+	--code-bg: #140e0a; --code-text: #f4ebdd;
+	color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+	margin: 0; background: var(--bg); color: var(--text);
+	font: 16px/1.6 "Segoe UI", system-ui, -apple-system, "Noto Sans", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+}
+[dir="rtl"] body, body[dir="rtl"] { font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", "Noto Naskh Arabic", Arial, sans-serif; }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+header.top {
+	background: var(--surface); border-bottom: 1px solid var(--border);
+	position: sticky; top: 0; z-index: 5;
+}
+header.top .wrap { display: flex; align-items: center; gap: 12px; min-height: 60px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; }
+.brand svg { width: 34px; height: 34px; flex: none; }
+.spacer { flex: 1; }
+.switch { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+.switch button {
+	font: inherit; font-size: .9rem; border: 0; background: transparent; color: var(--text);
+	padding: 6px 14px; cursor: pointer; min-height: 36px;
+}
+.switch button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.switch button:focus-visible, a:focus-visible, .copy:focus-visible, input:focus-visible + span { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+.hero { padding: 36px 0 12px; }
+.hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.25; margin: 0 0 10px; }
+.hero p { margin: 0; color: var(--text-muted); max-width: 62ch; }
+
+nav.toc { margin: 22px 0 6px; display: flex; flex-wrap: wrap; gap: 8px; }
+nav.toc a {
+	text-decoration: none; color: var(--text); background: var(--surface);
+	border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font-size: .92rem;
+}
+nav.toc a:hover { border-color: var(--accent); }
+
+section { padding: 26px 0 6px; }
+h2 { font-size: 1.35rem; margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }
+h2 .n {
+	display: inline-grid; place-items: center; width: 30px; height: 30px; flex: none;
+	border-radius: 50%; background: var(--orange); color: #fff; font-size: .95rem;
+}
+h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+p, li { max-width: 70ch; }
+a { color: var(--accent); }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin: 12px 0; }
+.note { background: var(--warn-bg); border-inline-start: 4px solid var(--warn-border); border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
+.ok { background: var(--accent-soft); border-inline-start: 4px solid var(--accent); border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
+
+ol.steps { padding-inline-start: 1.4em; }
+ol.steps > li { margin: 8px 0; }
+kbd { font: .85em/1 ui-monospace, Consolas, monospace; border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px; padding: 2px 5px; background: var(--surface-2); }
+code { font: .9em ui-monospace, Consolas, "Cascadia Mono", monospace; background: var(--surface-2); border-radius: 4px; padding: 1px 5px; overflow-wrap: anywhere; direction: ltr; unicode-bidi: isolate; display: inline-block; max-width: 100%; vertical-align: bottom; }
+
+.cmd { position: relative; margin: 10px 0; }
+.cmd pre {
+	margin: 0; background: var(--code-bg); color: var(--code-text); border-radius: 10px;
+	padding: 14px 16px; padding-right: 84px; white-space: pre-wrap; overflow-wrap: anywhere;
+	font: .88rem/1.55 ui-monospace, Consolas, "Cascadia Mono", monospace; direction: ltr; text-align: left;
+}
+.cmd pre code { background: none; padding: 0; color: inherit; font: inherit; }
+.copy {
+	position: absolute; top: 8px; right: 8px; font: inherit; font-size: .8rem;
+	border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: var(--code-text);
+	border-radius: 6px; padding: 4px 10px; cursor: pointer; min-height: 30px;
+}
+
+.table { overflow-x: auto; margin: 10px 0; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { text-align: start; padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { background: var(--surface-2); font-weight: 600; }
+td code { white-space: nowrap; }
+
+/* installer chooser */
+.chooser fieldset { border: 0; margin: 0 0 12px; padding: 0; }
+.chooser legend { font-weight: 600; margin-bottom: 6px; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opts label { position: relative; }
+.opts input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.opts span {
+	display: inline-block; border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px;
+	background: var(--surface-2); cursor: pointer; min-height: 40px; line-height: 22px;
+}
+.opts input:checked + span { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.result { margin-top: 6px; padding: 14px; border-radius: 10px; background: var(--accent-soft); }
+.result .file { display: block; font: 600 1.02rem ui-monospace, Consolas, monospace; overflow-wrap: anywhere; direction: ltr; margin: 4px 0; }
+.result.bad { background: var(--error-soft); color: var(--error); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .result.bad { background: #4a1d18; color: #ffb4ab; } }
+:root[data-theme="dark"] .result.bad { background: #4a1d18; color: #ffb4ab; }
+
+footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .9rem; }
+
+[hidden] { display: none !important; }
+
+@media (max-width: 560px) {
+	body { font-size: 15.5px; }
+	.card { padding: 14px; }
+	header.top .wrap { min-height: 54px; }
+}
+@media print {
+	header.top { position: static; }
+	.switch, .copy, nav.toc { display: none !important; }
+	.cmd pre { padding-right: 16px; }
+	body { background: #fff; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+	<div class="wrap">
+		<a class="brand" href="#">
+			<svg viewBox="0 0 512 512" aria-hidden="true">
+				<defs><linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="0" y1="128" x2="0" y2="352"><stop offset="0" stop-color="#f6bf3f"/><stop offset="1" stop-color="#f26b2d"/></linearGradient></defs>
+				<g stroke="#f6bf3f" stroke-width="18" stroke-linecap="round"><line x1="256" y1="104" x2="256" y2="58"/><line x1="190" y1="112" x2="166" y2="74"/><line x1="322" y1="112" x2="346" y2="74"/></g>
+				<rect x="120" y="128" width="272" height="60" rx="30" fill="url(#lg)"/>
+				<rect x="226" y="150" width="60" height="202" rx="30" fill="url(#lg)"/>
+				<g fill="#dff2ea" stroke="#13705f" stroke-width="16" stroke-linejoin="round"><rect x="44" y="288" width="120" height="80" rx="10"/><rect x="348" y="288" width="120" height="80" rx="10"/><rect x="196" y="378" width="120" height="80" rx="10"/></g>
+			</svg>
+			<span>Tafat <span style="font-weight:400;color:var(--text-muted)">· ⵜⴰⴼⴰⵜ · تافات</span></span>
+		</a>
+		<span class="spacer"></span>
+		<div class="switch" role="group" aria-label="Langue / اللغة">
+			<button type="button" data-set-lang="fr" aria-pressed="true">Français</button>
+			<button type="button" data-set-lang="ar" aria-pressed="false" lang="ar">العربية</button>
+		</div>
+	</div>
+</header>
+
+<!-- ===================================================================== -->
+<!-- FRANÇAIS                                                               -->
+<!-- ===================================================================== -->
+<main id="fr" lang="fr" dir="ltr">
+<div class="wrap">
+
+<div class="hero">
+	<h1>Installer Tafat dans une salle informatique</h1>
+	<p>Pour la personne qui installe la salle : un poste enseignant et les postes des élèves dans le même réseau. Les mêmes étapes valent pour plusieurs salles. Comptez environ une heure pour une salle de 20 postes.</p>
+	<nav class="toc" aria-label="Sommaire">
+		<a href="#fr-choose">1. Programme d'installation</a>
+		<a href="#fr-teacher">2. Poste enseignant</a>
+		<a href="#fr-students">3. Postes élèves</a>
+		<a href="#fr-check">4. Vérifier</a>
+		<a href="#fr-network">5. Réseau</a>
+		<a href="#fr-help">6. Problèmes</a>
+	</nav>
+</div>
+
+<div class="note"><strong>État :</strong> les programmes d'installation sont construits automatiquement mais n'ont pas encore été essayés sur de vrais postes de salle. Merci de signaler tout problème.</div>
+
+<section id="fr-choose">
+	<h2><span class="n">1</span>Choisir le programme d'installation</h2>
+	<p>Il existe quatre programmes d'installation. Ils fonctionnent tous ensemble : un poste enseignant sous Windows 11 peut piloter des postes élèves sous Windows 7, et inversement.</p>
+
+	<div class="card chooser" data-chooser>
+		<fieldset>
+			<legend>Version de Windows du poste</legend>
+			<div class="opts">
+				<label><input type="radio" name="fr-win" value="7"><span>Windows 7</span></label>
+				<label><input type="radio" name="fr-win" value="8.1"><span>Windows 8.1</span></label>
+				<label><input type="radio" name="fr-win" value="10" checked><span>Windows 10</span></label>
+				<label><input type="radio" name="fr-win" value="11"><span>Windows 11</span></label>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Architecture</legend>
+			<div class="opts">
+				<label><input type="radio" name="fr-arch" value="64" checked><span>64 bits</span></label>
+				<label><input type="radio" name="fr-arch" value="32"><span>32 bits</span></label>
+			</div>
+		</fieldset>
+		<div class="result" aria-live="polite">
+			<span data-msg="ok">Programme à utiliser :</span>
+			<span data-msg="bad" hidden>Windows 11 n'existe qu'en 64 bits. Vérifiez l'architecture du poste.</span>
+			<code class="file" data-file>tafat-&lt;version&gt;-win64-setup.exe</code>
+		</div>
+		<p style="margin:10px 0 0;color:var(--text-muted);font-size:.92rem">Pour connaître la version et l'architecture : touches <kbd>Windows</kbd> + <kbd>Pause</kbd>, ou <kbd>Windows</kbd> + <kbd>R</kbd> puis <code>winver</code>.</p>
+	</div>
+
+	<div class="table"><table>
+		<thead><tr><th>Windows</th><th>Programme d'installation</th></tr></thead>
+		<tbody>
+			<tr><td>10 / 11, 64 bits</td><td><code>tafat-&lt;version&gt;-win64-setup.exe</code></td></tr>
+			<tr><td>10, 32 bits</td><td><code>tafat-&lt;version&gt;-win32-setup.exe</code></td></tr>
+			<tr><td>7 / 8.1, 64 bits</td><td><code>tafat-&lt;version&gt;-win64-legacy-setup.exe</code></td></tr>
+			<tr><td>7 / 8.1, 32 bits</td><td><code>tafat-&lt;version&gt;-win32-legacy-setup.exe</code></td></tr>
+		</tbody>
+	</table></div>
+	<p>Le programme d'installation refuse de s'exécuter sur une version de Windows ou une architecture qui ne lui correspond pas. Les fichiers se téléchargent depuis les <a href="https://github.com/BenzidaneMo/Tafat/actions/workflows/windows.yml">builds Windows</a> (artefacts <code>tafat-windows-&lt;arch&gt;-qt6</code>, et <code>-qt5</code> pour Windows 7/8.1).</p>
+
+	<h3>Windows 7 et 8.1</h3>
+	<ul>
+		<li>Windows 7 doit avoir le Service Pack 1. La mise à jour KB2533623 est recommandée ; sans elle, <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Suppr</kbd> ne peut pas être envoyé à distance.</li>
+		<li>Le blocage des sites fonctionne avec les dernières versions pour Windows 7 : Chrome 109 et Firefox ESR 115.</li>
+		<li>Windows 7 ne reçoit plus de mises à jour de sécurité : gardez ces postes dans le réseau de la salle, de préférence sans accès direct à Internet.</li>
+	</ul>
+</section>
+
+<section id="fr-teacher">
+	<h2><span class="n">2</span>Poste de l'enseignant</h2>
+	<ol class="steps">
+		<li>Lancez le programme d'installation avec <strong>tous les composants</strong>.</li>
+		<li>Ouvrez <strong>Tafat Configurator</strong> → <em>Authentification</em> : choisissez <em>Authentification par fichier clé</em> et créez une paire de clés, par exemple <code>teacher</code>. En ligne de commande :
+			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" authkeys create teacher</code></pre></div>
+		</li>
+		<li><em>Emplacements &amp; ordinateurs</em> : ajoutez la salle et ses postes, ou importez-les depuis un fichier CSV (<code>salle;nom;hôte-ou-IP</code>) :
+			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
+		</li>
+		<li><em>Général</em> → <em>Langue</em> : arabe, français, tamazight (latin ou tifinagh) ou anglais.</li>
+		<li>Cliquez sur <em>Appliquer</em>.</li>
+	</ol>
+	<div class="ok">La clé <strong>privée</strong> reste sur le poste de l'enseignant. Seule la clé <strong>publique</strong> va sur les postes des élèves.</div>
+</section>
+
+<section id="fr-students">
+	<h2><span class="n">3</span>Postes des élèves</h2>
+
+	<h3>Avec le dossier d'installation des élèves (recommandé)</h3>
+	<ol class="steps">
+		<li>Sur le poste de l'enseignant : <strong>Tafat Configurator</strong> → <em>Installation de la salle</em>, choisissez la paire de clés de l'enseignant puis <em>Exporter l'installation des élèves…</em> vers un dossier vide, par exemple sur une clé USB. Le dossier reçoit <code>teacher_public_key.pem</code>, <code>tafat-config.json</code> et <code>install-students.bat</code>.</li>
+		<li>Copiez les programmes d'installation dans ce même dossier (les quatre, ou seulement ceux dont la salle a besoin).</li>
+		<li>Sur chaque poste élève : clic droit sur <code>install-students.bat</code> → <em>Exécuter en tant qu'administrateur</em>. Le script choisit le bon programme d'installation selon la version de Windows et installe Tafat sans le programme de l'enseignant, applique les paramètres et importe la clé.</li>
+	</ol>
+
+	<h3>À la main ou avec un outil de déploiement</h3>
+	<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
+
+	<div class="table"><table>
+		<thead><tr><th>Option</th><th>Effet</th></tr></thead>
+		<tbody>
+			<tr><td><code>/S</code></td><td>installation silencieuse</td></tr>
+			<tr><td><code>/NoMaster</code></td><td>sans le programme de l'enseignant</td></tr>
+			<tr><td><code>/NoInterception</code></td><td>sans le pilote de périphériques d'entrée (sert à bloquer clavier et souris)</td></tr>
+			<tr><td><code>/NoStartMenuFolder</code></td><td>pas d'entrées dans le menu Démarrer</td></tr>
+			<tr><td><code>/ApplyConfig=&lt;fichier&gt;</code></td><td>importe une configuration exportée du configurateur</td></tr>
+			<tr><td><code>/ImportPublicKey=&lt;fichier&gt;</code></td><td>importe une clé publique (remplace une clé du même nom)</td></tr>
+			<tr><td><code>/PublicKeyName=&lt;nom&gt;</code></td><td>nom de la clé importée (par défaut <code>teacher</code>)</td></tr>
+			<tr><td><code>/D=&lt;dossier&gt;</code></td><td>dossier d'installation (toujours en dernier)</td></tr>
+		</tbody>
+	</table></div>
+	<p>Désinstaller : <code>"C:\Program Files\Tafat\uninstall.exe" /S</code> (ajoutez <code>/ClearConfig</code> pour supprimer aussi la configuration).</p>
+</section>
+
+<section id="fr-check">
+	<h2><span class="n">4</span>Vérifier</h2>
+	<ol class="steps">
+		<li>Ouvrez <strong>Tafat Master</strong> sur le poste de l'enseignant et choisissez la salle. Chaque poste allumé doit afficher l'écran de l'élève.</li>
+		<li>Sélectionnez tous les postes puis <strong>Inventaire</strong> : chaque poste doit répondre avec la version attendue (les versions pour anciens systèmes sont signalées). <em>Exporter en CSV…</em> enregistre la liste.</li>
+		<li>Essayez <strong>Verrouiller</strong> puis déverrouillez.</li>
+	</ol>
+</section>
+
+<section id="fr-network">
+	<h2><span class="n">5</span>Réseau</h2>
+	<div class="table"><table>
+		<thead><tr><th>Port</th><th>Sur</th><th>Usage</th></tr></thead>
+		<tbody>
+			<tr><td><code>TCP 11100</code></td><td>postes élèves</td><td>connexion de l'enseignant (écrans, commandes)</td></tr>
+			<tr><td><code>TCP 11400</code></td><td>poste enseignant</td><td>démo (écran de l'enseignant vers les élèves)</td></tr>
+		</tbody>
+	</table></div>
+	<ul>
+		<li>Le programme d'installation ajoute l'exception dans le pare-feu Windows. Les autres pare-feu de la salle doivent autoriser ces ports.</li>
+		<li>Des adresses IP fixes ou des réservations DHCP rendent la liste de la salle fiable.</li>
+		<li><em>Bloquer aussi Internet pour tous les autres programmes</em> ne bloque que les adresses Internet publiques : le réseau de la salle continue de fonctionner.</li>
+		<li>Le blocage de l'impression arrête le service <em>Spouleur d'impression</em> des postes élèves pendant le mode ; il est rétabli ensuite.</li>
+	</ul>
+</section>
+
+<section id="fr-help">
+	<h2><span class="n">6</span>En cas de problème</h2>
+	<div class="table"><table>
+		<thead><tr><th>Symptôme</th><th>À vérifier</th></tr></thead>
+		<tbody>
+			<tr><td>Vignette grise</td><td>Poste éteint, hors du réseau, ou service Tafat arrêté. Redémarrez le poste ; vérifiez le port 11100.</td></tr>
+			<tr><td>Accès refusé</td><td>La clé publique de l'enseignant n'est pas installée sur le poste, ou porte un autre nom. Relancez <code>install-students.bat</code>.</td></tr>
+			<tr><td>« Ce programme n'est pas fait pour cette version de Windows »</td><td>Prenez l'autre programme d'installation (<code>-legacy</code> pour Windows 7/8.1, <code>win32</code> pour 32 bits).</td></tr>
+			<tr><td>Un site n'est pas bloqué</td><td>Navigateur non pris en charge ou Firefox pas redémarré : bloquez ce navigateur avec <strong>Bloquer les applis</strong>.</td></tr>
+		</tbody>
+	</table></div>
+	<p>Plus de détails (en anglais) : <a href="DEPLOYMENT.md">DEPLOYMENT.md</a>. Pour les enseignants : <a href="guide-enseignant.md">guide de l'enseignant</a>.</p>
+</section>
+
+</div>
+</main>
+
+<!-- ===================================================================== -->
+<!-- العربية                                                                -->
+<!-- ===================================================================== -->
+<main id="ar" lang="ar" dir="rtl" hidden>
+<div class="wrap">
+
+<div class="hero">
+	<h1>تثبيت تافات في قاعة الإعلام الآلي</h1>
+	<p>هذا الدليل موجّه لمن يجهّز القاعة: حاسوب الأستاذ وحواسيب التلاميذ في الشبكة نفسها. الخطوات نفسها تصلح لعدة قاعات. احسب حوالي ساعة لقاعة من 20 حاسوبًا.</p>
+	<nav class="toc" aria-label="المحتويات">
+		<a href="#ar-choose">1. برنامج التثبيت</a>
+		<a href="#ar-teacher">2. حاسوب الأستاذ</a>
+		<a href="#ar-students">3. حواسيب التلاميذ</a>
+		<a href="#ar-check">4. التحقق</a>
+		<a href="#ar-network">5. الشبكة</a>
+		<a href="#ar-help">6. المشاكل</a>
+	</nav>
+</div>
+
+<div class="note"><strong>الحالة:</strong> برامج التثبيت تُبنى آليًا لكنها لم تُجرَّب بعد على حواسيب قاعة حقيقية. نرجو الإبلاغ عن أي مشكلة.</div>
+
+<section id="ar-choose">
+	<h2><span class="n">1</span>اختيار برنامج التثبيت</h2>
+	<p>توجد أربعة برامج تثبيت، وكلها تعمل معًا: يمكن لحاسوب أستاذ بنظام Windows 11 أن يتحكم في حواسيب تلاميذ بنظام Windows 7، والعكس.</p>
+
+	<div class="card chooser" data-chooser>
+		<fieldset>
+			<legend>إصدار Windows على الحاسوب</legend>
+			<div class="opts">
+				<label><input type="radio" name="ar-win" value="7"><span>Windows 7</span></label>
+				<label><input type="radio" name="ar-win" value="8.1"><span>Windows 8.1</span></label>
+				<label><input type="radio" name="ar-win" value="10" checked><span>Windows 10</span></label>
+				<label><input type="radio" name="ar-win" value="11"><span>Windows 11</span></label>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>البنية</legend>
+			<div class="opts">
+				<label><input type="radio" name="ar-arch" value="64" checked><span>64 بت</span></label>
+				<label><input type="radio" name="ar-arch" value="32"><span>32 بت</span></label>
+			</div>
+		</fieldset>
+		<div class="result" aria-live="polite">
+			<span data-msg="ok">البرنامج المناسب:</span>
+			<span data-msg="bad" hidden>يوجد Windows 11 بنسخة 64 بت فقط. تحقق من بنية الحاسوب.</span>
+			<code class="file" data-file>tafat-&lt;version&gt;-win64-setup.exe</code>
+		</div>
+		<p style="margin:10px 0 0;color:var(--text-muted);font-size:.92rem">لمعرفة الإصدار والبنية: اضغط <kbd>Windows</kbd> + <kbd>Pause</kbd>، أو <kbd>Windows</kbd> + <kbd>R</kbd> ثم اكتب <code>winver</code>.</p>
+	</div>
+
+	<div class="table"><table>
+		<thead><tr><th>Windows</th><th>برنامج التثبيت</th></tr></thead>
+		<tbody>
+			<tr><td><bdi dir="ltr">10 / 11</bdi>، 64 بت</td><td><code dir="ltr">tafat-&lt;version&gt;-win64-setup.exe</code></td></tr>
+			<tr><td><bdi dir="ltr">10</bdi>، 32 بت</td><td><code dir="ltr">tafat-&lt;version&gt;-win32-setup.exe</code></td></tr>
+			<tr><td><bdi dir="ltr">7 / 8.1</bdi>، 64 بت</td><td><code dir="ltr">tafat-&lt;version&gt;-win64-legacy-setup.exe</code></td></tr>
+			<tr><td><bdi dir="ltr">7 / 8.1</bdi>، 32 بت</td><td><code dir="ltr">tafat-&lt;version&gt;-win32-legacy-setup.exe</code></td></tr>
+		</tbody>
+	</table></div>
+	<p>يرفض برنامج التثبيت العمل على إصدار Windows أو بنية لا تناسبه. تُحمَّل الملفات من <a href="https://github.com/BenzidaneMo/Tafat/actions/workflows/windows.yml">بناءات Windows</a> (الملفات <code dir="ltr">tafat-windows-&lt;arch&gt;-qt6</code>، و<code dir="ltr">-qt5</code> لـ Windows 7/8.1).</p>
+
+	<h3>Windows 7 و 8.1</h3>
+	<ul>
+		<li>يحتاج Windows 7 إلى حزمة الخدمة Service Pack 1. يُنصح بالتحديث KB2533623؛ بدونه لا يمكن إرسال <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> عن بعد.</li>
+		<li>يعمل حظر المواقع مع آخر الإصدارات المتاحة لـ Windows 7: <bdi>Chrome 109</bdi> و<bdi>Firefox ESR 115</bdi>.</li>
+		<li>لم يعد Windows 7 يتلقى تحديثات أمنية: أبقِ هذه الحواسيب في شبكة القاعة، ويُفضَّل دون وصول مباشر إلى الإنترنت.</li>
+	</ul>
+</section>
+
+<section id="ar-teacher">
+	<h2><span class="n">2</span>حاسوب الأستاذ</h2>
+	<ol class="steps">
+		<li>شغّل برنامج التثبيت مع <strong>كل المكونات</strong>.</li>
+		<li>افتح <strong>Tafat Configurator</strong> ← <em>التوثيق</em>: اختر <em>توثيق ملف المفاتيح</em> وأنشئ زوج مفاتيح، مثلاً باسم <code>teacher</code>. من سطر الأوامر:
+			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" authkeys create teacher</code></pre></div>
+		</li>
+		<li><em>القاعات والحواسيب</em>: أضف القاعة وحواسيبها، أو استوردها من ملف CSV (<code dir="ltr">room;name;host-or-IP</code>):
+			<div class="cmd"><pre><code>"C:\Program Files\Tafat\tafat-cli.exe" networkobjects import computers.csv format "%location%;%name%;%host%"</code></pre></div>
+		</li>
+		<li><em>عام</em> ← <em>اللغة</em>: العربية أو الفرنسية أو الأمازيغية (بالحروف اللاتينية أو تيفيناغ) أو الإنجليزية.</li>
+		<li>انقر على <em>تطبيق</em>.</li>
+	</ol>
+	<div class="ok">يبقى المفتاح <strong>الخاص</strong> على حاسوب الأستاذ. المفتاح <strong>العمومي</strong> وحده يُنقل إلى حواسيب التلاميذ.</div>
+</section>
+
+<section id="ar-students">
+	<h2><span class="n">3</span>حواسيب التلاميذ</h2>
+
+	<h3>باستعمال مجلد إعداد التلاميذ (موصى به)</h3>
+	<ol class="steps">
+		<li>على حاسوب الأستاذ: <strong>Tafat Configurator</strong> ← <em>إعداد القاعة</em>، اختر زوج مفاتيح الأستاذ ثم <em>تصدير إعداد حواسيب التلاميذ…</em> إلى مجلد فارغ، مثلاً على مفتاح USB. يحتوي المجلد بعدها على <code dir="ltr">teacher_public_key.pem</code> و<code dir="ltr">tafat-config.json</code> و<code dir="ltr">install-students.bat</code>.</li>
+		<li>انسخ برامج التثبيت إلى المجلد نفسه (الأربعة، أو التي تحتاجها القاعة فقط).</li>
+		<li>على كل حاسوب تلميذ: انقر بالزر الأيمن على <code dir="ltr">install-students.bat</code> ← <em>تشغيل كمسؤول</em>. يختار البرنامج النصي برنامج التثبيت المناسب لإصدار Windows، ويثبّت تافات دون برنامج الأستاذ، ويطبّق الإعدادات ويستورد المفتاح.</li>
+	</ol>
+
+	<h3>يدويًا أو بأداة نشر</h3>
+	<div class="cmd"><pre><code>tafat-&lt;version&gt;-win64-setup.exe /S /NoMaster /ApplyConfig=D:\tafat-config.json /ImportPublicKey=D:\teacher_public_key.pem</code></pre></div>
+
+	<div class="table"><table>
+		<thead><tr><th>الخيار</th><th>الأثر</th></tr></thead>
+		<tbody>
+			<tr><td><code dir="ltr">/S</code></td><td>تثبيت صامت</td></tr>
+			<tr><td><code dir="ltr">/NoMaster</code></td><td>دون برنامج الأستاذ</td></tr>
+			<tr><td><code dir="ltr">/NoInterception</code></td><td>دون برنامج تشغيل أجهزة الإدخال (يُستعمل لقفل لوحة المفاتيح والفأرة)</td></tr>
+			<tr><td><code dir="ltr">/NoStartMenuFolder</code></td><td>دون اختصارات في قائمة ابدأ</td></tr>
+			<tr><td><code dir="ltr">/ApplyConfig=&lt;file&gt;</code></td><td>استيراد إعدادات مصدّرة من المُهيِّئ</td></tr>
+			<tr><td><code dir="ltr">/ImportPublicKey=&lt;file&gt;</code></td><td>استيراد مفتاح عمومي (يستبدل مفتاحًا بالاسم نفسه)</td></tr>
+			<tr><td><code dir="ltr">/PublicKeyName=&lt;name&gt;</code></td><td>اسم المفتاح المستورد (افتراضيًا <code>teacher</code>)</td></tr>
+			<tr><td><code dir="ltr">/D=&lt;folder&gt;</code></td><td>مجلد التثبيت (دائمًا في الأخير)</td></tr>
+		</tbody>
+	</table></div>
+	<p>إلغاء التثبيت: <code dir="ltr">"C:\Program Files\Tafat\uninstall.exe" /S</code> (أضف <code dir="ltr">/ClearConfig</code> لحذف الإعدادات أيضًا).</p>
+</section>
+
+<section id="ar-check">
+	<h2><span class="n">4</span>التحقق</h2>
+	<ol class="steps">
+		<li>افتح <strong>Tafat Master</strong> على حاسوب الأستاذ واختر القاعة. يجب أن تعرض كل خانة حاسوب مشغَّل شاشةَ التلميذ.</li>
+		<li>حدّد كل الحواسيب ثم <strong>الجرد</strong>: يجب أن يجيب كل حاسوب بالإصدار المتوقع (إصدارات الأنظمة القديمة مُعلَّمة). <em>تصدير CSV…</em> يحفظ القائمة.</li>
+		<li>جرّب <strong>قفل</strong> ثم افتح القفل.</li>
+	</ol>
+</section>
+
+<section id="ar-network">
+	<h2><span class="n">5</span>الشبكة</h2>
+	<div class="table"><table>
+		<thead><tr><th>المنفذ</th><th>على</th><th>الاستعمال</th></tr></thead>
+		<tbody>
+			<tr><td><code dir="ltr">TCP 11100</code></td><td>حواسيب التلاميذ</td><td>اتصال الأستاذ (الشاشات والأوامر)</td></tr>
+			<tr><td><code dir="ltr">TCP 11400</code></td><td>حاسوب الأستاذ</td><td>العرض التوضيحي (شاشة الأستاذ نحو التلاميذ)</td></tr>
+		</tbody>
+	</table></div>
+	<ul>
+		<li>يضيف برنامج التثبيت الاستثناء إلى جدار حماية Windows. يجب أن تسمح جدران الحماية الأخرى في القاعة بهذه المنافذ.</li>
+		<li>العناوين الثابتة أو حجوزات DHCP تجعل قائمة القاعة موثوقة.</li>
+		<li>خيار <em>حظر الإنترنت أيضًا على جميع البرامج الأخرى</em> يحظر عناوين الإنترنت العامة فقط: تبقى شبكة القاعة تعمل.</li>
+		<li>حظر الطباعة يوقف خدمة <em>التخزين المؤقت للطباعة</em> على حواسيب التلاميذ طوال الوضع، ثم تعود بعده.</li>
+	</ul>
+</section>
+
+<section id="ar-help">
+	<h2><span class="n">6</span>عند حدوث مشكلة</h2>
+	<div class="table"><table>
+		<thead><tr><th>العَرَض</th><th>ما يجب التحقق منه</th></tr></thead>
+		<tbody>
+			<tr><td>خانة رمادية</td><td>الحاسوب مطفأ أو خارج الشبكة أو خدمة تافات متوقفة. أعد تشغيل الحاسوب وتحقق من المنفذ <bdi>11100</bdi>.</td></tr>
+			<tr><td>رفض الوصول</td><td>المفتاح العمومي للأستاذ غير مثبت على الحاسوب أو باسم مختلف. أعد تشغيل <code dir="ltr">install-students.bat</code>.</td></tr>
+			<tr><td>«هذا البرنامج غير مخصص لهذا الإصدار من Windows»</td><td>استعمل برنامج التثبيت الآخر (<code dir="ltr">-legacy</code> لـ Windows 7/8.1، و<code dir="ltr">win32</code> لنظام 32 بت).</td></tr>
+			<tr><td>موقع غير محظور</td><td>المتصفح غير مدعوم أو لم يُعَد تشغيل Firefox: احظر هذا المتصفح باستعمال <strong>حظر التطبيقات</strong>.</td></tr>
+		</tbody>
+	</table></div>
+	<p>تفاصيل أكثر (بالإنجليزية): <a href="DEPLOYMENT.md">DEPLOYMENT.md</a>. للأساتذة: <a href="guide-enseignant-ar.md">دليل الأستاذ</a>.</p>
+</section>
+
+</div>
+</main>
+
+<footer>
+	<div class="wrap">
+		Tafat — développé par <a href="https://github.com/BenzidaneMo">BenzidaneMo</a> ·
+		<span lang="ar" dir="rtl">تطوير <a href="https://github.com/BenzidaneMo">BenzidaneMo</a></span> ·
+		logiciel libre (GPL-2.0-or-later), basé sur <a href="https://veyon.io">Veyon</a> ·
+		<span lang="ar" dir="rtl">برنامج حر مبني على Veyon</span> ·
+		<a href="https://github.com/BenzidaneMo/Tafat">github.com/BenzidaneMo/Tafat</a>
+	</div>
+</footer>
+
+<script>
+(function () {
+	// language switch: ?lang=ar or #ar-… links, remembered per browser
+	var buttons = document.querySelectorAll('[data-set-lang]');
+	function setLang(lang) {
+		['fr', 'ar'].forEach(function (l) { document.getElementById(l).hidden = (l !== lang); });
+		document.documentElement.lang = lang;
+		document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+		document.title = (lang === 'ar') ? 'تثبيت تافات' : 'Installer Tafat';
+		buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)); });
+		try { localStorage.setItem('tafat-install-lang', lang); } catch (e) {}
+	}
+	buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.setLang); }); });
+
+	var stored = null;
+	try { stored = localStorage.getItem('tafat-install-lang'); } catch (e) {}
+	var q = new URLSearchParams(location.search).get('lang');
+	var initial;
+	if (q === 'ar' || q === 'fr') initial = q;
+	else if (/^#ar-/.test(location.hash)) initial = 'ar';
+	else if (/^#fr-/.test(location.hash)) initial = 'fr';
+	else if (stored === 'ar' || stored === 'fr') initial = stored;
+	else initial = ((navigator.language || '').indexOf('ar') === 0) ? 'ar' : 'fr';
+	setLang(initial);
+
+	// installer chooser
+	document.querySelectorAll('[data-chooser]').forEach(function (box) {
+		function update() {
+			var win = (box.querySelector('input[name$="-win"]:checked') || {}).value;
+			var arch = (box.querySelector('input[name$="-arch"]:checked') || {}).value;
+			var bad = (win === '11' && arch === '32');
+			var legacy = (win === '7' || win === '8.1');
+			var file = 'tafat-<version>-win' + arch + (legacy ? '-legacy' : '') + '-setup.exe';
+			box.querySelector('.result').classList.toggle('bad', bad);
+			box.querySelector('[data-msg="ok"]').hidden = bad;
+			box.querySelector('[data-msg="bad"]').hidden = !bad;
+			var out = box.querySelector('[data-file]');
+			out.hidden = bad;
+			out.textContent = file;
+		}
+		box.addEventListener('change', update);
+		update();
+	});
+
+	// copy buttons for commands
+	document.querySelectorAll('.cmd').forEach(function (block) {
+		var btn = document.createElement('button');
+		btn.type = 'button';
+		btn.className = 'copy';
+		var ar = block.closest('main').id === 'ar';
+		var label = ar ? 'نسخ' : 'Copier', done = ar ? 'تم النسخ' : 'Copié';
+		btn.textContent = label;
+		btn.addEventListener('click', function () {
+			var text = block.querySelector('code').textContent;
+			var ok = function () { btn.textContent = done; setTimeout(function () { btn.textContent = label; }, 1500); };
+			if (navigator.clipboard && window.isSecureContext) {
+				navigator.clipboard.writeText(text).then(ok, function () {});
+			} else {
+				var t = document.createElement('textarea');
+				t.value = text; document.body.appendChild(t); t.select();
+				try { document.execCommand('copy'); ok(); } catch (e) {}
+				document.body.removeChild(t);
+			}
+		});
+		block.appendChild(btn);
+	});
+})();
+</script>
+</body>
+</html>

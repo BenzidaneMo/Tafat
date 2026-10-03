@@ -3,7 +3,8 @@
 This guide is for the person who sets up a lab: one teacher computer and the
 student computers in the same network. All steps also work for several labs.
 For the teachers: [guide de l'enseignant](guide-enseignant.md) (français),
-[دليل الأستاذ](guide-enseignant-ar.md) (العربية).
+[دليل الأستاذ](guide-enseignant-ar.md) (العربية). A short version of this guide in French
+and Arabic, for printing or a USB stick: [install.html](install.html).
 
 > Status: the installers are built by CI but have not been tested on real lab
 > computers yet. Please report problems.
@@ -136,3 +137,7 @@ school's spreadsheet) in the register window to see who is absent.
 Tafat also builds for Linux (`.deb`/`.rpm` from the "build" workflow). The
 service is named `tafat`. Allow-only application control and the internet
 block for all programs are Windows only.
+
+---
+
+Tafat is developed by [BenzidaneMo](https://github.com/BenzidaneMo), based on [Veyon](https://veyon.io).

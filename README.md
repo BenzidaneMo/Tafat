@@ -5,7 +5,8 @@
 Tafat ("light" in Tamazight) is a free and open source classroom management
 solution for Algerian high schools — an open alternative to NetSupport School.
 
-Tafat is based on [Veyon](https://veyon.io) 4.11.3 by Tobias Junghans /
+Tafat is developed by [BenzidaneMo](https://github.com/BenzidaneMo).
+It is based on [Veyon](https://veyon.io) 4.11.3 by Tobias Junghans /
 Veyon Solutions and keeps its full history so upstream fixes can be merged
 (see [UPSTREAM.md](UPSTREAM.md)).
 
@@ -48,7 +49,8 @@ Added by Tafat:
   * Return work: give each student back their own corrected files
 
 More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:
-[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). Teacher guide:
+[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), or the French/Arabic page
+[docs/install.html](docs/install.html). Teacher guide:
 [français](docs/guide-enseignant.md), [العربية](docs/guide-enseignant-ar.md).
 
 ## Languages
@@ -71,7 +73,7 @@ See [INSTALL](INSTALL) for build instructions.
 
 ## License
 
-Copyright (C) 2026 Tafat contributors.
+Copyright (C) 2026 BenzidaneMo and Tafat contributors.
 Copyright (C) 2004-2026 Tobias Junghans / Veyon Solutions.
 
 This program is free software; you can redistribute it and/or modify it under

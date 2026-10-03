@@ -4,6 +4,10 @@
 <context>
     <name>AboutDialog</name>
     <message>
+        <source>Developed by %1</source>
+        <translation type="unfinished">ⵢⴻⵙⵏⴻⴼⵍⵉ-ⵜ %1</translation>
+    </message>
+    <message>
         <source>About Veyon</source>
         <translation type="unfinished">ⵖⴻⴼ Veyon</translation>
     </message>
@@ -49,7 +53,7 @@ If you&apos;re interested in translating Veyon into your local or another langua
     </message>
     <message>
         <source>%1 - based on %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - ⵢⴻⴱⵏⴰ ⵖⴻⴼ %2</translation>
     </message>
 </context>
 <context>
