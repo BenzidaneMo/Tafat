@@ -14,6 +14,9 @@
 !define REG_ROOT "HKLM"
 !define REG_APP_PATH "Software\Microsoft\Windows\CurrentVersion\App Paths\${MAIN_APP_EXE}"
 !define UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
+; end of a student installer made by Tafat Master ("Student installer"), see
+; plugins/labsetup/StudentPackage.cpp: <installer><JSON><8-byte length><marker>
+!define STUDENT_PACKAGE_MARKER "TAFAT-STUDENT-PACKAGE-v1"
 
 ######################################################################
 
@@ -42,6 +45,7 @@ RequestExecutionLevel admin
 
 !include "LogicLib.nsh"
 !include "MUI2.nsh"
+!include "Sections.nsh"
 !include "FileFunc.nsh"
 !include "WinVer.nsh"
 !include "x64.nsh"
@@ -62,21 +66,28 @@ RequestExecutionLevel admin
 !define MUI_LANGDLL_REGISTRY_KEY "${UNINSTALL_PATH}"
 !define MUI_LANGDLL_REGISTRY_VALUENAME "Installer Language"
 
+Var StudentPackage
+
 !insertmacro MUI_PAGE_WELCOME
 
+; a student installer only shows Welcome, progress and Finish
+!define MUI_PAGE_CUSTOMFUNCTION_PRE SkipPageForStudentPackage
 !insertmacro MUI_PAGE_LICENSE "${LICENSE_TXT}"
 
+!define MUI_PAGE_CUSTOMFUNCTION_PRE SkipPageForStudentPackage
 !insertmacro MUI_PAGE_DIRECTORY
 
+!define MUI_PAGE_CUSTOMFUNCTION_PRE SkipPageForStudentPackage
 !insertmacro MUI_PAGE_COMPONENTS
 
 !insertmacro MUI_PAGE_INSTFILES
 
 !define MUI_FINISHPAGE_RUN
-!define MUI_FINISHPAGE_RUN_TEXT "Run ${APP_NAME} Configurator now"
-!define MUI_FINISHPAGE_RUN_FUNCTION "RunConfigurator"
+!define MUI_FINISHPAGE_RUN_TEXT "$(FINISH_RUN_MASTER)"
+!define MUI_FINISHPAGE_RUN_FUNCTION "RunMaster"
 !define MUI_FINISHPAGE_LINK "Visit the ${APP_NAME} website"
 !define MUI_FINISHPAGE_LINK_LOCATION "${WEB_SITE}"
+!define MUI_PAGE_CUSTOMFUNCTION_SHOW FinishPageShow
 
 !insertmacro MUI_PAGE_FINISH
 
@@ -205,28 +216,57 @@ ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Windows/Softwar
 # disable forced guest logon as otherwise logon authentication fails
 WriteRegDWORD ${REG_ROOT} "SYSTEM\CurrentControlSet\Control\Lsa"  "ForceGuest" "0"
 ${GetParameters} $R0
-${GetOptions} $R0 "/ApplyConfig=" $R1
-${If} $R1 != ""
+; settings file ($R5), public key file ($R6) and key name ($R7) to apply
+StrCpy $R5 ""
+StrCpy $R6 ""
+StrCpy $R7 ""
+; a student installer carries the settings and the key of the teacher computer
+${If} $StudentPackage == 1
+  InitPluginsDir
   ClearErrors
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config import "$R1"' $0
-  ${If} $0 != 0
-	   MessageBox MB_OK|MB_ICONSTOP "Could not apply specified configuration file!"
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" labsetup extractpackage "$EXEPATH" "$PLUGINSDIR\student"' $0
+  ${If} $0 == 0
+    StrCpy $R5 "$PLUGINSDIR\student\@BRANDING_PRODUCT_SLUG@-config.json"
+    FindFirst $1 $2 "$PLUGINSDIR\student\*_public_key.pem"
+    ${If} $2 != ""
+      StrCpy $R6 "$PLUGINSDIR\student\$2"
+      ; "<name>_public_key.pem" without the 15 characters of "_public_key.pem"
+      StrCpy $R7 $2 -15
+    ${EndIf}
+    FindClose $1
+  ${Else}
+    MessageBox MB_OK|MB_ICONSTOP "$(STUDENT_PACKAGE_ERROR)" /SD IDOK
+    SetErrorLevel 3
   ${EndIf}
 ${EndIf}
+${GetOptions} $R0 "/ApplyConfig=" $R1
+${If} $R1 != ""
+  StrCpy $R5 $R1
+${EndIf}
 ; /ImportPublicKey=<file> [/PublicKeyName=<name>, default "teacher"]: e.g. from
-; the student setup exported by the configurator ("Lab setup" page)
+; the student setup folder exported by the configurator ("Lab setup" page)
 ${GetOptions} $R0 "/ImportPublicKey=" $R1
 ${If} $R1 != ""
-  ${GetOptions} $R0 "/PublicKeyName=" $R2
-  ${If} $R2 == ""
-    StrCpy $R2 "teacher"
+  StrCpy $R6 $R1
+  ${GetOptions} $R0 "/PublicKeyName=" $R7
+${EndIf}
+${If} $R5 != ""
+  ClearErrors
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config import "$R5"' $0
+  ${If} $0 != 0
+	   MessageBox MB_OK|MB_ICONSTOP "Could not apply specified configuration file!" /SD IDOK
+  ${EndIf}
+${EndIf}
+${If} $R6 != ""
+  ${If} $R7 == ""
+    StrCpy $R7 "teacher"
   ${EndIf}
   ; replace a key of the same name from a previous installation
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys delete "$R2/public"'
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys delete "$R7/public"'
   ClearErrors
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys import "$R2/public" "$R1"' $0
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys import "$R7/public" "$R6"' $0
   ${If} $0 != 0
-    MessageBox MB_OK|MB_ICONSTOP "Could not import the public key $R1!" /SD IDOK
+    MessageBox MB_OK|MB_ICONSTOP "Could not import the public key $R6!" /SD IDOK
     SetErrorLevel 3
   ${EndIf}
 ${EndIf}
@@ -239,6 +279,25 @@ SetOutPath "$INSTDIR"
 File "@BRANDING_PRODUCT_SLUG@-master.exe"
 
 ${GetParameters} $R0
+; teacher computer: create the key (kept on updates), let normal accounts use it
+; and switch to key file authentication, so no settings are needed afterwards
+${GetOptions} $R0 "/NoTeacherSetup" $R1
+${If} ${Errors}
+  ClearErrors
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" labsetup setupteacher' $0
+  ${If} $0 != 0
+    MessageBox MB_OK|MB_ICONEXCLAMATION "$(TEACHER_SETUP_ERROR)" /SD IDOK
+  ${EndIf}
+  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service restart'
+${EndIf}
+; keep this installer for "Student installer" in ${APP_NAME} Master
+${If} $EXEPATH != "$INSTDIR\setup\${INSTALLER_NAME}"
+  CreateDirectory "$INSTDIR\setup"
+  Delete "$INSTDIR\setup\@BRANDING_PRODUCT_SLUG@-*-setup.exe"
+  CopyFiles /SILENT "$EXEPATH" "$INSTDIR\setup\${INSTALLER_NAME}"
+${EndIf}
+
+${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${GetOptions} $R0 "/NoStartMenuFolder" $R1
 ${If} ${Errors}
 CreateDirectory "$SMPROGRAMS\${APP_NAME}"
@@ -253,14 +312,47 @@ SetOutPath "$INSTDIR\interception"
 File "interception/*"
 SectionEnd
 
-Function RunConfigurator
-	Exec '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-configurator.exe"'
+Function RunMaster
+	; through Explorer, so the master runs with the rights of the logged-on user, not as administrator
+	Exec '"$WINDIR\explorer.exe" "$INSTDIR\${MAIN_APP_EXE}"'
+FunctionEnd
+
+Function FinishPageShow
+${IfNot} ${SectionIsSelected} ${SEC_MASTER}
+	; nothing to start on a student computer
+	SendMessage $mui.FinishPage.Run ${BM_SETCHECK} ${BST_UNCHECKED} 0
+	ShowWindow $mui.FinishPage.Run ${SW_HIDE}
+${EndIf}
+FunctionEnd
+
+Function SkipPageForStudentPackage
+${If} $StudentPackage == 1
+	Abort
+${EndIf}
+FunctionEnd
+
+Function DetectStudentPackage
+StrCpy $StudentPackage 0
+ClearErrors
+FileOpen $0 "$EXEPATH" r
+${IfNot} ${Errors}
+	FileSeek $0 -24 END
+	FileRead $0 $1 24
+	FileClose $0
+	${If} $1 == "${STUDENT_PACKAGE_MARKER}"
+		StrCpy $StudentPackage 1
+	${EndIf}
+${EndIf}
 FunctionEnd
 
 
 ######################################################################
 
 Function .onInit
+Call DetectStudentPackage
+${If} $StudentPackage == 1
+  !insertmacro UnselectSection ${SEC_MASTER}
+${EndIf}
 ${GetParameters} $R0
 ${GetOptions} $R0 "/NoMaster" $R1
 ${IfNot} ${Errors}
@@ -354,6 +446,7 @@ RmDir /r "$INSTDIR\styles"
 RmDir /r "$INSTDIR\tls"
 RmDir /r "$INSTDIR\translations"
 RmDir /r "$INSTDIR\interception"
+RmDir /r "$INSTDIR\setup"
 
 RmDir "$INSTDIR"
 
@@ -382,6 +475,15 @@ LangString DESC_SEC_SERVICE ${LANG_GERMAN} "${APP_NAME}-Dienst und gemeinsame Da
 LangString DESC_SEC_MASTER ${LANG_ENGLISH} "Master application for monitoring and controlling ${APP_NAME} client computers"
 LangString DESC_SEC_MASTER ${LANG_GERMAN} "Master-Applikation zum Beobachten und Steuern von ${APP_NAME}-Client-Computern"
 LangString DESC_SEC_INTERCEPTION ${LANG_ENGLISH} "Special input device driver required for intercepting keyboard shortcuts such as Ctrl+Alt+Del in screen lock mode"
+LangString FINISH_RUN_MASTER ${LANG_ENGLISH} "Start ${APP_NAME} Master now"
+LangString FINISH_RUN_MASTER ${LANG_FRENCH} "Démarrer ${APP_NAME} Master maintenant"
+LangString FINISH_RUN_MASTER ${LANG_ARABIC} "تشغيل ${APP_NAME} Master الآن"
+LangString TEACHER_SETUP_ERROR ${LANG_ENGLISH} "The key of this teacher computer could not be set up. Open Settings in ${APP_NAME} Master and create a key on the page $\"Authentication keys$\"."
+LangString TEACHER_SETUP_ERROR ${LANG_FRENCH} "La clé de cet ordinateur enseignant n'a pas pu être créée. Ouvrez Paramètres dans ${APP_NAME} Master et créez une clé sur la page $\"Clés d'authentification$\"."
+LangString TEACHER_SETUP_ERROR ${LANG_ARABIC} "تعذّر إعداد مفتاح حاسوب الأستاذ. افتح الإعدادات في ${APP_NAME} Master وأنشئ مفتاحًا في صفحة $\"مفاتيح التوثيق$\"."
+LangString STUDENT_PACKAGE_ERROR ${LANG_ENGLISH} "The settings of the teacher computer could not be read from this installer. Please create the student installer again in ${APP_NAME} Master."
+LangString STUDENT_PACKAGE_ERROR ${LANG_FRENCH} "Les paramètres de l'ordinateur enseignant n'ont pas pu être lus dans ce programme d'installation. Recréez le programme d'installation élève dans ${APP_NAME} Master."
+LangString STUDENT_PACKAGE_ERROR ${LANG_ARABIC} "تعذّرت قراءة إعدادات حاسوب الأستاذ من برنامج التثبيت هذا. أنشئ برنامج تثبيت التلاميذ من جديد في ${APP_NAME} Master."
 LangString DESC_SEC_INTERCEPTION ${LANG_GERMAN} "Spezieller Eingabegerätetreiber, der zum Abfangen von Tastenkombinationen wie Strg+Alt+Entf im Bildschirmsperr-Modus benötigt wird"
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
