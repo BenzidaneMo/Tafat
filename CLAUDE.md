@@ -416,7 +416,9 @@ Traps found so far:
 | Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | green, installers ~15 MB (the x86_64 legacy job is the slowest, ~13 min) |
 
 Releases so far: v1.0.0 (first), v1.0.1 (teacher-only setup, student installer, Add computers),
-v1.0.2 (service kept on upgrade), v1.0.3 (Tafat-style toolbar icons, Contributors). The `release`
+v1.0.2 (service kept on upgrade), v1.0.3 (Tafat-style toolbar icons, Contributors), v1.0.4 (Rewards
+with stars per class, quiz True/False, fixes for cancelled and enforced modes and leftover workers,
+smaller student toolbar; the hideable teacher toolbar came after this tag). The `release`
 job only runs after all four builds; until then a fresh release shows just the source archives.
 
 First real Windows test (owner's PC, Windows 11, 2026-10-03): installing works, the master
