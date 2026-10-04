@@ -165,6 +165,16 @@ Traps found so far:
   namespace (`ip netns`, veth 10.77.0.1/2); 127.0.0.1 and own addresses count as the teacher's
   computer and are skipped by blockers and quizzes. The build tree needs a `tafat-worker`
   symlink next to `tafat-server`, and the server needs `USER` set when there is no logind session.
+  Without logind the server has no user session, so session features (lock, user names, Running
+  apps history) stay off. To test them, run a private system D-Bus with a small fake
+  `org.freedesktop.login1` (Session `Class` "user", `User` → `Name`), set
+  `VEYON_SESSION_PATH=/org/freedesktop/login1/session/<id>` per server, and start Xvfb with
+  `-noreset` (otherwise the root window is reset when its last client disconnects).
+- `QT_USE_QSTRINGBUILDER` is on: never `auto x = a + b` with strings. It keeps a builder that
+  refers to temporaries, which are already destroyed on the next line. Write `const QString x = …`.
+- On the master, `handleFeatureMessage` gets `ComputerControlInterface::weakPointer()`: a
+  QSharedPointer with a no-op deleter. Never keep a `QWeakPointer` from it (it expires at once).
+  Store `QPointer<ComputerControlInterface>` and send with `->weakPointer()`.
 
 ## 6. What is done
 
