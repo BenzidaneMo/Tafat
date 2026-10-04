@@ -599,6 +599,22 @@ Now copy the %3 installers into this folder.</source>
         <source>Answer options, one per line. Mark correct options with * at the beginning, e.g. *Algiers. Without a marked option the question is not graded.</source>
         <translation type="unfinished">ⵜⵉⵔⵉⵔⵉⵢⵉⵏ, ⵢⵉⵡⴻⵜ ⴷⴻⴳ ⵢⴰⵍ ⵉⵣⵉⵔⵉⴳ. ⵛⵔⴻⴹ ⵜⵉⵔⵉⵔⵉⵢⵉⵏ ⵜⵉⵎⴻⵖⵜⵓⵜⵉⵏ ⵙ * ⴷⴻⴳ ⵜⴰⵣⵡⴰⵔⴰ, ⴰⵎⴻⴷⵢⴰ *ⵍⵣⵣⴰⵢⴻⵔ. ⵎⴰ ⵓⵍⴰⵛ ⵜⵉⵔⵉⵔⵉⵜ ⵢⴻⵜⵜⵡⴰⵛⴻⵔⴹⴻⵏ, ⴰⵙⵜⴻⵇⵙⵉ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵙⴻⵇⴷⴰⵛ ⴰⵔⴰ ⵉ ⵜⵏⴻⵇⵇⵉⴹⵉⵏ.</translation>
     </message>
+    <message>
+        <source>True or false</source>
+        <translation type="unfinished">ⵢⴻⵚⴻⵃⵃⴰ ⵏⴻⵖ ⵓⵔ ⵢⴻⵚⴻⵃⵃⴰ ⴰⵔⴰ</translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished">ⵢⴻⵚⴻⵃⵃⴰ</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵚⴻⵃⵃⴰ ⴰⵔⴰ</translation>
+    </message>
+    <message>
+        <source>Mark the correct answer with * at the beginning, e.g. *True. Without a mark the question is not graded.</source>
+        <translation type="unfinished">ⵙⴻⵔⵙ * ⵣⴷⴰⵜ ⵏ ⵜⵔⵉⵔⵉⵜ ⵢⴻⵚⴻⵃⵃⴰⵏ, ⴰⵎⴻⴷⵢⴰ *ⵢⴻⵚⴻⵃⵃⴰ. ⵡⴰⵔ ⵜⴰⵛⵔⴻⴹⵜ, ⴰⵙⵜⴻⵇⵙⵉ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵣⵎⴻⵍ ⴰⵔⴰ.</translation>
+    </message>
 </context>
 <context>
     <name>QuizEditorDialog</name>

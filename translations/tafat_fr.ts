@@ -599,6 +599,22 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
         <source>Answer options, one per line. Mark correct options with * at the beginning, e.g. *Algiers. Without a marked option the question is not graded.</source>
         <translation type="unfinished">Réponses possibles, une par ligne. Marquez les bonnes réponses avec * au début, p. ex. *Alger. Sans réponse marquée, la question n&apos;est pas notée.</translation>
     </message>
+    <message>
+        <source>True or false</source>
+        <translation type="unfinished">Vrai ou faux</translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished">Vrai</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished">Faux</translation>
+    </message>
+    <message>
+        <source>Mark the correct answer with * at the beginning, e.g. *True. Without a mark the question is not graded.</source>
+        <translation type="unfinished">Marquez la bonne réponse avec * au début, par exemple *Vrai. Sans marque, la question n&apos;est pas notée.</translation>
+    </message>
 </context>
 <context>
     <name>QuizEditorDialog</name>

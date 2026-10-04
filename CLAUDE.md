@@ -207,7 +207,7 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   (`translations/CMakeLists.txt`, those sources are excluded from the `veyon_*.ts`
   catalogs) and loaded after the `veyon` catalog (`VeyonCore::initLocaleAndTranslation`).
   Add new Tafat plugins to `tafat_plugins` there (now also `inventory`, `labsetup`, `rewards`). Arabic, French and Tamazight
-  drafts for all 348 texts are in, marked *unfinished* (Qt still uses them) for native review.
+  drafts for all 352 texts are in, marked *unfinished* (Qt still uses them) for native review.
   lupdate (Qt 5 and 6) refuses to update the `kab`/`kab_Tfng` catalogs ("target language is not recognized"):
   set `language="ja"` (one plural form) for the run, then put `kab`/`kab_Tfng` back.
 - `veyon_ar.ts`: 816/1161, of which 598 are unfinished drafts.
@@ -246,8 +246,9 @@ OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,
   QSettings (system scope, "WebControl") and clears leftovers on server start.
   Firefox needs a restart to apply.
 - `plugins/quiz` — quizzes and polls: JSON library in the teacher's data dir,
-  editor (single/multiple choice, text; `*` marks correct options; unmarked =
-  survey), launcher, student window with countdown/auto-submit, live results
+  editor (single/multiple choice, text, and "True or false", saved as a single
+  choice question so the wire format stays the same; points per question; `*` marks
+  correct options; unmarked = survey), launcher, student window with countdown/auto-submit, live results
   window with per-question distribution, CSV export. Solutions are stripped
   before sending; grading happens on the teacher's PC. `m_serverQuizActive` is
   separate from the quiz ID so final answers still arrive after "end quiz".

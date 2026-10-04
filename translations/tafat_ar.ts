@@ -599,6 +599,22 @@ Now copy the %3 installers into this folder.</source>
         <source>Answer options, one per line. Mark correct options with * at the beginning, e.g. *Algiers. Without a marked option the question is not graded.</source>
         <translation type="unfinished">خيارات الإجابة، خيار في كل سطر. ضع * في بداية الخيارات الصحيحة، مثل *الجزائر. إذا لم يُحدَّد أي خيار لا يُنقَّط السؤال.</translation>
     </message>
+    <message>
+        <source>True or false</source>
+        <translation type="unfinished">صحيح أو خطأ</translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished">صحيح</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished">خطأ</translation>
+    </message>
+    <message>
+        <source>Mark the correct answer with * at the beginning, e.g. *True. Without a mark the question is not graded.</source>
+        <translation type="unfinished">ضع * قبل الإجابة الصحيحة، مثلًا *صحيح. بدون علامة لا يُنقَط السؤال.</translation>
+    </message>
 </context>
 <context>
     <name>QuizEditorDialog</name>

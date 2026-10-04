@@ -68,9 +68,10 @@ Sit tikkelt nniḍen ɣef tqeffalt akken ad tekkseḍ asewḥel.
 ## 6. Ssekyed: akayad
 
 1. **Akayad** → *Akayad amaynut* (neɣ *Asestan amaynut*), azwel, akud ma
-   tebɣiḍ, syin *Rnu asteqsi*: *Afran asuf*, *Afran aget* neɣ *Tiririt s
-   uḍris*. Yiwet n tririt deg yal izirig; sers `*` zdat n tririyin
-   yeṣeḥḥan. War `*`, asteqsi d **asestan** (ulac tazmilt).
+   tebɣiḍ, syin *Rnu asteqsi*: *Afran asuf*, *Afran aget*, *Tiririt s
+   uḍris* neɣ *Yeṣeḥḥa neɣ ur yeṣeḥḥa ara*. Yiwet n tririt deg yal izirig;
+   sers `*` zdat n tririyin yeṣeḥḥan. War `*`, asteqsi d **asestan** (ulac tazmilt).
+   *Tineqqiḍin* fkant azal ugar i yiwen usteqsi.
 2. Fren akayad deg tebdart, syin sit ɣef *Senker*. Ma yella wakud, inelmaden
    ad walin amḍan i d-yettqeṛṛiben, tiririyin-nsen ad ttwaznent s timmad-nsent
    di taggara.

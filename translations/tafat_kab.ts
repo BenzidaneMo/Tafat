@@ -599,6 +599,22 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
         <source>Answer options, one per line. Mark correct options with * at the beginning, e.g. *Algiers. Without a marked option the question is not graded.</source>
         <translation type="unfinished">Tiririyin, yiwet deg yal izirig. Creḍ tiririyin timeɣtutin s * deg tazwara, amedya *Lzzayer. Ma ulac tiririt yettwacerḍen, asteqsi ur yettwaseqdac ara i tneqqiḍin.</translation>
     </message>
+    <message>
+        <source>True or false</source>
+        <translation type="unfinished">Yeṣeḥḥa neɣ ur yeṣeḥḥa ara</translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished">Yeṣeḥḥa</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished">Ur yeṣeḥḥa ara</translation>
+    </message>
+    <message>
+        <source>Mark the correct answer with * at the beginning, e.g. *True. Without a mark the question is not graded.</source>
+        <translation type="unfinished">Sers * zdat n tririt yeṣeḥḥan, amedya *Yeṣeḥḥa. War tacreḍt, asteqsi ur yettwazmel ara.</translation>
+    </message>
 </context>
 <context>
     <name>QuizEditorDialog</name>

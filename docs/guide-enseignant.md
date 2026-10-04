@@ -70,9 +70,9 @@ Cliquez de nouveau sur le bouton pour lever le blocage.
 
 1. **Quiz** → *Nouveau quiz* (ou *Nouveau sondage*), un titre, une *Durée
    limite* si besoin, puis *Ajouter une question* : *Choix unique*, *Choix
-   multiple* ou *Réponse écrite*. Une réponse par ligne ; mettez `*` devant
-   les bonnes réponses. Sans `*`, la question compte comme **sondage** (pas de
-   note).
+   multiple*, *Réponse écrite* ou *Vrai ou faux*. Une réponse par ligne ;
+   mettez `*` devant les bonnes réponses. Sans `*`, la question compte comme
+   **sondage** (pas de note). *Points* donne plus de poids à une question.
 2. Choisissez le quiz dans la liste et cliquez sur *Lancer*. Avec une durée
    limite, les élèves voient un compte à rebours et leurs réponses sont
    envoyées automatiquement à la fin.
