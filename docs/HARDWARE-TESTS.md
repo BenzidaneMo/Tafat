@@ -99,6 +99,8 @@ the blocker is on (it must clean up at service start).
       student screen (also over a full-screen program), "Show stars" lists the names from
       the register, the stars stay after restarting Tafat Master, CSV opens in Excel.
       A second class (*New class*) starts without stars on the same computers.
+- [ ] **Teacher toolbar**: the button at the right end of the bottom bar hides and shows
+      the toolbar in Tafat Master; it stays hidden after closing and reopening the master.
 - [ ] **Student toolbar**: the arrow makes the bar smaller (only the hand) and bigger
       again; raising the hand works in both; the choice stays after hiding and showing it.
 

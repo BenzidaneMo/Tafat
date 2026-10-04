@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ar">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ar">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -1107,7 +1109,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; attempted to access this computer but could not authenticate successfully.</source>
-        <translation type="unfinished">حاول المستخدم "%1" من الجهاز "%2" الوصول إلى هذا الحاسوب لكن التوثيق فشل.</translation>
+        <translation type="unfinished">حاول المستخدم &quot;%1&quot; من الجهاز &quot;%2&quot; الوصول إلى هذا الحاسوب لكن التوثيق فشل.</translation>
     </message>
     <message>
         <source>Remote access</source>
@@ -1115,7 +1117,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; is now accessing this computer.</source>
-        <translation type="unfinished">المستخدم "%1" من الجهاز "%2" متصل الآن بهذا الحاسوب.</translation>
+        <translation type="unfinished">المستخدم &quot;%1&quot; من الجهاز &quot;%2&quot; متصل الآن بهذا الحاسوب.</translation>
     </message>
     <message>
         <source>Access control error</source>
@@ -1123,7 +1125,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>User &quot;%1&quot; at host &quot;%2&quot; attempted to access this computer but has been blocked due to access control settings.</source>
-        <translation type="unfinished">حاول المستخدم "%1" من الجهاز "%2" الوصول إلى هذا الحاسوب لكنه مُنع بسبب إعدادات التحكم في الوصول.</translation>
+        <translation type="unfinished">حاول المستخدم &quot;%1&quot; من الجهاز &quot;%2&quot; الوصول إلى هذا الحاسوب لكنه مُنع بسبب إعدادات التحكم في الوصول.</translation>
     </message>
     <message>
         <source>Veyon Service %1 at %2:%3</source>
@@ -1525,7 +1527,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Start application &quot;%1&quot;</source>
-        <translation type="unfinished">تشغيل التطبيق "%1"</translation>
+        <translation type="unfinished">تشغيل التطبيق &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Custom application</source>
@@ -1533,7 +1535,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>Open website &quot;%1&quot;</source>
-        <translation type="unfinished">فتح الموقع "%1"</translation>
+        <translation type="unfinished">فتح الموقع &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Custom website</source>
@@ -1727,7 +1729,7 @@ Make sure that the names of the keys belonging to each other are identical on al
         <source>Failed to initialize credentials</source>
         <translation>فشل في تهيئة بيانات الاعتماد
 
- </translation>
+&#xa0;</translation>
     </message>
     <message>
         <source>Could not establish a connection to host %1</source>
@@ -1826,7 +1828,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>The output directory &quot;%1&quot; does not exist and could not be created. Please check the configuration and the file permissions for the configured destination directory.</source>
-        <translation type="unfinished">مجلد الإخراج "%1" غير موجود وتعذر إنشاؤه. يرجى التحقق من الإعدادات ومن صلاحيات الملفات لمجلد الوجهة المحدد.</translation>
+        <translation type="unfinished">مجلد الإخراج &quot;%1&quot; غير موجود وتعذر إنشاؤه. يرجى التحقق من الإعدادات ومن صلاحيات الملفات لمجلد الوجهة المحدد.</translation>
     </message>
 </context>
 <context>
@@ -3070,6 +3072,10 @@ Make sure that the names of the keys belonging to each other are identical on al
         <source>Show icons only</source>
         <translation type="unfinished">عرض الأيقونات فقط</translation>
     </message>
+    <message>
+        <source>Hide the toolbar</source>
+        <translation type="unfinished">إخفاء شريط الأدوات</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -3259,7 +3265,7 @@ Make sure that the names of the keys belonging to each other are identical on al
     </message>
     <message>
         <source>The feature &quot;%1&quot; is still active. Please stop it before closing Veyon.</source>
-        <translation type="unfinished">الميزة "%1" ما زالت مفعّلة. يرجى إيقافها قبل إغلاق Veyon.</translation>
+        <translation type="unfinished">الميزة &quot;%1&quot; ما زالت مفعّلة. يرجى إيقافها قبل إغلاق Veyon.</translation>
     </message>
     <message>
         <source>Use custom computer arrangement.
@@ -3276,6 +3282,14 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <message>
         <source>Save computer positions</source>
         <translation type="unfinished">حفظ مواضع الحواسيب</translation>
+    </message>
+    <message>
+        <source>Show the toolbar</source>
+        <translation type="unfinished">إظهار شريط الأدوات</translation>
+    </message>
+    <message>
+        <source>Hide the toolbar</source>
+        <translation type="unfinished">إخفاء شريط الأدوات</translation>
     </message>
 </context>
 <context>
@@ -3297,10 +3311,6 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <translation type="unfinished">لقطات الشاشة</translation>
     </message>
     <message>
-        <source>User interface</source>
-        <translation>واجهة المستخدم</translation>
-    </message>
-    <message>
         <source>Text color</source>
         <translation type="unfinished">لون النص</translation>
     </message>
@@ -3313,20 +3323,12 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <translation type="unfinished">لون الخلفية</translation>
     </message>
     <message>
-        <source>Thumbnail spacing</source>
-        <translation type="unfinished">المسافة بين الصور المصغّرة</translation>
-    </message>
-    <message>
         <source> px</source>
         <translation type="unfinished"> بكسل</translation>
     </message>
     <message>
         <source>Auto</source>
         <translation type="unfinished">تلقائي</translation>
-    </message>
-    <message>
-        <source>Computer thumbnail caption</source>
-        <translation type="unfinished">عنوان الصورة المصغّرة للحاسوب</translation>
     </message>
     <message>
         <source>Computer and user name</source>
@@ -3349,16 +3351,8 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <translation type="unfinished">اسم المستخدم واسم الحاسوب</translation>
     </message>
     <message>
-        <source>Thumbnail update interval</source>
-        <translation type="unfinished">فاصل تحديث الصور المصغّرة</translation>
-    </message>
-    <message>
         <source>Sort order</source>
         <translation type="unfinished">ترتيب الفرز</translation>
-    </message>
-    <message>
-        <source>Thumbnail aspect ratio</source>
-        <translation type="unfinished">نسبة أبعاد الصور المصغّرة</translation>
     </message>
     <message>
         <source>Highest</source>
@@ -3379,14 +3373,6 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <message>
         <source>Lowest</source>
         <translation type="unfinished">الأدنى</translation>
-    </message>
-    <message>
-        <source>Image quality in monitoring mode</source>
-        <translation type="unfinished">جودة الصورة في وضع المراقبة</translation>
-    </message>
-    <message>
-        <source>Remote access image quality</source>
-        <translation type="unfinished">جودة الصورة في الوصول عن بعد</translation>
     </message>
     <message>
         <source>Identify users in guest sessions</source>
@@ -3571,6 +3557,50 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <message>
         <source>Session meta data hash</source>
         <translation type="unfinished">بصمة بيانات الجلسة الوصفية</translation>
+    </message>
+    <message>
+        <source>Monitoring view</source>
+        <translation type="unfinished">عرض المراقبة</translation>
+    </message>
+    <message>
+        <source>Refresh rate</source>
+        <translation type="unfinished">معدل التحديث</translation>
+    </message>
+    <message>
+        <source>Display label</source>
+        <translation type="unfinished">التسمية المعروضة</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished">نسبة الأبعاد</translation>
+    </message>
+    <message>
+        <source>Grid spacing</source>
+        <translation type="unfinished">تباعد الشبكة</translation>
+    </message>
+    <message>
+        <source>Image quality</source>
+        <translation type="unfinished">جودة الصورة</translation>
+    </message>
+    <message>
+        <source>Visibility mode</source>
+        <translation type="unfinished">وضع الظهور</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <translation type="unfinished">عادي</translation>
+    </message>
+    <message>
+        <source>Blurred</source>
+        <translation type="unfinished">مموّه</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation type="unfinished">مخفي</translation>
+    </message>
+    <message>
+        <source>Remote access</source>
+        <translation type="unfinished">التحكم عن بعد</translation>
     </message>
 </context>
 <context>
@@ -4090,11 +4120,11 @@ Please save your work and close all programs.</source>
     </message>
     <message>
         <source>Access allowed by rule &quot;%1&quot;</source>
-        <translation type="unfinished">سُمح بالوصول حسب القاعدة "%1"</translation>
+        <translation type="unfinished">سُمح بالوصول حسب القاعدة &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Access denied by rule &quot;%1&quot;</source>
-        <translation type="unfinished">رُفض الوصول حسب القاعدة "%1"</translation>
+        <translation type="unfinished">رُفض الوصول حسب القاعدة &quot;%1&quot;</translation>
     </message>
     <message>
         <source>No rule allowed access</source>

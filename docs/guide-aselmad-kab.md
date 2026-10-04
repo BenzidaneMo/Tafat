@@ -23,6 +23,11 @@ USB, sit snat n tikkal ɣef uselkim n unelmad), syin **Rnu iselkimen** →
 **Nadi** → ṛcem-it → **Rnu ɣer texxamt**. **Iɣewwaren** yeldi asmesbadu
 (tutlayt, d wayen nniḍen); *OK* ad isekles syin ad imdel.
 
+Akken ad yili ugar n wadeg i tegniwin: taqeffalt deg teɣmert n wadda (*Ffer
+afeggag n yifecka*) teffer afeggag n tqeffalin, taqeffalt-nni kan ad t-id-terr.
+Mi yella yeffer, asiti ayeffus deg temnaḍt n yiselkimen yefka-d akk timahilin.
+Asiti ayeffus ɣef ufeggag → *Sken tignitin kan* yesseḥzay-it.
+
 ## 2. Tazwara n tesragt: tilin
 
 - **Tilin**: yal anelmad yettaru isem-is d tneɣrit-is. Ismawen-nsen ad d-banen

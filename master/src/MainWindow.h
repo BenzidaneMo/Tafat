@@ -55,6 +55,9 @@ public:
 
 	void reloadSubFeatures();
 
+	// hides the feature toolbar to leave more room for the computers
+	void setToolBarHidden( bool hidden );
+
 	ComputerControlInterfaceList selectedComputerControlInterfaces() const;
 
 protected:
@@ -90,5 +93,7 @@ private:
 	VeyonMaster& m_master;
 
 	QButtonGroup* m_modeGroup;
+
+	QToolButton* m_toolBarToggleButton;
 
 } ;

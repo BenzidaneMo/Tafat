@@ -112,6 +112,10 @@ button-zoom-fit master/resources/zoom-fit-best.png
 button-zoom-fit-dark master/resources/zoom-fit-best-dark.png
 button-exchange master/resources/exchange-positions-zorder.png
 button-exchange-dark master/resources/exchange-positions-zorder-dark.png
+button-toolbar-hide master/resources/toolbar-hide.png
+button-toolbar-hide-dark master/resources/toolbar-hide-dark.png
+button-toolbar-show master/resources/toolbar-show.png
+button-toolbar-show-dark master/resources/toolbar-show-dark.png
 button-about core/resources/help-about.png
 button-about-dark core/resources/help-about-dark.png
 button-user-group core/resources/user-group-new.png

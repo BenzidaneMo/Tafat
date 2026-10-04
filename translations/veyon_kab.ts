@@ -3070,6 +3070,10 @@ Make sure that the names of the keys belonging to each other are identical on al
         <source>Show icons only</source>
         <translation type="unfinished">Sken tignitin kan</translation>
     </message>
+    <message>
+        <source>Hide the toolbar</source>
+        <translation type="unfinished">Ffer afeggag n yifecka</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -3276,6 +3280,14 @@ Sit u ṭṭef akken ad d-tessaliḍ asuddes seg ufaylu neɣ ad teskelseḍ asud
     <message>
         <source>Save computer positions</source>
         <translation type="unfinished">Sekles imukan n yiselkimen</translation>
+    </message>
+    <message>
+        <source>Show the toolbar</source>
+        <translation type="unfinished">Sken afeggag n yifecka</translation>
+    </message>
+    <message>
+        <source>Hide the toolbar</source>
+        <translation type="unfinished">Ffer afeggag n yifecka</translation>
     </message>
 </context>
 <context>

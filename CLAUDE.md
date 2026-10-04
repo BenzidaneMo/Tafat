@@ -342,6 +342,10 @@ Traps found so far:
     `<name>_public_key.pem`, `tafat-config.json` and `install-students.bat` (CRLF, ASCII; checks
     admin rights, picks `tafat-*-<win32|win64>[-legacy]-setup.exe` by `ver`/`PROCESSOR_ARCHITECTURE`,
     runs it with `/S /NoMaster /ApplyConfig=… /ImportPublicKey=… /PublicKeyName=…`).
+- Tafat Master can hide its feature toolbar: a toggle at the right end of the bottom bar
+  (`MainWindow::setToolBarHidden`, icons `master/resources/toolbar-{hide,show}[-dark].png`) and
+  *Hide the toolbar* in the toolbar's context menu; saved as `UI/ToolBarHidden` in the master's
+  user config (written when the master closes normally).
 - Master window title is set from `VeyonCore::productName()` ("Tafat Master"); the `.ui` title is
   `notr`, so `BrandingTranslator` never saw it. "Hands & chat" became "Hands and chat" (the `&`
   was shown as a mnemonic, "Hands _chat").
@@ -412,7 +416,9 @@ Traps found so far:
 | Windows Qt 5 legacy i686 / x86_64 (Win 7/8.1) | green, installers ~15 MB (the x86_64 legacy job is the slowest, ~13 min) |
 
 Releases so far: v1.0.0 (first), v1.0.1 (teacher-only setup, student installer, Add computers),
-v1.0.2 (service kept on upgrade), v1.0.3 (Tafat-style toolbar icons, Contributors). The `release`
+v1.0.2 (service kept on upgrade), v1.0.3 (Tafat-style toolbar icons, Contributors), v1.0.4 (Rewards
+with stars per class, quiz True/False, fixes for cancelled and enforced modes and leftover workers,
+smaller student toolbar; the hideable teacher toolbar came after this tag). The `release`
 job only runs after all four builds; until then a fresh release shows just the source archives.
 
 First real Windows test (owner's PC, Windows 11, 2026-10-03): installing works, the master
