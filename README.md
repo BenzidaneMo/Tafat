@@ -2,54 +2,62 @@
 
 # Tafat — ⵜⴰⴼⴰⵜ — تافات
 
-Tafat ("light" in Tamazight) is a free and open source classroom management
-solution for Algerian high schools — an open alternative to NetSupport School.
+Free, open source classroom management for school computer labs: see and control
+every screen, block apps and websites, run quizzes, take attendance, chat with
+students. In Arabic, Tamazight, French and English, on Windows 7 to 11. An open
+alternative to NetSupport School, made first for Algerian high schools.
 
-Tafat is developed by [BenzidaneMo](https://github.com/BenzidaneMo).
-It is based on [Veyon](https://veyon.io) 4.11.3 by Tobias Junghans /
-Veyon Solutions and keeps its full history so upstream fixes can be merged
-(see [UPSTREAM.md](UPSTREAM.md)).
-
-> **Status:** early development, not yet tested in a real lab. Based on Veyon
-> 4.11.3; Arabic/Tamazight translations and more features are in progress —
-> see the [roadmap](docs/ROADMAP.md).
+> **Status:** early development, **not yet tested in a real lab**. The Windows
+> installers build, but the hardware test round on real Windows 7, 8.1, 10 and 11
+> PCs is still to be done (see [docs/HARDWARE-TESTS.md](docs/HARDWARE-TESTS.md)).
+> Translations are drafts waiting for native review. See the
+> [roadmap](docs/ROADMAP.md).
 
 ## Features
 
-Inherited from Veyon:
+**Watch and guide**
 
-  * Overview: monitor all computers in one or multiple classrooms
-  * Remote access: view or control computers to watch and support students
-  * Demo: broadcast the teacher's screen in realtime (fullscreen/window)
-  * Screen lock: draw attention to what matters right now
-  * Communication: send text messages to students
-  * Start and end lessons: log in and log out users all at once
+  * Overview: monitor all computers of one or several classrooms at once
+  * Remote access: view or control a computer to watch and support a student
+  * Demo: broadcast the teacher's screen in realtime (fullscreen or window)
+  * Messages: send a text message to students
   * Screenshots: record learning progress and document infringements
-  * Programs & websites: launch programs and open website URLs remotely
-  * Teaching material: distribute and collect documents, images and videos
-  * Administration: power on/off and reboot computers remotely
+  * Running apps: see the open applications of each computer, the ones used
+    before, and close them
 
-Added by Tafat:
+**Keep focus**
 
+  * Screen lock: draw attention to what matters right now
   * Block apps: block listed programs or allow only the programs of the lesson,
-    optionally also USB sticks and printing; see the open applications of each
-    computer, the ones used before, and close them
+    optionally also USB sticks and printing
   * Block websites: block listed sites or allow only some, in Chrome, Edge,
     Brave, Chromium and Firefox, optionally block the internet for all programs
+
+**Assess**
+
   * Quiz: quizzes and polls with live results, scores and CSV export
+  * Rewards: give students stars for good work; each student sees a small "Well
+    done!" message, and the teacher sees and exports the stars of the class
+
+**Manage the class**
+
   * Register: attendance with student names on the computers (also with a
     shared account), class list import and absent students
   * Hands and chat: students raise their hands, chat with the teacher and hand in
     their work
+  * Teaching material: distribute and collect documents, images and videos;
+    return to each student their own corrected files
+  * Start and end lessons: log in and log out users all at once
+  * Power: switch computers on, off or reboot remotely
+  * Programs and websites: launch programs and open website URLs remotely
+
+**Set up the lab**
+
+  * Install on the teacher computer only: create a student installer on a USB
+    stick from Tafat Master (double-click on each student computer, no commands),
+    then **Add computers** searches the network for them
   * Inventory: Windows version, processor, memory, disk, addresses and installed
     version of every computer, with CSV export
-  * Lab setup, like NetSupport: install on the teacher computer only, create a
-    student installer on a USB stick from Tafat Master (double-click on each
-    student computer, no commands), and **Add computers** searches the network
-    for them
-  * Return work: give each student back their own corrected files
-  * Rewards: give students stars for good work; each student sees a small "Well
-    done!" message, and the teacher sees and exports the stars of the class
 
 More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:
 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), or the French/English/Arabic page
@@ -69,6 +77,20 @@ Tamazight in Tifinagh script uses the bundled Noto Sans Tifinagh font
   * Windows 10/11, 32-bit and 64-bit
   * Windows 7/8.1, 32-bit and 64-bit (legacy build, in progress)
   * Linux
+
+## Built on Veyon
+
+Tafat is built on [Veyon](https://veyon.io) (version 4.11.3), the free classroom
+management software by Tobias Junghans / Veyon Solutions, which has been used in
+schools for years. Veyon provides the foundation: computer overview, remote
+access, demo, screen lock, file transfer and the network and security layer.
+Tafat adds its own features as plugins and keeps Veyon's full history, so
+upstream fixes can be merged (see [UPSTREAM.md](UPSTREAM.md)).
+
+Tafat is an independent project. It is not made, endorsed or supported by Veyon
+or Veyon Solutions.
+
+Developed by [BenzidaneMo](https://github.com/BenzidaneMo) and Tafat contributors.
 
 ## Building
 
