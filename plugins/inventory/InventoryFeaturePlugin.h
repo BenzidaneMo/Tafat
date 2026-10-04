@@ -108,6 +108,6 @@ private:
 	const FeatureList m_features;
 
 	QPointer<InventoryWindow> m_window;
-	QMap<QString, QWeakPointer<ComputerControlInterface>> m_computers;
+	QMap<QString, QPointer<ComputerControlInterface>> m_computers;
 
 };

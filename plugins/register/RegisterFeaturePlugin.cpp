@@ -145,11 +145,11 @@ bool RegisterFeaturePlugin::handleFeatureMessage( ComputerControlInterface::Poin
 	{
 		m_watchedComputers.insert( key );
 		// keep showing the registered name when the monitoring updates the user information
-		const auto weakInterface = computerControlInterface.toWeakRef();
-		connect( computerControlInterface.data(), &ComputerControlInterface::userChanged, this, [this, weakInterface]() {
-			if( const auto controlInterface = weakInterface.toStrongRef() )
+		const QPointer<ComputerControlInterface> controlInterface = computerControlInterface.data();
+		connect( computerControlInterface.data(), &ComputerControlInterface::userChanged, this, [this, controlInterface]() {
+			if( controlInterface )
 			{
-				applyStudentName( controlInterface );
+				applyStudentName( controlInterface->weakPointer() );
 			}
 		} );
 	}

@@ -158,7 +158,7 @@ private:
 	// master side: conversations by host name
 	QPointer<QWidget> m_mainWindow;
 	QPointer<TeacherChatWindow> m_chatWindow;
-	QMap<QString, QWeakPointer<ComputerControlInterface>> m_computers;
+	QMap<QString, QPointer<ComputerControlInterface>> m_computers;
 	QMap<QString, ChatLog> m_masterLogs;
 	QMap<QString, QString> m_masterSessionIds;
 	HandInAssembler m_handInAssembler;
