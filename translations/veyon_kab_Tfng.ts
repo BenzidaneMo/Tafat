@@ -3070,6 +3070,10 @@ Make sure that the names of the keys belonging to each other are identical on al
         <source>Show icons only</source>
         <translation type="unfinished">ⵙⴽⴻⵏ ⵜⵉⴳⵏⵉⵜⵉⵏ ⴽⴰⵏ</translation>
     </message>
+    <message>
+        <source>Hide the toolbar</source>
+        <translation type="unfinished">ⴼⴼⴻⵔ ⴰⴼⴻⴳⴳⴰⴳ ⵏ ⵢⵉⴼⴻⵛⴽⴰ</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -3276,6 +3280,14 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <message>
         <source>Save computer positions</source>
         <translation type="unfinished">ⵙⴻⴽⵍⴻⵙ ⵉⵎⵓⴽⴰⵏ ⵏ ⵢⵉⵙⴻⵍⴽⵉⵎⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Show the toolbar</source>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴰⴼⴻⴳⴳⴰⴳ ⵏ ⵢⵉⴼⴻⵛⴽⴰ</translation>
+    </message>
+    <message>
+        <source>Hide the toolbar</source>
+        <translation type="unfinished">ⴼⴼⴻⵔ ⴰⴼⴻⴳⴳⴰⴳ ⵏ ⵢⵉⴼⴻⵛⴽⴰ</translation>
     </message>
 </context>
 <context>

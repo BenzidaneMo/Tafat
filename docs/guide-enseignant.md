@@ -21,6 +21,12 @@ une clé USB, double-clic sur l'ordinateur de l'élève), puis **Ajouter des
 ordinateurs** → **Rechercher** → cochez-le → **Ajouter à la salle**.
 **Paramètres** ouvre le configurateur (langue, etc.) ; *OK* enregistre et ferme.
 
+Plus de place pour les vignettes : le bouton tout en bas à droite (*Masquer la
+barre d'outils*) cache la barre des boutons, et le même bouton la réaffiche.
+Barre cachée, un clic droit dans la zone des ordinateurs donne toutes les
+fonctions. Clic droit sur la barre → *Afficher seulement les icônes* la rend
+plus petite.
+
 ## 2. Début du cours : l'appel
 
 - **Appel** : chaque élève saisit son nom et sa classe. Les noms s'affichent

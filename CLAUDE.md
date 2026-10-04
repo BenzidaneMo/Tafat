@@ -342,6 +342,10 @@ Traps found so far:
     `<name>_public_key.pem`, `tafat-config.json` and `install-students.bat` (CRLF, ASCII; checks
     admin rights, picks `tafat-*-<win32|win64>[-legacy]-setup.exe` by `ver`/`PROCESSOR_ARCHITECTURE`,
     runs it with `/S /NoMaster /ApplyConfig=… /ImportPublicKey=… /PublicKeyName=…`).
+- Tafat Master can hide its feature toolbar: a toggle at the right end of the bottom bar
+  (`MainWindow::setToolBarHidden`, icons `master/resources/toolbar-{hide,show}[-dark].png`) and
+  *Hide the toolbar* in the toolbar's context menu; saved as `UI/ToolBarHidden` in the master's
+  user config (written when the master closes normally).
 - Master window title is set from `VeyonCore::productName()` ("Tafat Master"); the `.ui` title is
   `notr`, so `BrandingTranslator` never saw it. "Hands & chat" became "Hands and chat" (the `&`
   was shown as a mnemonic, "Hands _chat").

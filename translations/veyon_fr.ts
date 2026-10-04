@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fr">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fr">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -3083,6 +3085,10 @@ Make sure that the names of the keys belonging to each other are identical on al
         <source>Show icons only</source>
         <translation>Afficher seulement les icônes</translation>
     </message>
+    <message>
+        <source>Hide the toolbar</source>
+        <translation type="unfinished">Masquer la barre d&apos;outils</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -3288,6 +3294,14 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <source>Save computer positions</source>
         <translation type="unfinished"/>
     </message>
+    <message>
+        <source>Show the toolbar</source>
+        <translation type="unfinished">Afficher la barre d&apos;outils</translation>
+    </message>
+    <message>
+        <source>Hide the toolbar</source>
+        <translation type="unfinished">Masquer la barre d&apos;outils</translation>
+    </message>
 </context>
 <context>
     <name>MasterConfigurationPage</name>
@@ -3308,10 +3322,6 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <translation>Captures d&apos;écrans</translation>
     </message>
     <message>
-        <source>User interface</source>
-        <translation>Interface de l&apos;utilisateur</translation>
-    </message>
-    <message>
         <source>Text color</source>
         <translation>Couleur du texte</translation>
     </message>
@@ -3324,20 +3334,12 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <translation>Couleur d&apos;arrière plan</translation>
     </message>
     <message>
-        <source>Thumbnail spacing</source>
-        <translation>Espacement des miniatures</translation>
-    </message>
-    <message>
         <source> px</source>
         <translation> px</translation>
     </message>
     <message>
         <source>Auto</source>
         <translation>Auto</translation>
-    </message>
-    <message>
-        <source>Computer thumbnail caption</source>
-        <translation>Légende de la vignette ordinateur</translation>
     </message>
     <message>
         <source>Computer and user name</source>
@@ -3360,16 +3362,8 @@ Press and hold to load arrangement from a file or save current arrangement to a 
         <translation>Utilisateur et nom d&apos;ordinateur</translation>
     </message>
     <message>
-        <source>Thumbnail update interval</source>
-        <translation>Intervalle de rafraichissement des miniatures d&apos;écran</translation>
-    </message>
-    <message>
         <source>Sort order</source>
         <translation>Ordre de tri</translation>
-    </message>
-    <message>
-        <source>Thumbnail aspect ratio</source>
-        <translation>Rapport hauteur / largeur de la miniature</translation>
     </message>
     <message>
         <source>Highest</source>
@@ -3390,14 +3384,6 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <message>
         <source>Lowest</source>
         <translation>La plus basse</translation>
-    </message>
-    <message>
-        <source>Image quality in monitoring mode</source>
-        <translation>Qualité d&apos;image en mode surveillance</translation>
-    </message>
-    <message>
-        <source>Remote access image quality</source>
-        <translation>Qualité de l&apos;image de l&apos;accès à distance</translation>
     </message>
     <message>
         <source>Identify users in guest sessions</source>
@@ -3582,6 +3568,50 @@ Press and hold to load arrangement from a file or save current arrangement to a 
     <message>
         <source>Session meta data hash</source>
         <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Monitoring view</source>
+        <translation type="unfinished">Vue de surveillance</translation>
+    </message>
+    <message>
+        <source>Refresh rate</source>
+        <translation type="unfinished">Fréquence de rafraîchissement</translation>
+    </message>
+    <message>
+        <source>Display label</source>
+        <translation type="unfinished">Libellé affiché</translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished">Rapport hauteur / largeur</translation>
+    </message>
+    <message>
+        <source>Grid spacing</source>
+        <translation type="unfinished">Espacement de la grille</translation>
+    </message>
+    <message>
+        <source>Image quality</source>
+        <translation type="unfinished">Qualité d&apos;image</translation>
+    </message>
+    <message>
+        <source>Visibility mode</source>
+        <translation type="unfinished">Mode de visibilité</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <translation type="unfinished">Normal</translation>
+    </message>
+    <message>
+        <source>Blurred</source>
+        <translation type="unfinished">Flou</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation type="unfinished">Masqué</translation>
+    </message>
+    <message>
+        <source>Remote access</source>
+        <translation type="unfinished">Accès à distance</translation>
     </message>
 </context>
 <context>
@@ -3884,7 +3914,7 @@ Veuillez sauvegarder votre travail et fermer tous les programmes.</translation>
     </message>
     <message>
         <source>No computer has been selected so you can enter a hostname or IP address of a computer for manual access:</source>
-        <translation>Aucun ordinateur n&apos;a été sélectionné, vous pouvez donc saisir le nom d&apos;hôte ou l&apos;adresse IP d&apos;un ordinateur pour un accès manuel :</translation>
+        <translation>Aucun ordinateur n&apos;a été sélectionné, vous pouvez donc saisir le nom d&apos;hôte ou l&apos;adresse IP d&apos;un ordinateur pour un accès manuel&#xa0;:</translation>
     </message>
     <message>
         <source>Remote view or control a computer</source>
