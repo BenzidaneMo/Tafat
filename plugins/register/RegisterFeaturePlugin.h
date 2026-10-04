@@ -126,6 +126,7 @@ private:
 	QString m_serverStudentName;
 	QString m_serverGroup;
 	QAtomicInt m_registrationVersion{0};
+	int m_registrationRequests{0};
 
 	// worker side
 	QPointer<RegistrationDialog> m_dialog;

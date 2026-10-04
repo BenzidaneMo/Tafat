@@ -350,6 +350,11 @@ bool AppControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server
 		m_applications.clear();
 		UsbStorageBlocker::clear();
 		PrintBlocker::clear();
+		// close the notice about closed applications, if any
+		if( server.featureWorkerManager().isWorkerRunning( m_appControlFeature.uid() ) )
+		{
+			server.featureWorkerManager().stopWorker( m_appControlFeature.uid() );
+		}
 		vInfo() << "stopped controlling applications";
 		return true;
 
