@@ -22,6 +22,8 @@
  *
  */
 
+#include <QTimer>
+
 #include "ComputerControlInterface.h"
 #include "FeatureWorkerManager.h"
 #include "MessageContext.h"
@@ -33,6 +35,7 @@
 
 
 static const char* RegistrationVersionProperty = "registerVersion";
+static constexpr int WorkerStopDelay = 1000;
 
 
 
@@ -199,6 +202,7 @@ bool RegisterFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server,
 		return false;
 	}
 
+	++m_registrationRequests;
 	server.featureWorkerManager().sendMessageToUnmanagedSessionWorker( message );
 
 	return true;
@@ -208,13 +212,20 @@ bool RegisterFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server,
 
 bool RegisterFeaturePlugin::handleFeatureMessageFromWorker( VeyonServerInterface& server, const FeatureMessage& message )
 {
-	Q_UNUSED(server)
-
 	if( message.featureUid() != m_registerFeature.uid() ||
 		message.command<FeatureCommand>() != FeatureCommand::Registered )
 	{
 		return false;
 	}
+
+	// the dialog has closed: stop the worker so that the computer no longer reports the feature as active
+	auto& workerManager = server.featureWorkerManager();
+	QTimer::singleShot( WorkerStopDelay, this, [this, &workerManager, requests = m_registrationRequests]() {
+		if( requests == m_registrationRequests )
+		{
+			workerManager.stopWorker( m_registerFeature.uid() );
+		}
+	} );
 
 	{
 		QMutexLocker locker( &m_serverMutex );

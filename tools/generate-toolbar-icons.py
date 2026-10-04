@@ -156,3 +156,75 @@ small('button-about', 'About',
 small('button-user-group', 'Users and groups',
 	lambda c, a: person(46, 36, 15, c, 56) + person(86, 44, 12, c, 44) +
 	             '  <circle cx="98" cy="98" r="22" fill="%s"/><path d="M98 86 v24 M86 98 h24" stroke="#fffdf9" stroke-width="8" stroke-linecap="round"/>\n' % a)
+
+# ---------------------------------------------------------------- configurator pages
+svg('page-general', 'Configurator page: general settings',
+	''.join('  <path d="M18 %d h92" stroke="%s" stroke-width="%d" stroke-linecap="round"/>\n  <path d="M18 %d h92" stroke="%s" stroke-width="%d" stroke-linecap="round"/>\n'
+	        % (y, PAPER, SW + 8, y, TEAL2, SW + 1) for y in (34, 64, 94)) +
+	''.join('  <circle cx="%d" cy="%d" r="12" fill="%s" stroke="%s" stroke-width="6"/>\n' % (x, y, c, TEAL)
+	        for x, y, c in ((44, 34, ORANGE), (84, 64, YELLOW), (56, 94, PAPER))))
+
+def gear(cx, cy, r, color, hole):
+	teeth = ''.join('<rect x="%g" y="%g" width="16" height="22" rx="4" transform="rotate(%d %g %g)"/>' % (cx - 8, cy - r - 12, a, cx, cy) for a in range(0, 360, 45))
+	return ('  <g fill="%s">%s<circle cx="%g" cy="%g" r="%g"/></g>\n' % (color, teeth, cx, cy, r) +
+	        '  <circle cx="%g" cy="%g" r="%g" fill="%s"/>\n' % (cx, cy, r * 0.42, hole))
+
+svg('page-service', 'Configurator page: the Tafat service',
+	gear(64, 64, 36, TEAL2, PAPER) + '  <circle cx="64" cy="64" r="8" fill="%s"/>\n' % ORANGE)
+
+svg('page-master', 'Configurator page: the teacher program',
+	screen() + ''.join('  <rect x="%d" y="%d" width="22" height="16" rx="3" fill="%s"/>\n' % (x, y, c)
+	                   for x, y, c in ((30, 32, TEAL2), (53, 32, YELLOW), (76, 32, TEAL2), (30, 52, TEAL2), (53, 52, ORANGE), (76, 52, TEAL2))))
+
+svg('page-access-control', 'Configurator page: access control',
+	'  <path d="M64 12 l42 14 v30 c0 28 -18 48 -42 60 c-24 -12 -42 -32 -42 -60 v-30 z" fill="%s" stroke="%s" stroke-width="%d" stroke-linejoin="round"/>\n' % (PAPER, TEAL, SW) +
+	'  <circle cx="64" cy="54" r="12" fill="%s"/><path d="M58 60 h12 l4 26 h-20 z" fill="%s"/>\n' % (ORANGE, ORANGE))
+
+svg('page-keys', 'Configurator page: authentication keys',
+	'  <circle cx="42" cy="64" r="26" fill="%s" stroke="%s" stroke-width="%d"/>\n' % (YELLOW, TEAL, SW) +
+	'  <circle cx="38" cy="64" r="8" fill="%s"/>\n' % PAPER +
+	'  <path d="M68 64 h48 M100 64 v18 M86 64 v12" stroke="%s" stroke-width="10" stroke-linecap="round"/>\n' % TEAL)
+
+svg('page-locations', 'Configurator page: locations and computers',
+	'  <path d="M14 56 l50 -38 l50 38 v52 a6 6 0 0 1 -6 6 h-88 a6 6 0 0 1 -6 -6 z" fill="%s" stroke="%s" stroke-width="%d" stroke-linejoin="round"/>\n' % (PAPER, TEAL, SW) +
+	''.join('  <rect x="%d" y="%d" width="26" height="18" rx="3" fill="%s"/><path d="M%d %d v6" stroke="%s" stroke-width="4"/>\n'
+	        % (x, y, c, x + 13, y + 18, TEAL, ) for x, y, c in ((28, 62, TEAL2), (74, 62, YELLOW), (51, 86, ORANGE))))
+
+svg('page-apps-websites', 'Configurator page: applications and websites',
+	'  <rect x="10" y="20" width="84" height="70" rx="10" fill="%s" stroke="%s" stroke-width="%d"/>\n' % (PAPER, TEAL, SW) +
+	'  <path d="M10 40 h84" stroke="%s" stroke-width="%d"/>\n' % (TEAL, SW) +
+	'  <path d="M36 52 l22 14 l-22 14 z" fill="%s"/>\n' % ORANGE +
+	'  <circle cx="92" cy="86" r="28" fill="%s" stroke="%s" stroke-width="6"/>\n' % (PAPER, TEAL) +
+	'  <g fill="none" stroke="%s" stroke-width="4"><ellipse cx="92" cy="86" rx="11" ry="28"/><path d="M64 86 h56"/></g>\n' % TEAL)
+
+svg('page-file-transfer', 'Configurator page: file transfer',
+	folder() +
+	'  <g fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">'
+	'<path d="M48 90 v-34 m-12 12 l12 -12 l12 12" stroke="%s"/><path d="M80 56 v34 m-12 -12 l12 12 l12 -12" stroke="%s"/></g>\n' % (ORANGE, TEAL2))
+
+svg('page-demo', 'Configurator page: demo',
+	screen(8, 12, 72, 52, stand=False) + screen(46, 44, 72, 52, inner=YELLOW))
+
+svg('page-ldap', 'Configurator page: LDAP / Active Directory',
+	''.join('  <ellipse cx="64" cy="%d" rx="40" ry="12" fill="%s" stroke="%s" stroke-width="6"/>\n' % (y, PAPER, TEAL) for y in ()) +
+	'  <path d="M24 28 v72 a40 12 0 0 0 80 0 v-72" fill="%s" stroke="%s" stroke-width="%d"/>\n' % (PAPER, TEAL, SW) +
+	'  <ellipse cx="64" cy="28" rx="40" ry="12" fill="%s" stroke="%s" stroke-width="%d"/>\n' % (YELLOW, TEAL, SW) +
+	'  <path d="M24 52 a40 12 0 0 0 80 0 M24 76 a40 12 0 0 0 80 0" fill="none" stroke="%s" stroke-width="5"/>\n' % TEAL +
+	'  <circle cx="90" cy="66" r="5" fill="%s"/><circle cx="90" cy="90" r="5" fill="%s"/>\n' % (ORANGE, ORANGE))
+
+svg('page-webapi', 'Configurator page: web API',
+	'  <rect x="10" y="18" width="108" height="92" rx="12" fill="%s" stroke="%s" stroke-width="%d"/>\n' % (PAPER, TEAL, SW) +
+	'  <g fill="none" stroke="%s" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path d="M44 46 l-18 18 l18 18"/><path d="M84 46 l18 18 l-18 18"/></g>\n' % TEAL +
+	'  <path d="M70 40 l-12 48" stroke="%s" stroke-width="9" stroke-linecap="round"/>\n' % ORANGE)
+
+# access control rule states
+svg('rule-allow', 'Access rule: allow', '  <circle cx="64" cy="64" r="50" fill="%s"/><path d="M40 66 l16 16 l32 -34" fill="none" stroke="%s" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>\n' % (TEAL2, PAPER))
+svg('rule-deny', 'Access rule: deny', '  <circle cx="64" cy="64" r="50" fill="%s"/><path d="M44 44 l40 40 M84 44 l-40 40" stroke="%s" stroke-width="12" stroke-linecap="round"/>\n' % (ORANGE, PAPER))
+svg('rule-ask', 'Access rule: ask for permission', '  <circle cx="64" cy="64" r="50" fill="%s"/><path d="M48 50 a16 16 0 1 1 22 15 c-5 2 -6 5 -6 10" fill="none" stroke="%s" stroke-width="11" stroke-linecap="round"/><circle cx="64" cy="94" r="7" fill="%s"/>\n' % (YELLOW, BROWN2, BROWN2))
+svg('rule-none', 'Access rule: no action', '  <circle cx="64" cy="64" r="50" fill="none" stroke="%s" stroke-width="10"/><path d="M42 64 h44" stroke="%s" stroke-width="12" stroke-linecap="round"/>\n' % (TEAL, TEAL))
+
+# ---------------------------------------------------------------- Tafat features
+svg('feature-rewards', 'Rewards: give a star to a student',
+	'  <path d="M64 10 l15 32 l35 4 l-26 24 l7 35 l-31 -18 l-31 18 l7 -35 l-26 -24 l35 -4 z" fill="%s" stroke="%s" stroke-width="%d" stroke-linejoin="round"/>\n' % (YELLOW, ORANGE, SW) +
+	'  <circle cx="64" cy="62" r="13" fill="%s"/>\n' % PAPER +
+	'  <path d="M58 62 l5 5 l9 -10" fill="none" stroke="%s" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>\n' % TEAL)

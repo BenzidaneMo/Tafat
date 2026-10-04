@@ -109,7 +109,10 @@ QuestionDialog::QuestionDialog( const QuizQuestion& question, QWidget* parent ) 
 	m_typeComboBox->addItem( tr( "Single choice" ), int(QuizQuestion::Type::SingleChoice) );
 	m_typeComboBox->addItem( tr( "Multiple choice" ), int(QuizQuestion::Type::MultipleChoice) );
 	m_typeComboBox->addItem( tr( "Text answer" ), int(QuizQuestion::Type::Text) );
-	m_typeComboBox->setCurrentIndex( m_typeComboBox->findData( int(question.type) ) );
+	m_typeComboBox->addItem( tr( "True or false" ), TrueFalseType );
+	const auto isTrueFalse = question.type == QuizQuestion::Type::SingleChoice &&
+							 question.options == trueFalseOptions();
+	m_typeComboBox->setCurrentIndex( m_typeComboBox->findData( isTrueFalse ? TrueFalseType : int(question.type) ) );
 
 	m_pointsSpinBox->setRange( 1, 100 );
 	m_pointsSpinBox->setValue( question.points );
@@ -144,7 +147,7 @@ QuestionDialog::QuestionDialog( const QuizQuestion& question, QWidget* parent ) 
 	connect( buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject );
 	layout->addRow( buttonBox );
 
-	connect( m_typeComboBox, QOverload<int>::of( &QComboBox::currentIndexChanged ), this, &QuestionDialog::updateHint );
+	connect( m_typeComboBox, QOverload<int>::of( &QComboBox::currentIndexChanged ), this, &QuestionDialog::updateType );
 	updateHint();
 }
 
@@ -158,7 +161,7 @@ QuizQuestion QuestionDialog::question() const
 		question.id = QUuid::createUuid().toString( QUuid::WithoutBraces );
 	}
 	question.text = m_textEdit->toPlainText().trimmed();
-	question.type = QuizQuestion::Type( m_typeComboBox->currentData().toInt() );
+	question.type = selectedType();
 	question.points = m_pointsSpinBox->value();
 	question.options.clear();
 	question.correctOptions.clear();
@@ -217,9 +220,55 @@ void QuestionDialog::accept()
 
 
 
+QuizQuestion::Type QuestionDialog::selectedType() const
+{
+	const auto type = m_typeComboBox->currentData().toInt();
+	return type == TrueFalseType ? QuizQuestion::Type::SingleChoice : QuizQuestion::Type( type );
+}
+
+
+
+QStringList QuestionDialog::trueFalseOptions() const
+{
+	return { tr( "True" ), tr( "False" ) };
+}
+
+
+
+void QuestionDialog::updateType()
+{
+	if( m_typeComboBox->currentData().toInt() == TrueFalseType )
+	{
+		// keep the * mark if the options are already "True" and "False"
+		auto options = m_answersEdit->toPlainText().split( QLatin1Char('\n') );
+		for( auto& option : options )
+		{
+			option = option.trimmed();
+			if( option.startsWith( CorrectMarker ) )
+			{
+				option = option.mid( 1 ).trimmed();
+			}
+		}
+		options.removeAll( QString() );
+		if( options != trueFalseOptions() )
+		{
+			m_answersEdit->setPlainText( trueFalseOptions().join( QLatin1Char('\n') ) );
+		}
+	}
+
+	updateHint();
+}
+
+
+
 void QuestionDialog::updateHint()
 {
-	if( QuizQuestion::Type( m_typeComboBox->currentData().toInt() ) == QuizQuestion::Type::Text )
+	if( m_typeComboBox->currentData().toInt() == TrueFalseType )
+	{
+		m_answersHint->setText( tr( "Mark the correct answer with * at the beginning, e.g. *True. "
+									"Without a mark the question is not graded." ) );
+	}
+	else if( selectedType() == QuizQuestion::Type::Text )
 	{
 		m_answersHint->setText( tr( "Accepted answers, one per line (not case sensitive). "
 									"Leave empty for questions without a correct answer." ) );

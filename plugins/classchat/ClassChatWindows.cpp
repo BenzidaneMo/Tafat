@@ -35,6 +35,7 @@
 #include <QPushButton>
 #include <QScreen>
 #include <QScrollBar>
+#include <QSettings>
 #include <QSplitter>
 #include <QTextBrowser>
 #include <QToolButton>
@@ -43,6 +44,24 @@
 
 #include "BrandTheme.h"
 #include "ClassChatWindows.h"
+
+
+// chevron for the button that makes the student toolbar smaller or bigger
+static QIcon chevronIcon( bool pointsRight )
+{
+	QPixmap pixmap( 32, 32 );
+	pixmap.fill( Qt::transparent );
+
+	QPainter painter( &pixmap );
+	painter.setRenderHint( QPainter::Antialiasing );
+	painter.setPen( QPen( BrandTheme::color( BrandTheme::TealDark ), 4, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin ) );
+	const auto x1 = pointsRight ? 11 : 21;
+	const auto x2 = pointsRight ? 21 : 11;
+	painter.drawPolyline( QPolygon( { QPoint( x1, 7 ), QPoint( x2, 16 ), QPoint( x1, 25 ) } ) );
+
+	return QIcon( pixmap );
+}
+
 
 
 static QPoint globalPosition( const QMouseEvent* event )
@@ -89,7 +108,8 @@ StudentToolbar::StudentToolbar( QWidget* parent ) :
 	QWidget( parent, Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::WindowDoesNotAcceptFocus ),
 	m_handButton( new QToolButton( this ) ),
 	m_chatButton( new QToolButton( this ) ),
-	m_handInButton( new QToolButton( this ) )
+	m_handInButton( new QToolButton( this ) ),
+	m_minimizeButton( new QToolButton( this ) )
 {
 	setAttribute( Qt::WA_TranslucentBackground );
 	setAttribute( Qt::WA_ShowWithoutActivating );
@@ -102,6 +122,9 @@ StudentToolbar::StudentToolbar( QWidget* parent ) :
 		button->setAutoRaise( true );
 		button->setFocusPolicy( Qt::NoFocus );
 	}
+	m_minimizeButton->setAutoRaise( true );
+	m_minimizeButton->setFocusPolicy( Qt::NoFocus );
+	m_minimizeButton->setIconSize( QSize( 16, 16 ) );
 
 	m_handButton->setCheckable( true );
 	m_handButton->setIcon( QIcon( QStringLiteral(":/classchat/hand-raised.png") ) );
@@ -118,13 +141,21 @@ StudentToolbar::StudentToolbar( QWidget* parent ) :
 	} );
 	connect( m_chatButton, &QToolButton::clicked, this, &StudentToolbar::chatRequested );
 	connect( m_handInButton, &QToolButton::clicked, this, &StudentToolbar::handInRequested );
+	connect( m_minimizeButton, &QToolButton::clicked, this, [this]() {
+		setMinimized( m_minimized == false );
+		QSettings( QSettings::UserScope, VeyonCore::productName(), QStringLiteral("ClassChat") )
+			.setValue( QStringLiteral("ToolbarMinimized"), m_minimized );
+	} );
 
 	auto layout = new QHBoxLayout( this );
-	layout->setContentsMargins( 10, 4, 10, 4 );
+	layout->setContentsMargins( 10, 4, 6, 4 );
 	layout->addWidget( m_handButton );
 	layout->addWidget( m_chatButton );
 	layout->addWidget( m_handInButton );
+	layout->addWidget( m_minimizeButton );
 
+	setMinimized( QSettings( QSettings::UserScope, VeyonCore::productName(), QStringLiteral("ClassChat") )
+					  .value( QStringLiteral("ToolbarMinimized"), false ).toBool() );
 	adjustSize();
 
 	// top center of the primary screen, below the title bars of maximized windows' edges
@@ -186,8 +217,45 @@ void StudentToolbar::paintEvent( QPaintEvent* event )
 
 void StudentToolbar::updateHandButton()
 {
-	m_handButton->setText( m_handButton->isChecked() ? tr( "Lower hand" ) : tr( "Raise hand" ) );
-	adjustSize();
+	const auto text = m_handButton->isChecked() ? tr( "Lower hand" ) : tr( "Raise hand" );
+	m_handButton->setText( text );
+	m_handButton->setToolTip( text );
+	updateSize();
+}
+
+
+
+void StudentToolbar::setMinimized( bool minimized )
+{
+	m_minimized = minimized;
+
+	m_handButton->setToolButtonStyle( minimized ? Qt::ToolButtonIconOnly : Qt::ToolButtonTextBesideIcon );
+	m_chatButton->setVisible( minimized == false );
+	m_handInButton->setVisible( minimized == false );
+
+	// the arrow points to where the bar grows or shrinks
+	const auto rightToLeft = layoutDirection() == Qt::RightToLeft;
+	m_minimizeButton->setIcon( chevronIcon( minimized != rightToLeft ) );
+	m_minimizeButton->setToolTip( minimized ? tr( "Show the whole bar" ) : tr( "Make the bar smaller" ) );
+
+	updateSize();
+}
+
+
+
+void StudentToolbar::updateSize()
+{
+	// keep the start of the bar in place
+	const auto rightEdge = frameGeometry().right();
+	if( layout() )
+	{
+		layout()->activate();
+	}
+	resize( sizeHint() );
+	if( isVisible() && layoutDirection() == Qt::RightToLeft )
+	{
+		move( rightEdge - frameGeometry().width() + 1, y() );
+	}
 }
 
 

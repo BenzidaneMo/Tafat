@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Rewards: give a star to a student -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M64 10 l15 32 l35 4 l-26 24 l7 35 l-31 -18 l-31 18 l7 -35 l-26 -24 l35 -4 z" fill="#f6bf3f" stroke="#f26b2d" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="64" cy="62" r="13" fill="#fffdf9"/>
+  <path d="M58 62 l5 5 l9 -10" fill="none" stroke="#13705f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -24,10 +24,12 @@
 
 #include <QJsonDocument>
 #include <QMessageBox>
+#include <QTimer>
 
 #include "ComputerControlInterface.h"
 #include "FeatureWorkerManager.h"
 #include "MessageContext.h"
+#include "ModeFeatureHelper.h"
 #include "PlatformCoreFunctions.h"
 #include "QuizEditorDialogs.h"
 #include "QuizFeaturePlugin.h"
@@ -39,6 +41,8 @@
 
 
 static const char* AnswersVersionProperty = "quizAnswersVersion";
+// time the worker gets to hand in the final answers before it is stopped
+static constexpr int WorkerStopDelay = 3000;
 
 
 
@@ -123,16 +127,36 @@ bool QuizFeaturePlugin::startFeature( VeyonMasterInterface& master, const Featur
 		return false;
 	}
 
-	QuizLauncherDialog launcher( master.mainWindow() );
-	if( launcher.exec() != QDialog::Accepted || launcher.selectedQuiz().questions.isEmpty() )
+	if( m_masterQuizActive == false && m_masterQuizCancelled )
 	{
+		// the launcher was cancelled and the master is going back to monitoring mode
 		return true;
 	}
 
-	m_masterQuiz = launcher.selectedQuiz();
+	const auto newQuiz = m_masterQuizActive == false;
+	if( newQuiz )
+	{
+		QuizLauncherDialog launcher( master.mainWindow() );
+		if( launcher.exec() != QDialog::Accepted || launcher.selectedQuiz().questions.isEmpty() )
+		{
+			m_masterQuizCancelled = true;
+			ModeFeatureHelper::returnToMonitoringMode( master );
+			return true;
+		}
 
-	delete m_resultsWindow;
-	m_resultsWindow = new QuizResultsWindow( m_masterQuiz, master.mainWindow() );
+		m_masterQuiz = launcher.selectedQuiz();
+		m_masterQuizActive = true;
+
+		delete m_resultsWindow;
+		m_resultsWindow = new QuizResultsWindow( m_masterQuiz, master.mainWindow() );
+	}
+	// else the master enforces the selected mode on a computer that (re)connected:
+	// send it the running quiz again
+	if( m_resultsWindow.isNull() )
+	{
+		m_resultsWindow = new QuizResultsWindow( m_masterQuiz, master.mainWindow() );
+	}
+
 	for( const auto& controlInterface : computerControlInterfaces )
 	{
 		if( controlInterface->computer().hostName().isEmpty() == false )
@@ -143,7 +167,10 @@ bool QuizFeaturePlugin::startFeature( VeyonMasterInterface& master, const Featur
 																						 : controlInterface->userFullName() );
 		}
 	}
-	m_resultsWindow->show();
+	if( newQuiz )
+	{
+		m_resultsWindow->show();
+	}
 
 	controlFeature( feature.uid(), Operation::Start,
 					{ { argToString( Argument::Quiz ), toJsonData( m_masterQuiz.toJson() ) } },
@@ -164,6 +191,8 @@ bool QuizFeaturePlugin::stopFeature( VeyonMasterInterface& master, const Feature
 		return false;
 	}
 
+	m_masterQuizActive = false;
+	m_masterQuizCancelled = false;
 	controlFeature( feature.uid(), Operation::Stop, {}, computerControlInterfaces );
 
 	if( m_resultsWindow )
@@ -228,9 +257,27 @@ bool QuizFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server,
 	}
 	else if( message.command<FeatureCommand>() == FeatureCommand::StopQuiz )
 	{
-		// keep the quiz ID so that the final answers handed in by the worker are still reported
-		QMutexLocker locker( &m_serverMutex );
-		m_serverQuizActive = false;
+		{
+			// keep the quiz ID so that the final answers handed in by the worker are still reported
+			QMutexLocker locker( &m_serverMutex );
+			m_serverQuizActive = false;
+		}
+
+		// the master stops all modes when switching modes: don't start a worker just to stop it
+		auto& workerManager = server.featureWorkerManager();
+		if( workerManager.isWorkerRunning( m_quizFeature.uid() ) )
+		{
+			workerManager.sendMessageToUnmanagedSessionWorker( message );
+			// give the worker the time to hand in the final answers and close its window
+			QTimer::singleShot( WorkerStopDelay, this, [this, &workerManager]() {
+				QMutexLocker locker( &m_serverMutex );
+				if( m_serverQuizActive == false )
+				{
+					workerManager.stopWorker( m_quizFeature.uid() );
+				}
+			} );
+		}
+		return true;
 	}
 	else
 	{

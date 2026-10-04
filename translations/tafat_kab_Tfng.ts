@@ -95,6 +95,18 @@
         <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
         <translation type="unfinished">ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵜⵜⵡⴰⵔⵏⴰⵏ ⵖⴻⵔ ⵜⴻⵅⵅⴰⵎⵜ &quot;%1&quot;. ⴰⴷ ⴷ-ⴱⴰⵏⴻⵏ ⴷⴻⴳ %2 ⴷⴻⴳ ⵜⴻⵙⴷⴰⵜ.</translation>
     </message>
+    <message>
+        <source>Optional, for another network: 192.168.2.0/24 or 10.0.5.10-80</source>
+        <translation type="unfinished">ⵎⴰ ⵜⴻⴱⵖⵉⴹ, ⵉ ⵓⵥⴻⵟⵟⴰ ⵏⵏⵉⴹⴻⵏ: 192.168.2.0/24 ⵏⴻⵖ 10.0.5.10-80</translation>
+    </message>
+    <message>
+        <source>Network to search:</source>
+        <translation type="unfinished">ⴰⵥⴻⵟⵟⴰ ⴰⵔⴰ ⵢⴻⵜⵜⵡⴰⵏⴰⴷⵉⵏ:</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; is not a local network range. Examples: 192.168.2.0/24, 10.0.5.10-80 (at most %2 addresses).</source>
+        <translation type="unfinished">&quot;%1&quot; ⵎⴰⵞⵞⵉ ⴷ ⴰⵣⵉⵍⴰⵍ ⵏ ⵓⵥⴻⵟⵟⴰ ⴰⴷⵉⴳⴰⵏ. ⵉⵎⴻⴷⵢⴰⵜⴻⵏ: 192.168.2.0/24, 10.0.5.10-80 (%2 ⵏ ⵜⴰⵏⵙⵉⵡⵉⵏ ⵙ ⵡⵓⴳⴰⵔ).</translation>
+    </message>
 </context>
 <context>
     <name>AppControlDialog</name>
@@ -586,6 +598,22 @@ Now copy the %3 installers into this folder.</source>
     <message>
         <source>Answer options, one per line. Mark correct options with * at the beginning, e.g. *Algiers. Without a marked option the question is not graded.</source>
         <translation type="unfinished">ⵜⵉⵔⵉⵔⵉⵢⵉⵏ, ⵢⵉⵡⴻⵜ ⴷⴻⴳ ⵢⴰⵍ ⵉⵣⵉⵔⵉⴳ. ⵛⵔⴻⴹ ⵜⵉⵔⵉⵔⵉⵢⵉⵏ ⵜⵉⵎⴻⵖⵜⵓⵜⵉⵏ ⵙ * ⴷⴻⴳ ⵜⴰⵣⵡⴰⵔⴰ, ⴰⵎⴻⴷⵢⴰ *ⵍⵣⵣⴰⵢⴻⵔ. ⵎⴰ ⵓⵍⴰⵛ ⵜⵉⵔⵉⵔⵉⵜ ⵢⴻⵜⵜⵡⴰⵛⴻⵔⴹⴻⵏ, ⴰⵙⵜⴻⵇⵙⵉ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵙⴻⵇⴷⴰⵛ ⴰⵔⴰ ⵉ ⵜⵏⴻⵇⵇⵉⴹⵉⵏ.</translation>
+    </message>
+    <message>
+        <source>True or false</source>
+        <translation type="unfinished">ⵢⴻⵚⴻⵃⵃⴰ ⵏⴻⵖ ⵓⵔ ⵢⴻⵚⴻⵃⵃⴰ ⴰⵔⴰ</translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished">ⵢⴻⵚⴻⵃⵃⴰ</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵚⴻⵃⵃⴰ ⴰⵔⴰ</translation>
+    </message>
+    <message>
+        <source>Mark the correct answer with * at the beginning, e.g. *True. Without a mark the question is not graded.</source>
+        <translation type="unfinished">ⵙⴻⵔⵙ * ⵣⴷⴰⵜ ⵏ ⵜⵔⵉⵔⵉⵜ ⵢⴻⵚⴻⵃⵃⴰⵏ, ⴰⵎⴻⴷⵢⴰ *ⵢⴻⵚⴻⵃⵃⴰ. ⵡⴰⵔ ⵜⴰⵛⵔⴻⴹⵜ, ⴰⵙⵜⴻⵇⵙⵉ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵣⵎⴻⵍ ⴰⵔⴰ.</translation>
     </message>
 </context>
 <context>
@@ -1126,6 +1154,143 @@ Now copy the %3 installers into this folder.</source>
     </message>
 </context>
 <context>
+    <name>RewardPopup</name>
+    <message>
+        <source>Well done! Your teacher gave you a star.</source>
+        <translation type="unfinished">ⴰⵢⵓⵣ! ⴰⵙⴻⵍⵎⴰⴷ-ⵉⴽ ⵢⴻⴼⴽⴰ-ⵢⴰⴽ-ⴷ ⵉⵜⵔⵉ.</translation>
+    </message>
+    <message>
+        <source>Your teacher took a star back.</source>
+        <translation type="unfinished">ⴰⵙⴻⵍⵎⴰⴷ-ⵉⴽ ⵢⴻⴽⴽⴻⵙ-ⴰⴽ ⵢⵉⵡⴻⵏ ⵏ ⵢⵉⵜⵔⵉ.</translation>
+    </message>
+    <message>
+        <source>Your stars: %1</source>
+        <translation type="unfinished">ⵉⵜⵔⴰⵏ-ⵉⴽ: %1</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsFeaturePlugin</name>
+    <message>
+        <source>Rewards</source>
+        <translation type="unfinished">ⴰⵔⵔⴰⵣⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Give stars to the selected students, for example for good work. Each student sees the star and the number of stars.</source>
+        <translation type="unfinished">ⴻⴼⴽ ⵉⵜⵔⴰⵏ ⵉ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ, ⴰⵎⴻⴷⵢⴰ ⵖⴻⴼ ⵍⴻⵇⴷⵉⵛ ⵢⴻⵍⵀⴰⵏ. ⵢⴰⵍ ⴰⵏⴻⵍⵎⴰⴷ ⴰⴷ ⵉⵡⴰⵍⵉ ⵉⵜⵔⵉ ⴷ ⵓⵎⴹⴰⵏ ⵏ ⵢⵉⵜⵔⴰⵏ-ⵉⵙ.</translation>
+    </message>
+    <message>
+        <source>Give a star</source>
+        <translation type="unfinished">ⴻⴼⴽ ⵉⵜⵔⵉ</translation>
+    </message>
+    <message>
+        <source>Give one star to each selected student.</source>
+        <translation type="unfinished">ⴻⴼⴽ ⵢⵉⵡⴻⵏ ⵏ ⵢⵉⵜⵔⵉ ⵉ ⵢⴰⵍ ⴰⵏⴻⵍⵎⴰⴷ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ.</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵉⵜⵔⵉ</translation>
+    </message>
+    <message>
+        <source>Take one star back from each selected student.</source>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵢⵉⵡⴻⵏ ⵏ ⵢⵉⵜⵔⵉ ⵉ ⵢⴰⵍ ⴰⵏⴻⵍⵎⴰⴷ ⵢⴻⵜⵜⵡⴰⴼⴻⵔⵏⴻⵏ.</translation>
+    </message>
+    <message>
+        <source>Show stars</source>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵉⵜⵔⴰⵏ</translation>
+    </message>
+    <message>
+        <source>Show the stars of all students and export them.</source>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⵉⵜⵔⴰⵏ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⵎⴻⵕⵕⴰ ⵙⵢⵉⵏ ⵙⵉⴼⴻⴹ-ⵉⵜⴻⵏ.</translation>
+    </message>
+    <message>
+        <source>Give stars to the students</source>
+        <translation type="unfinished">ⴻⴼⴽ ⵉⵜⵔⴰⵏ ⵉ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">ⵉⵎⵜⵜⴻⴽⴽⵉⵢⴻⵏ ⵏ %1</translation>
+    </message>
+    <message>
+        <source>My class</source>
+        <translation type="unfinished">ⵜⴰⵙⵎⵉⵍⵜ-ⵉⵡ</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsWindow</name>
+    <message>
+        <source>Stars</source>
+        <translation type="unfinished">ⵉⵜⵔⴰⵏ</translation>
+    </message>
+    <message>
+        <source>Student</source>
+        <translation type="unfinished">ⴰⵏⴻⵍⵎⴰⴷ</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵉⵜⵔⵉ</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation type="unfinished">ⴰⵍⴻⵙ ⵙⴻⴳ ⵜⴰⵣⵡⴰⵔⴰ</translation>
+    </message>
+    <message>
+        <source>Export (CSV)</source>
+        <translation type="unfinished">ⵙⵉⴼⴻⴹ (CSV)</translation>
+    </message>
+    <message>
+        <source>No stars yet. Select computers and click &quot;Give a star&quot;.</source>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⵉⵜⵔⴰⵏ ⴰⵔ ⵜⵓⵔⴰ. ⴼⵔⴻⵏ ⵉⵙⴻⵍⴽⵉⵎⴻⵏ ⵙⵢⵉⵏ ⵙⵉⵜ ⵖⴻⴼ &quot;ⴻⴼⴽ ⵉⵜⵔⵉ&quot;.</translation>
+    </message>
+    <message>
+        <source>Stars given: %1</source>
+        <translation type="unfinished">ⵉⵜⵔⴰⵏ ⵢⴻⵜⵜⵓⵏⴻⴼⴽⴻⵏ: %1</translation>
+    </message>
+    <message>
+        <source>Export stars</source>
+        <translation type="unfinished">ⵙⵉⴼⴻⴹ ⵉⵜⵔⴰⵏ</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ CSV (*.csv)</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴰⵔⵓ %1.</translation>
+    </message>
+    <message>
+        <source>Delete class</source>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⵜⴰⵙⵎⵉⵍⵜ</translation>
+    </message>
+    <message>
+        <source>New class</source>
+        <translation type="unfinished">ⵜⴰⵙⵎⵉⵍⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ</translation>
+    </message>
+    <message>
+        <source>Each class has its own stars. Choose the class you are teaching now.</source>
+        <translation type="unfinished">ⵢⴰⵍ ⵜⴰⵙⵎⵉⵍⵜ ⵖⵓⵔ-ⵙ ⵉⵜⵔⴰⵏ-ⵉⵙ. ⴼⵔⴻⵏ ⵜⴰⵙⵎⵉⵍⵜ ⵉ ⵜⴻⵙⵙⴻⵍⵎⴰⴷⴻⴹ ⵜⵓⵔⴰ.</translation>
+    </message>
+    <message>
+        <source>Class:</source>
+        <translation type="unfinished">ⵜⴰⵙⵎⵉⵍⵜ:</translation>
+    </message>
+    <message>
+        <source>Remove the stars of all students of this class?</source>
+        <translation type="unfinished">ⴰⴷ ⵜⴻⴽⴽⵙⴻⴹ ⵉⵜⵔⴰⵏ ⵏ ⵢⵉⵏⴻⵍⵎⴰⴷⴻⵏ ⵎⴻⵕⵕⴰ ⵏ ⵜⵙⵎⵉⵍⵜ-ⴰ?</translation>
+    </message>
+    <message>
+        <source>Delete the class %1 and its stars?</source>
+        <translation type="unfinished">ⴰⴷ ⵜⴻⴽⴽⵙⴻⴹ ⵜⴰⵙⵎⵉⵍⵜ %1 ⴷ ⵢⵉⵜⵔⴰⵏ-ⵉⵙ?</translation>
+    </message>
+    <message>
+        <source>Name of the class, e.g. 2AS1:</source>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵜⵙⵎⵉⵍⵜ, ⴰⵎⴻⴷⵢⴰ 2AS1:</translation>
+    </message>
+    <message>
+        <source>stars-%1-%2.csv</source>
+        <translation type="unfinished">itran-%1-%2.csv</translation>
+    </message>
+</context>
+<context>
     <name>RunningAppsWindow</name>
     <message>
         <source>Close on this computer</source>
@@ -1281,6 +1446,14 @@ Now copy the %3 installers into this folder.</source>
     <message>
         <source>Hand in work</source>
         <translation type="unfinished">ⴰⵣⴻⵏ ⵍⴻⵇⴷⵉⵛ</translation>
+    </message>
+    <message>
+        <source>Show the whole bar</source>
+        <translation type="unfinished">ⵙⴽⴻⵏ ⴰⴼⴻⴳⴳⴰⴳ ⴰⴽⴽ</translation>
+    </message>
+    <message>
+        <source>Make the bar smaller</source>
+        <translation type="unfinished">ⵙⴻⵏⵇⴻⵙ ⴰⴼⴻⴳⴳⴰⴳ</translation>
     </message>
 </context>
 <context>

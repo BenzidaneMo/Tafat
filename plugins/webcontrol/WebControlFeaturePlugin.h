@@ -102,6 +102,12 @@ private:
 	const Feature m_webControlFeature;
 	const FeatureList m_features;
 
+	// master side
+	bool m_masterModeActive{false};
+	bool m_masterModeCancelled{false};
+	QVariantMap m_masterStartArguments;
+
+	// server side
 	bool m_active{false};
 
 };

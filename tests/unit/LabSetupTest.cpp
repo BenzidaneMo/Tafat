@@ -236,6 +236,29 @@ private Q_SLOTS:
 		QVERIFY( ComputerScanner::isPrivateAddress( QHostAddress( QStringLiteral("fe80::1") ) ) == false );
 	}
 
+	void rangeHosts()
+	{
+		const auto subnet = ComputerScanner::rangeHosts( QStringLiteral("10.0.5.77/24") );
+		QCOMPARE( subnet.size(), 254 );
+		QCOMPARE( subnet.first(), QHostAddress( QStringLiteral("10.0.5.1") ) );
+		QCOMPARE( subnet.last(), QHostAddress( QStringLiteral("10.0.5.254") ) );
+
+		QCOMPARE( ComputerScanner::rangeHosts( QStringLiteral("172.16.0.0/22") ).size(), 1022 );
+		QVERIFY( ComputerScanner::rangeHosts( QStringLiteral("10.0.0.0/21") ).isEmpty() );	// too large
+
+		const auto shortRange = ComputerScanner::rangeHosts( QStringLiteral(" 192.168.1.10-80 ") );
+		QCOMPARE( shortRange.size(), 71 );
+		QCOMPARE( shortRange.last(), QHostAddress( QStringLiteral("192.168.1.80") ) );
+		QCOMPARE( ComputerScanner::rangeHosts( QStringLiteral("192.168.1.250-192.168.2.5") ).size(), 12 );
+		QCOMPARE( ComputerScanner::rangeHosts( QStringLiteral("192.168.3.7") ).size(), 1 );
+
+		QVERIFY( ComputerScanner::rangeHosts( QStringLiteral("192.168.1.80-10") ).isEmpty() );
+		QVERIFY( ComputerScanner::rangeHosts( QStringLiteral("8.8.8.0/24") ).isEmpty() );	// public
+		QVERIFY( ComputerScanner::rangeHosts( QStringLiteral("pc-01") ).isEmpty() );
+		QVERIFY( ComputerScanner::rangeHosts( QStringLiteral("10.0.0.1/abc") ).isEmpty() );
+		QVERIFY( ComputerScanner::rangeHosts( QString() ).isEmpty() );
+	}
+
 	void serverGreeting()
 	{
 		QVERIFY( ComputerScanner::isServerGreeting( "RFB 003.008\n" ) );

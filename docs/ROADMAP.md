@@ -171,8 +171,8 @@ interfaces in `plugins/platform/{windows,linux}`.
 
 ### 3.4 Then (rough order)
 Hand-raise/help requests + two-way chat → whiteboard/annotation during demo → screen
-recording & replay → audio mute/broadcast → lesson plans & reward points → hardware/software
-inventory → teacher mobile app (Android build already in `android/`).
+recording & replay → audio mute/broadcast → lesson plans & reward points (stars done) → hardware/software
+inventory (done) → teacher mobile app (Android build already in `android/`).
 
 ## Phase 4 — Packaging & deployment for schools
 - Rebranded Windows installer (NSIS) with silent install flags for mass deployment, plus a
@@ -198,11 +198,11 @@ inventory → teacher mobile app (Android build already in `android/`).
 
 ## Progress
 - Phase 0 done: Veyon v4.11.3 imported with history; Linux CI green (Debian 11 Qt 5, Fedora 44 Qt 6).
-- Phase 0b in progress: Windows CI (`.github/workflows/windows.yml`, Fedora MinGW) builds the
-  32/64-bit Qt 6 installers for Windows 10/11. The legacy Qt 5 builds for Windows 7/8.1
-  (`WITH_LEGACY_WINDOWS`) now configure and compile further after Qt 5 fixes in
-  Windows-only code; remaining errors are listed in `CLAUDE.md`. The installer refuses
-  the wrong Windows version or architecture. Not yet tested on real Windows machines.
+- Phase 0b done in CI: Windows CI (`.github/workflows/windows.yml`, Fedora MinGW) builds the
+  32/64-bit Qt 6 installers for Windows 10/11 and the legacy Qt 5 installers for Windows 7/8.1
+  (with a Windows 7 import check). Version tags publish all four as a GitHub release
+  (v1.0.0–v1.0.3). The installer refuses the wrong Windows version or architecture.
+  First tests on a real Windows 11 PC; Windows 7/8.1 and lab tests still open.
   LDAP and WebAPI are off on Windows.
 - Phase 1 done: name Tafat (`cmake/modules/Branding.cmake`), `tafat-*` programs, services,
   paths, packages and installer, UI texts via `BrandingTranslator`, About dialog, splash
@@ -210,17 +210,21 @@ inventory → teacher mobile app (Android build already in `android/`).
 - Phase 2 in progress: Tamazight in Latin (`kab`) and Tifinagh (`kab_Tfng`) with bundled
   Noto Sans Tifinagh.
   - Tafat's plugins have their own catalogs (`translations/tafat_*.ts`) with Arabic,
-    French and Tamazight drafts for all 263 texts.
-  - Upstream catalogs: Arabic 816/1161, Tamazight 815/1166 (the Tifinagh catalog is
-    transliterated from the Latin one). This covers the teacher program and the
-    configurator; LDAP, WebAPI and command line help are still open.
+    French and Tamazight drafts for all 323 texts.
+  - Upstream catalogs: Arabic and Tamazight drafts for everything except the 157 LDAP
+    texts (the Tifinagh catalog is transliterated from the Latin one).
+  - Teacher guides in French, Arabic and Tamazight (Latin); install page in French,
+    English and Arabic.
   - All drafts need review by native speakers.
 - Phase 3: done as plugins with unit tests — "Block apps" with optional USB and print
   block and a "Running apps" list (`plugins/appcontrol`),
   "Block websites" with optional internet block for all programs (`plugins/webcontrol`),
   "Quiz" with polls and result bars (`plugins/quiz`), "Register" with class list import
   and absent students (`plugins/register`), "Hands and chat" (`plugins/classchat`), "Return work" (`plugins/returnwork`),
-  "Inventory" (`plugins/inventory`), configurator page "Lab setup" (`plugins/labsetup`);
+  "Inventory" (`plugins/inventory`), "Rewards" with stars per student (`plugins/rewards`), lab setup like NetSupport (`plugins/labsetup`: install on
+  the teacher PC only, USB student installer, "Add computers" network search, "Settings");
   collected files are grouped by student name and computer.
-- Phase 4 started: `docs/DEPLOYMENT.md` (lab installation, silent install, keys, rooms).
-- Next: finish the legacy Windows builds, test on real lab PCs, review translations, then the rest of 3.4.
+- Phase 4 started: `docs/DEPLOYMENT.md` and `docs/install.html` (teacher-only install, student
+  installer, Add computers, silent options), `docs/HARDWARE-TESTS.md` checklist.
+- Next: test on real lab PCs (Windows 7–11, see `docs/HARDWARE-TESTS.md`), review translations,
+  then the rest of 3.4.

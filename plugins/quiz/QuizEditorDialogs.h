@@ -57,6 +57,12 @@ public:
 	void accept() override;
 
 private:
+	// combo box data of the "True or false" entry, stored as a single choice question
+	static constexpr int TrueFalseType = -1;
+
+	QuizQuestion::Type selectedType() const;
+	QStringList trueFalseOptions() const;
+	void updateType();
 	void updateHint();
 
 	QuizQuestion m_question;

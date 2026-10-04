@@ -95,6 +95,18 @@
         <source>The computers were added to the room &quot;%1&quot;. They appear in %2 within a minute.</source>
         <translation type="unfinished">Iselkimen ttwarnan ɣer texxamt &quot;%1&quot;. Ad d-banen deg %2 deg tesdat.</translation>
     </message>
+    <message>
+        <source>Optional, for another network: 192.168.2.0/24 or 10.0.5.10-80</source>
+        <translation type="unfinished">Ma tebɣiḍ, i uẓeṭṭa nniḍen: 192.168.2.0/24 neɣ 10.0.5.10-80</translation>
+    </message>
+    <message>
+        <source>Network to search:</source>
+        <translation type="unfinished">Aẓeṭṭa ara yettwanadin:</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot; is not a local network range. Examples: 192.168.2.0/24, 10.0.5.10-80 (at most %2 addresses).</source>
+        <translation type="unfinished">&quot;%1&quot; mačči d azilal n uẓeṭṭa adigan. Imedyaten: 192.168.2.0/24, 10.0.5.10-80 (%2 n tansiwin s wugar).</translation>
+    </message>
 </context>
 <context>
     <name>AppControlDialog</name>
@@ -586,6 +598,22 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
     <message>
         <source>Answer options, one per line. Mark correct options with * at the beginning, e.g. *Algiers. Without a marked option the question is not graded.</source>
         <translation type="unfinished">Tiririyin, yiwet deg yal izirig. Creḍ tiririyin timeɣtutin s * deg tazwara, amedya *Lzzayer. Ma ulac tiririt yettwacerḍen, asteqsi ur yettwaseqdac ara i tneqqiḍin.</translation>
+    </message>
+    <message>
+        <source>True or false</source>
+        <translation type="unfinished">Yeṣeḥḥa neɣ ur yeṣeḥḥa ara</translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished">Yeṣeḥḥa</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished">Ur yeṣeḥḥa ara</translation>
+    </message>
+    <message>
+        <source>Mark the correct answer with * at the beginning, e.g. *True. Without a mark the question is not graded.</source>
+        <translation type="unfinished">Sers * zdat n tririt yeṣeḥḥan, amedya *Yeṣeḥḥa. War tacreḍt, asteqsi ur yettwazmel ara.</translation>
     </message>
 </context>
 <context>
@@ -1126,6 +1154,143 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
     </message>
 </context>
 <context>
+    <name>RewardPopup</name>
+    <message>
+        <source>Well done! Your teacher gave you a star.</source>
+        <translation type="unfinished">Ayuz! Aselmad-ik yefka-yak-d itri.</translation>
+    </message>
+    <message>
+        <source>Your teacher took a star back.</source>
+        <translation type="unfinished">Aselmad-ik yekkes-ak yiwen n yitri.</translation>
+    </message>
+    <message>
+        <source>Your stars: %1</source>
+        <translation type="unfinished">Itran-ik: %1</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsFeaturePlugin</name>
+    <message>
+        <source>Rewards</source>
+        <translation type="unfinished">Arrazen</translation>
+    </message>
+    <message>
+        <source>Give stars to the selected students, for example for good work. Each student sees the star and the number of stars.</source>
+        <translation type="unfinished">Efk itran i yinelmaden yettwafernen, amedya ɣef leqdic yelhan. Yal anelmad ad iwali itri d umḍan n yitran-is.</translation>
+    </message>
+    <message>
+        <source>Give a star</source>
+        <translation type="unfinished">Efk itri</translation>
+    </message>
+    <message>
+        <source>Give one star to each selected student.</source>
+        <translation type="unfinished">Efk yiwen n yitri i yal anelmad yettwafernen.</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">Kkes itri</translation>
+    </message>
+    <message>
+        <source>Take one star back from each selected student.</source>
+        <translation type="unfinished">Kkes yiwen n yitri i yal anelmad yettwafernen.</translation>
+    </message>
+    <message>
+        <source>Show stars</source>
+        <translation type="unfinished">Sken itran</translation>
+    </message>
+    <message>
+        <source>Show the stars of all students and export them.</source>
+        <translation type="unfinished">Sken itran n yinelmaden meṛṛa syin sifeḍ-iten.</translation>
+    </message>
+    <message>
+        <source>Give stars to the students</source>
+        <translation type="unfinished">Efk itran i yinelmaden</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">Imttekkiyen n %1</translation>
+    </message>
+    <message>
+        <source>My class</source>
+        <translation type="unfinished">Tasmilt-iw</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsWindow</name>
+    <message>
+        <source>Stars</source>
+        <translation type="unfinished">Itran</translation>
+    </message>
+    <message>
+        <source>Student</source>
+        <translation type="unfinished">Anelmad</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">Kkes itri</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation type="unfinished">Ales seg tazwara</translation>
+    </message>
+    <message>
+        <source>Export (CSV)</source>
+        <translation type="unfinished">Sifeḍ (CSV)</translation>
+    </message>
+    <message>
+        <source>No stars yet. Select computers and click &quot;Give a star&quot;.</source>
+        <translation type="unfinished">Ulac itran ar tura. Fren iselkimen syin sit ɣef &quot;Efk itri&quot;.</translation>
+    </message>
+    <message>
+        <source>Stars given: %1</source>
+        <translation type="unfinished">Itran yettunefken: %1</translation>
+    </message>
+    <message>
+        <source>Export stars</source>
+        <translation type="unfinished">Sifeḍ itran</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished">Ifuyla CSV (*.csv)</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Ur yezmir ara ad yaru %1.</translation>
+    </message>
+    <message>
+        <source>Delete class</source>
+        <translation type="unfinished">Kkes tasmilt</translation>
+    </message>
+    <message>
+        <source>New class</source>
+        <translation type="unfinished">Tasmilt tamaynut</translation>
+    </message>
+    <message>
+        <source>Each class has its own stars. Choose the class you are teaching now.</source>
+        <translation type="unfinished">Yal tasmilt ɣur-s itran-is. Fren tasmilt i tesselmadeḍ tura.</translation>
+    </message>
+    <message>
+        <source>Class:</source>
+        <translation type="unfinished">Tasmilt:</translation>
+    </message>
+    <message>
+        <source>Remove the stars of all students of this class?</source>
+        <translation type="unfinished">Ad tekkseḍ itran n yinelmaden meṛṛa n tsmilt-a?</translation>
+    </message>
+    <message>
+        <source>Delete the class %1 and its stars?</source>
+        <translation type="unfinished">Ad tekkseḍ tasmilt %1 d yitran-is?</translation>
+    </message>
+    <message>
+        <source>Name of the class, e.g. 2AS1:</source>
+        <translation type="unfinished">Isem n tsmilt, amedya 2AS1:</translation>
+    </message>
+    <message>
+        <source>stars-%1-%2.csv</source>
+        <translation type="unfinished">itran-%1-%2.csv</translation>
+    </message>
+</context>
+<context>
     <name>RunningAppsWindow</name>
     <message>
         <source>Close on this computer</source>
@@ -1281,6 +1446,14 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
     <message>
         <source>Hand in work</source>
         <translation type="unfinished">Azen leqdic</translation>
+    </message>
+    <message>
+        <source>Show the whole bar</source>
+        <translation type="unfinished">Sken afeggag akk</translation>
+    </message>
+    <message>
+        <source>Make the bar smaller</source>
+        <translation type="unfinished">Senqes afeggag</translation>
     </message>
 </context>
 <context>

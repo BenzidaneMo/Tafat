@@ -44,7 +44,7 @@ void ComputerItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& 
 
 	if (index.isValid() && index.model())
 	{
-		drawFeatureIcons(painter, option.rect.topLeft(),
+		drawFeatureIcons(painter, option.rect, option.direction == Qt::RightToLeft,
 						 index.model()->data(index, ComputerControlListModel::ControlInterfaceRole).value<ComputerControlInterface::Pointer>());
 	}
 }
@@ -87,7 +87,8 @@ void ComputerItemDelegate::initFeaturePixmaps()
 
 
 
-void ComputerItemDelegate::drawFeatureIcons(QPainter* painter, const QPoint& pos, ComputerControlInterface::Pointer controlInterface) const
+void ComputerItemDelegate::drawFeatureIcons(QPainter* painter, const QRect& rect, bool rightToLeft,
+											 ComputerControlInterface::Pointer controlInterface) const
 {
 	if (painter &&
 		controlInterface &&
@@ -107,15 +108,17 @@ void ComputerItemDelegate::drawFeatureIcons(QPainter* painter, const QPoint& pos
 			return;
 		}
 
-		int x = pos.x() + OverlayIconsPadding;
-		const int y = pos.y() + OverlayIconsPadding;
+		// in the reading start corner: top left, or top right in right-to-left languages
+		const int width = count * (OverlayIconSize + OverlayIconSpacing);
+		int x = rightToLeft ? rect.right() - OverlayIconsPadding - width : rect.left() + OverlayIconsPadding;
+		const int y = rect.top() + OverlayIconsPadding;
 
 		painter->setRenderHint(QPainter::Antialiasing);
 		auto overlayBackgroundColor = BrandTheme::color(BrandTheme::Paper);
 		overlayBackgroundColor.setAlpha(192);
 		painter->setBrush(overlayBackgroundColor);
 		painter->setPen(BrandTheme::color(BrandTheme::Teal));
-		painter->drawRoundedRect(QRect(x, y, count * (OverlayIconSize + OverlayIconSpacing), OverlayIconSize),
+		painter->drawRoundedRect(QRect(x, y, width, OverlayIconSize),
 								 OverlayIconsRadius, OverlayIconsRadius);
 
 		for (const auto& feature : controlInterface->activeFeatures())

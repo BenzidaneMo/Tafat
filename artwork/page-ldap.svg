@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configurator page: LDAP / Active Directory -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M24 28 v72 a40 12 0 0 0 80 0 v-72" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <ellipse cx="64" cy="28" rx="40" ry="12" fill="#f6bf3f" stroke="#13705f" stroke-width="7"/>
+  <path d="M24 52 a40 12 0 0 0 80 0 M24 76 a40 12 0 0 0 80 0" fill="none" stroke="#13705f" stroke-width="5"/>
+  <circle cx="90" cy="66" r="5" fill="#f26b2d"/><circle cx="90" cy="90" r="5" fill="#f26b2d"/>
+</svg>

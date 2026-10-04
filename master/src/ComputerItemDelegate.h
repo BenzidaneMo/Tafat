@@ -41,7 +41,8 @@ public:
 
 private:
 	void initFeaturePixmaps();
-	void drawFeatureIcons(QPainter* painter, const QPoint& pos, ComputerControlInterface::Pointer controlInterface) const;
+	void drawFeatureIcons(QPainter* painter, const QRect& rect, bool rightToLeft,
+						  ComputerControlInterface::Pointer controlInterface) const;
 
 	static constexpr int OverlayIconSize = 32;
 	static constexpr int OverlayIconSpacing = 4;

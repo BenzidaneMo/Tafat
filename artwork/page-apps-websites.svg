@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configurator page: applications and websites -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="10" y="20" width="84" height="70" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <path d="M10 40 h84" stroke="#13705f" stroke-width="7"/>
+  <path d="M36 52 l22 14 l-22 14 z" fill="#f26b2d"/>
+  <circle cx="92" cy="86" r="28" fill="#fffdf9" stroke="#13705f" stroke-width="6"/>
+  <g fill="none" stroke="#13705f" stroke-width="4"><ellipse cx="92" cy="86" rx="11" ry="28"/><path d="M64 86 h56"/></g>
+</svg>

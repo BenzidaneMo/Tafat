@@ -71,6 +71,7 @@ private:
 	QProgressBar* m_progressBar;
 	QTreeWidget* m_list;
 	QLineEdit* m_manualEdit;
+	QLineEdit* m_rangeEdit;
 	QLabel* m_statusLabel;
 	QPushButton* m_addButton;
 	ComputerScanner* m_scanner;

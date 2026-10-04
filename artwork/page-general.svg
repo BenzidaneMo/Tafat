@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configurator page: general settings -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <path d="M18 34 h92" stroke="#fffdf9" stroke-width="15" stroke-linecap="round"/>
+  <path d="M18 34 h92" stroke="#1f9d86" stroke-width="8" stroke-linecap="round"/>
+  <path d="M18 64 h92" stroke="#fffdf9" stroke-width="15" stroke-linecap="round"/>
+  <path d="M18 64 h92" stroke="#1f9d86" stroke-width="8" stroke-linecap="round"/>
+  <path d="M18 94 h92" stroke="#fffdf9" stroke-width="15" stroke-linecap="round"/>
+  <path d="M18 94 h92" stroke="#1f9d86" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="44" cy="34" r="12" fill="#f26b2d" stroke="#13705f" stroke-width="6"/>
+  <circle cx="84" cy="64" r="12" fill="#f6bf3f" stroke="#13705f" stroke-width="6"/>
+  <circle cx="56" cy="94" r="12" fill="#fffdf9" stroke="#13705f" stroke-width="6"/>
+</svg>

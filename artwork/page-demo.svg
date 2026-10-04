@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configurator page: demo -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect x="8" y="12" width="72" height="52" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="17" y="21" width="54" height="34" rx="4" fill="#f4ebdd"/>
+  <path d="M82 96 v14 M62 112 h40" stroke="#13705f" stroke-width="7" stroke-linecap="round"/>
+  <rect x="46" y="44" width="72" height="52" rx="10" fill="#fffdf9" stroke="#13705f" stroke-width="7"/>
+  <rect x="55" y="53" width="54" height="34" rx="4" fill="#f6bf3f"/>
+</svg>

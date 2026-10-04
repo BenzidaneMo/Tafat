@@ -28,6 +28,7 @@
 #include "AppControlFeaturePlugin.h"
 #include "ComputerControlInterface.h"
 #include "FeatureWorkerManager.h"
+#include "ModeFeatureHelper.h"
 #include "PlatformCoreFunctions.h"
 #include "PlatformSessionFunctions.h"
 #include "PlatformUserFunctions.h"
@@ -120,6 +121,8 @@ bool AppControlFeaturePlugin::controlFeature( Feature::Uid featureUid, Operation
 
 	if( operation == Operation::Stop )
 	{
+		m_masterModeActive = false;
+		m_masterModeCancelled = false;
 		sendFeatureMessage( FeatureMessage{ featureUid, FeatureCommand::Stop }, computerControlInterfaces );
 		return true;
 	}
@@ -173,16 +176,31 @@ bool AppControlFeaturePlugin::startFeature( VeyonMasterInterface& master, const 
 		return false;
 	}
 
-	AppControlDialog dialog( master.mainWindow() );
-	if( dialog.exec() == QDialog::Accepted )
+	if( m_masterModeActive )
 	{
-		controlFeature( feature.uid(), Operation::Start,
-						{ { argToString( Argument::Mode ), int( dialog.mode() ) },
-						  { argToString( Argument::Applications ), dialog.applications() },
-						  { argToString( Argument::BlockUsbStorage ), dialog.blockUsbStorage() },
-						  { argToString( Argument::BlockPrinting ), dialog.blockPrinting() } },
-						computerControlInterfaces );
+		// the master enforces the selected mode on a computer that (re)connected
+		return controlFeature( feature.uid(), Operation::Start, m_masterStartArguments, computerControlInterfaces );
 	}
+	if( m_masterModeCancelled )
+	{
+		// the dialog was cancelled and the master is going back to monitoring mode
+		return true;
+	}
+
+	AppControlDialog dialog( master.mainWindow() );
+	if( dialog.exec() != QDialog::Accepted )
+	{
+		m_masterModeCancelled = true;
+		ModeFeatureHelper::returnToMonitoringMode( master );
+		return true;
+	}
+
+	m_masterStartArguments = { { argToString( Argument::Mode ), int( dialog.mode() ) },
+							   { argToString( Argument::Applications ), dialog.applications() },
+							   { argToString( Argument::BlockUsbStorage ), dialog.blockUsbStorage() },
+							   { argToString( Argument::BlockPrinting ), dialog.blockPrinting() } };
+	m_masterModeActive = true;
+	controlFeature( feature.uid(), Operation::Start, m_masterStartArguments, computerControlInterfaces );
 
 	return true;
 }
@@ -332,6 +350,11 @@ bool AppControlFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server
 		m_applications.clear();
 		UsbStorageBlocker::clear();
 		PrintBlocker::clear();
+		// close the notice about closed applications, if any
+		if( server.featureWorkerManager().isWorkerRunning( m_appControlFeature.uid() ) )
+		{
+			server.featureWorkerManager().stopWorker( m_appControlFeature.uid() );
+		}
 		vInfo() << "stopped controlling applications";
 		return true;
 

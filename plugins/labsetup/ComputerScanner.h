@@ -52,6 +52,11 @@ public:
 											   int maximum = MaximumHosts );
 	static QList<QHostAddress> localCandidateHosts();
 
+	// hosts of a typed range: "10.0.5.0/24" (prefix 22-32), "192.168.1.10-80" (last part)
+	// or "192.168.1.10-192.168.2.20"; private IPv4 only, at most "maximum" hosts.
+	// Returns an empty list for anything else.
+	static QList<QHostAddress> rangeHosts( const QString& range, int maximum = MaximumHosts );
+
 	static bool isPrivateAddress( const QHostAddress& address );
 	static bool isServerGreeting( const QByteArray& data );
 

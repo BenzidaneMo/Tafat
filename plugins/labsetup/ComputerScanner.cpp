@@ -117,6 +117,84 @@ QList<QHostAddress> ComputerScanner::candidateHosts( const QList<QNetworkAddress
 
 
 
+QList<QHostAddress> ComputerScanner::rangeHosts( const QString& range, int maximum )
+{
+	const auto text = range.trimmed();
+	quint32 first = 0;
+	quint32 last = 0;
+
+	const auto toIPv4 = []( const QString& value, quint32* ip ) {
+		QHostAddress address;
+		if( address.setAddress( value.trimmed() ) == false || address.protocol() != QAbstractSocket::IPv4Protocol )
+		{
+			return false;
+		}
+		*ip = address.toIPv4Address();
+		return true;
+	};
+
+	if( text.contains( QLatin1Char('/') ) )
+	{
+		bool ok = false;
+		const auto prefix = text.section( QLatin1Char('/'), 1 ).toInt( &ok );
+		quint32 ip = 0;
+		if( ok == false || prefix < 22 || prefix > 32 || toIPv4( text.section( QLatin1Char('/'), 0, 0 ), &ip ) == false )
+		{
+			return {};
+		}
+		const auto mask = prefix == 32 ? 0xffffffffu : quint32( 0xffffffffu << ( 32 - prefix ) );
+		first = ip & mask;
+		last = first | ~mask;
+		if( prefix < 31 )
+		{
+			// without network and broadcast address
+			++first;
+			--last;
+		}
+		else
+		{
+			first = last = ip;
+		}
+	}
+	else if( text.contains( QLatin1Char('-') ) )
+	{
+		const auto from = text.section( QLatin1Char('-'), 0, 0 ).trimmed();
+		auto to = text.section( QLatin1Char('-'), 1 ).trimmed();
+		if( to.contains( QLatin1Char('.') ) == false )
+		{
+			// "192.168.1.10-80": the end replaces the last part
+			to = from.section( QLatin1Char('.'), 0, 2 ) + QLatin1Char('.') + to;
+		}
+		if( toIPv4( from, &first ) == false || toIPv4( to, &last ) == false || last < first )
+		{
+			return {};
+		}
+	}
+	else if( toIPv4( text, &first ) )
+	{
+		last = first;
+	}
+	else
+	{
+		return {};
+	}
+
+	if( isPrivateAddress( QHostAddress( first ) ) == false || isPrivateAddress( QHostAddress( last ) ) == false ||
+		quint64( last ) - first + 1 > quint64( maximum ) )
+	{
+		return {};
+	}
+
+	QList<QHostAddress> hosts;
+	for( quint64 ip = first; ip <= last; ++ip )
+	{
+		hosts.append( QHostAddress( quint32( ip ) ) );
+	}
+	return hosts;
+}
+
+
+
 QList<QHostAddress> ComputerScanner::localCandidateHosts()
 {
 	QList<QNetworkAddressEntry> entries;

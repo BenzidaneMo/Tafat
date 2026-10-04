@@ -1767,6 +1767,15 @@ void Toast::setupUI()
 	else {
 		m_durationBarContainer->setVisible(false);
 	}
+
+	// right-to-left languages (Arabic): mirror the layout above, icon on the right
+	if (QGuiApplication::isRightToLeft())
+	{
+		for (auto child : m_notification->findChildren<QWidget*>(QString(), Qt::FindDirectChildrenOnly))
+		{
+			child->move(width - child->x() - child->width(), child->y());
+		}
+	}
 }
 
 QPoint Toast::calculatePosition()
