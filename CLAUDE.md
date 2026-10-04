@@ -373,7 +373,7 @@ Traps found so far:
   from the current catalogs; update the guides when feature names change.
 - `docs/install.html`: short installation page in French, English and Arabic. It is self-contained
   (works offline from a USB stick), with an installer chooser, copy buttons, brand colors,
-  light/dark and phone layout. Keep it in step with `DEPLOYMENT.md`.
+  the light theme of the master (always light) and phone layout. Keep it in step with `DEPLOYMENT.md`.
 - `docs/DEPLOYMENT.md`: lab installation guide (installers, keys, silent install
   options, room CSV import, ports, shared accounts).
 - `plugins/filetransfer/FileTransferConfiguration.h`: collected files are grouped

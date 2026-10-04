@@ -3,7 +3,8 @@
   Tafat installation guide for lab administrators (French, English and Arabic).
   Self-contained on purpose: it must work offline from a USB stick or a lab share.
   Keep it in step with docs/DEPLOYMENT.md (English, more detail).
-  Colors are the tokens of core/src/BrandTheme.h.
+  Colors are the light-theme tokens of core/src/BrandTheme.h, as in Tafat Master.
+  The page is always light, whatever the system theme.
 -->
 <html lang="fr">
 <head>
@@ -27,24 +28,6 @@
 	--warn-bg: var(--yellow-soft); --warn-border: var(--yellow);
 	--code-bg: var(--brown); --code-text: var(--cream);
 	color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-	:root:not([data-theme="light"]) {
-		--bg: #1e1510; --surface: #2b1f18; --surface-2: #3b271d;
-		--text: #f4ebdd; --text-muted: #c9b8a8; --border: #4b3427;
-		--accent: #5fd0b8; --accent-soft: #163c34;
-		--warn-bg: #3d3216; --warn-border: #f6bf3f;
-		--code-bg: #140e0a; --code-text: #f4ebdd;
-		color-scheme: dark;
-	}
-}
-:root[data-theme="dark"] {
-	--bg: #1e1510; --surface: #2b1f18; --surface-2: #3b271d;
-	--text: #f4ebdd; --text-muted: #c9b8a8; --border: #4b3427;
-	--accent: #5fd0b8; --accent-soft: #163c34;
-	--warn-bg: #3d3216; --warn-border: #f6bf3f;
-	--code-bg: #140e0a; --code-text: #f4ebdd;
-	color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -142,8 +125,6 @@ td code { white-space: nowrap; }
 .result { margin-top: 6px; padding: 14px; border-radius: 10px; background: var(--accent-soft); }
 .result .file { display: block; font: 600 1.02rem ui-monospace, Consolas, monospace; overflow-wrap: anywhere; direction: ltr; margin: 4px 0; }
 .result.bad { background: var(--error-soft); color: var(--error); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .result.bad { background: #4a1d18; color: #ffb4ab; } }
-:root[data-theme="dark"] .result.bad { background: #4a1d18; color: #ffb4ab; }
 
 footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .9rem; }
 
@@ -194,6 +175,7 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 
 <div class="hero">
 	<h1>Installer Tafat dans une salle informatique</h1>
+	<p>Tafat est un logiciel libre et gratuit de gestion de classe pour les salles informatiques : voir et contrôler tous les écrans, bloquer applications et sites, faire des quiz, faire l'appel, discuter avec les élèves. En arabe, tamazight, français et anglais, sur Windows 7 à 11.</p>
 	<p>Pour la personne qui installe la salle : un poste enseignant et les postes des élèves dans le même réseau. Tafat s'installe d'abord sur le poste de l'enseignant ; il crée ensuite lui-même l'installeur des postes des élèves. Aucune commande à taper.</p>
 	<nav class="toc" aria-label="Sommaire">
 		<a href="#fr-choose">1. Programme d'installation</a>
@@ -366,6 +348,7 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 
 <div class="hero">
 	<h1>Installing Tafat in a computer lab</h1>
+	<p>Tafat is free, open source classroom management for school computer labs: see and control every screen, block apps and websites, run quizzes, take attendance, chat with students. In Arabic, Tamazight, French and English, on Windows 7 to 11.</p>
 	<p>For the person who sets up the lab: one teacher computer and the student computers on the same network. Tafat is installed on the teacher computer first; it then creates the installer for the student computers itself. No commands to type.</p>
 	<nav class="toc" aria-label="Contents">
 		<a href="#en-choose">1. Installer</a>
@@ -538,6 +521,7 @@ footer { margin: 40px 0 0; padding: 22px 0 40px; border-top: 1px solid var(--bor
 
 <div class="hero">
 	<h1>تثبيت تافات في قاعة الإعلام الآلي</h1>
+	<p>تافات برنامج حر ومجاني لإدارة القسم في قاعات الإعلام الآلي: مشاهدة كل الشاشات والتحكم فيها، حظر التطبيقات والمواقع، إجراء اختبارات، تسجيل الحضور، والتواصل مع التلاميذ. بالعربية والأمازيغية والفرنسية والإنجليزية، على Windows 7 إلى 11.</p>
 	<p>هذا الدليل موجّه لمن يجهّز القاعة: حاسوب الأستاذ وحواسيب التلاميذ في الشبكة نفسها. يُثبَّت تافات أولًا على حاسوب الأستاذ، ثم يُنشئ بنفسه برنامج تثبيت حواسيب التلاميذ. لا حاجة لكتابة أي أمر.</p>
 	<nav class="toc" aria-label="المحتويات">
 		<a href="#ar-choose">1. برنامج التثبيت</a>
