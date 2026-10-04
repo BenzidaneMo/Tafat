@@ -69,10 +69,15 @@ protected:
 
 private:
 	void updateHandButton();
+	// shows only the hand button, so that the bar covers less of the screen
+	void setMinimized( bool minimized );
+	void updateSize();
 
 	QToolButton* m_handButton;
 	QToolButton* m_chatButton;
 	QToolButton* m_handInButton;
+	QToolButton* m_minimizeButton;
+	bool m_minimized{false};
 	QPoint m_dragOffset;
 
 };
