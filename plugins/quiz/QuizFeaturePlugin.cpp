@@ -28,6 +28,7 @@
 #include "ComputerControlInterface.h"
 #include "FeatureWorkerManager.h"
 #include "MessageContext.h"
+#include "ModeFeatureHelper.h"
 #include "PlatformCoreFunctions.h"
 #include "QuizEditorDialogs.h"
 #include "QuizFeaturePlugin.h"
@@ -123,16 +124,36 @@ bool QuizFeaturePlugin::startFeature( VeyonMasterInterface& master, const Featur
 		return false;
 	}
 
-	QuizLauncherDialog launcher( master.mainWindow() );
-	if( launcher.exec() != QDialog::Accepted || launcher.selectedQuiz().questions.isEmpty() )
+	if( m_masterQuizActive == false && m_masterQuizCancelled )
 	{
+		// the launcher was cancelled and the master is going back to monitoring mode
 		return true;
 	}
 
-	m_masterQuiz = launcher.selectedQuiz();
+	const auto newQuiz = m_masterQuizActive == false;
+	if( newQuiz )
+	{
+		QuizLauncherDialog launcher( master.mainWindow() );
+		if( launcher.exec() != QDialog::Accepted || launcher.selectedQuiz().questions.isEmpty() )
+		{
+			m_masterQuizCancelled = true;
+			ModeFeatureHelper::returnToMonitoringMode( master );
+			return true;
+		}
 
-	delete m_resultsWindow;
-	m_resultsWindow = new QuizResultsWindow( m_masterQuiz, master.mainWindow() );
+		m_masterQuiz = launcher.selectedQuiz();
+		m_masterQuizActive = true;
+
+		delete m_resultsWindow;
+		m_resultsWindow = new QuizResultsWindow( m_masterQuiz, master.mainWindow() );
+	}
+	// else the master enforces the selected mode on a computer that (re)connected:
+	// send it the running quiz again
+	if( m_resultsWindow.isNull() )
+	{
+		m_resultsWindow = new QuizResultsWindow( m_masterQuiz, master.mainWindow() );
+	}
+
 	for( const auto& controlInterface : computerControlInterfaces )
 	{
 		if( controlInterface->computer().hostName().isEmpty() == false )
@@ -143,7 +164,10 @@ bool QuizFeaturePlugin::startFeature( VeyonMasterInterface& master, const Featur
 																						 : controlInterface->userFullName() );
 		}
 	}
-	m_resultsWindow->show();
+	if( newQuiz )
+	{
+		m_resultsWindow->show();
+	}
 
 	controlFeature( feature.uid(), Operation::Start,
 					{ { argToString( Argument::Quiz ), toJsonData( m_masterQuiz.toJson() ) } },
@@ -164,6 +188,8 @@ bool QuizFeaturePlugin::stopFeature( VeyonMasterInterface& master, const Feature
 		return false;
 	}
 
+	m_masterQuizActive = false;
+	m_masterQuizCancelled = false;
 	controlFeature( feature.uid(), Operation::Stop, {}, computerControlInterfaces );
 
 	if( m_resultsWindow )

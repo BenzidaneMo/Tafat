@@ -133,6 +133,9 @@ private:
 	const FeatureList m_features;
 
 	// master side
+	bool m_masterModeActive{false};
+	bool m_masterModeCancelled{false};
+	QVariantMap m_masterStartArguments;
 	QPointer<RunningAppsWindow> m_runningAppsWindow;
 	QMap<QString, QWeakPointer<ComputerControlInterface>> m_runningAppsComputers;
 

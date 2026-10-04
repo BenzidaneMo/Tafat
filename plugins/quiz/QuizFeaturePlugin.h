@@ -129,6 +129,8 @@ private:
 
 	// master side: the running quiz including its solutions
 	Quiz m_masterQuiz;
+	bool m_masterQuizActive{false};
+	bool m_masterQuizCancelled{false};
 	QPointer<QuizResultsWindow> m_resultsWindow;
 
 	// server side: the latest answers reported by the student's quiz window

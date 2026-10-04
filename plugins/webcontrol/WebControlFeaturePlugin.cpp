@@ -24,6 +24,7 @@
 
 #include "ComputerControlInterface.h"
 #include "InternetBlocker.h"
+#include "ModeFeatureHelper.h"
 #include "PolicyStore.h"
 #include "VeyonMasterInterface.h"
 #include "VeyonServerInterface.h"
@@ -81,6 +82,8 @@ bool WebControlFeaturePlugin::controlFeature( Feature::Uid featureUid, Operation
 
 	if( operation == Operation::Stop )
 	{
+		m_masterModeActive = false;
+		m_masterModeCancelled = false;
 		sendFeatureMessage( FeatureMessage{ featureUid, FeatureCommand::Stop }, computerControlInterfaces );
 		return true;
 	}
@@ -98,15 +101,30 @@ bool WebControlFeaturePlugin::startFeature( VeyonMasterInterface& master, const 
 		return false;
 	}
 
-	WebControlDialog dialog( master.mainWindow() );
-	if( dialog.exec() == QDialog::Accepted )
+	if( m_masterModeActive )
 	{
-		controlFeature( feature.uid(), Operation::Start,
-						{ { argToString( Argument::Mode ), int( dialog.mode() ) },
-						  { argToString( Argument::Sites ), dialog.sites() },
-						  { argToString( Argument::BlockInternet ), dialog.blockInternet() } },
-						computerControlInterfaces );
+		// the master enforces the selected mode on a computer that (re)connected
+		return controlFeature( feature.uid(), Operation::Start, m_masterStartArguments, computerControlInterfaces );
 	}
+	if( m_masterModeCancelled )
+	{
+		// the dialog was cancelled and the master is going back to monitoring mode
+		return true;
+	}
+
+	WebControlDialog dialog( master.mainWindow() );
+	if( dialog.exec() != QDialog::Accepted )
+	{
+		m_masterModeCancelled = true;
+		ModeFeatureHelper::returnToMonitoringMode( master );
+		return true;
+	}
+
+	m_masterStartArguments = { { argToString( Argument::Mode ), int( dialog.mode() ) },
+							   { argToString( Argument::Sites ), dialog.sites() },
+							   { argToString( Argument::BlockInternet ), dialog.blockInternet() } };
+	m_masterModeActive = true;
+	controlFeature( feature.uid(), Operation::Start, m_masterStartArguments, computerControlInterfaces );
 
 	return true;
 }
