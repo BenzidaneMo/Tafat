@@ -130,4 +130,5 @@ rule-allow configurator/resources/vcs-normal.png 64
 rule-deny configurator/resources/vcs-conflicting.png 64
 rule-ask configurator/resources/access-rule-ask.png 64
 rule-none configurator/resources/vcs-removed.png 64
+feature-rewards plugins/rewards/rewards.png
 MAP

@@ -228,6 +228,25 @@ if(WITH_TESTS AND VEYON_BUILD_LINUX)
 	add_test(NAME LabSetupTest COMMAND LabSetupTest)
 
 	#
+	# RewardsTest: stars given to the students
+	#
+	add_executable(RewardsTest
+		RewardsTest.cpp
+		${CMAKE_SOURCE_DIR}/plugins/rewards/RewardBook.cpp
+	)
+
+	target_include_directories(RewardsTest PRIVATE
+		${CMAKE_SOURCE_DIR}/plugins/rewards
+	)
+
+	target_link_libraries(RewardsTest PRIVATE
+		Qt${QT_MAJOR_VERSION}::Test
+		Qt${QT_MAJOR_VERSION}::Core
+	)
+
+	add_test(NAME RewardsTest COMMAND RewardsTest)
+
+	#
 	# InventoryTest: inventory of the student computers
 	#
 	add_executable(InventoryTest

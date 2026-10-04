@@ -222,3 +222,9 @@ svg('rule-allow', 'Access rule: allow', '  <circle cx="64" cy="64" r="50" fill="
 svg('rule-deny', 'Access rule: deny', '  <circle cx="64" cy="64" r="50" fill="%s"/><path d="M44 44 l40 40 M84 44 l-40 40" stroke="%s" stroke-width="12" stroke-linecap="round"/>\n' % (ORANGE, PAPER))
 svg('rule-ask', 'Access rule: ask for permission', '  <circle cx="64" cy="64" r="50" fill="%s"/><path d="M48 50 a16 16 0 1 1 22 15 c-5 2 -6 5 -6 10" fill="none" stroke="%s" stroke-width="11" stroke-linecap="round"/><circle cx="64" cy="94" r="7" fill="%s"/>\n' % (YELLOW, BROWN2, BROWN2))
 svg('rule-none', 'Access rule: no action', '  <circle cx="64" cy="64" r="50" fill="none" stroke="%s" stroke-width="10"/><path d="M42 64 h44" stroke="%s" stroke-width="12" stroke-linecap="round"/>\n' % (TEAL, TEAL))
+
+# ---------------------------------------------------------------- Tafat features
+svg('feature-rewards', 'Rewards: give a star to a student',
+	'  <path d="M64 10 l15 32 l35 4 l-26 24 l7 35 l-31 -18 l-31 18 l7 -35 l-26 -24 l35 -4 z" fill="%s" stroke="%s" stroke-width="%d" stroke-linejoin="round"/>\n' % (YELLOW, ORANGE, SW) +
+	'  <circle cx="64" cy="62" r="13" fill="%s"/>\n' % PAPER +
+	'  <path d="M58 62 l5 5 l9 -10" fill="none" stroke="%s" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>\n' % TEAL)
