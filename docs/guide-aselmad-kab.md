@@ -83,14 +83,18 @@ Tiririyin yeṣeḥḥan ur ttwaznent ara ɣer yiselkimen n yinelmaden.
 ## 7. Mmeslay: afus d udiwenni
 
 - **Afus d udiwenni** → *Sken afeggag n unelmad*: yal anelmad ad yaf afeggag
-  amecṭuḥ s **Rfed afus**, adiwenni d *Azen leqdic*.
+  amecṭuḥ s **Rfed afus**, adiwenni d *Azen leqdic*. Aneccab deg taggara n
+  ufeggag yesseḥzay-it ar ufus kan.
 - Afus yettwarefden ad d-iban ɣef tegnit d usfaylu n udiwenni (*Ldi asfaylu n
   udiwenni*). Err i yiwen unelmad neɣ *Azen i yal yiwen*; *Sers afus* mi
   yefra.
 - **Arrazen** → *Efk itri*: yal anelmad yettwafernen ad yaf itri, ad iwali
   "Ayuz!" d umḍan n yitran-is. *Kkes itri* yekkes yiwen. *Sken itran* yesskan
   itran n tneɣrit meṛṛa (s yismawen n tilin), s *Ales seg tazwara* d
-  *Sifeḍ (CSV)*.
+  *Sifeḍ (CSV)*. Yal tasmilt ɣur-s itran-is: fren tasmilt deg uqerru n
+  usfaylu (*Tasmilt tamaynut* akken ad ternuḍ yiwet), neɣ m ulac anelmad
+  ad d-yernun ɣef yiwen uselkim ad iwali itran n win yezwaren. Asfaylu
+  yettweldi deg yitri amezwaru n yal tamsirt.
 
 ## 8. Ifuyla
 

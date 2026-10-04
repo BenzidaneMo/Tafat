@@ -1220,6 +1220,10 @@ Now copy the %3 installers into this folder.</source>
         <source>%1 contributors</source>
         <translation type="unfinished">المساهمون في %1</translation>
     </message>
+    <message>
+        <source>My class</source>
+        <translation type="unfinished">قسمي</translation>
+    </message>
 </context>
 <context>
     <name>RewardsWindow</name>
@@ -1244,10 +1248,6 @@ Now copy the %3 installers into this folder.</source>
         <translation type="unfinished">تصدير (CSV)</translation>
     </message>
     <message>
-        <source>Remove the stars of all students?</source>
-        <translation type="unfinished">حذف نجوم كل التلاميذ؟</translation>
-    </message>
-    <message>
         <source>No stars yet. Select computers and click &quot;Give a star&quot;.</source>
         <translation type="unfinished">لا توجد نجوم بعد. حدد الحواسيب وانقر على «امنح نجمة».</translation>
     </message>
@@ -1260,16 +1260,44 @@ Now copy the %3 installers into this folder.</source>
         <translation type="unfinished">تصدير النجوم</translation>
     </message>
     <message>
-        <source>stars-%1.csv</source>
-        <translation type="unfinished">stars-%1.csv</translation>
-    </message>
-    <message>
         <source>CSV files (*.csv)</source>
         <translation type="unfinished">ملفات CSV (*.csv)</translation>
     </message>
     <message>
         <source>Could not write %1.</source>
         <translation type="unfinished">تعذرت الكتابة في %1.</translation>
+    </message>
+    <message>
+        <source>Delete class</source>
+        <translation type="unfinished">حذف القسم</translation>
+    </message>
+    <message>
+        <source>New class</source>
+        <translation type="unfinished">قسم جديد</translation>
+    </message>
+    <message>
+        <source>Each class has its own stars. Choose the class you are teaching now.</source>
+        <translation type="unfinished">لكل قسم نجومه. اختر القسم الذي تدرّسه الآن.</translation>
+    </message>
+    <message>
+        <source>Class:</source>
+        <translation type="unfinished">القسم:</translation>
+    </message>
+    <message>
+        <source>Remove the stars of all students of this class?</source>
+        <translation type="unfinished">حذف نجوم كل تلاميذ هذا القسم؟</translation>
+    </message>
+    <message>
+        <source>Delete the class %1 and its stars?</source>
+        <translation type="unfinished">حذف القسم %1 ونجومه؟</translation>
+    </message>
+    <message>
+        <source>Name of the class, e.g. 2AS1:</source>
+        <translation type="unfinished">اسم القسم، مثلًا ⁨2AS1⁩:</translation>
+    </message>
+    <message>
+        <source>stars-%1-%2.csv</source>
+        <translation type="unfinished">stars-%1-%2.csv</translation>
     </message>
 </context>
 <context>
@@ -1428,6 +1456,14 @@ Now copy the %3 installers into this folder.</source>
     <message>
         <source>Hand in work</source>
         <translation type="unfinished">تسليم العمل</translation>
+    </message>
+    <message>
+        <source>Show the whole bar</source>
+        <translation type="unfinished">إظهار الشريط كاملًا</translation>
+    </message>
+    <message>
+        <source>Make the bar smaller</source>
+        <translation type="unfinished">تصغير الشريط</translation>
     </message>
 </context>
 <context>

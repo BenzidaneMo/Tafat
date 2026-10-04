@@ -1210,6 +1210,10 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
         <source>%1 contributors</source>
         <translation type="unfinished">Imttekkiyen n %1</translation>
     </message>
+    <message>
+        <source>My class</source>
+        <translation type="unfinished">Tasmilt-iw</translation>
+    </message>
 </context>
 <context>
     <name>RewardsWindow</name>
@@ -1234,10 +1238,6 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
         <translation type="unfinished">Sifeḍ (CSV)</translation>
     </message>
     <message>
-        <source>Remove the stars of all students?</source>
-        <translation type="unfinished">Ad tekkseḍ itran n yinelmaden meṛṛa?</translation>
-    </message>
-    <message>
         <source>No stars yet. Select computers and click &quot;Give a star&quot;.</source>
         <translation type="unfinished">Ulac itran ar tura. Fren iselkimen syin sit ɣef &quot;Efk itri&quot;.</translation>
     </message>
@@ -1250,16 +1250,44 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
         <translation type="unfinished">Sifeḍ itran</translation>
     </message>
     <message>
-        <source>stars-%1.csv</source>
-        <translation type="unfinished">itran-%1.csv</translation>
-    </message>
-    <message>
         <source>CSV files (*.csv)</source>
         <translation type="unfinished">Ifuyla CSV (*.csv)</translation>
     </message>
     <message>
         <source>Could not write %1.</source>
         <translation type="unfinished">Ur yezmir ara ad yaru %1.</translation>
+    </message>
+    <message>
+        <source>Delete class</source>
+        <translation type="unfinished">Kkes tasmilt</translation>
+    </message>
+    <message>
+        <source>New class</source>
+        <translation type="unfinished">Tasmilt tamaynut</translation>
+    </message>
+    <message>
+        <source>Each class has its own stars. Choose the class you are teaching now.</source>
+        <translation type="unfinished">Yal tasmilt ɣur-s itran-is. Fren tasmilt i tesselmadeḍ tura.</translation>
+    </message>
+    <message>
+        <source>Class:</source>
+        <translation type="unfinished">Tasmilt:</translation>
+    </message>
+    <message>
+        <source>Remove the stars of all students of this class?</source>
+        <translation type="unfinished">Ad tekkseḍ itran n yinelmaden meṛṛa n tsmilt-a?</translation>
+    </message>
+    <message>
+        <source>Delete the class %1 and its stars?</source>
+        <translation type="unfinished">Ad tekkseḍ tasmilt %1 d yitran-is?</translation>
+    </message>
+    <message>
+        <source>Name of the class, e.g. 2AS1:</source>
+        <translation type="unfinished">Isem n tsmilt, amedya 2AS1:</translation>
+    </message>
+    <message>
+        <source>stars-%1-%2.csv</source>
+        <translation type="unfinished">itran-%1-%2.csv</translation>
     </message>
 </context>
 <context>
@@ -1418,6 +1446,14 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
     <message>
         <source>Hand in work</source>
         <translation type="unfinished">Azen leqdic</translation>
+    </message>
+    <message>
+        <source>Show the whole bar</source>
+        <translation type="unfinished">Sken afeggag akk</translation>
+    </message>
+    <message>
+        <source>Make the bar smaller</source>
+        <translation type="unfinished">Senqes afeggag</translation>
     </message>
 </context>
 <context>

@@ -98,6 +98,9 @@ the blocker is on (it must clean up at service start).
 - [ ] **Rewards**: "Give a star" on one and on several computers shows the popup on each
       student screen (also over a full-screen program), "Show stars" lists the names from
       the register, the stars stay after restarting Tafat Master, CSV opens in Excel.
+      A second class (*New class*) starts without stars on the same computers.
+- [ ] **Student toolbar**: the arrow makes the bar smaller (only the hand) and bigger
+      again; raising the hand works in both; the choice stays after hiding and showing it.
 
 ## 5. Languages on Windows
 

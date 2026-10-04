@@ -1212,6 +1212,10 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
         <source>%1 contributors</source>
         <translation type="unfinished">Contributeurs de %1</translation>
     </message>
+    <message>
+        <source>My class</source>
+        <translation type="unfinished">Ma classe</translation>
+    </message>
 </context>
 <context>
     <name>RewardsWindow</name>
@@ -1236,10 +1240,6 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
         <translation type="unfinished">Exporter (CSV)</translation>
     </message>
     <message>
-        <source>Remove the stars of all students?</source>
-        <translation type="unfinished">Supprimer les étoiles de tous les élèves ?</translation>
-    </message>
-    <message>
         <source>No stars yet. Select computers and click &quot;Give a star&quot;.</source>
         <translation type="unfinished">Pas encore d&apos;étoiles. Sélectionnez des ordinateurs et cliquez sur « Donner une étoile ».</translation>
     </message>
@@ -1252,16 +1252,44 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
         <translation type="unfinished">Exporter les étoiles</translation>
     </message>
     <message>
-        <source>stars-%1.csv</source>
-        <translation type="unfinished">etoiles-%1.csv</translation>
-    </message>
-    <message>
         <source>CSV files (*.csv)</source>
         <translation type="unfinished">Fichiers CSV (*.csv)</translation>
     </message>
     <message>
         <source>Could not write %1.</source>
         <translation type="unfinished">Impossible d&apos;écrire %1.</translation>
+    </message>
+    <message>
+        <source>Delete class</source>
+        <translation type="unfinished">Supprimer la classe</translation>
+    </message>
+    <message>
+        <source>New class</source>
+        <translation type="unfinished">Nouvelle classe</translation>
+    </message>
+    <message>
+        <source>Each class has its own stars. Choose the class you are teaching now.</source>
+        <translation type="unfinished">Chaque classe a ses propres étoiles. Choisissez la classe que vous avez en ce moment.</translation>
+    </message>
+    <message>
+        <source>Class:</source>
+        <translation type="unfinished">Classe :</translation>
+    </message>
+    <message>
+        <source>Remove the stars of all students of this class?</source>
+        <translation type="unfinished">Supprimer les étoiles de tous les élèves de cette classe ?</translation>
+    </message>
+    <message>
+        <source>Delete the class %1 and its stars?</source>
+        <translation type="unfinished">Supprimer la classe %1 et ses étoiles ?</translation>
+    </message>
+    <message>
+        <source>Name of the class, e.g. 2AS1:</source>
+        <translation type="unfinished">Nom de la classe, par exemple 2AS1 :</translation>
+    </message>
+    <message>
+        <source>stars-%1-%2.csv</source>
+        <translation type="unfinished">etoiles-%1-%2.csv</translation>
     </message>
 </context>
 <context>
@@ -1420,6 +1448,14 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
     <message>
         <source>Hand in work</source>
         <translation type="unfinished">Remettre mon travail</translation>
+    </message>
+    <message>
+        <source>Show the whole bar</source>
+        <translation type="unfinished">Afficher toute la barre</translation>
+    </message>
+    <message>
+        <source>Make the bar smaller</source>
+        <translation type="unfinished">Réduire la barre</translation>
     </message>
 </context>
 <context>

@@ -85,7 +85,7 @@ Les bonnes réponses ne sont jamais envoyées aux ordinateurs des élèves.
 
 - **Mains levées et chat** → *Afficher la barre de l'élève* : chaque élève
   reçoit une petite barre avec **Lever la main**, le chat et *Remettre mon
-  travail*.
+  travail*. La flèche au bout de la barre la réduit à la seule main.
 - Une main levée apparaît sur la vignette et dans la fenêtre du chat
   (*Ouvrir la fenêtre de chat*). Répondez à un élève ou *Envoyer à tous* ;
   *Baisser la main* quand c'est réglé.
@@ -93,6 +93,10 @@ Les bonnes réponses ne sont jamais envoyées aux ordinateurs des élèves.
   étoile et voit « Bravo ! » avec son nombre d'étoiles. *Retirer une étoile*
   en reprend une. *Afficher les étoiles* montre les étoiles de toute la classe
   (par nom du registre), avec *Recommencer* et *Exporter (CSV)*.
+  Chaque classe a ses propres étoiles : choisissez la classe en haut de la
+  fenêtre (*Nouvelle classe* pour en ajouter une), sinon l'élève suivant sur le
+  même ordinateur verrait les étoiles du précédent. La fenêtre s'ouvre à la
+  première étoile de chaque séance pour vous le rappeler.
 
 ## 8. Fichiers
 

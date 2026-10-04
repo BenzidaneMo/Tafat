@@ -221,7 +221,7 @@ Traps found so far:
   (`translations/CMakeLists.txt`, those sources are excluded from the `veyon_*.ts`
   catalogs) and loaded after the `veyon` catalog (`VeyonCore::initLocaleAndTranslation`).
   Add new Tafat plugins to `tafat_plugins` there (now also `inventory`, `labsetup`, `rewards`). Arabic, French and Tamazight
-  drafts for all 352 texts are in, marked *unfinished* (Qt still uses them) for native review.
+  drafts for all 361 texts are in, marked *unfinished* (Qt still uses them) for native review.
   lupdate (Qt 5 and 6) refuses to update the `kab`/`kab_Tfng` catalogs ("target language is not recognized"):
   set `language="ja"` (one plural form) for the run, then put `kab`/`kab_Tfng` back.
 - `veyon_ar.ts`: 816/1161, of which 598 are unfinished drafts.
@@ -273,7 +273,8 @@ Traps found so far:
   so it survives mode switches; `stopFeature` does nothing on purpose):
   *Show/Hide student toolbar* (always-on-top movable bar: raise hand + chat),
   *Open chat window* (teacher: list of students with hand icons, one
-  conversation each, send to one/all, lower hand). Meta feature `HandRaised`
+  conversation each, send to one/all, lower hand). The student toolbar has a chevron that
+  shrinks it to the hand button (remembered in the student's QSettings "ClassChat"). Meta feature `HandRaised`
   (Master|Service, icon) is reported active while a hand is up → hand icon on
   the tile (`ComputerItemDelegate` draws icons of active Master features).
   Server keeps a `ChatLog` per session (IDs, last 200, 2000 chars) and pushes
@@ -351,9 +352,11 @@ Traps found so far:
   string keys are the wire format). `InventoryWindow`: sortable table, Qt 5 builds
   marked "legacy build", CSV export (UTF-8 BOM).
 - `plugins/rewards` — "Rewards" (Action with sub-features *Give a star*, *Remove a star*,
-  *Show stars*): the master keeps a `RewardBook` (student → stars, 0–999) in the teacher's
-  QSettings ("Rewards"); the key is the Register name, else the computer name
-  (`RewardBook::key`). Each change sends `ShowReward` (new total + change) to the computer;
+  *Show stars*): the master keeps a `RewardBook` (student → stars, 0–999) per class
+  (`RewardClasses`, ≤ 100 classes, natural sort, current class) in the teacher's QSettings
+  ("Rewards/Classes"), so the next class on the same computers starts at 0; the key is the
+  Register name, else the computer name (`RewardBook::key`). The Stars window has the class
+  selector and opens with the first star of each master session. Each change sends `ShowReward` (new total + change) to the computer;
   the worker shows a `RewardPopup` (bottom right, bottom left in RTL, 6 s). The *Stars* window
   lists all students, removes a star, starts again and exports CSV (UTF-8 BOM).
 - Master splash screen rebranded (`artwork/tafat-splash.svg` → `master/resources/splash.png`).
