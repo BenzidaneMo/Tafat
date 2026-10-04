@@ -1,4 +1,4 @@
-<p align="center"><img src="artwork/tafat.webp" alt="Tafat logo" width="600"></p>
+<p align="center"><img src="artwork/tafat-splash.svg" alt="Tafat logo" width="600"></p>
 
 # Tafat — ⵜⴰⴼⴰⵜ — تافات
 
