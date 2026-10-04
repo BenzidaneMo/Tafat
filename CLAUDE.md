@@ -152,6 +152,20 @@ Message flow:
 
 OS-specific code goes behind `Platform*Functions` in `plugins/platform/{windows,linux}`.
 
+Traps found so far:
+- A server is "active" for a feature while its worker runs (`QueryActiveFeatures`), and the tile
+  then shows the feature's icon. `sendMessageToUnmanagedSessionWorker` *starts* a worker if none
+  runs, so never forward a Stop to a worker that isn't running, and stop workers that are done
+  (`stopWorker`, see quiz, classchat, rewards).
+- Every Mode button first stops all features on all computers. A Mode feature that opens a dialog
+  must call `ModeFeatureHelper::returnToMonitoringMode` on Cancel. With "Enforce selected mode"
+  the master calls `startFeature` again for each reconnecting computer, so resend the last
+  settings without a dialog while the mode is active (appcontrol, webcontrol, quiz).
+- To test features with a second "student" in one container, run `tafat-server` in a network
+  namespace (`ip netns`, veth 10.77.0.1/2); 127.0.0.1 and own addresses count as the teacher's
+  computer and are skipped by blockers and quizzes. The build tree needs a `tafat-worker`
+  symlink next to `tafat-server`, and the server needs `USER` set when there is no logind session.
+
 ## 6. What is done
 
 **Docs/licensing:** `LICENSE` (GPLv2), `README.md` (logo, features, credit),
