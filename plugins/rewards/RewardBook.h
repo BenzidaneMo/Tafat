@@ -60,3 +60,45 @@ private:
 	QMap<QString, int> m_stars;
 
 };
+
+
+
+// The books of all classes taught on these computers, so that the next class
+// does not see the stars given to the previous one on the same computers.
+// There is always at least one class.
+class RewardClasses
+{
+public:
+	explicit RewardClasses( const QString& defaultClass );
+
+	QStringList classes() const;
+	QString currentClass() const
+	{
+		return m_current;
+	}
+
+	// selects the class and creates it if it does not exist yet
+	bool setCurrentClass( const QString& name );
+	// removes the class unless it is the last one
+	bool removeClass( const QString& name );
+
+	RewardBook& book()
+	{
+		return m_books[m_current];
+	}
+	const RewardBook& book() const
+	{
+		// the current class always exists
+		return *m_books.constFind( m_current );
+	}
+
+	QVariantMap toVariantMap() const;
+	static RewardClasses fromVariantMap( const QVariantMap& map, const QString& defaultClass );
+
+	static constexpr int MaximumClasses = 100;
+
+private:
+	QMap<QString, RewardBook> m_books;
+	QString m_current;
+
+};

@@ -68,7 +68,8 @@ RewardsFeaturePlugin::RewardsFeaturePlugin( QObject* parent ) :
 						  m_rewardsFeature.uid(),
 						  tr( "Show stars" ), {},
 						  tr( "Show the stars of all students and export them." ) ),
-	m_features( { m_rewardsFeature, m_giveStarFeature, m_removeStarFeature, m_showRewardsFeature } )
+	m_features( { m_rewardsFeature, m_giveStarFeature, m_removeStarFeature, m_showRewardsFeature } ),
+	m_classes( tr( "My class" ) )
 {
 }
 
@@ -107,6 +108,11 @@ bool RewardsFeaturePlugin::startFeature( VeyonMasterInterface& master, const Fea
 	if( feature.uid() == m_giveStarFeature.uid() || feature.uid() == m_rewardsFeature.uid() )
 	{
 		changeStars( computerControlInterfaces, 1 );
+		// show once per session which class gets the stars
+		if( m_windowShown == false )
+		{
+			showWindow( master );
+		}
 		return true;
 	}
 
@@ -118,29 +124,48 @@ bool RewardsFeaturePlugin::startFeature( VeyonMasterInterface& master, const Fea
 
 	if( feature.uid() == m_showRewardsFeature.uid() )
 	{
-		if( m_window == nullptr )
-		{
-			m_window = new RewardsWindow( master.mainWindow() );
-			m_window->setWindowFlags( Qt::Window );
-			connect( m_window, &RewardsWindow::removeStarRequested, this, [this]( const QString& student ) {
-				m_book.remove( student );
-				saveBook();
-				updateWindow();
-			} );
-			connect( m_window, &RewardsWindow::resetRequested, this, [this]() {
-				m_book.reset();
-				saveBook();
-				updateWindow();
-			} );
-		}
-		updateWindow();
-		m_window->show();
-		m_window->raise();
-		m_window->activateWindow();
+		showWindow( master );
 		return true;
 	}
 
 	return false;
+}
+
+
+
+void RewardsFeaturePlugin::showWindow( VeyonMasterInterface& master )
+{
+	if( m_window == nullptr )
+	{
+		m_window = new RewardsWindow( master.mainWindow() );
+		m_window->setWindowFlags( Qt::Window );
+		connect( m_window, &RewardsWindow::classSelected, this, [this]( const QString& name ) {
+			m_classes.setCurrentClass( name );
+			saveBook();
+			updateWindow();
+		} );
+		connect( m_window, &RewardsWindow::removeClassRequested, this, [this]( const QString& name ) {
+			m_classes.removeClass( name );
+			saveBook();
+			updateWindow();
+		} );
+		connect( m_window, &RewardsWindow::removeStarRequested, this, [this]( const QString& student ) {
+			m_classes.book().remove( student );
+			saveBook();
+			updateWindow();
+		} );
+		connect( m_window, &RewardsWindow::resetRequested, this, [this]() {
+			m_classes.book().reset();
+			saveBook();
+			updateWindow();
+		} );
+	}
+
+	m_windowShown = true;
+	updateWindow();
+	m_window->show();
+	m_window->raise();
+	m_window->activateWindow();
 }
 
 
@@ -198,12 +223,13 @@ void RewardsFeaturePlugin::changeStars( const ComputerControlInterfaceList& comp
 	for( const auto& computer : computers )
 	{
 		const auto student = RewardBook::key( computer->userFullName(), computer->computerName() );
-		if( student.isEmpty() || ( change < 0 && m_book.stars( student ) == 0 ) )
+		auto& book = m_classes.book();
+		if( student.isEmpty() || ( change < 0 && book.stars( student ) == 0 ) )
 		{
 			continue;
 		}
 
-		const auto stars = change > 0 ? m_book.add( student, change ) : m_book.remove( student, -change );
+		const auto stars = change > 0 ? book.add( student, change ) : book.remove( student, -change );
 		controlFeature( m_rewardsFeature.uid(), Operation::Start,
 						{ { argToString( Argument::Stars ), stars }, { argToString( Argument::Change ), change } },
 						{ computer } );
@@ -219,9 +245,10 @@ void RewardsFeaturePlugin::loadBook()
 {
 	if( m_bookLoaded == false )
 	{
-		m_book = RewardBook::fromVariantMap(
+		m_classes = RewardClasses::fromVariantMap(
 			QSettings( QSettings::UserScope, VeyonCore::productName(), QStringLiteral("Rewards") )
-				.value( QStringLiteral("Stars") ).toMap() );
+				.value( QStringLiteral("Classes") ).toMap(),
+			tr( "My class" ) );
 		m_bookLoaded = true;
 	}
 }
@@ -231,7 +258,7 @@ void RewardsFeaturePlugin::loadBook()
 void RewardsFeaturePlugin::saveBook()
 {
 	QSettings( QSettings::UserScope, VeyonCore::productName(), QStringLiteral("Rewards") )
-		.setValue( QStringLiteral("Stars"), m_book.toVariantMap() );
+		.setValue( QStringLiteral("Classes"), m_classes.toVariantMap() );
 }
 
 
@@ -240,6 +267,6 @@ void RewardsFeaturePlugin::updateWindow()
 {
 	if( m_window )
 	{
-		m_window->setBook( m_book );
+		m_window->setClasses( m_classes );
 	}
 }

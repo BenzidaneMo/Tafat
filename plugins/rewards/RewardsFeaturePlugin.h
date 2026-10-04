@@ -105,6 +105,7 @@ private:
 	};
 
 	void changeStars( const ComputerControlInterfaceList& computers, int change );
+	void showWindow( VeyonMasterInterface& master );
 	void loadBook();
 	void saveBook();
 	void updateWindow();
@@ -115,8 +116,9 @@ private:
 	const Feature m_showRewardsFeature;
 	const FeatureList m_features;
 
-	RewardBook m_book;
+	RewardClasses m_classes;
 	bool m_bookLoaded{false};
+	bool m_windowShown{false};
 	QPointer<RewardsWindow> m_window;
 	QPointer<RewardPopup> m_popup;
 

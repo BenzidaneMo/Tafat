@@ -79,6 +79,49 @@ private Q_SLOTS:
 		QCOMPARE( lines[1], QStringLiteral("\"Amina \"\"Mina\"\"\",3") );	// sorted, case-insensitive
 		QCOMPARE( lines[2], QStringLiteral("\"zahra\",1") );
 	}
+
+	void classes()
+	{
+		RewardClasses classes( QStringLiteral("My class") );
+		QCOMPARE( classes.classes(), QStringList{ QStringLiteral("My class") } );
+		QVERIFY( classes.removeClass( QStringLiteral("My class") ) == false );	// the last class stays
+
+		// the same computer in the next class starts without stars
+		classes.setCurrentClass( QStringLiteral(" 2AS1 ") );
+		classes.book().add( QStringLiteral("PC-05"), 3 );
+		classes.setCurrentClass( QStringLiteral("2AS2") );
+		QCOMPARE( classes.book().stars( QStringLiteral("PC-05") ), 0 );
+		classes.book().add( QStringLiteral("PC-05") );
+		classes.setCurrentClass( QStringLiteral("2AS1") );
+		QCOMPARE( classes.book().stars( QStringLiteral("PC-05") ), 3 );
+		QVERIFY( classes.setCurrentClass( QStringLiteral("   ") ) == false );
+		QCOMPARE( classes.currentClass(), QStringLiteral("2AS1") );
+
+		// natural order: 2AS10 after 2AS2
+		classes.setCurrentClass( QStringLiteral("2AS10") );
+		QCOMPARE( classes.classes(), QStringList( { QStringLiteral("2AS1"), QStringLiteral("2AS2"),
+													QStringLiteral("2AS10"), QStringLiteral("My class") } ) );
+
+		// removing the current class selects another one
+		QVERIFY( classes.removeClass( QStringLiteral("2AS10") ) );
+		QCOMPARE( classes.currentClass(), QStringLiteral("2AS1") );
+
+		// stored and restored; the unused default class is not added again
+		classes.removeClass( QStringLiteral("My class") );
+		classes.setCurrentClass( QStringLiteral("2AS2") );
+		const auto restored = RewardClasses::fromVariantMap( classes.toVariantMap(), QStringLiteral("My class") );
+		QCOMPARE( restored.classes(), QStringList( { QStringLiteral("2AS1"), QStringLiteral("2AS2") } ) );
+		QCOMPARE( restored.currentClass(), QStringLiteral("2AS2") );
+		QCOMPARE( restored.book().stars( QStringLiteral("PC-05") ), 1 );
+
+		// nothing stored yet, or broken data: the default class
+		const auto empty = RewardClasses::fromVariantMap( {}, QStringLiteral("My class") );
+		QCOMPARE( empty.classes(), QStringList{ QStringLiteral("My class") } );
+		const auto broken = RewardClasses::fromVariantMap(
+			{ { QStringLiteral("Classes"), QVariantMap{ { QStringLiteral(" "), QVariantMap{} } } },
+			  { QStringLiteral("Current"), QStringLiteral("gone") } }, QStringLiteral("My class") );
+		QCOMPARE( broken.currentClass(), QStringLiteral("My class") );
+	}
 };
 
 QTEST_GUILESS_MAIN(RewardsTest)

@@ -22,14 +22,17 @@
  *
  */
 
+#include <QComboBox>
 #include <QDate>
 #include <QFile>
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QHeaderView>
+#include <QInputDialog>
 #include <QLabel>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QTableWidget>
 #include <QTextStream>
 #include <QVBoxLayout>
@@ -41,6 +44,8 @@
 
 RewardsWindow::RewardsWindow( QWidget* parent ) :
 	QWidget( parent ),
+	m_classComboBox( new QComboBox( this ) ),
+	m_removeClassButton( new QPushButton( tr( "Delete class" ), this ) ),
 	m_table( new QTableWidget( 0, 2, this ) ),
 	m_summary( new QLabel( this ) )
 {
@@ -65,7 +70,18 @@ RewardsWindow::RewardsWindow( QWidget* parent ) :
 	buttons->addStretch( 1 );
 	buttons->addWidget( exportButton );
 
+	auto addClassButton = new QPushButton( tr( "New class" ), this );
+	m_classComboBox->setSizeAdjustPolicy( QComboBox::AdjustToContents );
+	m_classComboBox->setToolTip( tr( "Each class has its own stars. Choose the class you are teaching now." ) );
+
+	auto classLayout = new QHBoxLayout;
+	classLayout->addWidget( new QLabel( tr( "Class:" ), this ) );
+	classLayout->addWidget( m_classComboBox, 1 );
+	classLayout->addWidget( addClassButton );
+	classLayout->addWidget( m_removeClassButton );
+
 	auto layout = new QVBoxLayout( this );
+	layout->addLayout( classLayout );
 	layout->addWidget( m_summary );
 	layout->addWidget( m_table, 1 );
 	layout->addLayout( buttons );
@@ -78,12 +94,53 @@ RewardsWindow::RewardsWindow( QWidget* parent ) :
 		}
 	} );
 	connect( resetButton, &QPushButton::clicked, this, [this]() {
-		if( QMessageBox::question( this, windowTitle(), tr( "Remove the stars of all students?" ) ) == QMessageBox::Yes )
+		if( QMessageBox::question( this, windowTitle(), tr( "Remove the stars of all students of this class?" ) ) == QMessageBox::Yes )
 		{
 			Q_EMIT resetRequested();
 		}
 	} );
 	connect( exportButton, &QPushButton::clicked, this, &RewardsWindow::exportCsv );
+	connect( addClassButton, &QPushButton::clicked, this, &RewardsWindow::addClass );
+	connect( m_classComboBox, QOverload<int>::of( &QComboBox::activated ), this, [this]( int index ) {
+		Q_EMIT classSelected( m_classComboBox->itemText( index ) );
+	} );
+	connect( m_removeClassButton, &QPushButton::clicked, this, [this]() {
+		if( QMessageBox::question( this, windowTitle(),
+								   tr( "Delete the class %1 and its stars?" ).arg( QStringLiteral("\u2068%1\u2069").arg( m_className ) ) )
+			== QMessageBox::Yes )
+		{
+			Q_EMIT removeClassRequested( m_className );
+		}
+	} );
+}
+
+
+
+void RewardsWindow::setClasses( const RewardClasses& classes )
+{
+	const QSignalBlocker blocker( m_classComboBox );
+	m_classComboBox->clear();
+	m_classComboBox->addItems( classes.classes() );
+	m_classComboBox->setCurrentText( classes.currentClass() );
+	m_removeClassButton->setEnabled( m_classComboBox->count() > 1 );
+
+	if( m_className != classes.currentClass() )
+	{
+		m_table->setCurrentCell( -1, -1 );
+	}
+	m_className = classes.currentClass();
+	setBook( classes.book() );
+}
+
+
+
+void RewardsWindow::addClass()
+{
+	const auto name = QInputDialog::getText( this, tr( "New class" ), tr( "Name of the class, e.g. 2AS1:" ) ).simplified();
+	if( name.isEmpty() == false )
+	{
+		Q_EMIT classSelected( name );
+	}
 }
 
 
@@ -122,8 +179,11 @@ void RewardsWindow::setBook( const RewardBook& book )
 
 void RewardsWindow::exportCsv()
 {
+	auto safeClassName = m_className;
+	safeClassName.replace( QRegularExpression( QStringLiteral("[\\\\/:*?\"<>|]") ), QStringLiteral("-") );
+
 	const auto fileName = QFileDialog::getSaveFileName( this, tr( "Export stars" ),
-														tr( "stars-%1.csv" ).arg( QDate::currentDate().toString( Qt::ISODate ) ),
+														tr( "stars-%1-%2.csv" ).arg( safeClassName, QDate::currentDate().toString( Qt::ISODate ) ),
 														tr( "CSV files (*.csv)" ) );
 	if( fileName.isEmpty() )
 	{

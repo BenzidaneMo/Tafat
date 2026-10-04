@@ -28,7 +28,9 @@
 
 #include "RewardBook.h"
 
+class QComboBox;
 class QLabel;
+class QPushButton;
 class QTableWidget;
 
 class RewardsWindow : public QWidget
@@ -37,17 +39,25 @@ class RewardsWindow : public QWidget
 public:
 	explicit RewardsWindow( QWidget* parent = nullptr );
 
-	void setBook( const RewardBook& book );
+	void setClasses( const RewardClasses& classes );
 
 Q_SIGNALS:
+	// also sent for a new class
+	void classSelected( const QString& name );
+	void removeClassRequested( const QString& name );
 	void removeStarRequested( const QString& student );
 	void resetRequested();
 
 private:
+	void setBook( const RewardBook& book );
+	void addClass();
 	void exportCsv();
 
+	QComboBox* m_classComboBox;
+	QPushButton* m_removeClassButton;
 	QTableWidget* m_table;
 	QLabel* m_summary;
+	QString m_className;
 	RewardBook m_book;
 
 };
