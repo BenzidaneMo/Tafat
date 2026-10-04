@@ -95,6 +95,9 @@ the blocker is on (it must clean up at service start).
       lower hand, hand in work (several files), "Open handed-in work".
 - [ ] **Return work**: files come back into each student's "Returned work" folder.
 - [ ] **Inventory**: all PCs listed, legacy builds marked.
+- [ ] **Rewards**: "Give a star" on one and on several computers shows the popup on each
+      student screen (also over a full-screen program), "Show stars" lists the names from
+      the register, the stars stay after restarting Tafat Master, CSV opens in Excel.
 
 ## 5. Languages on Windows
 

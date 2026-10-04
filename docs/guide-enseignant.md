@@ -89,6 +89,10 @@ Les bonnes réponses ne sont jamais envoyées aux ordinateurs des élèves.
 - Une main levée apparaît sur la vignette et dans la fenêtre du chat
   (*Ouvrir la fenêtre de chat*). Répondez à un élève ou *Envoyer à tous* ;
   *Baisser la main* quand c'est réglé.
+- **Récompenses** → *Donner une étoile* : chaque élève sélectionné reçoit une
+  étoile et voit « Bravo ! » avec son nombre d'étoiles. *Retirer une étoile*
+  en reprend une. *Afficher les étoiles* montre les étoiles de toute la classe
+  (par nom du registre), avec *Recommencer* et *Exporter (CSV)*.
 
 ## 8. Fichiers
 

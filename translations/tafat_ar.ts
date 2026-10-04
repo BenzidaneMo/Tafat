@@ -1148,6 +1148,115 @@ Now copy the %3 installers into this folder.</source>
     </message>
 </context>
 <context>
+    <name>RewardPopup</name>
+    <message>
+        <source>Well done! Your teacher gave you a star.</source>
+        <translation type="unfinished">أحسنت! منحك أستاذك نجمة.</translation>
+    </message>
+    <message>
+        <source>Your teacher took a star back.</source>
+        <translation type="unfinished">استرجع أستاذك نجمة.</translation>
+    </message>
+    <message>
+        <source>Your stars: %1</source>
+        <translation type="unfinished">نجومك: ⁨%1⁩</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsFeaturePlugin</name>
+    <message>
+        <source>Rewards</source>
+        <translation type="unfinished">المكافآت</translation>
+    </message>
+    <message>
+        <source>Give stars to the selected students, for example for good work. Each student sees the star and the number of stars.</source>
+        <translation type="unfinished">امنح نجومًا للتلاميذ المحددين، مثلًا مقابل عمل جيد. يرى كل تلميذ النجمة وعدد نجومه.</translation>
+    </message>
+    <message>
+        <source>Give a star</source>
+        <translation type="unfinished">امنح نجمة</translation>
+    </message>
+    <message>
+        <source>Give one star to each selected student.</source>
+        <translation type="unfinished">امنح نجمة واحدة لكل تلميذ محدد.</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">اسحب نجمة</translation>
+    </message>
+    <message>
+        <source>Take one star back from each selected student.</source>
+        <translation type="unfinished">اسحب نجمة واحدة من كل تلميذ محدد.</translation>
+    </message>
+    <message>
+        <source>Show stars</source>
+        <translation type="unfinished">عرض النجوم</translation>
+    </message>
+    <message>
+        <source>Show the stars of all students and export them.</source>
+        <translation type="unfinished">عرض نجوم كل التلاميذ وتصديرها.</translation>
+    </message>
+    <message>
+        <source>Give stars to the students</source>
+        <translation type="unfinished">منح النجوم للتلاميذ</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">المساهمون في %1</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsWindow</name>
+    <message>
+        <source>Stars</source>
+        <translation type="unfinished">النجوم</translation>
+    </message>
+    <message>
+        <source>Student</source>
+        <translation type="unfinished">التلميذ</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">اسحب نجمة</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation type="unfinished">البدء من جديد</translation>
+    </message>
+    <message>
+        <source>Export (CSV)</source>
+        <translation type="unfinished">تصدير (CSV)</translation>
+    </message>
+    <message>
+        <source>Remove the stars of all students?</source>
+        <translation type="unfinished">حذف نجوم كل التلاميذ؟</translation>
+    </message>
+    <message>
+        <source>No stars yet. Select computers and click &quot;Give a star&quot;.</source>
+        <translation type="unfinished">لا توجد نجوم بعد. حدد الحواسيب وانقر على «امنح نجمة».</translation>
+    </message>
+    <message>
+        <source>Stars given: %1</source>
+        <translation type="unfinished">النجوم الممنوحة: ⁨%1⁩</translation>
+    </message>
+    <message>
+        <source>Export stars</source>
+        <translation type="unfinished">تصدير النجوم</translation>
+    </message>
+    <message>
+        <source>stars-%1.csv</source>
+        <translation type="unfinished">stars-%1.csv</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished">ملفات CSV (*.csv)</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">تعذرت الكتابة في %1.</translation>
+    </message>
+</context>
+<context>
     <name>RunningAppsWindow</name>
     <message>
         <source>Close on this computer</source>

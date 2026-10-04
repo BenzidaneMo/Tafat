@@ -86,6 +86,10 @@ Tiririyin yeṣeḥḥan ur ttwaznent ara ɣer yiselkimen n yinelmaden.
 - Afus yettwarefden ad d-iban ɣef tegnit d usfaylu n udiwenni (*Ldi asfaylu n
   udiwenni*). Err i yiwen unelmad neɣ *Azen i yal yiwen*; *Sers afus* mi
   yefra.
+- **Arrazen** → *Efk itri*: yal anelmad yettwafernen ad yaf itri, ad iwali
+  "Ayuz!" d umḍan n yitran-is. *Kkes itri* yekkes yiwen. *Sken itran* yesskan
+  itran n tneɣrit meṛṛa (s yismawen n tilin), s *Ales seg tazwara* d
+  *Sifeḍ (CSV)*.
 
 ## 8. Ifuyla
 

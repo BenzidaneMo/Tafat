@@ -48,6 +48,8 @@ Added by Tafat:
     student computer, no commands), and **Add computers** searches the network
     for them
   * Return work: give each student back their own corrected files
+  * Rewards: give students stars for good work; each student sees a small "Well
+    done!" message, and the teacher sees and exports the stars of the class
 
 More is planned, see the [roadmap](docs/ROADMAP.md). Installing in a lab:
 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), or the French/English/Arabic page

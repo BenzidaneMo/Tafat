@@ -1140,6 +1140,115 @@ Copiez maintenant les programmes d&apos;installation de %3 dans ce dossier.</tra
     </message>
 </context>
 <context>
+    <name>RewardPopup</name>
+    <message>
+        <source>Well done! Your teacher gave you a star.</source>
+        <translation type="unfinished">Bravo ! Ton enseignant t&apos;a donné une étoile.</translation>
+    </message>
+    <message>
+        <source>Your teacher took a star back.</source>
+        <translation type="unfinished">Ton enseignant t&apos;a retiré une étoile.</translation>
+    </message>
+    <message>
+        <source>Your stars: %1</source>
+        <translation type="unfinished">Tes étoiles : %1</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsFeaturePlugin</name>
+    <message>
+        <source>Rewards</source>
+        <translation type="unfinished">Récompenses</translation>
+    </message>
+    <message>
+        <source>Give stars to the selected students, for example for good work. Each student sees the star and the number of stars.</source>
+        <translation type="unfinished">Donner des étoiles aux élèves sélectionnés, par exemple pour un bon travail. Chaque élève voit l&apos;étoile et son nombre d&apos;étoiles.</translation>
+    </message>
+    <message>
+        <source>Give a star</source>
+        <translation type="unfinished">Donner une étoile</translation>
+    </message>
+    <message>
+        <source>Give one star to each selected student.</source>
+        <translation type="unfinished">Donner une étoile à chaque élève sélectionné.</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">Retirer une étoile</translation>
+    </message>
+    <message>
+        <source>Take one star back from each selected student.</source>
+        <translation type="unfinished">Retirer une étoile à chaque élève sélectionné.</translation>
+    </message>
+    <message>
+        <source>Show stars</source>
+        <translation type="unfinished">Afficher les étoiles</translation>
+    </message>
+    <message>
+        <source>Show the stars of all students and export them.</source>
+        <translation type="unfinished">Afficher les étoiles de tous les élèves et les exporter.</translation>
+    </message>
+    <message>
+        <source>Give stars to the students</source>
+        <translation type="unfinished">Donner des étoiles aux élèves</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">Contributeurs de %1</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsWindow</name>
+    <message>
+        <source>Stars</source>
+        <translation type="unfinished">Étoiles</translation>
+    </message>
+    <message>
+        <source>Student</source>
+        <translation type="unfinished">Élève</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">Retirer une étoile</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation type="unfinished">Recommencer</translation>
+    </message>
+    <message>
+        <source>Export (CSV)</source>
+        <translation type="unfinished">Exporter (CSV)</translation>
+    </message>
+    <message>
+        <source>Remove the stars of all students?</source>
+        <translation type="unfinished">Supprimer les étoiles de tous les élèves ?</translation>
+    </message>
+    <message>
+        <source>No stars yet. Select computers and click &quot;Give a star&quot;.</source>
+        <translation type="unfinished">Pas encore d&apos;étoiles. Sélectionnez des ordinateurs et cliquez sur « Donner une étoile ».</translation>
+    </message>
+    <message>
+        <source>Stars given: %1</source>
+        <translation type="unfinished">Étoiles données : %1</translation>
+    </message>
+    <message>
+        <source>Export stars</source>
+        <translation type="unfinished">Exporter les étoiles</translation>
+    </message>
+    <message>
+        <source>stars-%1.csv</source>
+        <translation type="unfinished">etoiles-%1.csv</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished">Fichiers CSV (*.csv)</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Impossible d&apos;écrire %1.</translation>
+    </message>
+</context>
+<context>
     <name>RunningAppsWindow</name>
     <message>
         <source>Close on this computer</source>

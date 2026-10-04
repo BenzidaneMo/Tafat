@@ -171,8 +171,8 @@ interfaces in `plugins/platform/{windows,linux}`.
 
 ### 3.4 Then (rough order)
 Hand-raise/help requests + two-way chat → whiteboard/annotation during demo → screen
-recording & replay → audio mute/broadcast → lesson plans & reward points → hardware/software
-inventory → teacher mobile app (Android build already in `android/`).
+recording & replay → audio mute/broadcast → lesson plans & reward points (stars done) → hardware/software
+inventory (done) → teacher mobile app (Android build already in `android/`).
 
 ## Phase 4 — Packaging & deployment for schools
 - Rebranded Windows installer (NSIS) with silent install flags for mass deployment, plus a
@@ -221,7 +221,7 @@ inventory → teacher mobile app (Android build already in `android/`).
   "Block websites" with optional internet block for all programs (`plugins/webcontrol`),
   "Quiz" with polls and result bars (`plugins/quiz`), "Register" with class list import
   and absent students (`plugins/register`), "Hands and chat" (`plugins/classchat`), "Return work" (`plugins/returnwork`),
-  "Inventory" (`plugins/inventory`), lab setup like NetSupport (`plugins/labsetup`: install on
+  "Inventory" (`plugins/inventory`), "Rewards" with stars per student (`plugins/rewards`), lab setup like NetSupport (`plugins/labsetup`: install on
   the teacher PC only, USB student installer, "Add computers" network search, "Settings");
   collected files are grouped by student name and computer.
 - Phase 4 started: `docs/DEPLOYMENT.md` and `docs/install.html` (teacher-only install, student

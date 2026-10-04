@@ -1138,6 +1138,115 @@ Tura nɣel ihilen n usebded n %3 ɣer ukaram-a.</translation>
     </message>
 </context>
 <context>
+    <name>RewardPopup</name>
+    <message>
+        <source>Well done! Your teacher gave you a star.</source>
+        <translation type="unfinished">Ayuz! Aselmad-ik yefka-yak-d itri.</translation>
+    </message>
+    <message>
+        <source>Your teacher took a star back.</source>
+        <translation type="unfinished">Aselmad-ik yekkes-ak yiwen n yitri.</translation>
+    </message>
+    <message>
+        <source>Your stars: %1</source>
+        <translation type="unfinished">Itran-ik: %1</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsFeaturePlugin</name>
+    <message>
+        <source>Rewards</source>
+        <translation type="unfinished">Arrazen</translation>
+    </message>
+    <message>
+        <source>Give stars to the selected students, for example for good work. Each student sees the star and the number of stars.</source>
+        <translation type="unfinished">Efk itran i yinelmaden yettwafernen, amedya ɣef leqdic yelhan. Yal anelmad ad iwali itri d umḍan n yitran-is.</translation>
+    </message>
+    <message>
+        <source>Give a star</source>
+        <translation type="unfinished">Efk itri</translation>
+    </message>
+    <message>
+        <source>Give one star to each selected student.</source>
+        <translation type="unfinished">Efk yiwen n yitri i yal anelmad yettwafernen.</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">Kkes itri</translation>
+    </message>
+    <message>
+        <source>Take one star back from each selected student.</source>
+        <translation type="unfinished">Kkes yiwen n yitri i yal anelmad yettwafernen.</translation>
+    </message>
+    <message>
+        <source>Show stars</source>
+        <translation type="unfinished">Sken itran</translation>
+    </message>
+    <message>
+        <source>Show the stars of all students and export them.</source>
+        <translation type="unfinished">Sken itran n yinelmaden meṛṛa syin sifeḍ-iten.</translation>
+    </message>
+    <message>
+        <source>Give stars to the students</source>
+        <translation type="unfinished">Efk itran i yinelmaden</translation>
+    </message>
+    <message>
+        <source>%1 contributors</source>
+        <translation type="unfinished">Imttekkiyen n %1</translation>
+    </message>
+</context>
+<context>
+    <name>RewardsWindow</name>
+    <message>
+        <source>Stars</source>
+        <translation type="unfinished">Itran</translation>
+    </message>
+    <message>
+        <source>Student</source>
+        <translation type="unfinished">Anelmad</translation>
+    </message>
+    <message>
+        <source>Remove a star</source>
+        <translation type="unfinished">Kkes itri</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation type="unfinished">Ales seg tazwara</translation>
+    </message>
+    <message>
+        <source>Export (CSV)</source>
+        <translation type="unfinished">Sifeḍ (CSV)</translation>
+    </message>
+    <message>
+        <source>Remove the stars of all students?</source>
+        <translation type="unfinished">Ad tekkseḍ itran n yinelmaden meṛṛa?</translation>
+    </message>
+    <message>
+        <source>No stars yet. Select computers and click &quot;Give a star&quot;.</source>
+        <translation type="unfinished">Ulac itran ar tura. Fren iselkimen syin sit ɣef &quot;Efk itri&quot;.</translation>
+    </message>
+    <message>
+        <source>Stars given: %1</source>
+        <translation type="unfinished">Itran yettunefken: %1</translation>
+    </message>
+    <message>
+        <source>Export stars</source>
+        <translation type="unfinished">Sifeḍ itran</translation>
+    </message>
+    <message>
+        <source>stars-%1.csv</source>
+        <translation type="unfinished">itran-%1.csv</translation>
+    </message>
+    <message>
+        <source>CSV files (*.csv)</source>
+        <translation type="unfinished">Ifuyla CSV (*.csv)</translation>
+    </message>
+    <message>
+        <source>Could not write %1.</source>
+        <translation type="unfinished">Ur yezmir ara ad yaru %1.</translation>
+    </message>
+</context>
+<context>
     <name>RunningAppsWindow</name>
     <message>
         <source>Close on this computer</source>
