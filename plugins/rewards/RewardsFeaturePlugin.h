@@ -120,4 +120,7 @@ private:
 	QPointer<RewardsWindow> m_window;
 	QPointer<RewardPopup> m_popup;
 
+	// server side
+	int m_rewardsShown{0};
+
 };

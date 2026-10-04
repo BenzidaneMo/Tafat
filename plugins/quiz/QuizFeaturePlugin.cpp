@@ -24,6 +24,7 @@
 
 #include <QJsonDocument>
 #include <QMessageBox>
+#include <QTimer>
 
 #include "ComputerControlInterface.h"
 #include "FeatureWorkerManager.h"
@@ -40,6 +41,8 @@
 
 
 static const char* AnswersVersionProperty = "quizAnswersVersion";
+// time the worker gets to hand in the final answers before it is stopped
+static constexpr int WorkerStopDelay = 3000;
 
 
 
@@ -254,9 +257,27 @@ bool QuizFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server,
 	}
 	else if( message.command<FeatureCommand>() == FeatureCommand::StopQuiz )
 	{
-		// keep the quiz ID so that the final answers handed in by the worker are still reported
-		QMutexLocker locker( &m_serverMutex );
-		m_serverQuizActive = false;
+		{
+			// keep the quiz ID so that the final answers handed in by the worker are still reported
+			QMutexLocker locker( &m_serverMutex );
+			m_serverQuizActive = false;
+		}
+
+		// the master stops all modes when switching modes: don't start a worker just to stop it
+		auto& workerManager = server.featureWorkerManager();
+		if( workerManager.isWorkerRunning( m_quizFeature.uid() ) )
+		{
+			workerManager.sendMessageToUnmanagedSessionWorker( message );
+			// give the worker the time to hand in the final answers and close its window
+			QTimer::singleShot( WorkerStopDelay, this, [this, &workerManager]() {
+				QMutexLocker locker( &m_serverMutex );
+				if( m_serverQuizActive == false )
+				{
+					workerManager.stopWorker( m_quizFeature.uid() );
+				}
+			} );
+		}
+		return true;
 	}
 	else
 	{

@@ -23,6 +23,7 @@
  */
 
 #include <QSettings>
+#include <QTimer>
 
 #include "ComputerControlInterface.h"
 #include "FeatureWorkerManager.h"
@@ -32,6 +33,11 @@
 #include "RewardsWindow.h"
 #include "VeyonMasterInterface.h"
 #include "VeyonServerInterface.h"
+
+
+// time after the popup disappeared until the worker is stopped
+static constexpr int WorkerStopMargin = 2000;
+
 
 
 RewardsFeaturePlugin::RewardsFeaturePlugin( QObject* parent ) :
@@ -146,7 +152,18 @@ bool RewardsFeaturePlugin::handleFeatureMessage( VeyonServerInterface& server, c
 
 	if( message.featureUid() == m_rewardsFeature.uid() )
 	{
-		server.featureWorkerManager().sendMessageToUnmanagedSessionWorker( message );
+		auto& workerManager = server.featureWorkerManager();
+		workerManager.sendMessageToUnmanagedSessionWorker( message );
+
+		// stop the worker once the last popup has disappeared, so that the computer
+		// does not keep reporting the feature as active
+		const auto shown = ++m_rewardsShown;
+		QTimer::singleShot( RewardPopup::DisplayTimeMs + WorkerStopMargin, this, [this, &workerManager, shown]() {
+			if( shown == m_rewardsShown )
+			{
+				workerManager.stopWorker( m_rewardsFeature.uid() );
+			}
+		} );
 		return true;
 	}
 
