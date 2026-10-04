@@ -112,6 +112,8 @@ void MainToolBar::contextMenuEvent( QContextMenuEvent* event )
 	iconModeAction->setCheckable( true );
 	iconModeAction->setChecked( m_mainWindow->masterCore().userConfig().toolButtonIconOnlyMode() );
 
+	menu.addAction( tr( "Hide the toolbar" ), m_mainWindow, [this]() { m_mainWindow->setToolBarHidden( true ); } );
+
 	menu.exec( event->globalPos() );
 }
 

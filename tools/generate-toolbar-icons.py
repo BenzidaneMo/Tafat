@@ -157,6 +157,15 @@ small('button-user-group', 'Users and groups',
 	lambda c, a: person(46, 36, 15, c, 56) + person(86, 44, 12, c, 44) +
 	             '  <circle cx="98" cy="98" r="22" fill="%s"/><path d="M98 86 v24 M86 98 h24" stroke="#fffdf9" stroke-width="8" stroke-linecap="round"/>\n' % a)
 
+def toolbar_toggle(c, a, up):
+	# the teacher's toolbar (a bar of three buttons) above a chevron pointing where it goes
+	chevron = 'M40 104 l24 -20 l24 20' if up else 'M40 84 l24 20 l24 -20'
+	return ('  <rect x="10" y="14" width="108" height="44" rx="10" fill="none" stroke="%s" stroke-width="10"/>\n' % c +
+	        ''.join('  <rect x="%d" y="28" width="16" height="16" rx="4" fill="%s"/>\n' % (x, c) for x in (28, 56, 84)) +
+	        '  <path d="%s" fill="none" stroke="%s" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>\n' % (chevron, a))
+small('button-toolbar-hide', 'Hide the toolbar', lambda c, a: toolbar_toggle(c, a, True))
+small('button-toolbar-show', 'Show the toolbar', lambda c, a: toolbar_toggle(c, a, False))
+
 # ---------------------------------------------------------------- configurator pages
 svg('page-general', 'Configurator page: general settings',
 	''.join('  <path d="M18 %d h92" stroke="%s" stroke-width="%d" stroke-linecap="round"/>\n  <path d="M18 %d h92" stroke="%s" stroke-width="%d" stroke-linecap="round"/>\n'

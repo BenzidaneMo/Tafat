@@ -59,7 +59,8 @@ MainWindow::MainWindow( VeyonMaster &masterCore, QWidget* parent ) :
 	QMainWindow( parent ),
 	ui( new Ui::MainWindow ),
 	m_master( masterCore ),
-	m_modeGroup( new QButtonGroup( this ) )
+	m_modeGroup( new QButtonGroup( this ) ),
+	m_toolBarToggleButton( new QToolButton( this ) )
 {
 	ui->setupUi( this );
 
@@ -83,6 +84,7 @@ MainWindow::MainWindow( VeyonMaster &masterCore, QWidget* parent ) :
 	ui->statusBar->addWidget( ui->alignComputersButton );
 	ui->statusBar->addWidget( ui->spacerLabel4 );
 	ui->statusBar->addWidget( ui->aboutButton );
+	ui->statusBar->addWidget( m_toolBarToggleButton );
 
 	// create all views
 	auto mainSplitter = new QSplitter( Qt::Horizontal, ui->centralWidget );
@@ -275,6 +277,13 @@ MainWindow::MainWindow( VeyonMaster &masterCore, QWidget* parent ) :
 
 	addFeaturesToToolBar();
 	reloadSubFeatures();
+
+	m_toolBarToggleButton->setAutoRaise( true );
+	m_toolBarToggleButton->setIconSize( QSize( 20, 20 ) );
+	connect( m_toolBarToggleButton, &QToolButton::clicked, this, [this]() {
+		setToolBarHidden( ui->toolBar->isHidden() == false );
+	} );
+	setToolBarHidden( m_master.userConfig().toolBarHidden() );
 
 	const auto monitoringModeButton = m_modeGroup->button(int(qHash(VeyonCore::builtinFeatures().monitoringMode().feature().uid()))); // clazy:exclude=qt6-qhash-signature
 	if (monitoringModeButton)
@@ -554,6 +563,19 @@ void MainWindow::addSubFeaturesToToolButton( QToolButton* button, const Feature&
 
 	button->setMenu( menu );
 	button->setPopupMode( ToolButton::InstantPopup );
+}
+
+
+
+void MainWindow::setToolBarHidden( bool hidden )
+{
+	ui->toolBar->setHidden( hidden );
+	m_master.userConfig().setToolBarHidden( hidden );
+
+	const auto darkSuffix = VeyonCore::useDarkMode() ? QStringLiteral("-dark") : QString();
+	m_toolBarToggleButton->setIcon( QIcon( QStringLiteral(":/master/toolbar-%1%2.png")
+										   .arg( hidden ? QStringLiteral("show") : QStringLiteral("hide"), darkSuffix ) ) );
+	m_toolBarToggleButton->setToolTip( hidden ? tr( "Show the toolbar" ) : tr( "Hide the toolbar" ) );
 }
 
 
