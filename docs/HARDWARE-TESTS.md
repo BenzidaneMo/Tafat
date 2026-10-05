@@ -1,6 +1,11 @@
 # Tafat – tests on real Windows PCs
 
-Nothing has run on a real Windows machine yet. Work through the sections **in order**
+**Done so far:** v1.0.6 on Windows 11 (64-bit modern installer), 2026-10-05, owner's report with
+screenshots, master and student on the *same* PC: screen view, lock, remote control, the
+*Start application* dialog, and a True/False quiz (sent, answered, submitted, results shown) worked.
+Everything else below, and every other Windows version, is still untested.
+
+Work through the sections **in order**
 on each PC and tick the boxes in a copy of this file (one copy per PC). Write down
 anything that fails with the Windows version, the installer file name and, if
 possible, the log files `Tafat*.log` from `C:\Windows\Temp\` (service, server) and
@@ -54,8 +59,9 @@ Chrome ≤ 109 or Firefox ESR 115 (newer browsers don't run there).
 
 ## 2. Basic functions (upstream Veyon)
 
-- [ ] Teacher sees the student screens (thumbnails update).
-- [ ] Lock / unlock screens.
+- [x] Teacher sees the student screens (thumbnails update). *(Win 11, v1.0.6, same PC)*
+- [x] Lock / unlock screens. *(Win 11, v1.0.6, same PC)*
+- [x] Remote control of a student PC. *(Win 11, v1.0.6, same PC)*
 - [ ] Demo: full screen and window, teacher screen to students.
 - [ ] File transfer: send a file to students; collect files from students.
 
@@ -87,7 +93,8 @@ the blocker is on (it must clean up at service start).
 
 - [ ] **Running apps**: list per computer, refreshes, "close" works on one and on all
       computers; history shows "since …" and closed apps in grey.
-- [ ] **Quiz**: create (single, multiple, text), launch, students answer, countdown
+- [ ] **Quiz** *(Win 11, v1.0.6: True/False launch, answer, submit and results OK; countdown, CSV and
+      the other question types not checked)*: create (single, multiple, text), launch, students answer, countdown
       auto-submits, live results and bars, CSV opens correctly in Excel (Arabic text).
 - [ ] **Register + class list**: import a CSV class list (with Arabic names), students
       register, tiles show their names, absent students in red, CSV export.
