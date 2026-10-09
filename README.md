@@ -1,4 +1,8 @@
-<p align="center"><img src="artwork/tafat-splash.svg" alt="Tafat logo" width="600"></p>
+<p align="center">
+ <a href="https://youtube.com/shorts/difagqgO8VA?feature=share" target="_blank">
+  <img src="artwork/tafat-splash.svg" alt="Tafat logo" width="600">
+ </a>
+</p>
 
 # Tafat — ⵜⴰⴼⴰⵜ — تافات
 
