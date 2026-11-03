@@ -137,7 +137,7 @@ private:
 	bool m_masterModeCancelled{false};
 	QVariantMap m_masterStartArguments;
 	QPointer<RunningAppsWindow> m_runningAppsWindow;
-	QMap<QString, QWeakPointer<ComputerControlInterface>> m_runningAppsComputers;
+	QMap<QString, QPointer<ComputerControlInterface>> m_runningAppsComputers;
 
 	// server side
 	QTimer m_enforcementTimer;

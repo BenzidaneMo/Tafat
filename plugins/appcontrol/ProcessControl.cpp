@@ -215,7 +215,7 @@ QList<ProcessControl::Process> ProcessControl::sessionProcesses()
 	{
 		bool isProcess = false;
 		const auto processId = entry.toUInt( &isProcess );
-		const auto processPath = QStringLiteral("/proc/") + entry;
+		const QString processPath = QStringLiteral("/proc/") + entry;
 
 		// /proc/<pid> is owned by the effective user of the process
 		if( isProcess == false || QFileInfo( processPath ).ownerId() != userId )

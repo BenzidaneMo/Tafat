@@ -173,6 +173,16 @@ Traps found so far:
   namespace (`ip netns`, veth 10.77.0.1/2); 127.0.0.1 and own addresses count as the teacher's
   computer and are skipped by blockers and quizzes. The build tree needs a `tafat-worker`
   symlink next to `tafat-server`, and the server needs `USER` set when there is no logind session.
+  Without logind the server has no user session, so session features (lock, user names, Running
+  apps history) stay off. To test them, run a private system D-Bus with a small fake
+  `org.freedesktop.login1` (Session `Class` "user", `User` → `Name`), set
+  `VEYON_SESSION_PATH=/org/freedesktop/login1/session/<id>` per server, and start Xvfb with
+  `-noreset` (otherwise the root window is reset when its last client disconnects).
+- `QT_USE_QSTRINGBUILDER` is on: never `auto x = a + b` with strings. It keeps a builder that
+  refers to temporaries, which are already destroyed on the next line. Write `const QString x = …`.
+- On the master, `handleFeatureMessage` gets `ComputerControlInterface::weakPointer()`: a
+  QSharedPointer with a no-op deleter. Never keep a `QWeakPointer` from it (it expires at once).
+  Store `QPointer<ComputerControlInterface>` and send with `->weakPointer()`.
 
 ## 6. What is done
 
@@ -439,12 +449,17 @@ Traps found so far:
 Releases so far: v1.0.0 (first), v1.0.1 (teacher-only setup, student installer, Add computers),
 v1.0.2 (service kept on upgrade), v1.0.3 (Tafat-style toolbar icons, Contributors), v1.0.4 (Rewards
 with stars per class, quiz True/False, fixes for cancelled and enforced modes and leftover workers,
-smaller student toolbar; the hideable teacher toolbar came after this tag). The `release`
+smaller student toolbar; the hideable teacher toolbar came after this tag), v1.0.5 (hideable
+teacher toolbar), v1.0.6 (fix for a memory error that crashed Linux student servers and for teacher
+chat replies, Running apps and Inventory refresh that silently did nothing). The `release`
 job only runs after all four builds; until then a fresh release shows just the source archives.
 
 First real Windows test (owner's PC, Windows 11, 2026-10-03): installing works, the master
 shows the new buttons; upgrading 1.0.0 → 1.0.1 without a reboot lost the service (fixed in v1.0.2,
-see §6 labsetup "Service upgrade").
+see §6 labsetup "Service upgrade"). Second test (v1.0.6, Windows 11, 2026-10-05, master and student on
+the same PC): screen view, lock, remote control, Start application and a True/False quiz with results
+worked. Not yet tested on real hardware: the blockers, register, hands and chat, rewards, inventory,
+Running apps, upgrades, a separate teacher and student PC, and Windows 7, 8.1 and 10.
 
 The legacy jobs also run `tools/check-windows7-imports.sh` on the packaged files:
 it prints `::warning::` lines for EXE/DLL files that import Windows 8+ DLLs or
@@ -452,7 +467,7 @@ functions (they would not load on Windows 7) and **fails the job**. It passes si
 run 29 (`dd72b231`): Fedora's MinGW OpenSSL 3.2 imported
 `api-ms-win-core-path-l1-1-0.dll`, so `fedora-deps.sh` now builds the OpenSSL 3.5
 LTS libraries for the legacy builds and replaces Fedora's `libcrypto-3.dll` /
-`libssl-3.dll` with them (same ABI). Nothing has been run on a real Windows PC yet.
+`libssl-3.dll` with them (same ABI). Only Windows 11 has been tried on a real PC so far.
 
 ## 8. Unfinished work (in order)
 

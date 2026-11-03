@@ -110,7 +110,7 @@ std::optional<HandInAssembler::File> HandInAssembler::add( const QString& source
 		return std::nullopt;
 	}
 
-	const auto key = source + QLatin1Char('/') + chunk.fileId.toString();
+	const QString key = source + QLatin1Char('/') + chunk.fileId.toString();
 	auto& partial = m_partial[key];
 	if( partial.count == 0 )
 	{

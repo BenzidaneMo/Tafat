@@ -145,10 +145,10 @@ bool AppControlFeaturePlugin::startFeature( VeyonMasterInterface& master, const 
 			} );
 			connect( m_runningAppsWindow, &RunningAppsWindow::closeRequested, this,
 					 [this]( const QString& key, const QString& application ) {
-				if( const auto computer = m_runningAppsComputers.value( key ).toStrongRef() )
+				if( const auto computer = m_runningAppsComputers.value( key ) )
 				{
 					controlFeature( m_runningAppsFeature.uid(), Operation::Start,
-									{ { argToString( Argument::Applications ), QStringList{ application } } }, { computer } );
+									{ { argToString( Argument::Applications ), QStringList{ application } } }, { computer->weakPointer() } );
 				}
 			} );
 			connect( m_runningAppsWindow, &RunningAppsWindow::closeEverywhereRequested, this,
@@ -237,7 +237,7 @@ void AppControlFeaturePlugin::addRunningAppsComputer( const ComputerControlInter
 		return;
 	}
 
-	m_runningAppsComputers[key] = computerControlInterface.toWeakRef();
+	m_runningAppsComputers[key] = computerControlInterface.data();
 
 	const auto user = computerControlInterface->userFullName().isEmpty() ? computerControlInterface->userLoginName()
 																		  : computerControlInterface->userFullName();
@@ -251,11 +251,11 @@ void AppControlFeaturePlugin::addRunningAppsComputer( const ComputerControlInter
 ComputerControlInterfaceList AppControlFeaturePlugin::runningAppsComputers() const
 {
 	ComputerControlInterfaceList computers;
-	for( const auto& weakComputer : m_runningAppsComputers )
+	for( const auto& computer : m_runningAppsComputers )
 	{
-		if( const auto computer = weakComputer.toStrongRef() )
+		if( computer )
 		{
-			computers.append( computer );
+			computers.append( computer->weakPointer() );
 		}
 	}
 	return computers;

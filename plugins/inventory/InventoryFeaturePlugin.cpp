@@ -138,7 +138,7 @@ void InventoryFeaturePlugin::addComputer( const ComputerControlInterface::Pointe
 		return;
 	}
 
-	m_computers[key] = computerControlInterface.toWeakRef();
+	m_computers[key] = computerControlInterface.data();
 
 	const auto user = computerControlInterface->userFullName().isEmpty() ? computerControlInterface->userLoginName()
 																		  : computerControlInterface->userFullName();
@@ -150,11 +150,11 @@ void InventoryFeaturePlugin::addComputer( const ComputerControlInterface::Pointe
 ComputerControlInterfaceList InventoryFeaturePlugin::computers() const
 {
 	ComputerControlInterfaceList computers;
-	for( const auto& weakComputer : m_computers )
+	for( const auto& computer : m_computers )
 	{
-		if( const auto computer = weakComputer.toStrongRef() )
+		if( computer )
 		{
-			computers.append( computer );
+			computers.append( computer->weakPointer() );
 		}
 	}
 	return computers;

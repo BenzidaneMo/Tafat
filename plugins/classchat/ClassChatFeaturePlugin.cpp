@@ -555,7 +555,7 @@ void ClassChatFeaturePlugin::addComputer( const ComputerControlInterface::Pointe
 		return;
 	}
 
-	m_computers[key] = computerControlInterface.toWeakRef();
+	m_computers[key] = computerControlInterface.data();
 	m_chatWindow->addComputer( key, computerControlInterface->computerName(),
 							   computerControlInterface->userFullName().isEmpty() ? computerControlInterface->userLoginName()
 																				   : computerControlInterface->userFullName() );
@@ -568,9 +568,9 @@ ComputerControlInterfaceList ClassChatFeaturePlugin::computersForKeys( const QSt
 	ComputerControlInterfaceList computers;
 	for( const auto& key : keys )
 	{
-		if( const auto controlInterface = m_computers.value( key ).toStrongRef() )
+		if( const auto controlInterface = m_computers.value( key ) )
 		{
-			computers.append( controlInterface );
+			computers.append( controlInterface->weakPointer() );
 		}
 	}
 	return computers;
