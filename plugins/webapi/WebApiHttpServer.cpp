@@ -40,6 +40,7 @@
 #include "WebApiConfiguration.h"
 #include "WebApiController.h"
 #include "VeyonCore.h"
+#include "veyonconfig.h"
 
 static inline QByteArray toJson(const QVariant& data)
 {
@@ -450,10 +451,10 @@ QString WebApiHttpServer::getDebugInformation()
 						  "<html lang=\"en-US\">\n"
 						  "<head>\n"
 						  "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n"
-						  "<title>Veyon WebAPI Debug Information</title>\n"
+						  "<title>" VEYON_PRODUCT_NAME " WebAPI Debug Information</title>\n"
 						  "</head>\n"
 						  "<body>\n"
-						  "<h1>Veyon WebAPI Debug Information</h1>\n"
+						  "<h1>" VEYON_PRODUCT_NAME " WebAPI Debug Information</h1>\n"
 						  "<h2>System</h2>\n"
 						  "%1\n"
 						  "<h2>Process limits</h2>\n"

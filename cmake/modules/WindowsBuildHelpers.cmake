@@ -15,6 +15,8 @@ function(add_windows_resources TARGET)
 	if (NOT arg_DESCRIPTION)
 		set(arg_DESCRIPTION "Veyon ${arg_NAME}")
 	endif()
+	# the description is what Windows shows in crash dialogs and the task manager
+	string(REPLACE "Veyon" "${BRANDING_PRODUCT_NAME}" arg_DESCRIPTION "${arg_DESCRIPTION}")
 
 	if (arg_CONSOLE)
 		set_target_properties(${TARGET} PROPERTIES LINK_FLAGS -mconsole)
@@ -84,11 +86,14 @@ function(add_windows_resources TARGET)
 
 	string(CONCAT MANIFEST_DATA "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
 		"<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">\n"
-		"	<assemblyIdentity version=\"${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}.${VERSION_BUILD}\" name=\"Veyon.${arg_NAME}\" type=\"win32\"/>\n"
+		"	<assemblyIdentity version=\"${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}.${VERSION_BUILD}\" name=\"${BRANDING_PRODUCT_NAME}.${arg_NAME}\" type=\"win32\"/>\n"
 		"	<description>${arg_DESCRIPTION}</description>\n"
 		"	<compatibility xmlns=\"urn:schemas-microsoft-com:compatibility.v1\">\n"
 		"		<application>\n"
-		"			<supportedOS Id=\"{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}\"/>\n"
+		"			<supportedOS Id=\"{35138b9a-5d96-4fbd-8e2d-a2440225f93a}\"/>\n" # Windows 7
+		"			<supportedOS Id=\"{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}\"/>\n" # Windows 8
+		"			<supportedOS Id=\"{1f676c76-80e1-4239-95bb-83d0f6d0da78}\"/>\n" # Windows 8.1
+		"			<supportedOS Id=\"{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}\"/>\n" # Windows 10/11
 		"		</application>\n"
 		"	</compatibility>\n"
 		"${MANIFEST_TRUSTINFO}"

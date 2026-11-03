@@ -50,6 +50,9 @@ if(PipeWire_FOUND AND Qt${QT_MAJOR_VERSION}DBus_FOUND)
 	# use the branded server app ID in the pre-authorization script
 	file(READ "${CMAKE_CURRENT_SOURCE_DIR}/veyon-preauth-kde.sh" preauth_script)
 	string(REPLACE "io.veyon.veyon-server" "${BRANDING_SERVER_APP_ID}" preauth_script "${preauth_script}")
+	string(REPLACE "Veyon Server" "${BRANDING_PRODUCT_NAME} Server" preauth_script "${preauth_script}")
+	string(REPLACE "Veyon KDE" "${BRANDING_PRODUCT_NAME} KDE" preauth_script "${preauth_script}")
+	string(REPLACE "/usr/share/veyon/veyon-preauth-kde.sh" "${CMAKE_INSTALL_PREFIX}/${VEYON_INSTALL_DATA_DIR}/${BRANDING_PRODUCT_SLUG}-preauth-kde.sh" preauth_script "${preauth_script}")
 	set(preauth_script_file "${CMAKE_CURRENT_BINARY_DIR}/${BRANDING_PRODUCT_SLUG}-preauth-kde.sh")
 	file(WRITE "${preauth_script_file}" "${preauth_script}")
 

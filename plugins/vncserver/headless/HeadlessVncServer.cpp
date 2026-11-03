@@ -31,6 +31,8 @@ extern "C" {
 
 #include <QImage>
 
+#include <veyonconfig.h>
+
 #include "HeadlessVncServer.h"
 #include "VeyonConfiguration.h"
 
@@ -123,7 +125,7 @@ bool HeadlessVncServer::initVncServer( int serverPort, const VncServerPluginInte
 
 	screen->passwords[0] = qstrdup( password.toByteArray().constData() );
 
-	rfbScreen->desktopName = "VeyonVNC";
+	rfbScreen->desktopName = VEYON_PRODUCT_NAME "VNC";
 	rfbScreen->frameBuffer = reinterpret_cast<char *>( screen->framebuffer.bits() );
 	rfbScreen->port = serverPort;
 	rfbScreen->ipv6port = serverPort;

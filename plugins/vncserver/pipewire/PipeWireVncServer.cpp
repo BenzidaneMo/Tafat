@@ -36,6 +36,8 @@
 
 #include <cstring>
 
+#include <veyonconfig.h>
+
 // Initial framebuffer dimensions (used before the first PipeWire frame arrives)
 static constexpr int DefaultWidth  = 1920;
 static constexpr int DefaultHeight = 1080;
@@ -185,7 +187,7 @@ bool PipeWireVncServer::initVncServer(int serverPort, const Password& password)
 	m_vncPasswords[0] = m_vncPassword;
 	m_vncPasswords[1] = nullptr;
 
-	m_rfbScreen->desktopName     = "VeyonVNC";
+	m_rfbScreen->desktopName     = VEYON_PRODUCT_NAME "VNC";
 	m_rfbScreen->frameBuffer     = framebufferData;
 	m_rfbScreen->port            = serverPort;
 	m_rfbScreen->ipv6port        = serverPort;
