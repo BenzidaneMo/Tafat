@@ -42,6 +42,7 @@
 #include "BrandTheme.h"
 #include "BrandingTranslator.h"
 #include "BuiltinFeatures.h"
+#include "CrashLog.h"
 #include "FeatureManager.h"
 #include "Filesystem.h"
 #include "HostAddress.h"
@@ -81,29 +82,46 @@ VeyonCore::VeyonCore( QCoreApplication* application, Component component, const 
 
 	s_instance = this;
 
+	// again, in case the C runtime replaced it after the core library was loaded
+	CrashLog::install();
+
+	CrashLog::setStage( "initPlatformPlugin" );
 	initPlatformPlugin();
 
+	CrashLog::setStage( "initConfiguration" );
 	initConfiguration();
 
+	CrashLog::setStage( "initSession" );
 	initSession();
 
+	CrashLog::setStage( "initLogging" );
 	initLogging( appComponentName );
 
+	CrashLog::setStage( "initLocaleAndTranslation" );
 	initLocaleAndTranslation();
 
+	CrashLog::setStage( "initUi" );
 	initUi();
 
+	CrashLog::setStage( "initCryptoCore" );
 	initCryptoCore();
 
+	CrashLog::setStage( "initAuthenticationCredentials" );
 	initAuthenticationCredentials();
 
+	CrashLog::setStage( "initPlugins" );
 	initPlugins();
 
+	CrashLog::setStage( "initManagers" );
 	initManagers();
 
+	CrashLog::setStage( "initFeatures" );
 	initFeatures();
 
+	CrashLog::setStage( "initSystemInfo" );
 	initSystemInfo();
+
+	CrashLog::setStage( "running" );
 
 	Q_EMIT initialized(); // clazy:exclude=incorrect-emit
 }
@@ -112,6 +130,8 @@ VeyonCore::VeyonCore( QCoreApplication* application, Component component, const 
 
 VeyonCore::~VeyonCore()
 {
+	CrashLog::setStage( "shutting down" );
+
 	vDebug();
 
 	delete m_featureManager;
