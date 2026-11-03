@@ -1,4 +1,8 @@
-# CLAUDE.md — Tafat
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Tafat
 
 Guidance for Claude Code (and humans) working on this repository. Read this first,
 then `docs/ROADMAP.md` (full plan) and `UPSTREAM.md` (merge procedure).
@@ -89,11 +93,15 @@ cmake -S . -B ../tafat-build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
 ninja -C ../tafat-build
 cd ../tafat-build && QT_QPA_PLATFORM=offscreen ctest -LE integration --output-on-failure  # 14 suites
 sudo ctest -L integration --output-on-failure   # server/client test, needs root + Xvfb
+QT_QPA_PLATFORM=offscreen ctest -R QuizTest --output-on-failure   # one suite
+./tests/unit/QuizTest grading                   # one test function (QtTest), run from the build dir
 
 # Qt 5 check: add -DWITH_QT6=OFF (Linux CI builds Debian 11 Qt 5 too)
 tools/check-branding.sh
 ```
 
+- Unit and integration tests build **only on Linux** (`tests/unit/CMakeLists.txt` is guarded by
+  `VEYON_BUILD_LINUX`); on a Windows workstation, use WSL or a Linux container to run them.
 - Test build traps (both broke the Debian 11 `unit-tests` job):
   - LibVNCServer's CMake options share names with ours. The bundled block in the root
     `CMakeLists.txt` saves and restores `WITH_TESTS` around its `set(WITH_TESTS OFF)`.
@@ -364,6 +372,19 @@ Traps found so far:
   the worker shows a `RewardPopup` (bottom right, bottom left in RTL, 6 s). The *Stars* window
   lists all students, removes a star, starts again and exports CSV (UTF-8 BOM).
 - Master splash screen rebranded (`artwork/tafat-splash.svg` → `master/resources/splash.png`).
+- **Bug-report logs** (`docs/DEPLOYMENT.md` §7):
+  - `core/src/CrashLog`: on Windows every program appends a report to `%TEMP%\Tafat-crash.log`
+    (SYSTEM: `C:\Windows\Temp`) on an unhandled exception or `abort()`. It records the program, command line,
+    versions, Windows version, the `VeyonCore` start-up stage (`CrashLog::setStage`), the exception,
+    the faulting `module+offset`, the stack (x64 exact unwind, x86 scan of code addresses) and the modules.
+    It is installed by a static object when `veyon-core.dll` loads and again in the `VeyonCore` constructor,
+    keeps the CRT's filter chained (re-entry guard), uses static buffers only and skips links/junctions.
+    Resolve offsets with `addr2line -e <module> 0x<image base + offset>` on the same CI build.
+  - The installer writes `$INSTDIR\install.log` (Windows version, each `wcli` step with its exit code: `${Cli}` macro).
+    A crashing `service register` stops retrying and names both files.
+- Installer `RegisterService`/`WaitForServiceRemoval` shared the `$1` counter (endless retry loop);
+  `WaitForServiceRemoval` now saves it. Windows EXE/DLL descriptions and manifest names are branded in
+  `WindowsBuildHelpers.cmake`, and the manifests list Windows 7–11.
 - NSIS installer refuses Windows < 10 for Qt 6 builds (points to the legacy
   installer), < 7 for legacy builds, and 64-bit installers on 32-bit Windows
   (`VEYON_INSTALLER_MIN_WINDOWS`, `VEYON_INSTALLER_64BIT` in root `CMakeLists.txt`).
