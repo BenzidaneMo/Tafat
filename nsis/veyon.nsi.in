@@ -162,11 +162,79 @@ Var StudentPackage
 
 ######################################################################
 
+; install.log in the installation folder: what the installer ran and how it ended,
+; to be sent along with a bug report (together with %TEMP%\${APP_NAME}-crash.log)
+!define InstallLog "!insertmacro InstallLog"
+!macro InstallLog MESSAGE
+	Push "${MESSAGE}"
+	Call InstallLog
+!macroend
+
+Function InstallLog
+	Exch $9
+	Push $8
+	CreateDirectory "$INSTDIR"
+	FileOpen $8 "$INSTDIR\install.log" a
+	FileSeek $8 0 END
+	FileWrite $8 "$9$\r$\n"
+	FileClose $8
+	Pop $8
+	Pop $9
+FunctionEnd
+
+; runs @BRANDING_PRODUCT_SLUG@-wcli.exe with the given arguments, logs them and returns the exit code in $0
+!define Cli "!insertmacro Cli"
+!macro Cli ARGUMENTS
+	Push '${ARGUMENTS}'
+	Call RunCli
+!macroend
+
+Function RunCli
+	Exch $9
+	ClearErrors
+	ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" $9' $0
+	${If} ${Errors}
+		StrCpy $0 "not started"
+	${EndIf}
+	${InstallLog} "wcli $9: $0"
+	Pop $9
+FunctionEnd
+
+Function InstallLogHeader
+	Push $R1
+	Push $R2
+	Push $R3
+	Push $R4
+	Push $R8
+	Push $9
+	Push $8
+	${GetTime} "" "L" $R1 $R2 $R3 $R4 $R8 $9 $8
+	${InstallLog} "==== $R3-$R2-$R1 $R8:$9:$8 ${APP_NAME} ${VERSION} (@VEYON_WINDOWS_ARCH@) from $EXEPATH"
+	${WinVerGetMajor} $R1
+	${WinVerGetMinor} $R2
+	${WinVerGetBuild} $R3
+	${WinVerGetServicePackLevel} $R4
+	StrCpy $R8 "32-bit"
+	${If} ${RunningX64}
+		StrCpy $R8 "64-bit"
+	${EndIf}
+	${InstallLog} "Windows $R1.$R2 build $R3 SP$R4 $R8, language $LANGUAGE, student package $StudentPackage"
+	Pop $8
+	Pop $9
+	Pop $R8
+	Pop $R4
+	Pop $R3
+	Pop $R2
+	Pop $R1
+FunctionEnd
+
+######################################################################
+
 Section "${APP_NAME} Service" SEC_SERVICE
 SectionIn RO
 ${INSTALL_TYPE}
-ClearErrors
-ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service unregister' $0
+Call InstallLogHeader
+${Cli} 'service unregister'
 ${If} $0 != 0
   ExecWait '"$INSTDIR\veyon-ctl.exe" service unregister'
 ${EndIf}
@@ -216,8 +284,8 @@ File "tls/qopensslbackend.dll"
 !endif
 # configuration
 Call RegisterService
-ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Network/FirewallExceptionEnabled 1'
-ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config set Windows/SoftwareSASEnabled 1'
+${Cli} 'config set Network/FirewallExceptionEnabled 1'
+${Cli} 'config set Windows/SoftwareSASEnabled 1'
 # disable forced guest logon as otherwise logon authentication fails
 WriteRegDWORD ${REG_ROOT} "SYSTEM\CurrentControlSet\Control\Lsa"  "ForceGuest" "0"
 ${GetParameters} $R0
@@ -228,8 +296,7 @@ StrCpy $R7 ""
 ; a student installer carries the settings and the key of the teacher computer
 ${If} $StudentPackage == 1
   InitPluginsDir
-  ClearErrors
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" labsetup extractpackage "$EXEPATH" "$PLUGINSDIR\student"' $0
+  ${Cli} 'labsetup extractpackage "$EXEPATH" "$PLUGINSDIR\student"'
   ${If} $0 == 0
     StrCpy $R5 "$PLUGINSDIR\student\@BRANDING_PRODUCT_SLUG@-config.json"
     FindFirst $1 $2 "$PLUGINSDIR\student\*_public_key.pem"
@@ -256,8 +323,7 @@ ${If} $R1 != ""
   ${GetOptions} $R0 "/PublicKeyName=" $R7
 ${EndIf}
 ${If} $R5 != ""
-  ClearErrors
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" config import "$R5"' $0
+  ${Cli} 'config import "$R5"'
   ${If} $0 != 0
 	   MessageBox MB_OK|MB_ICONSTOP "Could not apply specified configuration file!" /SD IDOK
   ${EndIf}
@@ -267,15 +333,14 @@ ${If} $R6 != ""
     StrCpy $R7 "teacher"
   ${EndIf}
   ; replace a key of the same name from a previous installation
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys delete "$R7/public"'
-  ClearErrors
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" authkeys import "$R7/public" "$R6"' $0
+  ${Cli} 'authkeys delete "$R7/public"'
+  ${Cli} 'authkeys import "$R7/public" "$R6"'
   ${If} $0 != 0
     MessageBox MB_OK|MB_ICONSTOP "Could not import the public key $R6!" /SD IDOK
     SetErrorLevel 3
   ${EndIf}
 ${EndIf}
-ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service start'
+${Cli} 'service start'
 SectionEnd
 
 Section "${APP_NAME} Master" SEC_MASTER
@@ -288,12 +353,11 @@ ${GetParameters} $R0
 ; and switch to key file authentication, so no settings are needed afterwards
 ${GetOptions} $R0 "/NoTeacherSetup" $R1
 ${If} ${Errors}
-  ClearErrors
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" labsetup setupteacher' $0
+  ${Cli} 'labsetup setupteacher'
   ${If} $0 != 0
     MessageBox MB_OK|MB_ICONEXCLAMATION "$(TEACHER_SETUP_ERROR)" /SD IDOK
   ${EndIf}
-  ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service restart'
+  ${Cli} 'service restart'
 ${EndIf}
 ; keep this installer for "Student installer" in ${APP_NAME} Master
 ${If} $EXEPATH != "$INSTDIR\setup\${INSTALLER_NAME}"
@@ -331,6 +395,8 @@ ${EndIf}
 FunctionEnd
 
 Function WaitForServiceRemoval
+; $1 is the retry counter of RegisterService
+Push $1
 StrCpy $1 0
 ${Do}
 	; sc.exe fails (1060, ERROR_SERVICE_DOES_NOT_EXIST) once the service is gone
@@ -342,15 +408,23 @@ ${Do}
 	Sleep 500
 	IntOp $1 $1 + 1
 ${LoopUntil} $1 >= 60
+Pop $1
 FunctionEnd
 
 Function RegisterService
 StrCpy $1 0
+StrCpy $3 ""
 ${Do}
-	ClearErrors
-	ExecWait '"$INSTDIR\@BRANDING_PRODUCT_SLUG@-wcli.exe" service register' $0
+	${Cli} 'service register'
+	; a crashed program returns its exception code (0xC0000005 …), which is negative;
+	; trying again would only show the same crash dialog again
+	${If} $0 < 0
+		IntFmt $3 "0x%08X" $0
+		${ExitDo}
+	${EndIf}
 	nsExec::Exec '"$SYSDIR\sc.exe" qc ${SERVICE_NAME}'
 	Pop $2
+	${InstallLog} "sc qc ${SERVICE_NAME}: $2"
 	${If} $0 == 0
 	${AndIf} $2 == 0
 		${ExitDo}
@@ -360,7 +434,10 @@ ${Do}
 	Sleep 1000
 	IntOp $1 $1 + 1
 ${LoopUntil} $1 >= 5
-${If} $2 != 0
+${If} $3 != ""
+	MessageBox MB_OK|MB_ICONSTOP "$(SERVICE_CRASH_ERROR)" /SD IDOK
+	SetErrorLevel 4
+${ElseIf} $2 != 0
 	MessageBox MB_OK|MB_ICONSTOP "$(SERVICE_REGISTER_ERROR)" /SD IDOK
 	SetErrorLevel 4
 ${EndIf}
@@ -479,6 +556,7 @@ Delete "$INSTDIR\*.exe"
 Delete "$INSTDIR\*.dll"
 Delete "$INSTDIR\*.TXT"
 Delete "$INSTDIR\*.url"
+Delete "$INSTDIR\install.log"
 RmDir /r "$INSTDIR\crypto"
 RmDir /r "$INSTDIR\imageformats"
 RmDir /r "$INSTDIR\plugins"
@@ -528,6 +606,9 @@ LangString STUDENT_PACKAGE_ERROR ${LANG_ARABIC} "تعذّرت قراءة إعد�
 LangString SERVICE_REGISTER_ERROR ${LANG_ENGLISH} "The ${APP_NAME} service could not be installed. Please restart the computer and run this installer again."
 LangString SERVICE_REGISTER_ERROR ${LANG_FRENCH} "Le service ${APP_NAME} n'a pas pu être installé. Redémarrez l'ordinateur et relancez ce programme d'installation."
 LangString SERVICE_REGISTER_ERROR ${LANG_ARABIC} "تعذّر تثبيت خدمة ${APP_NAME}. أعد تشغيل الحاسوب ثم شغّل برنامج التثبيت هذا من جديد."
+LangString SERVICE_CRASH_ERROR ${LANG_ENGLISH} "${APP_NAME} stopped working while installing its service (error code $3). Please report it at ${WEB_SITE}/issues and attach these two files:$\r$\n$INSTDIR\install.log$\r$\n$TEMP\${APP_NAME}-crash.log"
+LangString SERVICE_CRASH_ERROR ${LANG_FRENCH} "${APP_NAME} a cessé de fonctionner pendant l'installation de son service (code d'erreur $3). Merci de le signaler sur ${WEB_SITE}/issues en joignant ces deux fichiers :$\r$\n$INSTDIR\install.log$\r$\n$TEMP\${APP_NAME}-crash.log"
+LangString SERVICE_CRASH_ERROR ${LANG_ARABIC} "توقّف ${APP_NAME} عن العمل أثناء تثبيت خدمته (رمز الخطأ $3). يرجى الإبلاغ عن ذلك في ${WEB_SITE}/issues مع إرفاق هذين الملفين:$\r$\n$INSTDIR\install.log$\r$\n$TEMP\${APP_NAME}-crash.log"
 LangString DESC_SEC_INTERCEPTION ${LANG_GERMAN} "Spezieller Eingabegerätetreiber, der zum Abfangen von Tastenkombinationen wie Strg+Alt+Entf im Bildschirmsperr-Modus benötigt wird"
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN

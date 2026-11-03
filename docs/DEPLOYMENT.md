@@ -182,6 +182,20 @@ Tafat also builds for Linux (`.deb`/`.rpm` from the "build" workflow). The
 service is named `tafat`. Allow-only application control and the internet
 block for all programs are Windows only.
 
+## 7. Reporting a problem
+
+Please open an issue on [GitHub](https://github.com/BenzidaneMo/Tafat/issues) and
+attach these files (if they exist):
+
+- `C:\Program Files\Tafat\install.log`: written by the installer, with the Windows version,
+  each setup step and its result.
+- `%TEMP%\Tafat-crash.log`: written when a Tafat program crashes on Windows, with the program,
+  the step it was in, the error and where it happened. Type `%TEMP%` in the Explorer address
+  bar to open the folder of the account that ran the program. A crash of the service or of a
+  program started by it is in `C:\Windows\Temp\Tafat-crash.log`.
+- The normal log files (`Tafat*.log` in the same folders). The configurator's *General* page
+  sets how much they record. Choose *Debug* before reproducing a problem.
+
 ---
 
 Tafat is developed by [BenzidaneMo](https://github.com/BenzidaneMo), based on [Veyon](https://veyon.io).
